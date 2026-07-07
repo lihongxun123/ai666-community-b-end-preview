@@ -1,0 +1,936 @@
+{
+  "generatedAt": "2026-07-07T03:18:01.206Z",
+  "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
+  "status": "passed",
+  "checks": {
+    "htmlExists": true,
+    "navButtonCount": true,
+    "navClickActivatesExpectedPage": true,
+    "cEndCoverageMatrixComplete": true,
+    "reviewWorkbenchUsable": true,
+    "activityTaskPointsLoopUsable": true,
+    "userPointsPermissionLoopUsable": true,
+    "homeSlotWorkbenchUsable": true,
+    "operationFlowScenariosUsable": true,
+    "messageStoreDataReviewUsable": true,
+    "drawerOpensWithMaskedFields": true,
+    "dangerModalRequiresReason": true,
+    "walkthroughPanelOpens": true,
+    "noHorizontalDocumentOverflow": true,
+    "noConsoleErrors": true
+  },
+  "failed": [],
+  "expectedNavCount": 22,
+  "navResults": [
+    {
+      "view": "content-list",
+      "group": "内容运营",
+      "label": "内容列表",
+      "navLabel": "内容列表",
+      "navGroup": "内容运营",
+      "activeViews": [
+        "content-list"
+      ],
+      "activeNav": "content-list",
+      "title": "内容列表",
+      "breadcrumb": "首页 / 内容运营 / 内容列表",
+      "pageTitle": "内容列表",
+      "contract": "content-list",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "review-workbench",
+      "group": "内容运营",
+      "label": "审核工作台",
+      "navLabel": "审核工作台",
+      "navGroup": "内容运营",
+      "activeViews": [
+        "review-workbench"
+      ],
+      "activeNav": "review-workbench",
+      "title": "审核工作台",
+      "breadcrumb": "首页 / 内容运营 / 审核工作台",
+      "pageTitle": "审核工作台",
+      "contract": "review-workbench",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "feature-management",
+      "group": "内容运营",
+      "label": "精选管理",
+      "navLabel": "精选管理",
+      "navGroup": "内容运营",
+      "activeViews": [
+        "feature-management"
+      ],
+      "activeNav": "feature-management",
+      "title": "精选管理",
+      "breadcrumb": "首页 / 内容运营 / 精选管理",
+      "pageTitle": "精选管理",
+      "contract": "feature-management",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "submission-management",
+      "group": "内容运营",
+      "label": "投稿管理",
+      "navLabel": "投稿管理",
+      "navGroup": "内容运营",
+      "activeViews": [
+        "submission-management"
+      ],
+      "activeNav": "submission-management",
+      "title": "投稿管理",
+      "breadcrumb": "首页 / 内容运营 / 投稿管理",
+      "pageTitle": "投稿管理",
+      "contract": "submission-management",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "home-slots",
+      "group": "运营配置",
+      "label": "全站运营位",
+      "navLabel": "全站运营位",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "home-slots"
+      ],
+      "activeNav": "home-slots",
+      "title": "全站运营位",
+      "breadcrumb": "首页 / 运营配置 / 全站运营位",
+      "pageTitle": "全站运营位",
+      "contract": "home-slots",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "activity-config",
+      "group": "运营配置",
+      "label": "活动配置",
+      "navLabel": "活动配置",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "activity-config"
+      ],
+      "activeNav": "activity-config",
+      "title": "活动配置",
+      "breadcrumb": "首页 / 运营配置 / 活动配置",
+      "pageTitle": "活动配置",
+      "contract": "activity-config",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "task-config",
+      "group": "运营配置",
+      "label": "任务配置",
+      "navLabel": "任务配置",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "task-config"
+      ],
+      "activeNav": "task-config",
+      "title": "任务配置",
+      "breadcrumb": "首页 / 运营配置 / 任务配置",
+      "pageTitle": "任务配置",
+      "contract": "task-config",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "points-rules",
+      "group": "运营配置",
+      "label": "积分规则",
+      "navLabel": "积分规则",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "points-rules"
+      ],
+      "activeNav": "points-rules",
+      "title": "积分规则",
+      "breadcrumb": "首页 / 运营配置 / 积分规则",
+      "pageTitle": "积分规则",
+      "contract": "points-rules",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "message-config",
+      "group": "运营配置",
+      "label": "消息配置",
+      "navLabel": "消息配置",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "message-config"
+      ],
+      "activeNav": "message-config",
+      "title": "消息配置",
+      "breadcrumb": "首页 / 运营配置 / 消息配置",
+      "pageTitle": "消息配置",
+      "contract": "message-config",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "store-config",
+      "group": "运营配置",
+      "label": "商城配置",
+      "navLabel": "商城配置",
+      "navGroup": "运营配置",
+      "activeViews": [
+        "store-config"
+      ],
+      "activeNav": "store-config",
+      "title": "商城配置",
+      "breadcrumb": "首页 / 运营配置 / 商城配置",
+      "pageTitle": "商城配置",
+      "contract": "store-config",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "user-list",
+      "group": "用户管理",
+      "label": "用户列表",
+      "navLabel": "用户列表",
+      "navGroup": "用户管理",
+      "activeViews": [
+        "user-list"
+      ],
+      "activeNav": "user-list",
+      "title": "用户列表",
+      "breadcrumb": "首页 / 用户管理 / 用户列表",
+      "pageTitle": "用户列表",
+      "contract": "user-list",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "user-detail",
+      "group": "用户管理",
+      "label": "用户详情",
+      "navLabel": "用户详情",
+      "navGroup": "用户管理",
+      "activeViews": [
+        "user-detail"
+      ],
+      "activeNav": "user-detail",
+      "title": "用户详情",
+      "breadcrumb": "首页 / 用户管理 / 用户详情",
+      "pageTitle": "用户详情",
+      "contract": "user-detail",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "invite-records",
+      "group": "用户管理",
+      "label": "邀请记录",
+      "navLabel": "邀请记录",
+      "navGroup": "用户管理",
+      "activeViews": [
+        "invite-records"
+      ],
+      "activeNav": "invite-records",
+      "title": "邀请记录",
+      "breadcrumb": "首页 / 用户管理 / 邀请记录",
+      "pageTitle": "邀请记录",
+      "contract": "invite-records",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "points-records",
+      "group": "用户管理",
+      "label": "积分记录",
+      "navLabel": "积分记录",
+      "navGroup": "用户管理",
+      "activeViews": [
+        "points-records"
+      ],
+      "activeNav": "points-records",
+      "title": "积分记录",
+      "breadcrumb": "首页 / 用户管理 / 积分记录",
+      "pageTitle": "积分记录",
+      "contract": "points-records",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "trust-lists",
+      "group": "用户管理",
+      "label": "黑白名单",
+      "navLabel": "黑白名单",
+      "navGroup": "用户管理",
+      "activeViews": [
+        "trust-lists"
+      ],
+      "activeNav": "trust-lists",
+      "title": "黑白名单",
+      "breadcrumb": "首页 / 用户管理 / 黑白名单",
+      "pageTitle": "黑白名单",
+      "contract": "trust-lists",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "content-data",
+      "group": "数据看板",
+      "label": "内容数据",
+      "navLabel": "内容数据",
+      "navGroup": "数据看板",
+      "activeViews": [
+        "content-data"
+      ],
+      "activeNav": "content-data",
+      "title": "内容数据",
+      "breadcrumb": "首页 / 数据看板 / 内容数据",
+      "pageTitle": "内容数据",
+      "contract": "content-data",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "activity-data",
+      "group": "数据看板",
+      "label": "活动数据",
+      "navLabel": "活动数据",
+      "navGroup": "数据看板",
+      "activeViews": [
+        "activity-data"
+      ],
+      "activeNav": "activity-data",
+      "title": "活动数据",
+      "breadcrumb": "首页 / 数据看板 / 活动数据",
+      "pageTitle": "活动数据",
+      "contract": "activity-data",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "growth-data",
+      "group": "数据看板",
+      "label": "用户增长数据",
+      "navLabel": "用户增长数据",
+      "navGroup": "数据看板",
+      "activeViews": [
+        "growth-data"
+      ],
+      "activeNav": "growth-data",
+      "title": "用户增长数据",
+      "breadcrumb": "首页 / 数据看板 / 用户增长数据",
+      "pageTitle": "用户增长数据",
+      "contract": "growth-data",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "points-data",
+      "group": "数据看板",
+      "label": "积分数据",
+      "navLabel": "积分数据",
+      "navGroup": "数据看板",
+      "activeViews": [
+        "points-data"
+      ],
+      "activeNav": "points-data",
+      "title": "积分数据",
+      "breadcrumb": "首页 / 数据看板 / 积分数据",
+      "pageTitle": "积分数据",
+      "contract": "points-data",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "operation-log",
+      "group": "操作日志",
+      "label": "操作日志列表",
+      "navLabel": "操作日志列表",
+      "navGroup": "操作日志",
+      "activeViews": [
+        "operation-log"
+      ],
+      "activeNav": "operation-log",
+      "title": "操作日志列表",
+      "breadcrumb": "首页 / 操作日志 / 操作日志列表",
+      "pageTitle": "操作日志列表",
+      "contract": "operation-log",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "role-management",
+      "group": "系统设置",
+      "label": "角色管理",
+      "navLabel": "角色管理",
+      "navGroup": "系统设置",
+      "activeViews": [
+        "role-management"
+      ],
+      "activeNav": "role-management",
+      "title": "角色管理",
+      "breadcrumb": "首页 / 系统设置 / 角色管理",
+      "pageTitle": "角色管理",
+      "contract": "role-management",
+      "emptyStateCount": 0,
+      "ok": true
+    },
+    {
+      "view": "admin-users",
+      "group": "系统设置",
+      "label": "后台用户管理",
+      "navLabel": "后台用户管理",
+      "navGroup": "系统设置",
+      "activeViews": [
+        "admin-users"
+      ],
+      "activeNav": "admin-users",
+      "title": "后台用户管理",
+      "breadcrumb": "首页 / 系统设置 / 后台用户管理",
+      "pageTitle": "后台用户管理",
+      "contract": "admin-users",
+      "emptyStateCount": 0,
+      "ok": true
+    }
+  ],
+  "cEndCoverage": {
+    "formalPages": [
+      "index.html",
+      "aigc.html",
+      "aigc-templates.html",
+      "model-plaza.html",
+      "model-detail.html",
+      "flash.html",
+      "tutorial.html",
+      "tutorial-detail.html",
+      "activity-center.html",
+      "campaign-detail.html",
+      "campaign-prompt.html",
+      "prompt-submit.html",
+      "prompt-detail.html",
+      "campaign-new-user.html",
+      "campaign-seven-day.html",
+      "message-center.html",
+      "points-center.html",
+      "invite.html",
+      "login.html",
+      "member-store.html",
+      "user-center.html"
+    ],
+    "standalonePages": [
+      "content-detail-modals.html",
+      "campaign-ops.html"
+    ],
+    "featureGroups": [
+      "content-consumption",
+      "content-production",
+      "operation-slots",
+      "activity-task-points",
+      "message-notification",
+      "store-entitlement",
+      "user-account",
+      "data-review"
+    ],
+    "ok": true
+  },
+  "reviewWorkbench": {
+    "hasWorkbench": true,
+    "queues": [
+      "content",
+      "comment",
+      "submission",
+      "profile",
+      "submission",
+      "comment",
+      "profile",
+      "content"
+    ],
+    "filters": [
+      "object-type",
+      "status",
+      "risk-type",
+      "sla",
+      "assignee"
+    ],
+    "fields": [
+      "audit-id",
+      "object-type",
+      "summary",
+      "submitter",
+      "risk-source",
+      "risk-summary",
+      "status",
+      "sla",
+      "assignee",
+      "user-reason",
+      "internal-note",
+      "second-review",
+      "submitted-at",
+      "action"
+    ],
+    "outcomes": [
+      "approve",
+      "reject",
+      "second-review",
+      "return-edit",
+      "approve",
+      "reject",
+      "second-review",
+      "return-edit"
+    ],
+    "states": [
+      "pending",
+      "second-review",
+      "rejected",
+      "approved",
+      "pending",
+      "pending",
+      "rejected",
+      "approved"
+    ],
+    "guards": [
+      "user-readable-reason-required",
+      "internal-note-separate",
+      "sensitive-fields-masked",
+      "operation-log-required"
+    ],
+    "ok": true
+  },
+  "activityTaskPointsLoop": {
+    "loopPages": [
+      "activity-config",
+      "task-config",
+      "points-rules"
+    ],
+    "workflowSteps": [
+      "activity-rule",
+      "task-binding",
+      "points-reward",
+      "user-visible-copy",
+      "status-change-log"
+    ],
+    "activityFields": [
+      "activity-id",
+      "activity-name",
+      "activity-type",
+      "c-end-entry",
+      "rule-summary",
+      "linked-task",
+      "linked-points-rule",
+      "reward-summary",
+      "status",
+      "validity",
+      "owner",
+      "change-reason",
+      "action"
+    ],
+    "taskFields": [
+      "task-id",
+      "task-name",
+      "action-condition",
+      "display-entry",
+      "linked-activity",
+      "points-rule",
+      "daily-limit",
+      "status",
+      "validity",
+      "sort",
+      "action"
+    ],
+    "pointsRuleFields": [
+      "rule-id",
+      "source",
+      "trigger",
+      "points-amount",
+      "daily-limit",
+      "linked-activity",
+      "linked-task",
+      "manual-state",
+      "status",
+      "validity",
+      "owner",
+      "action"
+    ],
+    "states": [
+      "active",
+      "draft",
+      "exception",
+      "active",
+      "draft",
+      "ended",
+      "active",
+      "paused",
+      "exception",
+      "active",
+      "draft",
+      "exception"
+    ],
+    "guards": [
+      "user-readable-reward",
+      "no-auto-reward",
+      "rule-change-reason-required",
+      "abuse-risk-manual-review",
+      "operation-log-required"
+    ],
+    "ok": true
+  },
+  "userPointsPermissionLoop": {
+    "loopPages": [
+      "points-records",
+      "operation-log",
+      "role-management",
+      "admin-users"
+    ],
+    "workflowSteps": [
+      "points-record-review",
+      "manual-adjustment",
+      "log-immutability",
+      "sensitive-access-block",
+      "permission-change"
+    ],
+    "pointsRecordFields": [
+      "record-id",
+      "user",
+      "source",
+      "rule",
+      "change",
+      "accounting-state",
+      "review-state",
+      "linked-object",
+      "log-id",
+      "operator",
+      "time",
+      "action"
+    ],
+    "permissionLogFields": [
+      "log-id",
+      "object",
+      "action",
+      "before",
+      "after",
+      "operator",
+      "reason",
+      "time",
+      "risk-level",
+      "review-state",
+      "source-page"
+    ],
+    "roleFields": [
+      "role-id",
+      "role-name",
+      "menu-scope",
+      "action-scope",
+      "data-scope",
+      "approval-state",
+      "status",
+      "account-count",
+      "last-operator",
+      "action"
+    ],
+    "adminUserFields": [
+      "admin-id",
+      "nickname",
+      "role",
+      "account-state",
+      "permission-change",
+      "last-login",
+      "contact",
+      "review-state",
+      "last-operator",
+      "action"
+    ],
+    "states": [
+      "normal",
+      "pending-review",
+      "normal",
+      "adjusted",
+      "revoked",
+      "pending-review",
+      "permission-reclaimed",
+      "normal",
+      "adjusted",
+      "permission-granted",
+      "blocked",
+      "permission-granted",
+      "pending-review",
+      "permission-granted",
+      "normal",
+      "permission-reclaimed",
+      "normal",
+      "pending-review",
+      "blocked",
+      "normal",
+      "normal",
+      "blocked"
+    ],
+    "guards": [
+      "points-adjust-reason-required",
+      "no-sensitive-plain-text",
+      "second-review-required",
+      "log-immutable",
+      "permission-change-reason-required",
+      "least-privilege"
+    ],
+    "ok": true
+  },
+  "homeSlotWorkbench": {
+    "hasWorkbench": true,
+    "filters": [
+      "page",
+      "placement",
+      "status",
+      "target-type",
+      "validity"
+    ],
+    "fields": [
+      "ad-label",
+      "title",
+      "benefit",
+      "target",
+      "slot-id",
+      "placement",
+      "slot-type",
+      "ad-label",
+      "title",
+      "benefit",
+      "target",
+      "material-state",
+      "status",
+      "sort",
+      "validity",
+      "owner",
+      "last-updated",
+      "preview"
+    ],
+    "states": [
+      "enabled",
+      "draft",
+      "scheduled",
+      "blocked",
+      "enabled",
+      "enabled",
+      "draft",
+      "scheduled",
+      "enabled",
+      "enabled",
+      "draft",
+      "blocked"
+    ],
+    "guards": [
+      "visible-fields-only",
+      "no-internal-ids",
+      "no-internal-metrics",
+      "operation-log-required"
+    ],
+    "previewSource": "home-slots",
+    "ok": true
+  },
+  "operationFlow": {
+    "hasFlow": true,
+    "pages": [
+      "content-list",
+      "review-workbench",
+      "home-slots",
+      "points-records",
+      "operation-log",
+      "role-management"
+    ],
+    "batchPages": [
+      "content-list",
+      "review-workbench",
+      "home-slots",
+      "points-records",
+      "operation-log",
+      "role-management"
+    ],
+    "batchActions": [
+      "select-visible",
+      "batch-export-masked",
+      "batch-write-log",
+      "batch-status-change",
+      "select-visible",
+      "batch-assign",
+      "batch-write-log",
+      "select-visible",
+      "batch-export-masked",
+      "batch-status-change",
+      "batch-write-log",
+      "select-visible",
+      "batch-export-masked",
+      "batch-write-log",
+      "batch-status-change",
+      "select-visible",
+      "batch-export-masked",
+      "batch-write-log",
+      "select-visible",
+      "batch-assign",
+      "batch-export-masked",
+      "batch-status-change"
+    ],
+    "exceptionStates": [
+      "send-failed",
+      "pending-review",
+      "material-blocked",
+      "target-invalid",
+      "send-failed",
+      "points-risk",
+      "permission-risk"
+    ],
+    "guards": [
+      "masked-export-only",
+      "batch-reason-required",
+      "danger-confirm-required",
+      "drawer-readonly-first",
+      "exception-owner-required",
+      "single-object-review"
+    ],
+    "ok": true
+  },
+  "messageStoreDataReview": {
+    "pages": [
+      "message-config",
+      "store-config",
+      "content-data",
+      "activity-data",
+      "growth-data",
+      "points-data"
+    ],
+    "hasMessageWorkbench": true,
+    "hasStoreWorkbench": true,
+    "messageFields": [
+      "message-id",
+      "title",
+      "type",
+      "target",
+      "status",
+      "audience",
+      "send-window",
+      "fallback",
+      "recall-reason",
+      "owner",
+      "action"
+    ],
+    "storeFields": [
+      "sku-id",
+      "name",
+      "benefit",
+      "points-cost",
+      "display-state",
+      "validity",
+      "exchange-state",
+      "exception-summary",
+      "owner",
+      "action"
+    ],
+    "workflowSteps": [
+      "metric-definition",
+      "source-attribution",
+      "exclusion-rule",
+      "insight-decision",
+      "follow-up-action",
+      "review-log"
+    ],
+    "dataFields": [
+      "metric",
+      "definition",
+      "source",
+      "today",
+      "trend",
+      "exclusion",
+      "insight",
+      "owner",
+      "next-action",
+      "metric",
+      "definition",
+      "source",
+      "today",
+      "trend",
+      "exclusion",
+      "insight",
+      "owner",
+      "next-action",
+      "metric",
+      "definition",
+      "source",
+      "today",
+      "trend",
+      "exclusion",
+      "insight",
+      "owner",
+      "next-action",
+      "metric",
+      "definition",
+      "source",
+      "today",
+      "trend",
+      "exclusion",
+      "insight",
+      "owner",
+      "next-action"
+    ],
+    "states": [
+      "normal",
+      "watching",
+      "exception",
+      "resolved",
+      "normal",
+      "watching",
+      "exception",
+      "normal",
+      "watching",
+      "exception",
+      "resolved",
+      "normal",
+      "watching",
+      "exception",
+      "normal",
+      "watching",
+      "normal",
+      "watching",
+      "normal",
+      "watching",
+      "normal",
+      "exception",
+      "watching",
+      "normal",
+      "normal",
+      "exception",
+      "normal",
+      "exception"
+    ],
+    "guards": [
+      "no-auto-send",
+      "send-recall-reason-required",
+      "no-payment-settlement",
+      "no-card-code-inventory",
+      "data-source-labeled",
+      "test-data-excluded",
+      "no-bi-overbuild"
+    ],
+    "ok": true
+  },
+  "drawerState": {
+    "open": true,
+    "title": "运营位预览",
+    "fields": [
+      "object-summary",
+      "status-history",
+      "linked-records",
+      "risk-and-reason",
+      "operation-history"
+    ],
+    "hasRequiredFields": true,
+    "bodyIncludesMaskedFields": true
+  },
+  "modalState": {
+    "open": true,
+    "hasReasonInput": true,
+    "hasImpactCopy": true
+  },
+  "consoleErrors": [],
+  "pageErrors": []
+}

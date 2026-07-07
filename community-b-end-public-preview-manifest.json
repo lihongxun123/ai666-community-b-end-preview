@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-07-07T03:18:04.861Z",
+  "packageType": "community-b-end-public-preview",
+  "sourceRoot": "outputs/community-b-end-antdesign-prototype",
+  "entry": "index.html",
+  "homepage": "index.html",
+  "publishBasePath": "/ai666-community-b-end-preview",
+  "pageCount": 1,
+  "pages": [
+    {
+      "slug": "community-b-end-admin",
+      "label": "社区 B端管理后台",
+      "path": "index.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/index.html"
+    }
+  ],
+  "evidenceFiles": [
+    "community-b-end-antdesign-prototype-validation.json",
+    "community-b-end-antdesign-prototype-interaction-validation.json"
+  ],
+  "deploymentBoundary": {
+    "independentFrom": [
+      "outputs/public-preview",
+      "outputs/community-public-preview",
+      "ai666-c-end-preview",
+      "ai666-community-preview"
+    ],
+    "publicUrl": "https://lihongxun123.github.io/ai666-community-b-end-preview/"
+  }
+}

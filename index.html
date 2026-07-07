@@ -1,0 +1,1691 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI666 社区管理后台 V0.1</title>
+  <style>
+    :root {
+      --ant-sider-width: 208px;
+      --ant-header-height: 64px;
+      --ant-content-padding: 24px;
+      --ant-primary: #1677ff;
+      --ant-primary-soft: #e6f4ff;
+      --ant-success: #52c41a;
+      --ant-warning: #faad14;
+      --ant-danger: #ff4d4f;
+      --ant-text: #1f2937;
+      --ant-subtle: #667085;
+      --ant-border: #d9d9d9;
+      --ant-bg: #f5f7fb;
+      --ant-card: #ffffff;
+      --ant-sider: #001529;
+      --ant-sider-active: #1677ff;
+      --ant-radius: 6px;
+      --ant-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      min-width: 1280px;
+      min-height: 100%;
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ant-text);
+      background: var(--ant-bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0;
+    }
+
+    button,
+    input,
+    select,
+    textarea { font: inherit; }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: var(--ant-sider-width) minmax(0, 1fr);
+      background: var(--ant-bg);
+    }
+
+    .sidebar {
+      background: var(--ant-sider);
+      color: rgba(255, 255, 255, 0.72);
+      padding: 14px 10px 20px;
+      overflow-y: auto;
+    }
+
+    .brand {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 10px 12px;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      margin-bottom: 10px;
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--ant-primary);
+    }
+
+    .brand-title { font-weight: 650; }
+    .brand-subtitle { font-size: 12px; color: rgba(255,255,255,0.54); }
+
+    .nav-section { margin-bottom: 6px; }
+
+    .nav-group {
+      width: 100%;
+      border: 0;
+      color: rgba(255, 255, 255, 0.9);
+      background: transparent;
+      min-height: 36px;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: var(--ant-radius);
+      cursor: default;
+      font-weight: 600;
+    }
+
+    .nav-children { display: grid; gap: 2px; }
+
+    .nav-btn {
+      width: 100%;
+      border: 0;
+      min-height: 34px;
+      padding: 0 12px 0 24px;
+      text-align: left;
+      color: rgba(255, 255, 255, 0.68);
+      background: transparent;
+      border-radius: var(--ant-radius);
+      cursor: pointer;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.is-active {
+      color: #fff;
+      background: var(--ant-sider-active);
+    }
+
+    .main-shell {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: var(--ant-header-height) minmax(0, 1fr);
+    }
+
+    .topbar {
+      height: var(--ant-header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--ant-content-padding);
+      background: var(--ant-card);
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .breadcrumb {
+      color: var(--ant-subtle);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    .top-title {
+      font-size: 18px;
+      font-weight: 650;
+      margin: 0;
+    }
+
+    .top-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ant-subtle);
+      font-size: 13px;
+    }
+
+    .role-pill {
+      border: 1px solid #b7d8ff;
+      background: var(--ant-primary-soft);
+      color: #0958d9;
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    .content {
+      min-width: 0;
+      padding: var(--ant-content-padding);
+      overflow: auto;
+    }
+
+    .view { display: none; }
+    .view.is-active { display: block; }
+
+    .page-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .page-title h2 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 650;
+    }
+
+    .page-title p {
+      margin: 0;
+      color: var(--ant-subtle);
+    }
+
+    .action-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .stat-card,
+    .panel {
+      background: var(--ant-card);
+      border: 1px solid #edf0f5;
+      border-radius: var(--ant-radius);
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    }
+
+    .stat-card { padding: 14px 16px; }
+    .stat-label { color: var(--ant-subtle); font-size: 12px; margin-bottom: 6px; }
+    .stat-value { font-size: 24px; font-weight: 650; line-height: 1; }
+
+    .panel { margin-bottom: 14px; overflow: hidden; }
+    .panel-head {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 16px;
+      border-bottom: 1px solid #edf0f5;
+    }
+    .panel-title { font-weight: 650; }
+    .panel-body { padding: 14px 16px; }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .field { display: grid; gap: 5px; }
+    .field label { color: var(--ant-subtle); font-size: 12px; }
+    .input,
+    .select,
+    .textarea {
+      width: 100%;
+      min-height: 32px;
+      border: 1px solid var(--ant-border);
+      border-radius: var(--ant-radius);
+      background: #fff;
+      padding: 5px 10px;
+      color: var(--ant-text);
+    }
+    .textarea { min-height: 92px; resize: vertical; }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      padding: 10px 16px 0;
+      border-bottom: 1px solid #edf0f5;
+      background: var(--ant-card);
+    }
+    .tab {
+      border: 0;
+      background: transparent;
+      padding: 8px 4px 10px;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      color: var(--ant-subtle);
+    }
+    .tab.is-active {
+      color: var(--ant-primary);
+      border-bottom-color: var(--ant-primary);
+      font-weight: 650;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1160px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #edf0f5;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    th {
+      color: var(--ant-subtle);
+      font-weight: 600;
+      background: #fafafa;
+      font-size: 12px;
+    }
+
+    td.wrap { white-space: normal; min-width: 220px; }
+    .mono { font-family: "SFMono-Regular", Consolas, monospace; }
+    .muted { color: var(--ant-subtle); }
+    .small { font-size: 12px; }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid #d9d9d9;
+      background: #fafafa;
+      color: #475467;
+    }
+    .tag.success { color: #237804; background: #f6ffed; border-color: #b7eb8f; }
+    .tag.info { color: #0958d9; background: #e6f4ff; border-color: #91caff; }
+    .tag.warning { color: #ad6800; background: #fffbe6; border-color: #ffe58f; }
+    .tag.danger { color: #cf1322; background: #fff1f0; border-color: #ffa39e; }
+    .tag.gray { color: #475467; background: #f2f4f7; border-color: #d0d5dd; }
+
+    .btn {
+      min-height: 32px;
+      border: 1px solid var(--ant-border);
+      border-radius: var(--ant-radius);
+      background: #fff;
+      padding: 4px 12px;
+      cursor: pointer;
+      color: var(--ant-text);
+    }
+    .btn:hover { border-color: var(--ant-primary); color: var(--ant-primary); }
+    .btn.primary { background: var(--ant-primary); border-color: var(--ant-primary); color: #fff; }
+    .btn.link { border-color: transparent; background: transparent; color: var(--ant-primary); padding: 2px 4px; }
+    .btn.danger,
+    .danger-link { color: var(--ant-danger); }
+    .op-list { display: flex; gap: 8px; align-items: center; flex-wrap: nowrap; }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .profile-card {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .profile-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid #edf0f5;
+      padding-bottom: 8px;
+    }
+
+    .contract-panel {
+      border-left: 3px solid var(--ant-primary);
+      background: #f8fbff;
+      padding: 12px 14px;
+      color: #344054;
+      margin-bottom: 14px;
+    }
+
+    .workflow-row,
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .workflow-step,
+    .preview-card {
+      border: 1px solid #edf0f5;
+      border-radius: var(--ant-radius);
+      background: #fff;
+      padding: 12px;
+      min-height: 92px;
+    }
+
+    .workflow-step b,
+    .preview-card b {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .preview-card {
+      background: #fbfdff;
+    }
+
+    .empty-state {
+      background: #fff;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--ant-radius);
+      padding: 28px;
+      text-align: center;
+      color: var(--ant-subtle);
+    }
+
+    .batch-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 16px;
+      border-bottom: 1px solid #edf0f5;
+      background: #fafafa;
+    }
+
+    .exception-note {
+      border: 1px solid #ffe58f;
+      background: #fffbe6;
+    }
+
+    .drawer-detail-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .drawer-field {
+      border: 1px solid #edf0f5;
+      border-radius: var(--ant-radius);
+      background: #fbfdff;
+      padding: 10px 12px;
+    }
+
+    .drawer-backdrop,
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.42);
+      z-index: 40;
+    }
+    .drawer-backdrop.is-open,
+    .modal-backdrop.is-open { display: block; }
+
+    .drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 640px;
+      max-width: calc(100vw - 48px);
+      height: 100vh;
+      background: #fff;
+      z-index: 50;
+      box-shadow: var(--ant-shadow);
+    }
+    .drawer.is-open {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    .drawer-head,
+    .modal-head {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px;
+      border-bottom: 1px solid #edf0f5;
+      font-weight: 650;
+    }
+    .drawer-body,
+    .modal-body { padding: 18px; overflow: auto; }
+    .drawer-footer,
+    .modal-footer {
+      min-height: 56px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      align-items: center;
+      padding: 10px 18px;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: min(620px, calc(100vw - 48px));
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: var(--ant-shadow);
+      z-index: 60;
+    }
+    .modal.is-open { display: block; }
+
+    .walkthrough-toggle {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 30;
+      box-shadow: var(--ant-shadow);
+    }
+
+    .walkthrough-panel {
+      display: none;
+      position: fixed;
+      right: 18px;
+      bottom: 62px;
+      width: 390px;
+      max-height: 560px;
+      overflow: auto;
+      background: #fff;
+      border: 1px solid #edf0f5;
+      border-radius: 8px;
+      box-shadow: var(--ant-shadow);
+      z-index: 30;
+      padding: 14px;
+    }
+    .walkthrough-panel.is-open { display: block; }
+
+    @media (max-width: 1360px) {
+      .filter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .workflow-row,
+      .preview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell ant-layout" data-layout-system="ant-design" data-sider-width="208" data-header-height="64" data-content-padding="24" data-density="compact" data-component-size="small">
+    <aside class="sidebar ant-layout-sider" aria-label="B端导航">
+      <div class="brand">
+        <div class="brand-mark">AI</div>
+        <div>
+          <div class="brand-title">AI666 后台</div>
+          <div class="brand-subtitle">社区运营 V0.1</div>
+        </div>
+      </div>
+
+      <section class="nav-section" data-nav-section="content">
+        <button class="nav-group" type="button" data-nav-module="内容运营"><span>内容运营</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn is-active" type="button" data-nav="content-list">内容列表</button>
+          <button class="nav-btn" type="button" data-nav="review-workbench">审核工作台</button>
+          <button class="nav-btn" type="button" data-nav="feature-management">精选管理</button>
+          <button class="nav-btn" type="button" data-nav="submission-management">投稿管理</button>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="operation">
+        <button class="nav-group" type="button" data-nav-module="运营配置"><span>运营配置</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn" type="button" data-nav="home-slots">全站运营位</button>
+          <button class="nav-btn" type="button" data-nav="activity-config">活动配置</button>
+          <button class="nav-btn" type="button" data-nav="task-config">任务配置</button>
+          <button class="nav-btn" type="button" data-nav="points-rules">积分规则</button>
+          <button class="nav-btn" type="button" data-nav="message-config">消息配置</button>
+          <button class="nav-btn" type="button" data-nav="store-config">商城配置</button>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="users">
+        <button class="nav-group" type="button" data-nav-module="用户管理"><span>用户管理</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn" type="button" data-nav="user-list">用户列表</button>
+          <button class="nav-btn" type="button" data-nav="user-detail">用户详情</button>
+          <button class="nav-btn" type="button" data-nav="invite-records">邀请记录</button>
+          <button class="nav-btn" type="button" data-nav="points-records">积分记录</button>
+          <button class="nav-btn" type="button" data-nav="trust-lists">黑白名单</button>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="data">
+        <button class="nav-group" type="button" data-nav-module="数据看板"><span>数据看板</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn" type="button" data-nav="content-data">内容数据</button>
+          <button class="nav-btn" type="button" data-nav="activity-data">活动数据</button>
+          <button class="nav-btn" type="button" data-nav="growth-data">用户增长数据</button>
+          <button class="nav-btn" type="button" data-nav="points-data">积分数据</button>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="logs">
+        <button class="nav-group" type="button" data-nav-module="操作日志"><span>操作日志</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn" type="button" data-nav="operation-log">操作日志列表</button>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="system">
+        <button class="nav-group" type="button" data-nav-module="系统设置"><span>系统设置</span><span>▾</span></button>
+        <div class="nav-children">
+          <button class="nav-btn" type="button" data-nav="role-management">角色管理</button>
+          <button class="nav-btn" type="button" data-nav="admin-users">后台用户管理</button>
+        </div>
+      </section>
+    </aside>
+
+    <div class="main-shell ant-layout">
+      <header class="topbar ant-layout-header">
+        <div>
+          <div class="breadcrumb" id="globalBreadcrumb">首页 / 内容运营 / 内容列表</div>
+          <h1 class="top-title" id="globalTitle">内容列表</h1>
+        </div>
+        <div class="top-meta">
+          <span class="role-pill">社区运营负责人</span>
+          <span>[USER_ID]</span>
+          <button class="btn" type="button">退出</button>
+        </div>
+      </header>
+
+      <main class="content ant-layout-content">
+        <section class="view is-active" data-view="content-list" data-page-contract="content-list" data-operation-page="content-list">
+          <div class="contract-panel" data-page-contract="content-list">内容列表负责统一运营入口；审核、日志和详情治理进入抽屉或专门页面，不在列表直接处理复杂审核。</div>
+          <div class="page-head">
+            <div class="page-title">
+              <h2>内容列表</h2>
+              <p>管理 AIGC、Prompt、模板、模型、教程和闪念内容。</p>
+            </div>
+            <div class="action-row">
+              <button class="btn primary" type="button" data-open-drawer="content-detail">新增运营内容</button>
+              <button class="btn" type="button">导出脱敏摘要</button>
+            </div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">全部内容</div><div class="stat-value">2,418</div></div>
+            <div class="stat-card"><div class="stat-label">待审核</div><div class="stat-value">86</div></div>
+            <div class="stat-card"><div class="stat-label">已下架</div><div class="stat-value">34</div></div>
+            <div class="stat-card"><div class="stat-label">精选中</div><div class="stat-value">128</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">筛选</div><button class="btn" type="button">重置</button></div>
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>关键词</label><input class="input" value="提示词"></div>
+                <div class="field"><label>内容类型</label><select class="select"><option>AIGC / Prompt / 闪念</option></select></div>
+                <div class="field"><label>发布状态</label><select class="select"><option>全部状态</option></select></div>
+                <div class="field"><label>发布时间</label><input class="input" value="近 30 天"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-batch-page="content-list">
+            <div class="batch-bar">
+              <div><b>批量动作</b><span class="muted small"> 当前筛选结果只允许做低风险归类、脱敏导出和日志补充</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择当前结果</button>
+                <button class="btn" type="button" data-batch-action="batch-export-masked">导出脱敏摘要</button>
+                <button class="btn" type="button" data-batch-action="batch-write-log">补充日志备注</button>
+                <button class="btn" type="button" data-batch-action="batch-status-change" data-danger-action="content-batch-status" data-requires-confirm="true" data-requires-reason="true">批量改状态</button>
+              </div>
+            </div>
+            <div class="panel-body" data-operation-flow="batch-drawer-exception">
+              <div class="preview-grid">
+                <div class="preview-card" data-operation-guard="masked-export-only"><b>脱敏导出</b><p class="muted small">只导出内容摘要、状态、时间和占位用户，不带联系方式或凭证。</p></div>
+                <div class="preview-card" data-operation-guard="batch-reason-required"><b>原因必填</b><p class="muted small">批量改状态、补充备注和下架恢复都必须填写原因。</p></div>
+                <div class="preview-card" data-operation-guard="danger-confirm-required"><b>危险确认</b><p class="muted small">会改变 C端展示或权限状态的动作进入二次确认。</p></div>
+                <div class="preview-card" data-operation-guard="drawer-readonly-first"><b>先看详情</b><p class="muted small">抽屉先给只读摘要、关联记录、风险原因和操作历史。</p></div>
+                <div class="preview-card" data-operation-guard="exception-owner-required"><b>异常归属</b><p class="muted small">异常项必须有负责人、原因和下一步处理动作。</p></div>
+                <div class="preview-card" data-exception-state="send-failed"><b>发送失败</b><span class="tag warning">待处理</span><p class="muted small">消息或通知类配置失败时，只记录失败摘要和重试负责人。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">内容列表</div><span class="muted small">宽表格仅在表格内部横向滚动</span></div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="content-list">
+                <thead>
+                  <tr><th>内容 ID</th><th>标题</th><th>类型</th><th>作者</th><th>状态</th><th>精选</th><th>来源</th><th>发布时间</th><th>最近操作人</th><th>操作</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mono">AIGC-1001</td><td class="wrap"><b>AI 漫剧分镜提示词合集</b><br><span class="muted small">[CONTENT_ID]</span></td><td><span class="tag info">AIGC</span></td><td>拾光创作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag success">已发布</span></td><td><span class="tag success">精选中</span></td><td>轻创作</td><td>2026-07-06</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="content-detail">查看</button><button class="btn link" data-danger-action="unfeature" data-requires-confirm="true" data-requires-reason="true">取消精选</button><button class="btn link danger-link" data-danger-action="offline" data-requires-confirm="true" data-requires-reason="true">下架</button></div></td>
+                  </tr>
+                  <tr>
+                    <td class="mono">PRO-2048</td><td class="wrap"><b>Prompt 共创投稿：品牌短视频脚本</b></td><td><span class="tag warning">Prompt</span></td><td>内容作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag warning">待审核</span></td><td><span class="tag gray">未精选</span></td><td>投稿</td><td>2026-07-06</td><td>审核员 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="content-detail">查看</button><button class="btn link" data-open-view="review-workbench">去审核</button><button class="btn link danger-link" data-danger-action="delete" data-requires-confirm="true" data-requires-reason="true">删除</button></div></td>
+                  </tr>
+                  <tr>
+                    <td class="mono">FLA-0308</td><td class="wrap"><b>闪念：模型服务调用体验</b></td><td><span class="tag gray">闪念</span></td><td>社区用户<br><span class="muted small">[USER_ID]</span></td><td><span class="tag danger">已下架</span></td><td><span class="tag gray">-</span></td><td>用户发布</td><td>2026-07-05</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="content-detail">查看</button><button class="btn link" data-danger-action="restore" data-requires-confirm="true" data-requires-reason="true">恢复</button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="review-workbench" data-page-contract="review-workbench" data-operation-page="review-workbench">
+          <div class="contract-panel" data-page-contract="review-workbench">审核工作台集中处理内容、评论、投稿和资料审核；拒绝必须写用户可读原因。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>审核工作台</h2><p>集中处理需要人工判断的审核对象。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="review-detail">处理下一条</button></div>
+          </div>
+          <div class="tabs"><button class="tab is-active">内容审核</button><button class="tab">评论审核</button><button class="tab">投稿审核</button><button class="tab">资料审核</button></div>
+          <div class="panel" data-batch-page="review-workbench">
+            <div class="batch-bar">
+              <div><b>队列批量处理</b><span class="muted small"> 分配处理人可以批量做，审核结论仍按单对象确认</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择待处理队列</button>
+                <button class="btn" type="button" data-batch-action="batch-assign">批量分配</button>
+                <button class="btn" type="button" data-batch-action="batch-write-log">补充审核备注</button>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card exception-note" data-exception-state="pending-review"><b>待复核堆积</b><span class="tag warning">即将超时</span><p class="muted small">批量分配给审核员后，审核通过/拒绝仍需要单条填写原因。</p></div>
+                <div class="preview-card" data-operation-guard="single-object-review"><b>单对象审核</b><p class="muted small">通过、拒绝、转复核不提供批量结论，避免误伤内容或用户。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-review-workbench="manual-review">
+            <div class="panel-head"><div class="panel-title">审核队列</div><span class="muted small">按对象类型分流，统一用原因、备注、复核和日志收口</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-queue="content"><b>内容</b><span class="tag warning" data-review-state="pending">待审核 18</span><p class="muted small">Prompt、AIGC、教程、模型说明等发布内容。</p></div>
+                <div class="preview-card" data-review-queue="comment"><b>评论</b><span class="tag warning">待审核 7</span><p class="muted small">闪念评论、详情页评论、站外联系方式疑似内容。</p></div>
+                <div class="preview-card" data-review-queue="submission"><b>投稿</b><span class="tag info" data-review-state="second-review">复核 4</span><p class="muted small">活动投稿、Prompt 共创投稿、奖励前人工初筛。</p></div>
+                <div class="preview-card" data-review-queue="profile"><b>资料</b><span class="tag danger" data-review-state="rejected">已拒绝 2</span><p class="muted small">头像、昵称、简介、官方号资料变更。</p></div>
+                <div class="preview-card"><b>处理结果</b><p><span class="tag success" data-review-outcome="approve" data-review-state="approved">通过</span></p><p><span class="tag danger" data-review-outcome="reject">拒绝</span></p><p><span class="tag info" data-review-outcome="second-review">转复核</span></p><p><span class="tag warning" data-review-outcome="return-edit">退回修改</span></p></div>
+                <div class="preview-card"><b>审核保护</b><p><span class="tag gray" data-review-guard="user-readable-reason-required">拒绝需用户可读原因</span></p><p><span class="tag gray" data-review-guard="internal-note-separate">内部备注单独记录</span></p><p><span class="tag gray" data-review-guard="sensitive-fields-masked">敏感字段脱敏</span></p><p><span class="tag gray" data-review-guard="operation-log-required">处理写入日志</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field" data-review-filter="object-type"><label>对象类型</label><select class="select"><option>内容 / 评论 / 投稿 / 资料</option></select></div>
+                <div class="field" data-review-filter="status"><label>审核状态</label><select class="select"><option>待审核 / 复核 / 已拒绝 / 已通过</option></select></div>
+                <div class="field" data-review-filter="risk-type"><label>风险类型</label><select class="select"><option>站外引导 / 活动归属 / 资料异常</option></select></div>
+                <div class="field" data-review-filter="sla"><label>处理时限</label><select class="select"><option>即将超时优先</option></select></div>
+                <div class="field" data-review-filter="assignee"><label>处理人</label><input class="input" value="审核员 B"></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="review-workbench">
+                <thead><tr><th data-review-field="audit-id">审核 ID</th><th data-review-field="object-type">对象类型</th><th data-review-field="summary">对象摘要</th><th data-review-field="submitter">提交人</th><th data-review-field="risk-source">风险来源</th><th data-review-field="risk-summary">风险摘要</th><th data-review-field="status">状态</th><th data-review-field="sla">处理时限</th><th data-review-field="assignee">处理人</th><th data-review-field="user-reason">用户可读原因</th><th data-review-field="internal-note">内部备注</th><th data-review-field="second-review">复核</th><th data-review-field="submitted-at">提交时间</th><th data-review-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-review-queue="submission" data-review-state="pending"><td class="mono">AUD-1001</td><td><span class="tag info">Prompt 投稿</span></td><td class="wrap">品牌短视频脚本投稿</td><td>[USER_ID]</td><td>活动投稿</td><td>需人工判断活动归属</td><td><span class="tag warning">待审核</span></td><td>剩余 44 分钟</td><td>审核员 B</td><td>待填写</td><td>疑似符合 Prompt 共创计划，但需确认是否原创</td><td><span class="tag gray">无需复核</span></td><td>16 分钟前</td><td><div class="op-list"><button class="btn link" data-open-drawer="review-detail">查看</button><button class="btn link" data-review-outcome="approve" data-danger-action="approve-audit" data-requires-confirm="true" data-requires-reason="true">通过</button><button class="btn link danger-link" data-review-outcome="reject" data-danger-action="reject-audit" data-requires-confirm="true" data-requires-reason="true">拒绝</button></div></td></tr>
+                  <tr data-review-queue="comment" data-review-state="pending"><td class="mono">AUD-1002</td><td><span class="tag gray">评论</span></td><td class="wrap">闪念评论内容审核</td><td>[USER_ID]</td><td>关键词命中</td><td>疑似引导站外联系</td><td><span class="tag warning">待审核</span></td><td>剩余 23 分钟</td><td>审核员 B</td><td>评论含不适合公开展示的信息</td><td>仅展示脱敏对象，不保存站外联系方式</td><td><span class="tag info">建议复核</span></td><td>37 分钟前</td><td><div class="op-list"><button class="btn link" data-open-drawer="review-detail">查看</button><button class="btn link" data-review-outcome="second-review" data-danger-action="review-second" data-requires-confirm="true" data-requires-reason="true">转复核</button></div></td></tr>
+                  <tr data-review-queue="profile" data-review-state="rejected"><td class="mono">AUD-1003</td><td><span class="tag warning">资料</span></td><td class="wrap">用户头像与昵称变更</td><td>[USER_ID]</td><td>资料变更</td><td>头像疑似营销二维码</td><td><span class="tag danger">已拒绝</span></td><td>已处理</td><td>审核员 A</td><td>头像不符合社区资料展示规则，请更换后再提交</td><td>涉及站外引导风险，已留痕</td><td><span class="tag gray">无需复核</span></td><td>2 小时前</td><td><div class="op-list"><button class="btn link" data-open-drawer="review-detail">查看</button><button class="btn link" data-review-outcome="return-edit" data-danger-action="profile-return" data-requires-confirm="true" data-requires-reason="true">退回修改</button></div></td></tr>
+                  <tr data-review-queue="content" data-review-state="approved"><td class="mono">AUD-1004</td><td><span class="tag success">教程</span></td><td class="wrap">官方教程内容更新</td><td>[USER_ID]</td><td>人工抽检</td><td>内容可读，未发现敏感字段</td><td><span class="tag success">已通过</span></td><td>已处理</td><td>审核员 B</td><td>已通过审核</td><td>作为教程更新进入内容列表</td><td><span class="tag gray">无需复核</span></td><td>3 小时前</td><td><button class="btn link" data-open-drawer="review-detail">查看</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="feature-management" data-page-contract="feature-management" data-content-page="feature-management">
+          <div class="contract-panel" data-page-contract="feature-management">精选管理只管理展示结果、排序和推荐理由；内容审核仍回到审核工作台，C端不展示后台精选规则。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>精选管理</h2><p>管理首页、AIGC、模型广场和教程的精选展示。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="feature-detail">新增精选</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">展示中</div><div class="stat-value">42</div></div>
+            <div class="stat-card"><div class="stat-label">待展示</div><div class="stat-value">18</div></div>
+            <div class="stat-card"><div class="stat-label">已过期</div><div class="stat-value">9</div></div>
+            <div class="stat-card"><div class="stat-label">排序冲突</div><div class="stat-value">2</div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>展示位置</label><select class="select"><option>首页 / AIGC / 模型 / 教程</option></select></div>
+                <div class="field"><label>内容类型</label><select class="select"><option>AIGC / Prompt / 模型</option></select></div>
+                <div class="field"><label>状态</label><select class="select"><option>展示中</option></select></div>
+                <div class="field"><label>有效期</label><input class="input" value="近 30 天"></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="feature-management">
+                <thead><tr><th>精选 ID</th><th>内容</th><th>位置</th><th>推荐理由</th><th>状态</th><th>排序</th><th>有效期</th><th>最近操作人</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">FEA-1001</td><td class="wrap">AI 漫剧分镜提示词合集<br><span class="muted small">[CONTENT_ID]</span></td><td>首页精选</td><td>适合新用户快速理解场景</td><td><span class="tag success">展示中</span></td><td>10</td><td>2026-07-01 至 2026-07-31</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="feature-detail">详情</button><button class="btn link" data-danger-action="feature-sort" data-requires-confirm="true" data-requires-reason="true">调序</button><button class="btn link danger-link" data-danger-action="feature-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr><td class="mono">FEA-1002</td><td class="wrap">模型服务调用体验</td><td>模型广场</td><td>成本口径清楚，可做示例</td><td><span class="tag warning">待展示</span></td><td>30</td><td>待设置</td><td>运营 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="feature-detail">编辑</button><button class="btn link" data-danger-action="feature-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="submission-management" data-page-contract="submission-management" data-content-page="submission-management">
+          <div class="contract-panel" data-page-contract="submission-management">投稿管理承接活动投稿和 Prompt 投稿；奖励只做人工状态标记，不承诺自动发奖。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>投稿管理</h2><p>管理活动投稿、Prompt 共创和奖励待处理状态。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="submission-detail">查看待初筛</button></div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>活动 / 计划</label><select class="select"><option>Prompt 共创计划</option></select></div>
+                <div class="field"><label>投稿类型</label><select class="select"><option>Prompt / AIGC / 闪念</option></select></div>
+                <div class="field"><label>状态</label><select class="select"><option>待初筛</option></select></div>
+                <div class="field"><label>奖励状态</label><select class="select"><option>奖励待处理</option></select></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="submission-management">
+                <thead><tr><th>投稿 ID</th><th>活动 / 计划</th><th>投稿人</th><th>标题</th><th>类型</th><th>状态</th><th>奖励状态</th><th>提交时间</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">SUB-0710</td><td>Prompt 共创计划</td><td>[USER_ID]</td><td class="wrap">品牌短视频脚本 Prompt</td><td>Prompt</td><td><span class="tag warning">待初筛</span></td><td><span class="tag warning">奖励待处理</span></td><td>2026-07-06</td><td><div class="op-list"><button class="btn link" data-open-drawer="submission-detail">详情</button><button class="btn link" data-danger-action="submission-select" data-requires-confirm="true" data-requires-reason="true">标记入选</button><button class="btn link danger-link" data-danger-action="submission-return" data-requires-confirm="true" data-requires-reason="true">退回</button></div></td></tr>
+                  <tr><td class="mono">SUB-0801</td><td>AI 生图挑战</td><td>[USER_ID]</td><td class="wrap">赛博城市海报</td><td>AIGC</td><td><span class="tag success">已入选</span></td><td><span class="tag gray">已记录</span></td><td>2026-07-05</td><td><button class="btn link" data-open-drawer="submission-detail">查看</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="home-slots" data-page-contract="home-slots" data-operation-page="home-slots">
+          <div class="contract-panel" data-page-contract="home-slots" data-slot-center="global-operation-slots">全站运营位集中配置首页、闪念、AIGC、模型广场、积分/邀请、消息、公告和右侧栏入口；C端只展示广告标识、活动标题、单句利益点和整卡入口，不展示内部活动编号、任务编号、灰度标签、统计进度或多 CTA。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>全站运营位</h2><p>集中管理 C端跨页运营/广告位，避免首页、闪念、AIGC、模型、积分和消息各自散落配置。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="slot-preview">新增运营位</button></div>
+          </div>
+          <div class="tabs"><button class="tab is-active">顶部活动条</button><button class="tab">首页 Banner</button><button class="tab">右侧运营位</button><button class="tab">闪念广告位</button><button class="tab">模型页 Hero</button><button class="tab">AIGC 顶部</button><button class="tab">积分/邀请</button><button class="tab">公告入口</button></div>
+          <div class="panel" data-slot-workbench="centralized">
+            <div class="panel-head"><div class="panel-title">运营位工作台</div><span class="muted small">先按点位定位问题，再处理素材、目标、排期和状态</span></div>
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field" data-slot-filter="page"><label>所属页面</label><select class="select"><option>全部 C端页面</option><option>首页</option><option>闪念 / AIGC / 模型</option><option>积分 / 邀请 / 消息</option></select></div>
+                <div class="field" data-slot-filter="placement"><label>点位位置</label><select class="select"><option>全部点位</option><option>顶部活动条</option><option>首屏 Banner</option><option>右侧栏</option></select></div>
+                <div class="field" data-slot-filter="status"><label>展示状态</label><select class="select"><option>启用 / 草稿 / 待生效 / 阻断</option></select></div>
+                <div class="field" data-slot-filter="target-type"><label>绑定目标</label><select class="select"><option>活动 / 任务 / 公告 / 内容 / 模型</option></select></div>
+                <div class="field" data-slot-filter="validity"><label>有效期</label><input class="input" value="本月 + 长期"></div>
+              </div>
+              <div class="preview-grid">
+                <div class="preview-card" data-slot-state="enabled"><b>启用中</b><span class="tag success">5</span><p class="muted small">已配置素材、目标、有效期和排序，可在 C端展示。</p></div>
+                <div class="preview-card" data-slot-state="draft"><b>草稿</b><span class="tag warning">2</span><p class="muted small">已有点位和目标，但素材或排期未补齐。</p></div>
+                <div class="preview-card" data-slot-state="scheduled"><b>待生效</b><span class="tag info">1</span><p class="muted small">未来时间生效，启用前保留预览与调序能力。</p></div>
+                <div class="preview-card" data-slot-state="blocked"><b>阻断</b><span class="tag danger">1</span><p class="muted small">素材缺失、目标失效或排期冲突时不能启用。</p></div>
+                <div class="preview-card" data-slot-preview-card="c-end-visible" data-slot-preview-source="home-slots">
+                  <b>C端可见预览</b>
+                  <span class="tag info" data-slot-field="ad-label">广告</span>
+                  <p><b data-slot-field="title">Prompt 共创计划</b></p>
+                  <p class="muted small" data-slot-field="benefit">提交优质提示词可获得精选曝光</p>
+                  <p class="muted small">整卡跳转：<span data-slot-field="target">活动详情</span></p>
+                </div>
+                <div class="preview-card">
+                  <b>展示保护</b>
+                  <p><span class="tag gray" data-slot-guard="visible-fields-only">只展示用户可见字段</span></p>
+                  <p><span class="tag gray" data-slot-guard="no-internal-ids">不外露内部编号</span></p>
+                  <p><span class="tag gray" data-slot-guard="no-internal-metrics">不外露统计进度</span></p>
+                  <p><span class="tag gray" data-slot-guard="operation-log-required">启停调序写日志</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-bend-workflow="global-operation-slot">
+            <div class="panel-head"><div class="panel-title">配置闭环</div><span class="muted small">从选择点位到写入操作日志</span></div>
+            <div class="panel-body workflow-row">
+              <div class="workflow-step" data-workflow-step="select-placement"><b>选择点位</b><span class="muted small">按页面/位置确定展示范围。</span></div>
+              <div class="workflow-step" data-workflow-step="bind-target"><b>绑定目标</b><span class="muted small">活动、任务、公告、内容或模型。</span></div>
+              <div class="workflow-step" data-workflow-step="c-end-preview"><b>C端预览</b><span class="muted small">只预览用户可见信息。</span></div>
+              <div class="workflow-step" data-workflow-step="enable-disable"><b>启停排序</b><span class="muted small">启用、停用、调序均需原因。</span></div>
+              <div class="workflow-step" data-workflow-step="write-operation-log"><b>写入日志</b><span class="muted small">记录前后配置摘要。</span></div>
+            </div>
+          </div>
+          <div class="panel" data-batch-page="home-slots">
+            <div class="batch-bar">
+              <div><b>运营位批量动作</b><span class="muted small"> 只允许同点位、同状态范围内处理</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择当前点位</button>
+                <button class="btn" type="button" data-batch-action="batch-export-masked">导出配置摘要</button>
+                <button class="btn" type="button" data-batch-action="batch-status-change" data-danger-action="slot-batch-status" data-requires-confirm="true" data-requires-reason="true">批量停用</button>
+                <button class="btn" type="button" data-batch-action="batch-write-log">补充变更日志</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">绑定目标与异常</div><span class="muted small">只做运营配置，不做投放系统</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-target-type="activity"><b>活动</b><span class="tag success">可绑定</span><p class="muted small">活动中心、活动详情、Prompt 共创计划。</p></div>
+                <div class="preview-card" data-target-type="task"><b>任务</b><span class="tag success">可绑定</span><p class="muted small">新手任务、七日任务、赚积分入口。</p></div>
+                <div class="preview-card" data-target-type="announcement"><b>公告</b><span class="tag success">可绑定</span><p class="muted small">公告列表、公告详情、消息入口。</p></div>
+                <div class="preview-card" data-target-type="content"><b>内容</b><span class="tag success">可绑定</span><p class="muted small">精选内容、Prompt、AIGC 作品。</p></div>
+                <div class="preview-card" data-target-type="model"><b>模型</b><span class="tag success">可绑定</span><p class="muted small">模型广场、模型详情、模型活动。</p></div>
+                <div class="preview-card exception-note" data-slot-exception="material-missing" data-exception-state="material-blocked"><b>素材缺失</b><span class="tag danger">阻断启用</span><p class="muted small">缺图片或短文案时不能启用。</p></div>
+                <div class="preview-card exception-note" data-slot-exception="target-invalid" data-exception-state="target-invalid"><b>链接失效</b><span class="tag danger">阻断启用</span><p class="muted small">目标下架或归档后需替换。</p></div>
+                <div class="preview-card" data-slot-exception="time-conflict"><b>有效期冲突</b><span class="tag warning">需确认</span><p class="muted small">同点位同排序冲突必须改期或调序。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="home-slots">
+                <thead><tr><th data-slot-field="slot-id">运营位 ID</th><th data-slot-field="placement">页面 / 位置</th><th data-slot-field="slot-type">类型</th><th data-slot-field="ad-label">广告标识</th><th data-slot-field="title">标题</th><th data-slot-field="benefit">单句利益点</th><th data-slot-field="target">目标</th><th data-slot-field="material-state">素材状态</th><th data-slot-field="status">状态</th><th data-slot-field="sort">排序</th><th data-slot-field="validity">有效期</th><th data-slot-field="owner">负责人</th><th data-slot-field="last-updated">更新时间</th><th data-slot-field="preview">预览 / 操作</th></tr></thead>
+                <tbody>
+                  <tr data-slot-type="top-campaign" data-slot-state="enabled"><td class="mono">SLOT-TOP-001</td><td>全站顶部活动条</td><td>top-campaign</td><td><span class="tag info">广告</span></td><td class="wrap">Prompt 共创计划</td><td>提交优质提示词可获得精选曝光</td><td>活动详情</td><td><span class="tag success">素材完整</span></td><td><span class="tag success">启用</span></td><td>10</td><td>2026-07-01 至 2026-07-31</td><td>运营 A</td><td>2026-07-06 15:42</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">预览</button><button class="btn link" data-danger-action="slot-sort" data-requires-confirm="true" data-requires-reason="true">调整排序</button><button class="btn link danger-link" data-danger-action="slot-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-slot-type="home-banner" data-slot-state="enabled"><td class="mono">SLOT-HOME-002</td><td>首页首屏 Banner</td><td>home-banner</td><td><span class="tag info">推广</span></td><td class="wrap">AI 工具创作季</td><td>从首页直接进入本期主推活动</td><td>活动中心</td><td><span class="tag success">素材完整</span></td><td><span class="tag success">启用</span></td><td>20</td><td>2026-07-01 至 2026-07-31</td><td>运营 A</td><td>2026-07-06 14:18</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">编辑</button><button class="btn link" data-danger-action="slot-target-replace" data-requires-confirm="true" data-requires-reason="true">替换目标</button></div></td></tr>
+                  <tr data-slot-type="right-rail" data-slot-state="draft"><td class="mono">SLOT-RAIL-003</td><td>首页 / 详情右侧栏</td><td>right-rail</td><td><span class="tag gray">任务</span></td><td class="wrap">七日成长任务</td><td>连续浏览精选内容解锁成长奖励</td><td>七日任务</td><td><span class="tag warning">缺封面</span></td><td><span class="tag warning">草稿</span></td><td>30</td><td>待设置</td><td>运营 B</td><td>2026-07-06 11:20</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">编辑</button><button class="btn link" data-danger-action="slot-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                  <tr data-slot-type="flash-ad" data-slot-state="scheduled"><td class="mono">SLOT-FLA-004</td><td>闪念首屏 / 右侧位</td><td>flash-ad</td><td><span class="tag info">活动</span></td><td class="wrap">AI 生图创作挑战</td><td>发布闪念作品参与本期创作征集</td><td>活动详情</td><td><span class="tag success">素材完整</span></td><td><span class="tag info">待生效</span></td><td>40</td><td>2026-07-08 至 2026-07-24</td><td>运营 B</td><td>2026-07-06 10:05</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">预览</button><button class="btn link danger-link" data-danger-action="slot-stop-flash" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-slot-type="model-hero" data-slot-state="enabled"><td class="mono">SLOT-MOD-005</td><td>模型广场 Hero</td><td>model-hero</td><td><span class="tag info">推荐</span></td><td class="wrap">模型体验季</td><td>查看本周高频模型与示例成本口径</td><td>模型广场</td><td><span class="tag success">素材完整</span></td><td><span class="tag success">启用</span></td><td>50</td><td>长期</td><td>运营 A</td><td>2026-07-05 18:30</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">编辑</button><button class="btn link" data-danger-action="slot-model-sort" data-requires-confirm="true" data-requires-reason="true">调整排序</button></div></td></tr>
+                  <tr data-slot-type="aigc-top-campaign" data-slot-state="enabled"><td class="mono">SLOT-AIGC-006</td><td>AIGC 顶部活动条</td><td>aigc-top-campaign</td><td><span class="tag info">模板</span></td><td class="wrap">文生图模板更新</td><td>直接进入本期 AIGC 模板试用</td><td>AIGC 模板</td><td><span class="tag success">素材完整</span></td><td><span class="tag success">启用</span></td><td>60</td><td>2026-07-01 至 2026-07-20</td><td>运营 A</td><td>2026-07-05 16:12</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">预览</button><button class="btn link" data-danger-action="slot-aigc-target" data-requires-confirm="true" data-requires-reason="true">替换目标</button></div></td></tr>
+                  <tr data-slot-type="points-invite" data-slot-state="draft"><td class="mono">SLOT-PTS-007</td><td>积分 / 邀请 / 商城入口</td><td>points-invite</td><td><span class="tag gray">福利</span></td><td class="wrap">邀请有礼</td><td>邀请有效用户后查看阶段奖励</td><td>邀请有礼</td><td><span class="tag warning">缺排期</span></td><td><span class="tag warning">草稿</span></td><td>70</td><td>待设置</td><td>运营 B</td><td>2026-07-04 19:10</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">编辑</button><button class="btn link" data-danger-action="slot-points-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                  <tr data-slot-type="announcement-entry" data-slot-state="blocked"><td class="mono">SLOT-NOT-008</td><td>消息 / 公告右侧入口</td><td>announcement-entry</td><td><span class="tag gray">公告</span></td><td class="wrap">社区公告</td><td>查看规则更新、活动说明和运营通知</td><td>公告列表</td><td><span class="tag danger">目标失效</span></td><td><span class="tag danger">阻断</span></td><td>80</td><td>长期</td><td>运营 A</td><td>2026-07-04 12:40</td><td><div class="op-list"><button class="btn link" data-open-drawer="slot-preview">预览</button><button class="btn link" data-danger-action="slot-announcement-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-cend-coverage-matrix="formal-public-preview">
+            <div class="panel-head"><div class="panel-title">C端页面承接矩阵</div><span class="muted small">来源：community-public-preview-config.mjs</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-cend-feature="content-consumption"><b>内容消费</b><span class="muted small">首页、AIGC、模型、闪念、教程、详情。</span></div>
+                <div class="preview-card" data-cend-feature="content-production"><b>内容生产</b><span class="muted small">Prompt 投稿、投稿初筛、内容审核。</span></div>
+                <div class="preview-card" data-cend-feature="operation-slots"><b>运营位</b><span class="muted small">跨页广告位、右侧栏、公告入口。</span></div>
+                <div class="preview-card" data-cend-feature="activity-task-points"><b>活动任务积分</b><span class="muted small">活动、任务、积分、邀请奖励。</span></div>
+                <div class="preview-card" data-cend-feature="message-notification"><b>消息通知</b><span class="muted small">系统消息、活动消息、奖励通知。</span></div>
+                <div class="preview-card" data-cend-feature="store-entitlement"><b>商城权益</b><span class="muted small">商品展示、权益说明、兑换异常。</span></div>
+                <div class="preview-card" data-cend-feature="user-account"><b>用户账号</b><span class="muted small">登录、资料、邀请、积分、账号状态。</span></div>
+                <div class="preview-card" data-cend-feature="data-review"><b>数据复盘</b><span class="muted small">内容、活动、增长、积分复盘。</span></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="c-end-coverage">
+                <thead><tr><th>C端页面</th><th>用户功能</th><th>B端主责页面</th><th>承接方式</th></tr></thead>
+                <tbody>
+                  <tr data-cend-page="index.html"><td>社区首页</td><td>聚合分发、搜索、精选、首屏运营位</td><td>全站运营位 / 精选管理 / 内容数据</td><td>运营位配置、精选排序、首页数据复盘</td></tr>
+                  <tr data-cend-page="aigc.html"><td>AIGC</td><td>作品频道、模板入口、顶部活动条</td><td>内容列表 / 精选管理 / 全站运营位</td><td>内容管理、精选、AIGC 顶部运营位</td></tr>
+                  <tr data-cend-page="aigc-templates.html"><td>AIGC 模板库</td><td>模板筛选、模板卡片、复用入口</td><td>内容列表 / 精选管理</td><td>模板内容、推荐理由、上下架</td></tr>
+                  <tr data-cend-page="model-plaza.html"><td>模型广场</td><td>模型列表、筛选、推荐位</td><td>内容列表 / 全站运营位 / 内容数据</td><td>模型条目维护、模型 Hero、点击复盘</td></tr>
+                  <tr data-cend-page="model-detail.html"><td>模型详情</td><td>模型说明、成本口径、调用示例</td><td>内容列表 / 审核工作台</td><td>模型详情内容、下架、敏感字段治理</td></tr>
+                  <tr data-cend-page="flash.html"><td>闪念</td><td>轻内容流、发布、评论、闪念广告位</td><td>内容列表 / 审核工作台 / 全站运营位</td><td>闪念内容治理、评论审核、闪念广告位</td></tr>
+                  <tr data-cend-page="tutorial.html"><td>官方教程</td><td>教程列表、分类、推荐</td><td>内容列表 / 精选管理</td><td>教程内容、推荐、上下架</td></tr>
+                  <tr data-cend-page="tutorial-detail.html"><td>教程详情</td><td>教程阅读、详情内容</td><td>内容列表 / 审核工作台</td><td>教程正文、状态、敏感信息检查</td></tr>
+                  <tr data-cend-page="activity-center.html"><td>活动中心</td><td>活动聚合、历史活动、活动入口</td><td>活动配置 / 全站运营位 / 活动数据</td><td>活动卡片、上下线、入口复盘</td></tr>
+                  <tr data-cend-page="campaign-detail.html"><td>活动详情</td><td>活动规则、奖励摘要、参与入口</td><td>活动配置 / 投稿管理</td><td>规则摘要、状态、投稿入口</td></tr>
+                  <tr data-cend-page="campaign-prompt.html"><td>Prompt 共创计划</td><td>活动投稿、Prompt 共创说明</td><td>活动配置 / 投稿管理 / 积分规则</td><td>活动规则、投稿初筛、奖励摘要</td></tr>
+                  <tr data-cend-page="prompt-submit.html"><td>Prompt 投稿</td><td>投稿表单、提交状态</td><td>投稿管理 / 审核工作台</td><td>投稿初筛、退回原因、审核状态</td></tr>
+                  <tr data-cend-page="prompt-detail.html"><td>Prompt 详情</td><td>提示词详情、适用场景、互动</td><td>内容列表 / 精选管理 / 审核工作台</td><td>内容状态、精选、下架恢复</td></tr>
+                  <tr data-cend-page="campaign-new-user.html"><td>新手任务</td><td>新手任务、奖励提示</td><td>任务配置 / 积分规则</td><td>任务规则、奖励摘要、启停</td></tr>
+                  <tr data-cend-page="campaign-seven-day.html"><td>七日成长任务</td><td>连续任务、成长奖励</td><td>任务配置 / 积分规则</td><td>任务组、有效期、奖励摘要</td></tr>
+                  <tr data-cend-page="message-center.html"><td>消息中心</td><td>系统消息、活动消息、奖励通知</td><td>消息配置 / 操作日志</td><td>模板、发送/撤回、跳转目标、日志</td></tr>
+                  <tr data-cend-page="points-center.html"><td>积分中心</td><td>积分余额、赚积分、积分记录</td><td>积分规则 / 积分记录 / 积分数据</td><td>积分来源、流水、异常处理</td></tr>
+                  <tr data-cend-page="invite.html"><td>邀请有礼</td><td>邀请链接、阶段奖励、邀请记录</td><td>邀请记录 / 积分规则 / 用户增长数据</td><td>邀请关系、奖励异常、增长复盘</td></tr>
+                  <tr data-cend-page="login.html"><td>登录承接</td><td>登录注册、用户承接</td><td>用户列表 / 用户详情</td><td>账号状态、资料状态、用户记录</td></tr>
+                  <tr data-cend-page="member-store.html"><td>AI商城</td><td>商品卡、权益说明、兑换结果</td><td>商城配置 / 积分记录 / 积分数据</td><td>商品展示、权益记录、兑换异常</td></tr>
+                  <tr data-cend-page="user-center.html"><td>用户中心</td><td>资料、创作、积分、邀请入口</td><td>用户详情 / 用户列表 / 积分记录</td><td>资料审核、账号状态、积分邀请记录</td></tr>
+                  <tr data-standalone-preview="content-detail-modals.html"><td>内容详情弹层调试台</td><td>详情弹层状态验证</td><td>内容列表 / 审核工作台</td><td>作为调试入口归类，不作为正式 C端页面</td></tr>
+                  <tr data-standalone-preview="campaign-ops.html"><td>一期活动预览入口</td><td>活动运营位预览</td><td>全站运营位 / 活动配置</td><td>作为预览入口归类，不作为正式 C端页面</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="activity-config" data-page-contract="activity-config" data-config-page="activity-config">
+          <div class="contract-panel" data-page-contract="activity-config">活动配置管理活动规则、状态和展示入口；进行中活动的规则变更必须有原因。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>活动配置</h2><p>管理活动中心、活动详情和活动入口展示。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="activity-detail">新建活动</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">进行中</div><div class="stat-value">3</div></div>
+            <div class="stat-card"><div class="stat-label">草稿</div><div class="stat-value">5</div></div>
+            <div class="stat-card"><div class="stat-label">已结束</div><div class="stat-value">12</div></div>
+            <div class="stat-card"><div class="stat-label">投稿待处理</div><div class="stat-value">42</div></div>
+          </div>
+          <div class="panel" data-growth-loop-page="activity-config">
+            <div class="panel-head"><div class="panel-title">活动任务积分闭环</div><span class="muted small">先定义活动规则，再绑定任务和积分规则</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-growth-workflow-step="activity-rule"><b>活动规则</b><span class="tag success" data-growth-state="active">进行中</span><p class="muted small">活动名称、类型、C端入口、用户可读规则和有效期。</p></div>
+                <div class="preview-card" data-growth-workflow-step="task-binding"><b>任务绑定</b><span class="tag warning" data-growth-state="draft">草稿</span><p class="muted small">明确用户需要完成的动作，并挂到任务配置页。</p></div>
+                <div class="preview-card" data-growth-workflow-step="points-reward"><b>积分奖励</b><span class="tag info">规则引用</span><p class="muted small">只展示奖励摘要、上限和人工异常处理，不自动发奖。</p></div>
+                <div class="preview-card" data-growth-workflow-step="user-visible-copy"><b>用户可见文案</b><span class="tag gray">可读摘要</span><p class="muted small">C端只展示活动规则、任务说明、奖励摘要和参与入口。</p></div>
+                <div class="preview-card" data-growth-workflow-step="status-change-log"><b>状态变更</b><span class="tag danger" data-growth-state="exception">异常</span><p class="muted small">上线、下线、暂停、恢复都要填写原因并写入日志。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="activity-config">
+                <thead><tr><th data-activity-field="activity-id">活动 ID</th><th data-activity-field="activity-name">活动名称</th><th data-activity-field="activity-type">类型</th><th data-activity-field="c-end-entry">C端入口</th><th data-activity-field="rule-summary">规则摘要</th><th data-activity-field="linked-task">关联任务</th><th data-activity-field="linked-points-rule">积分规则</th><th data-activity-field="reward-summary">奖励摘要</th><th data-activity-field="status">状态</th><th data-activity-field="validity">有效期</th><th data-activity-field="owner">负责人</th><th data-activity-field="change-reason">变更原因</th><th data-activity-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-growth-state="active"><td class="mono">ACT-0710</td><td class="wrap">Prompt 共创计划</td><td>Prompt 投稿</td><td>顶部活动条 / 活动详情</td><td>提交优质提示词，审核通过后参与精选</td><td>TASK-001</td><td>RULE-001</td><td>+30 积分 + 精选曝光</td><td><span class="tag success">进行中</span></td><td>2026-07-01 至 2026-07-31</td><td>运营 A</td><td>7月主推活动，入口前置</td><td><div class="op-list"><button class="btn link" data-open-drawer="activity-detail">规则</button><button class="btn link" data-open-view="submission-management">投稿</button><button class="btn link danger-link" data-danger-action="activity-stop" data-requires-confirm="true" data-requires-reason="true">下线</button></div></td></tr>
+                  <tr data-growth-state="draft"><td class="mono">ACT-0801</td><td class="wrap">AI 生图挑战</td><td>AIGC 投稿</td><td>全站运营位</td><td>发布 AIGC 作品参与本期创作征集</td><td>TASK-0801</td><td>RULE-0801</td><td>活动积分，额度待确认</td><td><span class="tag warning">草稿</span></td><td>待设置</td><td>运营 B</td><td>待补素材和积分上限</td><td><div class="op-list"><button class="btn link" data-open-drawer="activity-detail">编辑</button><button class="btn link" data-danger-action="activity-enable" data-requires-confirm="true" data-requires-reason="true">上线</button></div></td></tr>
+                  <tr data-growth-state="ended"><td class="mono">ACT-0601</td><td class="wrap">新手创作引导</td><td>新手任务</td><td>新手任务页</td><td>完成基础浏览与收藏动作</td><td>TASK-NEW-001</td><td>RULE-NEW-001</td><td>阶段积分</td><td><span class="tag gray">已结束</span></td><td>2026-06-01 至 2026-06-30</td><td>运营 A</td><td>活动自然结束，保留复盘</td><td><button class="btn link" data-open-drawer="activity-detail">复盘</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="task-config" data-page-contract="task-config" data-config-page="task-config">
+          <div class="contract-panel" data-page-contract="task-config">任务配置只管理用户可见任务说明、奖励摘要和启停状态；不承诺自动判定或真实奖励发放。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>任务配置</h2><p>管理新手任务、七日成长任务和赚积分入口。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="task-detail">新建任务</button></div>
+          </div>
+          <div class="tabs"><button class="tab is-active">新手任务</button><button class="tab">七日成长</button><button class="tab">赚积分入口</button></div>
+          <div class="panel" data-growth-loop-page="task-config">
+            <div class="panel-head"><div class="panel-title">任务绑定口径</div><span class="muted small">任务只描述用户动作，不承担真实自动判定</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card"><b>动作条件</b><p class="muted small">用用户能理解的话写清楚“完成什么动作”，避免展示内部事件名。</p></div>
+                <div class="preview-card"><b>关联活动</b><p class="muted small">任务可以绑定活动，也可以作为长期赚积分入口。</p></div>
+                <div class="preview-card"><b>奖励摘要</b><p class="muted small">展示积分数量、每日上限和有效期，不承诺自动到账。</p></div>
+                <div class="preview-card"><b>异常处理</b><p class="muted small">疑似重复、刷量或未满足条件时进入人工记录。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="task-config">
+                <thead><tr><th data-task-field="task-id">任务 ID</th><th data-task-field="task-name">任务名称</th><th data-task-field="action-condition">动作条件</th><th data-task-field="display-entry">展示位置</th><th data-task-field="linked-activity">关联活动</th><th data-task-field="points-rule">积分规则</th><th data-task-field="daily-limit">每日上限</th><th data-task-field="status">状态</th><th data-task-field="validity">有效期</th><th data-task-field="sort">排序</th><th data-task-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-growth-state="active"><td class="mono">TASK-001</td><td class="wrap">完成一次 Prompt 投稿</td><td>提交 1 条 Prompt 投稿并进入审核队列</td><td>积分中心 / Prompt 共创计划</td><td>ACT-0710</td><td>RULE-001</td><td>3 次</td><td><span class="tag success">启用中</span></td><td>长期</td><td>10</td><td><div class="op-list"><button class="btn link" data-open-drawer="task-detail">编辑</button><button class="btn link danger-link" data-danger-action="task-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-growth-state="paused"><td class="mono">TASK-007</td><td class="wrap">连续 7 天浏览精选内容</td><td>连续 7 天浏览精选内容，每天至少 1 次</td><td>任务页</td><td>七日成长任务</td><td>RULE-007</td><td>1 次</td><td><span class="tag warning">暂停</span></td><td>待设置</td><td>70</td><td><div class="op-list"><button class="btn link" data-open-drawer="task-detail">编辑</button><button class="btn link" data-danger-action="task-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                  <tr data-growth-state="exception"><td class="mono">TASK-0801</td><td class="wrap">发布 AI 生图作品</td><td>活动期内发布 1 条 AIGC 作品并通过审核</td><td>AI 生图挑战</td><td>ACT-0801</td><td>RULE-0801</td><td>2 次</td><td><span class="tag danger">异常</span></td><td>待设置</td><td>80</td><td><button class="btn link" data-danger-action="task-exception-review" data-requires-confirm="true" data-requires-reason="true">人工处理</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="points-rules" data-page-contract="points-rules" data-config-page="points-rules">
+          <div class="contract-panel" data-page-contract="points-rules">积分规则只管理用户可读奖励摘要、上限和启停；不做真实自动发奖、防刷或财务结算。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>积分规则</h2><p>管理积分来源、奖励上限、有效期和规则启停。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="points-rule-detail">新增规则</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">启用中</div><div class="stat-value">7</div></div>
+            <div class="stat-card"><div class="stat-label">草稿</div><div class="stat-value">3</div></div>
+            <div class="stat-card"><div class="stat-label">异常规则</div><div class="stat-value">1</div></div>
+            <div class="stat-card"><div class="stat-label">今日触发记录</div><div class="stat-value">326</div></div>
+          </div>
+          <div class="panel" data-growth-loop-page="points-rules">
+            <div class="panel-head"><div class="panel-title">积分规则边界</div><span class="muted small">规则只定义摘要、上限、状态和人工处理要求</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card"><b>奖励口径</b><p class="muted small"><span class="tag gray" data-growth-guard="user-readable-reward">用户可读奖励摘要</span></p><p class="muted small">C端展示“获得什么”和“每日上限”，不展示内部事件名。</p></div>
+                <div class="preview-card"><b>发放边界</b><p class="muted small"><span class="tag gray" data-growth-guard="no-auto-reward">不承诺自动发奖</span></p><p class="muted small">本页只承接产品规则和运营复核，不处理真实到账。</p></div>
+                <div class="preview-card"><b>变更原因</b><p class="muted small"><span class="tag gray" data-growth-guard="rule-change-reason-required">规则变更需原因</span></p><p class="muted small">启停、调额、延期和恢复都需要写明原因。</p></div>
+                <div class="preview-card"><b>异常复核</b><p class="muted small"><span class="tag gray" data-growth-guard="abuse-risk-manual-review">刷量风险人工复核</span></p><p class="muted small"><span class="tag gray" data-growth-guard="operation-log-required">操作写入日志</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="points-rules">
+                <thead><tr><th data-points-rule-field="rule-id">规则 ID</th><th data-points-rule-field="source">来源模块</th><th data-points-rule-field="trigger">触发条件</th><th data-points-rule-field="points-amount">积分额度</th><th data-points-rule-field="daily-limit">每日上限</th><th data-points-rule-field="linked-activity">关联活动</th><th data-points-rule-field="linked-task">关联任务</th><th data-points-rule-field="manual-state">人工状态</th><th data-points-rule-field="status">状态</th><th data-points-rule-field="validity">有效期</th><th data-points-rule-field="owner">负责人</th><th data-points-rule-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-growth-state="active"><td class="mono">RULE-001</td><td>投稿管理</td><td class="wrap">Prompt 投稿审核通过</td><td>+30 积分</td><td>3 次</td><td>ACT-0710</td><td>TASK-001</td><td>系统记录 + 人工复核异常</td><td><span class="tag success">启用中</span></td><td>长期</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="points-rule-detail">编辑</button><button class="btn link danger-link" data-danger-action="points-rule-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-growth-state="draft"><td class="mono">RULE-002</td><td>邀请有礼</td><td class="wrap">邀请有效用户完成注册并通过基础校验</td><td>阶段奖励</td><td>5 人</td><td>邀请有礼</td><td>TASK-INVITE</td><td>奖励待确认</td><td><span class="tag warning">草稿</span></td><td>待设置</td><td>运营 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="points-rule-detail">编辑</button><button class="btn link" data-danger-action="points-rule-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                  <tr data-growth-state="exception"><td class="mono">RULE-0801</td><td>AI 生图挑战</td><td class="wrap">AIGC 作品审核通过并进入活动投稿池</td><td>活动积分</td><td>2 次</td><td>ACT-0801</td><td>TASK-0801</td><td>疑似重复触发需人工处理</td><td><span class="tag danger">异常</span></td><td>待设置</td><td>运营 B</td><td><button class="btn link" data-danger-action="points-rule-exception-review" data-requires-confirm="true" data-requires-reason="true">人工处理</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="message-config" data-page-contract="message-config" data-config-page="message-config">
+          <div class="contract-panel" data-page-contract="message-config">消息配置承接 C端消息中心，只管理系统消息、活动消息和奖励通知的用户可读模板、跳转目标和发送/撤回记录；不保存 Token、Session 或站外联系方式。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>消息配置</h2><p>管理消息模板、业务落点、发送状态和撤回原因。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="message-detail">新建消息</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">草稿</div><div class="stat-value">6</div></div>
+            <div class="stat-card"><div class="stat-label">待发送</div><div class="stat-value">3</div></div>
+            <div class="stat-card"><div class="stat-label">已发送</div><div class="stat-value">128</div></div>
+            <div class="stat-card"><div class="stat-label">已撤回</div><div class="stat-value">2</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="message-config" data-message-workbench="send-and-recall">
+            <div class="panel-head"><div class="panel-title">消息发送与撤回工作台</div><span class="muted small">模板、目标、发送窗口、失败兜底和撤回原因统一走查</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-state="normal"><b>已发送</b><span class="tag success">可复盘</span><p class="muted small">记录模板版本、业务落点、目标人群和发送窗口。</p></div>
+                <div class="preview-card" data-review-state="watching"><b>待发送</b><span class="tag warning">需确认</span><p class="muted small">发送前检查用户可读文案和跳转目标。</p></div>
+                <div class="preview-card exception-note" data-review-state="exception"><b>发送失败</b><span class="tag danger" data-exception-state="send-failed">待处理</span><p class="muted small">失败只记录摘要、负责人和兜底动作。</p></div>
+                <div class="preview-card" data-review-state="resolved"><b>已撤回</b><span class="tag gray">已留痕</span><p class="muted small">撤回必须记录用户可读原因和操作日志。</p></div>
+                <div class="preview-card"><b>发送保护</b><p><span class="tag gray" data-review-guard="no-auto-send">不自动群发</span></p><p><span class="tag gray" data-review-guard="send-recall-reason-required">发送/撤回需原因</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>消息类型</label><select class="select"><option>系统 / 活动 / 奖励</option></select></div>
+                <div class="field"><label>状态</label><select class="select"><option>全部状态</option></select></div>
+                <div class="field"><label>业务落点</label><select class="select"><option>公告 / 活动 / 积分 / 商城</option></select></div>
+                <div class="field"><label>时间</label><input class="input" value="近 30 天"></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="message-config">
+                <thead><tr><th data-message-field="message-id">消息 ID</th><th data-message-field="title">标题</th><th data-message-field="type">类型</th><th data-message-field="target">业务落点</th><th data-message-field="status">状态</th><th data-message-field="audience">目标人群</th><th data-message-field="send-window">发送窗口</th><th data-message-field="fallback">失败兜底</th><th data-message-field="recall-reason">撤回原因</th><th data-message-field="owner">负责人</th><th data-message-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-review-state="normal"><td class="mono">MSG-001</td><td class="wrap">Prompt 共创计划投稿已入选</td><td>奖励通知</td><td>Prompt 共创计划</td><td><span class="tag success">已发送</span></td><td>投稿入选用户</td><td>2026-07-06 10:00</td><td>站内消息重试一次</td><td>无</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="message-detail">详情</button><button class="btn link danger-link" data-danger-action="message-revoke" data-requires-confirm="true" data-requires-reason="true">撤回</button></div></td></tr>
+                  <tr data-review-state="watching"><td class="mono">MSG-002</td><td class="wrap">七日成长任务提醒</td><td>活动消息</td><td>七日成长任务</td><td><span class="tag warning">待发送</span></td><td>已报名未完成用户</td><td>待设置</td><td>发送失败后转人工检查</td><td>无</td><td>运营 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="message-detail">编辑</button><button class="btn link" data-danger-action="message-send" data-requires-confirm="true" data-requires-reason="true">发送</button></div></td></tr>
+                  <tr data-review-state="exception"><td class="mono">MSG-003</td><td class="wrap">积分兑换结果通知</td><td>系统消息</td><td>积分中心</td><td><span class="tag danger">发送失败</span></td><td>兑换异常用户</td><td>2026-07-06 12:30</td><td>转人工备注并补发站内提醒</td><td>无</td><td>运营 A</td><td><button class="btn link" data-open-drawer="message-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="store-config" data-page-contract="store-config" data-config-page="store-config">
+          <div class="contract-panel" data-page-contract="store-config">商城配置承接 C端 AI商城，只管理商品展示、权益说明、积分消耗摘要和兑换异常；不进入支付、退款、卡密库存或财务结算。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>商城配置</h2><p>管理商品卡、权益说明、展示状态和兑换异常。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="store-detail">新增商品</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">展示中商品</div><div class="stat-value">12</div></div>
+            <div class="stat-card"><div class="stat-label">草稿商品</div><div class="stat-value">4</div></div>
+            <div class="stat-card"><div class="stat-label">兑换异常</div><div class="stat-value">7</div></div>
+            <div class="stat-card"><div class="stat-label">今日兑换记录</div><div class="stat-value">38</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="store-config" data-store-workbench="entitlement-display">
+            <div class="panel-head"><div class="panel-title">权益展示与兑换异常</div><span class="muted small">只管理 C端可见商品卡和权益说明，不进入财务或库存系统</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-state="normal"><b>展示中</b><span class="tag success">可兑换</span><p class="muted small">商品名、权益说明、积分消耗和有效期清晰。</p></div>
+                <div class="preview-card" data-review-state="watching"><b>草稿</b><span class="tag warning">待补齐</span><p class="muted small">权益说明或有效期缺失时不能展示。</p></div>
+                <div class="preview-card exception-note" data-review-state="exception"><b>兑换异常</b><span class="tag danger">需复核</span><p class="muted small">只看兑换结果摘要和用户占位，不展示完整凭证。</p></div>
+                <div class="preview-card" data-review-state="resolved"><b>已处理</b><span class="tag gray">已留痕</span><p class="muted small">补偿、撤销或人工备注必须关联日志编号。</p></div>
+                <div class="preview-card"><b>商城边界</b><p><span class="tag gray" data-review-guard="no-payment-settlement">不做支付结算</span></p><p><span class="tag gray" data-review-guard="no-card-code-inventory">不管卡密库存</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="store-config">
+                <thead><tr><th data-store-field="sku-id">商品 ID</th><th data-store-field="name">商品名称</th><th data-store-field="benefit">权益说明</th><th data-store-field="points-cost">积分消耗</th><th data-store-field="display-state">展示状态</th><th data-store-field="validity">有效期</th><th data-store-field="exchange-state">兑换状态</th><th data-store-field="exception-summary">异常摘要</th><th data-store-field="owner">负责人</th><th data-store-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-review-state="normal"><td class="mono">SKU-001</td><td class="wrap">AI 工具体验券</td><td>兑换后进入工具体验说明页</td><td>120 积分</td><td><span class="tag success">展示中</span></td><td>2026-07-01 至 2026-07-31</td><td><span class="tag success">正常</span></td><td>无</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="store-detail">详情</button><button class="btn link" data-danger-action="store-sort" data-requires-confirm="true" data-requires-reason="true">调序</button><button class="btn link danger-link" data-danger-action="store-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-review-state="watching"><td class="mono">SKU-002</td><td class="wrap">漫剧模板权益包</td><td>兑换后查看模板使用指引</td><td>300 积分</td><td><span class="tag warning">草稿</span></td><td>待设置</td><td><span class="tag warning">待配置</span></td><td>[CARD_CODE] 占位异常记录</td><td>运营 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="store-detail">编辑</button><button class="btn link" data-danger-action="store-enable" data-requires-confirm="true" data-requires-reason="true">启用</button></div></td></tr>
+                  <tr data-review-state="exception"><td class="mono">SKU-003</td><td class="wrap">模型体验权益</td><td>兑换后查看模型体验说明</td><td>180 积分</td><td><span class="tag success">展示中</span></td><td>长期</td><td><span class="tag danger">异常</span></td><td>兑换后未进入权益说明页，已关联 LOG-2103</td><td>运营 A</td><td><button class="btn link" data-open-drawer="store-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="user-list" data-page-contract="user-list" data-user-page="user-list">
+          <div class="contract-panel" data-page-contract="user-list">用户列表负责账号查询、状态筛选和风险入口；不导出完整隐私字段。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>用户列表</h2><p>查询用户、账号状态、资料状态和基础风控状态。</p></div>
+            <div class="action-row"><button class="btn" type="button">导出脱敏摘要</button></div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>关键词</label><input class="input" value="[USER_ID]"></div>
+                <div class="field"><label>账号状态</label><select class="select"><option>全部状态</option></select></div>
+                <div class="field"><label>资料状态</label><select class="select"><option>资料待审</option></select></div>
+                <div class="field"><label>注册时间</label><input class="input" value="近 30 天"></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="user-list">
+                <thead><tr><th>用户 ID</th><th>昵称</th><th>账号状态</th><th>资料状态</th><th>内容数</th><th>积分</th><th>邀请数</th><th>最近登录</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr><td>[USER_ID]</td><td>拾光用户</td><td><span class="tag success">正常</span></td><td><span class="tag warning">资料待审</span></td><td>18</td><td>1,280</td><td>6</td><td>2026-07-06</td><td><div class="op-list"><button class="btn link" data-open-view="user-detail">详情</button><button class="btn link" data-danger-action="user-status-limit" data-requires-confirm="true" data-requires-reason="true">限制</button></div></td></tr>
+                  <tr><td>[USER_ID]</td><td>官方运营号</td><td><span class="tag info">官方</span></td><td><span class="tag success">已通过</span></td><td>42</td><td>0</td><td>0</td><td>2026-07-05</td><td><button class="btn link" data-open-view="user-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="user-detail" data-page-contract="user-detail" data-user-page="user-detail">
+          <div class="contract-panel" data-page-contract="user-detail">用户详情集中查看资料、内容、邀请、积分和处理记录；所有联系方式和设备信息必须脱敏。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>用户详情</h2><p>单个用户的运营处理页。</p></div>
+            <div class="action-row"><button class="btn" data-danger-action="user-limit" data-requires-confirm="true" data-requires-reason="true">限制账号</button><button class="btn primary" data-open-drawer="user-action">添加备注</button></div>
+          </div>
+          <div class="split-grid">
+            <div class="panel profile-card">
+              <div class="profile-line"><span>用户 ID</span><b>[USER_ID]</b></div>
+              <div class="profile-line"><span>昵称</span><b>拾光用户</b></div>
+              <div class="profile-line"><span>手机号</span><b>138****9000</b></div>
+              <div class="profile-line"><span>账号状态</span><span class="tag success">正常</span></div>
+              <div class="profile-line"><span>积分摘要</span><b>1,280</b></div>
+              <div class="profile-line"><span>邀请摘要</span><b>已邀请 6 人</b></div>
+            </div>
+            <div class="panel">
+              <div class="tabs"><button class="tab is-active">资料</button><button class="tab">内容记录</button><button class="tab">邀请记录</button><button class="tab">积分记录</button><button class="tab">操作记录</button></div>
+              <div class="panel-body">
+                <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+                  <table data-table="user-detail-records">
+                    <thead><tr><th>对象</th><th>状态</th><th>摘要</th><th>时间</th><th>操作</th></tr></thead>
+                    <tbody>
+                      <tr><td>资料审核</td><td><span class="tag warning">资料待审</span></td><td>头像与昵称待确认</td><td>2026-07-06</td><td><button class="btn link" data-danger-action="profile-reject" data-requires-confirm="true" data-requires-reason="true">拒绝资料</button></td></tr>
+                      <tr><td>积分异常</td><td><span class="tag danger">异常</span></td><td>邀请奖励重复入账风险</td><td>2026-07-05</td><td><button class="btn link" data-open-view="points-records">查看流水</button></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="invite-records" data-page-contract="invite-records" data-user-page="invite-records">
+          <div class="contract-panel" data-page-contract="invite-records">邀请记录只展示脱敏用户、阶段状态和异常处理入口；奖励处理必须写入日志。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>邀请记录</h2><p>回查邀请关系、阶段奖励和异常处理。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="invite-detail">处理异常</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">今日邀请</div><div class="stat-value">62</div></div>
+            <div class="stat-card"><div class="stat-label">奖励待发</div><div class="stat-value">14</div></div>
+            <div class="stat-card"><div class="stat-label">异常待处理</div><div class="stat-value">5</div></div>
+            <div class="stat-card"><div class="stat-label">已撤销</div><div class="stat-value">3</div></div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="invite-records">
+                <thead><tr><th>邀请 ID</th><th>邀请人</th><th>被邀请人</th><th>阶段</th><th>奖励状态</th><th>风险摘要</th><th>时间</th><th>操作人</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">INV-2031</td><td>[USER_ID]</td><td>[USER_ID]</td><td>完成注册</td><td><span class="tag warning">奖励待发</span></td><td>需人工确认有效行为</td><td>2026-07-06</td><td>运营 A</td><td><div class="op-list"><button class="btn link" data-open-drawer="invite-detail">详情</button><button class="btn link" data-danger-action="invite-reward" data-requires-confirm="true" data-requires-reason="true">处理奖励</button></div></td></tr>
+                  <tr><td class="mono">INV-2032</td><td>[USER_ID]</td><td>[USER_ID]</td><td>疑似重复</td><td><span class="tag danger">异常</span></td><td>设备/IP 摘要重复</td><td>2026-07-05</td><td>运营 B</td><td><div class="op-list"><button class="btn link" data-open-drawer="invite-detail">详情</button><button class="btn link danger-link" data-danger-action="invite-revoke" data-requires-confirm="true" data-requires-reason="true">撤销奖励</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="points-records" data-page-contract="points-records" data-operation-page="points-records">
+          <div class="contract-panel" data-page-contract="points-records">积分记录只处理流水、异常和人工调整；卡密、兑换凭证和联系方式不得明文展示。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>积分记录</h2><p>查看积分流水并处理异常入账、撤销和人工调整。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="points-detail">人工调整</button></div>
+          </div>
+          <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">今日入账</div><div class="stat-value">9,640</div></div>
+            <div class="stat-card"><div class="stat-label">异常流水</div><div class="stat-value">7</div></div>
+            <div class="stat-card"><div class="stat-label">人工调整</div><div class="stat-value">3</div></div>
+            <div class="stat-card"><div class="stat-label">撤销记录</div><div class="stat-value">2</div></div>
+          </div>
+          <div class="panel" data-governance-loop-page="points-records">
+            <div class="panel-head"><div class="panel-title">积分流水复核链路</div><span class="muted small">流水、人工调整和权限日志互相引用</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-governance-workflow-step="points-record-review"><b>流水复核</b><span class="tag success" data-governance-state="normal">正常</span><p class="muted small">记录来源规则、关联对象、入账状态和复核状态。</p></div>
+                <div class="preview-card" data-governance-workflow-step="manual-adjustment"><b>人工调整</b><span class="tag warning" data-governance-state="pending-review">待复核</span><p class="muted small"><span class="tag gray" data-governance-guard="points-adjust-reason-required">调整需填写原因</span></p></div>
+                <div class="preview-card"><b>敏感字段</b><p class="muted small"><span class="tag gray" data-governance-guard="no-sensitive-plain-text">不展示隐私明文</span></p><p class="muted small">用户、联系方式、兑换凭证只用占位或脱敏摘要。</p></div>
+                <div class="preview-card"><b>复核要求</b><p class="muted small"><span class="tag gray" data-governance-guard="second-review-required">高风险调整需二次复核</span></p><p class="muted small">异常撤销和大额调整必须关联日志编号。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-batch-page="points-records">
+            <div class="batch-bar">
+              <div><b>积分异常批量动作</b><span class="muted small"> 只处理同来源、同规则的异常摘要</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择异常流水</button>
+                <button class="btn" type="button" data-batch-action="batch-export-masked">导出脱敏流水</button>
+                <button class="btn" type="button" data-batch-action="batch-write-log">补充复核备注</button>
+                <button class="btn" type="button" data-batch-action="batch-status-change" data-danger-action="points-batch-review" data-requires-confirm="true" data-requires-reason="true">批量标记待复核</button>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card exception-note" data-exception-state="points-risk"><b>积分风险</b><span class="tag danger">高风险</span><p class="muted small">重复入账、大额调整和兑换异常必须关联日志编号。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="points-records">
+                <thead><tr><th data-points-record-field="record-id">流水 ID</th><th data-points-record-field="user">用户</th><th data-points-record-field="source">来源模块</th><th data-points-record-field="rule">关联规则</th><th data-points-record-field="change">变动值</th><th data-points-record-field="accounting-state">入账状态</th><th data-points-record-field="review-state">复核状态</th><th data-points-record-field="linked-object">关联对象</th><th data-points-record-field="log-id">日志编号</th><th data-points-record-field="operator">操作人</th><th data-points-record-field="time">时间</th><th data-points-record-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-governance-state="normal"><td class="mono">PTS-1001</td><td>[USER_ID]<br><span class="muted small">138****9000</span></td><td>邀请有礼</td><td>RULE-002</td><td>+60</td><td><span class="tag success">已入账</span></td><td>系统记录</td><td>INV-2031</td><td>LOG-2101</td><td>系统记录</td><td>2026-07-06</td><td><div class="op-list"><button class="btn link" data-open-drawer="points-detail">详情</button><button class="btn link" data-danger-action="points-adjust" data-requires-confirm="true" data-requires-reason="true">人工调整</button></div></td></tr>
+                  <tr data-governance-state="adjusted"><td class="mono">PTS-1002</td><td>[USER_ID]</td><td>AI商城</td><td>SKU-001</td><td>-120</td><td><span class="tag info">已调整</span></td><td>运营复核通过</td><td>[CARD_CODE]</td><td>LOG-2102</td><td>运营 A</td><td>2026-07-05</td><td><div class="op-list"><button class="btn link" data-open-drawer="points-detail">详情</button><button class="btn link danger-link" data-danger-action="points-revoke" data-requires-confirm="true" data-requires-reason="true">撤销</button></div></td></tr>
+                  <tr data-governance-state="revoked"><td class="mono">PTS-1003</td><td>[USER_ID]</td><td>Prompt 共创计划</td><td>RULE-001</td><td>+30</td><td><span class="tag danger">已撤销</span></td><td>二次复核完成</td><td>ACT-0710 / TASK-001</td><td>LOG-2103</td><td>运营 B</td><td>2026-07-06</td><td><button class="btn link" data-open-drawer="points-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="trust-lists" data-page-contract="trust-lists" data-user-page="trust-lists">
+          <div class="contract-panel" data-page-contract="trust-lists">黑白名单管理官方账号、测试账号和限制账号；加入、移除和权限变化必须填写原因。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>黑白名单</h2><p>管理官方账号、测试账号、白名单和黑名单。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="trust-detail">新增名单</button></div>
+          </div>
+          <div class="tabs"><button class="tab is-active">白名单</button><button class="tab">黑名单</button><button class="tab">官方账号</button><button class="tab">测试账号</button></div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="trust-lists">
+                <thead><tr><th>名单 ID</th><th>用户</th><th>名单类型</th><th>权限摘要</th><th>状态</th><th>原因摘要</th><th>最近操作人</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr><td class="mono">TRUST-001</td><td>[USER_ID]</td><td>官方账号</td><td>官方标识、测试内容发布</td><td><span class="tag success">启用</span></td><td>官方运营号</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="trust-detail">详情</button><button class="btn link danger-link" data-danger-action="trust-remove" data-requires-confirm="true" data-requires-reason="true">移除</button></div></td></tr>
+                  <tr><td class="mono">TRUST-002</td><td>[USER_ID]</td><td>黑名单</td><td>限制发布、限制评论</td><td><span class="tag danger">生效中</span></td><td>重复违规</td><td>运营 A</td><td><button class="btn link" data-danger-action="trust-restore" data-requires-confirm="true" data-requires-reason="true">解除</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="view" data-view="content-data" data-page-contract="content-data" data-dashboard-page="content-data">
+          <div class="contract-panel" data-page-contract="content-data">内容数据只服务运营复盘，测试内容和下架内容必须可排除；不做复杂 BI。</div>
+          <div class="page-head"><div class="page-title"><h2>内容数据</h2><p>查看内容供给、审核、精选和互动摘要。</p></div></div>
+          <div class="stats-row">
+            <div class="stat-card" data-dashboard-card="conversion"><div class="stat-label">内容点击转详情</div><div class="stat-value">18.6%</div></div>
+            <div class="stat-card"><div class="stat-label">发布完成率</div><div class="stat-value">32.4%</div></div>
+            <div class="stat-card"><div class="stat-label">精选点击率</div><div class="stat-value">12.8%</div></div>
+            <div class="stat-card" data-dashboard-card="exclusion"><div class="stat-label">排除测试内容</div><div class="stat-value">124</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="content-data">
+            <div class="panel-head"><div class="panel-title">数据复盘闭环</div><span class="muted small">先定义指标，再看来源、排除、判断和行动</span></div>
+            <div class="panel-body workflow-row">
+              <div class="workflow-step" data-data-review-step="metric-definition"><b>指标口径</b><span class="muted small">每个指标必须说明计算对象。</span></div>
+              <div class="workflow-step" data-data-review-step="source-attribution"><b>来源归因</b><span class="muted small">标明来自内容、活动、积分或用户路径。</span></div>
+              <div class="workflow-step" data-data-review-step="exclusion-rule"><b>排除规则</b><span class="muted small">测试账号、下架内容、异常投稿单独排除。</span></div>
+              <div class="workflow-step" data-data-review-step="insight-decision"><b>运营判断</b><span class="muted small">只写可行动的判断。</span></div>
+              <div class="workflow-step" data-data-review-step="follow-up-action"><b>后续动作</b><span class="muted small">指定负责人和下一步。</span></div>
+              <div class="workflow-step" data-data-review-step="review-log"><b>复盘留痕</b><span class="muted small">关键判断写入复盘记录。</span></div>
+            </div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card"><b>来源要求</b><p><span class="tag gray" data-review-guard="data-source-labeled">数据来源已标注</span></p></div>
+                <div class="preview-card"><b>排除要求</b><p><span class="tag gray" data-review-guard="test-data-excluded">测试和异常数据可排除</span></p></div>
+                <div class="preview-card"><b>复杂度边界</b><p><span class="tag gray" data-review-guard="no-bi-overbuild">不做复杂 BI</span></p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="content-data"><thead><tr><th data-data-review-field="metric">指标</th><th data-data-review-field="definition">口径</th><th data-data-review-field="source">来源</th><th data-data-review-field="today">今日</th><th data-data-review-field="trend">7日趋势</th><th data-data-review-field="exclusion">排除口径</th><th data-data-review-field="insight">判断</th><th data-data-review-field="owner">负责人</th><th data-data-review-field="next-action">下一步动作</th></tr></thead><tbody>
+                <tr data-review-state="normal"><td>内容发布</td><td>用户完成发布并进入可审核状态</td><td>内容列表 / 投稿管理</td><td>86</td><td>+12%</td><td>测试账号、下架内容</td><td>Prompt 投稿活动带动供给</td><td>运营 A</td><td>继续观察投稿质量</td></tr>
+                <tr data-review-state="watching"><td>审核通过</td><td>人工或三方通过后进入公开流</td><td>审核工作台</td><td>72</td><td>+8%</td><td>重复提交、资料异常</td><td>评论审核积压下降</td><td>审核员 B</td><td>补充拒绝原因模板</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </section>
+        <section class="view" data-view="activity-data" data-page-contract="activity-data" data-dashboard-page="activity-data">
+          <div class="contract-panel" data-page-contract="activity-data">活动数据看入口曝光、点击、投稿和反馈，不作为自动发奖依据。</div>
+          <div class="page-head"><div class="page-title"><h2>活动数据</h2><p>复盘活动入口、投稿和任务转化。</p></div></div>
+          <div class="stats-row">
+            <div class="stat-card" data-dashboard-card="conversion"><div class="stat-label">活动入口点击率</div><div class="stat-value">9.7%</div></div>
+            <div class="stat-card"><div class="stat-label">投稿完成</div><div class="stat-value">186</div></div>
+            <div class="stat-card"><div class="stat-label">任务领取</div><div class="stat-value">412</div></div>
+            <div class="stat-card" data-dashboard-card="exclusion"><div class="stat-label">排除异常投稿</div><div class="stat-value">11</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="activity-data">
+            <div class="panel-head"><div class="panel-title">活动复盘口径</div><span class="muted small">入口曝光、点击、投稿和任务完成必须拆开看</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-state="normal"><b>入口有效</b><span class="tag success">继续保留</span><p class="muted small">曝光到点击高于本周基线。</p></div>
+                <div class="preview-card" data-review-state="watching"><b>投稿质量</b><span class="tag warning">继续观察</span><p class="muted small">投稿数量增长后需要看入选率。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel"><div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+            <table data-table="activity-data"><thead><tr><th data-data-review-field="metric">指标</th><th data-data-review-field="definition">口径</th><th data-data-review-field="source">来源</th><th data-data-review-field="today">今日</th><th data-data-review-field="trend">7日趋势</th><th data-data-review-field="exclusion">排除口径</th><th data-data-review-field="insight">判断</th><th data-data-review-field="owner">负责人</th><th data-data-review-field="next-action">下一步动作</th></tr></thead><tbody>
+              <tr data-review-state="normal"><td>活动入口点击</td><td>活动入口曝光到点击</td><td>全站运营位 / 活动中心</td><td>1,804</td><td>+9.7%</td><td>测试入口、重复刷新</td><td>标题有效，入口可保留</td><td>运营 A</td><td>继续保留顶部活动条</td></tr>
+              <tr data-review-state="watching"><td>活动投稿</td><td>用户提交并进入初筛</td><td>投稿管理</td><td>186</td><td>+14%</td><td>异常投稿、重复投稿</td><td>投稿数量上升，质量待看</td><td>运营 B</td><td>抽样复盘入选率</td></tr>
+            </tbody></table>
+          </div></div>
+        </section>
+        <section class="view" data-view="growth-data" data-page-contract="growth-data" data-dashboard-page="growth-data">
+          <div class="contract-panel" data-page-contract="growth-data">用户增长数据只看注册、留存、邀请和有效动作，不做完整用户画像。</div>
+          <div class="page-head"><div class="page-title"><h2>用户增长数据</h2><p>查看新增、留存、邀请和活跃摘要。</p></div></div>
+          <div class="stats-row">
+            <div class="stat-card" data-dashboard-card="conversion"><div class="stat-label">注册到首个动作</div><div class="stat-value">41.3%</div></div>
+            <div class="stat-card"><div class="stat-label">7日留存</div><div class="stat-value">22.5%</div></div>
+            <div class="stat-card"><div class="stat-label">邀请新增</div><div class="stat-value">62</div></div>
+            <div class="stat-card" data-dashboard-card="exclusion"><div class="stat-label">排除测试账号</div><div class="stat-value">18</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="growth-data">
+            <div class="panel-head"><div class="panel-title">增长复盘口径</div><span class="muted small">只看注册、首个有效动作、留存和邀请质量</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-state="normal"><b>有效新增</b><span class="tag success">可跟进</span><p class="muted small">注册后完成首个有效动作才进入有效新增判断。</p></div>
+                <div class="preview-card exception-note" data-review-state="exception"><b>重复邀请</b><span class="tag danger">需抽查</span><p class="muted small">重复设备摘要只做人工判断，不展示完整设备信息。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel"><div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+            <table data-table="growth-data"><thead><tr><th data-data-review-field="metric">指标</th><th data-data-review-field="definition">口径</th><th data-data-review-field="source">来源</th><th data-data-review-field="today">今日</th><th data-data-review-field="trend">7日趋势</th><th data-data-review-field="exclusion">排除口径</th><th data-data-review-field="insight">判断</th><th data-data-review-field="owner">负责人</th><th data-data-review-field="next-action">下一步动作</th></tr></thead><tbody>
+              <tr data-review-state="watching"><td>邀请新增</td><td>邀请注册且完成首个有效动作</td><td>邀请记录 / 用户列表</td><td>62</td><td>+6%</td><td>测试账号、重复设备摘要</td><td>重复邀请需抽查</td><td>运营 B</td><td>优化阶段奖励文案</td></tr>
+              <tr data-review-state="normal"><td>首页转化</td><td>首页入口到注册后首个动作</td><td>首页 Banner / 用户列表</td><td>44</td><td>+4%</td><td>测试账号</td><td>低风险，入口可继续保留</td><td>运营 A</td><td>继续保留入口</td></tr>
+            </tbody></table>
+          </div></div>
+        </section>
+        <section class="view" data-view="points-data" data-page-contract="points-data" data-dashboard-page="points-data">
+          <div class="contract-panel" data-page-contract="points-data">积分数据用于看规则是否有效和异常是否增加，不做积分结算引擎。</div>
+          <div class="page-head"><div class="page-title"><h2>积分数据</h2><p>查看积分入账、消耗、异常和规则触发。</p></div></div>
+          <div class="stats-row">
+            <div class="stat-card" data-dashboard-card="conversion"><div class="stat-label">任务到入账完成</div><div class="stat-value">76.2%</div></div>
+            <div class="stat-card"><div class="stat-label">今日入账</div><div class="stat-value">9,640</div></div>
+            <div class="stat-card"><div class="stat-label">今日消耗</div><div class="stat-value">3,280</div></div>
+            <div class="stat-card" data-dashboard-card="exclusion"><div class="stat-label">异常流水</div><div class="stat-value">7</div></div>
+          </div>
+          <div class="panel" data-review-loop-page="points-data">
+            <div class="panel-head"><div class="panel-title">积分复盘口径</div><span class="muted small">看规则有效性和异常增加，不做结算引擎</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-review-state="normal"><b>规则有效</b><span class="tag success">可保留</span><p class="muted small">任务完成到入账完成稳定。</p></div>
+                <div class="preview-card exception-note" data-review-state="exception"><b>异常上升</b><span class="tag danger">需复核</span><p class="muted small">重复投稿、重复邀请和兑换异常进入人工抽查。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel"><div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+            <table data-table="points-data"><thead><tr><th data-data-review-field="metric">指标</th><th data-data-review-field="definition">口径</th><th data-data-review-field="source">来源</th><th data-data-review-field="today">今日</th><th data-data-review-field="trend">7日趋势</th><th data-data-review-field="exclusion">排除口径</th><th data-data-review-field="insight">判断</th><th data-data-review-field="owner">负责人</th><th data-data-review-field="next-action">下一步动作</th></tr></thead><tbody>
+              <tr data-review-state="normal"><td>Prompt 投稿入账</td><td>投稿通过后积分入账成功</td><td>积分规则 / 投稿管理</td><td>172</td><td>+8%</td><td>测试账号、重复投稿</td><td>规则有效，说明可继续优化</td><td>运营 B</td><td>优化投稿说明</td></tr>
+              <tr data-review-state="exception"><td>邀请有效用户入账</td><td>邀请用户完成有效动作后入账</td><td>邀请记录 / 积分记录</td><td>41</td><td>-3%</td><td>重复设备摘要、异常邀请</td><td>异常需人工抽查</td><td>运营 A</td><td>人工抽查异常</td></tr>
+            </tbody></table>
+          </div></div>
+        </section>
+
+        <section class="view" data-view="operation-log" data-page-contract="operation-log" data-operation-page="operation-log">
+          <div class="contract-panel" data-page-contract="operation-log">操作日志不可删除或修改，字段必须覆盖对象、动作、操作前后状态、操作人、原因和时间。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>操作日志列表</h2><p>追溯所有危险操作、配置变更和账号权限变更。</p></div>
+          </div>
+          <div class="panel" data-governance-loop-page="operation-log">
+            <div class="panel-head"><div class="panel-title">日志不可变规则</div><span class="muted small">积分调整、权限变更和敏感访问统一留痕</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-governance-workflow-step="log-immutability"><b>不可修改</b><p class="muted small"><span class="tag gray" data-governance-guard="log-immutable">日志不可删除或改写</span></p><p class="muted small">只允许补充复核备注，不覆盖原记录。</p></div>
+                <div class="preview-card" data-governance-workflow-step="sensitive-access-block"><b>敏感访问</b><p class="muted small">Token、Session、卡密和联系方式只记录拦截摘要。</p></div>
+                <div class="preview-card"><b>风险分级</b><span class="tag warning" data-governance-state="pending-review">待复核</span><p class="muted small">高风险日志进入二次复核队列。</p></div>
+                <div class="preview-card"><b>权限回收</b><span class="tag danger" data-governance-state="permission-reclaimed">已回收</span><p class="muted small">角色调整、账号停用和权限回收必须引用原因。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-batch-page="operation-log">
+            <div class="batch-bar">
+              <div><b>日志批量动作</b><span class="muted small"> 日志不可改写，只能导出摘要或补充复核备注</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择当前日志</button>
+                <button class="btn" type="button" data-batch-action="batch-export-masked">导出脱敏日志</button>
+                <button class="btn" type="button" data-batch-action="batch-write-log">补充复核备注</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div class="filter-grid">
+                <div class="field"><label>对象类型</label><select class="select"><option>全部对象</option></select></div>
+                <div class="field"><label>动作</label><select class="select"><option>危险操作</option></select></div>
+                <div class="field"><label>操作人</label><input class="input" value="运营 A"></div>
+                <div class="field"><label>时间</label><input class="input" value="近 7 天"></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="operation-log">
+                <thead><tr><th data-log-field="log-id">日志 ID</th><th data-log-field="object">对象</th><th data-log-field="action">动作</th><th data-log-field="before">操作前</th><th data-log-field="after">操作后</th><th data-log-field="operator">操作人</th><th data-log-field="reason">原因</th><th data-log-field="time">时间</th><th data-log-field="risk-level">风险等级</th><th data-log-field="review-state">复核状态</th><th data-log-field="source-page">来源页面</th><th>详情</th></tr></thead>
+                <tbody>
+                  <tr data-log-sample="slot" data-governance-state="normal"><td class="mono">LOG-2001</td><td>SLOT-TOP-001</td><td>运营位调序</td><td>排序 20</td><td>排序 10</td><td>运营 A</td><td>7 月主推活动前置</td><td>2026-07-06 15:42</td><td><span class="tag gray">低</span></td><td>已记录</td><td>全站运营位</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                  <tr data-log-sample="content"><td class="mono">LOG-2002</td><td>[CONTENT_ID]</td><td>内容下架</td><td>已发布</td><td>已下架</td><td>运营 A</td><td>活动已结束，停止首页展示</td><td>2026-07-06 15:20</td><td><span class="tag warning">中</span></td><td>已复核</td><td>内容列表</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                  <tr data-log-sample="review"><td class="mono">LOG-2003</td><td>AUD-1001</td><td>审核拒绝</td><td>待审核</td><td>未通过</td><td>审核员 B</td><td>用户可读原因已填写</td><td>2026-07-06 14:56</td><td><span class="tag warning">中</span></td><td>已复核</td><td>审核工作台</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                  <tr data-log-sample="points" data-governance-state="adjusted"><td class="mono">LOG-2103</td><td>[USER_ID]</td><td>积分人工调整</td><td>待入账</td><td>已撤销</td><td>运营 B</td><td>重复入账风险，已人工复核</td><td>2026-07-06 14:12</td><td><span class="tag danger">高</span></td><td>二次复核完成</td><td>积分记录</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                  <tr data-log-sample="rbac" data-governance-state="permission-granted"><td class="mono">LOG-2201</td><td>ROLE-OPS</td><td>授予运营配置权限</td><td>只读</td><td>可编辑全站运营位</td><td>管理员</td><td>临时支援 7 月活动配置</td><td>2026-07-06 13:52</td><td><span class="tag danger">高</span></td><td>待负责人确认</td><td>角色管理</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                  <tr data-governance-state="blocked"><td class="mono">LOG-2301</td><td>[TOKEN]</td><td>敏感字段查看拦截</td><td>不可见</td><td>占位展示</td><td>系统</td><td>敏感字段脱敏</td><td>2026-07-06 13:40</td><td><span class="tag danger">高</span></td><td>系统拦截</td><td>后台用户管理</td><td><button class="btn link" data-open-drawer="log-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" data-view="role-management" data-page-contract="role-management" data-rbac-page="role-management" data-operation-page="role-management">
+          <div class="contract-panel" data-page-contract="role-management">角色管理只做菜单权限和操作权限；授予审核、配置、用户处理权限必须确认并写原因。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>角色管理</h2><p>管理后台角色、菜单权限和危险操作权限。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="role-detail">新建角色</button></div>
+          </div>
+          <div class="panel" data-governance-loop-page="role-management">
+            <div class="panel-head"><div class="panel-title">角色授权边界</div><span class="muted small">权限变更必须可追溯到原因和日志</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-governance-workflow-step="permission-change"><b>权限变更</b><span class="tag info" data-governance-state="permission-granted">已授权</span><p class="muted small"><span class="tag gray" data-governance-guard="permission-change-reason-required">权限变更需原因</span></p></div>
+                <div class="preview-card"><b>最小权限</b><p class="muted small"><span class="tag gray" data-governance-guard="least-privilege">按角色最小授权</span></p><p class="muted small">菜单、操作和数据范围分开记录。</p></div>
+                <div class="preview-card"><b>复核状态</b><span class="tag warning" data-governance-state="pending-review">待复核</span><p class="muted small">高风险角色授权需要负责人确认。</p></div>
+                <div class="preview-card"><b>日志引用</b><p class="muted small">授权、停用、回收都要关联操作日志。</p></div>
+                <div class="preview-card exception-note" data-exception-state="permission-risk"><b>权限风险</b><span class="tag danger">需负责人确认</span><p class="muted small">高风险操作权限、数据范围扩大和临时账号授权必须复核。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel" data-batch-page="role-management">
+            <div class="batch-bar">
+              <div><b>角色批量动作</b><span class="muted small"> 只允许批量查看和分配复核人，授权仍按角色确认</span></div>
+              <div class="action-row">
+                <button class="btn" type="button" data-batch-action="select-visible">选择角色</button>
+                <button class="btn" type="button" data-batch-action="batch-assign">批量分配复核人</button>
+                <button class="btn" type="button" data-batch-action="batch-export-masked">导出权限摘要</button>
+                <button class="btn" type="button" data-batch-action="batch-status-change" data-danger-action="role-batch-permission" data-requires-confirm="true" data-requires-reason="true">批量标记待复核</button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="role-management">
+                <thead><tr><th data-role-field="role-id">角色 ID</th><th data-role-field="role-name">角色名称</th><th data-role-field="menu-scope">菜单权限</th><th data-role-field="action-scope">操作权限</th><th data-role-field="data-scope">数据范围</th><th data-role-field="approval-state">审批状态</th><th data-role-field="status">状态</th><th data-role-field="account-count">账号数</th><th data-role-field="last-operator">最近操作人</th><th data-role-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-governance-state="permission-granted"><td class="mono">ROLE-OPS</td><td>社区运营</td><td>内容运营、运营配置、数据看板</td><td>编辑运营位、处理投稿、查看脱敏数据</td><td>脱敏数据</td><td>LOG-2201 待负责人确认</td><td><span class="tag success">启用</span></td><td>3</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="role-detail">详情</button><button class="btn link" data-danger-action="role-grant" data-requires-confirm="true" data-requires-reason="true">授权</button><button class="btn link danger-link" data-danger-action="role-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-governance-state="normal"><td class="mono">ROLE-AUDIT</td><td>审核员</td><td>审核工作台、操作日志</td><td>通过、拒绝、转复核</td><td>对象摘要、脱敏用户</td><td>已确认</td><td><span class="tag success">启用</span></td><td>2</td><td>管理员</td><td><button class="btn link" data-open-drawer="role-detail">详情</button></td></tr>
+                  <tr data-governance-state="permission-reclaimed"><td class="mono">ROLE-TEMP</td><td>临时运营支援</td><td>运营配置</td><td>仅查看活动和任务配置</td><td>只读</td><td>权限已回收，LOG-2202</td><td><span class="tag gray">停用</span></td><td>0</td><td>管理员</td><td><button class="btn link" data-open-drawer="role-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+        <section class="view" data-view="admin-users" data-page-contract="admin-users" data-rbac-page="admin-users">
+          <div class="contract-panel" data-page-contract="admin-users">后台用户管理不展示密码、Token 或 Session；停用账号、回收权限和新增管理员必须留痕。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>后台用户管理</h2><p>管理后台账号、角色绑定和账号状态。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="admin-user-detail">新增后台用户</button></div>
+          </div>
+          <div class="panel" data-governance-loop-page="admin-users">
+            <div class="panel-head"><div class="panel-title">后台账号治理</div><span class="muted small">新增、停用、回收权限都必须留痕</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card"><b>账号状态</b><span class="tag success" data-governance-state="normal">正常</span><p class="muted small">后台用户只展示脱敏联系方式和角色摘要。</p></div>
+                <div class="preview-card"><b>角色调整</b><span class="tag warning" data-governance-state="pending-review">待复核</span><p class="muted small">角色变更必须关联授权日志。</p></div>
+                <div class="preview-card"><b>账号停用</b><span class="tag danger" data-governance-state="blocked">已停用</span><p class="muted small">停用账号后回收危险操作权限。</p></div>
+                <div class="preview-card"><b>敏感字段</b><p class="muted small">不展示密码、Token、Session 或完整联系方式。</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="admin-users">
+                <thead><tr><th data-admin-field="admin-id">后台用户 ID</th><th data-admin-field="nickname">昵称</th><th data-admin-field="role">角色</th><th data-admin-field="account-state">账号状态</th><th data-admin-field="permission-change">权限变化</th><th data-admin-field="last-login">最近登录</th><th data-admin-field="contact">联系方式</th><th data-admin-field="review-state">复核状态</th><th data-admin-field="last-operator">最近操作人</th><th data-admin-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-governance-state="normal"><td class="mono">ADM-001</td><td>运营 A</td><td>社区运营</td><td><span class="tag success">启用</span></td><td>新增全站运营位编辑权限，LOG-2201</td><td>2026-07-06</td><td>[EMAIL]</td><td>负责人待确认</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link" data-danger-action="admin-role-change" data-requires-confirm="true" data-requires-reason="true">调整角色</button><button class="btn link danger-link" data-danger-action="admin-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-governance-state="normal"><td class="mono">ADM-002</td><td>审核员 B</td><td>审核员</td><td><span class="tag success">启用</span></td><td>无新增权限</td><td>2026-07-05</td><td>[EMAIL]</td><td>已确认</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
+                  <tr data-governance-state="blocked"><td class="mono">ADM-009</td><td>临时支援</td><td>临时运营支援</td><td><span class="tag danger">停用</span></td><td>回收运营配置权限，LOG-2202</td><td>2026-07-03</td><td>[EMAIL]</td><td>已完成</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <button class="btn primary walkthrough-toggle" type="button" data-toggle-walkthrough>走查规则</button>
+  <aside class="walkthrough-panel" data-bend-walkthrough="true">
+    <b>B端 V0.1 走查规则</b>
+    <p>本原型验证 Ant Design 后台信息架构、22 个二级页面、21 个正式 C端页面承接、全站运营位配置闭环、审核处理闭环、活动任务积分闭环、用户积分权限日志闭环、消息商城数据复盘闭环、批量动作、抽屉详情、异常态、危险操作确认和敏感信息脱敏。</p>
+    <ul>
+      <li>一级导航固定为 6 个。</li>
+      <li>二级页面固定为 22 个，页面内必须有业务契约。</li>
+      <li>全站运营位必须覆盖点位选择、目标绑定、C端预览、启停排序和日志记录。</li>
+      <li>消息配置必须覆盖模板、业务落点、发送窗口、失败兜底和撤回原因。</li>
+      <li>商城配置只管理商品展示、权益说明、积分消耗摘要和兑换异常，不进入支付、结算或卡密库存。</li>
+      <li>数据看板必须标明指标口径、来源、排除规则、运营判断、负责人和下一步动作。</li>
+      <li>批量动作必须限定范围，涉及状态、权限或展示变更时必须填写原因并留痕。</li>
+      <li>详情抽屉必须包含对象摘要、状态历史、关联记录、风险原因和操作历史。</li>
+      <li>异常态必须标明负责人、阻断原因和下一步处理动作。</li>
+      <li>积分人工调整、权限变更和后台账号停用必须关联原因、复核状态和操作日志。</li>
+      <li>危险操作必须二次确认并填写原因。</li>
+      <li>日志字段必须包含对象、动作、前后状态、操作人、原因、时间。</li>
+      <li>用户、Token、卡密、兑换凭证只能占位展示。</li>
+    </ul>
+  </aside>
+
+  <div class="drawer-backdrop" data-close-layer></div>
+  <aside class="drawer" id="globalDrawer" aria-hidden="true">
+    <div class="drawer-head"><span id="drawerTitle">详情抽屉</span><button class="btn" data-close-layer>关闭</button></div>
+    <div class="drawer-body" id="drawerBody">
+      <p>对象只读预览、状态记录、关联配置和操作历史在这里承接。</p>
+    </div>
+    <div class="drawer-footer"><button class="btn" data-close-layer>关闭</button><button class="btn primary">保存草稿</button></div>
+  </aside>
+
+  <div class="modal-backdrop" data-close-layer></div>
+  <section class="modal" data-modal="danger-confirm" aria-hidden="true">
+    <div class="modal-head"><span>危险操作确认</span><button class="btn" data-close-layer>关闭</button></div>
+    <div class="modal-body">
+      <p id="modalImpact">该操作会改变 C端展示或用户状态，请确认影响范围。</p>
+      <div class="field">
+        <label>操作原因</label>
+        <textarea class="textarea" data-reason-input>填写清晰原因，写入操作日志。</textarea>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn" data-close-layer>取消</button><button class="btn primary" data-close-layer>确认并记录日志</button></div>
+  </section>
+
+  <script>
+    const pageTitles = {
+      "content-list": ["内容运营", "内容列表"],
+      "review-workbench": ["内容运营", "审核工作台"],
+      "feature-management": ["内容运营", "精选管理"],
+      "submission-management": ["内容运营", "投稿管理"],
+      "home-slots": ["运营配置", "全站运营位"],
+      "activity-config": ["运营配置", "活动配置"],
+      "task-config": ["运营配置", "任务配置"],
+      "points-rules": ["运营配置", "积分规则"],
+      "message-config": ["运营配置", "消息配置"],
+      "store-config": ["运营配置", "商城配置"],
+      "user-list": ["用户管理", "用户列表"],
+      "user-detail": ["用户管理", "用户详情"],
+      "invite-records": ["用户管理", "邀请记录"],
+      "points-records": ["用户管理", "积分记录"],
+      "trust-lists": ["用户管理", "黑白名单"],
+      "content-data": ["数据看板", "内容数据"],
+      "activity-data": ["数据看板", "活动数据"],
+      "growth-data": ["数据看板", "用户增长数据"],
+      "points-data": ["数据看板", "积分数据"],
+      "operation-log": ["操作日志", "操作日志列表"],
+      "role-management": ["系统设置", "角色管理"],
+      "admin-users": ["系统设置", "后台用户管理"]
+    };
+
+    const drawerCopy = {
+      "content-detail": ["内容详情", "只读预览、基础信息、状态记录、关联推荐位和操作记录。"],
+      "review-detail": ["审核详情", "对象预览、提交信息、审核历史、用户可读拒绝原因和内部备注。"],
+      "feature-detail": ["精选详情", "展示位置、推荐理由、排序、有效期、内容只读预览和操作历史。"],
+      "submission-detail": ["投稿详情", "投稿内容、关联活动、初筛记录、奖励状态和退回原因在这里承接。"],
+      "slot-preview": ["运营位预览", "按广告标识、活动标题、单句利益点、整卡入口预览 C端展示，内部配置字段不进入用户可见区域。"],
+      "activity-detail": ["活动规则", "活动规则、奖励摘要、页面展示信息、关联投稿和操作历史。"],
+      "task-detail": ["任务配置", "任务说明、奖励摘要、完成条件说明、展示位置和操作历史。"],
+      "points-rule-detail": ["积分规则", "积分来源、用户可读奖励、每日上限、有效期和启停记录。"],
+      "message-detail": ["消息详情", "消息模板、业务落点、目标人群、发送状态、撤回原因和操作历史。"],
+      "store-detail": ["商城商品", "商品展示、权益说明、积分消耗、展示状态、兑换异常和操作历史。"],
+      "user-action": ["用户处理", "资料审核、积分异常、邀请异常和账号状态变更说明。"],
+      "invite-detail": ["邀请详情", "邀请关系、阶段奖励、异常摘要和人工处理记录。"],
+      "points-detail": ["积分流水详情", "流水详情、关联活动/任务/邀请、异常说明和操作历史。"],
+      "trust-detail": ["名单详情", "名单类型、权限摘要、加入原因、移除原因和操作历史。"],
+      "log-detail": ["操作日志详情", "操作摘要、前后状态、原因、关联对象、操作人和时间。"],
+      "role-detail": ["角色详情", "菜单权限、操作权限、账号数量、授权原因和回收记录。"],
+      "admin-user-detail": ["后台用户详情", "后台账号、角色绑定、账号状态、最近登录和权限变更历史。"]
+    };
+
+    function openView(viewName) {
+      document.querySelectorAll(".view").forEach((view) => view.classList.toggle("is-active", view.dataset.view === viewName));
+      document.querySelectorAll(".nav-btn").forEach((button) => button.classList.toggle("is-active", button.dataset.nav === viewName));
+      const title = pageTitles[viewName] || ["首页", "社区后台"];
+      document.getElementById("globalBreadcrumb").textContent = `首页 / ${title[0]} / ${title[1]}`;
+      document.getElementById("globalTitle").textContent = title[1];
+    }
+
+    function openDrawer(type) {
+      const [title, body] = drawerCopy[type] || ["详情抽屉", "当前对象的只读预览、状态和操作历史在这里承接。"];
+      document.getElementById("drawerTitle").textContent = title;
+      document.getElementById("drawerBody").innerHTML = `
+        <p>${body}</p>
+        <div class="drawer-detail-grid" data-drawer-contract="readonly-first">
+          <div class="drawer-field" data-drawer-field="object-summary">
+            <b>对象摘要</b>
+            <p class="muted small">${title} / [CONTENT_ID] / [USER_ID]</p>
+          </div>
+          <div class="drawer-field" data-drawer-field="status-history">
+            <b>状态历史</b>
+            <p class="muted small">草稿、待审核、启用、停用、撤销等状态按时间线展示。</p>
+          </div>
+          <div class="drawer-field" data-drawer-field="linked-records">
+            <b>关联记录</b>
+            <p class="muted small">关联活动、任务、积分流水、操作日志和脱敏凭证 [CARD_CODE]。</p>
+          </div>
+          <div class="drawer-field" data-drawer-field="risk-and-reason">
+            <b>风险与原因</b>
+            <p class="muted small">展示阻断原因、处理原因、复核备注和敏感占位 [TOKEN]。</p>
+          </div>
+          <div class="drawer-field" data-drawer-field="operation-history">
+            <b>操作历史</b>
+            <p class="muted small">记录操作人、时间、前后状态和日志编号，不展示完整隐私字段。</p>
+          </div>
+        </div>
+        <div class="contract-panel">敏感字段以 [USER_ID]、[CONTENT_ID]、[TOKEN]、[CARD_CODE] 占位展示。</div>`;
+      document.querySelector(".drawer-backdrop").classList.add("is-open");
+      document.getElementById("globalDrawer").classList.add("is-open");
+    }
+
+    function openDangerModal(action) {
+      document.getElementById("modalImpact").textContent = `即将执行 ${action}，该操作会写入操作日志。`;
+      document.querySelector(".modal-backdrop").classList.add("is-open");
+      document.querySelector('[data-modal="danger-confirm"]').classList.add("is-open");
+    }
+
+    function closeLayers() {
+      document.querySelectorAll(".drawer-backdrop,.modal-backdrop,.drawer,.modal").forEach((node) => node.classList.remove("is-open"));
+    }
+
+    document.addEventListener("click", (event) => {
+      const nav = event.target.closest("[data-nav]");
+      if (nav) openView(nav.dataset.nav);
+
+      const jump = event.target.closest("[data-open-view]");
+      if (jump) openView(jump.dataset.openView);
+
+      const drawer = event.target.closest("[data-open-drawer]");
+      if (drawer) openDrawer(drawer.dataset.openDrawer);
+
+      const danger = event.target.closest("[data-danger-action]");
+      if (danger) openDangerModal(danger.dataset.dangerAction);
+
+      if (event.target.closest("[data-close-layer]")) closeLayers();
+
+      if (event.target.closest("[data-toggle-walkthrough]")) {
+        document.querySelector(".walkthrough-panel").classList.toggle("is-open");
+      }
+    });
+  </script>
+</body>
+</html>
