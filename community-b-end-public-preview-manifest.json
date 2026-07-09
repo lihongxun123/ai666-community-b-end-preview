@@ -1,22 +1,141 @@
 {
-  "generatedAt": "2026-07-07T03:18:04.861Z",
+  "generatedAt": "2026-07-09T14:17:23.724Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 1,
+  "pageCount": 19,
   "pages": [
     {
-      "slug": "community-b-end-admin",
-      "label": "社区 B端管理后台",
+      "slug": "content-list",
+      "label": "内容列表",
       "path": "index.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/index.html"
+    },
+    {
+      "slug": "content-detail",
+      "label": "内容详情",
+      "path": "content-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/content-detail.html"
+    },
+    {
+      "slug": "review-workbench",
+      "label": "审核工作台",
+      "path": "review-workbench.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/review-workbench.html"
+    },
+    {
+      "slug": "flash-management",
+      "label": "闪念管理",
+      "path": "flash-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/flash-management.html"
+    },
+    {
+      "slug": "flash-detail",
+      "label": "闪念详情",
+      "path": "flash-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/flash-detail.html"
+    },
+    {
+      "slug": "aigc-template-config",
+      "label": "模板配置",
+      "path": "aigc-template-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/aigc-template-config.html"
+    },
+    {
+      "slug": "tutorial-management",
+      "label": "教程管理",
+      "path": "tutorial-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/tutorial-management.html"
+    },
+    {
+      "slug": "home-slots",
+      "label": "广告位配置",
+      "path": "home-slots.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/home-slots.html"
+    },
+    {
+      "slug": "login-popup-config",
+      "label": "弹窗配置",
+      "path": "login-popup-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/login-popup-config.html"
+    },
+    {
+      "slug": "activity-config",
+      "label": "活动配置",
+      "path": "activity-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/activity-config.html"
+    },
+    {
+      "slug": "store-config",
+      "label": "商城配置",
+      "path": "store-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/store-config.html"
+    },
+    {
+      "slug": "user-list",
+      "label": "用户列表",
+      "path": "user-list.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/user-list.html"
+    },
+    {
+      "slug": "user-detail",
+      "label": "用户详情",
+      "path": "user-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/user-detail.html"
+    },
+    {
+      "slug": "invite-records",
+      "label": "邀请记录",
+      "path": "invite-records.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/invite-records.html"
+    },
+    {
+      "slug": "points-records",
+      "label": "积分记录",
+      "path": "points-records.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/points-records.html"
+    },
+    {
+      "slug": "trust-lists",
+      "label": "黑白名单",
+      "path": "trust-lists.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/trust-lists.html"
+    },
+    {
+      "slug": "operation-log",
+      "label": "操作日志列表",
+      "path": "operation-log.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/operation-log.html"
+    },
+    {
+      "slug": "role-management",
+      "label": "角色管理",
+      "path": "role-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/role-management.html"
+    },
+    {
+      "slug": "admin-users",
+      "label": "后台用户管理",
+      "path": "admin-users.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/admin-users.html"
     }
+  ],
+  "assets": [
+    "assets/image_assets/1.png",
+    "assets/image_assets/11.png",
+    "assets/image_assets/15.jpg",
+    "assets/image_assets/17.png",
+    "assets/image_assets/18.png",
+    "assets/image_assets/2.png",
+    "assets/image_assets/3.png",
+    "assets/image_assets/4.png"
   ],
   "evidenceFiles": [
     "community-b-end-antdesign-prototype-validation.json",
-    "community-b-end-antdesign-prototype-interaction-validation.json"
+    "community-b-end-antdesign-prototype-interaction-validation.json",
+    "multipage-manifest.json"
   ],
   "deploymentBoundary": {
     "independentFrom": [

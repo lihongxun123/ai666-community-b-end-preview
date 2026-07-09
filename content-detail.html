@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 内容列表</title>
+  <title>AI666 后台 - 内容详情</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -1718,7 +1718,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">内容列表</h1>
+          <h1 class="top-title" id="globalTitle">内容详情</h1>
         </div>
         <div class="top-meta">
           <button class="avatar-button" type="button" aria-label="登录用户" data-user-avatar="login-user">AI</button>
@@ -1726,57 +1726,79 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="content-list" data-page-contract="content-list" data-operation-page="content-list">
-          <div class="contract-panel" data-page-contract="content-list">内容列表负责 AIGC、Prompt、投稿来源内容、模型、模板和教程等正式内容的统一运营入口；首页爆款作品由内容列表承接，广告位配置只承接首页爆款首卡广告；闪念进入独立管理模块，审核、日志和详情治理进入抽屉或专门页面。</div>
-          <div class="page-head">
+<section class="view is-active" data-view="content-detail" data-page-contract="content-detail" data-operation-page="content-detail" data-route-only-page="content-list">
+          <div class="contract-panel" data-page-contract="content-detail">内容详情页从内容列表进入；主内容沿用 C端内容详情弹层的信息结构，用于运营核对内容、状态、互动和来源，不在详情页承接 C端消费动作；投稿来源必须展示具体活动归属；首页爆款状态由内容列表维护，投稿作品设为首页爆款后同步发放发布积分并写入操作日志。</div>
+          <div class="page-head content-detail-page-head">
             <div class="page-title">
-              <h2>内容列表</h2>
-              <p>管理 AIGC、Prompt、投稿来源、模板、模型和教程内容；闪念单独管理。</p>
-            </div>
-          </div>
-          <div class="stats-row content-list-stats" data-content-list-stats="compact">
-            <div class="stat-card"><div class="stat-label">全部内容</div><div class="stat-value">2,418</div></div>
-            <div class="stat-card"><div class="stat-label">待审核</div><div class="stat-value">86</div></div>
-            <div class="stat-card"><div class="stat-label">已下架</div><div class="stat-value">34</div></div>
-            <div class="stat-card" data-content-stat="home-hot-works" data-stat-source="home-hot-works"><div class="stat-label">爆款作品</div><div class="stat-value">128</div></div>
-          </div>
-          <div class="panel content-list-filter-panel" data-content-list-filter="query">
-            <div class="panel-head">
-              <div class="panel-title">筛选</div>
-              <div class="filter-actions">
-                <button class="btn primary" type="button" data-filter-action="search">搜索</button>
-                <button class="btn" type="button" data-filter-action="reset">重置</button>
+              <div class="content-detail-title-row">
+                <a class="ant-page-header-back content-detail-back-link" href="index.html" data-open-view="content-list"><span aria-hidden="true">←</span>返回列表</a>
+                <h2>内容详情</h2>
               </div>
+              <p>查看单条内容的 C端展示结构、运营状态、评论列表和来源信息。</p>
             </div>
-            <div class="panel-body">
-              <div class="filter-grid content-list-filter-grid">
-                <div class="field" data-content-filter="keyword"><label>关键词</label><input class="input" value="提示词"></div>
-                <div class="field" data-content-filter="content-type"><label>内容类型</label><select class="select"><option>全部类型</option><option>短剧漫剧</option><option>文本内容</option><option>图片生成</option><option>视频生成</option><option>Prompt</option></select></div>
-                <div class="field" data-content-filter="publish-state"><label>发布状态</label><select class="select"><option>全部状态</option><option>待审核</option><option>已发布</option><option>未通过</option><option>已下架</option><option>已删除</option></select></div>
-                <div class="field" data-content-filter="source"><label>来源</label><select class="select"><option>全部来源</option><option>轻创作</option><option>投稿 · Prompt 共创计划</option><option>投稿 · AI 生图挑战</option><option>用户发布</option></select></div>
-                <div class="field" data-content-filter="home-hot-state"><label>首页爆款</label><select class="select"><option>全部首页展示</option><option>首页爆款</option><option>非首页爆款</option></select></div>
-                <div class="field" data-content-filter="published-range"><label>发布时间</label><div class="ant-picker-range content-date-range" data-date-range-picker="published-at"><input class="input" value="2026-06-09" aria-label="发布时间开始"><span class="muted small">至</span><input class="input" value="2026-07-09" aria-label="发布时间结束"></div></div>
+          </div>
+          <div class="content-detail-shell" data-content-detail-source="c-end-modal">
+            <article class="case-detail-dialog content-format-modal backend-content-detail-card" data-bend-cend-preview="readonly" data-cend-detail-card="content-modal-card" data-content-id="AIGC-1001">
+              <div class="case-detail-media template-detail-media">
+                <div class="case-detail-viewport">
+                  <img class="case-gallery-main" src="assets/image_assets/11.png" alt="AI 漫剧分镜提示词合集">
+                </div>
               </div>
-            </div>
+              <aside class="case-detail-aside">
+                <h3 data-content-detail-title>AI 漫剧分镜提示词合集</h3>
+                <div class="detail-tags" data-content-detail-tags><span>短剧漫剧</span><span>9:16 竖屏</span><span>提示词合集</span><span>轻创作</span></div>
+                <p data-content-detail-summary>把故事冲突、人物动作和镜头节奏拆成 9 格分镜，适合新用户从一句创意开始生成漫剧开场。</p>
+                <div class="detail-tabs" data-cend-tabs="readonly">
+                  <div class="detail-tab-controls" role="tablist" aria-label="后台只读内容详情"><button class="detail-tab-label detail-tab-label-prompt is-active" type="button" role="tab" aria-selected="true" data-detail-tab="prompt" aria-controls="content-detail-panel-prompt">提示词</button><button class="detail-tab-label detail-tab-label-muted" type="button" role="tab" aria-selected="false" data-detail-tab="comments" aria-controls="content-detail-panel-comments">评论列表</button></div>
+                  <div class="detail-tab-content">
+                    <div class="detail-tab-panel detail-prompt detail-prompt-panel" role="tabpanel" id="content-detail-panel-prompt" data-detail-panel="prompt"><strong>提示词</strong><p data-content-detail-prompt>东方玄幻竖屏漫剧，第一集开场，乌云从高空撕裂，宫殿屋脊被金色雷光照亮，主角站在断裂石桥两端对峙。画面保留强冲突、清晰人物动作和连续镜头节奏。</p></div>
+                    <div class="detail-tab-panel flash-detail-comments content-detail-comments" role="tabpanel" id="content-detail-panel-comments" data-detail-panel="comments" hidden data-content-detail-comments>
+                      <b>评论列表</b>
+                      <div class="flash-detail-comment" data-content-detail-comment-item>
+                        <div class="avatar-button flash-detail-avatar">U1</div>
+                        <div class="flash-detail-comment-main"><strong>社区用户 <span class="muted small">[USER_ID]</span></strong><span>分镜拆得很清楚，适合直接拿来测试开场节奏。</span><span class="muted small">2026-07-06 14:20 · 赞 8</span></div>
+                      </div>
+                      <div class="flash-detail-comment" data-content-detail-comment-item>
+                        <div class="avatar-button flash-detail-avatar">U2</div>
+                        <div class="flash-detail-comment-main"><strong>内容作者 <span class="muted small">[USER_ID]</span></strong><span>建议再补一版现代都市题材，方便不同创作方向对照。</span><span class="muted small">2026-07-06 15:04 · 赞 3</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-readonly-metrics" data-content-readonly-metrics aria-label="后台只读互动数据">
+                  <div class="content-readonly-metric" data-content-readonly-metric="like"><span>点赞</span><strong data-content-detail-like>168</strong></div>
+                  <div class="content-readonly-metric" data-content-readonly-metric="favorite"><span>收藏</span><strong data-content-detail-favorite>72</strong></div>
+                  <div class="content-readonly-metric" data-content-readonly-metric="comment"><span>评论</span><strong data-content-detail-comment>21</strong></div>
+                </div>
+              </aside>
+            </article>
+            <aside class="content-detail-side-card" data-content-detail-ops-card>
+              <div class="panel-title">运营信息</div>
+              <dl class="content-detail-meta-list">
+                <dt>内容 ID</dt><dd data-content-detail-id>AIGC-1001</dd>
+                <dt>作者</dt><dd data-content-detail-author>拾光创作者 <span class="muted small">[USER_ID]</span></dd>
+                <dt>发布状态</dt><dd data-content-detail-state><span class="tag success">已发布</span></dd>
+                <dt>来源</dt><dd data-content-detail-source-text>轻创作</dd>
+                <dt>首页爆款</dt><dd data-content-detail-home-hot><span class="tag success">首页爆款 #12</span></dd>
+                <dt>发布时间</dt><dd data-content-detail-published>2026-07-06</dd>
+                <dt>最近操作人</dt><dd data-content-detail-operator>运营 A</dd>
+              </dl>
+              <div class="preview-card content-detail-activity-panel" data-content-detail-activity-panel hidden>
+                <b>活动投稿</b>
+                <p><span class="muted small">关联活动：</span><span data-content-detail-activity-name>Prompt 共创计划</span></p>
+                <p><span class="muted small">积分规则：</span><span data-content-detail-points-rule>设置为首页爆款作品后发放 +30 发布积分</span></p>
+                <p class="muted small" data-content-detail-points-note>设置为首页爆款作品后发放，写入积分记录和操作日志。</p>
+              </div>
+              <div class="preview-card content-detail-actions-panel" data-content-detail-actions-panel>
+                <b>运营动作</b>
+                <div class="content-detail-op-grid">
+                <button class="btn danger" type="button" data-content-op-action="take-down" data-content-id="AIGC-1001">下架内容</button>
+                  <button class="btn primary" type="button" data-content-op-action="set-home-hot" data-content-id="AIGC-1001" data-content-hot-reward="">设为首页爆款</button>
+                </div>
+              </div>
+            </aside>
           </div>
-          <div class="panel">
-            <div class="panel-head"><div class="panel-title">内容列表</div><span class="muted small">宽表格仅在表格内部横向滚动</span></div>
-            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="content-list">
-                <thead>
-                  <tr><th>内容 ID</th><th>标题</th><th>类型</th><th>作者</th><th>状态</th><th>首页爆款</th><th>来源</th><th>发布时间</th><th>操作</th></tr>
-                </thead>
-                <tbody>
-                  <tr data-content-id="AIGC-1001" data-content-home-hot-state="home-hot" data-content-home-hot-sort="12">
-                    <td class="mono">AIGC-1001</td><td class="wrap"><b>AI 漫剧分镜提示词合集</b><br><span class="muted small">[CONTENT_ID]</span></td><td><span class="tag info">短剧漫剧</span></td><td>拾光创作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag success">已发布</span></td><td data-content-home-hot-cell><span class="tag success">首页爆款 #12</span></td><td>轻创作</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=AIGC-1001" data-content-detail-link="AIGC-1001">详情</a></div></td>
-                  </tr>
-                  <tr data-content-id="PRO-2048" data-content-home-hot-state="none" data-content-home-hot-sort="">
-                    <td class="mono">PRO-2048</td><td class="wrap"><b>Prompt 共创投稿：品牌短视频脚本</b></td><td><span class="tag warning">Prompt</span></td><td>内容作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag warning">待审核</span></td><td data-content-home-hot-cell><span class="tag gray">未设置</span></td><td>投稿 · Prompt 共创计划</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=PRO-2048" data-content-detail-link="PRO-2048">详情</a></div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+          <table hidden aria-hidden="true"><tbody><tr data-content-detail-record="AIGC-1001" data-content-id="AIGC-1001" data-content-home-hot-state="home-hot" data-content-home-hot-sort="12"><td class="mono">AIGC-1001</td><td>AI 漫剧分镜提示词合集</td><td>短剧漫剧</td><td>拾光创作者 [USER_ID]</td><td>已发布</td><td>首页爆款 #12</td><td>轻创作</td><td>2026-07-06</td><td>运营 A</td></tr></tbody></table>
         </section>
       </main>
     </div>

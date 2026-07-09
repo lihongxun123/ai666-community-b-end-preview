@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-07-09T14:07:45.377Z",
+  "pages": [
+    {
+      "view": "content-list",
+      "file": "index.html",
+      "label": "内容列表"
+    },
+    {
+      "view": "content-detail",
+      "file": "content-detail.html",
+      "label": "内容详情"
+    },
+    {
+      "view": "review-workbench",
+      "file": "review-workbench.html",
+      "label": "审核工作台"
+    },
+    {
+      "view": "flash-management",
+      "file": "flash-management.html",
+      "label": "闪念管理"
+    },
+    {
+      "view": "flash-detail",
+      "file": "flash-detail.html",
+      "label": "闪念详情"
+    },
+    {
+      "view": "aigc-template-config",
+      "file": "aigc-template-config.html",
+      "label": "模板配置"
+    },
+    {
+      "view": "tutorial-management",
+      "file": "tutorial-management.html",
+      "label": "教程管理"
+    },
+    {
+      "view": "home-slots",
+      "file": "home-slots.html",
+      "label": "广告位配置"
+    },
+    {
+      "view": "login-popup-config",
+      "file": "login-popup-config.html",
+      "label": "弹窗配置"
+    },
+    {
+      "view": "activity-config",
+      "file": "activity-config.html",
+      "label": "活动配置"
+    },
+    {
+      "view": "store-config",
+      "file": "store-config.html",
+      "label": "商城配置"
+    },
+    {
+      "view": "user-list",
+      "file": "user-list.html",
+      "label": "用户列表"
+    },
+    {
+      "view": "user-detail",
+      "file": "user-detail.html",
+      "label": "用户详情"
+    },
+    {
+      "view": "invite-records",
+      "file": "invite-records.html",
+      "label": "邀请记录"
+    },
+    {
+      "view": "points-records",
+      "file": "points-records.html",
+      "label": "积分记录"
+    },
+    {
+      "view": "trust-lists",
+      "file": "trust-lists.html",
+      "label": "黑白名单"
+    },
+    {
+      "view": "operation-log",
+      "file": "operation-log.html",
+      "label": "操作日志列表"
+    },
+    {
+      "view": "role-management",
+      "file": "role-management.html",
+      "label": "角色管理"
+    },
+    {
+      "view": "admin-users",
+      "file": "admin-users.html",
+      "label": "后台用户管理"
+    }
+  ]
+}

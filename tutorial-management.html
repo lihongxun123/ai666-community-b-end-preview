@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 内容列表</title>
+  <title>AI666 后台 - 教程管理</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -1671,11 +1671,11 @@
       <section class="nav-section" data-nav-section="content">
         <button class="nav-group" type="button" data-nav-module="内容运营"><span>内容运营</span><span>▾</span></button>
         <div class="nav-children">
-          <a class="nav-btn is-active" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
+          <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
           <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
           <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
-          <a class="nav-btn" href="tutorial-management.html" data-nav="tutorial-management" data-page-link="tutorial-management.html">教程管理</a>
+          <a class="nav-btn is-active" href="tutorial-management.html" data-nav="tutorial-management" data-page-link="tutorial-management.html">教程管理</a>
         </div>
       </section>
 
@@ -1718,7 +1718,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">内容列表</h1>
+          <h1 class="top-title" id="globalTitle">教程管理</h1>
         </div>
         <div class="top-meta">
           <button class="avatar-button" type="button" aria-label="登录用户" data-user-avatar="login-user">AI</button>
@@ -1726,53 +1726,26 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="content-list" data-page-contract="content-list" data-operation-page="content-list">
-          <div class="contract-panel" data-page-contract="content-list">内容列表负责 AIGC、Prompt、投稿来源内容、模型、模板和教程等正式内容的统一运营入口；首页爆款作品由内容列表承接，广告位配置只承接首页爆款首卡广告；闪念进入独立管理模块，审核、日志和详情治理进入抽屉或专门页面。</div>
+<section class="view is-active" data-view="tutorial-management" data-page-contract="tutorial-management" data-content-page="tutorial-management">
+          <div class="contract-panel" data-page-contract="tutorial-management" data-tutorial-management="official-tutorials">教程管理承接 C端官方教程列表、分类字段、教程封面、标题摘要和详情正文；列表页只保留运营扫描与上下架排序需要的字段，正文内容进入编辑弹窗维护。</div>
           <div class="page-head">
-            <div class="page-title">
-              <h2>内容列表</h2>
-              <p>管理 AIGC、Prompt、投稿来源、模板、模型和教程内容；闪念单独管理。</p>
-            </div>
-          </div>
-          <div class="stats-row content-list-stats" data-content-list-stats="compact">
-            <div class="stat-card"><div class="stat-label">全部内容</div><div class="stat-value">2,418</div></div>
-            <div class="stat-card"><div class="stat-label">待审核</div><div class="stat-value">86</div></div>
-            <div class="stat-card"><div class="stat-label">已下架</div><div class="stat-value">34</div></div>
-            <div class="stat-card" data-content-stat="home-hot-works" data-stat-source="home-hot-works"><div class="stat-label">爆款作品</div><div class="stat-value">128</div></div>
-          </div>
-          <div class="panel content-list-filter-panel" data-content-list-filter="query">
-            <div class="panel-head">
-              <div class="panel-title">筛选</div>
-              <div class="filter-actions">
-                <button class="btn primary" type="button" data-filter-action="search">搜索</button>
-                <button class="btn" type="button" data-filter-action="reset">重置</button>
-              </div>
-            </div>
-            <div class="panel-body">
-              <div class="filter-grid content-list-filter-grid">
-                <div class="field" data-content-filter="keyword"><label>关键词</label><input class="input" value="提示词"></div>
-                <div class="field" data-content-filter="content-type"><label>内容类型</label><select class="select"><option>全部类型</option><option>短剧漫剧</option><option>文本内容</option><option>图片生成</option><option>视频生成</option><option>Prompt</option></select></div>
-                <div class="field" data-content-filter="publish-state"><label>发布状态</label><select class="select"><option>全部状态</option><option>待审核</option><option>已发布</option><option>未通过</option><option>已下架</option><option>已删除</option></select></div>
-                <div class="field" data-content-filter="source"><label>来源</label><select class="select"><option>全部来源</option><option>轻创作</option><option>投稿 · Prompt 共创计划</option><option>投稿 · AI 生图挑战</option><option>用户发布</option></select></div>
-                <div class="field" data-content-filter="home-hot-state"><label>首页爆款</label><select class="select"><option>全部首页展示</option><option>首页爆款</option><option>非首页爆款</option></select></div>
-                <div class="field" data-content-filter="published-range"><label>发布时间</label><div class="ant-picker-range content-date-range" data-date-range-picker="published-at"><input class="input" value="2026-06-09" aria-label="发布时间开始"><span class="muted small">至</span><input class="input" value="2026-07-09" aria-label="发布时间结束"></div></div>
-              </div>
-            </div>
+            <div class="page-title"><h2>教程管理</h2><p>管理官方教程列表、分类、封面、摘要和前台展示顺序。</p></div>
+            <div class="action-row"><button class="btn primary" type="button" data-open-content-modal="tutorial-create">新增教程</button></div>
           </div>
           <div class="panel">
-            <div class="panel-head"><div class="panel-title">内容列表</div><span class="muted small">宽表格仅在表格内部横向滚动</span></div>
             <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="content-list">
-                <thead>
-                  <tr><th>内容 ID</th><th>标题</th><th>类型</th><th>作者</th><th>状态</th><th>首页爆款</th><th>来源</th><th>发布时间</th><th>操作</th></tr>
-                </thead>
+              <table data-table="official-tutorial-management">
+                <thead><tr><th data-tutorial-field="tutorial-id">教程 ID</th><th data-tutorial-field="cover-image">封面</th><th data-tutorial-field="title">标题</th><th data-tutorial-field="category">分类</th><th data-tutorial-field="summary">摘要</th><th data-tutorial-field="status">状态</th><th data-tutorial-field="sort">排序</th><th data-tutorial-field="action">操作</th></tr></thead>
                 <tbody>
-                  <tr data-content-id="AIGC-1001" data-content-home-hot-state="home-hot" data-content-home-hot-sort="12">
-                    <td class="mono">AIGC-1001</td><td class="wrap"><b>AI 漫剧分镜提示词合集</b><br><span class="muted small">[CONTENT_ID]</span></td><td><span class="tag info">短剧漫剧</span></td><td>拾光创作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag success">已发布</span></td><td data-content-home-hot-cell><span class="tag success">首页爆款 #12</span></td><td>轻创作</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=AIGC-1001" data-content-detail-link="AIGC-1001">详情</a></div></td>
-                  </tr>
-                  <tr data-content-id="PRO-2048" data-content-home-hot-state="none" data-content-home-hot-sort="">
-                    <td class="mono">PRO-2048</td><td class="wrap"><b>Prompt 共创投稿：品牌短视频脚本</b></td><td><span class="tag warning">Prompt</span></td><td>内容作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag warning">待审核</span></td><td data-content-home-hot-cell><span class="tag gray">未设置</span></td><td>投稿 · Prompt 共创计划</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=PRO-2048" data-content-detail-link="PRO-2048">详情</a></div></td>
-                  </tr>
+                  <tr data-tutorial-id="TUT-001"><td class="mono">TUT-001</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/11.png">assets/image_assets/11.png</div></td><td class="wrap">12 分钟完成第一条漫剧分镜</td><td>漫剧生成</td><td class="wrap">从一句创意拆到角色、场景、镜头和封面提示词。</td><td><span class="tag success">展示中</span></td><td>10</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-002"><td class="mono">TUT-002</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/1.png">assets/image_assets/1.png</div></td><td class="wrap">国风角色设定怎么保持一致</td><td>漫剧生成</td><td class="wrap">先锁角色关键词，再补服饰、表情和镜头风格。</td><td><span class="tag success">展示中</span></td><td>20</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-003"><td class="mono">TUT-003</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/17.png">assets/image_assets/17.png</div></td><td class="wrap">一句话变成 9 格分镜</td><td>漫剧生成</td><td class="wrap">把开场冲突、人物动作和画面节奏拆成可生成镜头。</td><td><span class="tag success">展示中</span></td><td>30</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-004"><td class="mono">TUT-004</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/18.png">assets/image_assets/18.png</div></td><td class="wrap">封面主视觉提示词怎么写</td><td>图片生成</td><td class="wrap">从标题、主体、背景和氛围词生成一张可用封面。</td><td><span class="tag success">展示中</span></td><td>40</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-005"><td class="mono">TUT-005</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/4.png">assets/image_assets/4.png</div></td><td class="wrap">角色定妆图如何保持一致</td><td>图片生成</td><td class="wrap">用固定描述、服饰细节和镜头距离稳定角色形象。</td><td><span class="tag success">展示中</span></td><td>50</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-006"><td class="mono">TUT-006</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/2.png">assets/image_assets/2.png</div></td><td class="wrap">场景图从空画面到有故事</td><td>图片生成</td><td class="wrap">用前景、主体和远景关系，让图片更像一个可延展片段。</td><td><span class="tag success">展示中</span></td><td>60</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-007"><td class="mono">TUT-007</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/3.png">assets/image_assets/3.png</div></td><td class="wrap">图生视频的镜头描述怎么写</td><td>视频生成</td><td class="wrap">把主体、运动、景别和转场拆开写，减少返工。</td><td><span class="tag success">展示中</span></td><td>70</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-008"><td class="mono">TUT-008</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/11.png">assets/image_assets/11.png</div></td><td class="wrap">短视频开场 3 秒怎么做</td><td>视频生成</td><td class="wrap">先写主钩入场，镜头推进和第一帧吸引点。</td><td><span class="tag warning">停用</span></td><td>80</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
+                  <tr data-tutorial-id="TUT-009"><td class="mono">TUT-009</td><td><div class="image-thumb" data-tutorial-cover="assets/image_assets/3.png">assets/image_assets/3.png</div></td><td class="wrap">分镜动效预览怎么串起来</td><td>视频生成</td><td class="wrap">把关键帧、运动方向和转场要求写成连续镜头。</td><td><span class="tag success">展示中</span></td><td>90</td><td><button class="btn link" data-open-content-modal="tutorial-edit">编辑</button></td></tr>
                 </tbody>
               </table>
             </div>

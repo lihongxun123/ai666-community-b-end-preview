@@ -1,935 +1,1910 @@
 {
-  "generatedAt": "2026-07-07T03:18:01.206Z",
+  "generatedAt": "2026-07-09T14:11:48.475Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
+  "mode": "multi-page",
   "status": "passed",
   "checks": {
-    "htmlExists": true,
-    "navButtonCount": true,
-    "navClickActivatesExpectedPage": true,
-    "cEndCoverageMatrixComplete": true,
+    "generatedFilesExist": true,
+    "deferredDataDashboardFilesRemoved": true,
+    "hiddenOperationConfigFilesRemoved": true,
+    "taskConfigStandaloneRemoved": true,
+    "featureManagementFileRemoved": true,
+    "submissionManagementFileRemoved": true,
+    "navLinksNavigateToIndependentPages": true,
+    "layoutScrollIsolation": true,
+    "scrollbarChromeHidden": true,
     "reviewWorkbenchUsable": true,
-    "activityTaskPointsLoopUsable": true,
-    "userPointsPermissionLoopUsable": true,
-    "homeSlotWorkbenchUsable": true,
-    "operationFlowScenariosUsable": true,
-    "messageStoreDataReviewUsable": true,
-    "drawerOpensWithMaskedFields": true,
+    "reviewWorkbenchTabsSwitchable": true,
+    "reviewDetailDrawerCarriesActions": true,
+    "homeSlotPageUsable": true,
+    "homeDiamondAreaTabRegistered": true,
+    "homeQuickEntrySlotsUsable": true,
+    "homeQuickEntryEditModalUsable": true,
+    "homeSlotTabsSwitchable": true,
+    "topCampaignNoBackground": true,
+    "operationSlotCreateModalUsable": true,
+    "operationSlotDiamondIconFieldUsable": true,
+    "operationSlotDiamondCreateWritesToDiamondTable": true,
+    "topCampaignEditModalNoBackground": true,
+    "operationSlotEditModalUsable": true,
+    "loginPopupConfigUsable": true,
+    "loginPopupItemCreateModalUsable": true,
+    "loginPopupItemEditModalUsable": true,
+    "contentListRefinementUsable": true,
+    "flashManagementPageUsable": true,
+    "flashDetailRouteUsable": true,
+    "contentDetailRouteUsable": true,
+    "contentDetailActionsDoNotOpenModal": true,
+    "contentDetailTabsSwitchUsable": true,
+    "contentDetailAlternateDataUsable": true,
+    "aigcTemplateConfigUsable": true,
+    "aigcTemplateEditModalUsable": true,
+    "officialTutorialManagementUsable": true,
+    "activityConfigPageUsable": true,
+    "growthActivityEditModalUsable": true,
+    "growthActivityRewardTabFixedHeight": true,
+    "growthActivityRewardRuleInlineEditUsable": true,
+    "growthActivityRewardRuleInlineSaveUsable": true,
+    "growthActivitySevenDayEditModalUsable": true,
+    "growthActivitySevenDayLimitReadonly": true,
+    "growthActivityNewUserTypedRules": true,
+    "growthActivityNewUserLimitReadonly": true,
+    "growthActivityInviteTypedRules": true,
+    "growthActivityInviteRewardNumbersEditable": true,
+    "userDetailRouteOnlyFromUserList": true,
+    "userGovernanceEditModalUsable": true,
     "dangerModalRequiresReason": true,
     "walkthroughPanelOpens": true,
-    "noHorizontalDocumentOverflow": true,
     "noConsoleErrors": true
   },
   "failed": [],
-  "expectedNavCount": 22,
-  "navResults": [
+  "expectedNav": [
     {
       "view": "content-list",
       "group": "内容运营",
       "label": "内容列表",
-      "navLabel": "内容列表",
-      "navGroup": "内容运营",
-      "activeViews": [
-        "content-list"
-      ],
-      "activeNav": "content-list",
-      "title": "内容列表",
-      "breadcrumb": "首页 / 内容运营 / 内容列表",
-      "pageTitle": "内容列表",
-      "contract": "content-list",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "index.html"
     },
     {
       "view": "review-workbench",
       "group": "内容运营",
       "label": "审核工作台",
-      "navLabel": "审核工作台",
-      "navGroup": "内容运营",
-      "activeViews": [
-        "review-workbench"
-      ],
-      "activeNav": "review-workbench",
-      "title": "审核工作台",
-      "breadcrumb": "首页 / 内容运营 / 审核工作台",
-      "pageTitle": "审核工作台",
-      "contract": "review-workbench",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "review-workbench.html"
     },
     {
-      "view": "feature-management",
+      "view": "flash-management",
       "group": "内容运营",
-      "label": "精选管理",
-      "navLabel": "精选管理",
-      "navGroup": "内容运营",
-      "activeViews": [
-        "feature-management"
-      ],
-      "activeNav": "feature-management",
-      "title": "精选管理",
-      "breadcrumb": "首页 / 内容运营 / 精选管理",
-      "pageTitle": "精选管理",
-      "contract": "feature-management",
-      "emptyStateCount": 0,
-      "ok": true
+      "label": "闪念管理",
+      "file": "flash-management.html"
     },
     {
-      "view": "submission-management",
+      "view": "aigc-template-config",
       "group": "内容运营",
-      "label": "投稿管理",
-      "navLabel": "投稿管理",
-      "navGroup": "内容运营",
-      "activeViews": [
-        "submission-management"
-      ],
-      "activeNav": "submission-management",
-      "title": "投稿管理",
-      "breadcrumb": "首页 / 内容运营 / 投稿管理",
-      "pageTitle": "投稿管理",
-      "contract": "submission-management",
-      "emptyStateCount": 0,
-      "ok": true
+      "label": "模板配置",
+      "file": "aigc-template-config.html"
+    },
+    {
+      "view": "tutorial-management",
+      "group": "内容运营",
+      "label": "教程管理",
+      "file": "tutorial-management.html"
     },
     {
       "view": "home-slots",
       "group": "运营配置",
-      "label": "全站运营位",
-      "navLabel": "全站运营位",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "home-slots"
-      ],
-      "activeNav": "home-slots",
-      "title": "全站运营位",
-      "breadcrumb": "首页 / 运营配置 / 全站运营位",
-      "pageTitle": "全站运营位",
-      "contract": "home-slots",
-      "emptyStateCount": 0,
-      "ok": true
+      "label": "广告位配置",
+      "file": "home-slots.html"
+    },
+    {
+      "view": "login-popup-config",
+      "group": "运营配置",
+      "label": "弹窗配置",
+      "file": "login-popup-config.html"
     },
     {
       "view": "activity-config",
       "group": "运营配置",
       "label": "活动配置",
-      "navLabel": "活动配置",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "activity-config"
-      ],
-      "activeNav": "activity-config",
-      "title": "活动配置",
-      "breadcrumb": "首页 / 运营配置 / 活动配置",
-      "pageTitle": "活动配置",
-      "contract": "activity-config",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "task-config",
-      "group": "运营配置",
-      "label": "任务配置",
-      "navLabel": "任务配置",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "task-config"
-      ],
-      "activeNav": "task-config",
-      "title": "任务配置",
-      "breadcrumb": "首页 / 运营配置 / 任务配置",
-      "pageTitle": "任务配置",
-      "contract": "task-config",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "points-rules",
-      "group": "运营配置",
-      "label": "积分规则",
-      "navLabel": "积分规则",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "points-rules"
-      ],
-      "activeNav": "points-rules",
-      "title": "积分规则",
-      "breadcrumb": "首页 / 运营配置 / 积分规则",
-      "pageTitle": "积分规则",
-      "contract": "points-rules",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "message-config",
-      "group": "运营配置",
-      "label": "消息配置",
-      "navLabel": "消息配置",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "message-config"
-      ],
-      "activeNav": "message-config",
-      "title": "消息配置",
-      "breadcrumb": "首页 / 运营配置 / 消息配置",
-      "pageTitle": "消息配置",
-      "contract": "message-config",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "activity-config.html"
     },
     {
       "view": "store-config",
       "group": "运营配置",
       "label": "商城配置",
-      "navLabel": "商城配置",
-      "navGroup": "运营配置",
-      "activeViews": [
-        "store-config"
-      ],
-      "activeNav": "store-config",
-      "title": "商城配置",
-      "breadcrumb": "首页 / 运营配置 / 商城配置",
-      "pageTitle": "商城配置",
-      "contract": "store-config",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "store-config.html"
     },
     {
       "view": "user-list",
       "group": "用户管理",
       "label": "用户列表",
-      "navLabel": "用户列表",
-      "navGroup": "用户管理",
-      "activeViews": [
-        "user-list"
-      ],
-      "activeNav": "user-list",
-      "title": "用户列表",
-      "breadcrumb": "首页 / 用户管理 / 用户列表",
-      "pageTitle": "用户列表",
-      "contract": "user-list",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "user-detail",
-      "group": "用户管理",
-      "label": "用户详情",
-      "navLabel": "用户详情",
-      "navGroup": "用户管理",
-      "activeViews": [
-        "user-detail"
-      ],
-      "activeNav": "user-detail",
-      "title": "用户详情",
-      "breadcrumb": "首页 / 用户管理 / 用户详情",
-      "pageTitle": "用户详情",
-      "contract": "user-detail",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "user-list.html"
     },
     {
       "view": "invite-records",
       "group": "用户管理",
       "label": "邀请记录",
-      "navLabel": "邀请记录",
-      "navGroup": "用户管理",
-      "activeViews": [
-        "invite-records"
-      ],
-      "activeNav": "invite-records",
-      "title": "邀请记录",
-      "breadcrumb": "首页 / 用户管理 / 邀请记录",
-      "pageTitle": "邀请记录",
-      "contract": "invite-records",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "invite-records.html"
     },
     {
       "view": "points-records",
       "group": "用户管理",
       "label": "积分记录",
-      "navLabel": "积分记录",
-      "navGroup": "用户管理",
-      "activeViews": [
-        "points-records"
-      ],
-      "activeNav": "points-records",
-      "title": "积分记录",
-      "breadcrumb": "首页 / 用户管理 / 积分记录",
-      "pageTitle": "积分记录",
-      "contract": "points-records",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "points-records.html"
     },
     {
       "view": "trust-lists",
       "group": "用户管理",
       "label": "黑白名单",
-      "navLabel": "黑白名单",
-      "navGroup": "用户管理",
-      "activeViews": [
-        "trust-lists"
-      ],
-      "activeNav": "trust-lists",
-      "title": "黑白名单",
-      "breadcrumb": "首页 / 用户管理 / 黑白名单",
-      "pageTitle": "黑白名单",
-      "contract": "trust-lists",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "content-data",
-      "group": "数据看板",
-      "label": "内容数据",
-      "navLabel": "内容数据",
-      "navGroup": "数据看板",
-      "activeViews": [
-        "content-data"
-      ],
-      "activeNav": "content-data",
-      "title": "内容数据",
-      "breadcrumb": "首页 / 数据看板 / 内容数据",
-      "pageTitle": "内容数据",
-      "contract": "content-data",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "activity-data",
-      "group": "数据看板",
-      "label": "活动数据",
-      "navLabel": "活动数据",
-      "navGroup": "数据看板",
-      "activeViews": [
-        "activity-data"
-      ],
-      "activeNav": "activity-data",
-      "title": "活动数据",
-      "breadcrumb": "首页 / 数据看板 / 活动数据",
-      "pageTitle": "活动数据",
-      "contract": "activity-data",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "growth-data",
-      "group": "数据看板",
-      "label": "用户增长数据",
-      "navLabel": "用户增长数据",
-      "navGroup": "数据看板",
-      "activeViews": [
-        "growth-data"
-      ],
-      "activeNav": "growth-data",
-      "title": "用户增长数据",
-      "breadcrumb": "首页 / 数据看板 / 用户增长数据",
-      "pageTitle": "用户增长数据",
-      "contract": "growth-data",
-      "emptyStateCount": 0,
-      "ok": true
-    },
-    {
-      "view": "points-data",
-      "group": "数据看板",
-      "label": "积分数据",
-      "navLabel": "积分数据",
-      "navGroup": "数据看板",
-      "activeViews": [
-        "points-data"
-      ],
-      "activeNav": "points-data",
-      "title": "积分数据",
-      "breadcrumb": "首页 / 数据看板 / 积分数据",
-      "pageTitle": "积分数据",
-      "contract": "points-data",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "trust-lists.html"
     },
     {
       "view": "operation-log",
       "group": "操作日志",
       "label": "操作日志列表",
-      "navLabel": "操作日志列表",
-      "navGroup": "操作日志",
-      "activeViews": [
-        "operation-log"
-      ],
-      "activeNav": "operation-log",
-      "title": "操作日志列表",
-      "breadcrumb": "首页 / 操作日志 / 操作日志列表",
-      "pageTitle": "操作日志列表",
-      "contract": "operation-log",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "operation-log.html"
     },
     {
       "view": "role-management",
       "group": "系统设置",
       "label": "角色管理",
-      "navLabel": "角色管理",
-      "navGroup": "系统设置",
-      "activeViews": [
-        "role-management"
-      ],
-      "activeNav": "role-management",
-      "title": "角色管理",
-      "breadcrumb": "首页 / 系统设置 / 角色管理",
-      "pageTitle": "角色管理",
-      "contract": "role-management",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "role-management.html"
     },
     {
       "view": "admin-users",
       "group": "系统设置",
       "label": "后台用户管理",
-      "navLabel": "后台用户管理",
-      "navGroup": "系统设置",
-      "activeViews": [
-        "admin-users"
-      ],
-      "activeNav": "admin-users",
-      "title": "后台用户管理",
-      "breadcrumb": "首页 / 系统设置 / 后台用户管理",
-      "pageTitle": "后台用户管理",
-      "contract": "admin-users",
-      "emptyStateCount": 0,
-      "ok": true
+      "file": "admin-users.html"
     }
   ],
-  "cEndCoverage": {
-    "formalPages": [
-      "index.html",
-      "aigc.html",
-      "aigc-templates.html",
-      "model-plaza.html",
-      "model-detail.html",
-      "flash.html",
-      "tutorial.html",
-      "tutorial-detail.html",
-      "activity-center.html",
-      "campaign-detail.html",
-      "campaign-prompt.html",
-      "prompt-submit.html",
-      "prompt-detail.html",
-      "campaign-new-user.html",
-      "campaign-seven-day.html",
-      "message-center.html",
-      "points-center.html",
-      "invite.html",
-      "login.html",
-      "member-store.html",
-      "user-center.html"
+  "generatedPages": [
+    {
+      "view": "content-list",
+      "group": "内容运营",
+      "label": "内容列表",
+      "file": "index.html"
+    },
+    {
+      "view": "review-workbench",
+      "group": "内容运营",
+      "label": "审核工作台",
+      "file": "review-workbench.html"
+    },
+    {
+      "view": "flash-management",
+      "group": "内容运营",
+      "label": "闪念管理",
+      "file": "flash-management.html"
+    },
+    {
+      "view": "aigc-template-config",
+      "group": "内容运营",
+      "label": "模板配置",
+      "file": "aigc-template-config.html"
+    },
+    {
+      "view": "tutorial-management",
+      "group": "内容运营",
+      "label": "教程管理",
+      "file": "tutorial-management.html"
+    },
+    {
+      "view": "home-slots",
+      "group": "运营配置",
+      "label": "广告位配置",
+      "file": "home-slots.html"
+    },
+    {
+      "view": "login-popup-config",
+      "group": "运营配置",
+      "label": "弹窗配置",
+      "file": "login-popup-config.html"
+    },
+    {
+      "view": "activity-config",
+      "group": "运营配置",
+      "label": "活动配置",
+      "file": "activity-config.html"
+    },
+    {
+      "view": "store-config",
+      "group": "运营配置",
+      "label": "商城配置",
+      "file": "store-config.html"
+    },
+    {
+      "view": "user-list",
+      "group": "用户管理",
+      "label": "用户列表",
+      "file": "user-list.html"
+    },
+    {
+      "view": "invite-records",
+      "group": "用户管理",
+      "label": "邀请记录",
+      "file": "invite-records.html"
+    },
+    {
+      "view": "points-records",
+      "group": "用户管理",
+      "label": "积分记录",
+      "file": "points-records.html"
+    },
+    {
+      "view": "trust-lists",
+      "group": "用户管理",
+      "label": "黑白名单",
+      "file": "trust-lists.html"
+    },
+    {
+      "view": "operation-log",
+      "group": "操作日志",
+      "label": "操作日志列表",
+      "file": "operation-log.html"
+    },
+    {
+      "view": "role-management",
+      "group": "系统设置",
+      "label": "角色管理",
+      "file": "role-management.html"
+    },
+    {
+      "view": "admin-users",
+      "group": "系统设置",
+      "label": "后台用户管理",
+      "file": "admin-users.html"
+    },
+    {
+      "view": "content-detail",
+      "group": "内容运营",
+      "label": "内容详情",
+      "file": "content-detail.html"
+    },
+    {
+      "view": "flash-detail",
+      "group": "内容运营",
+      "label": "闪念详情",
+      "file": "flash-detail.html"
+    },
+    {
+      "view": "user-detail",
+      "group": "用户管理",
+      "label": "用户详情",
+      "file": "user-detail.html"
+    }
+  ],
+  "details": {
+    "navResults": [
+      {
+        "view": "content-list",
+        "group": "内容运营",
+        "label": "内容列表",
+        "file": "index.html",
+        "urlFile": "index.html",
+        "navLabel": "内容列表",
+        "navGroup": "内容运营",
+        "navHref": "index.html",
+        "activeViews": [
+          "content-list"
+        ],
+        "activeNav": "content-list",
+        "title": "内容列表",
+        "pageTitle": "内容列表",
+        "contract": "content-list",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "review-workbench",
+        "group": "内容运营",
+        "label": "审核工作台",
+        "file": "review-workbench.html",
+        "urlFile": "review-workbench.html",
+        "navLabel": "审核工作台",
+        "navGroup": "内容运营",
+        "navHref": "review-workbench.html",
+        "activeViews": [
+          "review-workbench"
+        ],
+        "activeNav": "review-workbench",
+        "title": "审核工作台",
+        "pageTitle": "审核工作台",
+        "contract": "review-workbench",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "flash-management",
+        "group": "内容运营",
+        "label": "闪念管理",
+        "file": "flash-management.html",
+        "urlFile": "flash-management.html",
+        "navLabel": "闪念管理",
+        "navGroup": "内容运营",
+        "navHref": "flash-management.html",
+        "activeViews": [
+          "flash-management"
+        ],
+        "activeNav": "flash-management",
+        "title": "闪念管理",
+        "pageTitle": "闪念管理",
+        "contract": "flash-management",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "aigc-template-config",
+        "group": "内容运营",
+        "label": "模板配置",
+        "file": "aigc-template-config.html",
+        "urlFile": "aigc-template-config.html",
+        "navLabel": "模板配置",
+        "navGroup": "内容运营",
+        "navHref": "aigc-template-config.html",
+        "activeViews": [
+          "aigc-template-config"
+        ],
+        "activeNav": "aigc-template-config",
+        "title": "模板配置",
+        "pageTitle": "模板配置",
+        "contract": "aigc-template-config",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "tutorial-management",
+        "group": "内容运营",
+        "label": "教程管理",
+        "file": "tutorial-management.html",
+        "urlFile": "tutorial-management.html",
+        "navLabel": "教程管理",
+        "navGroup": "内容运营",
+        "navHref": "tutorial-management.html",
+        "activeViews": [
+          "tutorial-management"
+        ],
+        "activeNav": "tutorial-management",
+        "title": "教程管理",
+        "pageTitle": "教程管理",
+        "contract": "tutorial-management",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "home-slots",
+        "group": "运营配置",
+        "label": "广告位配置",
+        "file": "home-slots.html",
+        "urlFile": "home-slots.html",
+        "navLabel": "广告位配置",
+        "navGroup": "运营配置",
+        "navHref": "home-slots.html",
+        "activeViews": [
+          "home-slots"
+        ],
+        "activeNav": "home-slots",
+        "title": "广告位配置",
+        "pageTitle": "广告位配置",
+        "contract": "home-slots",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "login-popup-config",
+        "group": "运营配置",
+        "label": "弹窗配置",
+        "file": "login-popup-config.html",
+        "urlFile": "login-popup-config.html",
+        "navLabel": "弹窗配置",
+        "navGroup": "运营配置",
+        "navHref": "login-popup-config.html",
+        "activeViews": [
+          "login-popup-config"
+        ],
+        "activeNav": "login-popup-config",
+        "title": "弹窗配置",
+        "pageTitle": "弹窗配置",
+        "contract": "login-popup-config",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "activity-config",
+        "group": "运营配置",
+        "label": "活动配置",
+        "file": "activity-config.html",
+        "urlFile": "activity-config.html",
+        "navLabel": "活动配置",
+        "navGroup": "运营配置",
+        "navHref": "activity-config.html",
+        "activeViews": [
+          "activity-config"
+        ],
+        "activeNav": "activity-config",
+        "title": "活动配置",
+        "pageTitle": "活动配置",
+        "contract": "activity-config",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "store-config",
+        "group": "运营配置",
+        "label": "商城配置",
+        "file": "store-config.html",
+        "urlFile": "store-config.html",
+        "navLabel": "商城配置",
+        "navGroup": "运营配置",
+        "navHref": "store-config.html",
+        "activeViews": [
+          "store-config"
+        ],
+        "activeNav": "store-config",
+        "title": "商城配置",
+        "pageTitle": "商城配置",
+        "contract": "store-config",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "user-list",
+        "group": "用户管理",
+        "label": "用户列表",
+        "file": "user-list.html",
+        "urlFile": "user-list.html",
+        "navLabel": "用户列表",
+        "navGroup": "用户管理",
+        "navHref": "user-list.html",
+        "activeViews": [
+          "user-list"
+        ],
+        "activeNav": "user-list",
+        "title": "用户列表",
+        "pageTitle": "用户列表",
+        "contract": "user-list",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "invite-records",
+        "group": "用户管理",
+        "label": "邀请记录",
+        "file": "invite-records.html",
+        "urlFile": "invite-records.html",
+        "navLabel": "邀请记录",
+        "navGroup": "用户管理",
+        "navHref": "invite-records.html",
+        "activeViews": [
+          "invite-records"
+        ],
+        "activeNav": "invite-records",
+        "title": "邀请记录",
+        "pageTitle": "邀请记录",
+        "contract": "invite-records",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "points-records",
+        "group": "用户管理",
+        "label": "积分记录",
+        "file": "points-records.html",
+        "urlFile": "points-records.html",
+        "navLabel": "积分记录",
+        "navGroup": "用户管理",
+        "navHref": "points-records.html",
+        "activeViews": [
+          "points-records"
+        ],
+        "activeNav": "points-records",
+        "title": "积分记录",
+        "pageTitle": "积分记录",
+        "contract": "points-records",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "trust-lists",
+        "group": "用户管理",
+        "label": "黑白名单",
+        "file": "trust-lists.html",
+        "urlFile": "trust-lists.html",
+        "navLabel": "黑白名单",
+        "navGroup": "用户管理",
+        "navHref": "trust-lists.html",
+        "activeViews": [
+          "trust-lists"
+        ],
+        "activeNav": "trust-lists",
+        "title": "黑白名单",
+        "pageTitle": "黑白名单",
+        "contract": "trust-lists",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "operation-log",
+        "group": "操作日志",
+        "label": "操作日志列表",
+        "file": "operation-log.html",
+        "urlFile": "operation-log.html",
+        "navLabel": "操作日志列表",
+        "navGroup": "操作日志",
+        "navHref": "operation-log.html",
+        "activeViews": [
+          "operation-log"
+        ],
+        "activeNav": "operation-log",
+        "title": "操作日志列表",
+        "pageTitle": "操作日志列表",
+        "contract": "operation-log",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "role-management",
+        "group": "系统设置",
+        "label": "角色管理",
+        "file": "role-management.html",
+        "urlFile": "role-management.html",
+        "navLabel": "角色管理",
+        "navGroup": "系统设置",
+        "navHref": "role-management.html",
+        "activeViews": [
+          "role-management"
+        ],
+        "activeNav": "role-management",
+        "title": "角色管理",
+        "pageTitle": "角色管理",
+        "contract": "role-management",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "admin-users",
+        "group": "系统设置",
+        "label": "后台用户管理",
+        "file": "admin-users.html",
+        "urlFile": "admin-users.html",
+        "navLabel": "后台用户管理",
+        "navGroup": "系统设置",
+        "navHref": "admin-users.html",
+        "activeViews": [
+          "admin-users"
+        ],
+        "activeNav": "admin-users",
+        "title": "后台用户管理",
+        "pageTitle": "后台用户管理",
+        "contract": "admin-users",
+        "viewCount": 1,
+        "navLinkCount": 16,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      }
     ],
-    "standalonePages": [
-      "content-detail-modals.html",
-      "campaign-ops.html"
+    "layoutScrollIsolation": {
+      "before": {
+        "documentOverflowY": 0,
+        "windowScrollY": 0,
+        "topbarTop": 0,
+        "brandTop": 14,
+        "sidebarClientHeight": 900,
+        "sidebarScrollHeight": 900,
+        "contentClientHeight": 836,
+        "viewportHeight": 900
+      },
+      "afterWindowScroll": {
+        "windowScrollY": 0,
+        "topbarTop": 0
+      },
+      "afterSidebarScroll": {
+        "sidebarScrollTop": 0,
+        "windowScrollY": 0,
+        "topbarTop": 0,
+        "brandTop": 14
+      }
+    },
+    "scrollbarChrome": [
+      {
+        "selector": ".sidebar",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      },
+      {
+        "selector": ".content",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      },
+      {
+        "selector": ".table-wrap",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": true
+      },
+      {
+        "selector": ".modal-body",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      }
     ],
-    "featureGroups": [
-      "content-consumption",
-      "content-production",
-      "operation-slots",
-      "activity-task-points",
-      "message-notification",
-      "store-entitlement",
-      "user-account",
-      "data-review"
+    "reviewWorkbench": {
+      "queueCount": 4,
+      "fieldCount": 14,
+      "outcomeCount": 4,
+      "guardCount": 4,
+      "tabCount": 4,
+      "activeTab": "content",
+      "selectedTab": "content",
+      "allRowQueues": [
+        "submission",
+        "comment",
+        "profile",
+        "content"
+      ],
+      "visibleRowQueues": [
+        "content"
+      ],
+      "rowActionGroups": [
+        [
+          "查看详情"
+        ],
+        [
+          "查看详情"
+        ],
+        [
+          "查看详情"
+        ],
+        [
+          "查看详情"
+        ]
+      ],
+      "rowInlineOutcomeCount": 0,
+      "rowDangerActionCount": 0,
+      "batchActionCount": 0,
+      "headerNextButtonCount": 0
+    },
+    "reviewWorkbenchTabSwitches": [
+      {
+        "expectedQueue": "comment",
+        "queueCount": 4,
+        "fieldCount": 14,
+        "outcomeCount": 4,
+        "guardCount": 4,
+        "tabCount": 4,
+        "activeTab": "comment",
+        "selectedTab": "comment",
+        "allRowQueues": [
+          "submission",
+          "comment",
+          "profile",
+          "content"
+        ],
+        "visibleRowQueues": [
+          "comment"
+        ],
+        "rowActionGroups": [
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ]
+        ],
+        "rowInlineOutcomeCount": 0,
+        "rowDangerActionCount": 0,
+        "batchActionCount": 0,
+        "headerNextButtonCount": 0
+      },
+      {
+        "expectedQueue": "submission",
+        "queueCount": 4,
+        "fieldCount": 14,
+        "outcomeCount": 4,
+        "guardCount": 4,
+        "tabCount": 4,
+        "activeTab": "submission",
+        "selectedTab": "submission",
+        "allRowQueues": [
+          "submission",
+          "comment",
+          "profile",
+          "content"
+        ],
+        "visibleRowQueues": [
+          "submission"
+        ],
+        "rowActionGroups": [
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ]
+        ],
+        "rowInlineOutcomeCount": 0,
+        "rowDangerActionCount": 0,
+        "batchActionCount": 0,
+        "headerNextButtonCount": 0
+      },
+      {
+        "expectedQueue": "profile",
+        "queueCount": 4,
+        "fieldCount": 14,
+        "outcomeCount": 4,
+        "guardCount": 4,
+        "tabCount": 4,
+        "activeTab": "profile",
+        "selectedTab": "profile",
+        "allRowQueues": [
+          "submission",
+          "comment",
+          "profile",
+          "content"
+        ],
+        "visibleRowQueues": [
+          "profile"
+        ],
+        "rowActionGroups": [
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ]
+        ],
+        "rowInlineOutcomeCount": 0,
+        "rowDangerActionCount": 0,
+        "batchActionCount": 0,
+        "headerNextButtonCount": 0
+      },
+      {
+        "expectedQueue": "content",
+        "queueCount": 4,
+        "fieldCount": 14,
+        "outcomeCount": 4,
+        "guardCount": 4,
+        "tabCount": 4,
+        "activeTab": "content",
+        "selectedTab": "content",
+        "allRowQueues": [
+          "submission",
+          "comment",
+          "profile",
+          "content"
+        ],
+        "visibleRowQueues": [
+          "content"
+        ],
+        "rowActionGroups": [
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ],
+          [
+            "查看详情"
+          ]
+        ],
+        "rowInlineOutcomeCount": 0,
+        "rowDangerActionCount": 0,
+        "batchActionCount": 0,
+        "headerNextButtonCount": 0
+      }
     ],
-    "ok": true
-  },
-  "reviewWorkbench": {
-    "hasWorkbench": true,
-    "queues": [
-      "content",
-      "comment",
-      "submission",
-      "profile",
-      "submission",
-      "comment",
-      "profile",
-      "content"
-    ],
-    "filters": [
-      "object-type",
-      "status",
-      "risk-type",
-      "sla",
-      "assignee"
-    ],
-    "fields": [
-      "audit-id",
-      "object-type",
-      "summary",
-      "submitter",
-      "risk-source",
-      "risk-summary",
-      "status",
-      "sla",
-      "assignee",
-      "user-reason",
-      "internal-note",
-      "second-review",
-      "submitted-at",
-      "action"
-    ],
-    "outcomes": [
-      "approve",
-      "reject",
-      "second-review",
-      "return-edit",
-      "approve",
-      "reject",
-      "second-review",
-      "return-edit"
-    ],
-    "states": [
-      "pending",
-      "second-review",
-      "rejected",
-      "approved",
-      "pending",
-      "pending",
-      "rejected",
-      "approved"
-    ],
-    "guards": [
-      "user-readable-reason-required",
-      "internal-note-separate",
-      "sensitive-fields-masked",
-      "operation-log-required"
-    ],
-    "ok": true
-  },
-  "activityTaskPointsLoop": {
-    "loopPages": [
-      "activity-config",
-      "task-config",
-      "points-rules"
-    ],
-    "workflowSteps": [
-      "activity-rule",
-      "task-binding",
-      "points-reward",
-      "user-visible-copy",
-      "status-change-log"
-    ],
-    "activityFields": [
-      "activity-id",
-      "activity-name",
-      "activity-type",
-      "c-end-entry",
-      "rule-summary",
-      "linked-task",
-      "linked-points-rule",
-      "reward-summary",
-      "status",
-      "validity",
-      "owner",
-      "change-reason",
-      "action"
-    ],
-    "taskFields": [
-      "task-id",
-      "task-name",
-      "action-condition",
-      "display-entry",
-      "linked-activity",
-      "points-rule",
-      "daily-limit",
-      "status",
-      "validity",
-      "sort",
-      "action"
-    ],
-    "pointsRuleFields": [
-      "rule-id",
-      "source",
-      "trigger",
-      "points-amount",
-      "daily-limit",
-      "linked-activity",
-      "linked-task",
-      "manual-state",
-      "status",
-      "validity",
-      "owner",
-      "action"
-    ],
-    "states": [
-      "active",
-      "draft",
-      "exception",
-      "active",
-      "draft",
-      "ended",
-      "active",
-      "paused",
-      "exception",
-      "active",
-      "draft",
-      "exception"
-    ],
-    "guards": [
-      "user-readable-reward",
-      "no-auto-reward",
-      "rule-change-reason-required",
-      "abuse-risk-manual-review",
-      "operation-log-required"
-    ],
-    "ok": true
-  },
-  "userPointsPermissionLoop": {
-    "loopPages": [
-      "points-records",
-      "operation-log",
-      "role-management",
-      "admin-users"
-    ],
-    "workflowSteps": [
-      "points-record-review",
-      "manual-adjustment",
-      "log-immutability",
-      "sensitive-access-block",
-      "permission-change"
-    ],
-    "pointsRecordFields": [
-      "record-id",
-      "user",
-      "source",
-      "rule",
-      "change",
-      "accounting-state",
-      "review-state",
-      "linked-object",
-      "log-id",
-      "operator",
-      "time",
-      "action"
-    ],
-    "permissionLogFields": [
-      "log-id",
-      "object",
-      "action",
-      "before",
-      "after",
-      "operator",
-      "reason",
-      "time",
-      "risk-level",
-      "review-state",
-      "source-page"
-    ],
-    "roleFields": [
-      "role-id",
-      "role-name",
-      "menu-scope",
-      "action-scope",
-      "data-scope",
-      "approval-state",
-      "status",
-      "account-count",
-      "last-operator",
-      "action"
-    ],
-    "adminUserFields": [
-      "admin-id",
-      "nickname",
-      "role",
-      "account-state",
-      "permission-change",
-      "last-login",
-      "contact",
-      "review-state",
-      "last-operator",
-      "action"
-    ],
-    "states": [
-      "normal",
-      "pending-review",
-      "normal",
-      "adjusted",
-      "revoked",
-      "pending-review",
-      "permission-reclaimed",
-      "normal",
-      "adjusted",
-      "permission-granted",
-      "blocked",
-      "permission-granted",
-      "pending-review",
-      "permission-granted",
-      "normal",
-      "permission-reclaimed",
-      "normal",
-      "pending-review",
-      "blocked",
-      "normal",
-      "normal",
-      "blocked"
-    ],
-    "guards": [
-      "points-adjust-reason-required",
-      "no-sensitive-plain-text",
-      "second-review-required",
-      "log-immutable",
-      "permission-change-reason-required",
-      "least-privilege"
-    ],
-    "ok": true
-  },
-  "homeSlotWorkbench": {
-    "hasWorkbench": true,
-    "filters": [
-      "page",
-      "placement",
-      "status",
-      "target-type",
-      "validity"
-    ],
-    "fields": [
-      "ad-label",
-      "title",
-      "benefit",
-      "target",
-      "slot-id",
-      "placement",
-      "slot-type",
-      "ad-label",
-      "title",
-      "benefit",
-      "target",
-      "material-state",
-      "status",
-      "sort",
-      "validity",
-      "owner",
-      "last-updated",
-      "preview"
-    ],
-    "states": [
-      "enabled",
-      "draft",
-      "scheduled",
-      "blocked",
-      "enabled",
-      "enabled",
-      "draft",
-      "scheduled",
-      "enabled",
-      "enabled",
-      "draft",
-      "blocked"
-    ],
-    "guards": [
-      "visible-fields-only",
-      "no-internal-ids",
-      "no-internal-metrics",
-      "operation-log-required"
-    ],
-    "previewSource": "home-slots",
-    "ok": true
-  },
-  "operationFlow": {
-    "hasFlow": true,
-    "pages": [
-      "content-list",
-      "review-workbench",
-      "home-slots",
-      "points-records",
-      "operation-log",
-      "role-management"
-    ],
-    "batchPages": [
-      "content-list",
-      "review-workbench",
-      "home-slots",
-      "points-records",
-      "operation-log",
-      "role-management"
-    ],
-    "batchActions": [
-      "select-visible",
-      "batch-export-masked",
-      "batch-write-log",
-      "batch-status-change",
-      "select-visible",
-      "batch-assign",
-      "batch-write-log",
-      "select-visible",
-      "batch-export-masked",
-      "batch-status-change",
-      "batch-write-log",
-      "select-visible",
-      "batch-export-masked",
-      "batch-write-log",
-      "batch-status-change",
-      "select-visible",
-      "batch-export-masked",
-      "batch-write-log",
-      "select-visible",
-      "batch-assign",
-      "batch-export-masked",
-      "batch-status-change"
-    ],
-    "exceptionStates": [
-      "send-failed",
-      "pending-review",
-      "material-blocked",
-      "target-invalid",
-      "send-failed",
-      "points-risk",
-      "permission-risk"
-    ],
-    "guards": [
-      "masked-export-only",
-      "batch-reason-required",
-      "danger-confirm-required",
-      "drawer-readonly-first",
-      "exception-owner-required",
-      "single-object-review"
-    ],
-    "ok": true
-  },
-  "messageStoreDataReview": {
-    "pages": [
-      "message-config",
-      "store-config",
-      "content-data",
-      "activity-data",
-      "growth-data",
-      "points-data"
-    ],
-    "hasMessageWorkbench": true,
-    "hasStoreWorkbench": true,
-    "messageFields": [
-      "message-id",
-      "title",
-      "type",
-      "target",
-      "status",
-      "audience",
-      "send-window",
-      "fallback",
-      "recall-reason",
-      "owner",
-      "action"
-    ],
-    "storeFields": [
-      "sku-id",
-      "name",
-      "benefit",
-      "points-cost",
-      "display-state",
-      "validity",
-      "exchange-state",
-      "exception-summary",
-      "owner",
-      "action"
-    ],
-    "workflowSteps": [
-      "metric-definition",
-      "source-attribution",
-      "exclusion-rule",
-      "insight-decision",
-      "follow-up-action",
-      "review-log"
-    ],
-    "dataFields": [
-      "metric",
-      "definition",
-      "source",
-      "today",
-      "trend",
-      "exclusion",
-      "insight",
-      "owner",
-      "next-action",
-      "metric",
-      "definition",
-      "source",
-      "today",
-      "trend",
-      "exclusion",
-      "insight",
-      "owner",
-      "next-action",
-      "metric",
-      "definition",
-      "source",
-      "today",
-      "trend",
-      "exclusion",
-      "insight",
-      "owner",
-      "next-action",
-      "metric",
-      "definition",
-      "source",
-      "today",
-      "trend",
-      "exclusion",
-      "insight",
-      "owner",
-      "next-action"
-    ],
-    "states": [
-      "normal",
-      "watching",
-      "exception",
-      "resolved",
-      "normal",
-      "watching",
-      "exception",
-      "normal",
-      "watching",
-      "exception",
-      "resolved",
-      "normal",
-      "watching",
-      "exception",
-      "normal",
-      "watching",
-      "normal",
-      "watching",
-      "normal",
-      "watching",
-      "normal",
-      "exception",
-      "watching",
-      "normal",
-      "normal",
-      "exception",
-      "normal",
-      "exception"
-    ],
-    "guards": [
-      "no-auto-send",
-      "send-recall-reason-required",
-      "no-payment-settlement",
-      "no-card-code-inventory",
-      "data-source-labeled",
-      "test-data-excluded",
-      "no-bi-overbuild"
-    ],
-    "ok": true
-  },
-  "drawerState": {
-    "open": true,
-    "title": "运营位预览",
-    "fields": [
-      "object-summary",
-      "status-history",
-      "linked-records",
-      "risk-and-reason",
-      "operation-history"
-    ],
-    "hasRequiredFields": true,
-    "bodyIncludesMaskedFields": true
-  },
-  "modalState": {
-    "open": true,
-    "hasReasonInput": true,
-    "hasImpactCopy": true
+    "reviewDetailDrawer": {
+      "open": true,
+      "title": "审核详情",
+      "hasReviewActionsPanel": true,
+      "actionLabels": [
+        "通过",
+        "拒绝",
+        "转复核",
+        "退回修改"
+      ],
+      "actions": [
+        {
+          "action": "approve",
+          "label": "通过",
+          "requiresConfirm": "true",
+          "requiresReason": "true"
+        },
+        {
+          "action": "reject",
+          "label": "拒绝",
+          "requiresConfirm": "true",
+          "requiresReason": "true"
+        },
+        {
+          "action": "second-review",
+          "label": "转复核",
+          "requiresConfirm": "true",
+          "requiresReason": "true"
+        },
+        {
+          "action": "return-edit",
+          "label": "退回修改",
+          "requiresConfirm": "true",
+          "requiresReason": "true"
+        }
+      ]
+    },
+    "homeSlotPage": {
+      "filterCount": 0,
+      "fieldCount": 7,
+      "fieldKeys": [
+        "title",
+        "description",
+        "jump-link",
+        "background-image",
+        "status",
+        "sort",
+        "action"
+      ],
+      "headerLabels": [
+        "标题",
+        "描述",
+        "跳转链接",
+        "背景图片",
+        "状态",
+        "排序",
+        "操作"
+      ],
+      "jumpLinkCellCount": 10,
+      "jumpLinkLabels": [
+        "./activity-center.html",
+        "./campaign-prompt.html",
+        "./campaign-seven-day.html",
+        "./model-plaza.html",
+        "./campaign-prompt.html",
+        "./campaign-detail.html",
+        "./model-plaza.html",
+        "./model-plaza.html",
+        "./model-plaza.html",
+        "./campaign-seven-day.html"
+      ],
+      "backgroundImageCount": 9,
+      "backgroundTagCount": 0,
+      "noBackgroundRowCount": 1,
+      "statusLabels": [
+        "启用",
+        "启用",
+        "停用",
+        "启用",
+        "启用",
+        "启用",
+        "启用",
+        "启用",
+        "启用",
+        "停用"
+      ],
+      "rowCount": 10,
+      "visibleRowCount": 3,
+      "hiddenRowCount": 7,
+      "tabCount": 7,
+      "hasAllTab": false,
+      "hasHomeFeedTab": false,
+      "bannerGroupCount": 0,
+      "bannerItemCount": 6,
+      "hotFirstCardCount": 1,
+      "homeFeedCardCount": 0,
+      "removedWrongSlotTypeCount": 0,
+      "slotTypes": [
+        "home-banner",
+        "hot-first-card",
+        "top-campaign",
+        "flash-hero-ad",
+        "flash-right-ad",
+        "model-hero"
+      ],
+      "homeSlotBatchBarCount": 0,
+      "navLinkCount": 16
+    },
+    "homeDiamondAreaTabInitial": {
+      "tabs": [
+        {
+          "key": "home-banner",
+          "label": "首页 Banner",
+          "active": true
+        },
+        {
+          "key": "home-diamond-area",
+          "label": "首页金刚区",
+          "active": false
+        },
+        {
+          "key": "hot-first-card",
+          "label": "爆款首卡广告",
+          "active": false
+        },
+        {
+          "key": "top-campaign",
+          "label": "全站顶部活动条",
+          "active": false
+        },
+        {
+          "key": "flash-hero-ad",
+          "label": "闪念首屏广告",
+          "active": false
+        },
+        {
+          "key": "flash-right-ad",
+          "label": "闪念右侧广告",
+          "active": false
+        },
+        {
+          "key": "model-hero",
+          "label": "模型页 Hero",
+          "active": false
+        }
+      ],
+      "bannerIndex": 0,
+      "diamondIndex": 1,
+      "diamondLabel": "首页金刚区",
+      "operationPanelHidden": false,
+      "diamondPanelExists": true,
+      "diamondPanelHidden": true,
+      "quickEntryCopyCount": 0
+    },
+    "homeQuickEntrySlots": {
+      "activeTab": "home-diamond-area",
+      "panelExists": true,
+      "panelHidden": false,
+      "operationPanelHidden": true,
+      "operationPanelsVisibleCount": 0,
+      "visibleOperationTableHeaderCount": 0,
+      "panelHeadCount": 0,
+      "rowCount": 4,
+      "fieldKeys": [
+        "title",
+        "description",
+        "jump-link",
+        "background-image",
+        "icon",
+        "status",
+        "sort",
+        "action"
+      ],
+      "titles": [
+        "漫剧制作",
+        "一句话生成",
+        "模型体验季",
+        "镜像站"
+      ],
+      "links": [
+        "./aigc.html#quick-create",
+        "./aigc.html#quick-create",
+        "./model-plaza.html",
+        "./member-store.html"
+      ],
+      "backgroundCount": 4,
+      "iconCount": 4,
+      "statusLabels": [
+        "启用",
+        "启用",
+        "启用",
+        "启用"
+      ]
+    },
+    "homeQuickEntryEditModal": {
+      "open": true,
+      "mode": "edit",
+      "fieldCount": 8,
+      "fields": [
+        "quick-entry-id",
+        "title",
+        "description",
+        "jump-link",
+        "background-image",
+        "icon",
+        "status",
+        "sort"
+      ],
+      "title": "漫剧制作",
+      "link": "./aigc.html#quick-create",
+      "icon": "plus",
+      "bgLabel": "quick-entry-comic.webp",
+      "statusType": "checkbox",
+      "statusLabel": "启用"
+    },
+    "homeSlotTabSwitch": {
+      "activeTab": "hot-first-card",
+      "visibleSlotTypes": [
+        "hot-first-card"
+      ],
+      "visibleConfigIds": [
+        "HOT-FIRST-001"
+      ],
+      "focusedSlotTypes": [
+        "hot-first-card"
+      ],
+      "focusedConfigIds": [
+        "HOT-FIRST-001"
+      ],
+      "hiddenRowCount": 9
+    },
+    "topCampaignNoBackground": {
+      "activeTab": "top-campaign",
+      "visibleHeaders": [
+        "标题",
+        "描述",
+        "跳转链接",
+        "状态",
+        "排序",
+        "操作"
+      ],
+      "visibleRowCount": 1,
+      "noBackgroundAttr": "true",
+      "visibleImageCount": 0
+    },
+    "operationSlotCreateModal": {
+      "open": true,
+      "mode": "create",
+      "fieldCount": 8,
+      "fields": [
+        "placement",
+        "title",
+        "benefit",
+        "jump-link",
+        "material-state",
+        "icon",
+        "status",
+        "sort"
+      ],
+      "placementOptions": [
+        "home-banner",
+        "home-diamond-area",
+        "hot-first-card",
+        "top-campaign",
+        "flash-hero-ad",
+        "flash-right-ad",
+        "model-hero"
+      ],
+      "placement": "top-campaign",
+      "uploadExists": true,
+      "uploadVisible": false,
+      "iconFieldExists": true,
+      "iconFieldVisible": false,
+      "jumpLinkPlaceholder": "填写 C端页面链接，例如 ./activity-center.html",
+      "statusType": "checkbox"
+    },
+    "operationSlotCreateDiamondModal": {
+      "placement": "home-diamond-area",
+      "uploadVisible": true,
+      "iconFieldExists": true,
+      "iconFieldVisible": true,
+      "iconPlaceholder": "plus / image / cube / window"
+    },
+    "operationSlotDiamondCreateResult": {
+      "activeTab": "home-diamond-area",
+      "rowExists": true,
+      "icon": "sparkles",
+      "link": "./aigc.html#test-entry",
+      "bg": "quick-entry-test.webp",
+      "status": "启用",
+      "rowCount": 5
+    },
+    "topCampaignEditModal": {
+      "open": true,
+      "placement": "top-campaign",
+      "image": "未选择文件",
+      "uploadVisible": false
+    },
+    "operationSlotEditModal": {
+      "open": true,
+      "mode": "edit",
+      "title": "编辑广告位",
+      "placement": "home-banner",
+      "jumpLink": "./activity-center.html",
+      "image": "home-banner-01.webp",
+      "uploadVisible": true,
+      "sortFieldIndex": 7,
+      "statusLabel": "启用"
+    },
+    "loginPopupConfig": {
+      "popupFieldCount": 2,
+      "itemRowCount": 5,
+      "itemFieldCount": 9,
+      "previewComponentCount": 0,
+      "statRowCount": 0,
+      "filterGridCount": 0
+    },
+    "loginPopupItemCreateModal": {
+      "open": true,
+      "mode": "create",
+      "fieldCount": 8,
+      "fields": [
+        "item-id",
+        "left-title",
+        "left-description",
+        "detail-bg-image",
+        "button-copy",
+        "button-link",
+        "sort",
+        "status"
+      ],
+      "uploadExists": true,
+      "statusType": "checkbox",
+      "previewRemoved": true
+    },
+    "loginPopupItemEditModal": {
+      "open": true,
+      "mode": "edit",
+      "title": "新手任务",
+      "reward": "110 积分",
+      "image": "assets/image_assets/18.png",
+      "button": "查看新手任务",
+      "link": "./campaign-new-user.html",
+      "statusLabel": "上架",
+      "previewRemoved": true
+    },
+    "contentListRefinement": {
+      "topActionTexts": [],
+      "tableHeaders": [
+        "内容 ID",
+        "标题",
+        "类型",
+        "作者",
+        "状态",
+        "首页爆款",
+        "来源",
+        "发布时间",
+        "操作"
+      ],
+      "hasSearchAction": true,
+      "hasResetAction": true,
+      "statCards": [
+        {
+          "label": "全部内容",
+          "value": "2,418",
+          "stat": ""
+        },
+        {
+          "label": "待审核",
+          "value": "86",
+          "stat": ""
+        },
+        {
+          "label": "已下架",
+          "value": "34",
+          "stat": ""
+        },
+        {
+          "label": "爆款作品",
+          "value": "128",
+          "stat": "home-hot-works"
+        }
+      ],
+      "typeOptions": [
+        "全部类型",
+        "短剧漫剧",
+        "文本内容",
+        "图片生成",
+        "视频生成",
+        "Prompt"
+      ],
+      "statusOptions": [
+        "全部状态",
+        "待审核",
+        "已发布",
+        "未通过",
+        "已下架",
+        "已删除"
+      ],
+      "sourceOptions": [
+        "全部来源",
+        "轻创作",
+        "投稿 · Prompt 共创计划",
+        "投稿 · AI 生图挑战",
+        "用户发布"
+      ],
+      "homeHotOptions": [
+        "全部首页展示",
+        "首页爆款",
+        "非首页爆款"
+      ],
+      "hasBatchPanel": false,
+      "rowIds": [
+        "AIGC-1001",
+        "PRO-2048"
+      ],
+      "rowTypeLabels": [
+        "短剧漫剧",
+        "Prompt"
+      ],
+      "homeHotStates": [
+        "home-hot",
+        "none"
+      ],
+      "homeHotSorts": [
+        "12",
+        ""
+      ],
+      "rowCellCounts": [
+        9,
+        9
+      ],
+      "detailLinkCount": 2,
+      "processButtonCount": 0,
+      "actionTexts": [
+        "详情",
+        "详情"
+      ],
+      "dateRangeInputCount": 2,
+      "statCardHeight": 55,
+      "statColumnCount": 4
+    },
+    "flashManagementPage": {
+      "activeTitle": "闪念管理",
+      "pageTitle": "闪念管理",
+      "statPanelExists": false,
+      "statCount": 0,
+      "filterKeys": [
+        "keyword",
+        "publish-state",
+        "published-range"
+      ],
+      "dateRangeInputCount": 2,
+      "columns": [
+        "闪念 ID",
+        "正文摘要",
+        "媒体",
+        "作者",
+        "互动",
+        "发布状态",
+        "发布时间",
+        "操作"
+      ],
+      "rowIds": [
+        "FLA-0308",
+        "FLA-0311",
+        "FLA-0312"
+      ],
+      "actionTexts": [
+        "详情",
+        "详情",
+        "详情"
+      ],
+      "detailLinks": [
+        "flash-detail.html?id=FLA-0308",
+        "flash-detail.html?id=FLA-0311",
+        "flash-detail.html?id=FLA-0312"
+      ],
+      "modalActionCount": 0,
+      "bodyExcerptCount": 3,
+      "mediaTypeCount": 6,
+      "topicCount": 0,
+      "interactionCount": 6,
+      "actionCount": 3,
+      "hasBatchPanel": false
+    },
+    "flashDetailRoute": {
+      "urlFile": "flash-detail.html",
+      "urlSearch": "?id=FLA-0308",
+      "activeView": "flash-detail",
+      "activeNav": "flash-management",
+      "title": "闪念详情",
+      "pageTitle": "闪念详情",
+      "source": "c-end-flash-card",
+      "cardCount": 1,
+      "flashId": "FLA-0308",
+      "bodyText": "同一输入在不同模型下的成本、速度和结果稳定性差异较大，建议在发布前补充适用场景、输入样例和结果截图，避免只写结论。",
+      "mediaCount": 1,
+      "metricCount": 4,
+      "commentCount": 2,
+      "hasBackLink": true,
+      "modalOpen": false,
+      "flashEditTriggerCount": 0,
+      "titleFieldCount": 0,
+      "userReasonFieldCount": 0,
+      "noteFieldCount": 0,
+      "appendNoteActionCount": 0,
+      "actionLabels": [
+        "恢复展示",
+        "维持下架"
+      ],
+      "hasRemovedSideCopy": false,
+      "hasRecommendedCopy": false,
+      "cEndActionCount": 0,
+      "horizontalOverflow": 0
+    },
+    "contentDetailRoute": {
+      "urlFile": "content-detail.html",
+      "activeView": "content-detail",
+      "activeNav": "content-list",
+      "title": "内容详情",
+      "pageTitle": "内容详情",
+      "source": "c-end-modal",
+      "readonlyPreview": "readonly",
+      "cEndCardCount": 1,
+      "cEndDialogReused": true,
+      "mediaExists": true,
+      "mediaSrc": "../../assets/image_assets/11.png",
+      "tagCount": 4,
+      "promptPanelExists": true,
+      "readonlyMetricCount": 3,
+      "cEndActionCount": 0,
+      "commentComposerCount": 0,
+      "commentListCount": 2,
+      "hasFeatureMeta": false,
+      "hasRemovedDetailCopy": false,
+      "hasBackLink": true,
+      "pageHeadActionCount": 0,
+      "actionLabels": [
+        "下架内容",
+        "设为首页爆款"
+      ],
+      "primaryActionLabels": [
+        "设为首页爆款"
+      ],
+      "modalActionCount": 0,
+      "remixButtonCount": 0,
+      "horizontalOverflow": 0
+    },
+    "contentDetailActionStates": {
+      "afterTakeDown": {
+        "modalOpen": false,
+        "opensContentModal": ""
+      },
+      "afterSetHomeHot": {
+        "modalOpen": false,
+        "opensContentModal": ""
+      }
+    },
+    "contentDetailInitialTabState": {
+      "promptTabCount": 1,
+      "commentsTabCount": 1,
+      "promptSelected": "true",
+      "commentsSelected": "false",
+      "promptHidden": false,
+      "commentsHidden": true,
+      "visibleCommentCount": 0
+    },
+    "contentDetailCommentTabState": {
+      "promptTabCount": 1,
+      "commentsTabCount": 1,
+      "promptSelected": "false",
+      "commentsSelected": "true",
+      "promptHidden": true,
+      "commentsHidden": false,
+      "visibleCommentCount": 2
+    },
+    "contentDetailPromptTabState": {
+      "promptTabCount": 1,
+      "commentsTabCount": 1,
+      "promptSelected": "true",
+      "commentsSelected": "false",
+      "promptHidden": false,
+      "commentsHidden": true,
+      "visibleCommentCount": 0
+    },
+    "contentDetailAlternateRoute": {
+      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/content-detail.html?id=PRO-2048",
+      "title": "Prompt 共创投稿：品牌短视频脚本",
+      "id": "PRO-2048",
+      "tags": [
+        "Prompt",
+        "短视频脚本",
+        "投稿",
+        "Prompt 共创计划",
+        "待审核"
+      ],
+      "state": "待审核",
+      "source": "投稿 · Prompt 共创计划",
+      "activityPanelHidden": false,
+      "activityName": "Prompt 共创计划",
+      "pointsRule": "设置为首页爆款作品后发放 +30 发布积分",
+      "pointsNote": "设置为首页爆款作品后发放，写入积分记录和操作日志。",
+      "hotActionText": "设为首页爆款并发放积分",
+      "hotReward": "publish-points",
+      "hiddenRecord": "PRO-2048",
+      "hiddenCellId": "PRO-2048",
+      "actionId": "PRO-2048"
+    },
+    "templateCreateModal": {
+      "rowCount": 8,
+      "fieldKeys": [
+        "template-id",
+        "cover-image",
+        "title",
+        "summary",
+        "category",
+        "cost",
+        "status",
+        "sort",
+        "action"
+      ],
+      "headerLabels": [
+        "模板 ID",
+        "封面",
+        "卡片标题",
+        "卡片描述",
+        "模板分类",
+        "预计消耗",
+        "展示状态",
+        "排序",
+        "操作"
+      ],
+      "titleColumnWidth": 142,
+      "firstRowCellCount": 9,
+      "firstRowEditableFields": "封面 / 标题 / 描述 / 预计消耗积分",
+      "filterLabels": [
+        "模板分类",
+        "展示状态"
+      ],
+      "statRows": 0,
+      "templateRuleCards": 0,
+      "configRuleTitles": 0,
+      "open": true,
+      "mode": "create",
+      "type": "template",
+      "fieldCount": 9,
+      "formFieldKeys": [
+        "template-id",
+        "cover-image",
+        "title",
+        "summary",
+        "category",
+        "cost",
+        "status",
+        "sort",
+        "editable-fields"
+      ],
+      "visibleFieldKeys": [
+        "cover-image",
+        "title",
+        "summary",
+        "category",
+        "cost",
+        "status",
+        "sort"
+      ],
+      "visibleLabels": [
+        "封面图",
+        "标题",
+        "卡片描述",
+        "模板分类",
+        "预计消耗积分",
+        "是否展示",
+        "停用",
+        "排序"
+      ],
+      "hiddenFieldKeys": [
+        "template-id",
+        "cover-image",
+        "editable-fields"
+      ],
+      "coverUploadExists": true,
+      "coverUploadFile": "未选择文件",
+      "previewRemoved": true
+    },
+    "templateEditModal": {
+      "open": true,
+      "modalTitle": "编辑模板",
+      "mode": "edit",
+      "type": "template",
+      "fieldCount": 9,
+      "title": "短剧漫剧开场",
+      "cost": "16",
+      "coverImage": "assets/image_assets/11.png",
+      "coverUploadExists": true,
+      "coverUploadFile": "assets/image_assets/11.png",
+      "visibleFieldKeys": [
+        "cover-image",
+        "title",
+        "summary",
+        "category",
+        "cost",
+        "status",
+        "sort"
+      ],
+      "visibleLabels": [
+        "封面图",
+        "标题",
+        "卡片描述",
+        "模板分类",
+        "预计消耗积分",
+        "是否展示",
+        "展示中",
+        "排序"
+      ],
+      "hiddenFieldKeys": [
+        "template-id",
+        "cover-image",
+        "editable-fields"
+      ],
+      "hiddenEditableFields": "封面 / 标题 / 描述 / 预计消耗积分",
+      "removedMaintainerField": true,
+      "removedJumpLinkField": true,
+      "removedReasonField": true
+    },
+    "tutorialCreateModal": {
+      "rowCount": 9,
+      "fieldKeys": [
+        "tutorial-id",
+        "cover-image",
+        "title",
+        "category",
+        "summary",
+        "status",
+        "sort",
+        "action"
+      ],
+      "visibleFormFields": [
+        "title",
+        "category",
+        "sort",
+        "summary",
+        "cover-image",
+        "detail-content"
+      ],
+      "hiddenFormFields": [
+        "tutorial-id",
+        "status",
+        "reason"
+      ],
+      "categoryTabs": 0,
+      "statCards": 0,
+      "ruleCards": 0,
+      "configRuleTitles": 0,
+      "hasTutorialForm": true,
+      "hasBasicSection": true,
+      "hasDetailSection": true,
+      "hasCoverUpload": true,
+      "hasSummaryTextarea": true,
+      "hasDetailEditor": true,
+      "editorToolbarLabels": [
+        "H2",
+        "加粗",
+        "列表",
+        "图片",
+        "链接"
+      ],
+      "detailEditorHeight": 585,
+      "modalWide": true,
+      "tutorialInfoHorizontalLayout": true,
+      "tutorialSectionsFillBody": true,
+      "open": true,
+      "mode": "create",
+      "type": "tutorial",
+      "fieldCount": 9,
+      "previewRemoved": true
+    },
+    "activityConfigPage": {
+      "activityFieldKeys": [
+        "title",
+        "activity-time",
+        "cover-image",
+        "action"
+      ],
+      "rowKeys": [
+        "image-challenge",
+        "prompt-co-create",
+        "new-user",
+        "seven-day",
+        "invite"
+      ],
+      "rowTimeModes": {
+        "image-challenge": "range",
+        "prompt-co-create": "long-term",
+        "new-user": "long-term",
+        "seven-day": "long-term",
+        "invite": "long-term"
+      },
+      "rowTimes": {
+        "image-challenge": "2026-06-27 至 2026-07-10",
+        "prompt-co-create": "长期有效",
+        "new-user": "长期有效",
+        "seven-day": "长期有效",
+        "invite": "长期有效"
+      },
+      "statRows": 0,
+      "workflowPanels": 0,
+      "rewardConfigPanels": 0,
+      "createEntryCount": 0
+    },
+    "growthActivityEditModal": {
+      "open": true,
+      "mode": "edit",
+      "type": "activity",
+      "modalHeight": 836,
+      "titleValue": "AI 生图创作挑战",
+      "fieldCount": 5,
+      "fields": [
+        "title",
+        "activity-time",
+        "activity-time-mode",
+        "cover-image",
+        "detail-content"
+      ],
+      "statusType": "",
+      "hasUpload": true,
+      "hasRangePicker": true,
+      "timeModeOptions": [
+        "range",
+        "long-term"
+      ],
+      "activeTimeMode": "range",
+      "timeModeValue": "range",
+      "rangeHidden": false,
+      "timeModeRangeSameRow": false,
+      "timeModeRangeStacked": true,
+      "activityInfoHorizontalLayout": true,
+      "activityInfoPanelsFillBody": true,
+      "activityInfoBasicWidth": 420,
+      "activityInfoDetailWidth": 734,
+      "activityInfoBasicHeight": 652,
+      "activityInfoDetailHeight": 652,
+      "hasEditor": true,
+      "hasRuleTemplate": true,
+      "activityTabs": [
+        "活动信息",
+        "积分奖励"
+      ],
+      "activeActivityTab": "activity-info",
+      "activeActivityPanel": "activity-info",
+      "detailEditorHeight": 537,
+      "rewardRulePanelTab": "reward-rules",
+      "typeOptionCount": 0,
+      "ruleTemplateOptionCount": 0,
+      "rewardRulePoints": [
+        "+50",
+        "+100",
+        "+1000"
+      ],
+      "rewardRuleHeaderTagCount": 0,
+      "rewardRuleLabelCount": 0,
+      "rewardRuleLeadCount": 0,
+      "rewardRuleTableRowCount": 3,
+      "rewardRuleHeaders": [
+        "创作触发",
+        "积分",
+        "周期上限",
+        "确认方式",
+        "异常处理",
+        "操作"
+      ],
+      "rewardRuleActionCount": 3,
+      "hasReadonlyId": false,
+      "previewRemoved": true
+    },
+    "growthActivityRewardTabState": {
+      "modalHeight": 836,
+      "activeActivityTab": "reward-rules",
+      "activeActivityPanel": "reward-rules"
+    },
+    "growthActivityRewardRuleInlineEdit": {
+      "editingIndex": "0",
+      "pointsInputValue": "+50",
+      "limitInputValue": "2",
+      "limitInputType": "number",
+      "limitInputMode": "numeric",
+      "saveActionCount": 1,
+      "cancelActionCount": 1
+    },
+    "growthActivityRewardRuleInlineSave": {
+      "editingIndex": "",
+      "pointsText": "+55",
+      "limitText": "每期前 3 次有效发布",
+      "editActionCount": 3,
+      "inputCount": 0
+    },
+    "growthActivitySevenDayEditModal": {
+      "open": true,
+      "mode": "edit",
+      "type": "activity",
+      "titleValue": "七日成长任务",
+      "activeTimeMode": "long-term",
+      "timeModeValue": "long-term",
+      "detailSectionHidden": true,
+      "rewardRulePoints": [
+        "+20",
+        "+20",
+        "+40",
+        "+40",
+        "+60",
+        "+60",
+        "+80"
+      ],
+      "rewardRuleHeaderTagCount": 0,
+      "rewardRuleLabelCount": 0,
+      "rewardRuleLeadCount": 0,
+      "rewardRuleTableRowCount": 7,
+      "rewardRuleHeaders": [
+        "日期",
+        "任务动作",
+        "积分",
+        "完成上限",
+        "完成判定",
+        "异常处理",
+        "操作"
+      ],
+      "rewardRuleActionCount": 7,
+      "hasRuleTemplateField": false
+    },
+    "growthActivitySevenDayLimitReadonly": {
+      "pointsInputCount": 1,
+      "limitInputCount": 0,
+      "limitText": "当日任务一次"
+    },
+    "growthActivityNewUserEditModal": {
+      "titleValue": "新手任务",
+      "activeTimeMode": "long-term",
+      "timeModeValue": "long-term",
+      "detailSectionHidden": true,
+      "rewardRuleHeaders": [
+        "任务动作",
+        "积分",
+        "完成上限",
+        "完成判定",
+        "异常处理",
+        "操作"
+      ],
+      "rewardRuleTableRowCount": 7,
+      "rewardRuleActionCount": 7,
+      "rewardRulePoints": [
+        "+10",
+        "+10",
+        "+10",
+        "+10",
+        "+10",
+        "+30",
+        "+30"
+      ]
+    },
+    "growthActivityNewUserLimitReadonly": {
+      "pointsInputCount": 1,
+      "limitInputCount": 0,
+      "limitText": "仅一次"
+    },
+    "growthActivityInviteEditModal": {
+      "titleValue": "邀请有礼",
+      "activeTimeMode": "long-term",
+      "timeModeValue": "long-term",
+      "detailSectionHidden": false,
+      "detailEditorValue": "### 邀请有礼\n\n#### 活动概述\n邀请好友加入，一起完成任务拿积分。\n\n#### 参与路径\n复制邀请链接，好友注册后查看邀请记录和阶段进度。\n\n#### 奖励与规则\n单个好友按注册、互动、发布三个阶段计奖，最高 90 积分。",
+      "rewardMarkdownFieldCount": 0,
+      "rewardMarkdownToolbarCount": 0,
+      "rewardRuleHeaders": [
+        "好友行为",
+        "邀请人奖励",
+        "上限",
+        "发放条件",
+        "异常处理",
+        "操作"
+      ],
+      "rewardRuleTableRowCount": 3,
+      "rewardRuleActionCount": 3,
+      "rewardRulePoints": [
+        "+20",
+        "+20",
+        "+50"
+      ]
+    },
+    "growthActivityInviteRewardNumbersEditable": {
+      "pointsInputValue": "+20",
+      "pointsInputCount": 1,
+      "pointsInputWidth": 56,
+      "limitInputCount": 2,
+      "limitInputValues": [
+        "5",
+        "50"
+      ],
+      "limitInputTypes": [
+        "number",
+        "number"
+      ],
+      "limitInputModes": [
+        "numeric",
+        "numeric"
+      ],
+      "limitInputWidths": [
+        52,
+        52
+      ],
+      "limitText": "每日注册  人；每月注册  人"
+    },
+    "userDetailEntryCount": 2,
+    "userDetailRouteFromList": {
+      "urlFile": "user-detail.html",
+      "activeViews": [
+        "user-detail"
+      ],
+      "activeNav": "user-list",
+      "userDetailNavCount": 0,
+      "navLinkCount": 16,
+      "title": "用户详情",
+      "pageTitle": "用户详情"
+    },
+    "userGovernanceEditModal": {
+      "open": true,
+      "mode": "edit",
+      "type": "user",
+      "fieldCount": 9,
+      "previewRemoved": true
+    },
+    "dangerModal": {
+      "open": true,
+      "hasReasonInput": true,
+      "impactCopy": "即将执行 points-batch-review，该操作会写入操作日志。"
+    },
+    "walkthroughPanel": {
+      "open": true,
+      "ruleCount": 5
+    }
   },
   "consoleErrors": [],
   "pageErrors": []

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 内容列表</title>
+  <title>AI666 后台 - 后台用户管理</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -1671,7 +1671,7 @@
       <section class="nav-section" data-nav-section="content">
         <button class="nav-group" type="button" data-nav-module="内容运营"><span>内容运营</span><span>▾</span></button>
         <div class="nav-children">
-          <a class="nav-btn is-active" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
+          <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
           <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
           <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
@@ -1710,7 +1710,7 @@
         <button class="nav-group" type="button" data-nav-module="系统设置"><span>系统设置</span><span>▾</span></button>
         <div class="nav-children">
           <a class="nav-btn" href="role-management.html" data-nav="role-management" data-page-link="role-management.html">角色管理</a>
-          <a class="nav-btn" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
+          <a class="nav-btn is-active" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
         </div>
       </section>
     </aside>
@@ -1718,7 +1718,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">内容列表</h1>
+          <h1 class="top-title" id="globalTitle">后台用户管理</h1>
         </div>
         <div class="top-meta">
           <button class="avatar-button" type="button" aria-label="登录用户" data-user-avatar="login-user">AI</button>
@@ -1726,58 +1726,37 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="content-list" data-page-contract="content-list" data-operation-page="content-list">
-          <div class="contract-panel" data-page-contract="content-list">内容列表负责 AIGC、Prompt、投稿来源内容、模型、模板和教程等正式内容的统一运营入口；首页爆款作品由内容列表承接，广告位配置只承接首页爆款首卡广告；闪念进入独立管理模块，审核、日志和详情治理进入抽屉或专门页面。</div>
+<section class="view is-active" data-view="admin-users" data-page-contract="admin-users" data-rbac-page="admin-users">
+          <div class="contract-panel" data-page-contract="admin-users">后台用户管理不展示密码、Token 或 Session；停用账号、回收权限和新增管理员必须留痕。</div>
           <div class="page-head">
-            <div class="page-title">
-              <h2>内容列表</h2>
-              <p>管理 AIGC、Prompt、投稿来源、模板、模型和教程内容；闪念单独管理。</p>
-            </div>
+            <div class="page-title"><h2>后台用户管理</h2><p>管理后台账号、角色绑定和账号状态。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-drawer="admin-user-detail">新增后台用户</button></div>
           </div>
-          <div class="stats-row content-list-stats" data-content-list-stats="compact">
-            <div class="stat-card"><div class="stat-label">全部内容</div><div class="stat-value">2,418</div></div>
-            <div class="stat-card"><div class="stat-label">待审核</div><div class="stat-value">86</div></div>
-            <div class="stat-card"><div class="stat-label">已下架</div><div class="stat-value">34</div></div>
-            <div class="stat-card" data-content-stat="home-hot-works" data-stat-source="home-hot-works"><div class="stat-label">爆款作品</div><div class="stat-value">128</div></div>
-          </div>
-          <div class="panel content-list-filter-panel" data-content-list-filter="query">
-            <div class="panel-head">
-              <div class="panel-title">筛选</div>
-              <div class="filter-actions">
-                <button class="btn primary" type="button" data-filter-action="search">搜索</button>
-                <button class="btn" type="button" data-filter-action="reset">重置</button>
-              </div>
-            </div>
+          <div class="panel" data-governance-loop-page="admin-users">
+            <div class="panel-head"><div class="panel-title">后台账号治理</div><span class="muted small">新增、停用、回收权限都必须留痕</span></div>
             <div class="panel-body">
-              <div class="filter-grid content-list-filter-grid">
-                <div class="field" data-content-filter="keyword"><label>关键词</label><input class="input" value="提示词"></div>
-                <div class="field" data-content-filter="content-type"><label>内容类型</label><select class="select"><option>全部类型</option><option>短剧漫剧</option><option>文本内容</option><option>图片生成</option><option>视频生成</option><option>Prompt</option></select></div>
-                <div class="field" data-content-filter="publish-state"><label>发布状态</label><select class="select"><option>全部状态</option><option>待审核</option><option>已发布</option><option>未通过</option><option>已下架</option><option>已删除</option></select></div>
-                <div class="field" data-content-filter="source"><label>来源</label><select class="select"><option>全部来源</option><option>轻创作</option><option>投稿 · Prompt 共创计划</option><option>投稿 · AI 生图挑战</option><option>用户发布</option></select></div>
-                <div class="field" data-content-filter="home-hot-state"><label>首页爆款</label><select class="select"><option>全部首页展示</option><option>首页爆款</option><option>非首页爆款</option></select></div>
-                <div class="field" data-content-filter="published-range"><label>发布时间</label><div class="ant-picker-range content-date-range" data-date-range-picker="published-at"><input class="input" value="2026-06-09" aria-label="发布时间开始"><span class="muted small">至</span><input class="input" value="2026-07-09" aria-label="发布时间结束"></div></div>
+              <div class="preview-grid">
+                <div class="preview-card"><b>账号状态</b><span class="tag success" data-governance-state="normal">正常</span><p class="muted small">后台用户只展示脱敏联系方式和角色摘要。</p></div>
+                <div class="preview-card"><b>角色调整</b><span class="tag warning" data-governance-state="pending-review">待复核</span><p class="muted small">角色变更必须关联授权日志。</p></div>
+                <div class="preview-card"><b>账号停用</b><span class="tag danger" data-governance-state="blocked">已停用</span><p class="muted small">停用账号后回收危险操作权限。</p></div>
+                <div class="preview-card"><b>敏感字段</b><p class="muted small">不展示密码、Token、Session 或完整联系方式。</p></div>
               </div>
             </div>
           </div>
           <div class="panel">
-            <div class="panel-head"><div class="panel-title">内容列表</div><span class="muted small">宽表格仅在表格内部横向滚动</span></div>
             <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="content-list">
-                <thead>
-                  <tr><th>内容 ID</th><th>标题</th><th>类型</th><th>作者</th><th>状态</th><th>首页爆款</th><th>来源</th><th>发布时间</th><th>操作</th></tr>
-                </thead>
+              <table data-table="admin-users">
+                <thead><tr><th data-admin-field="admin-id">后台用户 ID</th><th data-admin-field="nickname">昵称</th><th data-admin-field="role">角色</th><th data-admin-field="account-state">账号状态</th><th data-admin-field="permission-change">权限变化</th><th data-admin-field="last-login">最近登录</th><th data-admin-field="contact">联系方式</th><th data-admin-field="review-state">复核状态</th><th data-admin-field="last-operator">最近操作人</th><th data-admin-field="action">操作</th></tr></thead>
                 <tbody>
-                  <tr data-content-id="AIGC-1001" data-content-home-hot-state="home-hot" data-content-home-hot-sort="12">
-                    <td class="mono">AIGC-1001</td><td class="wrap"><b>AI 漫剧分镜提示词合集</b><br><span class="muted small">[CONTENT_ID]</span></td><td><span class="tag info">短剧漫剧</span></td><td>拾光创作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag success">已发布</span></td><td data-content-home-hot-cell><span class="tag success">首页爆款 #12</span></td><td>轻创作</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=AIGC-1001" data-content-detail-link="AIGC-1001">详情</a></div></td>
-                  </tr>
-                  <tr data-content-id="PRO-2048" data-content-home-hot-state="none" data-content-home-hot-sort="">
-                    <td class="mono">PRO-2048</td><td class="wrap"><b>Prompt 共创投稿：品牌短视频脚本</b></td><td><span class="tag warning">Prompt</span></td><td>内容作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag warning">待审核</span></td><td data-content-home-hot-cell><span class="tag gray">未设置</span></td><td>投稿 · Prompt 共创计划</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=PRO-2048" data-content-detail-link="PRO-2048">详情</a></div></td>
-                  </tr>
+                  <tr data-governance-state="normal"><td class="mono">ADM-001</td><td>运营 A</td><td>社区运营</td><td><span class="tag success">启用</span></td><td>新增广告位配置编辑权限，LOG-2201</td><td>2026-07-06</td><td>[EMAIL]</td><td>负责人待确认</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link" data-danger-action="admin-role-change" data-requires-confirm="true" data-requires-reason="true">调整角色</button><button class="btn link danger-link" data-danger-action="admin-stop" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
+                  <tr data-governance-state="normal"><td class="mono">ADM-002</td><td>审核员 B</td><td>审核员</td><td><span class="tag success">启用</span></td><td>无新增权限</td><td>2026-07-05</td><td>[EMAIL]</td><td>已确认</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
+                  <tr data-governance-state="blocked"><td class="mono">ADM-009</td><td>临时支援</td><td>临时运营支援</td><td><span class="tag danger">停用</span></td><td>回收运营配置权限，LOG-2202</td><td>2026-07-03</td><td>[EMAIL]</td><td>已完成</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
                 </tbody>
               </table>
             </div>
           </div>
         </section>
+      
       </main>
     </div>
   </div>

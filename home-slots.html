@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 内容列表</title>
+  <title>AI666 后台 - 广告位配置</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -1671,7 +1671,7 @@
       <section class="nav-section" data-nav-section="content">
         <button class="nav-group" type="button" data-nav-module="内容运营"><span>内容运营</span><span>▾</span></button>
         <div class="nav-children">
-          <a class="nav-btn is-active" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
+          <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
           <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
           <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
@@ -1682,7 +1682,7 @@
       <section class="nav-section" data-nav-section="operation">
         <button class="nav-group" type="button" data-nav-module="运营配置"><span>运营配置</span><span>▾</span></button>
         <div class="nav-children">
-          <a class="nav-btn" href="home-slots.html" data-nav="home-slots" data-page-link="home-slots.html">广告位配置</a>
+          <a class="nav-btn is-active" href="home-slots.html" data-nav="home-slots" data-page-link="home-slots.html">广告位配置</a>
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">弹窗配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城配置</a>
@@ -1718,7 +1718,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">内容列表</h1>
+          <h1 class="top-title" id="globalTitle">广告位配置</h1>
         </div>
         <div class="top-meta">
           <button class="avatar-button" type="button" aria-label="登录用户" data-user-avatar="login-user">AI</button>
@@ -1726,53 +1726,111 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="content-list" data-page-contract="content-list" data-operation-page="content-list">
-          <div class="contract-panel" data-page-contract="content-list">内容列表负责 AIGC、Prompt、投稿来源内容、模型、模板和教程等正式内容的统一运营入口；首页爆款作品由内容列表承接，广告位配置只承接首页爆款首卡广告；闪念进入独立管理模块，审核、日志和详情治理进入抽屉或专门页面。</div>
+<section class="view is-active" data-view="home-slots" data-page-contract="home-slots" data-operation-page="home-slots">
+          <div class="contract-panel" data-page-contract="home-slots" data-slot-center="global-operation-slots">广告位配置只承接本期真实可运营投放位：首页 Banner、首页金刚区、首页爆款首卡、全站顶部活动条、闪念首屏广告、闪念右侧广告和模型页 Hero Banner。首页登录后弹窗归属弹窗配置，公告入口归属后续公告配置，AIGC 顶部背景视频归属页面素材配置，积分中心和邀请入口不进入广告位配置。列表页只展示标题、描述、跳转链接、背景图片、状态、排序和操作；编辑弹窗只保留页面位置、标题、描述、跳转链接、背景图片、是否启用和排序。新增广告位选择首页金刚区时展示 Icon 字段，并保存到首页金刚区页签。全站顶部活动条不维护背景图片，切换到该页签或在编辑弹窗选择该点位时不展示背景图片字段。</div>
           <div class="page-head">
-            <div class="page-title">
-              <h2>内容列表</h2>
-              <p>管理 AIGC、Prompt、投稿来源、模板、模型和教程内容；闪念单独管理。</p>
+            <div class="page-title"><h2>广告位配置</h2><p>集中管理 C端可投放素材、可上下架、可排序、可跳转的运营广告位。</p></div>
+            <div class="action-row"><button class="btn primary" data-open-slot-modal="create">新增广告位</button></div>
+          </div>
+          <div class="tabs" data-slot-tabs="home-slots"><button class="tab is-active" type="button" data-slot-tab="home-banner">首页 Banner</button><button class="tab" type="button" data-slot-tab="home-diamond-area">首页金刚区</button><button class="tab" type="button" data-slot-tab="hot-first-card">爆款首卡广告</button><button class="tab" type="button" data-slot-tab="top-campaign">全站顶部活动条</button><button class="tab" type="button" data-slot-tab="flash-hero-ad">闪念首屏广告</button><button class="tab" type="button" data-slot-tab="flash-right-ad">闪念右侧广告</button><button class="tab" type="button" data-slot-tab="model-hero">模型页 Hero</button></div>
+          <div class="panel" data-bend-workflow="global-operation-slot">
+            <div class="panel-head"><div class="panel-title">配置闭环</div><span class="muted small">从选择点位到写入操作日志</span></div>
+            <div class="panel-body workflow-row">
+              <div class="workflow-step" data-workflow-step="select-placement"><b>选择点位</b><span class="muted small">按页面/位置确定展示范围。</span></div>
+              <div class="workflow-step" data-workflow-step="bind-target"><b>绑定目标</b><span class="muted small">活动、任务、内容或模型。</span></div>
+              <div class="workflow-step" data-workflow-step="configuration-check"><b>配置校验</b><span class="muted small">核对展示字段、跳转目标和背景图片。</span></div>
+              <div class="workflow-step" data-workflow-step="enable-disable"><b>启停排序</b><span class="muted small">启用、停用、调序均需原因。</span></div>
+              <div class="workflow-step" data-workflow-step="write-operation-log"><b>写入日志</b><span class="muted small">记录前后配置摘要。</span></div>
             </div>
           </div>
-          <div class="stats-row content-list-stats" data-content-list-stats="compact">
-            <div class="stat-card"><div class="stat-label">全部内容</div><div class="stat-value">2,418</div></div>
-            <div class="stat-card"><div class="stat-label">待审核</div><div class="stat-value">86</div></div>
-            <div class="stat-card"><div class="stat-label">已下架</div><div class="stat-value">34</div></div>
-            <div class="stat-card" data-content-stat="home-hot-works" data-stat-source="home-hot-works"><div class="stat-label">爆款作品</div><div class="stat-value">128</div></div>
-          </div>
-          <div class="panel content-list-filter-panel" data-content-list-filter="query">
-            <div class="panel-head">
-              <div class="panel-title">筛选</div>
-              <div class="filter-actions">
-                <button class="btn primary" type="button" data-filter-action="search">搜索</button>
-                <button class="btn" type="button" data-filter-action="reset">重置</button>
-              </div>
-            </div>
+          <div class="panel" data-slot-panel="operation-slots">
+            <div class="panel-head"><div class="panel-title">绑定目标与异常</div><span class="muted small">只做运营配置，不做投放系统</span></div>
             <div class="panel-body">
-              <div class="filter-grid content-list-filter-grid">
-                <div class="field" data-content-filter="keyword"><label>关键词</label><input class="input" value="提示词"></div>
-                <div class="field" data-content-filter="content-type"><label>内容类型</label><select class="select"><option>全部类型</option><option>短剧漫剧</option><option>文本内容</option><option>图片生成</option><option>视频生成</option><option>Prompt</option></select></div>
-                <div class="field" data-content-filter="publish-state"><label>发布状态</label><select class="select"><option>全部状态</option><option>待审核</option><option>已发布</option><option>未通过</option><option>已下架</option><option>已删除</option></select></div>
-                <div class="field" data-content-filter="source"><label>来源</label><select class="select"><option>全部来源</option><option>轻创作</option><option>投稿 · Prompt 共创计划</option><option>投稿 · AI 生图挑战</option><option>用户发布</option></select></div>
-                <div class="field" data-content-filter="home-hot-state"><label>首页爆款</label><select class="select"><option>全部首页展示</option><option>首页爆款</option><option>非首页爆款</option></select></div>
-                <div class="field" data-content-filter="published-range"><label>发布时间</label><div class="ant-picker-range content-date-range" data-date-range-picker="published-at"><input class="input" value="2026-06-09" aria-label="发布时间开始"><span class="muted small">至</span><input class="input" value="2026-07-09" aria-label="发布时间结束"></div></div>
+              <div class="preview-grid">
+                <div class="preview-card" data-target-type="activity"><b>活动</b><span class="tag success">可绑定</span><p class="muted small">活动中心、活动详情、Prompt 共创计划。</p></div>
+                <div class="preview-card" data-target-type="task"><b>任务</b><span class="tag success">可绑定</span><p class="muted small">新手任务、七日任务、赚积分入口。</p></div>
+                <div class="preview-card" data-target-type="content"><b>内容</b><span class="tag success">可绑定</span><p class="muted small">精选内容、Prompt、AIGC 作品。</p></div>
+                <div class="preview-card" data-target-type="model"><b>模型</b><span class="tag success">可绑定</span><p class="muted small">模型广场、模型详情、模型活动。</p></div>
+                <div class="preview-card exception-note" data-slot-exception="material-missing" data-exception-state="material-blocked"><b>素材缺失</b><span class="tag danger">阻断启用</span><p class="muted small">缺图片或短文案时不能启用。</p></div>
+                <div class="preview-card exception-note" data-slot-exception="target-invalid" data-exception-state="target-invalid"><b>链接失效</b><span class="tag danger">阻断启用</span><p class="muted small">目标下架或归档后需替换。</p></div>
+                <div class="preview-card" data-slot-exception="time-conflict"><b>有效期冲突</b><span class="tag warning">需确认</span><p class="muted small">同点位同排序冲突必须改期或调序。</p></div>
               </div>
             </div>
           </div>
-          <div class="panel">
-            <div class="panel-head"><div class="panel-title">内容列表</div><span class="muted small">宽表格仅在表格内部横向滚动</span></div>
+          <div class="panel" data-slot-panel="operation-slots">
             <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="content-list">
-                <thead>
-                  <tr><th>内容 ID</th><th>标题</th><th>类型</th><th>作者</th><th>状态</th><th>首页爆款</th><th>来源</th><th>发布时间</th><th>操作</th></tr>
-                </thead>
+              <table data-table="home-slots">
+                <colgroup><col style="width: 18%"><col style="width: 24%"><col style="width: 18%"><col data-slot-background-col style="width: 18%"><col style="width: 7%"><col style="width: 7%"><col style="width: 8%"></colgroup>
+                <thead><tr><th data-slot-field="title">标题</th><th data-slot-field="description">描述</th><th data-slot-field="jump-link">跳转链接</th><th data-slot-field="background-image" data-slot-background-column>背景图片</th><th data-slot-field="status">状态</th><th data-slot-field="sort">排序</th><th data-slot-field="action">操作</th></tr></thead>
                 <tbody>
-                  <tr data-content-id="AIGC-1001" data-content-home-hot-state="home-hot" data-content-home-hot-sort="12">
-                    <td class="mono">AIGC-1001</td><td class="wrap"><b>AI 漫剧分镜提示词合集</b><br><span class="muted small">[CONTENT_ID]</span></td><td><span class="tag info">短剧漫剧</span></td><td>拾光创作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag success">已发布</span></td><td data-content-home-hot-cell><span class="tag success">首页爆款 #12</span></td><td>轻创作</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=AIGC-1001" data-content-detail-link="AIGC-1001">详情</a></div></td>
-                  </tr>
-                  <tr data-content-id="PRO-2048" data-content-home-hot-state="none" data-content-home-hot-sort="">
-                    <td class="mono">PRO-2048</td><td class="wrap"><b>Prompt 共创投稿：品牌短视频脚本</b></td><td><span class="tag warning">Prompt</span></td><td>内容作者<br><span class="muted small">[USER_ID]</span></td><td><span class="tag warning">待审核</span></td><td data-content-home-hot-cell><span class="tag gray">未设置</span></td><td>投稿 · Prompt 共创计划</td><td>2026-07-06</td><td><div class="op-list"><a class="btn link" href="content-detail.html?id=PRO-2048" data-content-detail-link="PRO-2048">详情</a></div></td>
-                  </tr>
+                  <tr data-slot-id="BANNER-001" data-slot-type="home-banner" data-banner-row-type="item" data-slot-state="enabled" data-slot-placement="首页首屏 Banner / 第 1 张" data-slot-structure="Banner 子广告" data-slot-ad-label="推广" data-slot-target="活动中心" data-slot-jump-link="./activity-center.html" data-slot-background-image="home-banner-01.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-06 14:18"><td class="wrap">AI 工具创作季</td><td>从首页直接进入本期主推活动</td><td class="mono small" data-slot-jump-link-cell>./activity-center.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb" data-slot-bg-image="home-banner-01.webp" title="home-banner-01.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>10</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="BANNER-002" data-slot-type="home-banner" data-banner-row-type="item" data-slot-state="enabled" data-slot-placement="首页首屏 Banner / 第 2 张" data-slot-structure="Banner 子广告" data-slot-ad-label="活动" data-slot-target="Prompt 共创" data-slot-jump-link="./campaign-prompt.html" data-slot-background-image="home-banner-02.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-06 13:30"><td class="wrap">Prompt 共创计划</td><td>提交优质提示词可获得精选曝光</td><td class="mono small" data-slot-jump-link-cell>./campaign-prompt.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb" data-slot-bg-image="home-banner-02.webp" title="home-banner-02.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>20</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="BANNER-003" data-slot-type="home-banner" data-banner-row-type="item" data-slot-state="disabled" data-slot-placement="首页首屏 Banner / 第 3 张" data-slot-structure="Banner 子广告" data-slot-ad-label="任务" data-slot-target="七日任务" data-slot-jump-link="./campaign-seven-day.html" data-slot-background-image="home-banner-03.webp" data-slot-validity="待设置" data-slot-owner="运营 B" data-slot-updated="2026-07-06 11:20"><td class="wrap">七日成长任务</td><td>连续完成任务领取成长奖励</td><td class="mono small" data-slot-jump-link-cell>./campaign-seven-day.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb" data-slot-bg-image="home-banner-03.webp" title="home-banner-03.webp"></div></td><td data-slot-status-cell><span class="tag warning">停用</span></td><td>30</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="HOT-FIRST-001" data-slot-type="hot-first-card" data-hot-card-row-type="slot" data-slot-state="enabled" data-slot-placement="首页爆款区 / 第一个广告卡片" data-slot-structure="爆款首卡广告" data-slot-ad-label="推荐" data-slot-target="模型广场" data-slot-jump-link="./model-plaza.html" data-slot-background-image="hot-first-model.webp" data-slot-validity="长期" data-slot-owner="运营 A" data-slot-updated="2026-07-05 18:30"><td class="wrap">模型体验季</td><td>首卡承接本周模型活动入口</td><td class="mono small" data-slot-jump-link-cell>./model-plaza.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-hot" data-slot-bg-image="hot-first-model.webp" title="hot-first-model.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>10</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="SLOT-TOP-001" data-slot-type="top-campaign" data-slot-no-background="true" data-slot-state="enabled" data-slot-placement="全站顶部活动条" data-slot-structure="顶部活动条" data-slot-ad-label="广告" data-slot-target="活动详情" data-slot-jump-link="./campaign-prompt.html" data-slot-background-image="" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-06 15:42"><td class="wrap">Prompt 共创计划</td><td>提交优质提示词可获得精选曝光</td><td class="mono small" data-slot-jump-link-cell>./campaign-prompt.html</td><td data-slot-background-cell></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>10</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="FLASH-HERO-001" data-slot-type="flash-hero-ad" data-slot-state="enabled" data-slot-placement="闪念首屏活动广告" data-slot-structure="闪念首屏广告" data-slot-ad-label="活动" data-slot-target="活动详情" data-slot-jump-link="./campaign-detail.html" data-slot-background-image="flash-hero-image.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 B" data-slot-updated="2026-07-05 18:36"><td class="wrap">AI 生图创作挑战</td><td>发布闪念作品参与本期创作征集</td><td class="mono small" data-slot-jump-link-cell>./campaign-detail.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-flash" data-slot-bg-image="flash-hero-image.webp" title="flash-hero-image.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>10</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="FLASH-RIGHT-001" data-slot-type="flash-right-ad" data-slot-state="enabled" data-slot-placement="闪念右侧活动广告" data-slot-structure="闪念右侧广告" data-slot-ad-label="活动" data-slot-target="模型广场" data-slot-jump-link="./model-plaza.html" data-slot-background-image="flash-right-model.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-05 18:42"><td class="wrap">模型体验季</td><td>右侧承接本周模型活动入口</td><td class="mono small" data-slot-jump-link-cell>./model-plaza.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-flash" data-slot-bg-image="flash-right-model.webp" title="flash-right-model.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>20</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="MODEL-HERO-001" data-slot-type="model-hero" data-banner-row-type="item" data-slot-state="enabled" data-slot-placement="模型广场 Hero / 第 1 张" data-slot-structure="Hero Banner 子广告" data-slot-ad-label="推荐" data-slot-target="模型广场" data-slot-jump-link="./model-plaza.html" data-slot-background-image="model-hero-01.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-05 16:20"><td class="wrap">模型体验季</td><td>查看本周高频模型与示例成本口径</td><td class="mono small" data-slot-jump-link-cell>./model-plaza.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-model" data-slot-bg-image="model-hero-01.webp" title="model-hero-01.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>10</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="MODEL-HERO-002" data-slot-type="model-hero" data-banner-row-type="item" data-slot-state="enabled" data-slot-placement="模型广场 Hero / 第 2 张" data-slot-structure="Hero Banner 子广告" data-slot-ad-label="活动" data-slot-target="模型专题" data-slot-jump-link="./model-plaza.html" data-slot-background-image="model-hero-02.webp" data-slot-validity="2026-07-01 至 2026-07-31" data-slot-owner="运营 A" data-slot-updated="2026-07-05 16:18"><td class="wrap">低成本生图模型精选</td><td>快速比较适合新手的模型调用成本</td><td class="mono small" data-slot-jump-link-cell>./model-plaza.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-model" data-slot-bg-image="model-hero-02.webp" title="model-hero-02.webp"></div></td><td data-slot-status-cell><span class="tag success">启用</span></td><td>20</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                  <tr data-slot-id="MODEL-HERO-003" data-slot-type="model-hero" data-banner-row-type="item" data-slot-state="disabled" data-slot-placement="模型广场 Hero / 第 3 张" data-slot-structure="Hero Banner 子广告" data-slot-ad-label="任务" data-slot-target="七日任务" data-slot-jump-link="./campaign-seven-day.html" data-slot-background-image="model-hero-03.webp" data-slot-validity="待设置" data-slot-owner="运营 B" data-slot-updated="2026-07-05 15:56"><td class="wrap">七日模型练习</td><td>连续体验模型后领取成长奖励</td><td class="mono small" data-slot-jump-link-cell>./campaign-seven-day.html</td><td data-slot-background-cell><div class="image-thumb slot-bg-thumb slot-bg-model" data-slot-bg-image="model-hero-03.webp" title="model-hero-03.webp"></div></td><td data-slot-status-cell><span class="tag warning">停用</span></td><td>30</td><td><div class="op-list"><button class="btn link" data-open-slot-modal="edit">编辑</button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-slot-panel="home-diamond-area" hidden data-slot-diamond-area-config="home-diamond-area">
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="home-diamond-area-slots">
+                <thead><tr><th data-quick-entry-field="title">标题</th><th data-quick-entry-field="description">描述</th><th data-quick-entry-field="jump-link">跳转链接</th><th data-quick-entry-field="background-image">背景图</th><th data-quick-entry-field="icon">Icon</th><th data-quick-entry-field="status">状态</th><th data-quick-entry-field="sort">排序</th><th data-quick-entry-field="action">操作</th></tr></thead>
+                <tbody>
+                  <tr data-quick-entry-id="QUICK-001" data-quick-entry-bg-value="quick-entry-comic.webp" data-quick-entry-icon-value="plus" data-quick-entry-state="enabled"><td class="wrap" data-quick-entry-title-cell>漫剧制作</td><td>无限画布，释放你的想象力</td><td class="mono small" data-quick-entry-link-cell>./aigc.html#quick-create</td><td><div class="image-thumb slot-bg-thumb" data-quick-entry-bg="quick-entry-comic.webp" title="quick-entry-comic.webp"></div></td><td><span class="config-icon-chip" data-quick-entry-icon="plus">plus</span></td><td data-quick-entry-status-cell><span class="tag success">启用</span></td><td>10</td><td><button class="btn link" data-open-quick-entry-modal="edit">编辑</button></td></tr>
+                  <tr data-quick-entry-id="QUICK-002" data-quick-entry-bg-value="quick-entry-one-line.webp" data-quick-entry-icon-value="image" data-quick-entry-state="enabled"><td class="wrap" data-quick-entry-title-cell>一句话生成</td><td>输入一句想法，生成广告片</td><td class="mono small" data-quick-entry-link-cell>./aigc.html#quick-create</td><td><div class="image-thumb slot-bg-thumb" data-quick-entry-bg="quick-entry-one-line.webp" title="quick-entry-one-line.webp"></div></td><td><span class="config-icon-chip" data-quick-entry-icon="image">image</span></td><td data-quick-entry-status-cell><span class="tag success">启用</span></td><td>20</td><td><button class="btn link" data-open-quick-entry-modal="edit">编辑</button></td></tr>
+                  <tr data-quick-entry-id="QUICK-003" data-quick-entry-bg-value="quick-entry-model-season.webp" data-quick-entry-icon-value="cube" data-quick-entry-state="enabled"><td class="wrap" data-quick-entry-title-cell>模型体验季</td><td>文本、图像、视频模型精选入口</td><td class="mono small" data-quick-entry-link-cell>./model-plaza.html</td><td><div class="image-thumb slot-bg-thumb slot-bg-model" data-quick-entry-bg="quick-entry-model-season.webp" title="quick-entry-model-season.webp"></div></td><td><span class="config-icon-chip" data-quick-entry-icon="cube">cube</span></td><td data-quick-entry-status-cell><span class="tag success">启用</span></td><td>30</td><td><button class="btn link" data-open-quick-entry-modal="edit">编辑</button></td></tr>
+                  <tr data-quick-entry-id="QUICK-004" data-quick-entry-bg-value="quick-entry-mirror.webp" data-quick-entry-icon-value="window" data-quick-entry-state="enabled"><td class="wrap" data-quick-entry-title-cell>镜像站</td><td>研发人员订阅与积分兑换入口</td><td class="mono small" data-quick-entry-link-cell>./member-store.html</td><td><div class="image-thumb slot-bg-thumb" data-quick-entry-bg="quick-entry-mirror.webp" title="quick-entry-mirror.webp"></div></td><td><span class="config-icon-chip" data-quick-entry-icon="window">window</span></td><td data-quick-entry-status-cell><span class="tag success">启用</span></td><td>40</td><td><button class="btn link" data-open-quick-entry-modal="edit">编辑</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-cend-coverage-matrix="formal-public-preview">
+            <div class="panel-head"><div class="panel-title">C端页面承接矩阵</div><span class="muted small">来源：community-public-preview-config.mjs</span></div>
+            <div class="panel-body">
+              <div class="preview-grid">
+                <div class="preview-card" data-cend-feature="content-consumption"><b>内容消费</b><span class="muted small">首页、AIGC、模型、闪念、教程、详情。</span></div>
+                <div class="preview-card" data-cend-feature="content-production"><b>内容生产</b><span class="muted small">Prompt 投稿、投稿初筛、内容审核。</span></div>
+                <div class="preview-card" data-cend-feature="operation-slots"><b>广告位</b><span class="muted small">首页 Banner、爆款首卡、顶部活动条、闪念广告和模型 Hero。</span></div>
+                <div class="preview-card" data-cend-feature="activity-task-points"><b>活动任务积分</b><span class="muted small">活动、任务、积分、邀请奖励。</span></div>
+                <div class="preview-card" data-cend-feature="message-notification"><b>消息通知</b><span class="muted small">系统消息、活动消息、奖励通知。</span></div>
+                <div class="preview-card" data-cend-feature="store-entitlement"><b>商城权益</b><span class="muted small">商品展示、权益说明、兑换异常。</span></div>
+                <div class="preview-card" data-cend-feature="user-account"><b>用户账号</b><span class="muted small">登录、资料、邀请、积分、账号状态。</span></div>
+                <div class="preview-card" data-cend-feature="data-review"><b>数据复盘</b><span class="muted small">内容、活动、增长、积分复盘。</span></div>
+              </div>
+            </div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="c-end-coverage">
+                <thead><tr><th>C端页面</th><th>用户功能</th><th>B端主责页面</th><th>承接方式</th></tr></thead>
+                <tbody>
+                  <tr data-cend-page="index.html"><td>社区首页</td><td>聚合分发、搜索、爆款作品、首屏运营位</td><td>广告位配置 / 内容列表 / 内容数据</td><td>广告位配置、首页爆款内容状态、首页数据复盘</td></tr>
+                  <tr data-cend-page="aigc.html"><td>AIGC</td><td>作品频道、模板入口、背景视频</td><td>内容列表 / 模板配置</td><td>内容管理、模板入口；顶部背景视频后续归入页面素材配置</td></tr>
+                  <tr data-cend-page="aigc-templates.html"><td>AIGC 模板库</td><td>模板筛选、模板卡片、复用入口</td><td>模板配置</td><td>模板内容、消耗、展示状态和排序</td></tr>
+                  <tr data-cend-page="model-plaza.html"><td>模型广场</td><td>模型列表、筛选、Hero 轮播</td><td>内容列表 / 广告位配置 / 内容数据</td><td>模型条目维护、模型 Hero Banner、点击复盘</td></tr>
+                  <tr data-cend-page="model-detail.html"><td>模型详情</td><td>模型说明、成本口径、调用示例</td><td>内容列表 / 审核工作台</td><td>模型详情内容、下架、敏感字段治理</td></tr>
+                  <tr data-cend-page="flash.html"><td>闪念</td><td>轻内容流、发布、评论、首屏/右侧广告位</td><td>闪念管理 / 审核工作台 / 广告位配置</td><td>闪念内容治理、评论审核、首屏与右侧广告位</td></tr>
+                  <tr data-cend-page="tutorial.html"><td>官方教程</td><td>教程列表、分类、推荐</td><td>教程管理</td><td>教程内容、分类、上下架</td></tr>
+                  <tr data-cend-page="tutorial-detail.html"><td>教程详情</td><td>教程阅读、详情内容</td><td>内容列表 / 审核工作台</td><td>教程正文、状态、敏感信息检查</td></tr>
+                  <tr data-cend-page="activity-center.html"><td>活动中心</td><td>活动聚合、历史活动、活动入口</td><td>活动配置 / 活动数据</td><td>活动卡片、上下线、入口复盘</td></tr>
+                  <tr data-cend-page="campaign-detail.html"><td>活动详情</td><td>活动规则、奖励摘要、参与入口</td><td>活动配置 / 内容列表</td><td>规则摘要、状态、投稿入口</td></tr>
+                  <tr data-cend-page="campaign-prompt.html"><td>Prompt 共创计划</td><td>活动投稿、Prompt 共创说明</td><td>活动配置 / 内容列表 / 积分记录</td><td>活动规则、投稿内容归档、奖励摘要</td></tr>
+                  <tr data-cend-page="prompt-submit.html"><td>Prompt 投稿</td><td>投稿表单、提交状态</td><td>内容列表 / 审核工作台</td><td>投稿内容、退回原因、审核状态</td></tr>
+                  <tr data-cend-page="prompt-detail.html"><td>Prompt 详情</td><td>提示词详情、适用场景、互动</td><td>内容列表 / 审核工作台</td><td>内容状态、下架恢复</td></tr>
+                  <tr data-cend-page="campaign-new-user.html"><td>新手任务</td><td>新手任务、奖励提示</td><td>活动配置 / 积分规则</td><td>活动详情、奖励摘要、启停</td></tr>
+                  <tr data-cend-page="campaign-seven-day.html"><td>七日成长任务</td><td>连续任务、成长奖励</td><td>活动配置 / 积分规则</td><td>活动详情、有效期、奖励摘要</td></tr>
+                  <tr data-cend-page="message-center.html"><td>消息中心</td><td>系统消息、活动消息、奖励通知</td><td>消息配置 / 操作日志</td><td>模板、发送/撤回、跳转目标、日志</td></tr>
+                  <tr data-cend-page="points-center.html"><td>积分中心</td><td>积分余额、赚积分、积分记录</td><td>积分规则 / 积分记录 / 积分数据</td><td>积分来源、流水、异常处理</td></tr>
+                  <tr data-cend-page="invite.html"><td>邀请有礼</td><td>邀请链接、阶段奖励、邀请记录</td><td>活动配置 / 邀请记录 / 积分规则 / 用户增长数据</td><td>活动入口、邀请关系、奖励异常、增长复盘</td></tr>
+                  <tr data-cend-page="login.html"><td>登录承接</td><td>登录注册、用户承接</td><td>用户列表 / 用户详情</td><td>账号状态、资料状态、用户记录</td></tr>
+                  <tr data-cend-page="member-store.html"><td>AI商城</td><td>商品卡、权益说明、兑换结果</td><td>商城配置 / 积分记录 / 积分数据</td><td>商品展示、权益记录、兑换异常</td></tr>
+                  <tr data-cend-page="user-center.html"><td>用户中心</td><td>资料、创作、积分、邀请入口</td><td>用户详情 / 用户列表 / 积分记录</td><td>资料审核、账号状态、积分邀请记录</td></tr>
+                  <tr data-standalone-preview="content-detail-modals.html"><td>内容详情弹层调试台</td><td>详情弹层状态验证</td><td>内容列表 / 审核工作台</td><td>作为调试入口归类，不作为正式 C端页面</td></tr>
+                  <tr data-standalone-preview="campaign-ops.html"><td>一期活动预览入口</td><td>活动预览</td><td>活动配置</td><td>作为预览入口归类，不作为正式 C端页面</td></tr>
                 </tbody>
               </table>
             </div>

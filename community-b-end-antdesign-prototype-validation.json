@@ -1,123 +1,316 @@
 {
-  "generatedAt": "2026-07-07T03:17:59.787Z",
+  "generatedAt": "2026-07-09T14:11:40.214Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
+  "mode": "multi-page",
   "status": "passed",
   "checks": {
-    "htmlExists": true,
+    "manifestExists": true,
+    "sourceSinglePageRetained": true,
+    "generatorExists": true,
+    "generatedPageCount": true,
+    "allGeneratedFilesExist": true,
+    "indexIsContentListPage": true,
+    "generatedPagesAreSingleView": true,
+    "generatedPagesUseMultiPageMode": true,
+    "sourceKeepsCurrentAndDeferredViews": true,
+    "routeManifestMatchesGeneratedPages": true,
+    "taskConfigStandaloneRemoved": true,
+    "dataDashboardModuleHiddenFromCurrentIA": true,
+    "deferredDataDashboardViewsRetainedInSource": true,
+    "deferredDataDashboardPagesNotGenerated": true,
+    "dataDashboardDeferredRequirementRecorded": true,
+    "navigationRefinementApplied": true,
+    "hiddenOperationConfigPagesNotGenerated": true,
     "layoutUsesAntDesignShell": true,
     "siderWidthIs208": true,
     "headerHeightIs64": true,
     "contentPaddingIs24": true,
     "compactDensityDeclared": true,
-    "wideTableScrollInsideTable": true,
     "bodyHorizontalOverflowGuard": true,
+    "layoutScrollIsolationContract": true,
+    "globalScrollbarChromeHidden": true,
     "sidebarModulesMatchConfirmedIA": true,
     "sidebarPagesMatchConfirmedIA": true,
-    "topLevelNavCount": true,
-    "p0PageCount": true,
-    "firstBatchRenderablePages": true,
+    "navUsesRealPageLinks": true,
+    "featureManagementModuleRemoved": true,
+    "noNavButtonsRemain": true,
+    "activeNavMatchesPage": true,
+    "globalTitleMatchesPage": true,
     "allBackendPagesRenderable": true,
+    "pageRoutesObjectComplete": true,
+    "crossPageButtonsUseRealLinks": true,
+    "submissionManagementMergedIntoContentList": true,
+    "contentListSurfaceRefined": true,
+    "reviewWorkbenchTabListsRefined": true,
+    "flashManagementPageComplete": true,
+    "flashDetailRoutePage": true,
+    "contentDetailRoutePage": true,
     "centralizedOperationSlots": true,
-    "operationSlotTypesCoverCEnd": true,
-    "operationSlotVisibleRules": true,
+    "operationSlotTabsInteractive": true,
+    "homeAdSlotInformationArchitecture": true,
+    "operationSlotSecondaryFiltersRemoved": true,
     "operationSlotWorkflowComplete": true,
-    "operationSlotWorkbenchDeepened": true,
-    "reviewWorkbenchDeepened": true,
-    "activityTaskPointsLoopDeepened": true,
-    "userPointsPermissionLoopDeepened": true,
-    "contentOpsPagesComplete": true,
-    "operationConfigPagesComplete": true,
-    "publicPreviewConfigReadable": true,
+    "homeQuickEntryAdSlotsComplete": true,
+    "operationSlotEditorModalComplete": true,
+    "aigcTemplateConfigComplete": true,
+    "officialTutorialManagementComplete": true,
+    "officialTutorialManagementSurfaceSlimmed": true,
+    "officialTutorialModalMatchesCEndIA": true,
+    "loginPopupConfigComplete": true,
+    "activityTaskPointsLoopComplete": true,
+    "storeConfigAndDeferredReviewComplete": true,
+    "userPointsPermissionLoopComplete": true,
     "cEndFormalPagesCovered": true,
     "standalonePreviewPagesClassified": true,
     "cEndFeatureGroupsCovered": true,
-    "userManagementPagesComplete": true,
-    "dataDashboardsComplete": true,
-    "rbacPagesComplete": true,
-    "operationFlowScenariosDeepened": true,
-    "messageStoreDataReviewDeepened": true,
-    "allNavTargetsHaveViews": true,
-    "dangerousActionsExist": true,
     "dangerousActionsRequireConfirm": true,
-    "dangerousActionsRequireReason": true,
     "confirmModalHasReasonInput": true,
-    "operationLogFieldsComplete": true,
     "operationLogSamplesCoverBackend": true,
     "sensitiveFieldsMasked": true,
+    "walkthroughPanelExists": true,
+    "formalCleanupRulesRecorded": true,
+    "globalFormalChromeCleaned": true,
     "noFinalApiProtocol": true,
     "noDatabaseDesign": true,
     "noRealProductionAutomation": true,
     "noRealPaymentOrCardCode": true,
-    "noTodoMarkers": true,
-    "walkthroughPanelExists": true,
-    "firstBatchPagesHavePanels": true
+    "noTodoMarkers": true
   },
   "failed": [],
-  "requiredModules": [
-    "内容运营",
-    "运营配置",
-    "用户管理",
-    "数据看板",
-    "操作日志",
-    "系统设置"
+  "sidebarPages": [
+    {
+      "view": "content-list",
+      "group": "内容运营",
+      "label": "内容列表",
+      "file": "index.html"
+    },
+    {
+      "view": "review-workbench",
+      "group": "内容运营",
+      "label": "审核工作台",
+      "file": "review-workbench.html"
+    },
+    {
+      "view": "flash-management",
+      "group": "内容运营",
+      "label": "闪念管理",
+      "file": "flash-management.html"
+    },
+    {
+      "view": "aigc-template-config",
+      "group": "内容运营",
+      "label": "模板配置",
+      "file": "aigc-template-config.html"
+    },
+    {
+      "view": "tutorial-management",
+      "group": "内容运营",
+      "label": "教程管理",
+      "file": "tutorial-management.html"
+    },
+    {
+      "view": "home-slots",
+      "group": "运营配置",
+      "label": "广告位配置",
+      "file": "home-slots.html"
+    },
+    {
+      "view": "login-popup-config",
+      "group": "运营配置",
+      "label": "弹窗配置",
+      "file": "login-popup-config.html"
+    },
+    {
+      "view": "activity-config",
+      "group": "运营配置",
+      "label": "活动配置",
+      "file": "activity-config.html"
+    },
+    {
+      "view": "store-config",
+      "group": "运营配置",
+      "label": "商城配置",
+      "file": "store-config.html"
+    },
+    {
+      "view": "user-list",
+      "group": "用户管理",
+      "label": "用户列表",
+      "file": "user-list.html"
+    },
+    {
+      "view": "invite-records",
+      "group": "用户管理",
+      "label": "邀请记录",
+      "file": "invite-records.html"
+    },
+    {
+      "view": "points-records",
+      "group": "用户管理",
+      "label": "积分记录",
+      "file": "points-records.html"
+    },
+    {
+      "view": "trust-lists",
+      "group": "用户管理",
+      "label": "黑白名单",
+      "file": "trust-lists.html"
+    },
+    {
+      "view": "operation-log",
+      "group": "操作日志",
+      "label": "操作日志列表",
+      "file": "operation-log.html"
+    },
+    {
+      "view": "role-management",
+      "group": "系统设置",
+      "label": "角色管理",
+      "file": "role-management.html"
+    },
+    {
+      "view": "admin-users",
+      "group": "系统设置",
+      "label": "后台用户管理",
+      "file": "admin-users.html"
+    }
   ],
-  "requiredPages": [
-    "内容列表",
-    "审核工作台",
-    "精选管理",
-    "投稿管理",
-    "全站运营位",
-    "活动配置",
-    "任务配置",
-    "积分规则",
-    "消息配置",
-    "商城配置",
-    "用户列表",
-    "用户详情",
-    "邀请记录",
-    "积分记录",
-    "黑白名单",
-    "内容数据",
-    "活动数据",
-    "用户增长数据",
-    "积分数据",
-    "操作日志列表",
-    "角色管理",
-    "后台用户管理"
+  "generatedPages": [
+    {
+      "view": "content-list",
+      "group": "内容运营",
+      "label": "内容列表",
+      "file": "index.html"
+    },
+    {
+      "view": "review-workbench",
+      "group": "内容运营",
+      "label": "审核工作台",
+      "file": "review-workbench.html"
+    },
+    {
+      "view": "flash-management",
+      "group": "内容运营",
+      "label": "闪念管理",
+      "file": "flash-management.html"
+    },
+    {
+      "view": "aigc-template-config",
+      "group": "内容运营",
+      "label": "模板配置",
+      "file": "aigc-template-config.html"
+    },
+    {
+      "view": "tutorial-management",
+      "group": "内容运营",
+      "label": "教程管理",
+      "file": "tutorial-management.html"
+    },
+    {
+      "view": "home-slots",
+      "group": "运营配置",
+      "label": "广告位配置",
+      "file": "home-slots.html"
+    },
+    {
+      "view": "login-popup-config",
+      "group": "运营配置",
+      "label": "弹窗配置",
+      "file": "login-popup-config.html"
+    },
+    {
+      "view": "activity-config",
+      "group": "运营配置",
+      "label": "活动配置",
+      "file": "activity-config.html"
+    },
+    {
+      "view": "store-config",
+      "group": "运营配置",
+      "label": "商城配置",
+      "file": "store-config.html"
+    },
+    {
+      "view": "user-list",
+      "group": "用户管理",
+      "label": "用户列表",
+      "file": "user-list.html"
+    },
+    {
+      "view": "invite-records",
+      "group": "用户管理",
+      "label": "邀请记录",
+      "file": "invite-records.html"
+    },
+    {
+      "view": "points-records",
+      "group": "用户管理",
+      "label": "积分记录",
+      "file": "points-records.html"
+    },
+    {
+      "view": "trust-lists",
+      "group": "用户管理",
+      "label": "黑白名单",
+      "file": "trust-lists.html"
+    },
+    {
+      "view": "operation-log",
+      "group": "操作日志",
+      "label": "操作日志列表",
+      "file": "operation-log.html"
+    },
+    {
+      "view": "role-management",
+      "group": "系统设置",
+      "label": "角色管理",
+      "file": "role-management.html"
+    },
+    {
+      "view": "admin-users",
+      "group": "系统设置",
+      "label": "后台用户管理",
+      "file": "admin-users.html"
+    },
+    {
+      "view": "content-detail",
+      "group": "内容运营",
+      "label": "内容详情",
+      "file": "content-detail.html"
+    },
+    {
+      "view": "flash-detail",
+      "group": "内容运营",
+      "label": "闪念详情",
+      "file": "flash-detail.html"
+    },
+    {
+      "view": "user-detail",
+      "group": "用户管理",
+      "label": "用户详情",
+      "file": "user-detail.html"
+    }
   ],
-  "firstBatchViews": [
-    "content-list",
-    "review-workbench",
-    "home-slots",
-    "activity-config",
-    "task-config",
-    "user-detail",
-    "points-records",
-    "operation-log"
-  ],
-  "requiredViews": [
-    "content-list",
-    "review-workbench",
-    "feature-management",
-    "submission-management",
-    "home-slots",
-    "activity-config",
-    "task-config",
-    "points-rules",
-    "message-config",
-    "store-config",
-    "user-list",
-    "user-detail",
-    "invite-records",
-    "points-records",
-    "trust-lists",
-    "content-data",
-    "activity-data",
-    "growth-data",
-    "points-data",
-    "operation-log",
-    "role-management",
-    "admin-users"
+  "generatedFiles": [
+    "outputs/community-b-end-antdesign-prototype/index.html",
+    "outputs/community-b-end-antdesign-prototype/review-workbench.html",
+    "outputs/community-b-end-antdesign-prototype/flash-management.html",
+    "outputs/community-b-end-antdesign-prototype/aigc-template-config.html",
+    "outputs/community-b-end-antdesign-prototype/tutorial-management.html",
+    "outputs/community-b-end-antdesign-prototype/home-slots.html",
+    "outputs/community-b-end-antdesign-prototype/login-popup-config.html",
+    "outputs/community-b-end-antdesign-prototype/activity-config.html",
+    "outputs/community-b-end-antdesign-prototype/store-config.html",
+    "outputs/community-b-end-antdesign-prototype/user-list.html",
+    "outputs/community-b-end-antdesign-prototype/invite-records.html",
+    "outputs/community-b-end-antdesign-prototype/points-records.html",
+    "outputs/community-b-end-antdesign-prototype/trust-lists.html",
+    "outputs/community-b-end-antdesign-prototype/operation-log.html",
+    "outputs/community-b-end-antdesign-prototype/role-management.html",
+    "outputs/community-b-end-antdesign-prototype/admin-users.html",
+    "outputs/community-b-end-antdesign-prototype/content-detail.html",
+    "outputs/community-b-end-antdesign-prototype/flash-detail.html",
+    "outputs/community-b-end-antdesign-prototype/user-detail.html"
   ],
   "formalCEndPages": [
     "index.html",
@@ -145,380 +338,5 @@
   "standalonePreviewPages": [
     "content-detail-modals.html",
     "campaign-ops.html"
-  ],
-  "requiredCEndFeatureGroups": [
-    "content-consumption",
-    "content-production",
-    "operation-slots",
-    "activity-task-points",
-    "message-notification",
-    "store-entitlement",
-    "user-account",
-    "data-review"
-  ],
-  "requiredOperationSlotTypes": [
-    "top-campaign",
-    "home-banner",
-    "right-rail",
-    "flash-ad",
-    "model-hero",
-    "aigc-top-campaign",
-    "points-invite",
-    "announcement-entry"
-  ],
-  "requiredOperationSlotWorkflowSteps": [
-    "select-placement",
-    "bind-target",
-    "c-end-preview",
-    "enable-disable",
-    "write-operation-log"
-  ],
-  "requiredOperationSlotTargets": [
-    "activity",
-    "task",
-    "announcement",
-    "content",
-    "model"
-  ],
-  "requiredSlotExceptions": [
-    "material-missing",
-    "target-invalid",
-    "time-conflict"
-  ],
-  "requiredOperationSlotFilters": [
-    "page",
-    "placement",
-    "status",
-    "target-type",
-    "validity"
-  ],
-  "requiredOperationSlotFields": [
-    "slot-id",
-    "placement",
-    "slot-type",
-    "ad-label",
-    "title",
-    "benefit",
-    "target",
-    "status",
-    "sort",
-    "validity",
-    "owner",
-    "last-updated",
-    "material-state",
-    "preview"
-  ],
-  "requiredOperationSlotStates": [
-    "enabled",
-    "draft",
-    "scheduled",
-    "blocked"
-  ],
-  "requiredOperationSlotGuards": [
-    "visible-fields-only",
-    "no-internal-ids",
-    "no-internal-metrics",
-    "operation-log-required"
-  ],
-  "requiredReviewQueues": [
-    "content",
-    "comment",
-    "submission",
-    "profile"
-  ],
-  "requiredReviewFilters": [
-    "object-type",
-    "status",
-    "risk-type",
-    "sla",
-    "assignee"
-  ],
-  "requiredReviewFields": [
-    "audit-id",
-    "object-type",
-    "summary",
-    "submitter",
-    "risk-source",
-    "risk-summary",
-    "status",
-    "sla",
-    "assignee",
-    "user-reason",
-    "internal-note",
-    "second-review",
-    "submitted-at",
-    "action"
-  ],
-  "requiredReviewOutcomes": [
-    "approve",
-    "reject",
-    "second-review",
-    "return-edit"
-  ],
-  "requiredReviewStates": [
-    "pending",
-    "second-review",
-    "rejected",
-    "approved"
-  ],
-  "requiredReviewGuards": [
-    "user-readable-reason-required",
-    "internal-note-separate",
-    "sensitive-fields-masked",
-    "operation-log-required"
-  ],
-  "requiredGrowthLoopPages": [
-    "activity-config",
-    "task-config",
-    "points-rules"
-  ],
-  "requiredGrowthWorkflowSteps": [
-    "activity-rule",
-    "task-binding",
-    "points-reward",
-    "user-visible-copy",
-    "status-change-log"
-  ],
-  "requiredActivityFields": [
-    "activity-id",
-    "activity-name",
-    "activity-type",
-    "c-end-entry",
-    "rule-summary",
-    "linked-task",
-    "linked-points-rule",
-    "reward-summary",
-    "status",
-    "validity",
-    "owner",
-    "change-reason",
-    "action"
-  ],
-  "requiredTaskFields": [
-    "task-id",
-    "task-name",
-    "action-condition",
-    "display-entry",
-    "linked-activity",
-    "points-rule",
-    "daily-limit",
-    "status",
-    "validity",
-    "sort",
-    "action"
-  ],
-  "requiredPointsRuleFields": [
-    "rule-id",
-    "source",
-    "trigger",
-    "points-amount",
-    "daily-limit",
-    "linked-activity",
-    "linked-task",
-    "manual-state",
-    "status",
-    "validity",
-    "owner",
-    "action"
-  ],
-  "requiredGrowthStates": [
-    "active",
-    "draft",
-    "paused",
-    "ended",
-    "exception"
-  ],
-  "requiredGrowthGuards": [
-    "no-auto-reward",
-    "user-readable-reward",
-    "rule-change-reason-required",
-    "operation-log-required",
-    "abuse-risk-manual-review"
-  ],
-  "requiredGovernanceLoopPages": [
-    "points-records",
-    "operation-log",
-    "role-management",
-    "admin-users"
-  ],
-  "requiredGovernanceWorkflowSteps": [
-    "points-record-review",
-    "manual-adjustment",
-    "permission-change",
-    "log-immutability",
-    "sensitive-access-block"
-  ],
-  "requiredPointsRecordFields": [
-    "record-id",
-    "user",
-    "source",
-    "rule",
-    "change",
-    "accounting-state",
-    "review-state",
-    "linked-object",
-    "log-id",
-    "operator",
-    "time",
-    "action"
-  ],
-  "requiredPermissionLogFields": [
-    "log-id",
-    "object",
-    "action",
-    "before",
-    "after",
-    "operator",
-    "reason",
-    "time",
-    "risk-level",
-    "review-state",
-    "source-page"
-  ],
-  "requiredRoleFields": [
-    "role-id",
-    "role-name",
-    "menu-scope",
-    "action-scope",
-    "data-scope",
-    "approval-state",
-    "status",
-    "account-count",
-    "last-operator",
-    "action"
-  ],
-  "requiredAdminUserFields": [
-    "admin-id",
-    "nickname",
-    "role",
-    "account-state",
-    "permission-change",
-    "last-login",
-    "contact",
-    "review-state",
-    "last-operator",
-    "action"
-  ],
-  "requiredGovernanceStates": [
-    "normal",
-    "pending-review",
-    "adjusted",
-    "revoked",
-    "permission-granted",
-    "permission-reclaimed",
-    "blocked"
-  ],
-  "requiredGovernanceGuards": [
-    "no-sensitive-plain-text",
-    "points-adjust-reason-required",
-    "permission-change-reason-required",
-    "log-immutable",
-    "least-privilege",
-    "second-review-required"
-  ],
-  "requiredOperationFlowPages": [
-    "content-list",
-    "review-workbench",
-    "home-slots",
-    "points-records",
-    "operation-log",
-    "role-management"
-  ],
-  "requiredBatchActions": [
-    "select-visible",
-    "batch-assign",
-    "batch-status-change",
-    "batch-export-masked",
-    "batch-write-log"
-  ],
-  "requiredDrawerFields": [
-    "object-summary",
-    "status-history",
-    "linked-records",
-    "risk-and-reason",
-    "operation-history"
-  ],
-  "requiredExceptionStates": [
-    "pending-review",
-    "material-blocked",
-    "target-invalid",
-    "points-risk",
-    "permission-risk",
-    "send-failed"
-  ],
-  "requiredOperationGuards": [
-    "batch-reason-required",
-    "masked-export-only",
-    "single-object-review",
-    "danger-confirm-required",
-    "drawer-readonly-first",
-    "exception-owner-required"
-  ],
-  "requiredMessageStoreDataPages": [
-    "message-config",
-    "store-config",
-    "content-data",
-    "activity-data",
-    "growth-data",
-    "points-data"
-  ],
-  "requiredMessageFields": [
-    "message-id",
-    "title",
-    "type",
-    "target",
-    "status",
-    "audience",
-    "send-window",
-    "fallback",
-    "recall-reason",
-    "owner",
-    "action"
-  ],
-  "requiredStoreFields": [
-    "sku-id",
-    "name",
-    "benefit",
-    "points-cost",
-    "display-state",
-    "validity",
-    "exchange-state",
-    "exception-summary",
-    "owner",
-    "action"
-  ],
-  "requiredDataReviewWorkflowSteps": [
-    "metric-definition",
-    "source-attribution",
-    "exclusion-rule",
-    "insight-decision",
-    "follow-up-action",
-    "review-log"
-  ],
-  "requiredDataReviewFields": [
-    "metric",
-    "definition",
-    "source",
-    "today",
-    "trend",
-    "exclusion",
-    "insight",
-    "owner",
-    "next-action"
-  ],
-  "requiredMessageStoreDataStates": [
-    "normal",
-    "watching",
-    "exception",
-    "resolved"
-  ],
-  "requiredMessageStoreDataGuards": [
-    "no-auto-send",
-    "send-recall-reason-required",
-    "no-payment-settlement",
-    "no-card-code-inventory",
-    "data-source-labeled",
-    "test-data-excluded",
-    "no-bi-overbuild"
   ]
 }
