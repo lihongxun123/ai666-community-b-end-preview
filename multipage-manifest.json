@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T14:07:45.377Z",
+  "generatedAt": "2026-07-15T14:55:03.854Z",
   "pages": [
     {
       "view": "content-list",
@@ -17,6 +17,11 @@
       "label": "审核工作台"
     },
     {
+      "view": "review-detail",
+      "file": "review-detail.html",
+      "label": "审核任务"
+    },
+    {
       "view": "flash-management",
       "file": "flash-management.html",
       "label": "闪念管理"
@@ -25,6 +30,11 @@
       "view": "flash-detail",
       "file": "flash-detail.html",
       "label": "闪念详情"
+    },
+    {
+      "view": "model-management",
+      "file": "model-management.html",
+      "label": "模型管理"
     },
     {
       "view": "aigc-template-config",
@@ -39,22 +49,27 @@
     {
       "view": "home-slots",
       "file": "home-slots.html",
-      "label": "广告位配置"
+      "label": "展示位管理"
     },
     {
       "view": "login-popup-config",
       "file": "login-popup-config.html",
-      "label": "弹窗配置"
+      "label": "登录弹窗配置"
     },
     {
       "view": "activity-config",
       "file": "activity-config.html",
-      "label": "活动配置"
+      "label": "活动管理"
+    },
+    {
+      "view": "activity-detail",
+      "file": "activity-detail.html",
+      "label": "活动详情"
     },
     {
       "view": "store-config",
       "file": "store-config.html",
-      "label": "商城配置"
+      "label": "商城管理"
     },
     {
       "view": "user-list",
@@ -79,12 +94,12 @@
     {
       "view": "trust-lists",
       "file": "trust-lists.html",
-      "label": "黑白名单"
+      "label": "账号治理"
     },
     {
       "view": "operation-log",
       "file": "operation-log.html",
-      "label": "操作日志列表"
+      "label": "日志"
     },
     {
       "view": "role-management",

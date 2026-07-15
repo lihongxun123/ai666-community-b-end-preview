@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T14:11:40.214Z",
+  "generatedAt": "2026-07-15T14:55:04.458Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -41,35 +41,112 @@
     "crossPageButtonsUseRealLinks": true,
     "submissionManagementMergedIntoContentList": true,
     "contentListSurfaceRefined": true,
+    "contentCatalogObjectCoverageComplete": true,
+    "reviewSourceObjectsUseRegisteredBusinessDetails": true,
+    "submissionReviewSourcesUseRegisteredContentObjects": true,
+    "contentDetailMediaRequiresRegisteredAsset": true,
+    "contentOperationSamplesRemovedFromVisibleList": true,
     "reviewWorkbenchTabListsRefined": true,
+    "reviewCommentAndProfileOwnershipComplete": true,
+    "reviewWorkbenchFiltersAreOperational": true,
+    "reviewDecisionSeparatesReadableResultAndInternalNote": true,
+    "operationalListFiltersPresent": true,
+    "rowAwareBusinessDrawersDeclared": true,
+    "activityDetailProfilesMatchWorkbenchRoutes": true,
+    "activityDetailUnknownRouteDoesNotInheritAnotherObject": true,
+    "activityChildObjectRoutesUseCanonicalParent": true,
+    "backendExplicitObjectRoutesHaveResolutionFeedback": true,
+    "activityCatalogCoverageComplete": true,
+    "activitySubmissionRewardContextComplete": true,
+    "submissionSourceReviewActivityRewardBindingComplete": true,
+    "activityMutationsRequireRegisteredEvidenceChain": true,
+    "userDetailRouteKeepsRowContext": true,
+    "userDetailSourceHandoffsAndUnknownGuardComplete": true,
+    "userDetailContentTabUsesDirectList": true,
+    "userDetailProfileAndInvitePresentationComplete": true,
+    "inviteRecordsShowNicknameAndUserId": true,
+    "inviteRewardAndPointsLedgerUseOneSourceChain": true,
+    "userGovernanceActionsRespectStateOwnership": true,
+    "accountRestrictionLiftKeepsBusinessStateIsolated": true,
+    "trustTabsAreOperational": true,
+    "reviewDetailsUseClickedRowContext": true,
+    "processedReviewCanCreateSeparateRecheckTask": true,
+    "modelAndStoreMaintenanceActionsComplete": true,
+    "currentDangerActionsAndReviewFormsComplete": true,
+    "roleAndAdminDirectSaveWithoutApproval": true,
+    "roleAndAdminWideTablesRemainScannable": true,
+    "roleAndAdminDirectCreateEditComplete": true,
+    "roleAndAdminStopDirectlyWithConfirmation": true,
+    "stickyActionColumnsSupported": true,
+    "globalListActionLinksArePlainAndAligned": true,
+    "dangerConfirmCarriesContextAndReasonGate": true,
     "flashManagementPageComplete": true,
+    "flashCurrentCatalogExactAndOperationallySeparated": true,
     "flashDetailRoutePage": true,
     "contentDetailRoutePage": true,
+    "contentVersionVisibilityFollowsLifecycle": true,
     "centralizedOperationSlots": true,
     "operationSlotTabsInteractive": true,
     "homeAdSlotInformationArchitecture": true,
     "operationSlotSecondaryFiltersRemoved": true,
     "operationSlotWorkflowComplete": true,
+    "operationSlotSourceLifecycleContractComplete": true,
+    "operationSlotCurrentCEndPlacementContractComplete": true,
     "homeQuickEntryAdSlotsComplete": true,
+    "homeQuickEntryPresetContractComplete": true,
     "operationSlotEditorModalComplete": true,
+    "operationSlotCapacityScheduleGateComplete": true,
     "aigcTemplateConfigComplete": true,
+    "aigcTemplateLifecycleComplete": true,
+    "aigcTemplateModelSingleSourceComplete": true,
+    "modelSurfaceScopeRemoved": true,
+    "modelRelationSummaryRemoved": true,
     "officialTutorialManagementComplete": true,
+    "tutorialCatalogObjectCoverageComplete": true,
     "officialTutorialManagementSurfaceSlimmed": true,
     "officialTutorialModalMatchesCEndIA": true,
+    "cFacingAssetUploadsAreOperational": true,
     "loginPopupConfigComplete": true,
+    "loginPopupSettingsSaveContractComplete": true,
     "activityTaskPointsLoopComplete": true,
+    "activityCreationIsDevelopmentOwned": true,
+    "activityLifecycleVersionBindingComplete": true,
     "storeConfigAndDeferredReviewComplete": true,
+    "storeRemediationSourceChainAndProcessingContractComplete": true,
+    "storeCatalogMatchesCurrentCEndProducts": true,
     "userPointsPermissionLoopComplete": true,
+    "pointsLedgerCorrectionIsAppendOnly": true,
+    "pointsAdjustmentRequiresSourceLedgerEntry": true,
+    "mangaReturnTrialCoveredByExistingPages": true,
+    "communityProductBusinessContractsComplete": true,
+    "placementUsesDeliveryNotSlotCreation": true,
+    "activityAndStoreWorkspacesSeparated": true,
+    "activityDetailKeepsVisibleObjectIdentity": true,
+    "logsRemainImmutableAndSensitiveAccessTracked": true,
+    "operationLogHasAlignedSingleEntry": true,
+    "inviteExceptionProcessingIsObjectScoped": true,
+    "globalDescriptiveSurfaceClutterRemoved": true,
+    "globalOverdesignClutterRemoved": true,
+    "operationLogIsSinglePurposeAndUserResultEventsAreRemoved": true,
+    "reviewLifecycleStatesComplete": true,
+    "roleAndAdminPermissionsUsePageActionTrees": true,
+    "businessDetailDrawersCarryObjectStateAndNextStep": true,
+    "objectEntryResponsibilityContractIsDeclared": true,
     "cEndFormalPagesCovered": true,
     "standalonePreviewPagesClassified": true,
     "cEndFeatureGroupsCovered": true,
     "dangerousActionsRequireConfirm": true,
     "confirmModalHasReasonInput": true,
     "operationLogSamplesCoverBackend": true,
+    "operationLogSamplesCoverP0DangerousDomains": true,
+    "operationLogsReturnToExactBusinessObjects": true,
+    "operationLogStateTimelineIsAppendOnly": true,
+    "activityRewardReviewReferencesExactTasks": true,
     "sensitiveFieldsMasked": true,
     "walkthroughPanelExists": true,
     "formalCleanupRulesRecorded": true,
     "globalFormalChromeCleaned": true,
+    "globalChromeHasNoFalseButtons": true,
     "noFinalApiProtocol": true,
     "noDatabaseDesign": true,
     "noRealProductionAutomation": true,
@@ -80,56 +157,62 @@
   "sidebarPages": [
     {
       "view": "content-list",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "内容列表",
       "file": "index.html"
     },
     {
       "view": "review-workbench",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "审核工作台",
       "file": "review-workbench.html"
     },
     {
       "view": "flash-management",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "闪念管理",
       "file": "flash-management.html"
     },
     {
+      "view": "model-management",
+      "group": "内容管理",
+      "label": "模型管理",
+      "file": "model-management.html"
+    },
+    {
       "view": "aigc-template-config",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "模板配置",
       "file": "aigc-template-config.html"
     },
     {
       "view": "tutorial-management",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "教程管理",
       "file": "tutorial-management.html"
     },
     {
       "view": "home-slots",
-      "group": "运营配置",
-      "label": "广告位配置",
+      "group": "运营管理",
+      "label": "展示位管理",
       "file": "home-slots.html"
     },
     {
       "view": "login-popup-config",
-      "group": "运营配置",
-      "label": "弹窗配置",
+      "group": "运营管理",
+      "label": "登录弹窗配置",
       "file": "login-popup-config.html"
     },
     {
       "view": "activity-config",
-      "group": "运营配置",
-      "label": "活动配置",
+      "group": "运营管理",
+      "label": "活动管理",
       "file": "activity-config.html"
     },
     {
       "view": "store-config",
-      "group": "运营配置",
-      "label": "商城配置",
+      "group": "运营管理",
+      "label": "商城管理",
       "file": "store-config.html"
     },
     {
@@ -153,24 +236,24 @@
     {
       "view": "trust-lists",
       "group": "用户管理",
-      "label": "黑白名单",
+      "label": "账号治理",
       "file": "trust-lists.html"
     },
     {
       "view": "operation-log",
-      "group": "操作日志",
-      "label": "操作日志列表",
+      "group": "系统管理",
+      "label": "日志",
       "file": "operation-log.html"
     },
     {
       "view": "role-management",
-      "group": "系统设置",
+      "group": "系统管理",
       "label": "角色管理",
       "file": "role-management.html"
     },
     {
       "view": "admin-users",
-      "group": "系统设置",
+      "group": "系统管理",
       "label": "后台用户管理",
       "file": "admin-users.html"
     }
@@ -178,56 +261,62 @@
   "generatedPages": [
     {
       "view": "content-list",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "内容列表",
       "file": "index.html"
     },
     {
       "view": "review-workbench",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "审核工作台",
       "file": "review-workbench.html"
     },
     {
       "view": "flash-management",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "闪念管理",
       "file": "flash-management.html"
     },
     {
+      "view": "model-management",
+      "group": "内容管理",
+      "label": "模型管理",
+      "file": "model-management.html"
+    },
+    {
       "view": "aigc-template-config",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "模板配置",
       "file": "aigc-template-config.html"
     },
     {
       "view": "tutorial-management",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "教程管理",
       "file": "tutorial-management.html"
     },
     {
       "view": "home-slots",
-      "group": "运营配置",
-      "label": "广告位配置",
+      "group": "运营管理",
+      "label": "展示位管理",
       "file": "home-slots.html"
     },
     {
       "view": "login-popup-config",
-      "group": "运营配置",
-      "label": "弹窗配置",
+      "group": "运营管理",
+      "label": "登录弹窗配置",
       "file": "login-popup-config.html"
     },
     {
       "view": "activity-config",
-      "group": "运营配置",
-      "label": "活动配置",
+      "group": "运营管理",
+      "label": "活动管理",
       "file": "activity-config.html"
     },
     {
       "view": "store-config",
-      "group": "运营配置",
-      "label": "商城配置",
+      "group": "运营管理",
+      "label": "商城管理",
       "file": "store-config.html"
     },
     {
@@ -251,38 +340,50 @@
     {
       "view": "trust-lists",
       "group": "用户管理",
-      "label": "黑白名单",
+      "label": "账号治理",
       "file": "trust-lists.html"
     },
     {
       "view": "operation-log",
-      "group": "操作日志",
-      "label": "操作日志列表",
+      "group": "系统管理",
+      "label": "日志",
       "file": "operation-log.html"
     },
     {
       "view": "role-management",
-      "group": "系统设置",
+      "group": "系统管理",
       "label": "角色管理",
       "file": "role-management.html"
     },
     {
       "view": "admin-users",
-      "group": "系统设置",
+      "group": "系统管理",
       "label": "后台用户管理",
       "file": "admin-users.html"
     },
     {
       "view": "content-detail",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "内容详情",
       "file": "content-detail.html"
     },
     {
+      "view": "review-detail",
+      "group": "内容管理",
+      "label": "审核任务",
+      "file": "review-detail.html"
+    },
+    {
       "view": "flash-detail",
-      "group": "内容运营",
+      "group": "内容管理",
       "label": "闪念详情",
       "file": "flash-detail.html"
+    },
+    {
+      "view": "activity-detail",
+      "group": "运营管理",
+      "label": "活动详情",
+      "file": "activity-detail.html"
     },
     {
       "view": "user-detail",
@@ -295,6 +396,7 @@
     "outputs/community-b-end-antdesign-prototype/index.html",
     "outputs/community-b-end-antdesign-prototype/review-workbench.html",
     "outputs/community-b-end-antdesign-prototype/flash-management.html",
+    "outputs/community-b-end-antdesign-prototype/model-management.html",
     "outputs/community-b-end-antdesign-prototype/aigc-template-config.html",
     "outputs/community-b-end-antdesign-prototype/tutorial-management.html",
     "outputs/community-b-end-antdesign-prototype/home-slots.html",
@@ -309,7 +411,9 @@
     "outputs/community-b-end-antdesign-prototype/role-management.html",
     "outputs/community-b-end-antdesign-prototype/admin-users.html",
     "outputs/community-b-end-antdesign-prototype/content-detail.html",
+    "outputs/community-b-end-antdesign-prototype/review-detail.html",
     "outputs/community-b-end-antdesign-prototype/flash-detail.html",
+    "outputs/community-b-end-antdesign-prototype/activity-detail.html",
     "outputs/community-b-end-antdesign-prototype/user-detail.html"
   ],
   "formalCEndPages": [

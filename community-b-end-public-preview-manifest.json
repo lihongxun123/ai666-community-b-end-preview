@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-09T14:21:31.718Z",
+  "generatedAt": "2026-07-15T14:55:18.886Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 19,
+  "pageCount": 22,
   "pages": [
     {
       "slug": "content-list",
@@ -26,6 +26,12 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/review-workbench.html"
     },
     {
+      "slug": "review-detail",
+      "label": "审核任务",
+      "path": "review-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/review-detail.html"
+    },
+    {
       "slug": "flash-management",
       "label": "闪念管理",
       "path": "flash-management.html",
@@ -36,6 +42,12 @@
       "label": "闪念详情",
       "path": "flash-detail.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/flash-detail.html"
+    },
+    {
+      "slug": "model-management",
+      "label": "模型管理",
+      "path": "model-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-management.html"
     },
     {
       "slug": "aigc-template-config",
@@ -51,25 +63,31 @@
     },
     {
       "slug": "home-slots",
-      "label": "广告位配置",
+      "label": "展示位管理",
       "path": "home-slots.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/home-slots.html"
     },
     {
       "slug": "login-popup-config",
-      "label": "弹窗配置",
+      "label": "登录弹窗配置",
       "path": "login-popup-config.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/login-popup-config.html"
     },
     {
       "slug": "activity-config",
-      "label": "活动配置",
+      "label": "活动管理",
       "path": "activity-config.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/activity-config.html"
     },
     {
+      "slug": "activity-detail",
+      "label": "活动详情",
+      "path": "activity-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/activity-detail.html"
+    },
+    {
       "slug": "store-config",
-      "label": "商城配置",
+      "label": "商城管理",
       "path": "store-config.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/store-config.html"
     },
@@ -99,13 +117,13 @@
     },
     {
       "slug": "trust-lists",
-      "label": "黑白名单",
+      "label": "账号治理",
       "path": "trust-lists.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/trust-lists.html"
     },
     {
       "slug": "operation-log",
-      "label": "操作日志列表",
+      "label": "日志",
       "path": "operation-log.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/operation-log.html"
     },
@@ -125,6 +143,7 @@
   "assets": [
     "assets/image_assets/1.png",
     "assets/image_assets/11.png",
+    "assets/image_assets/12.png",
     "assets/image_assets/15.jpg",
     "assets/image_assets/17.png",
     "assets/image_assets/18.png",

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 后台用户管理</title>
+  <title>AI666 后台 - 审核任务</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -2532,7 +2532,7 @@
         <div class="nav-group" data-nav-module="内容管理"><span>内容管理</span></div>
         <div class="nav-children">
           <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
-          <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
+          <a class="nav-btn is-active" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
           <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
           <a class="nav-btn" href="model-management.html" data-nav="model-management" data-page-link="model-management.html">模型管理</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
@@ -2565,7 +2565,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="operation-log.html" data-nav="operation-log" data-page-link="operation-log.html">日志</a>
           <a class="nav-btn" href="role-management.html" data-nav="role-management" data-page-link="role-management.html">角色管理</a>
-          <a class="nav-btn is-active" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
+          <a class="nav-btn" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
         </div>
       </section>
     </aside>
@@ -2573,7 +2573,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">后台用户管理</h1>
+          <h1 class="top-title" id="globalTitle">审核任务</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -2581,38 +2581,68 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="admin-users" data-page-contract="admin-users" data-rbac-page="admin-users" data-last-super-admin-guard="enabled">
-          <div class="contract-panel" data-page-contract="admin-users">后台用户只关联角色并继承角色权限，不配置组织、部门或数据范围。新增和调整直接保存；账号不可删除，停用后保留历史责任，最后一个超级管理员受保护。</div>
+<section class="view is-active" data-view="review-detail" data-page-contract="review-detail" data-review-task-page="true" data-review-state-owner="review-workbench">
+          <div class="contract-panel" data-page-contract="review-detail">审核任务详情是独立工作页：它承载对象上下文、来源证据、风险判断、用户可读结果、内部备注和审核动作；审核工作台只负责扫描与进入任务，不再用通用详情抽屉代替工作页。</div>
           <div class="page-head">
-            <div class="page-title"><h2>后台用户管理</h2><p>管理后台登录账号、角色组合和继承权限。</p></div>
-            <div class="action-row"><button class="btn primary" data-open-drawer="admin-user-detail">新增后台用户</button></div>
+            <div class="page-title">
+              <p class="muted small"><a class="btn link" href="review-workbench.html" data-review-back-link>审核工作台</a> / <span class="mono" data-review-page-task-id>AUD-0000</span></p>
+              <h2 data-review-page-title>审核任务</h2>
+              <p data-review-page-subtitle>核对对象、证据和用户影响后给出结论。</p>
+            </div>
+            <div class="action-row"><a class="btn" href="review-workbench.html">返回队列</a></div>
           </div>
-          <div class="panel" data-governance-loop-page="admin-users">
-            <div class="panel-head"><div class="panel-title">后台账号治理</div><span class="muted small">新增、停用、回收权限都必须留痕</span></div>
-            <div class="panel-body">
-              <div class="preview-grid">
-                <div class="preview-card"><b>账号状态</b><span class="tag success" data-governance-state="normal">正常</span><p class="muted small">后台用户只展示脱敏联系方式和角色摘要。</p></div>
-                <div class="preview-card"><b>角色调整</b><span class="tag info" data-governance-state="permission-granted">直接保存</span><p class="muted small">后台用户继承所选角色权限。</p></div>
-                <div class="preview-card"><b>账号停用</b><span class="tag danger" data-governance-state="blocked">已停用</span><p class="muted small">停用账号后回收危险操作权限。</p></div>
-                <div class="preview-card"><b>敏感字段</b><p class="muted small">不展示密码、Token、Session 或完整联系方式。</p></div>
+          <div class="review-task-layout">
+            <div class="review-task-main">
+              <div class="panel">
+                <div class="panel-head"><div class="panel-title">任务与对象</div><div class="op-list"><span class="tag warning" data-review-page-status>待审核</span><span class="tag gray" data-review-page-sla>处理中</span></div></div>
+                <div class="panel-body review-task-facts">
+                  <div class="review-fact"><b>审核对象</b><span data-review-page-object>等待载入</span></div>
+                  <div class="review-fact"><b>提交人与处理人</b><span data-review-page-people>等待载入</span></div>
+                  <div class="review-fact"><b>风险来源</b><span data-review-page-risk-source>等待载入</span></div>
+                  <div class="review-fact"><b>风险摘要</b><span data-review-page-risk-summary>等待载入</span></div>
+                </div>
+              </div>
+              <div class="panel">
+                <div class="panel-head"><div class="panel-title">来源与证据</div><span class="tag gray" data-review-page-source-state>待回查</span></div>
+                <div class="panel-body review-task-facts">
+                  <div class="review-fact"><b>来源对象</b><span class="mono" data-review-page-source-object>等待载入</span></div>
+                  <div class="review-fact"><b>C端来源上下文</b><span data-review-page-source-cend>等待载入</span></div>
+                  <div class="review-fact"><b>当前公开结果</b><span data-review-page-public-state>等待载入</span></div>
+                  <div class="review-fact"><b>关联记录</b><span data-review-page-related-records>暂无关联记录</span></div>
+                </div>
+                <div class="panel-body"><a class="btn link" href="#" data-review-page-source-link>回查来源业务</a></div>
+              </div>
+              <div class="panel">
+                <div class="panel-head"><div class="panel-title">任务历史</div><span class="muted small">原任务记录不被后续复核覆盖</span></div>
+                <div class="panel-body">
+                  <table data-review-page-history>
+                    <thead><tr><th>提交时间</th><th>当前状态</th><th>复核</th><th>下一步</th></tr></thead>
+                    <tbody><tr><td data-review-page-submitted-at>等待载入</td><td data-review-page-history-status>等待载入</td><td data-review-page-second-review>等待载入</td><td class="wrap" data-review-page-next-step>等待载入</td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="review-task-side">
+              <div class="panel">
+                <div class="panel-head"><div class="panel-title">审核处理</div><span class="tag info" data-review-page-mode>可处理</span></div>
+                <div class="panel-body review-decision-fields" data-review-page-actionable>
+                  <div class="field"><label>用户可读结果</label><textarea class="input textarea" data-review-page-user-reason aria-label="用户可读结果" placeholder="说明用户能理解的结论和下一步"></textarea></div>
+                  <div class="field"><label>内部备注</label><textarea class="input textarea" data-review-page-internal-note aria-label="内部备注" placeholder="记录证据、复核意见和内部判断；不向 C端展示"></textarea></div>
+                  <div class="review-decision-actions">
+                    <button class="btn primary" type="button" data-review-page-decision="approve">通过</button>
+                    <button class="btn danger" type="button" data-review-page-decision="reject">拒绝</button>
+                    <button class="btn" type="button" data-review-page-decision="second-review">转复核</button>
+                    <button class="btn" type="button" data-review-page-decision="return-edit">退回修改</button>
+                  </div>
+                  <p class="muted small" data-review-page-feedback role="status" hidden></p>
+                </div>
+                <div class="panel-body" data-review-page-readonly hidden>
+                  <p><b>该任务已处理，只读回查。</b></p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="panel" data-scan-table-panel="admin-users">
-            <div class="panel-head"><div class="panel-title">后台用户列表</div></div>
-            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="admin-users">
-                <thead><tr><th data-admin-field="admin-id">后台用户 ID</th><th data-admin-field="nickname">昵称</th><th data-admin-field="role">角色</th><th data-admin-field="account-state">账号状态</th><th data-admin-field="permission-change">权限变化</th><th data-admin-field="last-login">最近登录</th><th data-admin-field="contact">联系方式</th><th data-admin-field="last-operator">最近操作人</th><th data-admin-field="action">操作</th></tr></thead>
-                <tbody>
-                  <tr data-governance-state="normal" data-admin-state="normal" data-admin-role-summary="super-admin-content-ops"><td class="mono">ADM-001</td><td>运营 A</td><td>超级管理员、内容运营</td><td><span class="tag success">正常</span></td><td>新增展示位管理权限，LOG-2201</td><td>2026-07-13 15:46</td><td>[EMAIL]</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link" data-open-drawer="admin-user-detail" data-drawer-intent="edit">调整角色</button><button class="btn link" disabled title="最后一个超级管理员不能停用">停用</button></div></td></tr>
-                  <tr data-governance-state="normal" data-admin-state="active" data-admin-role-summary="reviewer"><td class="mono">ADM-002</td><td>审核员 B</td><td>审核员</td><td><span class="tag success">启用</span></td><td>无新增权限</td><td>2026-07-05</td><td>[EMAIL]</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link danger-link" data-danger-action="admin-stop" data-danger-object-id="ADM-002 · 审核员 B" data-danger-current-state="启用 · 审核员" data-danger-result="停用账号并保留历史责任、角色变化和操作日志" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
-                  <tr data-governance-state="blocked" data-admin-state="disabled" data-admin-role-summary="temporary-support"><td class="mono">ADM-009</td><td>临时支援</td><td>临时运营支援</td><td><span class="tag danger">已停用</span></td><td>回收运营管理权限，LOG-2202</td><td>2026-07-12 18:20</td><td>[EMAIL]</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </section>
-
       </main>
     </div>
   </div>

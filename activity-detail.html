@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 后台用户管理</title>
+  <title>AI666 后台 - 活动详情</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -2545,7 +2545,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="home-slots.html" data-nav="home-slots" data-page-link="home-slots.html">展示位管理</a>
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
-          <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
+          <a class="nav-btn is-active" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -2565,7 +2565,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="operation-log.html" data-nav="operation-log" data-page-link="operation-log.html">日志</a>
           <a class="nav-btn" href="role-management.html" data-nav="role-management" data-page-link="role-management.html">角色管理</a>
-          <a class="nav-btn is-active" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
+          <a class="nav-btn" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
         </div>
       </section>
     </aside>
@@ -2573,7 +2573,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">后台用户管理</h1>
+          <h1 class="top-title" id="globalTitle">活动详情</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -2581,38 +2581,36 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="admin-users" data-page-contract="admin-users" data-rbac-page="admin-users" data-last-super-admin-guard="enabled">
-          <div class="contract-panel" data-page-contract="admin-users">后台用户只关联角色并继承角色权限，不配置组织、部门或数据范围。新增和调整直接保存；账号不可删除，停用后保留历史责任，最后一个超级管理员受保护。</div>
+<section class="view is-active" data-view="activity-detail" data-page-contract="activity-detail" data-route-only-page="activity-config" data-rule-version="v3">
+          <div class="contract-panel">活动详情承接参与条件、任务、投稿资格、奖励处理、积分关联、规则版本和暂停/恢复生效记录；生命周期变化不伪装成新规则版本。显式活动 ID 未登记时只显示不可操作的空状态，不继承其他活动数据、规则或动作。</div>
           <div class="page-head">
-            <div class="page-title"><h2>后台用户管理</h2><p>管理后台登录账号、角色组合和继承权限。</p></div>
-            <div class="action-row"><button class="btn primary" data-open-drawer="admin-user-detail">新增后台用户</button></div>
+            <div class="page-title"><div class="content-detail-title-row"><a class="ant-page-header-back" href="activity-config.html" data-open-view="activity-config">← 返回活动</a><h2>活动详情</h2></div><div class="page-object-identity" data-activity-detail-summary><b data-activity-detail-name>Prompt 共创计划</b><span class="mono" data-activity-detail-id-label>ACT-PROMPT-001</span><span>·</span><span data-activity-detail-state-text>进行中</span><span>·</span><span>规则版本 <span data-activity-detail-version>V3</span></span></div></div>
+            <div class="action-row" data-activity-detail-actions><span class="muted small" data-activity-detail-paused-note data-activity-rule-write-gate="paused-readonly" hidden>活动已暂停；暂停期间规则只读，不创建待生效版本；恢复后再调整规则。现有资格与奖励仍可处理。</span><span class="muted small" data-activity-detail-ended-note hidden>活动已结束，规则只读；仍可继续处理历史资格与奖励。</span><button class="btn primary" data-activity-running-action data-open-activity-rule-version>调整规则</button><button class="btn danger" data-activity-running-action data-danger-action="activity-pause" data-requires-confirm="true" data-requires-reason="true">暂停活动</button><button class="btn primary" data-activity-paused-action data-danger-action="activity-resume" data-requires-confirm="true" data-requires-reason="true" hidden>恢复活动</button><button class="btn" data-activity-active-action data-danger-action="activity-end" data-requires-confirm="true" data-requires-reason="true">结束活动</button></div>
           </div>
-          <div class="panel" data-governance-loop-page="admin-users">
-            <div class="panel-head"><div class="panel-title">后台账号治理</div><span class="muted small">新增、停用、回收权限都必须留痕</span></div>
+          <div class="tabs" data-business-tabs="activity">
+            <button class="tab is-active" data-activity-tab="base" data-business-tab="base">概览</button><button class="tab" data-activity-tab="records" data-business-tab="records" data-activity-records-tab-label>参与与投稿</button><button class="tab" data-activity-tab="grants" data-business-tab="grants">奖励处理</button><button class="tab" data-activity-tab="changes" data-business-tab="changes">变更记录</button>
+          </div>
+          <div class="panel" data-business-panel-group="activity" data-business-panel="base"><div class="panel-body"><div class="activity-missing-state" data-activity-missing-state role="status" hidden></div><dl class="activity-summary-list"><div><dt>活动状态</dt><dd><span class="tag success" data-activity-detail-state>进行中</span></dd></div><div><dt>活动时间</dt><dd data-activity-detail-time>长期有效</dd></div><div><dt>待处理</dt><dd data-activity-detail-pending>投稿 12 · 资格 6 · 奖励 6</dd></div></dl><span data-activity-detail-binding-note hidden>新增记录绑定 V3 · 当前生效</span><span data-activity-detail-time-note hidden>暂停后停止新增参与和投稿。</span><div class="contract-panel" data-activity-lifecycle-result role="status" hidden></div></div></div>
+          <div class="panel" data-business-panel-group="activity" data-business-panel="records" data-activity-record-workbench="source-status-and-activity-judgment" hidden>
             <div class="panel-body">
-              <div class="preview-grid">
-                <div class="preview-card"><b>账号状态</b><span class="tag success" data-governance-state="normal">正常</span><p class="muted small">后台用户只展示脱敏联系方式和角色摘要。</p></div>
-                <div class="preview-card"><b>角色调整</b><span class="tag info" data-governance-state="permission-granted">直接保存</span><p class="muted small">后台用户继承所选角色权限。</p></div>
-                <div class="preview-card"><b>账号停用</b><span class="tag danger" data-governance-state="blocked">已停用</span><p class="muted small">停用账号后回收危险操作权限。</p></div>
-                <div class="preview-card"><b>敏感字段</b><p class="muted small">不展示密码、Token、Session 或完整联系方式。</p></div>
-              </div>
+              <div class="contract-panel"><p data-activity-detail-records>参与记录 326 · 投稿记录 84 · 示例数据，仅用于原型走查。</p><p class="muted small">来源审核、任务完成或邀请关系保持各自状态；本页只处理活动资格及其处理结果，不改写来源对象。</p></div>
+              <div class="table-wrap ant-table-wrapper"><table data-table="activity-records"><thead><tr><th>记录</th><th>用户</th><th>来源对象</th><th>来源状态</th><th>活动判定</th><th>奖励</th><th>C端结果</th><th>操作</th></tr></thead><tbody data-activity-records-body></tbody></table></div>
+              <div class="contract-panel" data-activity-records-result role="status" hidden></div>
             </div>
           </div>
-          <div class="panel" data-scan-table-panel="admin-users">
-            <div class="panel-head"><div class="panel-title">后台用户列表</div></div>
-            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
-              <table data-table="admin-users">
-                <thead><tr><th data-admin-field="admin-id">后台用户 ID</th><th data-admin-field="nickname">昵称</th><th data-admin-field="role">角色</th><th data-admin-field="account-state">账号状态</th><th data-admin-field="permission-change">权限变化</th><th data-admin-field="last-login">最近登录</th><th data-admin-field="contact">联系方式</th><th data-admin-field="last-operator">最近操作人</th><th data-admin-field="action">操作</th></tr></thead>
-                <tbody>
-                  <tr data-governance-state="normal" data-admin-state="normal" data-admin-role-summary="super-admin-content-ops"><td class="mono">ADM-001</td><td>运营 A</td><td>超级管理员、内容运营</td><td><span class="tag success">正常</span></td><td>新增展示位管理权限，LOG-2201</td><td>2026-07-13 15:46</td><td>[EMAIL]</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link" data-open-drawer="admin-user-detail" data-drawer-intent="edit">调整角色</button><button class="btn link" disabled title="最后一个超级管理员不能停用">停用</button></div></td></tr>
-                  <tr data-governance-state="normal" data-admin-state="active" data-admin-role-summary="reviewer"><td class="mono">ADM-002</td><td>审核员 B</td><td>审核员</td><td><span class="tag success">启用</span></td><td>无新增权限</td><td>2026-07-05</td><td>[EMAIL]</td><td>管理员</td><td><div class="op-list"><button class="btn link" data-open-drawer="admin-user-detail">详情</button><button class="btn link danger-link" data-danger-action="admin-stop" data-danger-object-id="ADM-002 · 审核员 B" data-danger-current-state="启用 · 审核员" data-danger-result="停用账号并保留历史责任、角色变化和操作日志" data-requires-confirm="true" data-requires-reason="true">停用</button></div></td></tr>
-                  <tr data-governance-state="blocked" data-admin-state="disabled" data-admin-role-summary="temporary-support"><td class="mono">ADM-009</td><td>临时支援</td><td>临时运营支援</td><td><span class="tag danger">已停用</span></td><td>回收运营管理权限，LOG-2202</td><td>2026-07-12 18:20</td><td>[EMAIL]</td><td>管理员</td><td><button class="btn link" data-open-drawer="admin-user-detail">详情</button></td></tr>
-                </tbody>
-              </table>
+          <div class="panel" data-business-panel-group="activity" data-business-panel="grants" data-activity-reward-workbench="activity-scoped" hidden>
+            <div class="panel-body"><p class="muted small" data-activity-reward-summary>奖励记录按当前活动 ID 加载；资格、发放和积分流水分别维护。</p></div>
+            <div class="table-wrap ant-table-wrapper"><table data-table="activity-rewards"><thead><tr><th>奖励记录</th><th>用户</th><th>资格</th><th>发放</th><th>积分流水</th><th>C端结果</th><th>操作</th></tr></thead><tbody data-activity-rewards-body></tbody></table></div>
+          </div>
+          <div class="panel" data-business-panel-group="activity" data-business-panel="changes" hidden>
+            <div class="panel-body">
+              <div class="contract-panel" data-activity-version-result role="status" hidden></div>
+              <p data-activity-detail-changes>V3：调整奖励说明，影响新参与记录；历史参与、奖励和积分流水不改写。</p>
+              <p class="muted small">每次核心规则调整都生成新版本和日志；旧版本继续绑定既有参与、资格、奖励与积分流水。</p>
             </div>
+            <div class="table-wrap ant-table-wrapper"><table data-table="activity-rule-versions"><thead><tr><th>规则版本</th><th>记录类型</th><th>变更摘要</th><th>生效时间与范围</th><th>变更原因</th><th>历史结果</th><th>日志</th></tr></thead><tbody data-activity-change-history-body></tbody></table></div>
           </div>
         </section>
-
       </main>
     </div>
   </div>
