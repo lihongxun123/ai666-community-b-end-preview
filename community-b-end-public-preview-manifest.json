@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-15T14:55:18.886Z",
+  "generatedAt": "2026-07-16T11:53:08.009Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 22,
+  "pageCount": 23,
   "pages": [
     {
       "slug": "content-list",
@@ -84,6 +84,12 @@
       "label": "活动详情",
       "path": "activity-detail.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/activity-detail.html"
+    },
+    {
+      "slug": "points-rules",
+      "label": "积分规则",
+      "path": "points-rules.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/points-rules.html"
     },
     {
       "slug": "store-config",

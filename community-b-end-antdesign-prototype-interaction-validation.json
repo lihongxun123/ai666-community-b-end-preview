@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T14:55:18.540Z",
+  "generatedAt": "2026-07-16T11:52:39.367Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -20,10 +20,12 @@
     "reviewWorkbenchFiltersWork": true,
     "reviewWorkbenchFilterResetWorks": true,
     "reviewDetailDrawerCarriesActions": true,
+    "reviewDetailNextTaskStaysInQueue": true,
     "reviewDecisionSeparatesReadableResultInternalNoteAndLog": true,
     "activityRecordsDoNotFakeMissingReviewTasks": true,
     "activityIncompleteEvidenceBlocksQualificationAndRewardMutations": true,
     "homeSlotPageUsable": true,
+    "homeSlotRowsUseNeutralTableBackground": true,
     "operationSlotCurrentCEndPlacementContractComplete": true,
     "operationSlotSourceLifecycleVisible": true,
     "operationSlotInvalidSourceCannotBypassInEditor": true,
@@ -62,6 +64,7 @@
     "contentListRefinementUsable": true,
     "contentListOperationalFilterWorks": true,
     "flashManagementPageUsable": true,
+    "globalTagsStayCompactAndContentSized": true,
     "flashOperationalFilterWorks": true,
     "flashDetailRouteUsable": true,
     "flashDetailRestoreLoopWorks": true,
@@ -106,15 +109,20 @@
     "userListOperationalFilterWorks": true,
     "userDetailUsesClickedRowContext": true,
     "userListActionsRespectStateOwnership": true,
+    "userListBatchPointsAdjustmentIsExplicitAndAppendOnly": true,
     "userListLimitCarriesReadableContext": true,
     "userDetailActionsHaveDistinctResponsibilities": true,
+    "userPointsAdjustmentTargetsExactUser": true,
+    "userPointsAdjustmentRequiresReason": true,
+    "userPointsCreditAppendsLedgerAndLog": true,
+    "userPointsDebitAppendsWithoutOverwritingHistory": true,
     "userDetailContentListIsDirectAndTraceable": true,
     "userDetailActivityUsesReconciledInviteRewardSource": true,
     "userDetailInviteListMatchesSummary": true,
     "userDetailPointsListIsReadableAndStable": true,
     "userDetailRegisteredSourceUsesExactContext": true,
     "unknownUserDetailCannotInheritOrMutate": true,
-    "pointsExactEntryRouteOpensRequestedRecord": true,
+    "pointsExactEntryRouteHighlightsRequestedRecord": true,
     "inviteRegistrationLedgerMatchesCurrentRule": true,
     "inviteRegistrationRewardReturnsToExactLedger": true,
     "profileReviewRouteUsesSingleStateOwner": true,
@@ -122,9 +130,11 @@
     "userDetailGenericRecordEntryRemoved": true,
     "modelOperationalFilterWorks": true,
     "modelBusinessLoopWorks": true,
+    "modelListKeepsScanFieldsAndDefersDecisionFields": true,
     "modelEditPreservesClickedObject": true,
     "modelSurfaceScopeRemoved": true,
     "modelRelationSummaryRemoved": true,
+    "modelCommunityPointsAreSeparateFromCost": true,
     "modelPauseRequiresImpactAndReason": true,
     "modelResumeRequiresStateAndDisplayReview": true,
     "submissionReviewHandsOffCanonicalObjectRelation": true,
@@ -203,7 +213,7 @@
     "inviteRewardLogReturnsToExactRecord": true,
     "inviteRewardLogOpensExactRecord": true,
     "pointsWithdrawalLogReturnsToExactLedger": true,
-    "pointsWithdrawalLogOpensExactEntry": true,
+    "pointsWithdrawalLogHighlightsExactEntry": true,
     "operationLogExactSourceRoutesWork": true,
     "sensitiveOperationLogDoesNotFabricateSourceRoute": true,
     "contentLifecycleAndVersionVisible": true,
@@ -212,17 +222,15 @@
     "reviewLifecycleStatesVisible": true,
     "pointsLedgerIsAppendOnly": true,
     "pointsOperationalFilterWorks": true,
-    "pointsDetailPreservesLedgerRelations": true,
+    "pointsRowsContainCompleteFactsWithoutDetailDrawer": true,
     "mangaRewardPendingAndExceptionStatesWork": true,
-    "pointsAdjustmentUsesCreateOnlySourceContext": true,
-    "pointsStandaloneAdjustmentEntryUnavailable": true,
-    "pointsAdjustmentRequiresValueAndReason": true,
-    "pointsAdjustmentAppendsWithoutOverwritingOriginal": true,
+    "pointsLedgerIsReadonly": true,
     "explicitObjectRoutesExplainMissingTargets": true,
     "activityChildRoutesUseCanonicalParentAndExactSource": true,
     "explicitObjectRoutesUseObjectIdAsCanonicalContext": true,
     "objectEntryResponsibilitiesAreExplicit": true,
     "dangerModalRequiresReason": true,
+    "pointsRulesPageIndexesSourceOwnedRules": true,
     "walkthroughPanelOpens": true,
     "formControlsHaveAccessibleNames": true,
     "noConsoleErrors": true
@@ -282,6 +290,12 @@
       "group": "运营管理",
       "label": "活动管理",
       "file": "activity-config.html"
+    },
+    {
+      "view": "points-rules",
+      "group": "运营管理",
+      "label": "积分规则",
+      "file": "points-rules.html"
     },
     {
       "view": "store-config",
@@ -388,6 +402,12 @@
       "file": "activity-config.html"
     },
     {
+      "view": "points-rules",
+      "group": "运营管理",
+      "label": "积分规则",
+      "file": "points-rules.html"
+    },
+    {
       "view": "store-config",
       "group": "运营管理",
       "label": "商城管理",
@@ -485,7 +505,7 @@
         "pageTitle": "内容列表",
         "contract": "content-list",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -507,7 +527,7 @@
         "pageTitle": "审核工作台",
         "contract": "review-workbench",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -529,7 +549,7 @@
         "pageTitle": "闪念管理",
         "contract": "flash-management",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -551,7 +571,7 @@
         "pageTitle": "模型管理",
         "contract": "model-management",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -573,7 +593,7 @@
         "pageTitle": "模板配置",
         "contract": "aigc-template-config",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -595,7 +615,7 @@
         "pageTitle": "教程管理",
         "contract": "tutorial-management",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -617,7 +637,7 @@
         "pageTitle": "展示位管理",
         "contract": "home-slots",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -639,7 +659,7 @@
         "pageTitle": "登录弹窗配置",
         "contract": "login-popup-config",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -661,7 +681,29 @@
         "pageTitle": "活动管理",
         "contract": "activity-config",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
+        "bodyMode": "multi-page",
+        "overflowX": 0,
+        "ok": true
+      },
+      {
+        "view": "points-rules",
+        "group": "运营管理",
+        "label": "积分规则",
+        "file": "points-rules.html",
+        "urlFile": "points-rules.html",
+        "navLabel": "积分规则",
+        "navGroup": "运营管理",
+        "navHref": "points-rules.html",
+        "activeViews": [
+          "points-rules"
+        ],
+        "activeNav": "points-rules",
+        "title": "积分规则",
+        "pageTitle": "积分规则",
+        "contract": "points-rules",
+        "viewCount": 1,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -683,7 +725,7 @@
         "pageTitle": "商城管理",
         "contract": "store-config",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -705,7 +747,7 @@
         "pageTitle": "用户列表",
         "contract": "user-list",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -727,7 +769,7 @@
         "pageTitle": "邀请记录",
         "contract": "invite-records",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -749,7 +791,7 @@
         "pageTitle": "积分记录",
         "contract": "points-records",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -771,7 +813,7 @@
         "pageTitle": "账号治理",
         "contract": "trust-lists",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -793,7 +835,7 @@
         "pageTitle": "日志",
         "contract": "operation-log",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -815,7 +857,7 @@
         "pageTitle": "角色管理",
         "contract": "role-management",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -837,7 +879,7 @@
         "pageTitle": "后台用户管理",
         "contract": "admin-users",
         "viewCount": 1,
-        "navLinkCount": 17,
+        "navLinkCount": 18,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -905,6 +947,13 @@
         "actionLinkCount": 7,
         "underlinedCount": 0,
         "mixedGroupCount": 7,
+        "misalignedGroupCount": 0
+      },
+      {
+        "view": "points-rules",
+        "actionLinkCount": 8,
+        "underlinedCount": 0,
+        "mixedGroupCount": 0,
         "misalignedGroupCount": 0
       },
       {
@@ -1667,6 +1716,13 @@
       "hasUserResult": true,
       "hasInternalNote": true,
       "genericPlaceholderCount": 0,
+      "summaryPanelCount": 1,
+      "summaryRowCount": 5,
+      "legacyFactCount": 0,
+      "exposesTechnicalSource": false,
+      "returnQueueHref": "review-workbench.html?queue=content",
+      "nextTaskLabel": "下一条",
+      "nextTaskHref": "review-detail.html?queue=content&task=AUD-1004",
       "taskId": "AUD-1005",
       "objectState": "待审核",
       "pageContract": "review-detail",
@@ -1702,6 +1758,15 @@
           "requiresReason": "true"
         }
       ]
+    },
+    "reviewDetailNextTaskRoute": {
+      "queue": "content",
+      "task": "AUD-1004",
+      "pageQueue": "content",
+      "pageTask": "AUD-1004",
+      "readonly": true,
+      "nextLabel": "已是最后一条",
+      "nextDisabled": "true"
     },
     "reviewRejectDecisionModal": {
       "open": true,
@@ -1939,6 +2004,26 @@
       "rowCount": 11,
       "visibleRowCount": 3,
       "hiddenRowCount": 8,
+      "visibleRowBackgrounds": [
+        {
+          "id": "BANNER-001",
+          "colors": [
+            "rgb(255, 255, 255)"
+          ]
+        },
+        {
+          "id": "BANNER-002",
+          "colors": [
+            "rgb(255, 255, 255)"
+          ]
+        },
+        {
+          "id": "BANNER-003",
+          "colors": [
+            "rgb(255, 255, 255)"
+          ]
+        }
+      ],
       "tabCount": 7,
       "hasAllTab": false,
       "hasHomeFeedTab": false,
@@ -1956,7 +2041,7 @@
         "model-operation-card"
       ],
       "homeSlotBatchBarCount": 0,
-      "navLinkCount": 17
+      "navLinkCount": 18
     },
     "operationSlotSourceLifecycleInitial": {
       "invalidSourceState": "invalid",
@@ -3894,7 +3979,135 @@
       "topicCount": 0,
       "interactionCount": 12,
       "actionCount": 6,
-      "hasBatchPanel": false
+      "hasBatchPanel": false,
+      "tagMetrics": [
+        {
+          "text": "纯文本",
+          "width": 50,
+          "parentWidth": 101,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "已下架",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "图文",
+          "width": 38,
+          "parentWidth": 77,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "已发布",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "纯文本",
+          "width": 50,
+          "parentWidth": 101,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "已发布",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "时间待回查",
+          "width": 74,
+          "parentWidth": 152,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "视频",
+          "width": 38,
+          "parentWidth": 77,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "已发布",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "纯文本",
+          "width": 50,
+          "parentWidth": 101,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "已发布",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "时间待回查",
+          "width": 74,
+          "parentWidth": 152,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "图文",
+          "width": 38,
+          "parentWidth": 77,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        },
+        {
+          "text": "待审核",
+          "width": 50,
+          "parentWidth": 91,
+          "minHeight": "20px",
+          "padding": "0px 6px",
+          "radius": "4px",
+          "justifySelf": "start"
+        }
+      ]
     },
     "flashOperationalFilter": {
       "visibleRows": 0,
@@ -4218,7 +4431,7 @@
         "卡片描述",
         "模板分类",
         "维护来源",
-        "预计消耗",
+        "消耗积分",
         "展示状态",
         "排序",
         "操作"
@@ -4230,7 +4443,9 @@
       "tableWrapWidth": 1182,
       "unusedRightSpace": 0,
       "firstRowCellCount": 10,
-      "firstRowEditableFields": "封面 / 标题 / 描述 / 分类 / 维护来源 / 默认模型 / 预计消耗积分",
+      "firstRowEditableFields": "封面 / 标题 / 描述 / 分类 / 维护来源 / 使用模型 / 消耗积分（自动）",
+      "firstRowCostText": "12 积分",
+      "firstRowCostValue": "12",
       "realCoverPreviewCount": 17,
       "filterLabels": [
         "模板分类",
@@ -4276,8 +4491,8 @@
         "维护来源",
         "卡片描述",
         "封面图",
-        "默认创作模型",
-        "预计消耗积分",
+        "使用模型",
+        "消耗积分",
         "排序",
         "展示状态",
         "停用",
@@ -4338,16 +4553,8 @@
         "MODEL-VID-OLD"
       ],
       "linkedModelEnabledValues": [
-        "gpt-4.1",
-        "gpt-5-chat-latest",
-        "claude-sonnet-4-6",
-        "gemini-3-pro-preview",
-        "gemini-2.5-pro",
-        "o4-mini",
-        "text-embedding-3-large",
         "gpt-image-2",
         "doubao-seedream-4-5-251128",
-        "gemini-3.1-flash-image",
         "grok-video-3",
         "grok-video-3-10s",
         "doubao-seedream-5-0-260128",
@@ -4364,48 +4571,58 @@
         "doubao-seedance-2-0-10s",
         "doubao-seedance-2-0-15s",
         "kling-2.5-1080p",
-        "grok-1.5-video-10s",
-        "MODEL-0056"
+        "grok-1.5-video-10s"
       ],
       "linkedModelDisabledValues": [
+        "gpt-4.1",
+        "gpt-5-chat-latest",
+        "claude-sonnet-4-6",
+        "gemini-3-pro-preview",
+        "gemini-2.5-pro",
+        "o4-mini",
+        "text-embedding-3-large",
+        "gemini-3.1-flash-image",
+        "MODEL-0056",
         "MODEL-IMG-A",
         "MODEL-VID-OLD"
       ],
       "linkedModelLabels": [
-        "gpt-4.1 · OpenAI · 可用于模板",
-        "gpt-5-chat-latest · OpenAI · 可用于模板",
-        "claude-sonnet-4-6 · Anthropic · 可用于模板",
-        "gemini-3-pro-preview · Google · 可用于模板",
-        "gemini-2.5-pro · Google · 可用于模板",
-        "o4-mini · OpenAI · 可用于模板",
-        "text-embedding-3-large · OpenAI · 可用于模板",
-        "gpt-image-2 · OpenAI · 可用于模板",
-        "doubao-seedream-4-5-251128 · Doubao · 可用于模板",
-        "gemini-3.1-flash-image · Google · 可用于模板",
-        "grok-video-3 · Grok · 可用于模板",
-        "grok-video-3-10s · Grok · 可用于模板",
-        "doubao-seedream-5-0-260128 · Doubao · 可用于模板",
-        "Nano Banana Pro · nano-banana-pro · 待确认 · 可用于模板",
-        "nano-banana-2 · 待确认 · 可用于模板",
-        "gemini-3-flash-preview · 待确认 · 可用于模板",
-        "kimi-k2.6 · 待确认 · 可用于模板",
-        "gpt-5.5 · OpenAI · 可用于模板",
-        "deepseek-v4-pro · 待确认 · 可用于模板",
-        "doubao-seedance-1-5-pro · 待确认 · 可用于模板",
-        "doubao-seedance-2-0-5s · 待确认 · 可用于模板",
-        "kling-3.0-omni-720p-ref-mute · 待确认 · 可用于模板",
-        "omni-fast · 待确认 · 可用于模板",
-        "doubao-seedance-2-0-10s · 待确认 · 可用于模板",
-        "doubao-seedance-2-0-15s · 待确认 · 可用于模板",
-        "kling-2.5-1080p · 待确认 · 可用于模板",
-        "grok-1.5-video-10s · 待确认 · 可用于模板",
-        "GPT-5.6（B端待投放） · MODEL-0056 · OpenAI · 可用于模板",
+        "gpt-4.1 · OpenAI · 未配置积分",
+        "gpt-5-chat-latest · OpenAI · 未配置积分",
+        "claude-sonnet-4-6 · Anthropic · 未配置积分",
+        "gemini-3-pro-preview · Google · 未配置积分",
+        "gemini-2.5-pro · Google · 未配置积分",
+        "o4-mini · OpenAI · 未配置积分",
+        "text-embedding-3-large · OpenAI · 未配置积分",
+        "gpt-image-2 · OpenAI · 18 积分/次 · 可用于模板",
+        "doubao-seedream-4-5-251128 · Doubao · 24 积分/次 · 可用于模板",
+        "gemini-3.1-flash-image · Google · 未配置积分",
+        "grok-video-3 · Grok · 36 积分/次 · 可用于模板",
+        "grok-video-3-10s · Grok · 40 积分/次 · 可用于模板",
+        "doubao-seedream-5-0-260128 · Doubao · 28 积分/次 · 可用于模板",
+        "Nano Banana Pro · nano-banana-pro · 待确认 · 22 积分/次 · 可用于模板",
+        "nano-banana-2 · 待确认 · 20 积分/次 · 可用于模板",
+        "gemini-3-flash-preview · 待确认 · 8 积分/次 · 可用于模板",
+        "kimi-k2.6 · 待确认 · 10 积分/次 · 可用于模板",
+        "gpt-5.5 · OpenAI · 12 积分/次 · 可用于模板",
+        "deepseek-v4-pro · 待确认 · 9 积分/次 · 可用于模板",
+        "doubao-seedance-1-5-pro · 待确认 · 36 积分/次 · 可用于模板",
+        "doubao-seedance-2-0-5s · 待确认 · 42 积分/次 · 可用于模板",
+        "kling-3.0-omni-720p-ref-mute · 待确认 · 48 积分/次 · 可用于模板",
+        "omni-fast · 待确认 · 28 积分/次 · 可用于模板",
+        "doubao-seedance-2-0-10s · 待确认 · 56 积分/次 · 可用于模板",
+        "doubao-seedance-2-0-15s · 待确认 · 72 积分/次 · 可用于模板",
+        "kling-2.5-1080p · 待确认 · 64 积分/次 · 可用于模板",
+        "grok-1.5-video-10s · 待确认 · 44 积分/次 · 可用于模板",
+        "GPT-5.6（B端待投放） · MODEL-0056 · OpenAI · 未配置积分",
         "历史图像模型（样例） · MODEL-IMG-A · 示例提供方 · 已暂停",
         "历史视频模型（样例） · MODEL-VID-OLD · 示例提供方 · 已下线"
       ],
-      "linkedModelHint": "选项来自模型管理；仅“已发布”的模型可新选。",
+      "linkedModelHint": "请选择已发布且已配置积分的模型。",
       "linkedModelAvailability": "unselected",
       "linkedModelHintHidden": true,
+      "costReadOnly": true,
+      "costPlaceholder": "选择模型后自动带出",
       "unnamedVisibleControls": 0,
       "reasonFieldHidden": true,
       "statusHint": "保存后 C端停止展示；模板配置与历史操作记录保留。",
@@ -4433,10 +4650,11 @@
       "type": "template",
       "fieldCount": 13,
       "title": "短剧漫剧开场",
-      "cost": "16",
+      "cost": "12",
+      "costReadOnly": true,
       "maintenanceSource": "官方维护",
       "linkedModel": "gpt-5.5",
-      "linkedModelHint": "gpt-5.5 当前可用于模板；保存时记录官方模型 ID gpt-5.5。",
+      "linkedModelHint": "gpt-5.5 当前可用于模板；消耗 12 积分/次。",
       "linkedModelAvailability": "available",
       "linkedModelHintHidden": true,
       "coverImage": "assets/image_assets/11.png",
@@ -4476,8 +4694,8 @@
         "维护来源",
         "卡片描述",
         "封面图",
-        "默认创作模型",
-        "预计消耗积分",
+        "使用模型",
+        "消耗积分",
         "排序",
         "展示状态",
         "展示中",
@@ -4491,7 +4709,7 @@
         "template-id",
         "editable-fields"
       ],
-      "hiddenEditableFields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 默认模型 / 预计消耗积分",
+      "hiddenEditableFields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 使用模型 / 消耗积分（自动）",
       "removedMaintainerField": true,
       "removedJumpLinkField": true,
       "reasonFieldHidden": true,
@@ -4507,7 +4725,7 @@
       "title": "邀请福利海报",
       "category": "活动海报",
       "maintenanceSource": "官方维护",
-      "cost": "9",
+      "cost": "18",
       "linkedModel": "gpt-image-2",
       "statusChecked": true
     },
@@ -4516,6 +4734,15 @@
       "errorVisible": true,
       "errorText": "请补齐 8 个必填字段后再保存模板。",
       "recordCount": 17
+    },
+    "templateModelCostBinding": {
+      "model": "gpt-5.5",
+      "cost": "12",
+      "readOnly": true
+    },
+    "templateModelCostAfterSwitch": {
+      "model": "gpt-image-2",
+      "cost": "18"
     },
     "templateDirectPublishBlocked": {
       "modalOpen": true,
@@ -4532,6 +4759,8 @@
       "recordCount": 18,
       "rowTitle": "镜头节奏模板",
       "rowMaintenanceSource": "专业维护",
+      "rowCost": "12 积分",
+      "rowCostValue": "12",
       "rowStatus": "停用",
       "filterCategory": "文本写作",
       "filterStatus": "停用",
@@ -4576,7 +4805,7 @@
     "templateUnavailableModelBlocksActiveSave": {
       "modalOpen": true,
       "errorVisible": true,
-      "errorText": "当前默认创作模型已暂停或下线；展示中模板必须改用已发布模型，或先停用模板。",
+      "errorText": "当前使用模型未发布或未配置积分；展示中模板必须改用可用模型，或先停用模板。",
       "linkedModel": "MODEL-IMG-A"
     },
     "tutorialCreateModal": {
@@ -4634,7 +4863,7 @@
         "链接"
       ],
       "editorToolbarButtonCount": 6,
-      "detailEditorHeight": 582,
+      "detailEditorHeight": 583,
       "modalWide": true,
       "tutorialInfoHorizontalLayout": true,
       "tutorialSectionsFillBody": true,
@@ -4808,6 +5037,9 @@
       "detailEntryCount": 7,
       "editEntryCount": 7,
       "pendingSummaryCount": 7,
+      "visibleVersionSuffixCount": 0,
+      "titleSubtitleCount": 0,
+      "lifecycleMismatchNoteCount": 0,
       "statRows": 0,
       "workflowPanels": 0,
       "rewardConfigPanels": 0,
@@ -4826,6 +5058,8 @@
       "lifecycle": "ended",
       "name": "模型体验季回顾",
       "version": "V1",
+      "headerText": "模型体验季回顾ACT-MODEL-REVIEW-001·已结束",
+      "headerVersionFieldCount": 0,
       "visibleTabs": [
         "base",
         "changes"
@@ -4904,7 +5138,7 @@
       "historyRows": 3,
       "currentRows": 1,
       "firstVersion": "V4",
-      "firstScope": "2026-07-15 22:55 起新增参与、投稿资格判定与奖励记录绑定 V4",
+      "firstScope": "2026-07-16 19:52 起新增参与、投稿资格判定与奖励记录绑定 V4",
       "firstHistoryResult": "V3 及更早参与、来源审核、奖励和积分流水不改写",
       "firstLog": "LOG-ACT-PROMPT-001-V4",
       "result": "V4 已生成并关联 LOG-ACT-PROMPT-001-V4。新规则仅影响后续新增记录；历史参与、资格、奖励与积分流水保持 V3 及原版本结果。C端页面本轮未修改。",
@@ -4937,7 +5171,7 @@
       ],
       "activeNav": "user-list",
       "userDetailNavCount": 0,
-      "navLinkCount": 17,
+      "navLinkCount": 18,
       "title": "用户详情",
       "pageTitle": "用户详情"
     },
@@ -4968,6 +5202,62 @@
       "firstLimitAction": true,
       "staleLimitAction": false
     },
+    "userBatchPointsInitial": {
+      "checkboxCount": 2,
+      "barHidden": true,
+      "batchActions": [
+        "批量调整积分",
+        "取消选择"
+      ],
+      "batchRestrictCount": 0,
+      "batchExportCount": 0
+    },
+    "userBatchPointsOneSelected": {
+      "barHidden": false,
+      "count": "已选择 1 人",
+      "actionDisabled": false,
+      "selectAllIndeterminate": true
+    },
+    "userBatchPointsAllSelected": {
+      "selectedIds": [
+        "USR-1001",
+        "USR-9001"
+      ],
+      "count": "已选择 2 人",
+      "selectAllChecked": true
+    },
+    "userBatchPointsModal": {
+      "open": true,
+      "mode": "batch",
+      "userIds": "USR-1001,USR-9001",
+      "title": "批量调整积分",
+      "targetLabel": "已选用户",
+      "target": "2 人 · 拾光用户（USR-1001）、官方运营号（USR-9001）",
+      "balanceHidden": true,
+      "directions": [
+        "发放积分",
+        "扣除积分"
+      ]
+    },
+    "userBatchPointsDebitGate": {
+      "modalOpen": true,
+      "error": "以下用户积分不足，整批未处理：官方运营号（USR-9001）",
+      "balances": [
+        "1,280",
+        "0"
+      ]
+    },
+    "userBatchPointsSaved": {
+      "modalOpen": false,
+      "balances": [
+        "1,295",
+        "15"
+      ],
+      "selectedCount": 0,
+      "barHidden": true,
+      "feedback": "批次 PTB-0001 已完成：为 2 人每人发放 15 积分，已分别生成 2 条积分流水和操作日志。",
+      "feedbackHidden": false
+    },
     "userListLimitConfirmation": {
       "open": true,
       "title": "账号限制确认",
@@ -4979,8 +5269,10 @@
     },
     "userDetailActionContract": {
       "actionLabels": [
+        "调整积分",
         "限制账号"
       ],
+      "pointsAction": true,
       "limitAction": true,
       "recordAction": false,
       "duplicateNoteAction": false,
@@ -5007,6 +5299,60 @@
         "资料状态",
         "注册来源",
         "个人简介"
+      ]
+    },
+    "userPointsAdjustmentModal": {
+      "open": true,
+      "userId": "USR-1001",
+      "user": "拾光用户 · USR-1001",
+      "balance": "1280",
+      "directions": [
+        "发放积分",
+        "扣除积分"
+      ],
+      "hasAmount": true,
+      "hasReason": true
+    },
+    "userPointsAdjustmentReasonGate": {
+      "open": true,
+      "error": "请填写本次发放或扣除积分的调整原因。",
+      "balance": "1,280",
+      "rowCount": 2
+    },
+    "userPointsCreditResult": {
+      "modalOpen": false,
+      "balance": "1,305",
+      "activeTab": "points",
+      "id": "PTS-MANUAL-1001-01",
+      "reason": "活动补偿，补发漏记积分",
+      "logId": "LOG-PTS-MANUAL-1001-01",
+      "cells": [
+        "后台人工发放流水 PTS-MANUAL-1001-01",
+        "+25",
+        "已入账",
+        "调整原因：活动补偿，补发漏记积分",
+        "2026-07-16 19:52",
+        "LOG-PTS-MANUAL-1001-01"
+      ],
+      "feedback": "发放 25 积分已完成，当前积分 1,305；原因已写入 LOG-PTS-MANUAL-1001-01，并生成新流水 PTS-MANUAL-1001-01。",
+      "recordReason": "活动补偿，补发漏记积分"
+    },
+    "userPointsDebitResult": {
+      "balance": "1,295",
+      "count": 2,
+      "firstId": "PTS-MANUAL-1001-02",
+      "firstReason": "重复奖励扣回",
+      "firstCells": [
+        "后台人工扣除流水 PTS-MANUAL-1001-02",
+        "-10",
+        "已扣减",
+        "调整原因：重复奖励扣回",
+        "2026-07-16 19:52",
+        "LOG-PTS-MANUAL-1001-02"
+      ],
+      "originalIds": [
+        "PTS-1001",
+        "PTS-1003"
       ]
     },
     "userDetailContentList": {
@@ -5082,22 +5428,32 @@
         "操作"
       ],
       "ids": [
+        "PTS-MANUAL-1001-02",
+        "PTS-MANUAL-1001-01",
         "PTS-1001",
         "PTS-1003"
       ],
       "sources": [
+        "后台人工扣除",
+        "后台人工发放",
         "邀请注册奖励",
         "Prompt 共创奖励"
       ],
       "changes": [
+        "-10",
+        "+25",
         "+20",
         "-30"
       ],
       "results": [
+        "已扣减",
+        "已入账",
         "已到账",
         "已撤回"
       ],
       "relations": [
+        "调整原因：重复奖励扣回",
+        "调整原因：活动补偿，补发漏记积分",
         "邀请记录 INV-2031",
         "原流水 PTS-0994"
       ],
@@ -5130,21 +5486,35 @@
       "accountState": "待核对",
       "points": "未登记",
       "disabledActions": [
+        "调整积分",
         "限制账号"
       ],
       "inheritedText": false
     },
     "pointsExactEntryRoute": {
       "search": "?entry=PTS-1003",
-      "drawerOpen": true,
-      "entryId": "PTS-1003"
+      "highlighted": true,
+      "cells": [
+        "PTS-1003",
+        "[USER_ID]",
+        "Prompt 共创计划",
+        "RULE-001",
+        "-30",
+        "撤回流水",
+        "原流水 PTS-0994",
+        "LOG-2103",
+        "运营 B",
+        "2026-07-13 14:12"
+      ],
+      "drawerOpen": false
     },
     "inviteRegistrationLedger": {
+      "highlighted": true,
       "entryId": "PTS-1001",
-      "state": "已入账 · 系统记录",
-      "source": "邀请有礼 · INV-2031",
+      "state": "已入账",
+      "source": "邀请有礼 · 邀请记录 INV-2031",
       "ruleAndChange": "RULE-002 · +20",
-      "original": "当前为独立流水；后续撤销必须新增反向流水。"
+      "reversal": ""
     },
     "inviteRegistrationReward": {
       "id": "INV-2031",
@@ -5162,8 +5532,8 @@
       "activeQueue": "profile",
       "pageOpen": true,
       "taskId": "AUD-1006",
-      "sourceObject": "USR-1001 · profile-submission",
-      "sourceContext": "用户中心资料 · user-center.html#edit-profile",
+      "sourceObject": "USR-1001",
+      "sourceContext": "用户中心资料",
       "sourceState": "已登记",
       "actions": [
         "通过",
@@ -5180,6 +5550,7 @@
     "userDetailGenericRecordEntry": {
       "triggerCount": 0,
       "headerActions": [
+        "调整积分",
         "限制账号"
       ],
       "processingHeaders": [
@@ -5237,6 +5608,93 @@
         "MODEL-IMG-A": "MODEL-IMG-A",
         "MODEL-VID-OLD": "MODEL-VID-OLD"
       },
+      "communityPoints": {
+        "gpt-4.1": "",
+        "gpt-5-chat-latest": "",
+        "claude-sonnet-4-6": "",
+        "gemini-3-pro-preview": "",
+        "gemini-2.5-pro": "",
+        "o4-mini": "",
+        "text-embedding-3-large": "",
+        "gpt-image-2": "18",
+        "doubao-seedream-4-5-251128": "24",
+        "gemini-3.1-flash-image": "",
+        "grok-video-3": "36",
+        "grok-video-3-10s": "40",
+        "doubao-seedream-5-0-260128": "28",
+        "nano-banana-pro": "22",
+        "nano-banana-2": "20",
+        "gemini-3-flash-preview": "8",
+        "kimi-k2.6": "10",
+        "gpt-5.5": "12",
+        "deepseek-v4-pro": "9",
+        "doubao-seedance-1-5-pro": "36",
+        "doubao-seedance-2-0-5s": "42",
+        "kling-3.0-omni-720p-ref-mute": "48",
+        "omni-fast": "28",
+        "doubao-seedance-2-0-10s": "56",
+        "doubao-seedance-2-0-15s": "72",
+        "kling-2.5-1080p": "64",
+        "grok-1.5-video-10s": "44",
+        "MODEL-0056": "",
+        "MODEL-IMG-A": "",
+        "MODEL-VID-OLD": ""
+      },
+      "costValues": {
+        "gpt-4.1": "输入 $0.4000 / 1M Tokens",
+        "gpt-5-chat-latest": "输入 $0.2500 / 1M Tokens",
+        "claude-sonnet-4-6": "输入 $1.5000 / 1M Tokens",
+        "gemini-3-pro-preview": "输入 $1.4000 / 1M Tokens",
+        "gemini-2.5-pro": "输入 $0.8750 / 1M Tokens",
+        "o4-mini": "输入 $0.5000 / 1M Tokens",
+        "text-embedding-3-large": "输入 $0.0260 / 1M Tokens",
+        "gpt-image-2": "待维护",
+        "doubao-seedream-4-5-251128": "待维护",
+        "gemini-3.1-flash-image": "模型价格 $0.175 / 次",
+        "grok-video-3": "待维护",
+        "grok-video-3-10s": "待维护",
+        "doubao-seedream-5-0-260128": "待维护",
+        "nano-banana-pro": "待维护",
+        "nano-banana-2": "待维护",
+        "gemini-3-flash-preview": "待维护",
+        "kimi-k2.6": "待维护",
+        "gpt-5.5": "待维护",
+        "deepseek-v4-pro": "待维护",
+        "doubao-seedance-1-5-pro": "待维护",
+        "doubao-seedance-2-0-5s": "待维护",
+        "kling-3.0-omni-720p-ref-mute": "待维护",
+        "omni-fast": "待维护",
+        "doubao-seedance-2-0-10s": "待维护",
+        "doubao-seedance-2-0-15s": "待维护",
+        "kling-2.5-1080p": "待维护",
+        "grok-1.5-video-10s": "待维护",
+        "MODEL-0056": "按调用场景说明",
+        "MODEL-IMG-A": "历史成本口径",
+        "MODEL-VID-OLD": "已停止维护"
+      },
+      "headerLabels": [
+        "模型名称",
+        "官方模型 ID",
+        "提供方",
+        "输入 / 输出",
+        "核心能力",
+        "成本口径",
+        "社区调用积分",
+        "供应状态",
+        "更新时间",
+        "操作"
+      ],
+      "visibleHeaderLabels": [
+        "模型名称",
+        "官方模型 ID",
+        "提供方",
+        "输入 / 输出",
+        "社区调用积分",
+        "供应状态",
+        "操作"
+      ],
+      "tableMinWidth": "1000px",
+      "pointsCellCount": 30,
       "modelIds": [
         "gpt-4.1",
         "gpt-5-chat-latest",
@@ -5345,6 +5803,9 @@
       "cendReferenceEditable": false,
       "scopeReasonEditable": false,
       "surfaceScopeFields": 0,
+      "capabilityDetailCount": 1,
+      "costDetailCount": 1,
+      "timeDetailCount": 1,
       "primaryVisible": true
     },
     "modelEditDrawer": {
@@ -5356,7 +5817,9 @@
       "modelIdReadonly": true,
       "capability": "工具调用、对话与识图",
       "cost": "输入 $0.4000 / 1M Tokens",
-      "fieldCount": 6,
+      "communityPoints": "",
+      "communityPointsType": "number",
+      "fieldCount": 7,
       "primaryVisible": true
     },
     "modelSurfaceScopeRemoved": {
@@ -5371,6 +5834,13 @@
       "relationCellCount": 0,
       "relationAttributeCount": 0,
       "drawerRelationFieldCount": 0
+    },
+    "modelCommunityPointsEdit": {
+      "cost": "待维护",
+      "communityPoints": "18",
+      "communityPointsType": "number",
+      "communityPointsMin": "1",
+      "hint": "社区系统中用户调用一次扣减的积分，与成本口径独立。"
     },
     "modelPauseConfirmation": {
       "open": true,
@@ -5534,8 +6004,8 @@
       "lifecycle": "paused",
       "state": "已暂停",
       "version": "V3",
-      "binding": "2026-07-15 22:55 起停止新增记录 · 当前规则 V3 保持，暂停前记录保留原版本",
-      "timeNote": "2026-07-15 22:55 起停止新增参与和投稿；恢复前现有资格、奖励和积分处理继续。",
+      "binding": "2026-07-16 19:52 起停止新增记录 · 当前规则 V3 保持，暂停前记录保留原版本",
+      "timeNote": "2026-07-16 19:52 起停止新增参与和投稿；恢复前现有资格、奖励和积分处理继续。",
       "pausedNoteVisible": true,
       "pausedNote": "活动已暂停；暂停期间规则只读，不创建待生效版本；恢复后再调整规则。现有资格与奖励仍可处理。",
       "ruleActionHidden": true,
@@ -5547,9 +6017,9 @@
       "currentVersionRows": 1,
       "firstHistoryType": "lifecycle",
       "firstHistoryStatus": "暂停记录",
-      "firstHistoryScope": "2026-07-15 22:55 起停止新增参与和投稿；规则版本保持 V3",
-      "firstHistoryLog": "LOG-ACT-PROMPT-001-PAUSE-202607152255",
-      "result": "ACT-PROMPT-001 已于 2026-07-15 22:55 暂停；该时间起停止新增参与和投稿，规则仍为 V3；暂停前记录继续绑定原版本。原因“临时暂停新增投稿，核对活动运营节奏”已写入 LOG-ACT-PROMPT-001-PAUSE-202607152255。",
+      "firstHistoryScope": "2026-07-16 19:52 起停止新增参与和投稿；规则版本保持 V3",
+      "firstHistoryLog": "LOG-ACT-PROMPT-001-PAUSE-202607161952",
+      "result": "ACT-PROMPT-001 已于 2026-07-16 19:52 暂停；该时间起停止新增参与和投稿，规则仍为 V3；暂停前记录继续绑定原版本。原因“临时暂停新增投稿，核对活动运营节奏”已写入 LOG-ACT-PROMPT-001-PAUSE-202607161952。",
       "preservedJudgment": "有效",
       "generatedRewardExists": true
     },
@@ -5573,17 +6043,17 @@
       "lifecycle": "running",
       "state": "进行中",
       "version": "V3",
-      "binding": "2026-07-15 22:55 起新增记录绑定 V3 · 当前生效",
-      "timeNote": "2026-07-15 22:55 起恢复新增参与和投稿；新增记录绑定 V3。",
+      "binding": "2026-07-16 19:52 起新增记录绑定 V3 · 当前生效",
+      "timeNote": "2026-07-16 19:52 起恢复新增参与和投稿；新增记录绑定 V3。",
       "ruleActionVisible": true,
       "pauseActionVisible": true,
       "resumeActionHidden": true,
       "lifecycleRows": 2,
       "currentVersionRows": 1,
       "firstHistoryStatus": "恢复记录",
-      "firstHistoryScope": "2026-07-15 22:55 起新增参与、投稿资格判定与奖励记录绑定 V3",
+      "firstHistoryScope": "2026-07-16 19:52 起新增参与、投稿资格判定与奖励记录绑定 V3",
       "secondHistoryStatus": "暂停记录",
-      "result": "ACT-PROMPT-001 已于 2026-07-15 22:55 恢复；该时间后的新增参与、资格判定和奖励记录绑定 V3；历史记录不改写。原因“运营核对完成，按当前规则版本恢复新增参与”已写入 LOG-ACT-PROMPT-001-RESUME-202607152255。",
+      "result": "ACT-PROMPT-001 已于 2026-07-16 19:52 恢复；该时间后的新增参与、资格判定和奖励记录绑定 V3；历史记录不改写。原因“运营核对完成，按当前规则版本恢复新增参与”已写入 LOG-ACT-PROMPT-001-RESUME-202607161952。",
       "preservedJudgment": "有效",
       "generatedRewardExists": true
     },
@@ -5924,7 +6394,11 @@
       "scopeField": false,
       "reviewField": false,
       "sensitiveField": false,
-      "treePages": 17,
+      "treePages": 18,
+      "pointsRulesActions": [
+        "view"
+      ],
+      "activityCreateAction": false,
       "primary": "保存角色"
     },
     "roleDirectCreated": {
@@ -5947,11 +6421,12 @@
       "scopeField": false,
       "reviewField": false,
       "sensitiveField": false,
+      "pointsRulesViewChecked": true,
       "primary": "保存权限"
     },
     "roleDirectEditResult": {
-      "pages": "内容列表、审核工作台、闪念管理、模型管理、模板配置、教程管理、展示位管理、登录弹窗配置、活动管理、商城管理、用户列表、邀请记录、积分记录、账号治理、日志、角色管理",
-      "map": "{\"content-list\":[\"view\",\"edit\",\"offline\"],\"review-workbench\":[\"view\",\"approve\",\"return\"],\"flash-management\":[\"view\",\"edit\",\"restore\",\"offline\"],\"model-management\":[\"view\",\"edit\",\"supply\"],\"aigc-template-config\":[\"view\",\"create\",\"edit\"],\"tutorial-management\":[\"view\",\"create\",\"edit\"],\"home-slots\":[\"view\",\"create\",\"edit\",\"delivery\"],\"login-popup-config\":[\"view\",\"create\",\"edit\",\"toggle\"],\"activity-config\":[\"view\",\"create\",\"edit\",\"rule\",\"reward\"],\"store-config\":[\"view\",\"create\",\"edit\",\"exception\"],\"user-list\":[\"view\",\"detail\",\"restrict\"],\"invite-records\":[\"view\",\"revoke\"],\"points-records\":[\"view\",\"adjust\"],\"trust-lists\":[\"view\",\"lift\"],\"operation-log\":[\"view\"],\"role-management\":[\"view\"]}",
+      "pages": "内容列表、审核工作台、闪念管理、模型管理、模板配置、教程管理、展示位管理、登录弹窗配置、活动管理、积分规则、商城管理、用户列表、邀请记录、积分记录、账号治理、日志、角色管理",
+      "map": "{\"content-list\":[\"view\",\"edit\",\"offline\"],\"review-workbench\":[\"view\",\"approve\",\"return\"],\"flash-management\":[\"view\",\"edit\",\"restore\",\"offline\"],\"model-management\":[\"view\",\"edit\",\"supply\"],\"aigc-template-config\":[\"view\",\"create\",\"edit\"],\"tutorial-management\":[\"view\",\"create\",\"edit\"],\"home-slots\":[\"view\",\"create\",\"edit\",\"delivery\"],\"login-popup-config\":[\"view\",\"create\",\"edit\",\"toggle\"],\"activity-config\":[\"view\",\"edit\",\"rule\",\"reward\"],\"points-rules\":[\"view\"],\"store-config\":[\"view\",\"create\",\"edit\",\"exception\"],\"user-list\":[\"view\",\"detail\",\"points-adjust\",\"points-batch-adjust\",\"restrict\"],\"invite-records\":[\"view\",\"revoke\"],\"points-records\":[\"view\"],\"trust-lists\":[\"view\",\"lift\"],\"operation-log\":[\"view\"],\"role-management\":[\"view\"]}",
       "feedback": "角色权限已保存并立即生效；LOG-RBAC-R-ROLE-OPS 已记录。",
       "reviewRows": 0
     },
@@ -6212,7 +6687,7 @@
       "queueActive": true,
       "pageOpen": true,
       "taskId": "AUD-1003",
-      "object": "USR-PROFILE-1003 · 资料 · USR-1003 头像与昵称变更"
+      "object": "USR-PROFILE-1003 · USR-1003 头像与昵称变更"
     },
     "activityRewardLogRoute": {
       "open": true,
@@ -6264,14 +6739,14 @@
     },
     "historicalReviewLogTarget": {
       "taskId": "AUD-0995",
-      "object": "PRO-2042 · Prompt 投稿 · 历史 Prompt 营销文案投稿",
+      "object": "PRO-2042 · 历史 Prompt 营销文案投稿",
       "status": "已拒绝",
       "readonly": true,
       "actionable": false
     },
     "currentReviewTaskIndependent": {
       "taskId": "AUD-1001",
-      "object": "PRO-2048 · Prompt 投稿 · 品牌短视频脚本投稿",
+      "object": "PRO-2048 · 品牌短视频脚本投稿",
       "status": "待审核",
       "actionable": true,
       "readonly": false
@@ -6288,7 +6763,7 @@
     },
     "rewardReviewTaskRoute": {
       "taskId": "AUD-0996",
-      "object": "PRO-2044 · Prompt 投稿 · 活动海报 Prompt 投稿",
+      "object": "PRO-2044 · 活动海报 Prompt 投稿",
       "status": "已通过",
       "readonly": true
     },
@@ -6351,9 +6826,10 @@
     },
     "pointsWithdrawalLogExactEntry": {
       "search": "?entry=PTS-1003",
-      "open": true,
+      "highlighted": true,
       "entryId": "PTS-1003",
-      "original": "原流水关系引用原流水 PTS-0994，以反向流水承接，不改写原记录。"
+      "original": "PTS-0994",
+      "drawerOpen": false
     },
     "operationLogExactSourceRoutes": {
       "slotHref": "home-slots.html?slot=BANNER-001",
@@ -6473,14 +6949,21 @@
         "PTS-MANGA-002"
       ]
     },
-    "pointsDetailDrawer": {
-      "open": true,
-      "entryId": "PTS-1002",
-      "entryState": "入账与复核已扣减 · 权益发放异常待处理",
-      "source": "来源与关联对象AI商城 · RED-1002",
-      "original": "原流水关系当前为独立流水；后续撤销必须新增反向流水。",
-      "body": "流水 IDPTS-1002\n          入账与复核已扣减 · 权益发放异常待处理\n          来源与关联对象AI商城 · RED-1002\n          规则与变动SKU-003 · -180\n          原流水关系当前为独立流水；后续撤销必须新增反向流水。\n          \n          日志与执行LOG-2102 · 系统记录 · 2026-07-13 13:48\n          \n        \n        敏感字段以 [USER_ID]、[CONTENT_ID]、[TOKEN]、[CARD_CODE] 占位展示。",
-      "genericHistory": false
+    "pointsRowFacts": {
+      "cells": [
+        "PTS-1002",
+        "[USER_ID]",
+        "AI商城",
+        "SKU-003",
+        "-180",
+        "已扣减",
+        "兑换单 RED-1002",
+        "LOG-2102",
+        "系统记录",
+        "2026-07-13 13:48"
+      ],
+      "actionCount": 0,
+      "operationHeaderCount": 0
     },
     "mangaPendingPointsFilter": {
       "visibleIds": [
@@ -6490,10 +6973,11 @@
     },
     "mangaPendingPointsDetail": {
       "entryId": "PTS-MANGA-001",
-      "entryState": "入账与复核待入账 · 资格待确认",
-      "sourceObject": "来源与关联对象漫剧作品发布奖励 · MANGA-3001 / MANGA-WORK-3001",
+      "entryState": "待入账",
+      "sourceRecord": "社区内容 MANGA-3001 · 来源作品 MANGA-WORK-3001",
       "rewardState": "qualification-pending",
-      "rewardText": "漫剧奖励处理用户已在社区确认发布；当前等待内容审核与奖励资格确认，尚未计入可用积分。来源作品 MANGA-WORK-3001 · 同一来源作品仅奖励一次。"
+      "sourceWork": "MANGA-WORK-3001",
+      "dedupe": "one-reward-per-source-work"
     },
     "mangaExceptionPointsFilter": {
       "visibleIds": [
@@ -6501,82 +6985,19 @@
       ],
       "result": "1 条结果"
     },
-    "pointsAdjustmentBefore": {
+    "pointsLedgerReadonly": {
       "rowCount": 5,
-      "sourceCells": [
-        "PTS-1001",
-        "[USER_ID]138****9000",
-        "邀请有礼",
-        "RULE-002",
-        "+20",
-        "已入账",
-        "系统记录",
-        "INV-2031",
-        "LOG-2101",
-        "系统记录",
-        "2026-07-13 14:26"
-      ],
-      "sourceAction": "新增调整记录",
-      "sourceActionCount": 5,
-      "standaloneActionCount": 0,
-      "pageHeadAdjustmentButtonCount": 0,
-      "entryNote": "",
-      "editActionCount": 0
-    },
-    "pointsAdjustmentModal": {
-      "open": true,
-      "mode": "create",
-      "editId": "",
-      "title": "基于原流水新增调整记录",
-      "noteVisible": false,
-      "note": "",
-      "recordId": "PTS-AUTO-006",
-      "user": "[USER_ID]",
-      "source": "积分纠错",
-      "linkedObject": "原流水 PTS-1001",
-      "accountingState": "待入账",
-      "reviewState": "待复核",
-      "submit": "新增调整记录"
-    },
-    "pointsAdjustmentInvalid": {
-      "modalOpen": true,
-      "errorVisible": true,
-      "error": "积分变动值和调整原因均为必填；变动值需为非零整数。",
-      "rowCount": 5
-    },
-    "pointsAdjustmentErrorCleared": true,
-    "pointsAdjustmentAfter": {
-      "modalClosed": true,
-      "rowCount": 6,
-      "sourceCells": [
-        "PTS-1001",
-        "[USER_ID]138****9000",
-        "邀请有礼",
-        "RULE-002",
-        "+20",
-        "已入账",
-        "系统记录",
-        "INV-2031",
-        "LOG-2101",
-        "系统记录",
-        "2026-07-13 14:26"
-      ],
-      "sourceAction": "新增调整记录",
-      "addedCells": [
-        "PTS-AUTO-006",
-        "[USER_ID]",
-        "积分纠错",
-        "MANUAL-CORRECTION",
-        "-60",
-        "待入账",
-        "待复核",
-        "原流水 PTS-1001",
-        "提交后生成",
-        "当前管理员",
-        "2026-07-15 14:55"
-      ],
-      "adjustmentSource": "PTS-1001",
-      "addedState": "pending"
+      "rowActionCount": 0,
+      "operationHeaderCount": 0,
+      "reviewFilterCount": 0,
+      "reviewHeaderCount": 0,
+      "linkedObjectHeaderCount": 0,
+      "sourceRecordHeaderCount": 1,
+      "sourceRecordCount": 5,
+      "mutationActionCount": 0,
+      "adjustmentCopyCount": 0,
+      "supportedActions": "trust-create trust-edit",
+      "pointsCreateConfigPresent": false
     },
     "explicitObjectRouteMissingStates": {
       "review-task": {
@@ -7005,28 +7426,6 @@
           "unnamed": 0
         }
       ],
-      "points-records": [
-        {
-          "expectedLabel": "流水详情",
-          "expectedContract": "independent-readonly",
-          "count": 5,
-          "labels": [
-            "流水详情",
-            "流水详情",
-            "流水详情",
-            "流水详情",
-            "流水详情"
-          ],
-          "contracts": [
-            "independent-readonly",
-            "independent-readonly",
-            "independent-readonly",
-            "independent-readonly",
-            "independent-readonly"
-          ],
-          "unnamed": 0
-        }
-      ],
       "trust-lists": [
         {
           "expectedLabel": "治理详情",
@@ -7149,12 +7548,40 @@
       "hasReasonInput": true,
       "impactCopy": "即将暂停模型供应。请确认本次对象、当前状态和预期结果。"
     },
+    "pointsRulesPage": {
+      "earningRows": 5,
+      "spendingRows": 3,
+      "hasLedgerSection": true,
+      "sourceLinks": [
+        "activity-detail.html?id=ACT-NEW-001",
+        "activity-detail.html?id=ACT-SEVEN-001",
+        "activity-detail.html?id=ACT-IMAGE-001",
+        "activity-detail.html?id=ACT-PROMPT-001",
+        "activity-detail.html?id=ACT-INVITE-001",
+        "model-management.html",
+        "aigc-template-config.html",
+        "store-config.html",
+        "points-records.html"
+      ],
+      "editableControls": 0,
+      "visibleVersionSuffixCount": 0
+    },
     "walkthroughPanel": {
       "open": true,
-      "ruleCount": 5
+      "view": "points-rules",
+      "title": "积分规则走查规则",
+      "summary": "统一盘点积分获取、消耗和配置归属，避免同一积分在多个页面重复维护。",
+      "ruleCount": 5,
+      "sectionLabels": [
+        "页面职责",
+        "关键字段",
+        "状态与操作",
+        "跨页关系",
+        "验收口径"
+      ]
     },
     "formControlAccessibleNames": {
-      "total": 41,
+      "total": 43,
       "unnamed": 0
     }
   },

@@ -873,7 +873,7 @@
     table[data-table="admin-users"] { min-width: 1180px; }
 
     table[data-table="model-management"] {
-      min-width: 1400px;
+      min-width: 1000px;
     }
 
     table[data-table="model-management"] th:nth-child(1),
@@ -884,8 +884,17 @@
     }
 
     table[data-table="model-management"] th:nth-child(5),
-    table[data-table="model-management"] td:nth-child(5) {
-      min-width: 220px;
+    table[data-table="model-management"] td:nth-child(5),
+    table[data-table="model-management"] th:nth-child(6),
+    table[data-table="model-management"] td:nth-child(6),
+    table[data-table="model-management"] th:nth-child(9),
+    table[data-table="model-management"] td:nth-child(9) {
+      display: none;
+    }
+
+    table[data-table="model-management"] th:nth-child(7),
+    table[data-table="model-management"] td:nth-child(7) {
+      min-width: 130px;
     }
 
     .table-empty-row td {
@@ -925,8 +934,8 @@
     table[data-table="home-slots"] tr[data-banner-row-type="item"] td:first-child {
       padding-left: 28px;
     }
-    table[data-table="home-slots"] tr.is-slot-focused td {
-      background: #fff7e6;
+    table[data-table="home-slots"] tbody td {
+      background: #fff;
     }
 
     table[data-table="login-popup-items"] {
@@ -1079,9 +1088,13 @@
     .tag {
       display: inline-flex;
       align-items: center;
-      min-height: 22px;
-      padding: 0 8px;
-      border-radius: 999px;
+      width: fit-content;
+      max-width: 100%;
+      min-height: 20px;
+      padding: 0 6px;
+      border-radius: 4px;
+      align-self: start;
+      justify-self: start;
       font-size: 12px;
       border: 1px solid #d9d9d9;
       background: #fafafa;
@@ -1608,6 +1621,11 @@
       background: #fafafa;
     }
 
+    .selection-cell {
+      width: 44px;
+      text-align: center;
+    }
+
     .exception-note {
       border: 1px solid #ffe58f;
       background: #fffbe6;
@@ -2127,6 +2145,12 @@
       grid-column: 1 / -1;
     }
 
+    [data-template-model-cost][readonly] {
+      color: #475569;
+      background: #f5f7fa;
+      cursor: not-allowed;
+    }
+
     .template-content-editor .activity-markdown-editor {
       min-height: 560px;
       border-radius: var(--ant-radius);
@@ -2140,32 +2164,58 @@
     }
 
     .review-task-main,
-    .review-task-side,
-    .review-task-facts {
+    .review-task-side {
       display: grid;
       gap: 16px;
     }
 
-    .review-task-facts {
+    .review-summary-list {
+      display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 24px;
+      padding: 4px 16px 0;
     }
 
-    .review-fact {
-      padding: 14px;
-      border: 1px solid #edf0f5;
-      border-radius: 8px;
-      background: #fafbfc;
+    .review-summary-row {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf0f5;
     }
 
-    .review-fact b,
-    .review-fact span {
-      display: block;
+    .review-summary-row.wide {
+      grid-column: 1 / -1;
     }
 
-    .review-fact span {
-      margin-top: 7px;
+    .review-summary-row dt {
       color: #5f6b7a;
-      line-height: 1.6;
+    }
+
+    .review-summary-row dd {
+      min-width: 0;
+      margin: 0;
+      color: #1f2937;
+      line-height: 1.55;
+    }
+
+    .review-summary-row .tag {
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .review-summary-actions {
+      display: flex;
+      justify-content: flex-start;
+      padding: 12px 16px 16px;
+    }
+
+    .btn.is-disabled {
+      color: #a3aab5;
+      background: #f5f5f5;
+      border-color: #e5e7eb;
+      pointer-events: none;
     }
 
     .review-task-side .panel {
@@ -2190,8 +2240,13 @@
 
     @media (max-width: 1100px) {
       .review-task-layout,
+      .review-summary-list,
       .template-content-form .activity-form-section-body {
         grid-template-columns: 1fr;
+      }
+
+      .review-summary-row.wide {
+        grid-column: auto;
       }
 
       .template-content-form {
@@ -2491,8 +2546,8 @@
       position: fixed;
       right: 18px;
       bottom: 62px;
-      width: 390px;
-      max-height: 560px;
+      width: min(460px, calc(100vw - 36px));
+      max-height: min(680px, calc(100vh - 96px));
       overflow: auto;
       background: #fff;
       border: 1px solid #edf0f5;
@@ -2502,6 +2557,42 @@
       padding: 14px;
     }
     .walkthrough-panel.is-open { display: block; }
+
+    .walkthrough-panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .walkthrough-panel-head p {
+      margin: 6px 0 0;
+      color: var(--ant-subtle);
+      line-height: 1.6;
+    }
+
+    .walkthrough-page-sections {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .walkthrough-page-section {
+      display: grid;
+      gap: 5px;
+      padding: 10px 12px;
+      border: 1px solid #edf0f5;
+      border-radius: var(--ant-radius);
+      background: #fafafa;
+    }
+
+    .walkthrough-page-section p {
+      margin: 0;
+      color: var(--ant-text);
+      line-height: 1.65;
+    }
 
     @media (max-width: 1360px) {
       .filter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -2546,6 +2637,7 @@
           <a class="nav-btn" href="home-slots.html" data-nav="home-slots" data-page-link="home-slots.html">展示位管理</a>
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
+          <a class="nav-btn" href="points-rules.html" data-nav="points-rules" data-page-link="points-rules.html">积分规则</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -2607,9 +2699,11 @@
   </div>
 
   <button class="btn primary walkthrough-toggle" type="button" data-toggle-walkthrough>走查规则</button>
-  <aside class="walkthrough-panel" data-bend-walkthrough="true">
-    <b>B端 V0.1 走查规则</b>
-    <p>本原型验证 Ant Design 后台信息架构、17 个左侧入口、4 个固定二级路由、21 个正式 C端页面承接，以及内容、模型、活动、奖励、积分、展示投放、账号治理、商城履约、权限和日志闭环。</p>
+  <aside class="walkthrough-panel" data-bend-walkthrough="true" aria-live="polite" aria-label="本页走查规则">
+    <div class="walkthrough-panel-head"><div><b data-walkthrough-page-title>本页走查规则</b><p data-walkthrough-page-summary></p></div><button class="btn" type="button" data-close-walkthrough>关闭</button></div>
+    <div class="walkthrough-page-sections" data-walkthrough-page-sections></div>
+  </aside>
+  <template data-walkthrough-rule-registry>
     <b>正式页清理规则</b>
     <ul data-formal-cleanup-rules>
       <li data-formal-cleanup-rule="contracts-hidden">页面主体不展示业务契约、验收合同、来源说明和研发口径。</li>
@@ -2627,14 +2721,14 @@
       <li data-refinement-rule="list-scan-first">列表只保留识别、扫描和进入编辑所需字段；调序、目标替换、启停、素材补充等配置动作收进编辑弹窗。</li>
       <li data-refinement-rule="activity-development-owned-creation">新活动通常需要产品定义与研发开发活动页面、参与规则、奖励链路和状态回传，B端不提供新建活动或活动草稿入口。活动管理只承接已登记活动的展示编辑、生命周期操作、规则版本、参与记录与奖励处理。</li>
       <li data-refinement-rule="rules-in-walkthrough">规则、触发条件、频控、灰度、异常阻断和日志口径进入走查规则，不作为正式页面主内容。</li>
-      <li data-refinement-rule="ia-contract">左侧固定为内容管理、运营管理、用户管理、系统管理 4 组 17 个入口；内容、闪念、活动和用户详情使用二级路由。</li>
+      <li data-refinement-rule="ia-contract">左侧固定为内容管理、运营管理、用户管理、系统管理 4 组 18 个入口；内容、审核、闪念、活动和用户详情使用独立工作页。</li>
       <li data-refinement-rule="global-chrome-static-semantics">当前版本的导航分组标题和登录头像仅承担分组识别与身份标识，不提供折叠或账号菜单；没有真实动作时不得使用按钮、箭头或手型光标制造可点击暗示。</li>
-      <li data-refinement-rule="model-source">模型管理是 C端模型广场、模型详情、AIGC 创作和模板默认创作模型的对象事实来源；官方模型 ID 是跨页稳定业务主键，C端引用键只承接页面现有别名。</li>
+      <li data-refinement-rule="model-source">模型管理是 C端模型广场、模型详情、AIGC 创作和模板使用模型的对象事实来源；成本口径记录供应商价格或内部成本，社区调用积分记录用户每调用一次实际扣减的积分，模板只继承社区调用积分。</li>
       <li data-refinement-rule="single-object-workspace">同一业务对象的详情与编辑若由同一负责人、同一事实源承接，且不存在独立审核、权限或日志责任，则合并为一个内容承载工作面，只保留一个编辑入口；审核记录、权限复核、兑换单等独立责任对象仍保留只读详情。</li>
       <li data-refinement-rule="object-entry-responsibility-language">对象入口必须直接说明后续职责：同一事实工作面使用“编辑”，需要持续处理记录、奖励或审核的独立页面使用“进入任务/进入活动”，角色权限配置统一使用“调整权限”，治理、流水、日志等只读责任对象使用对应的“治理详情/流水详情/日志详情”；不得用泛化“详情”混淆编辑、处理与留痕责任。</li>
       <li data-refinement-rule="page-purpose-entry-alignment">日志页只承接后台操作追溯；导航、页头和权限页面统一使用“日志”，不设置跨业务结果索引。</li>
-      <li data-refinement-rule="route-only-object-identity">非导航详情工作页必须在首屏显示当前业务对象身份并提供返回来源列表的路径；多页签活动详情至少显示活动名称、活动 ID、当前状态与规则版本，不能只显示泛化“活动详情”后让运营依赖 URL 猜测对象。</li>
-      <li data-refinement-rule="template-lifecycle">模板配置是 C端 AIGC 模板卡片的字段、分类、预计消耗、排序和展示状态负责人；默认创作模型只引用模型管理。只有“已发布”的模型可新选；暂停或下线模型不自动改写模板状态，停用模板可保留历史关联，展示中模板保存前必须换用已发布模型或先停用。</li>
+      <li data-refinement-rule="route-only-object-identity">非导航详情工作页必须在首屏显示当前业务对象身份并提供返回来源列表的路径；多页签活动详情只在页头显示活动名称、活动 ID 与当前状态，规则版本只在规则调整和变更记录中出现。</li>
+      <li data-refinement-rule="template-lifecycle">模板配置是 C端 AIGC 模板卡片的字段、分类、消耗积分、排序和展示状态负责人；模型只引用模型管理，消耗积分不可手填。只有“已发布且已配置积分”的模型可新选；暂停或下线模型不自动改写模板状态，停用模板可保留历史关联，展示中模板保存前必须换用可用模型或先停用。</li>
       <li data-refinement-rule="template-content-workspace">模板本身是 AIGC 内容对象，编辑工作面在同一入口维护卡片元数据与可复用内容；正文统一使用 Markdown 编辑，不再按内容形态拆分专用字段。</li>
       <li data-refinement-rule="template-catalog-object-coverage">当前 C端模板目录由 5 个分类、16 个展示中模板对象构成；B端必须逐项承接分类、标题、维护来源和预计消耗，且对象集合完全一致。B端停用历史模板只用于保留历史关联与恢复能力，不计入当前 C端模板目录。</li>
       <li data-refinement-rule="tutorial-lifecycle">教程管理是 C端官方教程公开版本、分类、排序和展示状态的负责人；当前 C端 9 张教程卡必须逐项对应 B端 9 个展示中对象，分类、标题、类型/时长、摘要、详情目标和顺序保持一致。新增默认停用，编辑必须读取当前教程，切换展示状态时填写原因。停用后 C端停止展示但历史访问与内容记录保留，恢复后按当前分类与排序展示。正文结构工具必须真实写入对应 Markdown 语法；插入图片写入图片语法，插入视频写入可播放的视频标签，不作为装饰性工具栏。</li>
@@ -2658,7 +2752,7 @@
       <li data-refinement-rule="account-governance-result-traceability">账号治理用户结果必须绑定同一治理记录 ID 和不可变日志 ID；结果与日志返回来源时必须进入对应治理分类并直接展开目标记录，不得只回到账号治理列表后让运营再次查找。</li>
       <li data-refinement-rule="processed-review-recheck-isolation">已处理审核任务保持只读；如需改变结论，必须基于原任务新建复核任务。新任务创建后不改写原任务、原结论或当前 C端结果，待复核形成新结论后再按独立动作处理。</li>
       <li data-refinement-rule="account-governance">账号治理按具体限制记录处理发布、互动、活动、奖励、兑换和登录范围，不用会员、积分或内容状态代替账号状态。</li>
-      <li data-refinement-rule="user-detail-source-handoff">用户详情只聚合已确认归属的资料与业务记录；各业务页签使用运营可理解的具体字段，积分记录直接展示来源、变动、处理结果、关联记录与时间，流水 ID 只作为次级识别信息，不使用泛化“业务对象”代替业务含义。处理记录由资料审核、积分、邀请、账号限制等具体业务动作自动生成，不提供泛化的“新增处理记录”入口。内容、审核、活动、邀请、积分与兑换仍在各自责任页面处理。路由中的未知用户 ID 必须进入“待核对”空状态，不得继承其他用户资料，也不得开放限制账号等处理动作。</li>
+      <li data-refinement-rule="user-detail-source-handoff">用户详情只聚合已确认归属的资料与业务记录；各业务页签使用运营可理解的具体字段，积分记录直接展示来源、变动、处理结果、关联记录与时间，流水 ID 只作为次级识别信息，不使用泛化“业务对象”代替业务含义。单用户人工发放或扣除从已登记用户详情发起，批量调整从用户列表明确勾选用户后发起；两者都必须选择方向、填写正整数积分和调整原因，系统为每个用户追加独立流水与操作日志，不改写既有流水。处理记录由资料审核、积分、邀请、账号限制等具体业务动作自动生成，不提供泛化的“新增处理记录”入口。内容、审核、活动、邀请、积分与兑换仍在各自责任页面处理。路由中的未知用户 ID 必须进入“待核对”空状态，不得继承其他用户资料，也不得开放积分调整、限制账号等处理动作。</li>
       <li data-refinement-rule="manga-return-source">漫剧回流内容沿用内容列表、内容详情和审核工作台承接；详情必须展示来源作品与社区发布确认，不新增独立漫剧后台页面。</li>
       <li data-refinement-rule="manga-reward-after-confirmed-publish">漫剧入口点击、自动注册、继续创作和草稿保存均不奖励；只有用户在社区确认发布后才进入奖励资格判断。</li>
       <li data-refinement-rule="manga-duplicate-reward-guard">同一漫剧来源作品只允许一笔有效发布奖励；重复发布不重复入账，审核失败、删除或撤回通过待确认或反向流水处理。</li>
@@ -2669,14 +2763,15 @@
       <li data-refinement-rule="permission-layers">当前 RBAC 只配置页面与操作权限；没有组织、部门或数据范围权限。最后一个超级管理员不能停用或移除超级管理员角色。</li>
       <li data-refinement-rule="rbac-direct-save">新建角色、调整角色权限、新增后台用户和调整后台用户角色均直接保存生效，并记录最近操作；不建立审批状态、复核队列或启用草稿。停用角色和后台用户仍需二次确认并记录日志。</li>
       <li data-refinement-rule="immutable-history">积分流水和操作日志只追加，不编辑或删除；敏感字段只记录发生变更，不记录明文。</li>
-      <li data-refinement-rule="points-adjustment-append-only">积分原流水只提供详情和“新增调整记录”，不得进入编辑模式；页面不提供脱离原流水的独立人工调整入口。调整记录必须绑定来源流水、填写非零变动值和原因，先进入待入账/待复核，原流水、余额口径和 C端当前结果保持不变。</li>
+      <li data-refinement-rule="points-rule-ownership">积分规则页统一盘点获取与消耗，但不复制来源页的可编辑数值：活动奖励回活动详情，轻创作与模板消耗回模型管理，商城兑换回商城管理，最终结果回积分记录。模板消耗积分必须跟随所选模型，不能手填。</li>
+      <li data-refinement-rule="points-ledger-readonly">积分记录页只提供筛选和完整流水列表，不设置独立复核状态、操作列或详情弹层，也不直接提供新增、编辑、删除、调整或批量操作。来源记录使用“业务名称 + 单号”标明流水出处；单用户人工调整从用户详情发起，批量人工调整从用户列表已勾选用户发起，两者都强制填写原因并为每个用户追加独立流水与日志；补发、撤回、返还等动作仍由来源业务页面发起。</li>
       <li data-refinement-rule="dangerous-actions">危险操作必须明确对象、影响范围和可恢复性，要求二次确认、填写原因并记录日志。</li>
       <li data-refinement-rule="p0-danger-log-traceability">操作日志按 14 类业务对象回查 P0 危险操作；列表和详情必须保留对象、动作、前后状态、原因、来源页面、操作人和复核状态。</li>
       <li data-refinement-rule="operation-log-source-traceability">操作日志必须使用稳定业务主键返回精确业务对象；不得只返回列表。敏感字段拦截日志只保留脱敏占位符和拦截事实，不得把占位符拼入链接或暴露真实敏感对象。</li>
       <li data-refinement-rule="c-end-freeze">C端 21 个正式页面及信息架构冻结；如必须修改，先提交变更清单并由用户确认。</li>
       <li data-refinement-rule="non-goals">当前不进入真实支付、退款、会员、卡密库存、通用订单、复杂反作弊和最终技术实现。</li>
     </ul>
-  </aside>
+  </template>
 
   <div class="drawer-backdrop" data-close-layer></div>
   <aside class="drawer" id="globalDrawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
@@ -2923,7 +3018,7 @@
     <div class="modal-footer"><button class="btn" data-close-layer>取消</button><button class="btn primary" data-content-submit>保存</button></div>
   </section>
 
-  <section class="modal popup-item-modal" data-modal="user-governance" data-user-governance-form-mode="" data-user-governance-form-type="" data-user-governance-generated-id-source="auto" data-user-governance-supported-actions="points-create trust-create trust-edit" aria-hidden="true">
+  <section class="modal popup-item-modal" data-modal="user-governance" data-user-governance-form-mode="" data-user-governance-form-type="" data-user-governance-generated-id-source="auto" data-user-governance-supported-actions="trust-create trust-edit" aria-hidden="true">
     <div class="modal-head"><span data-user-governance-modal-title>用户治理处理</span><button class="btn" data-close-layer>关闭</button></div>
     <div class="modal-body">
       <div class="popup-item-form-grid" data-user-governance-form>
@@ -2932,6 +3027,23 @@
       <p class="field-error" data-user-governance-error role="alert" hidden></p>
     </div>
     <div class="modal-footer"><button class="btn" data-close-layer>取消</button><button class="btn primary" data-user-governance-submit>保存</button></div>
+  </section>
+
+  <section class="modal popup-item-modal" data-modal="user-points-adjustment" data-user-points-adjustment-mode="single" data-user-points-adjustment-user-id="" data-user-points-adjustment-user-ids="" aria-hidden="true">
+    <div class="modal-head"><span data-user-points-adjustment-title>调整用户积分</span><button class="btn" data-close-layer>关闭</button></div>
+    <div class="modal-body">
+      <div class="popup-item-form-grid">
+        <div class="popup-item-fields">
+          <div class="field wide"><label data-user-points-adjustment-target-label>用户</label><input class="input" data-user-points-adjustment-field="user" readonly></div>
+          <div class="field"><label>调整类型</label><select class="select" data-user-points-adjustment-field="direction"><option value="credit">发放积分</option><option value="debit">扣除积分</option></select></div>
+          <div class="field" data-user-points-current-balance-field><label>当前积分</label><input class="input" data-user-points-adjustment-field="current-balance" readonly></div>
+          <div class="field wide"><label>积分数量</label><input class="input" type="number" min="1" step="1" inputmode="numeric" data-user-points-adjustment-field="amount" placeholder="填写大于 0 的整数"></div>
+          <div class="field wide"><label>调整原因</label><textarea class="textarea" rows="4" data-user-points-adjustment-field="reason" placeholder="必填，说明本次发放或扣除积分的业务原因"></textarea></div>
+          <p class="field-error wide" data-user-points-adjustment-error role="alert" hidden></p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn" data-close-layer>取消</button><button class="btn primary" data-user-points-adjustment-submit>确认调整</button></div>
   </section>
 
   <section class="modal popup-item-modal" data-modal="login-popup-item" data-popup-item-form-mode="" aria-hidden="true">
@@ -3000,6 +3112,7 @@
       "home-slots": "home-slots.html",
       "login-popup-config": "login-popup-config.html",
       "activity-config": "activity-config.html",
+      "points-rules": "points-rules.html",
       "store-config": "store-config.html",
       "user-list": "user-list.html",
       "invite-records": "invite-records.html",
@@ -3028,7 +3141,7 @@
       "login-popup-config": ["运营管理", "登录弹窗配置"],
       "activity-config": ["运营管理", "活动管理"],
       "activity-detail": ["运营管理", "活动详情"],
-      "points-rules": ["运营配置", "积分规则"],
+      "points-rules": ["运营管理", "积分规则"],
       "message-config": ["运营配置", "消息配置"],
       "store-config": ["运营管理", "商城管理"],
       "user-list": ["用户管理", "用户列表"],
@@ -3040,15 +3153,263 @@
       "activity-data": ["数据看板", "活动数据"],
       "growth-data": ["数据看板", "用户增长数据"],
       "points-data": ["数据看板", "积分数据"],
-      "operation-log": ["系统管理", "操作日志"],
+      "operation-log": ["系统管理", "日志"],
       "role-management": ["系统管理", "角色管理"],
       "admin-users": ["系统管理", "后台用户管理"]
     };
 
+    const walkthroughSectionLabels = ["页面职责", "关键字段", "状态与操作", "跨页关系", "验收口径"];
+    const walkthroughPageCatalog = {
+      "content-list": {
+        summary: "承接当前 C端内容目录的运营扫描与进入处理，不在列表展开审核或活动奖励细节。",
+        rules: [
+          "列表覆盖当前 C端正式内容对象；运营在这里按标题、类型、状态、来源、首页爆款和发布时间定位内容。",
+          "每行保留内容 ID、标题、类型、作者昵称与用户 ID、发布状态、首页爆款、来源和真实发布日期；不使用待回查占位。",
+          "列表只提供进入内容工作页的入口；下架、恢复、审核和首页爆款调整在内容详情或审核任务内完成。",
+          "投稿内容必须保留活动与投稿记录关系；漫剧回流仍沿用内容对象，不新增独立后台目录。",
+          "筛选结果、作者身份、发布日期与 C端目录一致；页面不出现运营样例区、描述卡或说明性流水。",
+        ],
+      },
+      "content-detail": {
+        summary: "核对单条内容的完整资料、C端呈现、来源关系和可执行状态。",
+        rules: [
+          "详情是单个内容对象的运营工作页，必须显示对象身份并可返回内容列表。",
+          "展示标题、作者、正文或媒体、互动摘要、发布状态、来源、发布时间、首页爆款和版本关系。",
+          "待审核内容进入审核任务；已发布内容才可下架或调整首页爆款，危险动作要求原因、确认和日志。",
+          "活动投稿保留活动 ID、投稿记录、审核任务和规则版本；漫剧回流保留来源作品、发布确认和奖励资格。",
+          "路由中的内容 ID 必须精确命中对象；未知 ID 不继承样例资料，也不得开放任何处理动作。",
+        ],
+      },
+      "review-workbench": {
+        summary: "只负责审核队列扫描和筛选，单条判断进入独立审核任务。",
+        rules: [
+          "工作台聚合内容、评论、投稿和资料审核队列，不在列表直接形成审核结论。",
+          "列表保留任务 ID、对象类型、对象摘要、提交人、风险来源、状态、时限、处理人和提交时间。",
+          "处理入口必须打开审核任务；已处理任务只读，如需改变结论应基于原任务新建复核任务。",
+          "来源对象必须能精确返回内容、闪念、活动投稿或用户资料；未登记来源显示待回查并阻断判断。",
+          "筛选可按队列、状态、风险、时限和处理人收敛；列表不使用通用详情抽屉替代任务页。",
+        ],
+      },
+      "review-detail": {
+        summary: "在同一页完成对象证据核对、风险判断和审核结论记录。",
+        rules: [
+          "页面必须显示审核任务 ID、队列、来源对象和当前公开结果，并提供返回审核工作台的路径。",
+          "对象上下文、来源证据、风险摘要、提交信息、用户可读结果与内部备注必须分区明确。",
+          "通过、拒绝、退回修改和转复核均绑定当前任务；已处理任务不允许覆盖原结论。",
+          "审核结果、用户结果和不可变日志沿用同一任务 ID；来源审核不替代活动资格或奖励判断。",
+          "未知任务进入不可操作空状态；无已登记媒资时显示无独立媒资，不能继承其他对象图片。",
+        ],
+      },
+      "flash-management": {
+        summary: "扫描社区闪念内容及其公开状态，具体内容与评论回到闪念详情。",
+        rules: [
+          "列表只承接已登记闪念对象的检索、状态扫描和进入详情。",
+          "保留闪念 ID、正文摘要、媒体类型、作者、互动摘要、发布状态和发布时间。",
+          "待审核进入审核任务；已发布可下架，已下架可恢复，动作要求原因、确认和日志。",
+          "评论审核只处理评论本身，不改变来源闪念正文和公开状态。",
+          "筛选、状态和发布时间必须可读；列表动作无下划线并在操作列左对齐。",
+        ],
+      },
+      "flash-detail": {
+        summary: "按 C端闪念结构核对正文、媒体、互动、评论和当前运营状态。",
+        rules: [
+          "详情显示闪念身份和返回列表路径，不依赖 URL 猜测对象。",
+          "正文、图片或视频、作者、发布时间、互动摘要、评论列表和公开状态完整展示。",
+          "下架与恢复只改变闪念公开状态，必须填写原因并追加日志；历史互动和评论记录保留。",
+          "评论审核可精确返回审核任务；闪念内容与评论分别维护状态。",
+          "未知闪念 ID 显示待核对空状态，不继承其他闪念媒体或开放治理动作。",
+        ],
+      },
+      "model-management": {
+        summary: "统一维护模型对象、供应状态、成本口径和社区调用积分，是轻创作计价的事实来源。",
+        rules: [
+          "模型管理覆盖 C端模型广场、模型详情、轻创作和模板可选模型；官方模型 ID 是稳定主键。",
+          "列表只保留模型身份、提供方、输入输出、社区调用积分、供应状态和操作；核心能力、成本口径与更新时间进入模型编辑预览。",
+          "编辑模型可调整社区调用积分；暂停或恢复供应独立确认并留痕，未配置积分的模型不可用于新模板。",
+          "模板只引用模型及其积分；模板切换模型后自动带出积分，不再维护第二份价格。",
+          "已发布且积分大于 0 的模型才能新选；价格变更后模板与轻创作展示使用最新模型口径。",
+        ],
+      },
+      "aigc-template-config": {
+        summary: "维护模板卡片、Markdown 内容和模型绑定，模板消耗积分始终跟随模型。",
+        rules: [
+          "模板是 C端可发现和复用的内容对象；新增与编辑使用同一工作面。",
+          "基础信息包含标题、分类、维护来源、描述、封面；模板内容只保留一个 Markdown 编辑框。",
+          "使用模型只能选择已发布且配置积分的模型；消耗积分只读并随模型选择自动更新。",
+          "模板目录与 C端 5 个分类、16 个展示中对象一致；停用模板保留历史关联但不进入当前目录。",
+          "保存前校验模型可用、积分一致、排序有效和展示状态；不得手填或覆盖模型积分。",
+        ],
+      },
+      "tutorial-management": {
+        summary: "维护 C端官方教程的卡片、Markdown 正文、排序和展示生命周期。",
+        rules: [
+          "教程列表覆盖 C端当前 9 个展示中教程；新增和编辑共用同一表单。",
+          "保留教程 ID、封面、标题、分类、内容类型、展示状态和排序；不展示摘要和时长列。",
+          "正文用 Markdown 编辑，可插入图片和视频；展示状态变化必须填写原因。",
+          "停用后 C端停止展示但历史访问保留；恢复后按当前分类和排序重新展示。",
+          "列表对象、标题、分类、详情目标和顺序与 C端逐项一致，工具栏按钮必须真实写入正文。",
+        ],
+      },
+      "home-slots": {
+        summary: "管理产品预置展示位中的投放单，不在后台创建新的页面位置。",
+        rules: [
+          "页面按首页 Banner 等预置位置管理投放，来源必须绑定已登记的 C端目标。",
+          "投放表单保留位置、目标、标题、描述、跳转、排期模式、素材、排序和启用状态。",
+          "长期投放用开关选择；定期投放填写开始和结束日期；启停变更要求原因并写日志。",
+          "来源失效时投放失效；来源恢复不自动上线，需重新核对目标、素材、跳转、排期和容量。",
+          "同一时段容量校验阻断超量投放；正式表单不展示规则说明卡和来源状态说明文案。",
+        ],
+      },
+      "login-popup-config": {
+        summary: "配置 C端登录后弹窗及其可见子项，所有跳转必须落到已登记 C端页面。",
+        rules: [
+          "页面只维护登录后弹窗标题、触发状态、活动大图、按钮文案、跳转和排序。",
+          "子项 ID 系统生成；图片支持本地选择或已登记素材地址；目标必须是有效 C端页面。",
+          "新增与编辑共用表单，启用或停用必须记录原因；停用后配置继续保留。",
+          "活动或任务规则由对应业务页维护，弹窗只引用标题、利益点和落点。",
+          "保存校验必填字段、素材、排序和跳转；无真实动作的字段不得出现在表单。",
+        ],
+      },
+      "activity-config": {
+        summary: "运营已由产品与研发登记的活动，查看生命周期、奖励摘要和待处理事项。",
+        rules: [
+          "活动管理不提供新建活动；活动页面、参与方式和奖励链路需先由产品与研发登记。",
+          "列表保留活动名称与 ID、类型、状态、活动时间、C端展示、奖励摘要、待处理和负责人。",
+          "编辑展示只维护 C端卡片；规则调整、参与记录和奖励处理进入活动详情；暂停或恢复需确认。",
+          "积分规则页只做活动奖励索引，具体任务积分、上限和规则版本仍由活动详情维护。",
+          "已结束活动不再新增参与，但历史投稿、资格、奖励和积分流水继续可查与处理。",
+        ],
+      },
+      "activity-detail": {
+        summary: "承接单个活动的规则版本、参与记录、资格判断、奖励处理和生命周期留痕。",
+        rules: [
+          "首屏必须显示活动名称、活动 ID、当前状态和规则版本，并提供返回活动列表路径。",
+          "概览、参与与投稿、奖励处理、变更记录分别承载事实，不用审核状态代替活动资格。",
+          "调整核心规则生成新版本；暂停与恢复只追加生命周期记录，不伪装成规则版本。",
+          "投稿、审核、资格、奖励和积分流水保留同一内容对象、活动记录、任务与规则版本链路。",
+          "子记录深链按真实活动归属定位；未知活动或记录不得继承其他活动数据和动作。",
+        ],
+      },
+      "points-rules": {
+        summary: "统一盘点积分获取、消耗和配置归属，避免同一积分在多个页面重复维护。",
+        rules: [
+          "获取积分固定归为新手任务、七日成长、生图挑战、Prompt 共创和邀请有礼五类活动来源。",
+          "消耗积分归为模型调用、模板创作和商城兑换；模板价格跟随模型，商城价格跟随商品。",
+          "本页只提供查看和前往事实页配置，不新增、编辑、启停规则，也不直接调整用户积分。",
+          "活动积分回活动详情，模型积分回模型管理，商品积分回商城管理，结果流水回积分记录。",
+          "页面必须同时覆盖获取与消耗、标明上限和配置归属；角色权限树包含积分规则页面查看权限。",
+        ],
+      },
+      "store-config": {
+        summary: "维护 C端 AI 商城商品积分、展示状态、兑换记录和履约异常。",
+        rules: [
+          "商城目录逐项承接 C端 3 条产品线、16 个展示中商品；内部草稿不计入当前目录。",
+          "商品保留 SKU、产品线、名称、权益说明、兑换积分、展示状态、有效期、负责人和异常摘要。",
+          "商品积分只在商城管理维护；停用停止新增兑换，历史商品快照、扣减和权益记录保留。",
+          "兑换成功需同时满足积分扣减和权益发放；异常只能选择补发权益或新增返还积分流水。",
+          "补救动作校验兑换单、商品、原积分流水和异常日志完整，缺一项即阻断。",
+        ],
+      },
+      "user-list": {
+        summary: "按用户身份和状态定位账号，并进入用户详情或发起明确的账号限制。",
+        rules: [
+          "列表用于检索用户，不承担内容、积分、邀请或审核的跨业务处理。",
+          "保留用户 ID、昵称、账号状态、资料状态、内容数、积分、邀请数和最近登录。",
+          "详情进入用户工作页；列表只对已勾选用户提供批量调整积分，不提供其他批量操作。单个或批量发放、扣除都必须填写原因，并为每个用户生成新流水与日志；限制账号仍逐个处理。",
+          "用户详情聚合已确认归属记录，具体业务仍返回内容、审核、活动、邀请、积分或治理页面。",
+          "手机号只在用户详情完整展示；列表不暴露联系方式、设备、IP 或其他敏感字段。",
+        ],
+      },
+      "user-detail": {
+        summary: "聚合单个用户的完整资料和已确认归属的业务记录，不创造泛化处理对象。",
+        rules: [
+          "左侧展示头像、昵称、用户 ID、完整手机号、账号状态、积分和邀请摘要。",
+          "资料页展示用户所有资料字段；内容与投稿、活动与奖励、积分与兑换、邀请列表和限制记录分标签承载。",
+          "手机号在用户详情页完整展示；限制与解除必须基于具体治理记录。",
+          "内容、审核、活动、邀请、积分和兑换记录均提供精确来源去向，不用业务对象等抽象字段。",
+          "未知用户 ID 进入待核对空状态，不继承其他用户头像、手机号、内容或治理动作。",
+        ],
+      },
+      "invite-records": {
+        summary: "查看邀请关系、阶段奖励和异常处理，邀请双方均显示昵称与用户 ID。",
+        rules: [
+          "每条邀请记录保留邀请 ID、邀请人、被邀请人、阶段、奖励状态、风险摘要、时间和操作人。",
+          "邀请人和被邀请人统一显示昵称 + 用户 ID；不只展示占位符或单独 ID。",
+          "异常撤销奖励必须从目标邀请记录发起，保留原邀请关系并新增反向积分流水和日志。",
+          "奖励数值与限额由邀请活动规则维护；邀请记录只展示阶段结果，不复制可编辑积分配置。",
+          "详情不展示下一步等说明性卡片；日志返回时直接打开对应邀请记录。",
+        ],
+      },
+        "points-records": {
+          summary: "承接所有积分获取、扣减、撤回和返还结果，是只读的积分账务事实页。",
+          rules: [
+            "列表按用户、来源、入账状态和日期查询积分流水；积分页不建立独立复核状态。",
+            "保留流水 ID、用户、来源模块、规则或商品、变动值、入账状态、来源记录、日志、操作人和时间。",
+            "页面只提供筛选和完整流水列表，不设置操作列或详情弹层。",
+            "补发、撤回、返还等动作回到活动、邀请、商城等来源页面处理，系统生成的新流水带回具体来源 ID。",
+            "正负方向、待入账、已扣减、撤回和异常状态清晰；既有流水和当前余额口径不可改写。",
+          ],
+        },
+      "trust-lists": {
+        summary: "按具体治理记录处理账号限制和解除，不用会员、积分或内容状态代替账号状态。",
+        rules: [
+          "治理记录覆盖发布、互动、活动、奖励、兑换和登录等明确限制范围。",
+          "保留治理记录 ID、用户、限制类型、权限摘要、状态、用户可读原因、内部说明和最近操作人。",
+          "解除只恢复该记录覆盖的账号能力，要求原因、确认和日志；原限制记录不可覆盖。",
+          "内容、奖励、投放等业务对象保持各自状态，解除账号限制不自动恢复这些对象。",
+          "账号映射冲突只展示脱敏事实，不自动合并，也不显示凭证、设备或联系方式明文。",
+        ],
+      },
+      "operation-log": {
+        summary: "追溯后台关键操作及前后状态，日志不可改写或删除。",
+        rules: [
+          "页面只承接后台操作日志，并保持单一、不可变的日志用途。",
+          "保留日志 ID、对象、动作、操作前后、操作人、原因、时间、风险、复核状态和来源页面。",
+          "历史日志只读；后续恢复、重新发布或再次暂停必须新增日志并形成状态时间线。",
+          "来源链接使用稳定业务主键精确返回内容、审核、活动、商品、积分、角色或用户对象。",
+          "敏感字段日志只保留脱敏占位和拦截事实；页面标题与导航统一为“日志”。",
+        ],
+      },
+      "role-management": {
+        summary: "以树状页面—操作结构配置角色权限，只保留调整权限入口。",
+        rules: [
+          "权限树按内容管理、运营管理、用户管理、系统管理分组，页面节点下展开实际操作。",
+          "当前只配置页面与操作权限，不存在组织、部门、数据范围、敏感权限或审批状态。",
+          "新建角色和调整权限直接保存生效并写日志；停用角色需确认，最后一个超级管理员不可停用。",
+          "新增积分规则页面后，运营管理分组同步出现“积分规则—查看”；源页面编辑权限仍独立控制。",
+          "列表只保留调整权限一个详情入口；权限树不得出现页面不存在的操作，例如新建活动。",
+        ],
+      },
+      "admin-users": {
+        summary: "维护后台用户账号与角色组合，生效权限完全继承角色。",
+        rules: [
+          "后台用户管理展示账号身份、角色组合、账号状态、最近登录和权限变化。",
+          "联系信息只使用脱敏邮箱；不展示密码、Token、Session、设备 ID 或 IP。",
+          "新增用户和调整角色直接保存并写日志；停用账号回收当前权限但保留历史责任。",
+          "权限树为角色继承的只读结果，后台用户不单独配置数据范围或额外操作权限。",
+          "最后一个超级管理员不可停用或移除超级管理员角色；停用账号的权限树明确标记不生效。",
+        ],
+      },
+    };
+
+    function renderWalkthroughPanel(viewName = document.querySelector(".view.is-active")?.dataset.view || "content-list") {
+      const panel = document.querySelector(".walkthrough-panel");
+      const title = panel?.querySelector("[data-walkthrough-page-title]");
+      const summary = panel?.querySelector("[data-walkthrough-page-summary]");
+      const sections = panel?.querySelector("[data-walkthrough-page-sections]");
+      if (!panel || !title || !summary || !sections) return;
+      const entry = walkthroughPageCatalog[viewName] || walkthroughPageCatalog["content-list"];
+      const pageLabel = pageTitles[viewName]?.[1] || "当前页面";
+      panel.dataset.walkthroughView = viewName;
+      title.textContent = `${pageLabel}走查规则`;
+      summary.textContent = entry.summary;
+      sections.innerHTML = entry.rules.map((rule, index) => `<section class="walkthrough-page-section" data-page-walkthrough-rule="${escapeAttribute(viewName)}-${index + 1}"><b>${escapeHtml(walkthroughSectionLabels[index])}</b><p>${escapeHtml(rule)}</p></section>`).join("");
+    }
+
     const drawerCopy = {
       "content-detail": ["内容详情", "只读预览、基础信息、状态记录、关联推荐位和操作记录。"],
       "review-detail": ["审核详情", "对象预览、提交信息、审核历史、用户可读拒绝原因和内部备注。"],
-      "model-detail": ["模型详情", "查看模型资料、供应状态和变更历史。"],
+      "model-detail": ["模型详情", "查看模型资料、核心能力、成本口径、社区调用积分、供应状态和变更历史。"],
       "slot-preview": ["广告位配置详情", "查看标题、描述、背景图片、状态、排序和后台配置字段。"],
       "login-popup-detail": ["弹窗详情", "配置 C端首页登录后弹窗标题和是否弹出。"],
       "login-popup-item-detail": ["弹窗子项详情", "配置标题、描述、活动大图、按钮文案、按钮跳转链接、排序和状态。"],
@@ -3058,7 +3419,6 @@
       "store-detail": ["商城商品", "商品展示、权益说明、积分消耗、展示状态、兑换异常和操作历史。"],
       "user-action": ["用户处理", "资料审核、积分异常、邀请异常和账号状态变更说明。"],
       "invite-detail": ["邀请详情", "邀请关系、阶段奖励、异常摘要和人工处理记录。"],
-      "points-detail": ["积分流水详情", "流水详情、关联活动/任务/邀请、异常说明和操作历史。"],
       "trust-detail": ["账号治理详情", "查看限制范围、用户可见原因、内部说明、有效时间和解除记录。"],
       "log-detail": ["操作日志详情", "操作摘要、前后状态、原因、关联对象、操作人和时间。"],
       "role-detail": ["角色详情", "页面与操作权限、账号数量、授权原因和回收记录。"],
@@ -3325,13 +3685,14 @@
       ["operation", "运营管理", [
         ["home-slots", "展示位管理", [["view", "查看"], ["create", "新建投放"], ["edit", "编辑"], ["delivery", "暂停 / 恢复"]]],
         ["login-popup-config", "登录弹窗配置", [["view", "查看"], ["create", "新建"], ["edit", "编辑"], ["toggle", "启用 / 停用"]]],
-        ["activity-config", "活动管理", [["view", "查看"], ["create", "新建"], ["edit", "编辑展示"], ["rule", "调整规则"], ["reward", "奖励处理"]]],
+        ["activity-config", "活动管理", [["view", "查看"], ["edit", "编辑展示"], ["rule", "调整规则"], ["reward", "奖励处理"]]],
+        ["points-rules", "积分规则", [["view", "查看"]]],
         ["store-config", "商城管理", [["view", "查看"], ["create", "新建"], ["edit", "编辑"], ["stop", "停用"], ["exception", "异常处理"]]],
       ]],
       ["user", "用户管理", [
-        ["user-list", "用户列表", [["view", "查看"], ["detail", "用户详情"], ["restrict", "限制账号"]]],
+        ["user-list", "用户列表", [["view", "查看"], ["detail", "用户详情"], ["points-adjust", "调整积分"], ["points-batch-adjust", "批量调整积分"], ["restrict", "限制账号"]]],
         ["invite-records", "邀请记录", [["view", "查看"], ["revoke", "撤销奖励"]]],
-        ["points-records", "积分记录", [["view", "查看"], ["adjust", "调整积分"]]],
+        ["points-records", "积分记录", [["view", "查看"]]],
         ["trust-lists", "账号治理", [["view", "查看"], ["lift", "解除限制"]]],
       ]],
       ["system", "系统管理", [
@@ -3352,11 +3713,12 @@
         "tutorial-management": ["view", "create", "edit"],
         "home-slots": ["view", "create", "edit", "delivery"],
         "login-popup-config": ["view", "create", "edit", "toggle"],
-        "activity-config": ["view", "create", "edit", "rule", "reward"],
+        "activity-config": ["view", "edit", "rule", "reward"],
+        "points-rules": ["view"],
         "store-config": ["view", "create", "edit", "exception"],
-        "user-list": ["view", "detail", "restrict"],
+        "user-list": ["view", "detail", "points-adjust", "points-batch-adjust", "restrict"],
         "invite-records": ["view", "revoke"],
-        "points-records": ["view", "adjust"],
+        "points-records": ["view"],
         "trust-lists": ["view", "lift"],
         "operation-log": ["view"],
       },
@@ -3509,6 +3871,7 @@
       document.querySelectorAll(".nav-btn").forEach((button) => button.classList.toggle("is-active", button.dataset.nav === viewName));
       const title = pageTitles[viewName] || ["首页", "社区后台"];
       document.getElementById("globalTitle").textContent = title[1];
+      renderWalkthroughPanel(viewName);
     }
 
     function openDrawer(type, trigger = null) {
@@ -3575,15 +3938,18 @@
           <div class="drawer-field"><b>官方模型 ID</b><input class="input" data-drawer-create-field="model-id" value="${escapeAttribute(isModelEdit ? rowContext.row.dataset.modelId || "" : "")}" ${isModelEdit ? "readonly" : ""} placeholder="填写提供方的唯一模型 ID"></div>
           <div class="drawer-field"><b>提供方</b><input class="input" data-drawer-create-field="model-provider" value="${escapeAttribute(isModelEdit ? rowValues["提供方"] : "")}" placeholder="例如：OpenAI"></div>
           <div class="drawer-field"><b>输入 / 输出</b><input class="input" data-drawer-create-field="model-io" value="${escapeAttribute(isModelEdit ? rowValues["输入 / 输出"] : "")}" placeholder="例如：文本 / 图像"></div>
-          <div class="drawer-field"><b>核心能力</b><textarea class="input" data-drawer-create-field="model-capability" placeholder="说明 C端用户能理解的能力边界">${escapeHtml(isModelEdit ? rowValues["核心能力"] : "")}</textarea></div>
-          <div class="drawer-field"><b>成本口径</b><input class="input" data-drawer-create-field="model-cost" value="${escapeAttribute(isModelEdit ? rowValues["成本口径"] : "")}" placeholder="填写 C端可读的成本说明"></div>
+          <div class="drawer-field" data-model-detail-capability><b>核心能力</b><textarea class="input" data-drawer-create-field="model-capability" placeholder="说明 C端用户能理解的能力边界">${escapeHtml(isModelEdit ? rowValues["核心能力"] : "")}</textarea></div>
+          <div class="drawer-field" data-model-detail-cost><b>成本口径</b><input class="input" data-drawer-create-field="model-cost" value="${escapeAttribute(isModelEdit ? rowValues["成本口径"] : "")}" placeholder="填写供应商价格或内部成本"></div>
+          <div class="drawer-field"><b>社区调用积分</b><input class="input" type="number" min="1" step="1" inputmode="numeric" data-drawer-create-field="model-community-points" value="${escapeAttribute(isModelEdit ? String(rowValues["社区调用积分"] || "").replace(/[^0-9]/g, "") : "")}" placeholder="填写每次调用扣减积分"><p class="muted small">社区系统中用户调用一次扣减的积分，与成本口径独立。</p></div>
+          ${isModelEdit ? `<div class="drawer-field" data-model-change-history><b>更新时间</b><p class="muted small">${escapeHtml(rowValues["更新时间"] || "待补充")}</p></div>` : ""}
           ` : `
           <div class="drawer-field"><b>模型名称</b><p>${escapeHtml(rowValues["模型名称"] || "未识别模型")}</p></div>
           <div class="drawer-field" data-model-id="${escapeAttribute(rowContext.row.dataset.modelId || "")}"><b>官方模型 ID</b><p class="mono">${escapeHtml(rowContext.row.dataset.modelId || "未识别 ID")}</p></div>
           <div class="drawer-field" data-model-cend-reference="${escapeAttribute(rowContext.row.dataset.modelCendReference || "")}"><b>C端引用键</b><p class="mono">${escapeHtml(rowContext.row.dataset.modelCendReference || rowContext.row.dataset.modelId || "未登记")}</p></div>
           <div class="drawer-field"><b>提供方与输入 / 输出</b><p>${escapeHtml(rowValues["提供方"] || "待补充")} · ${escapeHtml(rowValues["输入 / 输出"] || "待补充")}</p></div>
-          <div class="drawer-field"><b>核心能力</b><p>${escapeHtml(rowValues["核心能力"] || "待补充")}</p></div>
-          <div class="drawer-field"><b>成本口径</b><p>${escapeHtml(rowValues["成本口径"] || "待补充")}</p></div>
+          <div class="drawer-field" data-model-detail-capability><b>核心能力</b><p>${escapeHtml(rowValues["核心能力"] || "待补充")}</p></div>
+          <div class="drawer-field" data-model-detail-cost><b>成本口径</b><p>${escapeHtml(rowValues["成本口径"] || "待补充")}</p></div>
+          <div class="drawer-field" data-model-community-points="${escapeAttribute(rowContext.row.dataset.modelCommunityPoints || "")}"><b>社区调用积分</b><p>${escapeHtml(rowValues["社区调用积分"] || "未配置")}</p><p class="muted small">社区系统中用户调用一次实际扣减。</p></div>
           <div class="drawer-field" data-model-supply-state="${escapeAttribute(rowContext.row.dataset.modelSupplyState || "unknown")}"><b>供应状态</b><p>${escapeHtml(rowValues["供应状态"] || "待确认")}</p></div>
           <div class="drawer-field" data-model-change-history><b>更新时间</b><p class="muted small">${escapeHtml(rowValues["更新时间"] || "待补充")}</p></div>` ) : "";
       const reviewOwnershipCopy = reviewContext?.queue === "comment"
@@ -3612,14 +3978,6 @@
           ${reviewContext?.activityId ? `<div class="drawer-field" data-review-activity-relation="${escapeAttribute(reviewContext.activityId)}"><b>活动承接关系</b><p class="mono">${escapeHtml(reviewContext.activityId)} / ${escapeHtml(reviewContext.activityRecordId)} / 规则 ${escapeHtml(reviewContext.ruleVersion)}</p><p class="muted small">本任务只输出内容来源结论；审核通过后仍须在活动记录中独立判定资格。</p></div>` : ""}
           <div class="drawer-field" data-review-user-result><b>用户结果</b><p>${escapeHtml(reviewContext?.userReason || "待填写")}；下一步：${escapeHtml(reviewContext?.nextStep || "确认后处理")}</p></div>
           <div class="drawer-field" data-review-internal-note><b>内部处理</b><p class="muted small">${escapeHtml(reviewContext?.internalNote || "暂无内部备注")}；用户可读原因与内部备注分开保存。</p></div>` : "";
-      const pointsDetails = type === "points-detail" && rowContext ? `
-          <div class="drawer-field" data-points-entry-id="${escapeAttribute(rowValues["流水 ID"] || "")}"><b>流水 ID</b><p class="mono">${escapeHtml(rowValues["流水 ID"] || "未识别流水")}</p></div>
-          <div class="drawer-field" data-points-entry-state="${escapeAttribute(rowContext.row.dataset.ledgerState || "unknown")}"><b>入账与复核</b><p><span class="${tagClassForText(rowValues["入账状态"] || "待确认")}">${escapeHtml(rowValues["入账状态"] || "待确认")}</span> · ${escapeHtml(rowValues["复核状态"] || "待确认")}</p></div>
-          <div class="drawer-field" data-points-source-object="${escapeAttribute(rowValues["关联对象"] || "")}"><b>来源与关联对象</b><p>${escapeHtml(rowValues["来源模块"] || "待补充")} · ${escapeHtml(rowValues["关联对象"] || "待补充")}</p></div>
-          <div class="drawer-field"><b>规则与变动</b><p>${escapeHtml(rowValues["关联规则"] || "待补充")} · ${escapeHtml(rowValues["变动值"] || "待确认")}</p></div>
-          <div class="drawer-field" data-points-original-entry="${escapeAttribute(rowContext.row.dataset.ledgerReversal || "none")}"><b>原流水关系</b><p>${rowContext.row.dataset.ledgerReversal ? `引用原流水 ${escapeHtml(rowContext.row.dataset.ledgerReversal)}，以反向流水承接，不改写原记录。` : "当前为独立流水；后续撤销必须新增反向流水。"}</p></div>
-          ${rowContext.row.dataset.mangaRewardState ? `<div class="drawer-field" data-points-manga-reward-state="${escapeAttribute(rowContext.row.dataset.mangaRewardState)}"><b>漫剧奖励处理</b><p>${rowContext.row.dataset.mangaRewardState === "sync-failed" ? "社区作品已发布，积分同步异常；保留当前流水待处理，不重复创建奖励。" : "用户已在社区确认发布；当前等待内容审核与奖励资格确认，尚未计入可用积分。"}</p><p class="muted small">来源作品 ${escapeHtml(rowContext.row.dataset.mangaSourceWork || "待补充")} · 同一来源作品仅奖励一次。</p></div>` : ""}
-          <div class="drawer-field"><b>日志与执行</b><p>${escapeHtml(rowValues["日志编号"] || "待补充")} · ${escapeHtml(rowValues["操作人"] || "待补充")} · ${escapeHtml(rowValues["时间"] || "待补充")}</p></div>` : "";
       const storeDetails = type === "store-detail" ? (isCreateDrawer || isStoreEdit ? `
           <div class="drawer-field" data-store-product-id="${escapeAttribute(isStoreEdit ? rowValues["商品 ID"] || "" : "")}"><b>商品 ID</b><p class="mono">${isStoreEdit ? escapeHtml(rowValues["商品 ID"] || "未识别商品") : "保存草稿时由系统生成"}</p></div>
           <div class="drawer-field"><b>产品线</b><select class="select" data-drawer-create-field="store-line"><option value="">请选择产品线</option>${["API中转站", "镜像站", "闪创AI", "内部草稿"].map((line) => `<option value="${escapeAttribute(line)}"${isStoreEdit && rowValues["产品线"] === line ? " selected" : ""}>${escapeHtml(line)}</option>`).join("")}</select></div>
@@ -3709,13 +4067,13 @@
           <div class="drawer-field" data-admin-detail-login><b>最近登录</b><p>${escapeHtml(rowValues["最近登录"] || "待补充")} · 不展示设备 ID、IP 或 Session</p></div>
           <div class="drawer-field" data-admin-detail-history><b>权限历史</b><p>${escapeHtml(rowValues["权限变化"] || "无新增权限")}</p></div>
           <div class="drawer-field"><b>最近操作人</b><p>${escapeHtml(rowValues["最近操作人"] || "待补充")}</p></div>` ) : "";
-      const specializedDetails = [modelDetails, reviewDetails, pointsDetails, storeDetails, inviteDetails, trustDetails, roleDetails, logDetails, adminDetails].join("");
+      const specializedDetails = [modelDetails, reviewDetails, storeDetails, inviteDetails, trustDetails, roleDetails, logDetails, adminDetails].join("");
       const objectSummary = reviewContext
         ? `${reviewContext.taskId} / ${reviewContext.objectId} / ${reviewContext.submitter}`
         : rowContext
           ? rowContext.headers.slice(0, 2).map((header) => `${header}：${rowValues[header]}`).join(" / ")
           : `${title} / 新建草稿`;
-      const rowAwareTypes = ["model-detail", "review-detail", "store-detail", "points-detail", "invite-detail", "trust-detail", "log-detail", "role-detail", "admin-user-detail"];
+      const rowAwareTypes = ["model-detail", "review-detail", "store-detail", "invite-detail", "trust-detail", "log-detail", "role-detail", "admin-user-detail"];
       const genericDetails = rowAwareTypes.includes(type) ? "" : `
           <div class="drawer-field" data-drawer-field="status-history">
             <b>状态历史</b>
@@ -3884,7 +4242,7 @@
         : drawer.dataset.drawerType === "admin-user-detail" && drawer.dataset.drawerMode === "edit"
           ? `后台用户角色已保存并立即生效；${savedRecord?.logId || "操作日志待生成"} 已记录。`
           : drawer.dataset.drawerType === "model-detail" && drawer.dataset.drawerMode === "edit"
-            ? "模型资料和各页面使用范围已保存；供应状态未改变，模板展示状态不自动改写。"
+            ? "模型资料和社区调用积分已保存；成本口径、供应状态和模板展示状态继续独立维护。"
           : drawer.dataset.drawerType === "role-detail" && savedRecord
             ? `角色 ${savedRecord.id} 已保存并启用；${savedRecord.logId} 已记录。`
             : drawer.dataset.drawerType === "admin-user-detail" && savedRecord
@@ -5661,7 +6019,47 @@
       if (empty) empty.hidden = visibleCount > 0;
       const result = document.querySelector(`[data-operational-filter-result="${pageKey}"]`);
       if (result) result.textContent = `${visibleCount} 条结果`;
+      if (pageKey === "user-list") {
+        table.querySelectorAll("tbody tr[data-operational-filter-row][hidden] [data-user-select]").forEach((input) => {
+          input.checked = false;
+        });
+        syncUserBatchSelection();
+      }
       return visibleCount;
+    }
+
+    function selectedUserIds() {
+      return [...document.querySelectorAll('.view[data-view="user-list"] [data-user-select]:checked')]
+        .map((input) => input.dataset.userId || "")
+        .filter(Boolean);
+    }
+
+    function syncUserBatchSelection() {
+      const view = document.querySelector('.view[data-view="user-list"]');
+      if (!view) return [];
+      const visibleInputs = [...view.querySelectorAll('tbody tr[data-operational-filter-row]:not([hidden]) [data-user-select]')];
+      const selected = selectedUserIds();
+      const bar = view.querySelector("[data-user-batch-bar]");
+      const count = view.querySelector("[data-user-batch-count]");
+      const action = view.querySelector("[data-open-user-batch-points-adjustment]");
+      const selectAll = view.querySelector("[data-user-select-all]");
+      if (bar) bar.hidden = selected.length === 0;
+      if (count) count.textContent = `已选择 ${selected.length} 人`;
+      if (action) action.disabled = selected.length === 0;
+      if (selectAll) {
+        const selectedVisibleCount = visibleInputs.filter((input) => input.checked).length;
+        selectAll.checked = visibleInputs.length > 0 && selectedVisibleCount === visibleInputs.length;
+        selectAll.indeterminate = selectedVisibleCount > 0 && selectedVisibleCount < visibleInputs.length;
+      }
+      return selected;
+    }
+
+    function clearUserBatchSelection() {
+      document.querySelectorAll('.view[data-view="user-list"] [data-user-select], .view[data-view="user-list"] [data-user-select-all]').forEach((input) => {
+        input.checked = false;
+        input.indeterminate = false;
+      });
+      return syncUserBatchSelection();
     }
 
     function resetOperationalFilters(pageKey) {
@@ -5669,6 +6067,14 @@
         control.value = control.tagName === "SELECT" ? control.querySelector("option")?.value || "all" : "";
       });
       return applyOperationalFilters(pageKey);
+    }
+
+    function simplifyVisibleVersionMetadata() {
+      document.querySelectorAll('[data-table="activity-workbench"] tr[data-activity-version] td:first-child .muted.small.mono').forEach((node) => node.remove());
+      document.querySelectorAll('[data-table="activity-workbench"] tr[data-activity-fact-conflict] td:nth-child(5) .muted.small').forEach((node) => node.remove());
+      document.querySelectorAll('[data-table="points-earning-rules"] [data-points-rule-source="activity"] td:first-child .muted.small.mono').forEach((node) => {
+        node.textContent = node.textContent.replace(/\s*·\s*V\d+$/i, "");
+      });
     }
 
     const activityDetailProfiles = {
@@ -6232,7 +6638,7 @@
       setText("[data-activity-detail-name]", profile.name);
       setText("[data-activity-detail-id-label]", routeId);
       setText("[data-activity-detail-state-text]", profile.state);
-      setText("[data-activity-detail-version]", profile.version);
+      view.dataset.ruleVersion = String(profile.version || "").toLowerCase();
       setText("[data-activity-detail-time]", profile.time);
       setText("[data-activity-detail-time-note]", profile.timeNote);
       setText("[data-activity-detail-pending]", profile.pending);
@@ -6333,7 +6739,7 @@
 
     function buildUserPointsRows(rows = [], emptyMessage = "暂无积分或兑换记录") {
       if (!rows.length) return `<tr><td colspan="6"><span class="muted small">${escapeHtml(emptyMessage)}</span></td></tr>`;
-      return rows.map((row) => `<tr data-user-points-id="${escapeAttribute(row.id)}"><td><b>${escapeHtml(row.source)}</b><br><span class="muted small mono">流水 ${escapeHtml(row.id)}</span></td><td><span class="${escapeAttribute(row.changeClass)}">${escapeHtml(row.change)}</span></td><td><span class="${escapeAttribute(row.resultClass)}">${escapeHtml(row.result)}</span></td><td>${escapeHtml(row.relation)}</td><td>${escapeHtml(row.time)}</td><td><a class="btn link" href="${escapeAttribute(row.href)}">查看流水</a></td></tr>`).join("");
+      return rows.map((row) => `<tr data-user-points-id="${escapeAttribute(row.id)}"${row.manual ? ` data-user-points-adjustment-record="true" data-user-points-adjustment-reason="${escapeAttribute(row.reason || "")}" data-user-points-adjustment-log-id="${escapeAttribute(row.logId || "")}"${row.batchId ? ` data-user-points-adjustment-batch-id="${escapeAttribute(row.batchId)}"` : ""}` : ""}><td><b>${escapeHtml(row.source)}</b><br><span class="muted small mono">流水 ${escapeHtml(row.id)}</span></td><td><span class="${escapeAttribute(row.changeClass)}">${escapeHtml(row.change)}</span></td><td><span class="${escapeAttribute(row.resultClass)}">${escapeHtml(row.result)}</span></td><td>${escapeHtml(row.relation)}</td><td>${escapeHtml(row.time)}</td><td>${row.href ? `<a class="btn link" href="${escapeAttribute(row.href)}">查看流水</a>` : `<span class="muted small mono">${escapeHtml(row.logId || "已生成")}</span>`}</td></tr>`).join("");
     }
 
     const userDetailProfiles = {
@@ -6461,6 +6867,138 @@
       restriction: `<div class="preview-card exception-note"><b>暂不可处理</b><p class="muted small">用户 ID 未登记；核对身份前不得新增限制或处理记录。</p></div>`,
     };
 
+    let userPointsBatchSequence = 0;
+
+    function parseUserPointsBalance(value = "") {
+      const normalized = String(value).replace(/,/g, "").trim();
+      return /^\d+$/.test(normalized) ? Number(normalized) : null;
+    }
+
+    function setUserPointsAdjustmentError(message = "") {
+      const error = document.querySelector("[data-user-points-adjustment-error]");
+      if (!error) return;
+      error.textContent = message;
+      error.hidden = !message;
+    }
+
+    function openUserPointsAdjustment(userIds = []) {
+      const view = document.querySelector('.view[data-view="user-detail"]');
+      const modal = document.querySelector('[data-modal="user-points-adjustment"]');
+      if (!modal) return false;
+      const batchUserIds = [...new Set(userIds.filter(Boolean))];
+      const isBatch = batchUserIds.length > 0;
+      const resolvedIds = isBatch ? batchUserIds : [view?.dataset.userContextId || ""];
+      const targets = resolvedIds
+        .map((userId) => ({ userId, profile: userDetailProfiles[userId], balance: parseUserPointsBalance(userDetailProfiles[userId]?.points) }))
+        .filter(({ profile, balance }) => profile && balance != null);
+      if (!resolvedIds[0] || targets.length !== resolvedIds.length || targets.length > 100) return false;
+      const singleTarget = targets[0];
+      modal.dataset.userPointsAdjustmentMode = isBatch ? "batch" : "single";
+      modal.dataset.userPointsAdjustmentUserId = isBatch ? "" : singleTarget.userId;
+      modal.dataset.userPointsAdjustmentUserIds = isBatch ? resolvedIds.join(",") : "";
+      modal.querySelector("[data-user-points-adjustment-title]").textContent = isBatch ? "批量调整积分" : "调整用户积分";
+      modal.querySelector("[data-user-points-adjustment-target-label]").textContent = isBatch ? "已选用户" : "用户";
+      modal.querySelector('[data-user-points-adjustment-field="user"]').value = isBatch
+        ? `${targets.length} 人 · ${targets.map(({ userId, profile }) => `${profile.name}（${userId}）`).join("、")}`
+        : `${singleTarget.profile.name} · ${singleTarget.userId}`;
+      modal.querySelector('[data-user-points-adjustment-field="direction"]').value = "credit";
+      modal.querySelector('[data-user-points-adjustment-field="current-balance"]').value = isBatch ? "" : String(singleTarget.balance);
+      modal.querySelector("[data-user-points-current-balance-field]").hidden = isBatch;
+      modal.querySelector('[data-user-points-adjustment-field="amount"]').value = "";
+      modal.querySelector('[data-user-points-adjustment-field="reason"]').value = "";
+      setUserPointsAdjustmentError();
+      document.querySelector(".modal-backdrop")?.classList.add("is-open");
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      modal.querySelector('[data-user-points-adjustment-field="amount"]')?.focus();
+      return true;
+    }
+
+    function saveUserPointsAdjustment() {
+      const modal = document.querySelector('[data-modal="user-points-adjustment"]');
+      const mode = modal?.dataset.userPointsAdjustmentMode || "single";
+      const userIds = mode === "batch"
+        ? String(modal?.dataset.userPointsAdjustmentUserIds || "").split(",").filter(Boolean)
+        : [modal?.dataset.userPointsAdjustmentUserId || ""].filter(Boolean);
+      const targets = userIds.map((userId) => ({ userId, profile: userDetailProfiles[userId], balance: parseUserPointsBalance(userDetailProfiles[userId]?.points) }));
+      const direction = modal?.querySelector('[data-user-points-adjustment-field="direction"]')?.value || "";
+      const amountText = modal?.querySelector('[data-user-points-adjustment-field="amount"]')?.value?.trim() || "";
+      const reason = modal?.querySelector('[data-user-points-adjustment-field="reason"]')?.value?.trim() || "";
+      if (!modal || !targets.length || targets.length > 100 || targets.some(({ profile, balance }) => !profile || balance == null)) {
+        setUserPointsAdjustmentError(mode === "batch" ? "已选用户或积分余额未登记，整批未处理。" : "当前用户或积分余额未登记，不能调整积分。");
+        return false;
+      }
+      if (!/^[1-9]\d*$/.test(amountText)) {
+        setUserPointsAdjustmentError("积分数量必须填写为大于 0 的整数。");
+        return false;
+      }
+      if (!reason) {
+        setUserPointsAdjustmentError("请填写本次发放或扣除积分的调整原因。");
+        return false;
+      }
+      const amount = Number(amountText);
+      const insufficientTargets = direction === "debit" ? targets.filter(({ balance }) => amount > balance) : [];
+      if (insufficientTargets.length) {
+        const insufficientNames = insufficientTargets.map(({ userId, profile }) => `${profile.name}（${userId}）`).join("、");
+        setUserPointsAdjustmentError(mode === "batch"
+          ? `以下用户积分不足，整批未处理：${insufficientNames}`
+          : "扣除积分不能超过当前积分余额。");
+        return false;
+      }
+      const isCredit = direction === "credit";
+      const time = formatActivityLifecycleTime();
+      const actionLabel = isCredit ? "发放" : "扣除";
+      const batchId = mode === "batch" ? `PTB-${String(++userPointsBatchSequence).padStart(4, "0")}` : "";
+      let singleResult = null;
+      targets.forEach(({ userId, profile, balance }) => {
+        const sequence = (profile.pointsRows || []).filter((row) => row.manual).length + 1;
+        const idSuffix = userId.replace(/^USR-/, "");
+        const ledgerId = batchId ? `PTS-BATCH-${batchId.slice(4)}-${idSuffix}` : `PTS-MANUAL-${idSuffix}-${String(sequence).padStart(2, "0")}`;
+        const logId = `LOG-${ledgerId}`;
+        const nextBalance = balance + (isCredit ? amount : -amount);
+        profile.points = nextBalance.toLocaleString("en-US");
+        profile.pointsRows = [{
+          id: ledgerId,
+          source: batchId ? `后台批量${actionLabel}` : `后台人工${actionLabel}`,
+          change: `${isCredit ? "+" : "-"}${amount}`,
+          changeClass: isCredit ? "tag success" : "tag danger",
+          result: isCredit ? "已入账" : "已扣减",
+          resultClass: "tag success",
+          relation: batchId ? `批次 ${batchId} · 调整原因：${reason}` : `调整原因：${reason}`,
+          time,
+          manual: true,
+          reason,
+          logId,
+          batchId,
+        }, ...(profile.pointsRows || [])];
+        profile.records = `<tr data-user-points-adjustment-record="${escapeAttribute(ledgerId)}" data-user-points-adjustment-reason="${escapeAttribute(reason)}"${batchId ? ` data-user-points-adjustment-batch-id="${escapeAttribute(batchId)}"` : ""}><td>积分调整</td><td><span class="tag success">已记录</span></td><td>${escapeHtml(actionLabel)} ${amount} 积分 · ${escapeHtml(reason)} · ${escapeHtml(ledgerId)}</td><td>${escapeHtml(time.slice(0, 10))}</td><td><span class="muted small mono">${escapeHtml(logId)}</span></td></tr>${profile.records || ""}`;
+        const listRow = [...document.querySelectorAll('.view[data-view="user-list"] tr[data-user-id]')].find((row) => row.dataset.userId === userId);
+        const pointsCell = listRow?.querySelector("[data-user-points-cell]");
+        if (pointsCell) pointsCell.textContent = profile.points;
+        singleResult = { userId, profile, ledgerId, logId };
+      });
+      if (mode === "batch") {
+        clearUserBatchSelection();
+        const result = document.querySelector('.view[data-view="user-list"] [data-user-batch-points-result]');
+        if (result) {
+          result.textContent = `批次 ${batchId} 已完成：为 ${targets.length} 人每人${actionLabel} ${amount} 积分，已分别生成 ${targets.length} 条积分流水和操作日志。`;
+          result.hidden = false;
+        }
+      } else if (singleResult) {
+        syncUserDetailContext(singleResult.userId);
+        const view = document.querySelector('.view[data-view="user-detail"]');
+        const pointsTab = view?.querySelector('[data-business-tab="points"]');
+        if (pointsTab) activateBusinessTab(pointsTab);
+        const result = view?.querySelector("[data-user-points-adjustment-result]");
+        if (result) {
+          result.textContent = `${actionLabel} ${amount} 积分已完成，当前积分 ${singleResult.profile.points}；原因已写入 ${singleResult.logId}，并生成新流水 ${singleResult.ledgerId}。`;
+          result.hidden = false;
+        }
+      }
+      setUserPointsAdjustmentError();
+      return true;
+    }
+
     function syncUserDetailContext(userId = "") {
       const resolvedId = userId || new URLSearchParams(window.location.search).get("id") || "USR-1001";
       const profile = userDetailProfiles[resolvedId] || missingUserDetailProfile;
@@ -6502,6 +7040,13 @@
       if (records) records.innerHTML = profile.records;
       const restriction = view.querySelector("[data-user-detail-restriction-summary]");
       if (restriction) restriction.innerHTML = profile.restriction;
+      const adjustableBalance = parseUserPointsBalance(profile.points);
+      view.querySelectorAll("[data-open-user-points-adjustment]").forEach((button) => {
+        const disabled = Boolean(profile.missing) || adjustableBalance == null;
+        button.disabled = disabled;
+        button.title = disabled ? "用户或积分余额未登记，核对后再调整" : "";
+        button.dataset.userPointsAdjustmentUserId = resolvedId;
+      });
       view.querySelectorAll('[data-danger-action="user-limit"]').forEach((button) => {
         button.disabled = Boolean(profile.missing);
         button.title = profile.missing ? "用户 ID 未登记，核对身份后再处理" : "";
@@ -6661,7 +7206,6 @@
       applyEntryContract('[data-table="activity-workbench"] [data-open-growth-modal="activity-edit"]', "编辑展示", "scoped-edit", "编辑活动的 C端展示信息");
       applyEntryContract('[data-table="user-list"] [data-open-view="user-detail"]', "用户详情", "task-page", "进入用户详情工作页");
       applyEntryContract('[data-table="invite-records"] [data-open-drawer="invite-detail"]', "邀请详情", "independent-readonly", "查看邀请记录详情");
-      applyEntryContract('[data-table="points-records"] [data-open-drawer="points-detail"]', "流水详情", "independent-readonly", "查看积分流水详情");
       applyEntryContract('[data-table="trust-lists"] [data-open-drawer="trust-detail"]', "治理详情", "independent-readonly", "查看账号治理记录详情");
       applyEntryContract('[data-table="operation-log"] [data-open-drawer="log-detail"]', "日志详情", "readonly-log", "查看不可变操作日志详情");
       applyEntryContract('[data-table="role-management"] [data-open-drawer="role-detail"][data-drawer-intent="edit"]', "调整权限", "direct-save-edit", "调整并保存角色权限");
@@ -6712,6 +7256,13 @@
         syncRouteResolutionFeedback(view, { objectType: "审核任务", objectId: requestedTaskId || "未提供", found: false, fallbackLabel: "审核任务详情" });
         view.querySelector("[data-review-page-actionable]").hidden = true;
         view.querySelector("[data-review-page-readonly]").hidden = false;
+        const nextTaskLink = view.querySelector("[data-review-page-next-task]");
+        if (nextTaskLink) {
+          nextTaskLink.removeAttribute("href");
+          nextTaskLink.textContent = "暂无下一条";
+          nextTaskLink.classList.add("is-disabled");
+          nextTaskLink.setAttribute("aria-disabled", "true");
+        }
         return;
       }
       view.dataset.reviewTaskId = task.taskId;
@@ -6722,15 +7273,18 @@
       setText("[data-review-page-subtitle]", `${task.taskId} · ${task.status} · ${task.nextStep}`);
       setText("[data-review-page-status]", task.status);
       setText("[data-review-page-sla]", task.sla);
-      setText("[data-review-page-object]", `${task.objectId} · ${task.objectType} · ${task.summary}`);
+      setText("[data-review-page-object]", `${task.objectId} · ${task.summary}`);
       setText("[data-review-page-people]", `${task.submitter} · 处理人 ${task.assignee}`);
       setText("[data-review-page-risk-source]", task.riskSource);
       setText("[data-review-page-risk-summary]", task.riskSummary);
       setText("[data-review-page-source-state]", task.sourceBendState || task.sourcePageState);
-      setText("[data-review-page-source-object]", `${task.sourceObjectId || "未登记"} · ${task.sourceType || "来源待补充"}`);
-      setText("[data-review-page-source-cend]", `${task.sourcePageLabel || "来源页面"} · ${task.sourcePage || "待补充"}`);
+      setText("[data-review-page-source-object]", task.sourceObjectId || task.objectId || "未登记");
+      setText("[data-review-page-source-cend]", task.sourcePageLabel || "来源页面");
       setText("[data-review-page-public-state]", task.publicStateLabel || task.publicState || "待确认");
-      setText("[data-review-page-related-records]", [task.activityId, task.activityRecordId, task.ruleVersion, task.resultLogId].filter(Boolean).join(" · ") || "暂无关联业务记录");
+      const relatedRecords = [task.activityId, task.activityRecordId, task.ruleVersion, task.resultLogId].filter(Boolean).join(" · ");
+      setText("[data-review-page-related-records]", relatedRecords);
+      const relatedRow = view.querySelector("[data-review-page-related-row]");
+      if (relatedRow) relatedRow.hidden = !relatedRecords;
       setText("[data-review-page-submitted-at]", task.submittedAt);
       setText("[data-review-page-history-status]", task.status);
       setText("[data-review-page-second-review]", task.secondReview);
@@ -6743,6 +7297,28 @@
       if (sourceLink) {
         sourceLink.hidden = !task.sourceBendHref;
         if (task.sourceBendHref) sourceLink.href = task.sourceBendHref;
+      }
+      view.querySelectorAll("[data-review-back-link]").forEach((link) => {
+        link.href = `${pageRoutes["review-workbench"] || "review-workbench.html"}?queue=${encodeURIComponent(task.queue)}`;
+      });
+      const queueTasks = catalog.filter((item) => item.queue === task.queue);
+      const currentQueueIndex = queueTasks.findIndex((item) => item.taskId === task.taskId);
+      const nextTask = currentQueueIndex >= 0 ? queueTasks[currentQueueIndex + 1] : null;
+      const nextTaskLink = view.querySelector("[data-review-page-next-task]");
+      if (nextTaskLink) {
+        if (nextTask) {
+          nextTaskLink.href = `review-detail.html?queue=${encodeURIComponent(task.queue)}&task=${encodeURIComponent(nextTask.taskId)}`;
+          nextTaskLink.textContent = "下一条";
+          nextTaskLink.classList.remove("is-disabled");
+          nextTaskLink.removeAttribute("aria-disabled");
+          nextTaskLink.setAttribute("aria-label", `下一条：${nextTask.summary}`);
+        } else {
+          nextTaskLink.removeAttribute("href");
+          nextTaskLink.textContent = "已是最后一条";
+          nextTaskLink.classList.add("is-disabled");
+          nextTaskLink.setAttribute("aria-disabled", "true");
+          nextTaskLink.removeAttribute("aria-label");
+        }
       }
       const userReason = view.querySelector("[data-review-page-user-reason]");
       const internalNote = view.querySelector("[data-review-page-internal-note]");
@@ -8470,9 +9046,12 @@
       if (activeView?.dataset.view === "points-records") {
         const entryId = params.get("entry") || "";
         const entryRow = entryId ? activeView.querySelector(`[data-points-record-id="${CSS.escape(entryId)}"]`) : null;
-        const detailTrigger = entryRow?.querySelector('[data-open-drawer="points-detail"]');
-        if (detailTrigger) openDrawer("points-detail", detailTrigger);
-        if (entryId) syncRouteResolutionFeedback(activeView, { objectType: "积分流水", objectId: entryId, found: Boolean(entryRow && detailTrigger), fallbackLabel: "积分流水列表" });
+        if (entryRow) {
+          activeView.querySelectorAll("[data-points-record-id][data-route-target]").forEach((row) => delete row.dataset.routeTarget);
+          entryRow.dataset.routeTarget = "true";
+          entryRow.scrollIntoView({ block: "center" });
+        }
+        if (entryId) syncRouteResolutionFeedback(activeView, { objectType: "积分流水", objectId: entryId, found: Boolean(entryRow), fallbackLabel: "积分流水列表" });
       }
     }
 
@@ -8987,8 +9566,8 @@
           ["summary", "卡片描述"],
           ["category", "模板分类", "select", ["短剧漫剧", "图片生成", "视频生成", "文本写作", "活动海报"]],
           ["maintenance-source", "维护来源", "select", ["官方维护", "专业维护"]],
-          ["linked-model", "默认创作模型", "select", []],
-          ["cost", "预计消耗积分"],
+          ["linked-model", "使用模型", "select", []],
+          ["cost", "消耗积分"],
           ["content-body", "Markdown 内容", "textarea"],
           ["status", "是否展示", "switch", ["展示中", "停用"]],
           ["sort", "排序"],
@@ -9045,30 +9624,6 @@
         ],
         preview: { type: "stage", title: "inviter", summary: "risk-summary", action: "reward-state" },
       },
-      points: {
-        table: "points-records",
-        idPrefix: "PTS-AUTO",
-        idField: "record-id",
-        createTitle: "基于原流水新增调整记录",
-        editTitle: "基于原流水新增调整记录",
-        rowAction: "新增调整记录",
-        fields: [
-          ["record-id", "流水 ID", "hidden-id"],
-          ["user", "用户"],
-          ["source", "来源模块", "readonly"],
-          ["rule", "关联规则", "hidden"],
-          ["change", "变动值"],
-          ["accounting-state", "入账状态", "readonly"],
-          ["review-state", "复核状态", "readonly"],
-          ["linked-object", "来源流水", "readonly"],
-          ["log-id", "日志编号", "hidden"],
-          ["operator", "操作人", "hidden"],
-          ["time", "时间", "hidden"],
-          ["reason", "调整原因", "textarea"],
-        ],
-        tableFields: ["record-id", "user", "source", "rule", "change", "accounting-state", "review-state", "linked-object", "log-id", "operator", "time"],
-        preview: { type: "source", title: "user", summary: "change", action: "accounting-state" },
-      },
       trust: {
         table: "trust-lists",
         idPrefix: "TRUST-AUTO",
@@ -9100,6 +9655,33 @@
       return options.map(([value, label]) => `<option value="${escapeAttribute(value)}"${value === current ? " selected" : ""}>${escapeHtml(label)}</option>`).join("");
     }
 
+    function materializeModelCommunityPointsInDom(root = document) {
+      const table = root.querySelector('[data-table="model-management"]');
+      if (!table) return;
+      const headers = [...table.querySelectorAll("thead th")];
+      const costHeader = headers.find((cell) => cell.textContent.trim() === "成本口径");
+      if (costHeader && !headers.some((cell) => cell.textContent.trim() === "社区调用积分")) {
+        const pointsHeader = document.createElement("th");
+        pointsHeader.textContent = "社区调用积分";
+        costHeader.insertAdjacentElement("afterend", pointsHeader);
+      }
+      table.querySelectorAll("tbody tr[data-model-row]").forEach((row) => {
+        if (row.querySelector("[data-model-community-points-cell]")) return;
+        const costCell = row.children[5];
+        if (!costCell) return;
+        const legacyPoints = Number(costCell.textContent.match(/(\d+)\s*积分\s*\/\s*次/)?.[1] || 0);
+        const points = Number(row.dataset.modelCommunityPoints || legacyPoints || 0);
+        row.dataset.modelCommunityPoints = points ? String(points) : "";
+        if (legacyPoints) costCell.innerHTML = '<span class="muted">待维护</span>';
+        const pointsCell = document.createElement("td");
+        pointsCell.dataset.modelCommunityPointsCell = "";
+        pointsCell.innerHTML = points ? `${points} 积分 / 次` : '<span class="muted">未配置</span>';
+        costCell.insertAdjacentElement("afterend", pointsCell);
+      });
+      const emptyCell = table.querySelector('[data-operational-filter-empty="model-management"] td');
+      if (emptyCell) emptyCell.colSpan = 10;
+    }
+
     function getModelManagementCatalog() {
       const liveCatalog = [...document.querySelectorAll('[data-table="model-management"] tbody tr[data-model-row]')].map((row) => {
         const id = row.dataset.modelId || row.children[1]?.textContent?.trim() || "";
@@ -9107,13 +9689,15 @@
         const provider = row.dataset.filterProvider || row.children[2]?.textContent?.trim() || "";
         const supply = row.dataset.modelSupplyState || "";
         const cendReference = row.dataset.modelCendReference || id;
+        const points = Number(row.dataset.modelCommunityPoints || row.querySelector("[data-model-community-points-cell]")?.textContent?.match(/(\d+)/)?.[1] || 0);
         return {
           id,
           name,
           provider,
           supply,
           cendReference,
-          selectable: supply === "published",
+          points,
+          selectable: supply === "published" && points > 0,
         };
       }).filter((model) => model.id);
       if (liveCatalog.length) return liveCatalog;
@@ -9121,7 +9705,8 @@
       try {
         return JSON.parse(embeddedCatalog).map((model) => ({
           ...model,
-          selectable: model.supply === "published",
+          points: Number(model.points || 0),
+          selectable: model.supply === "published" && Number(model.points || 0) > 0,
         })).filter((model) => model.id);
       } catch (error) {
         return [];
@@ -9132,6 +9717,7 @@
       if (!model) return "模型对象未找到";
       if (model.selectable) return "可用于模板";
       const supplyLabels = { published: "已发布", paused: "已暂停", offline: "已下线" };
+      if (model.supply === "published" && !model.points) return "未配置积分";
       if (model.supply !== "published") return supplyLabels[model.supply] || model.supply || "供应状态未知";
       return "当前不可选择";
     }
@@ -9142,13 +9728,26 @@
       const models = !current || hasCurrent
         ? catalog
         : [...catalog, { id: current, name: current, provider: "", supply: "missing", selectable: false }];
-      return `<option value=""></option>${models.map((model) => {
+      return `<option value=""${current ? "" : " selected"} disabled>请选择模型</option>${models.map((model) => {
         const identity = model.name === model.id ? model.id : `${model.name} · ${model.id}`;
         const provider = model.provider ? ` · ${model.provider}` : "";
+        const points = model.points ? ` · ${model.points} 积分/次` : "";
         const selected = model.id === current ? " selected" : "";
         const disabled = model.selectable ? "" : " disabled";
-        return `<option value="${escapeAttribute(model.id)}"${selected}${disabled}>${escapeHtml(identity)}${escapeHtml(provider)} · ${escapeHtml(modelAvailabilityLabel(model))}</option>`;
+        return `<option value="${escapeAttribute(model.id)}"${selected}${disabled}>${escapeHtml(identity)}${escapeHtml(provider)}${escapeHtml(points)} · ${escapeHtml(modelAvailabilityLabel(model))}</option>`;
       }).join("")}`;
+    }
+
+    function syncTemplateCatalogModelCosts(root = document) {
+      const catalog = new Map(getModelManagementCatalog().map((model) => [model.id, model]));
+      root.querySelectorAll('[data-table="aigc-template-config"] tbody tr[data-linked-model]').forEach((row) => {
+        const model = catalog.get(row.dataset.linkedModel || "");
+        if (!model?.points) return;
+        row.dataset.templateCost = String(model.points);
+        row.dataset.editableFields = "封面 / 标题 / 描述 / 分类 / 维护来源 / 使用模型 / 消耗积分（自动）";
+        const costCell = row.children[6];
+        if (costCell) costCell.textContent = `${model.points} 积分`;
+      });
     }
 
     function hydrateContentCoverPreviews(root = document) {
@@ -9233,7 +9832,7 @@
       return {
         ...values,
         "content-body": values["content-body"] || `## ${title}\n\n${summary}\n\n### 使用说明\n说明需要填写的输入、生成结果和复用方式。`,
-        "editable-fields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 默认模型 / 预计消耗积分",
+        "editable-fields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 使用模型 / 消耗积分（自动）",
       };
     }
 
@@ -9244,7 +9843,10 @@
         return `<div class="field wide"><label>${label}</label><div class="ant-upload ant-upload-drag popup-upload" data-content-upload data-template-cover-upload data-prototype-upload><div class="popup-upload-title">模板封面</div><div class="popup-upload-hint">JPG / PNG / WebP · 单张不超过 5MB</div><div class="prototype-upload-actions"><button class="btn" type="button" data-prototype-upload-trigger>选择本地图片</button><span class="popup-upload-file" data-content-upload-file data-prototype-upload-status>${value ? `已配置：${value}` : "未选择文件"}</span></div><input type="file" data-prototype-upload-input accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" aria-label="选择模板封面"><input class="input prototype-upload-path" data-content-form-field="cover-image" data-prototype-upload-value aria-label="${label}" placeholder="图片地址或素材编号"><p class="field-error prototype-upload-error" data-prototype-upload-error role="alert" hidden></p></div></div>`;
       }
       if (field === "linked-model") {
-        return `<div class="field"><label>${label}</label><select class="select" data-content-form-field="linked-model" data-options-source="model-management" aria-label="${label}">${modelOptionMarkup(value)}</select><p class="muted small" data-template-model-hint data-model-availability="unselected" hidden>选项来自模型管理；仅“已发布”的模型可新选。</p></div>`;
+        return `<div class="field"><label>${label}</label><select class="select" data-content-form-field="linked-model" data-options-source="model-management" aria-label="${label}">${modelOptionMarkup(value)}</select><p class="muted small" data-template-model-hint data-model-availability="unselected" hidden>仅展示已发布且已配置积分的模型。</p></div>`;
+      }
+      if (field === "cost") {
+        return `<div class="field"><label>${label}</label><input class="input" data-content-form-field="cost" data-template-model-cost aria-label="${label}" placeholder="选择模型后自动带出" readonly aria-readonly="true"></div>`;
       }
       if (field === "status") {
         return `<div class="field template-lifecycle-field" data-template-lifecycle-field><label>展示状态</label><label class="switch-control" data-content-status-control><input type="checkbox" data-content-form-field="status" aria-label="展示状态"><span class="switch-track" aria-hidden="true"></span><span data-content-status-label>停用</span></label><p class="muted small template-lifecycle-hint" data-template-status-hint hidden>停用时 C端不展示；模板配置与历史操作记录保留。</p></div>`;
@@ -9403,20 +10005,25 @@
       const modal = document.querySelector('[data-modal="content-ops"]');
       if (!modal || modal.dataset.contentFormType !== "template") return;
       const select = modal.querySelector('[data-content-form-field="linked-model"]');
+      const cost = modal.querySelector('[data-content-form-field="cost"]');
       const hint = modal.querySelector("[data-template-model-hint]");
-      if (!select || !hint) return;
+      if (!select || !cost || !hint) return;
       const selectedId = select.value || "";
       const model = getModelManagementCatalog().find((item) => item.id === selectedId);
       if (!selectedId) {
+        cost.value = "";
         hint.dataset.modelAvailability = "unselected";
-        hint.textContent = "选项来自模型管理；仅“已发布”的模型可新选。";
+        hint.textContent = "请选择已发布且已配置积分的模型。";
         return;
       }
       if (model?.selectable) {
+        cost.value = String(model.points);
         hint.dataset.modelAvailability = "available";
-        hint.textContent = `${model.name} 当前可用于模板；保存时记录官方模型 ID ${model.id}。`;
+        hint.textContent = `${model.name} 当前可用于模板；消耗 ${model.points} 积分/次。`;
         return;
       }
+      const preservesStoppedHistory = modal.dataset.contentFormMode === "edit" && selectedId === modal.dataset.templateOriginalLinkedModel;
+      if (!preservesStoppedHistory) cost.value = "";
       hint.dataset.modelAvailability = "unavailable";
       hint.textContent = `${model?.name || selectedId} 当前为“${modelAvailabilityLabel(model)}”。展示中模板保存前必须替换为可用模型或先停用；停用模板可保留原历史关联。`;
     }
@@ -9454,7 +10061,7 @@
       const formatTableValue = (config, field, value) => {
         if (!isTemplateCostField(config, field)) return value || "";
         const points = extractPointsValue(value);
-        return points ? `${points} 起` : "";
+        return points ? `${points} 积分` : "";
       };
       const fieldSelector = (field) => `[data-${target}-form-field="${field}"]`;
       const getField = (field) => {
@@ -9566,10 +10173,6 @@
           const taskId = values[config.idField] || "";
           return `<div class="op-list"><a class="btn link" href="review-detail.html?queue=content&amp;task=${encodeURIComponent(taskId)}" data-review-task-link="${escapeAttribute(taskId)}" data-object-entry-contract="task-page" aria-label="进入审核任务 ${escapeAttribute(taskId)}">进入任务</a></div>`;
         }
-        if (target === "user-governance" && type === "points") {
-          const sourceId = values[config.idField] || "";
-          return `<div class="op-list"><button class="btn link" data-open-drawer="points-detail">详情</button><button class="btn link" data-open-${target}-modal="${type}-create" data-points-source-record="${escapeAttribute(sourceId)}">${config.rowAction}</button></div>`;
-        }
         if (target === "user-governance" && type === "invite") {
           const inviteId = values[config.idField] || "";
           const stage = values.stage || "待确认阶段";
@@ -9652,21 +10255,9 @@
           row.dataset.flashMediaType = values["media-state"] || "";
           row.dataset.flashInteractions = values["interaction-summary"] || "";
         }
-        if (config.table === "points-records") {
-          row.dataset.operationalFilterRow = "";
-          row.dataset.governanceState = "pending";
-          row.dataset.ledgerState = "pending";
-          row.dataset.filterKeyword = `${values["record-id"] || ""} ${values.user || ""}`.trim();
-          row.dataset.filterSource = values.source || "";
-          row.dataset.filterAccountingState = values["accounting-state"] || "";
-          row.dataset.filterReviewState = values["review-state"] || "";
-          row.dataset.filterDate = String(values.time || "").slice(0, 10);
-          if (String(values["linked-object"] || "").startsWith("原流水 ")) {
-            row.dataset.ledgerAdjustmentSource = String(values["linked-object"]).replace(/^原流水\s*/, "");
-          }
-        }
         if (config.table === "aigc-template-config") {
           row.dataset.templateId = values[config.idField] || "";
+          row.dataset.templateCost = values.cost || "";
           row.dataset.operationalFilterRow = "";
           row.dataset.filterCategory = values.category || "";
           row.dataset.filterStatus = values.status === "active" ? "展示中" : "停用";
@@ -9709,6 +10300,11 @@
         }
         if (!values[config.idField]) return false;
         if (target === "content" && type === "template") {
+          const linkedModel = getModelManagementCatalog().find((model) => model.id === values["linked-model"]);
+          if (linkedModel?.selectable) {
+            values.cost = String(linkedModel.points);
+            setField("cost", values.cost);
+          }
           const requiredFields = ["cover-image", "title", "summary", "category", "maintenance-source", "linked-model", "cost", "sort", "content-body"];
           const missing = requiredFields.filter((field) => !String(values[field] || "").trim());
           const originalStatus = modal.dataset.templateOriginalStatus || "draft";
@@ -9724,7 +10320,7 @@
           }
           if (!/^\d+$/.test(values.cost) || Number(values.cost) <= 0) {
             if (contentError) {
-              contentError.textContent = "预计消耗积分必须填写为大于 0 的整数。";
+              contentError.textContent = "请选择已配置消耗积分的模型。";
               contentError.hidden = false;
             }
             return false;
@@ -9736,13 +10332,12 @@
             }
             return false;
           }
-          const linkedModel = getModelManagementCatalog().find((model) => model.id === values["linked-model"]);
           const preservesStoppedHistory = modal.dataset.contentFormMode === "edit" && values.status === "draft" && values["linked-model"] === originalLinkedModel;
           if (!linkedModel?.selectable && !preservesStoppedHistory) {
             if (contentError) {
               contentError.textContent = values.status === "active"
-                ? "当前默认创作模型已暂停或下线；展示中模板必须改用已发布模型，或先停用模板。"
-                : "已暂停或已下线的模型不能建立新的模板关联；仅停用模板可以保留原历史关联。";
+                ? "当前使用模型未发布或未配置积分；展示中模板必须改用可用模型，或先停用模板。"
+                : "未发布或未配置积分的模型不能建立新的模板关联；仅停用模板可以保留原历史关联。";
               contentError.hidden = false;
             }
             return false;
@@ -9779,17 +10374,6 @@
             if (contentError) {
               contentError.textContent = "切换教程展示状态时必须填写状态调整原因。";
               contentError.hidden = false;
-            }
-            return false;
-          }
-        }
-        if (target === "user-governance" && type === "points") {
-          const change = String(values.change || "").trim();
-          const reason = String(values.reason || "").trim();
-          if (!/^[+-]?\d+$/.test(change) || Number(change) === 0 || !reason) {
-            if (error) {
-              error.textContent = "积分变动值和调整原因均为必填；变动值需为非零整数。";
-              error.hidden = false;
             }
             return false;
           }
@@ -9902,38 +10486,10 @@
             contentError.textContent = "";
           }
         }
-        const pointsAppendOnly = target === "user-governance" && type === "points";
         const governanceError = modal.querySelector("[data-user-governance-error]");
         if (governanceError) {
           governanceError.hidden = true;
           governanceError.textContent = "";
-        }
-        if (pointsAppendOnly && mode === "create") {
-          const sourceValues = row ? rowToValues(config, row) : {};
-          const sourceId = sourceValues[config.idField] || row?.dataset[`${targetKey}Id`] || "";
-          if (sourceId) {
-            document.querySelector(titleSelector).textContent = config.editTitle;
-            document.querySelector(submitSelector).textContent = "新增调整记录";
-            setField("user", String(sourceValues.user || "").split(/\s+/)[0]);
-            setField("source", "积分纠错");
-            setField("rule", "MANUAL-CORRECTION");
-            setField("linked-object", `原流水 ${sourceId}`);
-          } else {
-            document.querySelector(titleSelector).textContent = "暂不可新增调整记录";
-            document.querySelector(submitSelector).textContent = "请先选择来源流水";
-            document.querySelector(submitSelector).disabled = true;
-            setField("source", "未选择来源流水");
-            setField("linked-object", "未绑定");
-            if (governanceError) {
-              governanceError.textContent = "请关闭当前弹层，并从目标积分流水行点击“新增调整记录”；不得创建无来源流水的独立人工调整。";
-              governanceError.hidden = false;
-            }
-          }
-          setField("accounting-state", "待入账");
-          setField("review-state", "待复核");
-          setField("log-id", "提交后生成");
-          setField("operator", "当前管理员");
-          setField("time", new Date().toISOString().slice(0, 16).replace("T", " "));
         }
         document.querySelector(".modal-backdrop").classList.add("is-open");
         document.querySelector(modalSelector).classList.add("is-open");
@@ -9992,6 +10548,7 @@
       root.querySelectorAll("[data-business-panel]").forEach((panel) => panel.setAttribute("role", "tabpanel"));
     }
 
+    materializeModelCommunityPointsInDom();
     activateReviewTab("content");
     ["content-list", "flash-management", "model-management", "aigc-template-config", "store-config", "user-list", "points-records", "operation-log"].forEach(applyOperationalFilters);
     activateTrustTab("reviewing");
@@ -10004,6 +10561,8 @@
     normalizeObjectEntryResponsibilities();
     syncApprovedCEndContracts();
     hydrateContentCoverPreviews();
+    syncTemplateCatalogModelCosts();
+    document.addEventListener("DOMContentLoaded", () => syncTemplateCatalogModelCosts());
     syncUserDetailContext();
     syncReviewDetailPage();
     initializePopupSettings();
@@ -10273,6 +10832,22 @@
       const userGovernanceTrigger = event.target.closest("[data-open-user-governance-modal]");
       if (userGovernanceTrigger) userGovernanceController.open(userGovernanceTrigger.dataset.openUserGovernanceModal, userGovernanceTrigger.closest("tr"));
 
+      const userSelectAll = event.target.closest("[data-user-select-all]");
+      if (userSelectAll) {
+        document.querySelectorAll('.view[data-view="user-list"] tbody tr[data-operational-filter-row]:not([hidden]) [data-user-select]').forEach((input) => {
+          input.checked = userSelectAll.checked;
+        });
+        syncUserBatchSelection();
+      }
+
+      if (event.target.closest("[data-user-select]")) syncUserBatchSelection();
+
+      if (event.target.closest("[data-user-batch-clear]")) clearUserBatchSelection();
+
+      if (event.target.closest("[data-open-user-batch-points-adjustment]")) openUserPointsAdjustment(selectedUserIds());
+
+      if (event.target.closest("[data-open-user-points-adjustment]")) openUserPointsAdjustment();
+
       if (event.target.closest("[data-open-review-recheck]")) openReviewRecheckModal();
 
       const popupItemTrigger = event.target.closest("[data-open-popup-item-modal]");
@@ -10310,17 +10885,24 @@
       const userGovernanceSubmit = event.target.closest("[data-user-governance-submit]");
       if (userGovernanceSubmit && userGovernanceController.save()) closeLayers();
 
+      const userPointsAdjustmentSubmit = event.target.closest("[data-user-points-adjustment-submit]");
+      if (userPointsAdjustmentSubmit && saveUserPointsAdjustment()) closeLayers();
+
       if (event.target.closest("[data-review-recheck-submit]")) saveReviewRecheckTask();
       if (event.target.closest("[data-review-recheck-cancel]")) closeReviewRecheckModal();
 
       if (event.target.closest("[data-close-layer]")) closeLayers();
 
       if (event.target.closest("[data-toggle-walkthrough]")) {
+        renderWalkthroughPanel();
         document.querySelector(".walkthrough-panel").classList.toggle("is-open");
       }
+      if (event.target.closest("[data-close-walkthrough]")) document.querySelector(".walkthrough-panel")?.classList.remove("is-open");
     });
+    simplifyVisibleVersionMetadata();
+    renderWalkthroughPanel();
     syncReviewWorkbenchRouteContext();
   </script>
-  <script type="application/json" data-model-management-catalog>[{"id":"gpt-4.1","name":"gpt-4.1","provider":"OpenAI","supply":"published","cendReference":"gpt-4.1"},{"id":"gpt-5-chat-latest","name":"gpt-5-chat-latest","provider":"OpenAI","supply":"published","cendReference":"gpt-5-chat-latest"},{"id":"claude-sonnet-4-6","name":"claude-sonnet-4-6","provider":"Anthropic","supply":"published","cendReference":"claude-sonnet-4-6"},{"id":"gemini-3-pro-preview","name":"gemini-3-pro-preview","provider":"Google","supply":"published","cendReference":"gemini-3-pro-preview"},{"id":"gemini-2.5-pro","name":"gemini-2.5-pro","provider":"Google","supply":"published","cendReference":"gemini-2.5-pro"},{"id":"o4-mini","name":"o4-mini","provider":"OpenAI","supply":"published","cendReference":"o4-mini"},{"id":"text-embedding-3-large","name":"text-embedding-3-large","provider":"OpenAI","supply":"published","cendReference":"text-embedding-3-large"},{"id":"gpt-image-2","name":"gpt-image-2","provider":"OpenAI","supply":"published","cendReference":"gpt-image-2"},{"id":"doubao-seedream-4-5-251128","name":"doubao-seedream-4-5-251128","provider":"Doubao","supply":"published","cendReference":"doubao-seedream-4-5-251128"},{"id":"gemini-3.1-flash-image","name":"gemini-3.1-flash-image","provider":"Google","supply":"published","cendReference":"gemini-3.1-flash-image"},{"id":"grok-video-3","name":"grok-video-3","provider":"Grok","supply":"published","cendReference":"grok-video-3"},{"id":"grok-video-3-10s","name":"grok-video-3-10s","provider":"Grok","supply":"published","cendReference":"grok-video-3-10s"},{"id":"doubao-seedream-5-0-260128","name":"doubao-seedream-5-0-260128","provider":"Doubao","supply":"published","cendReference":"doubao-seedream-5-0-260128"},{"id":"nano-banana-pro","name":"Nano Banana Pro","provider":"待确认","supply":"published","cendReference":"nano-banana-pro"},{"id":"nano-banana-2","name":"nano-banana-2","provider":"待确认","supply":"published","cendReference":"nano-banana-2"},{"id":"gemini-3-flash-preview","name":"gemini-3-flash-preview","provider":"待确认","supply":"published","cendReference":"gemini-3-flash-preview"},{"id":"kimi-k2.6","name":"kimi-k2.6","provider":"待确认","supply":"published","cendReference":"kimi-k2-6"},{"id":"gpt-5.5","name":"gpt-5.5","provider":"OpenAI","supply":"published","cendReference":"gpt-5-5"},{"id":"deepseek-v4-pro","name":"deepseek-v4-pro","provider":"待确认","supply":"published","cendReference":"deepseek-v4-pro"},{"id":"doubao-seedance-1-5-pro","name":"doubao-seedance-1-5-pro","provider":"待确认","supply":"published","cendReference":"doubao-seedance-1-5-pro"},{"id":"doubao-seedance-2-0-5s","name":"doubao-seedance-2-0-5s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-5s"},{"id":"kling-3.0-omni-720p-ref-mute","name":"kling-3.0-omni-720p-ref-mute","provider":"待确认","supply":"published","cendReference":"kling-3-0-omni-720p-ref-mute"},{"id":"omni-fast","name":"omni-fast","provider":"待确认","supply":"published","cendReference":"omni-fast"},{"id":"doubao-seedance-2-0-10s","name":"doubao-seedance-2-0-10s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-10s"},{"id":"doubao-seedance-2-0-15s","name":"doubao-seedance-2-0-15s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-15s"},{"id":"kling-2.5-1080p","name":"kling-2.5-1080p","provider":"待确认","supply":"published","cendReference":"kling-2-5-1080p"},{"id":"grok-1.5-video-10s","name":"grok-1.5-video-10s","provider":"待确认","supply":"published","cendReference":"grok-1-5-video-10s"},{"id":"MODEL-0056","name":"GPT-5.6（B端待投放）","provider":"OpenAI","supply":"published","cendReference":"MODEL-0056"},{"id":"MODEL-IMG-A","name":"历史图像模型（样例）","provider":"示例提供方","supply":"paused","cendReference":"MODEL-IMG-A"},{"id":"MODEL-VID-OLD","name":"历史视频模型（样例）","provider":"示例提供方","supply":"offline","cendReference":"MODEL-VID-OLD"}]</script>
+  <script type="application/json" data-model-management-catalog>[{"id":"gpt-4.1","name":"gpt-4.1","provider":"OpenAI","supply":"published","cendReference":"gpt-4.1","points":0},{"id":"gpt-5-chat-latest","name":"gpt-5-chat-latest","provider":"OpenAI","supply":"published","cendReference":"gpt-5-chat-latest","points":0},{"id":"claude-sonnet-4-6","name":"claude-sonnet-4-6","provider":"Anthropic","supply":"published","cendReference":"claude-sonnet-4-6","points":0},{"id":"gemini-3-pro-preview","name":"gemini-3-pro-preview","provider":"Google","supply":"published","cendReference":"gemini-3-pro-preview","points":0},{"id":"gemini-2.5-pro","name":"gemini-2.5-pro","provider":"Google","supply":"published","cendReference":"gemini-2.5-pro","points":0},{"id":"o4-mini","name":"o4-mini","provider":"OpenAI","supply":"published","cendReference":"o4-mini","points":0},{"id":"text-embedding-3-large","name":"text-embedding-3-large","provider":"OpenAI","supply":"published","cendReference":"text-embedding-3-large","points":0},{"id":"gpt-image-2","name":"gpt-image-2","provider":"OpenAI","supply":"published","cendReference":"gpt-image-2","points":18},{"id":"doubao-seedream-4-5-251128","name":"doubao-seedream-4-5-251128","provider":"Doubao","supply":"published","cendReference":"doubao-seedream-4-5-251128","points":24},{"id":"gemini-3.1-flash-image","name":"gemini-3.1-flash-image","provider":"Google","supply":"published","cendReference":"gemini-3.1-flash-image","points":0},{"id":"grok-video-3","name":"grok-video-3","provider":"Grok","supply":"published","cendReference":"grok-video-3","points":36},{"id":"grok-video-3-10s","name":"grok-video-3-10s","provider":"Grok","supply":"published","cendReference":"grok-video-3-10s","points":40},{"id":"doubao-seedream-5-0-260128","name":"doubao-seedream-5-0-260128","provider":"Doubao","supply":"published","cendReference":"doubao-seedream-5-0-260128","points":28},{"id":"nano-banana-pro","name":"Nano Banana Pro","provider":"待确认","supply":"published","cendReference":"nano-banana-pro","points":22},{"id":"nano-banana-2","name":"nano-banana-2","provider":"待确认","supply":"published","cendReference":"nano-banana-2","points":20},{"id":"gemini-3-flash-preview","name":"gemini-3-flash-preview","provider":"待确认","supply":"published","cendReference":"gemini-3-flash-preview","points":8},{"id":"kimi-k2.6","name":"kimi-k2.6","provider":"待确认","supply":"published","cendReference":"kimi-k2-6","points":10},{"id":"gpt-5.5","name":"gpt-5.5","provider":"OpenAI","supply":"published","cendReference":"gpt-5-5","points":12},{"id":"deepseek-v4-pro","name":"deepseek-v4-pro","provider":"待确认","supply":"published","cendReference":"deepseek-v4-pro","points":9},{"id":"doubao-seedance-1-5-pro","name":"doubao-seedance-1-5-pro","provider":"待确认","supply":"published","cendReference":"doubao-seedance-1-5-pro","points":36},{"id":"doubao-seedance-2-0-5s","name":"doubao-seedance-2-0-5s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-5s","points":42},{"id":"kling-3.0-omni-720p-ref-mute","name":"kling-3.0-omni-720p-ref-mute","provider":"待确认","supply":"published","cendReference":"kling-3-0-omni-720p-ref-mute","points":48},{"id":"omni-fast","name":"omni-fast","provider":"待确认","supply":"published","cendReference":"omni-fast","points":28},{"id":"doubao-seedance-2-0-10s","name":"doubao-seedance-2-0-10s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-10s","points":56},{"id":"doubao-seedance-2-0-15s","name":"doubao-seedance-2-0-15s","provider":"待确认","supply":"published","cendReference":"doubao-seedance-2-0-15s","points":72},{"id":"kling-2.5-1080p","name":"kling-2.5-1080p","provider":"待确认","supply":"published","cendReference":"kling-2-5-1080p","points":64},{"id":"grok-1.5-video-10s","name":"grok-1.5-video-10s","provider":"待确认","supply":"published","cendReference":"grok-1-5-video-10s","points":44},{"id":"MODEL-0056","name":"GPT-5.6（B端待投放）","provider":"OpenAI","supply":"published","cendReference":"MODEL-0056","points":0},{"id":"MODEL-IMG-A","name":"历史图像模型（样例）","provider":"示例提供方","supply":"paused","cendReference":"MODEL-IMG-A","points":0},{"id":"MODEL-VID-OLD","name":"历史视频模型（样例）","provider":"示例提供方","supply":"offline","cendReference":"MODEL-VID-OLD","points":0}]</script>
 </body>
 </html>

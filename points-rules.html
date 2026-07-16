@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI666 后台 - 闪念详情</title>
+  <title>AI666 后台 - 积分规则</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -2624,7 +2624,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
           <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
-          <a class="nav-btn is-active" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
+          <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
           <a class="nav-btn" href="model-management.html" data-nav="model-management" data-page-link="model-management.html">模型管理</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
           <a class="nav-btn" href="tutorial-management.html" data-nav="tutorial-management" data-page-link="tutorial-management.html">教程管理</a>
@@ -2637,7 +2637,7 @@
           <a class="nav-btn" href="home-slots.html" data-nav="home-slots" data-page-link="home-slots.html">展示位管理</a>
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn" href="points-rules.html" data-nav="points-rules" data-page-link="points-rules.html">积分规则</a>
+          <a class="nav-btn is-active" href="points-rules.html" data-nav="points-rules" data-page-link="points-rules.html">积分规则</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -2665,7 +2665,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">闪念详情</h1>
+          <h1 class="top-title" id="globalTitle">积分规则</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -2673,66 +2673,42 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="flash-detail" data-page-contract="flash-detail" data-operation-page="flash-detail" data-route-only-page="flash-management">
-          <div class="contract-panel" data-page-contract="flash-detail">闪念详情页从闪念管理进入；主内容参考 C端闪念卡片的正文、媒体、互动和评论展示，只用于后台核对，不作为 C端独立详情页；当前发布状态决定可执行动作，待审核闪念先进入审核工作台；下架与恢复均须填写原因、二次确认并写入操作日志。</div>
-          <div class="page-head content-detail-page-head">
-            <div class="page-title">
-              <div class="content-detail-title-row">
-                <a class="ant-page-header-back content-detail-back-link" href="flash-management.html" data-open-view="flash-management"><span aria-hidden="true">←</span>返回列表</a>
-                <h2>闪念详情</h2>
-              </div>
-              <p>按 C端闪念流样式核对正文、媒体、互动、评论摘要和运营状态。</p>
+<section class="view is-active" data-view="points-rules" data-page-contract="points-rules" data-config-page="points-rules">
+          <div class="contract-panel" data-page-contract="points-rules">积分规则是社区积分获取与消耗的统一索引；规则数值仍由活动、模型和商城各自维护，本页不复制可编辑字段。积分流水只在积分记录追加，不在规则页改账。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>积分规则</h2><p>统一查看积分从哪里获得、在哪里消耗，以及应回到哪个页面配置。</p></div>
+          </div>
+          <div class="panel" data-points-rule-section="earn">
+            <div class="panel-head"><div class="panel-title">获取积分</div><span class="muted small">5 个活动 / 任务来源</span></div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="points-earning-rules">
+                <thead><tr><th>积分来源</th><th>当前奖励</th><th>上限 / 去重</th><th>配置归属</th><th>状态</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr data-points-rule-source="activity" data-points-rule-id="ACT-NEW-001"><td><b>新手任务</b><div class="muted small mono">ACT-NEW-001 · V1</div></td><td class="wrap">6 项基础任务共 80；全部完成再 +30，最高 110 积分</td><td>同一用户同一任务仅一次</td><td>活动管理 · 活动规则</td><td><span class="tag success">进行中</span></td><td><a class="btn link" href="activity-detail.html?id=ACT-NEW-001" data-open-view="activity-detail">调整活动规则</a></td></tr>
+                  <tr data-points-rule-source="activity" data-points-rule-id="ACT-SEVEN-001"><td><b>七日成长任务</b><div class="muted small mono">ACT-SEVEN-001 · V1</div></td><td class="wrap">D1-D7 共 140；连续 3/5/7 天 +30/+50/+100，最高 320 积分</td><td>按任务日与连续周期判定</td><td>活动管理 · 活动规则</td><td><span class="tag success">进行中</span></td><td><a class="btn link" href="activity-detail.html?id=ACT-SEVEN-001" data-open-view="activity-detail">调整活动规则</a></td></tr>
+                  <tr data-points-rule-source="activity" data-points-rule-id="ACT-IMAGE-001"><td><b>AI 生图创作挑战</b><div class="muted small mono">ACT-IMAGE-001 · V2</div></td><td class="wrap">有效发布 +50；精选 +100；首页推荐 +1000</td><td>发布 2 次 / 精选 5 次 / 首页 2 次（每期每人）</td><td>活动管理 · 活动规则</td><td><span class="tag gray">已结束</span></td><td><a class="btn link" href="activity-detail.html?id=ACT-IMAGE-001" data-open-view="activity-detail">查看历史规则</a></td></tr>
+                  <tr data-points-rule-source="activity" data-points-rule-id="ACT-PROMPT-001"><td><b>Prompt 共创计划</b><div class="muted small mono">ACT-PROMPT-001 · V3</div></td><td class="wrap">纯文字 +20；带案例 +40；精选 +100；首页推荐 +500</td><td>基础奖励每日前 2 条有效投稿</td><td>活动管理 · 活动规则</td><td><span class="tag success">进行中</span></td><td><a class="btn link" href="activity-detail.html?id=ACT-PROMPT-001" data-open-view="activity-detail">调整活动规则</a></td></tr>
+                  <tr data-points-rule-source="activity" data-points-rule-id="ACT-INVITE-001"><td><b>邀请有礼</b><div class="muted small mono">ACT-INVITE-001 · V1</div></td><td class="wrap">好友注册 +20；首次互动 +20；首次有效发布 +50</td><td>每日 300 / 每月 2000；阶段按好友去重</td><td>活动管理 · 活动规则</td><td><span class="tag success">进行中</span></td><td><a class="btn link" href="activity-detail.html?id=ACT-INVITE-001" data-open-view="activity-detail">调整活动规则</a></td></tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="content-detail-shell flash-detail-shell" data-flash-detail-source="c-end-flash-card">
-            <article class="flash-detail-card" data-flash-detail-card="readonly" data-flash-id="FLA-0308">
-              <div class="flash-detail-author-line">
-                <div class="flash-detail-avatar" aria-hidden="true">用</div>
-                <div class="flash-detail-author-meta">
-                  <strong data-flash-detail-author>社区用户 <span class="muted small">[USER_ID]</span></strong>
-                  <span class="muted small" data-flash-detail-time>2026-07-05 发布</span>
-                </div>
-              </div>
-              <p class="flash-detail-body" data-flash-detail-body>同一输入在不同模型下的成本、速度和结果稳定性差异较大，建议在发布前补充适用场景、输入样例和结果截图，避免只写结论。</p>
-              <div class="flash-detail-media-grid" data-flash-detail-media-grid data-media-count="1">
-                <div class="flash-detail-media-item" data-flash-detail-media-item>纯文本闪念，无媒体附件</div>
-              </div>
-              <div class="content-readonly-metrics" data-content-readonly-metrics aria-label="后台只读互动数据">
-                <div class="content-readonly-metric" data-content-readonly-metric="like"><span>点赞</span><strong data-flash-detail-like>18</strong></div>
-                <div class="content-readonly-metric" data-content-readonly-metric="comment"><span>评论</span><strong data-flash-detail-comment-count>2</strong></div>
-                <div class="content-readonly-metric" data-content-readonly-metric="share"><span>分享</span><strong data-flash-detail-share>1</strong></div>
-                <div class="content-readonly-metric" data-content-readonly-metric="favorite"><span>收藏</span><strong data-flash-detail-favorite>3</strong></div>
-              </div>
-              <div class="flash-detail-comments" data-flash-detail-comments>
-                <b>评论摘要</b>
-                <div class="flash-detail-comment" data-flash-detail-comment>
-                  <div class="flash-detail-avatar" aria-hidden="true">评</div>
-                  <div class="flash-detail-comment-main"><strong>模型服务阿祺 <span class="muted small">[USER_ID]</span></strong><span>建议补一张不同模型输出对比图，结论会更容易判断。</span><span class="muted small">2026-07-05 18:20 · 赞 3</span></div>
-                </div>
-                <div class="flash-detail-comment" data-flash-detail-comment>
-                  <div class="flash-detail-avatar" aria-hidden="true">运</div>
-                  <div class="flash-detail-comment-main"><strong>运营 A</strong><span>已标记为下架核对，等待作者补充上下文后可恢复展示。</span><span class="muted small">2026-07-05 18:46 · 赞 1</span></div>
-                </div>
-              </div>
-            </article>
-            <aside class="content-detail-side-card" data-flash-detail-ops-card>
-              <div class="panel-title">运营信息</div>
-              <dl class="content-detail-meta-list">
-                <dt>闪念 ID</dt><dd data-flash-detail-id>FLA-0308</dd>
-                <dt>作者</dt><dd data-flash-detail-meta-author>社区用户 <span class="muted small">[USER_ID]</span></dd>
-                <dt>发布状态</dt><dd data-flash-detail-state><span class="tag danger">已下架</span></dd>
-                <dt>媒体</dt><dd data-flash-detail-media-state>纯文本</dd>
-                <dt>发布时间</dt><dd data-flash-detail-published>2026-07-05</dd>
-              </dl>
-              <div class="preview-card content-detail-actions-panel" data-flash-detail-actions-panel>
-                <b>运营动作</b>
-                <div class="content-detail-op-grid">
-                  <button class="btn primary" type="button" data-content-op-action="flash-lifecycle" data-requires-confirm="true" data-requires-reason="true">恢复展示</button>
-                  <a class="btn link" href="review-workbench.html" data-flash-review-entry hidden>进入审核工作台</a>
-                </div>
-                <p class="muted small" data-flash-detail-action-feedback role="status" hidden></p>
-              </div>
-            </aside>
+          <div class="panel" data-points-rule-section="spend">
+            <div class="panel-head"><div class="panel-title">消耗积分</div><span class="muted small">模型调用、模板创作和商城兑换</span></div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+              <table data-table="points-spending-rules">
+                <thead><tr><th>消耗场景</th><th>计价方式</th><th>当前口径</th><th>配置归属</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr data-points-rule-source="model"><td><b>轻创作 / 一键同款</b></td><td>按选中模型每次调用扣减</td><td class="wrap">已配置积分的模型为 3–72 积分 / 次；未配置积分的模型不可用于新模板</td><td>模型管理 · 模型积分</td><td><a class="btn link" href="model-management.html">管理模型积分</a></td></tr>
+                  <tr data-points-rule-source="template"><td><b>模板创作</b></td><td>跟随模板选中的模型</td><td class="wrap">模板不单独定价；切换模型后自动带出该模型积分，不允许手填</td><td>模板配置引用模型管理</td><td><a class="btn link" href="aigc-template-config.html">查看模板绑定</a></td></tr>
+                  <tr data-points-rule-source="store"><td><b>AI 商城兑换</b></td><td>按商品配置扣减</td><td class="wrap">当前 16 个展示中商品，100–1200 积分 / 件</td><td>商城管理 · 商品积分</td><td><a class="btn link" href="store-config.html">管理商品积分</a></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel" data-points-rule-section="ledger">
+            <div class="panel-head"><div class="panel-title">积分流水</div></div>
+            <div class="panel-body"><div class="action-row" style="justify-content: space-between"><span>奖励发放、模型调用、模板创作和商城兑换最终都形成只读积分流水；补发、撤回或返还由对应来源业务处理并生成新流水。</span><a class="btn link" href="points-records.html">查看积分记录</a></div></div>
           </div>
         </section>
       </main>
