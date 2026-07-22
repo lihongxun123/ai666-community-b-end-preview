@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:52:06.971Z",
+  "generatedAt": "2026-07-17T17:21:13.603Z",
   "pages": [
     {
       "view": "content-list",
@@ -67,9 +67,9 @@
       "label": "活动详情"
     },
     {
-      "view": "points-rules",
-      "file": "points-rules.html",
-      "label": "积分规则"
+      "view": "operation-config",
+      "file": "operation-config.html",
+      "label": "公告配置"
     },
     {
       "view": "store-config",

@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-07-16T11:53:08.009Z
+生成时间：2026-07-22T07:28:52.404Z
 
 ## 用途
 
@@ -40,7 +40,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 登录弹窗配置: login-popup-config.html
 - 活动管理: activity-config.html
 - 活动详情: activity-detail.html
-- 积分规则: points-rules.html
+- 公告配置: operation-config.html
 - 商城管理: store-config.html
 - 用户列表: user-list.html
 - 用户详情: user-detail.html

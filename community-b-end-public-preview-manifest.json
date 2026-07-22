@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:53:08.009Z",
+  "generatedAt": "2026-07-22T07:28:52.404Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
@@ -86,10 +86,10 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/activity-detail.html"
     },
     {
-      "slug": "points-rules",
-      "label": "积分规则",
-      "path": "points-rules.html",
-      "sourcePath": "outputs/community-b-end-antdesign-prototype/points-rules.html"
+      "slug": "operation-config",
+      "label": "公告配置",
+      "path": "operation-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/operation-config.html"
     },
     {
       "slug": "store-config",
