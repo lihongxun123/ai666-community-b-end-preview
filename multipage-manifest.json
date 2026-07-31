@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T17:21:13.603Z",
+  "generatedAt": "2026-07-31T15:57:08.083Z",
   "pages": [
     {
       "view": "content-list",
@@ -94,12 +94,7 @@
     {
       "view": "points-records",
       "file": "points-records.html",
-      "label": "积分记录"
-    },
-    {
-      "view": "trust-lists",
-      "file": "trust-lists.html",
-      "label": "账号治理"
+      "label": "限时积分记录"
     },
     {
       "view": "operation-log",

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-22T07:28:52.404Z",
+  "generatedAt": "2026-07-31T16:00:24.033Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 23,
+  "pageCount": 22,
   "pages": [
     {
       "slug": "content-list",
@@ -117,15 +117,9 @@
     },
     {
       "slug": "points-records",
-      "label": "积分记录",
+      "label": "限时积分记录",
       "path": "points-records.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/points-records.html"
-    },
-    {
-      "slug": "trust-lists",
-      "label": "账号治理",
-      "path": "trust-lists.html",
-      "sourcePath": "outputs/community-b-end-antdesign-prototype/trust-lists.html"
     },
     {
       "slug": "operation-log",
@@ -144,6 +138,12 @@
       "label": "后台用户管理",
       "path": "admin-users.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/admin-users.html"
+    }
+  ],
+  "compatibilityRoutes": [
+    {
+      "path": "trust-lists.html",
+      "redirectTo": "user-list.html"
     }
   ],
   "assets": [

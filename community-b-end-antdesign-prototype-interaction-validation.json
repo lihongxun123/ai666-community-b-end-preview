@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T07:27:37.165Z",
+  "generatedAt": "2026-07-31T15:57:26.739Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -45,13 +45,15 @@
     "operationSlotCreateModalUsable": true,
     "operationSlotCannotCreatePresetDiamondEntry": true,
     "operationSlotLongTermScheduleSwitchWorks": true,
-    "operationSlotUploadWorks": true,
+    "operationSlotUsesImageAddressOnly": true,
     "operationSlotRequiresSourceAndSchedule": true,
+    "operationSlotRejectsUnsafeJumpProtocols": true,
+    "operationSlotAcceptsExternalHttpsJumpLink": true,
     "operationSlotOverlapCapacityBlocked": true,
     "operationSlotNonOverlapScheduleAllowed": true,
     "topCampaignEditModalNoBackground": true,
     "operationSlotEditModalUsable": true,
-    "operationSlotTargetPickerRestrictsToRegisteredPages": true,
+    "operationSlotTargetInputSupportsInternalAndExternalLinks": true,
     "operationSlotStatusChangeShowsCendImpact": true,
     "operationSlotStatusChangeRequiresReason": true,
     "operationSlotDisableExplainsCendResult": true,
@@ -65,7 +67,8 @@
     "loginPopupItemEditModalUsable": true,
     "loginPopupRejectsUnregisteredAnchor": true,
     "contentListRefinementUsable": true,
-    "officialContentCanPublishAsEnabledOfficialAccount": true,
+    "contentListAuthorLinksOpenReadOnlyUserDetail": true,
+    "officialContentPublishingEntryRemoved": true,
     "contentListOperationalFilterWorks": true,
     "contentCategoryConfigurationVisibleAndComplete": true,
     "contentCategoryEditRequiresReasonAndPreservesContent": true,
@@ -195,7 +198,7 @@
     "inviteResultReturnRouteOpensCorrectRecord": true,
     "inviteRevokePreservesRelationAndLedgerHistory": true,
     "inviteExceptionProcessingIsObjectScoped": true,
-    "trustTabsFilterGovernanceCases": true,
+    "accountGovernanceFiltersUseUserList": true,
     "accountGovernanceUsesListInsteadOfRedundantDetail": true,
     "whitelistEditUsesBinaryStatusOnly": true,
     "mangaAccountMappingConflictUsesGovernanceCase": true,
@@ -207,35 +210,21 @@
     "roleStopConfirmsThenDirectlyReclaims": true,
     "adminPageRemovesDataScopeAndApproval": true,
     "adminCreateUsesDirectSaveForm": true,
+    "adminPasswordRequiresMatchingConfirmation": true,
     "adminCreateSavesAndEnablesImmediately": true,
     "adminEditKeepsRoleInheritedTree": true,
     "adminRoleEditAppliesWithoutApproval": true,
     "adminStopConfirmsThenDirectlyDisables": true,
     "operationLogIsImmutable": true,
     "operationLogHasNoNonfunctionalBatchBar": true,
-    "operationLogActionColumnIsSticky": true,
+    "operationLogIsListOnlyWithoutDetailActions": true,
     "operationLogOperationalFilterWorks": true,
     "operationLogCrossDomainFilterWorks": true,
-    "operationLogsUseExactSourceRoutes": true,
-    "operationLogIsSinglePurpose": true,
-    "userResultLogRouteOpensExactImmutableRecord": true,
-    "reviewLogReturnsToExactTask": true,
-    "activityRewardLogReturnsToExactRecord": true,
-    "logDetailPreservesBeforeAfterAndReason": true,
-    "modelResumeLogDetailIsSimpleAndReturnsToCurrentState": true,
-    "activityResumeLogDetailIsSimpleAndReturnsToCurrentState": true,
-    "historicalReviewLogDoesNotOverwriteCurrentTask": true,
-    "activityRewardsReturnToExactSubmissionReviews": true,
-    "p0DangerousOperationLogContextWorks": true,
-    "accountGovernanceRouteHighlightsExactRecord": true,
-    "storeFulfillmentLogReturnsToExactRecord": true,
-    "storeFulfillmentRouteOpensExactRecord": true,
-    "inviteRewardLogReturnsToExactRecord": true,
-    "inviteRewardLogOpensExactRecord": true,
-    "pointsWithdrawalLogReturnsToExactLedger": true,
-    "pointsWithdrawalLogHighlightsExactEntry": true,
-    "operationLogExactSourceRoutesWork": true,
-    "sensitiveOperationLogDoesNotFabricateSourceRoute": true,
+    "operationLogActionsUseCompleteControlledDictionary": true,
+    "operationLogObjectsLinkOnlyWhenEntityIsNavigable": true,
+    "operationLogRouteHighlightsRowWithoutOpeningDetail": true,
+    "operationLogObjectLinkOpensExactEntity": true,
+    "sensitiveOperationLogObjectStaysDisplayOnly": true,
     "contentLifecycleAndVersionVisible": true,
     "reviewDecisionContractComplete": true,
     "reviewTasksPreserveExactResultAndLogChain": true,
@@ -339,14 +328,8 @@
     {
       "view": "points-records",
       "group": "用户管理",
-      "label": "积分记录",
+      "label": "限时积分记录",
       "file": "points-records.html"
-    },
-    {
-      "view": "trust-lists",
-      "group": "用户管理",
-      "label": "账号治理",
-      "file": "trust-lists.html"
     },
     {
       "view": "operation-log",
@@ -449,14 +432,8 @@
     {
       "view": "points-records",
       "group": "用户管理",
-      "label": "积分记录",
+      "label": "限时积分记录",
       "file": "points-records.html"
-    },
-    {
-      "view": "trust-lists",
-      "group": "用户管理",
-      "label": "账号治理",
-      "file": "trust-lists.html"
     },
     {
       "view": "operation-log",
@@ -522,11 +499,15 @@
           "content-list"
         ],
         "activeNav": "content-list",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "内容列表",
         "pageTitle": "内容列表",
         "contract": "content-list",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -544,11 +525,15 @@
           "review-workbench"
         ],
         "activeNav": "review-workbench",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "审核工作台",
         "pageTitle": "审核工作台",
         "contract": "review-workbench",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -566,11 +551,15 @@
           "flash-management"
         ],
         "activeNav": "flash-management",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "闪念管理",
         "pageTitle": "闪念管理",
         "contract": "flash-management",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -588,11 +577,15 @@
           "model-management"
         ],
         "activeNav": "model-management",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "模型管理",
         "pageTitle": "模型管理",
         "contract": "model-management",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -610,11 +603,15 @@
           "aigc-template-config"
         ],
         "activeNav": "aigc-template-config",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "模板配置",
         "pageTitle": "模板配置",
         "contract": "aigc-template-config",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -632,11 +629,15 @@
           "tutorial-management"
         ],
         "activeNav": "tutorial-management",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "教程管理",
         "pageTitle": "教程管理",
         "contract": "tutorial-management",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -654,11 +655,15 @@
           "home-slots"
         ],
         "activeNav": "home-slots",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "展示位管理",
         "pageTitle": "展示位管理",
         "contract": "home-slots",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -676,11 +681,15 @@
           "login-popup-config"
         ],
         "activeNav": "login-popup-config",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "登录弹窗配置",
         "pageTitle": "登录弹窗配置",
         "contract": "login-popup-config",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -698,11 +707,15 @@
           "activity-config"
         ],
         "activeNav": "activity-config",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "活动管理",
         "pageTitle": "活动管理",
         "contract": "activity-config",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -720,11 +733,15 @@
           "operation-config"
         ],
         "activeNav": "operation-config",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "公告配置",
         "pageTitle": "公告配置",
         "contract": "operation-config",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -742,11 +759,15 @@
           "store-config"
         ],
         "activeNav": "store-config",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "商城管理",
         "pageTitle": "商城管理",
         "contract": "store-config",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -764,11 +785,15 @@
           "user-list"
         ],
         "activeNav": "user-list",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "用户列表",
         "pageTitle": "用户列表",
         "contract": "user-list",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -786,11 +811,15 @@
           "invite-records"
         ],
         "activeNav": "invite-records",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "邀请记录",
         "pageTitle": "邀请记录",
         "contract": "invite-records",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -798,43 +827,25 @@
       {
         "view": "points-records",
         "group": "用户管理",
-        "label": "积分记录",
+        "label": "限时积分记录",
         "file": "points-records.html",
         "urlFile": "points-records.html",
-        "navLabel": "积分记录",
+        "navLabel": "限时积分记录",
         "navGroup": "用户管理",
         "navHref": "points-records.html",
         "activeViews": [
           "points-records"
         ],
         "activeNav": "points-records",
-        "title": "积分记录",
-        "pageTitle": "积分记录",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
+        "title": "限时积分记录",
+        "pageTitle": "限时积分记录",
         "contract": "points-records",
         "viewCount": 1,
-        "navLinkCount": 18,
-        "bodyMode": "multi-page",
-        "overflowX": 0,
-        "ok": true
-      },
-      {
-        "view": "trust-lists",
-        "group": "用户管理",
-        "label": "账号治理",
-        "file": "trust-lists.html",
-        "urlFile": "trust-lists.html",
-        "navLabel": "账号治理",
-        "navGroup": "用户管理",
-        "navHref": "trust-lists.html",
-        "activeViews": [
-          "trust-lists"
-        ],
-        "activeNav": "trust-lists",
-        "title": "账号治理",
-        "pageTitle": "账号治理",
-        "contract": "trust-lists",
-        "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -852,11 +863,15 @@
           "operation-log"
         ],
         "activeNav": "operation-log",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "日志",
         "pageTitle": "日志",
         "contract": "operation-log",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -874,11 +889,15 @@
           "role-management"
         ],
         "activeNav": "role-management",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "角色管理",
         "pageTitle": "角色管理",
         "contract": "role-management",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -896,11 +915,15 @@
           "admin-users"
         ],
         "activeNav": "admin-users",
+        "activeNavDisplay": "flex",
+        "activeNavAlignItems": "center",
+        "activeNavTextAlign": "left",
         "title": "后台用户管理",
         "pageTitle": "后台用户管理",
         "contract": "admin-users",
         "viewCount": 1,
-        "navLinkCount": 18,
+        "navLinkCount": 17,
+        "navUnderlineCount": 0,
         "bodyMode": "multi-page",
         "overflowX": 0,
         "ok": true
@@ -909,7 +932,7 @@
     "listActionStyleResults": [
       {
         "view": "content-list",
-        "actionLinkCount": 54,
+        "actionLinkCount": 43,
         "underlinedCount": 0,
         "mixedGroupCount": 0,
         "misalignedGroupCount": 0
@@ -986,9 +1009,9 @@
       },
       {
         "view": "user-list",
-        "actionLinkCount": 2,
+        "actionLinkCount": 4,
         "underlinedCount": 0,
-        "mixedGroupCount": 2,
+        "mixedGroupCount": 4,
         "misalignedGroupCount": 0
       },
       {
@@ -1000,13 +1023,6 @@
       },
       {
         "view": "points-records",
-        "actionLinkCount": 0,
-        "underlinedCount": 0,
-        "mixedGroupCount": 0,
-        "misalignedGroupCount": 0
-      },
-      {
-        "view": "trust-lists",
         "actionLinkCount": 0,
         "underlinedCount": 0,
         "mixedGroupCount": 0,
@@ -1214,10 +1230,10 @@
         ],
         "keys": [
           "account-state",
-          "profile-state",
-          "whitelist-state"
+          "whitelist-state",
+          "profile-state"
         ],
-        "buttonCount": 5,
+        "buttonCount": 6,
         "covered": true,
         "missingKeys": [],
         "unlabeledButtons": 0,
@@ -1248,20 +1264,6 @@
           "points-posting-state"
         ],
         "buttonCount": 2,
-        "covered": true,
-        "missingKeys": [],
-        "unlabeledButtons": 0,
-        "duplicateTargets": 0
-      },
-      {
-        "view": "trust-lists",
-        "expectedKeys": [
-          "account-state"
-        ],
-        "keys": [
-          "account-state"
-        ],
-        "buttonCount": 1,
         "covered": true,
         "missingKeys": [],
         "unlabeledButtons": 0,
@@ -1410,8 +1412,8 @@
     "globalPointsStatusHelp": {
       "key": "points-posting-state",
       "open": true,
-      "title": "积分入账状态说明（5 种）",
-      "summary": "积分入账状态共 5 种，表示积分流水从等待处理到最终入账、扣减或异常的结果。",
+      "title": "限时积分入账状态说明（5 种）",
+      "summary": "限时积分入账状态共 5 种，表示限时积分流水从等待处理到最终入账、扣减或异常的结果。",
       "labels": [
         "待入账",
         "已入账",
@@ -2395,7 +2397,7 @@
           "type": "hot-first-card",
           "label": "Prompt 共创",
           "title": "发布你的可复用 Prompt",
-          "description": "补充图文或视频案例，获得更多积分",
+          "description": "补充图文或视频案例，获得更多限时积分",
           "target": "./campaign-prompt.html"
         },
         "HOT-FIRST-002": {
@@ -2409,14 +2411,14 @@
           "type": "hot-first-card",
           "label": "Seedance 2.0",
           "title": "官方35折限时开抢",
-          "description": "低至￥0.5/s，AI商城加赠积分",
+          "description": "低至￥0.5/s，AI商城加赠限时积分",
           "target": "./member-store.html"
         },
         "SLOT-TOP-001": {
           "type": "top-campaign",
           "label": "Prompt 共创",
           "title": "Prompt 共创长期开放",
-          "description": "发布可复用 Prompt，补充案例可获得更多积分",
+          "description": "发布可复用 Prompt，补充案例可获得更多限时积分",
           "target": "./campaign-prompt.html"
         },
         "FLASH-HERO-001": {
@@ -2430,7 +2432,7 @@
           "type": "flash-right-ad",
           "label": "活动广告",
           "title": "七日成长任务",
-          "description": "完成互动、创作与兑换，领取成长积分",
+          "description": "完成互动、创作与兑换，领取成长限时积分",
           "target": "./activity-center.html"
         },
         "MODEL-OP-001": {
@@ -2489,7 +2491,7 @@
         "model-operation-card"
       ],
       "homeSlotBatchBarCount": 0,
-      "navLinkCount": 18
+      "navLinkCount": 17
     },
     "operationSlotSourceLifecycleInitial": {
       "invalidSourceState": "invalid",
@@ -2737,7 +2739,7 @@
         "schedule-long-term",
         "validity-start",
         "validity-end",
-        "material-state",
+        "background-image",
         "status",
         "sort",
         "status-reason"
@@ -2776,10 +2778,26 @@
           "label": "官方教程"
         }
       ],
+      "targetTag": "INPUT",
+      "targetInputMode": "url",
+      "targetSuggestions": "slotTargetSuggestions",
+      "targetHelpCount": 0,
+      "targetAriaDescribedBy": "",
       "placement": "top-campaign",
-      "uploadExists": true,
+      "uploadExists": false,
       "uploadVisible": false,
-      "targetLabel": "跳转页面",
+      "placementHeight": 32,
+      "targetHeight": 32,
+      "placementTop": 286.5,
+      "targetTop": 286.5,
+      "placementBottom": 318.5,
+      "targetBottom": 318.5,
+      "placementFieldHeight": 53,
+      "targetFieldHeight": 53,
+      "backgroundTag": "INPUT",
+      "backgroundPlaceholder": "填写图片地址",
+      "backgroundLabel": "背景图片地址",
+      "targetLabel": "跳转链接",
       "longTermType": "checkbox",
       "dateFieldCount": 2,
       "explanatoryPanelCount": 0,
@@ -2791,17 +2809,26 @@
       "label": "开启",
       "dateFieldsHidden": true
     },
-    "operationSlotUploadAfterSelection": {
-      "triggerText": "选择本地图片",
-      "accept": ".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp",
-      "value": "assets/uploads/banner-entry.webp",
-      "status": "已选择：banner-entry.webp",
-      "errorHidden": true
+    "operationSlotImageAddress": {
+      "value": "https://cdn.example/banner-entry.webp",
+      "uploadCount": 0,
+      "materialFieldCount": 0
     },
     "operationSlotRequiredValidation": {
       "modalOpen": true,
       "errorVisible": true,
-      "errorText": "请选择展示位和跳转页面，并填写标题与投放日期；长期投放可开启开关。"
+      "errorText": "请选择展示位并填写跳转链接、标题与投放日期；长期投放可开启开关。"
+    },
+    "operationSlotUnsafeProtocolRejected": {
+      "modalOpen": true,
+      "error": "跳转链接仅支持站内相对路径或 HTTPS 站外地址，不能使用 javascript:、data: 等协议。"
+    },
+    "operationSlotExternalHttpsSaved": {
+      "modalClosed": true,
+      "jumpLink": "https://partner.example/campaign",
+      "targetKind": "external",
+      "sourceType": "external-link",
+      "sourceId": "partner.example"
     },
     "operationSlotOverlapCapacityBlocked": {
       "modalOpen": true,
@@ -2817,7 +2844,8 @@
     "topCampaignEditModal": {
       "open": true,
       "placement": "top-campaign",
-      "image": "未选择文件",
+      "image": "",
+      "uploadExists": false,
       "uploadVisible": false
     },
     "operationSlotEditModal": {
@@ -2828,15 +2856,20 @@
       "targetPage": "./aigc.html#aigc-create-panel",
       "longTermChecked": true,
       "dateFieldsHidden": true,
-      "image": "已配置：assets/image_assets/17.png",
+      "image": "assets/image_assets/17.png",
+      "uploadExists": false,
       "uploadVisible": true,
       "sortFieldIndex": 9,
       "statusLabel": "启用"
     },
-    "operationSlotTargetPickerBoundary": {
+    "operationSlotTargetInputBoundary": {
       "rawJumpLinkFieldCount": 0,
-      "optionCount": 6,
-      "allRegistered": true
+      "tag": "INPUT",
+      "list": "slotTargetSuggestions",
+      "suggestionCount": 6,
+      "allSuggestionsRegistered": true,
+      "externalHttpsValid": true,
+      "unsafeProtocolValid": false
     },
     "operationSlotDisableImpact": {
       "panelVisible": true,
@@ -2861,7 +2894,7 @@
     "operationSlotRestoreReasonRequired": {
       "modalOpen": true,
       "title": "启用影响确认",
-      "impact": "启用后，C端将按当前来源、素材、已登记跳转、排期和排序恢复展示；保存前会再次校验当前表单值与点位容量。",
+      "impact": "启用后，C端将按当前来源、素材、有效跳转链接、排期和排序恢复展示；保存前会再次校验当前表单值与点位容量。",
       "error": "绑定有效的投放启停发生变化时必须填写状态变更原因。",
       "rowState": "disabled"
     },
@@ -2870,7 +2903,7 @@
       "rowState": "enabled",
       "status": "启用",
       "feedbackVisible": true,
-      "feedback": "BANNER-001 已启用；C端按当前来源或目标、素材、已登记跳转、排期、排序和点位容量恢复展示；原因“活动投放恢复并完成当前配置复核”已写入 LOG-SLOT-STATUS-BANNER-001。",
+      "feedback": "BANNER-001 已启用；C端按当前来源或目标、素材、有效跳转链接、排期、排序和点位容量恢复展示；原因“活动投放恢复并完成当前配置复核”已写入 LOG-SLOT-STATUS-BANNER-001。",
       "result": "enabled",
       "logId": "LOG-SLOT-STATUS-BANNER-001"
     },
@@ -2934,7 +2967,7 @@
       "open": true,
       "mode": "edit",
       "title": "新手任务",
-      "reward": "100 积分",
+      "reward": "100 限时积分",
       "image": "assets/image_assets/18.png",
       "button": "查看新手任务",
       "link": "./campaign-new-user.html",
@@ -2947,16 +2980,13 @@
       "rowLink": "./campaign-new-user.html"
     },
     "contentListRefinement": {
-      "topActionTexts": [
-        "发布内容"
-      ],
+      "topActionTexts": [],
       "tableHeaders": [
         "内容 ID",
         "标题",
         "类型",
         "作者",
         "状态",
-        "首页爆款",
         "来源",
         "发布时间",
         "操作"
@@ -2967,7 +2997,6 @@
       "typeOptions": [
         "全部类型",
         "短剧漫剧",
-        "文本内容",
         "图片生成",
         "视频生成",
         "Prompt"
@@ -2997,6 +3026,7 @@
         "首页爆款",
         "非首页爆款"
       ],
+      "homeHotColumnCellCount": 0,
       "hasBatchPanel": false,
       "rowIds": [
         "CNT-HOME-001",
@@ -3007,17 +3037,14 @@
         "CNT-HOME-006",
         "CNT-HOME-007",
         "CNT-HOME-008",
-        "CNT-HOME-009",
         "CNT-HOME-010",
         "CNT-HOME-011",
         "CNT-HOME-012",
-        "CNT-HOME-013",
         "CNT-HOME-014",
         "CNT-HOME-015",
         "CNT-HOME-016",
         "CNT-HOME-017",
         "CNT-HOME-018",
-        "CNT-HOME-019",
         "CNT-HOME-020",
         "CNT-HOME-021",
         "CNT-HOME-022",
@@ -3026,32 +3053,24 @@
         "CNT-HOME-025",
         "CNT-HOME-026",
         "CNT-HOME-027",
-        "CNT-HOME-028",
         "CNT-HOME-029",
         "CNT-HOME-030",
-        "CNT-HOME-031",
         "CNT-HOME-032",
         "CNT-HOME-033",
-        "CNT-HOME-034",
         "CNT-HOME-035",
         "CNT-HOME-036",
         "CNT-HOME-037",
-        "CNT-HOME-038",
         "CNT-HOME-039",
         "CNT-HOME-040",
-        "CNT-HOME-041",
         "CNT-HOME-042",
         "CNT-HOME-043",
-        "CNT-HOME-044",
         "CNT-HOME-045",
         "CNT-HOME-046",
         "CNT-HOME-047",
         "CNT-HOME-048",
-        "CNT-HOME-049",
         "CNT-HOME-050",
         "CNT-HOME-051",
         "CNT-HOME-052",
-        "CNT-HOME-053",
         "CNT-HOME-054"
       ],
       "rowTypeLabels": [
@@ -3063,17 +3082,14 @@
         "图片生成",
         "视频生成",
         "图片生成",
-        "文本内容",
         "短剧漫剧",
         "视频生成",
         "短剧漫剧",
-        "文本内容",
         "图片生成",
         "图片生成",
         "视频生成",
         "短剧漫剧",
         "视频生成",
-        "文本内容",
         "图片生成",
         "短剧漫剧",
         "图片生成",
@@ -3082,46 +3098,27 @@
         "图片生成",
         "短剧漫剧",
         "视频生成",
-        "文本内容",
         "短剧漫剧",
         "图片生成",
-        "文本内容",
         "视频生成",
         "图片生成",
-        "文本内容",
         "图片生成",
         "视频生成",
         "视频生成",
-        "文本内容",
         "图片生成",
         "短剧漫剧",
-        "文本内容",
         "视频生成",
         "短剧漫剧",
-        "文本内容",
         "图片生成",
         "短剧漫剧",
         "视频生成",
         "图片生成",
-        "文本内容",
         "图片生成",
         "短剧漫剧",
         "视频生成",
-        "文本内容",
         "图片生成"
       ],
       "homeHotStates": [
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
-        "home-hot",
         "home-hot",
         "home-hot",
         "home-hot",
@@ -3209,18 +3206,7 @@
         "40",
         "41",
         "42",
-        "43",
-        "44",
-        "45",
-        "46",
-        "47",
-        "48",
-        "49",
-        "50",
-        "51",
-        "52",
-        "53",
-        "54"
+        "43"
       ],
       "currentCatalog": [
         {
@@ -3237,6 +3223,7 @@
           "publishedAt": "2026-07-14 16:40",
           "filterDate": "2026-07-14",
           "authorCell": "云栖USR-2101",
+          "authorHref": "user-detail.html?id=USR-2101",
           "publishedCell": "2026-07-14 16:40",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-001"
@@ -3255,6 +3242,7 @@
           "publishedAt": "2026-07-14 15:25",
           "filterDate": "2026-07-14",
           "authorCell": "南舟USR-2102",
+          "authorHref": "user-detail.html?id=USR-2102",
           "publishedCell": "2026-07-14 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-002"
@@ -3273,6 +3261,7 @@
           "publishedAt": "2026-07-14 13:50",
           "filterDate": "2026-07-14",
           "authorCell": "青梧USR-2103",
+          "authorHref": "user-detail.html?id=USR-2103",
           "publishedCell": "2026-07-14 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-003"
@@ -3291,6 +3280,7 @@
           "publishedAt": "2026-07-14 12:15",
           "filterDate": "2026-07-14",
           "authorCell": "星野USR-2104",
+          "authorHref": "user-detail.html?id=USR-2104",
           "publishedCell": "2026-07-14 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-004"
@@ -3309,6 +3299,7 @@
           "publishedAt": "2026-07-14 10:45",
           "filterDate": "2026-07-14",
           "authorCell": "木辛USR-2105",
+          "authorHref": "user-detail.html?id=USR-2105",
           "publishedCell": "2026-07-14 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-005"
@@ -3327,6 +3318,7 @@
           "publishedAt": "2026-07-14 09:20",
           "filterDate": "2026-07-14",
           "authorCell": "鹿鸣USR-2106",
+          "authorHref": "user-detail.html?id=USR-2106",
           "publishedCell": "2026-07-14 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-006"
@@ -3345,6 +3337,7 @@
           "publishedAt": "2026-07-13 16:40",
           "filterDate": "2026-07-13",
           "authorCell": "白榆USR-2107",
+          "authorHref": "user-detail.html?id=USR-2107",
           "publishedCell": "2026-07-13 16:40",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-007"
@@ -3363,31 +3356,14 @@
           "publishedAt": "2026-07-13 15:25",
           "filterDate": "2026-07-13",
           "authorCell": "绘光者USR-2108",
+          "authorHref": "user-detail.html?id=USR-2108",
           "publishedCell": "2026-07-13 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-008"
         },
         {
-          "id": "CNT-HOME-009",
-          "order": "9",
-          "title": "金色启航",
-          "summary": "活动海报脚本，首屏转化文案成稿",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "镜川",
-          "authorId": "USR-2109",
-          "publishedAt": "2026-07-13 13:50",
-          "filterDate": "2026-07-13",
-          "authorCell": "镜川USR-2109",
-          "publishedCell": "2026-07-13 13:50",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-009"
-        },
-        {
           "id": "CNT-HOME-010",
-          "order": "10",
+          "order": "9",
           "title": "画室追光",
           "summary": "真人质感画面，短剧角色宣传图",
           "model": "Seedance 2.0",
@@ -3399,13 +3375,14 @@
           "publishedAt": "2026-07-13 12:15",
           "filterDate": "2026-07-13",
           "authorCell": "松子USR-2110",
+          "authorHref": "user-detail.html?id=USR-2110",
           "publishedCell": "2026-07-13 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-010"
         },
         {
           "id": "CNT-HOME-011",
-          "order": "11",
+          "order": "10",
           "title": "异界裂隙",
           "summary": "暗黑幻想场景，战斗分镜快速定调",
           "model": "Seedance 2.0",
@@ -3417,13 +3394,14 @@
           "publishedAt": "2026-07-13 10:45",
           "filterDate": "2026-07-13",
           "authorCell": "阿澄USR-2111",
+          "authorHref": "user-detail.html?id=USR-2111",
           "publishedCell": "2026-07-13 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-011"
         },
         {
           "id": "CNT-HOME-012",
-          "order": "12",
+          "order": "11",
           "title": "决战前夜",
           "summary": "双主角压迫感，高潮镜头直接复用",
           "model": "Seedance 2.0",
@@ -3435,31 +3413,14 @@
           "publishedAt": "2026-07-13 09:20",
           "filterDate": "2026-07-13",
           "authorCell": "拾光漫剧社USR-2112",
+          "authorHref": "user-detail.html?id=USR-2112",
           "publishedCell": "2026-07-13 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-012"
         },
         {
-          "id": "CNT-HOME-013",
-          "order": "13",
-          "title": "AI画师工作台",
-          "summary": "教程结构草稿，工具卖点快速拆解",
-          "model": "Gemini 3 Flash",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/2.png",
-          "authorName": "云栖",
-          "authorId": "USR-2101",
-          "publishedAt": "2026-07-12 16:40",
-          "filterDate": "2026-07-12",
-          "authorCell": "云栖USR-2101",
-          "publishedCell": "2026-07-12 16:40",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-013"
-        },
-        {
           "id": "CNT-HOME-014",
-          "order": "14",
+          "order": "12",
           "title": "云海行舟",
           "summary": "轻幻想插画，故事配图更容易出片",
           "model": "Flux Pro 1.1",
@@ -3471,13 +3432,14 @@
           "publishedAt": "2026-07-12 15:25",
           "filterDate": "2026-07-12",
           "authorCell": "南舟USR-2102",
+          "authorHref": "user-detail.html?id=USR-2102",
           "publishedCell": "2026-07-12 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-014"
         },
         {
           "id": "CNT-HOME-015",
-          "order": "15",
+          "order": "13",
           "title": "霓虹街角",
           "summary": "赛博街拍质感，适合潮流海报首图",
           "model": "Flux Pro 1.1",
@@ -3489,13 +3451,14 @@
           "publishedAt": "2026-07-12 13:50",
           "filterDate": "2026-07-12",
           "authorCell": "青梧USR-2103",
+          "authorHref": "user-detail.html?id=USR-2103",
           "publishedCell": "2026-07-12 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-015"
         },
         {
           "id": "CNT-HOME-016",
-          "order": "16",
+          "order": "14",
           "title": "沙漠巡航",
           "summary": "荒漠大景推进，短片开场更有速度",
           "model": "Seedance 2.0",
@@ -3507,13 +3470,14 @@
           "publishedAt": "2026-07-12 12:15",
           "filterDate": "2026-07-12",
           "authorCell": "星野USR-2104",
+          "authorHref": "user-detail.html?id=USR-2104",
           "publishedCell": "2026-07-12 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-016"
         },
         {
           "id": "CNT-HOME-017",
-          "order": "17",
+          "order": "15",
           "title": "机甲晨光",
           "summary": "异界战斗压场，漫剧世界观一眼建立",
           "model": "Seedance 2.0",
@@ -3525,13 +3489,14 @@
           "publishedAt": "2026-07-12 10:45",
           "filterDate": "2026-07-12",
           "authorCell": "木辛USR-2105",
+          "authorHref": "user-detail.html?id=USR-2105",
           "publishedCell": "2026-07-12 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-017"
         },
         {
           "id": "CNT-HOME-018",
-          "order": "18",
+          "order": "16",
           "title": "星舰边境",
           "summary": "高燃冲突镜头，适合预告片转场",
           "model": "Seedance 2.0",
@@ -3543,31 +3508,14 @@
           "publishedAt": "2026-07-12 09:20",
           "filterDate": "2026-07-12",
           "authorCell": "鹿鸣USR-2106",
+          "authorHref": "user-detail.html?id=USR-2106",
           "publishedCell": "2026-07-12 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-018"
         },
         {
-          "id": "CNT-HOME-019",
-          "order": "19",
-          "title": "雪山来信",
-          "summary": "治愈旁白脚本，30 秒情绪片直接成稿",
-          "model": "Gemini 3 Flash",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "白榆",
-          "authorId": "USR-2107",
-          "publishedAt": "2026-07-11 16:40",
-          "filterDate": "2026-07-11",
-          "authorCell": "白榆USR-2107",
-          "publishedCell": "2026-07-11 16:40",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-019"
-        },
-        {
           "id": "CNT-HOME-020",
-          "order": "20",
+          "order": "17",
           "title": "逆光少女",
           "summary": "人物封面质感，角色设定更抓眼",
           "model": "Flux Pro 1.1",
@@ -3579,13 +3527,14 @@
           "publishedAt": "2026-07-11 15:25",
           "filterDate": "2026-07-11",
           "authorCell": "绘光者USR-2108",
+          "authorHref": "user-detail.html?id=USR-2108",
           "publishedCell": "2026-07-11 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-020"
         },
         {
           "id": "CNT-HOME-021",
-          "order": "21",
+          "order": "18",
           "title": "金殿长阶",
           "summary": "古风权谋场景，剧情冲突直接拉满",
           "model": "Seedance 2.0",
@@ -3597,13 +3546,14 @@
           "publishedAt": "2026-07-11 13:50",
           "filterDate": "2026-07-11",
           "authorCell": "镜川USR-2109",
+          "authorHref": "user-detail.html?id=USR-2109",
           "publishedCell": "2026-07-11 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-021"
         },
         {
           "id": "CNT-HOME-022",
-          "order": "22",
+          "order": "19",
           "title": "童话港口",
           "summary": "轻奇幻故事配图，适合连载封面",
           "model": "Flux Pro 1.1",
@@ -3615,13 +3565,14 @@
           "publishedAt": "2026-07-11 12:15",
           "filterDate": "2026-07-11",
           "authorCell": "松子USR-2110",
+          "authorHref": "user-detail.html?id=USR-2110",
           "publishedCell": "2026-07-11 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-022"
         },
         {
           "id": "CNT-HOME-023",
-          "order": "23",
+          "order": "20",
           "title": "蓝焰骑士",
           "summary": "战斗动作镜头，动态预告快速定调",
           "model": "Seedance 2.0",
@@ -3633,13 +3584,14 @@
           "publishedAt": "2026-07-11 10:45",
           "filterDate": "2026-07-11",
           "authorCell": "阿澄USR-2111",
+          "authorHref": "user-detail.html?id=USR-2111",
           "publishedCell": "2026-07-11 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-023"
         },
         {
           "id": "CNT-HOME-024",
-          "order": "24",
+          "order": "21",
           "title": "赛博花园",
           "summary": "未来植物空间，视觉 KV 很有记忆点",
           "model": "Flux Pro 1.1",
@@ -3651,13 +3603,14 @@
           "publishedAt": "2026-07-11 09:20",
           "filterDate": "2026-07-11",
           "authorCell": "拾光漫剧社USR-2112",
+          "authorHref": "user-detail.html?id=USR-2112",
           "publishedCell": "2026-07-11 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-024"
         },
         {
           "id": "CNT-HOME-025",
-          "order": "25",
+          "order": "22",
           "title": "密林回声",
           "summary": "森系氛围海报，教程封面更有层次",
           "model": "Flux Pro 1.1",
@@ -3669,13 +3622,14 @@
           "publishedAt": "2026-07-10 16:40",
           "filterDate": "2026-07-10",
           "authorCell": "云栖USR-2101",
+          "authorHref": "user-detail.html?id=USR-2101",
           "publishedCell": "2026-07-10 16:40",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-025"
         },
         {
           "id": "CNT-HOME-026",
-          "order": "26",
+          "order": "23",
           "title": "龙鳞王座",
           "summary": "强对抗主视觉，漫剧第一集封面",
           "model": "Seedance 2.0",
@@ -3687,13 +3641,14 @@
           "publishedAt": "2026-07-10 15:25",
           "filterDate": "2026-07-10",
           "authorCell": "南舟USR-2102",
+          "authorHref": "user-detail.html?id=USR-2102",
           "publishedCell": "2026-07-10 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-026"
         },
         {
           "id": "CNT-HOME-027",
-          "order": "27",
+          "order": "24",
           "title": "海雾灯塔",
           "summary": "情绪化风景镜头，片头氛围直接到位",
           "model": "Seedance 2.0",
@@ -3705,31 +3660,14 @@
           "publishedAt": "2026-07-10 13:50",
           "filterDate": "2026-07-10",
           "authorCell": "青梧USR-2103",
+          "authorHref": "user-detail.html?id=USR-2103",
           "publishedCell": "2026-07-10 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-027"
         },
         {
-          "id": "CNT-HOME-028",
-          "order": "28",
-          "title": "星尘海报",
-          "summary": "活动主标题和副标题，一次生成三版",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "星野",
-          "authorId": "USR-2104",
-          "publishedAt": "2026-07-10 12:15",
-          "filterDate": "2026-07-10",
-          "authorCell": "星野USR-2104",
-          "publishedCell": "2026-07-10 12:15",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-028"
-        },
-        {
           "id": "CNT-HOME-029",
-          "order": "29",
+          "order": "25",
           "title": "暗潮分镜",
           "summary": "黑暗幻想分镜，冲突节点更清晰",
           "model": "Seedance 2.0",
@@ -3741,13 +3679,14 @@
           "publishedAt": "2026-07-10 10:45",
           "filterDate": "2026-07-10",
           "authorCell": "木辛USR-2105",
+          "authorHref": "user-detail.html?id=USR-2105",
           "publishedCell": "2026-07-10 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-029"
         },
         {
           "id": "CNT-HOME-030",
-          "order": "30",
+          "order": "26",
           "title": "清泉物语",
           "summary": "清爽治愈场景，轻内容封面直接可用",
           "model": "Flux Pro 1.1",
@@ -3759,31 +3698,14 @@
           "publishedAt": "2026-07-10 09:20",
           "filterDate": "2026-07-10",
           "authorCell": "鹿鸣USR-2106",
+          "authorHref": "user-detail.html?id=USR-2106",
           "publishedCell": "2026-07-10 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-030"
         },
         {
-          "id": "CNT-HOME-031",
-          "order": "31",
-          "title": "快闪广告脚本",
-          "summary": "15 秒短促销，开场钩子快速成稿",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "白榆",
-          "authorId": "USR-2107",
-          "publishedAt": "2026-07-09 16:40",
-          "filterDate": "2026-07-09",
-          "authorCell": "白榆USR-2107",
-          "publishedCell": "2026-07-09 16:40",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-031"
-        },
-        {
           "id": "CNT-HOME-032",
-          "order": "32",
+          "order": "27",
           "title": "月下航线",
           "summary": "航行镜头推进，旅行片开场更有质感",
           "model": "Seedance 2.0",
@@ -3795,13 +3717,14 @@
           "publishedAt": "2026-07-09 15:25",
           "filterDate": "2026-07-09",
           "authorCell": "绘光者USR-2108",
+          "authorHref": "user-detail.html?id=USR-2108",
           "publishedCell": "2026-07-09 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-032"
         },
         {
           "id": "CNT-HOME-033",
-          "order": "33",
+          "order": "28",
           "title": "国风角色卡",
           "summary": "人物设定图，适合短剧角色预热",
           "model": "Flux Pro 1.1",
@@ -3813,31 +3736,14 @@
           "publishedAt": "2026-07-09 13:50",
           "filterDate": "2026-07-09",
           "authorCell": "镜川USR-2109",
+          "authorHref": "user-detail.html?id=USR-2109",
           "publishedCell": "2026-07-09 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-033"
         },
         {
-          "id": "CNT-HOME-034",
-          "order": "34",
-          "title": "产品片开场",
-          "summary": "卖点拆解成镜头，品牌介绍更顺滑",
-          "model": "Gemini 3 Flash",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "松子",
-          "authorId": "USR-2110",
-          "publishedAt": "2026-07-09 12:15",
-          "filterDate": "2026-07-09",
-          "authorCell": "松子USR-2110",
-          "publishedCell": "2026-07-09 12:15",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-034"
-        },
-        {
           "id": "CNT-HOME-035",
-          "order": "35",
+          "order": "29",
           "title": "虚拟摄影棚",
           "summary": "棚拍质感封面，人物与产品同框展示",
           "model": "Flux Pro 1.1",
@@ -3849,13 +3755,14 @@
           "publishedAt": "2026-07-09 10:45",
           "filterDate": "2026-07-09",
           "authorCell": "阿澄USR-2111",
+          "authorHref": "user-detail.html?id=USR-2111",
           "publishedCell": "2026-07-09 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-035"
         },
         {
           "id": "CNT-HOME-036",
-          "order": "36",
+          "order": "30",
           "title": "异界荒原",
           "summary": "巨物移动镜头，幻想短片快速起势",
           "model": "Seedance 2.0",
@@ -3867,13 +3774,14 @@
           "publishedAt": "2026-07-09 09:20",
           "filterDate": "2026-07-09",
           "authorCell": "拾光漫剧社USR-2112",
+          "authorHref": "user-detail.html?id=USR-2112",
           "publishedCell": "2026-07-09 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-036"
         },
         {
           "id": "CNT-HOME-037",
-          "order": "37",
+          "order": "31",
           "title": "深海片头",
           "summary": "蓝色海雾氛围，情绪片封面更高级",
           "model": "Seedance 2.0",
@@ -3885,31 +3793,14 @@
           "publishedAt": "2026-07-08 16:40",
           "filterDate": "2026-07-08",
           "authorCell": "云栖USR-2101",
+          "authorHref": "user-detail.html?id=USR-2101",
           "publishedCell": "2026-07-08 16:40",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-037"
         },
         {
-          "id": "CNT-HOME-038",
-          "order": "38",
-          "title": "学习路径海报",
-          "summary": "把教程卖点整理成海报标题、正文和行动按钮",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/3.png",
-          "authorName": "南舟",
-          "authorId": "USR-2102",
-          "publishedAt": "2026-07-08 15:25",
-          "filterDate": "2026-07-08",
-          "authorCell": "南舟USR-2102",
-          "publishedCell": "2026-07-08 15:25",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-038"
-        },
-        {
           "id": "CNT-HOME-039",
-          "order": "39",
+          "order": "32",
           "title": "竹林试镜",
           "summary": "清透人物场景，角色定妆图更自然",
           "model": "Flux Pro 1.1",
@@ -3921,13 +3812,14 @@
           "publishedAt": "2026-07-08 13:50",
           "filterDate": "2026-07-08",
           "authorCell": "青梧USR-2103",
+          "authorHref": "user-detail.html?id=USR-2103",
           "publishedCell": "2026-07-08 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-039"
         },
         {
           "id": "CNT-HOME-040",
-          "order": "40",
+          "order": "33",
           "title": "黑金封面",
           "summary": "强运营海报感，活动入口更像大片",
           "model": "Seedance 2.0",
@@ -3939,31 +3831,14 @@
           "publishedAt": "2026-07-08 12:15",
           "filterDate": "2026-07-08",
           "authorCell": "星野USR-2104",
+          "authorHref": "user-detail.html?id=USR-2104",
           "publishedCell": "2026-07-08 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-040"
         },
         {
-          "id": "CNT-HOME-041",
-          "order": "41",
-          "title": "角色关系图",
-          "summary": "人物动机和冲突线，自动整理成梗概",
-          "model": "Gemini 3 Flash",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "木辛",
-          "authorId": "USR-2105",
-          "publishedAt": "2026-07-08 10:45",
-          "filterDate": "2026-07-08",
-          "authorCell": "木辛USR-2105",
-          "publishedCell": "2026-07-08 10:45",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-041"
-        },
-        {
           "id": "CNT-HOME-042",
-          "order": "42",
+          "order": "34",
           "title": "龙虎追击",
           "summary": "快节奏镜头方案，动作短片更利落",
           "model": "Seedance 2.0",
@@ -3975,13 +3850,14 @@
           "publishedAt": "2026-07-08 09:20",
           "filterDate": "2026-07-08",
           "authorCell": "鹿鸣USR-2106",
+          "authorHref": "user-detail.html?id=USR-2106",
           "publishedCell": "2026-07-08 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-042"
         },
         {
           "id": "CNT-HOME-043",
-          "order": "43",
+          "order": "35",
           "title": "轻喜剧分镜",
           "summary": "轻松剧情节奏，适合竖屏短剧开场",
           "model": "Seedance 2.0",
@@ -3993,31 +3869,14 @@
           "publishedAt": "2026-07-07 16:40",
           "filterDate": "2026-07-07",
           "authorCell": "白榆USR-2107",
+          "authorHref": "user-detail.html?id=USR-2107",
           "publishedCell": "2026-07-07 16:40",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-043"
         },
         {
-          "id": "CNT-HOME-044",
-          "order": "44",
-          "title": "高转化标题",
-          "summary": "小红书与短视频标题，一次给出多版",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "绘光者",
-          "authorId": "USR-2108",
-          "publishedAt": "2026-07-07 15:25",
-          "filterDate": "2026-07-07",
-          "authorCell": "绘光者USR-2108",
-          "publishedCell": "2026-07-07 15:25",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-044"
-        },
-        {
           "id": "CNT-HOME-045",
-          "order": "45",
+          "order": "36",
           "title": "花火夜航",
           "summary": "节日活动主视觉，夜景光效更醒目",
           "model": "Flux Pro 1.1",
@@ -4029,13 +3888,14 @@
           "publishedAt": "2026-07-07 13:50",
           "filterDate": "2026-07-07",
           "authorCell": "镜川USR-2109",
+          "authorHref": "user-detail.html?id=USR-2109",
           "publishedCell": "2026-07-07 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-045"
         },
         {
           "id": "CNT-HOME-046",
-          "order": "46",
+          "order": "37",
           "title": "古堡醒来",
           "summary": "悬疑场景铺垫，故事封面更有张力",
           "model": "Seedance 2.0",
@@ -4047,13 +3907,14 @@
           "publishedAt": "2026-07-07 12:15",
           "filterDate": "2026-07-07",
           "authorCell": "松子USR-2110",
+          "authorHref": "user-detail.html?id=USR-2110",
           "publishedCell": "2026-07-07 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-046"
         },
         {
           "id": "CNT-HOME-047",
-          "order": "47",
+          "order": "38",
           "title": "旗舰新品片",
           "summary": "产品高光镜头，广告片卖点更集中",
           "model": "Seedance 2.0",
@@ -4065,13 +3926,14 @@
           "publishedAt": "2026-07-07 10:45",
           "filterDate": "2026-07-07",
           "authorCell": "阿澄USR-2111",
+          "authorHref": "user-detail.html?id=USR-2111",
           "publishedCell": "2026-07-07 10:45",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-047"
         },
         {
           "id": "CNT-HOME-048",
-          "order": "48",
+          "order": "39",
           "title": "角色海报组",
           "summary": "同一角色多风格，宣发素材更成套",
           "model": "Flux Pro 1.1",
@@ -4083,31 +3945,14 @@
           "publishedAt": "2026-07-07 09:20",
           "filterDate": "2026-07-07",
           "authorCell": "拾光漫剧社USR-2112",
+          "authorHref": "user-detail.html?id=USR-2112",
           "publishedCell": "2026-07-07 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-048"
         },
         {
-          "id": "CNT-HOME-049",
-          "order": "49",
-          "title": "频道开场白",
-          "summary": "直播和教程开场，一键写成口播稿",
-          "model": "Gemini 3 Flash",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/18.png",
-          "authorName": "云栖",
-          "authorId": "USR-2101",
-          "publishedAt": "2026-07-06 16:40",
-          "filterDate": "2026-07-06",
-          "authorCell": "云栖USR-2101",
-          "publishedCell": "2026-07-06 16:40",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-049"
-        },
-        {
           "id": "CNT-HOME-050",
-          "order": "50",
+          "order": "40",
           "title": "云上仙音",
           "summary": "轻幻想空间图，故事配图更有氛围",
           "model": "Flux Pro 1.1",
@@ -4119,13 +3964,14 @@
           "publishedAt": "2026-07-06 15:25",
           "filterDate": "2026-07-06",
           "authorCell": "南舟USR-2102",
+          "authorHref": "user-detail.html?id=USR-2102",
           "publishedCell": "2026-07-06 15:25",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-050"
         },
         {
           "id": "CNT-HOME-051",
-          "order": "51",
+          "order": "41",
           "title": "决赛预告",
           "summary": "赛事主视觉升级，适合活动公布页",
           "model": "Seedance 2.0",
@@ -4137,13 +3983,14 @@
           "publishedAt": "2026-07-06 13:50",
           "filterDate": "2026-07-06",
           "authorCell": "青梧USR-2103",
+          "authorHref": "user-detail.html?id=USR-2103",
           "publishedCell": "2026-07-06 13:50",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-051"
         },
         {
           "id": "CNT-HOME-052",
-          "order": "52",
+          "order": "42",
           "title": "镜头运动样片",
           "summary": "推拉摇移示例，视频生成更好理解",
           "model": "Seedance 2.0",
@@ -4155,31 +4002,14 @@
           "publishedAt": "2026-07-06 12:15",
           "filterDate": "2026-07-06",
           "authorCell": "星野USR-2104",
+          "authorHref": "user-detail.html?id=USR-2104",
           "publishedCell": "2026-07-06 12:15",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-052"
         },
         {
-          "id": "CNT-HOME-053",
-          "order": "53",
-          "title": "教程封面快稿",
-          "summary": "标题、摘要和封面卖点同步生成",
-          "model": "GPT-4.1",
-          "type": "文本内容",
-          "detailTarget": "#case-detail-text",
-          "media": "assets/image_assets/2.png",
-          "authorName": "木辛",
-          "authorId": "USR-2105",
-          "publishedAt": "2026-07-06 10:45",
-          "filterDate": "2026-07-06",
-          "authorCell": "木辛USR-2105",
-          "publishedCell": "2026-07-06 10:45",
-          "state": "已发布",
-          "detailHref": "content-detail.html?id=CNT-HOME-053"
-        },
-        {
           "id": "CNT-HOME-054",
-          "order": "54",
+          "order": "43",
           "title": "灵泉实验室",
           "summary": "清透场景氛围，模型评测图更有质感",
           "model": "Flux Pro 1.1",
@@ -4191,6 +4021,7 @@
           "publishedAt": "2026-07-06 09:20",
           "filterDate": "2026-07-06",
           "authorCell": "鹿鸣USR-2106",
+          "authorHref": "user-detail.html?id=USR-2106",
           "publishedCell": "2026-07-06 09:20",
           "state": "已发布",
           "detailHref": "content-detail.html?id=CNT-HOME-054"
@@ -4203,75 +4034,53 @@
         "linkCount": 0
       },
       "rowCellCounts": [
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9,
-        9
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
       ],
-      "detailLinkCount": 54,
+      "detailLinkCount": 43,
       "processButtonCount": 0,
       "actionTexts": [
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
-        "详情",
         "详情",
         "详情",
         "详情",
@@ -4318,37 +4127,30 @@
       ],
       "dateRangeInputCount": 2
     },
-    "officialContentCreateInitial": {
-      "open": true,
-      "id": "CNT-OFFICIAL-001",
-      "idHidden": true,
-      "idDisplay": "CNT-OFFICIAL-001",
-      "authorOptions": [
-        {
-          "value": "USR-9001",
-          "label": "官方运营号 · USR-9001"
-        }
+    "contentAuthorDetailRoute": {
+      "contextState": "content-author",
+      "id": "USR-2101",
+      "name": "云栖",
+      "phone": "[PHONE]",
+      "contentIds": [
+        "CNT-HOME-001",
+        "CNT-HOME-025",
+        "CNT-HOME-037"
       ],
-      "authorDisabled": false,
-      "operator": "内容运营",
-      "boundary": "C端公开作者展示所选官方账号；后台日志另行记录实际操作人。停用的官方账号不能用于新发布，历史作者信息不改写。"
+      "disableActionDisabled": true,
+      "pointsActionDisabled": true
     },
-    "officialContentCreated": {
+    "officialContentPublishingBoundary": {
+      "pageHeadEntryCount": 0,
+      "visibleTriggerCount": 0,
       "modalOpen": false,
-      "id": "CNT-OFFICIAL-001",
-      "authorId": "USR-9001",
-      "authorName": "官方运营号",
-      "actualOperator": "内容运营",
-      "source": "官方发布",
-      "state": "已发布",
-      "logId": "LOG-CONTENT-1784705243443",
-      "feedback": "内容 CNT-OFFICIAL-001 已发布到 C端；公开作者为 官方运营号（USR-9001），实际操作人 内容运营 已写入 LOG-CONTENT-1784705243443。"
+      "walkthroughBoundary": "内容列表负责 AIGC、Prompt、投稿来源内容、模型、模板和教程等正式内容的统一运营入口；当前后台不提供内容发布入口，仅承接已有内容的扫描、筛选、详情与治理，普通社区用户仍只由 C端注册产生；分类配置承接全站共用的 aigc-inspiration-v1 分类名称、排序和启停状态，不按首页、AIGC、收藏或点赞区分适用范围；首页爆款作品由内容列表承接，当前首页 43 条爆款作品必须逐条保持标题、摘要、模型、类型、媒资和展示顺序一致；原型内容目录使用演示作者与标准发布时间，真实上线时由内容数据替换；审核与详情测试对象通过内部登记维护，不混入正式内容列表；广告位配置只承接首页爆款首卡广告；闪念进入独立管理模块，审核、日志和详情治理进入抽屉或专门页面。\n          \n            \n              内容列表\n              管理正式内容及首页、AIGC 共用分类；闪念单独管理。\n            \n          \n          \n            内容管理\n            分类配置\n          \n          \n          \n            \n              筛选\n              \n                搜索\n                重置\n              \n            \n            \n              \n                关键词\n                内容类型全部类型短剧漫剧图片生成视频生成Prompt\n                内容状态全部状态草稿待审核审核通过已发布未通过已下架已删除\n                来源全部来源首页爆款作品轻创作漫剧回流投稿 · Prompt 共创计划投稿 · AI 生图挑战用户发布官方发布\n                首页爆款全部首页展示首页爆款非首页爆款\n                发布时间至\n              \n            \n          \n          \n            内容列表43 条结果\n            \n              \n                \n                  内容 ID标题类型作者状态来源发布时间操作\n                \n                \n                  \n                    CNT-HOME-001标题拆解 PromptGPT-4.1 · 无图文版本，先看完整提示词再复用Prompt云栖USR-2101已发布首页爆款作品2026-07-14 16:40详情\n                  \n                  \n                    CNT-HOME-002国风神女 PromptFlux Pro 1.1 · 效果图、提示词和同款入口同屏承接Prompt南舟USR-2102已发布首页爆款作品2026-07-14 15:25详情\n                  \n                  \n                    CNT-HOME-003广告脚本 PromptGPT-4.1 · 适合运营短视频首版草稿Prompt青梧USR-2103已发布首页爆款作品2026-07-14 13:50详情\n                  \n                  \n                    CNT-HOME-004治愈场景 PromptFlux Pro 1.1 · 带示例图，直接复用场景关键词Prompt星野USR-2104已发布首页爆款作品2026-07-14 12:15详情\n                  \n                  \n                    CNT-HOME-005龙虎天劫Seedance 2.0 · 高燃对决封面，漫剧开场感拉满短剧漫剧木辛USR-2105已发布首页爆款作品2026-07-14 10:45详情\n                  \n                  \n                    CNT-HOME-006竹泉秘境Flux Pro 1.1 · 清新治愈场景，夏日氛围一键生成图片生成鹿鸣USR-2106已发布首页爆款作品2026-07-14 09:20详情\n                  \n                  \n                    CNT-HOME-007海灯守望Seedance 2.0 · 海边落日镜头，故事片头更有画面视频生成白榆USR-2107已发布首页爆款作品2026-07-13 16:40详情\n                  \n                  \n                    CNT-HOME-008凤冠神女Flux Pro 1.1 · 国风神女设定，古装角色直接出图图片生成绘光者USR-2108已发布首页爆款作品2026-07-13 15:25详情\n                  \n                  \n                    CNT-HOME-010画室追光Seedance 2.0 · 真人质感画面，短剧角色宣传图短剧漫剧松子USR-2110已发布首页爆款作品2026-07-13 12:15详情\n                  \n                  \n                    CNT-HOME-011异界裂隙Seedance 2.0 · 暗黑幻想场景，战斗分镜快速定调视频生成阿澄USR-2111已发布首页爆款作品2026-07-13 10:45详情\n                  \n                  \n                    CNT-HOME-012决战前夜Seedance 2.0 · 双主角压迫感，高潮镜头直接复用短剧漫剧拾光漫剧社USR-2112已发布首页爆款作品2026-07-13 09:20详情\n                  \n                  \n                    CNT-HOME-014云海行舟Flux Pro 1.1 · 轻幻想插画，故事配图更容易出片图片生成南舟USR-2102已发布首页爆款作品2026-07-12 15:25详情\n                  \n                  \n                    CNT-HOME-015霓虹街角Flux Pro 1.1 · 赛博街拍质感，适合潮流海报首图图片生成青梧USR-2103已发布首页爆款作品2026-07-12 13:50详情\n                  \n                  \n                    CNT-HOME-016沙漠巡航Seedance 2.0 · 荒漠大景推进，短片开场更有速度视频生成星野USR-2104已发布首页爆款作品2026-07-12 12:15详情\n                  \n                  \n                    CNT-HOME-017机甲晨光Seedance 2.0 · 异界战斗压场，漫剧世界观一眼建立短剧漫剧木辛USR-2105已发布首页爆款作品2026-07-12 10:45详情\n                  \n                  \n                    CNT-HOME-018星舰边境Seedance 2.0 · 高燃冲突镜头，适合预告片转场视频生成鹿鸣USR-2106已发布首页爆款作品2026-07-12 09:20详情\n                  \n                  \n                    CNT-HOME-020逆光少女Flux Pro 1.1 · 人物封面质感，角色设定更抓眼图片生成绘光者USR-2108已发布首页爆款作品2026-07-11 15:25详情\n                  \n                  \n                    CNT-HOME-021金殿长阶Seedance 2.0 · 古风权谋场景，剧情冲突直接拉满短剧漫剧镜川USR-2109已发布首页爆款作品2026-07-11 13:50详情\n                  \n                  \n                    CNT-HOME-022童话港口Flux Pro 1.1 · 轻奇幻故事配图，适合连载封面图片生成松子USR-2110已发布首页爆款作品2026-07-11 12:15详情\n                  \n                  \n                    CNT-HOME-023蓝焰骑士Seedance 2.0 · 战斗动作镜头，动态预告快速定调视频生成阿澄USR-2111已发布首页爆款作品2026-07-11 10:45详情\n                  \n                  \n                    CNT-HOME-024赛博花园Flux Pro 1.1 · 未来植物空间，视觉 KV 很有记忆点图片生成拾光漫剧社USR-2112已发布首页爆款作品2026-07-11 09:20详情\n                  \n                  \n                    CNT-HOME-025密林回声Flux Pro 1.1 · 森系氛围海报，教程封面更有层次图片生成云栖USR-2101已发布首页爆款作品2026-07-10 16:40详情\n                  \n                  \n                    CNT-HOME-026龙鳞王座Seedance 2.0 · 强对抗主视觉，漫剧第一集封面短剧漫剧南舟USR-2102已发布首页爆款作品2026-07-10 15:25详情\n                  \n                  \n                    CNT-HOME-027海雾灯塔Seedance 2.0 · 情绪化风景镜头，片头氛围直接到位视频生成青梧USR-2103已发布首页爆款作品2026-07-10 13:50详情\n                  \n                  \n                    CNT-HOME-029暗潮分镜Seedance 2.0 · 黑暗幻想分镜，冲突节点更清晰短剧漫剧木辛USR-2105已发布首页爆款作品2026-07-10 10:45详情\n                  \n                  \n                    CNT-HOME-030清泉物语Flux Pro 1.1 · 清爽治愈场景，轻内容封面直接可用图片生成鹿鸣USR-2106已发布首页爆款作品2026-07-10 09:20详情\n                  \n                  \n                    CNT-HOME-032月下航线Seedance 2.0 · 航行镜头推进，旅行片开场更有质感视频生成绘光者USR-2108已发布首页爆款作品2026-07-09 15:25详情\n                  \n                  \n                    CNT-HOME-033国风角色卡Flux Pro 1.1 · 人物设定图，适合短剧角色预热图片生成镜川USR-2109已发布首页爆款作品2026-07-09 13:50详情\n                  \n                  \n                    CNT-HOME-035虚拟摄影棚Flux Pro 1.1 · 棚拍质感封面，人物与产品同框展示图片生成阿澄USR-2111已发布首页爆款作品2026-07-09 10:45详情\n                  \n                  \n                    CNT-HOME-036异界荒原Seedance 2.0 · 巨物移动镜头，幻想短片快速起势视频生成拾光漫剧社USR-2112已发布首页爆款作品2026-07-09 09:20详情\n                  \n                  \n                    CNT-HOME-037深海片头Seedance 2.0 · 蓝色海雾氛围，情绪片封面更高级视频生成云栖USR-2101已发布首页爆款作品2026-07-08 16:40详情\n                  \n                  \n                    CNT-HOME-039竹林试镜Flux Pro 1.1 · 清透人物场景，角色定妆图更自然图片生成青梧USR-2103已发布首页爆款作品2026-07-08 13:50详情\n                  \n                  \n                    CNT-HOME-040黑金封面Seedance 2.0 · 强运营海报感，活动入口更像大片短剧漫剧星野USR-2104已发布首页爆款作品2026-07-08 12:15详情\n                  \n                  \n                    CNT-HOME-042龙虎追击Seedance 2.0 · 快节奏镜头方案，动作短片更利落视频生成鹿鸣USR-2106已发布首页爆款作品2026-07-08 09:20详情\n                  \n                  \n                    CNT-HOME-043轻喜剧分镜Seedance 2.0 · 轻松剧情节奏，适合竖屏短剧开场短剧漫剧白榆USR-2107已发布首页爆款作品2026-07-07 16:40详情\n                  \n                  \n                    CNT-HOME-045花火夜航Flux Pro 1.1 · 节日活动主视觉，夜景光效更醒目图片生成镜川USR-2109已发布首页爆款作品2026-07-07 13:50详情\n                  \n                  \n                    CNT-HOME-046古堡醒来Seedance 2.0 · 悬疑场景铺垫，故事封面更有张力短剧漫剧松子USR-2110已发布首页爆款作品2026-07-07 12:15详情\n                  \n                  \n                    CNT-HOME-047旗舰新品片Seedance 2.0 · 产品高光镜头，广告片卖点更集中视频生成阿澄USR-2111已发布首页爆款作品2026-07-07 10:45详情\n                  \n                  \n                    CNT-HOME-048角色海报组Flux Pro 1.1 · 同一角色多风格，宣发素材更成套图片生成拾光漫剧社USR-2112已发布首页爆款作品2026-07-07 09:20详情\n                  \n                  \n                    CNT-HOME-050云上仙音Flux Pro 1.1 · 轻幻想空间图，故事配图更有氛围图片生成南舟USR-2102已发布首页爆款作品2026-07-06 15:25详情\n                  \n                  \n                    CNT-HOME-051决赛预告Seedance 2.0 · 赛事主视觉升级，适合活动公布页短剧漫剧青梧USR-2103已发布首页爆款作品2026-07-06 13:50详情\n                  \n                  \n                    CNT-HOME-052镜头运动样片Seedance 2.0 · 推拉摇移示例，视频生成更好理解视频生成星野USR-2104已发布首页爆款作品2026-07-06 12:15详情\n                  \n                  \n                    CNT-HOME-054灵泉实验室Flux Pro 1.1 · 清透场景氛围，模型评测图更有质感图片生成鹿鸣USR-2106已发布首页爆款作品2026-07-06 09:20详情\n                  \n                  没有符合条件的内容，请调整筛选条件。\n                \n              \n            \n          \n          \n            \n              \n                全站共用内容分类\n              \n              5 个分类展示中“全部”为系统聚合项\n            \n            \n              \n                排序分类键展示名称状态操作\n                \n                  \n                    0all全部系统聚合展示中系统固定\n                  \n                  \n                    10manga短剧漫剧展示中编辑\n                  \n                  \n                    20image图片生成展示中编辑\n                  \n                  \n                    30video视频生成展示中编辑\n                  \n                  \n                    40promptPrompt展示中编辑\n                  \n                \n              \n            \n            \n              分类全站共用同一套名称、顺序和状态；停用分类后，各内容消费入口同步隐藏该分类筛选，已发布内容不下架、不改分类，仍可从“全部”和详情入口访问。分类键不可修改，“全部”始终固定在首位。"
     },
     "contentListOperationalFilter": {
       "visibleRows": 0,
       "emptyVisible": true,
       "result": "0 条结果",
-      "resetVisibleRows": 55
+      "resetVisibleRows": 43
     },
     "contentCategoryConfiguration": {
       "activeTab": "分类配置",
@@ -4359,111 +4161,62 @@
         "排序",
         "分类键",
         "展示名称",
-        "首页爆款",
-        "AIGC 灵感广场",
-        "个人中心",
         "状态",
         "操作"
       ],
+      "rowCellCounts": [
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "visibleSurfaceCellCount": 0,
+      "surfaceFieldCount": 0,
+      "hasCategoryScopeSummary": false,
       "rows": [
         {
           "key": "all",
           "label": "全部",
           "sort": "0",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
           "status": "active",
           "system": "true",
-          "homeCount": "54",
-          "aigcCount": "16",
-          "favoritesCount": "6",
-          "likesCount": "6",
           "editCount": 0
         },
         {
           "key": "manga",
           "label": "短剧漫剧",
           "sort": "10",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
           "status": "active",
           "system": "false",
-          "homeCount": "11",
-          "aigcCount": "2",
-          "favoritesCount": "1",
-          "likesCount": "1",
-          "editCount": 1
-        },
-        {
-          "key": "text",
-          "label": "文本内容",
-          "sort": "20",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
-          "status": "active",
-          "system": "false",
-          "homeCount": "11",
-          "aigcCount": "2",
-          "favoritesCount": "1",
-          "likesCount": "1",
           "editCount": 1
         },
         {
           "key": "image",
           "label": "图片生成",
-          "sort": "30",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
+          "sort": "20",
           "status": "active",
           "system": "false",
-          "homeCount": "16",
-          "aigcCount": "3",
-          "favoritesCount": "2",
-          "likesCount": "1",
           "editCount": 1
         },
         {
           "key": "video",
           "label": "视频生成",
-          "sort": "40",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
+          "sort": "30",
           "status": "active",
           "system": "false",
-          "homeCount": "12",
-          "aigcCount": "3",
-          "favoritesCount": "1",
-          "likesCount": "1",
           "editCount": 1
         },
         {
           "key": "prompt",
           "label": "Prompt",
-          "sort": "50",
-          "home": "true",
-          "aigc": "true",
-          "favorites": "true",
-          "likes": "true",
+          "sort": "40",
           "status": "active",
           "system": "false",
-          "homeCount": "4",
-          "aigcCount": "6",
-          "favoritesCount": "1",
-          "likesCount": "2",
           "editCount": 1
         }
       ],
-      "boundary": "停用分类或取消某个展示端，只隐藏首页、AIGC、收藏或点赞中的对应 C端分类入口；已发布内容不下架、不改分类，仍可从“全部”和详情入口访问。分类键不可修改，“全部”始终固定在首位。"
+      "boundary": "分类全站共用同一套名称、顺序和状态；停用分类后，各内容消费入口同步隐藏该分类筛选，已发布内容不下架、不改分类，仍可从“全部”和详情入口访问。分类键不可修改，“全部”始终固定在首位。"
     },
     "contentCategoryEditModal": {
       "open": true,
@@ -4471,32 +4224,22 @@
       "keyHidden": true,
       "keyDisplay": "prompt",
       "label": "Prompt",
-      "sort": "50",
-      "home": true,
-      "aigc": true,
-      "favorites": true,
-      "likes": true,
+      "sort": "40",
       "status": "active"
     },
     "contentCategoryReasonRequired": {
       "modalOpen": true,
       "error": "分类变更会影响 C端入口，请填写变更原因后再保存。",
-      "impact": "停用后首页、AIGC、我的收藏和我的点赞中的该分类入口均隐藏；已绑定内容、分类关系和历史记录保留，内容仍可从“全部”和详情入口访问。"
+      "impact": "停用后全站内容消费入口同步隐藏该分类筛选；已绑定内容、分类关系和历史记录保留，内容仍可从“全部”和详情入口访问。"
     },
     "contentCategorySaved": {
       "modalClosed": true,
-      "home": "false",
-      "aigc": "true",
       "status": "stopped",
-      "reason": "阶段性隐藏 Prompt 分类入口，保留内容关系用于恢复",
-      "logId": "LOG-CATEGORY-1784705243744",
-      "homeCell": "不展示",
-      "aigcCell": "随分类停用",
-      "favoritesCell": "收藏 · 随分类停用",
-      "likesCell": "点赞 · 随分类停用",
+      "reason": "阶段性停用 Prompt 分类，保留内容关系用于恢复",
+      "logId": "LOG-CATEGORY-1785513436278",
       "statusCell": "停用",
-      "summary": "5 个分类展示中",
-      "result": "分类 prompt 已保存：全部入口均隐藏；已绑定内容和分类关系保留。原因与操作日志已记录。"
+      "summary": "4 个分类展示中",
+      "result": "分类 prompt 已保存：全站停用；名称、排序和状态由全部内容消费入口共用，已绑定内容和分类关系保留。原因与操作日志已记录。"
     },
     "contentCategoryReturnsToCatalog": {
       "activeTab": "内容管理",
@@ -4605,8 +4348,8 @@
       "hasBatchPanel": false,
       "tagMetrics": [
         {
-          "text": "纯文本",
-          "width": 50,
+          "text": "文本",
+          "width": 38,
           "parentWidth": 99,
           "minHeight": "20px",
           "padding": "0px 6px",
@@ -4623,7 +4366,7 @@
           "justifySelf": "start"
         },
         {
-          "text": "图文",
+          "text": "图片",
           "width": 38,
           "parentWidth": 75,
           "minHeight": "20px",
@@ -4641,8 +4384,8 @@
           "justifySelf": "start"
         },
         {
-          "text": "纯文本",
-          "width": 50,
+          "text": "文本",
+          "width": 38,
           "parentWidth": 99,
           "minHeight": "20px",
           "padding": "0px 6px",
@@ -4686,8 +4429,8 @@
           "justifySelf": "start"
         },
         {
-          "text": "纯文本",
-          "width": 50,
+          "text": "文本",
+          "width": 38,
           "parentWidth": 99,
           "minHeight": "20px",
           "padding": "0px 6px",
@@ -4713,7 +4456,7 @@
           "justifySelf": "start"
         },
         {
-          "text": "图文",
+          "text": "图片",
           "width": 38,
           "parentWidth": 75,
           "minHeight": "20px",
@@ -4749,9 +4492,9 @@
       "cardCount": 1,
       "flashId": "FLA-0308",
       "bodyText": "同一输入在不同模型下的成本、速度和结果稳定性差异较大，建议在发布前补充适用场景、输入样例和结果截图，避免只写结论。",
-      "mediaCount": 1,
+      "mediaCount": 0,
       "metricCount": 4,
-      "commentCount": 2,
+      "commentSectionCount": 0,
       "hasBackLink": true,
       "modalOpen": false,
       "flashEditTriggerCount": 0,
@@ -4763,7 +4506,7 @@
         "恢复展示"
       ],
       "dangerAction": "flash-restore",
-      "requiresReason": true,
+      "requiresReason": false,
       "stateClass": "tag danger",
       "hasRemovedSideCopy": false,
       "hasRecommendedCopy": false,
@@ -4777,16 +4520,12 @@
       "current": "已下架",
       "result": "闪念改为已发布；C端恢复展示；正文、媒体、互动和操作记录保留"
     },
-    "flashRestoreReasonGate": {
-      "modalStillOpen": true,
-      "errorVisible": true
-    },
     "flashRestoreResult": {
       "modalClosed": true,
       "state": "已发布",
       "nextLabel": "下架闪念",
       "nextDangerAction": "flash-take-down",
-      "feedback": "处理完成：FLA-0308 已更新为“已发布”；原因“作者已补充上下文，复核后恢复展示”已写入操作日志。"
+      "feedback": "处理完成：FLA-0308 已更新为“已发布”；操作已确认并记录。"
     },
     "flashTakeDownResult": {
       "state": "已下架",
@@ -4993,9 +4732,9 @@
       "source": "投稿 · Prompt 共创计划",
       "activityPanelHidden": false,
       "activityName": "Prompt 共创计划",
-      "pointsRule": "设置为首页爆款作品后发放 +30 发布积分",
+      "pointsRule": "设置为首页爆款作品后发放 +30 发布限时积分",
       "pointsNote": "",
-      "hotActionText": "设为首页爆款并发放积分",
+      "hotActionText": "设为首页爆款并发放限时积分",
       "hotActionHidden": true,
       "lifecycleHidden": true,
       "hotReward": "publish-points",
@@ -5054,7 +4793,7 @@
         "卡片描述",
         "模板分类",
         "维护来源",
-        "消耗积分",
+        "消耗限时积分",
         "展示状态",
         "排序",
         "操作"
@@ -5066,8 +4805,8 @@
       "tableWrapWidth": 1182,
       "unusedRightSpace": 0,
       "firstRowCellCount": 10,
-      "firstRowEditableFields": "封面 / 标题 / 描述 / 分类 / 维护来源 / 使用模型 / 消耗积分（自动）",
-      "firstRowCostText": "12 积分",
+      "firstRowEditableFields": "封面 / 标题 / 描述 / 分类 / 维护来源 / 使用模型 / 消耗限时积分（自动）",
+      "firstRowCostText": "12 限时积分",
       "firstRowCostValue": "12",
       "realCoverPreviewCount": 17,
       "filterLabels": [
@@ -5115,7 +4854,7 @@
         "卡片描述",
         "封面图",
         "使用模型",
-        "消耗积分",
+        "消耗限时积分",
         "排序",
         "展示状态",
         "停用",
@@ -5210,38 +4949,38 @@
         "MODEL-VID-OLD"
       ],
       "linkedModelLabels": [
-        "gpt-4.1 · OpenAI · 未配置积分",
-        "gpt-5-chat-latest · OpenAI · 未配置积分",
-        "claude-sonnet-4-6 · Anthropic · 未配置积分",
-        "gemini-3-pro-preview · Google · 未配置积分",
-        "gemini-2.5-pro · Google · 未配置积分",
-        "o4-mini · OpenAI · 未配置积分",
-        "text-embedding-3-large · OpenAI · 未配置积分",
-        "gpt-image-2 · OpenAI · 18 积分/次 · 可用于模板",
-        "doubao-seedream-4-5-251128 · Doubao · 24 积分/次 · 可用于模板",
-        "gemini-3.1-flash-image · Google · 未配置积分",
-        "grok-video-3 · Grok · 36 积分/次 · 可用于模板",
-        "grok-video-3-10s · Grok · 40 积分/次 · 可用于模板",
-        "doubao-seedream-5-0-260128 · Doubao · 28 积分/次 · 可用于模板",
-        "Nano Banana Pro · nano-banana-pro · 待确认 · 22 积分/次 · 可用于模板",
-        "nano-banana-2 · 待确认 · 20 积分/次 · 可用于模板",
-        "gemini-3-flash-preview · 待确认 · 8 积分/次 · 可用于模板",
-        "kimi-k2.6 · 待确认 · 10 积分/次 · 可用于模板",
-        "gpt-5.5 · OpenAI · 12 积分/次 · 可用于模板",
-        "deepseek-v4-pro · 待确认 · 9 积分/次 · 可用于模板",
-        "doubao-seedance-1-5-pro · 待确认 · 36 积分/次 · 可用于模板",
-        "doubao-seedance-2-0-5s · 待确认 · 42 积分/次 · 可用于模板",
-        "kling-3.0-omni-720p-ref-mute · 待确认 · 48 积分/次 · 可用于模板",
-        "omni-fast · 待确认 · 28 积分/次 · 可用于模板",
-        "doubao-seedance-2-0-10s · 待确认 · 56 积分/次 · 可用于模板",
-        "doubao-seedance-2-0-15s · 待确认 · 72 积分/次 · 可用于模板",
-        "kling-2.5-1080p · 待确认 · 64 积分/次 · 可用于模板",
-        "grok-1.5-video-10s · 待确认 · 44 积分/次 · 可用于模板",
-        "GPT-5.6（B端待投放） · MODEL-0056 · OpenAI · 未配置积分",
+        "gpt-4.1 · OpenAI · 未配置限时积分",
+        "gpt-5-chat-latest · OpenAI · 未配置限时积分",
+        "claude-sonnet-4-6 · Anthropic · 未配置限时积分",
+        "gemini-3-pro-preview · Google · 未配置限时积分",
+        "gemini-2.5-pro · Google · 未配置限时积分",
+        "o4-mini · OpenAI · 未配置限时积分",
+        "text-embedding-3-large · OpenAI · 未配置限时积分",
+        "gpt-image-2 · OpenAI · 18 限时积分/次 · 可用于模板",
+        "doubao-seedream-4-5-251128 · Doubao · 24 限时积分/次 · 可用于模板",
+        "gemini-3.1-flash-image · Google · 未配置限时积分",
+        "grok-video-3 · Grok · 36 限时积分/次 · 可用于模板",
+        "grok-video-3-10s · Grok · 40 限时积分/次 · 可用于模板",
+        "doubao-seedream-5-0-260128 · Doubao · 28 限时积分/次 · 可用于模板",
+        "Nano Banana Pro · nano-banana-pro · 待确认 · 22 限时积分/次 · 可用于模板",
+        "nano-banana-2 · 待确认 · 20 限时积分/次 · 可用于模板",
+        "gemini-3-flash-preview · 待确认 · 8 限时积分/次 · 可用于模板",
+        "kimi-k2.6 · 待确认 · 10 限时积分/次 · 可用于模板",
+        "gpt-5.5 · OpenAI · 12 限时积分/次 · 可用于模板",
+        "deepseek-v4-pro · 待确认 · 9 限时积分/次 · 可用于模板",
+        "doubao-seedance-1-5-pro · 待确认 · 36 限时积分/次 · 可用于模板",
+        "doubao-seedance-2-0-5s · 待确认 · 42 限时积分/次 · 可用于模板",
+        "kling-3.0-omni-720p-ref-mute · 待确认 · 48 限时积分/次 · 可用于模板",
+        "omni-fast · 待确认 · 28 限时积分/次 · 可用于模板",
+        "doubao-seedance-2-0-10s · 待确认 · 56 限时积分/次 · 可用于模板",
+        "doubao-seedance-2-0-15s · 待确认 · 72 限时积分/次 · 可用于模板",
+        "kling-2.5-1080p · 待确认 · 64 限时积分/次 · 可用于模板",
+        "grok-1.5-video-10s · 待确认 · 44 限时积分/次 · 可用于模板",
+        "GPT-5.6（B端待投放） · MODEL-0056 · OpenAI · 未配置限时积分",
         "历史图像模型（样例） · MODEL-IMG-A · 示例提供方 · 已暂停",
         "历史视频模型（样例） · MODEL-VID-OLD · 示例提供方 · 已下线"
       ],
-      "linkedModelHint": "请选择已发布且已配置积分的模型。",
+      "linkedModelHint": "请选择已发布且已配置限时积分的模型。",
       "linkedModelAvailability": "unselected",
       "linkedModelHintHidden": true,
       "costReadOnly": true,
@@ -5277,7 +5016,7 @@
       "costReadOnly": true,
       "maintenanceSource": "官方维护",
       "linkedModel": "gpt-5.5",
-      "linkedModelHint": "gpt-5.5 当前可用于模板；消耗 12 积分/次。",
+      "linkedModelHint": "gpt-5.5 当前可用于模板；消耗 12 限时积分/次。",
       "linkedModelAvailability": "available",
       "linkedModelHintHidden": true,
       "coverImage": "assets/image_assets/11.png",
@@ -5318,7 +5057,7 @@
         "卡片描述",
         "封面图",
         "使用模型",
-        "消耗积分",
+        "消耗限时积分",
         "排序",
         "展示状态",
         "展示中",
@@ -5332,7 +5071,7 @@
         "template-id",
         "editable-fields"
       ],
-      "hiddenEditableFields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 使用模型 / 消耗积分（自动）",
+      "hiddenEditableFields": "封面 / 标题 / 描述 / 分类 / Markdown 内容 / 使用模型 / 消耗限时积分（自动）",
       "removedMaintainerField": true,
       "removedJumpLinkField": true,
       "reasonFieldHidden": true,
@@ -5382,7 +5121,7 @@
       "recordCount": 18,
       "rowTitle": "镜头节奏模板",
       "rowMaintenanceSource": "专业维护",
-      "rowCost": "12 积分",
+      "rowCost": "12 限时积分",
       "rowCostValue": "12",
       "rowStatus": "停用",
       "filterCategory": "文本写作",
@@ -5428,7 +5167,7 @@
     "templateUnavailableModelBlocksActiveSave": {
       "modalOpen": true,
       "errorVisible": true,
-      "errorText": "当前使用模型未发布或未配置积分；展示中模板必须改用可用模型，或先停用模板。",
+      "errorText": "当前使用模型未发布或未配置限时积分；展示中模板必须改用可用模型，或先停用模板。",
       "linkedModel": "MODEL-IMG-A"
     },
     "tutorialCreateModal": {
@@ -5761,16 +5500,16 @@
     "activityPointsDirectEntry": {
       "activityId": "ACT-PROMPT-001",
       "modalOpen": true,
-      "title": "配置积分规则 · Prompt 共创计划",
+      "title": "配置限时积分规则 · Prompt 共创计划",
       "scope": "version",
       "rewardRows": 4,
       "firstPoints": "+20",
-      "detailAction": "配置积分规则",
+      "detailAction": "配置限时积分规则",
       "formTabs": 0,
       "versionImpactTextCount": 0,
       "impactFieldCount": 0,
       "timeFieldCount": 0,
-      "submitText": "保存积分规则"
+      "submitText": "保存限时积分规则"
     },
     "activePromptRuleBoundary": {
       "lifecycle": "running",
@@ -5810,7 +5549,7 @@
       "hasDisplayFields": false,
       "timeValue": "",
       "timeFieldCount": 0,
-      "submitText": "保存积分规则",
+      "submitText": "保存限时积分规则",
       "impactFieldCount": 0
     },
     "activityRuleVersionSaved": {
@@ -5819,7 +5558,7 @@
       "ruleVersionAttr": "v4",
       "activeTab": "base",
       "changeSurfaceCount": 0,
-      "result": "积分规则已保存，当前生效版本已更新为 V4，操作日志 LOG-ACT-PROMPT-001-V4。新规则仅影响后续新增记录；历史参与、资格、奖励与积分流水保持 V3 及原版本结果。C端页面本轮未修改。",
+      "result": "限时积分规则已保存，当前生效版本已更新为 V4，操作日志 LOG-ACT-PROMPT-001-V4。新规则仅影响后续新增记录；历史参与、资格、奖励与限时积分流水保持 V3 及原版本结果。C端页面本轮未修改。",
       "recordIds": [
         "SUB-PROMPT-012",
         "SUB-PROMPT-011"
@@ -5853,7 +5592,7 @@
         "markdown",
         "markdown"
       ],
-      "contract": "公告配置当前只承接公告发布。公告由有权限的后台人员选择启用中的官方账号发布，标题、摘要、Markdown 正文、目标人群、状态、公开作者和实际操作人分别记录；草稿可在列表直接发布，已发布公告进入 C端消息中心，撤回使用简单确认并保留日志。事务消息继续由审核、活动、积分、兑换和账号状态等来源业务事件产生，其配置暂不纳入当前版本。"
+      "contract": "公告配置当前只承接公告发布。公告由有权限的后台人员选择启用中的官方账号发布，标题、摘要、Markdown 正文、目标人群、状态、公开作者和实际操作人分别记录；草稿可在列表直接发布，已发布公告进入 C端消息中心，撤回使用简单确认并保留日志。事务消息继续由审核、活动、限时积分、兑换和账号状态等来源业务事件产生，其配置暂不纳入当前版本。"
     },
     "announcementEditIdentity": {
       "value": "ANN-002",
@@ -5876,8 +5615,8 @@
         "查看",
         "撤回"
       ],
-      "logId": "LOG-ANNOUNCEMENT-PUBLISH-1784705247575",
-      "feedback": "公告 ANN-002 已发布到 C端消息中心；实际操作人 内容运营 已写入 LOG-ANNOUNCEMENT-PUBLISH-1784705247575。"
+      "logId": "LOG-ANNOUNCEMENT-PUBLISH-1785513439595",
+      "feedback": "公告 ANN-002 已发布到 C端消息中心；实际操作人 内容运营 已写入 LOG-ANNOUNCEMENT-PUBLISH-1785513439595。"
     },
     "announcementCreateInitial": {
       "open": true,
@@ -5914,8 +5653,8 @@
       "authorId": "USR-9001",
       "actualOperator": "内容运营",
       "markdown": "# Prompt 创作规范\n\n请补充 **适用场景**：\n\n- 文本写作\n- 图片生成\n\n`Prompt` 需可复用。",
-      "logId": "LOG-ANNOUNCEMENT-1784705247691",
-      "feedback": "公告 ANN-003 已发布到 C端消息中心；公开作者 官方运营号，实际操作人 内容运营 已写入 LOG-ANNOUNCEMENT-1784705247691。"
+      "logId": "LOG-ANNOUNCEMENT-1785513439678",
+      "feedback": "公告 ANN-003 已发布到 C端消息中心；公开作者 官方运营号，实际操作人 内容运营 已写入 LOG-ANNOUNCEMENT-1785513439678。"
     },
     "announcementRevokeConfirm": {
       "title": "撤回公告",
@@ -5928,11 +5667,11 @@
       "state": "revoked",
       "reason": "",
       "stateText": "已撤回",
-      "logId": "LOG-ANNOUNCEMENT-REVOKE-1784705247759",
+      "logId": "LOG-ANNOUNCEMENT-REVOKE-1785513439745",
       "action": "查看",
-      "feedback": "公告 ANN-003 已撤回；C端消息中心停止新增展示，Markdown 正文与历史记录保留。操作记录已写入 LOG-ANNOUNCEMENT-REVOKE-1784705247759。"
+      "feedback": "公告 ANN-003 已撤回；C端消息中心停止新增展示，Markdown 正文与历史记录保留。操作记录已写入 LOG-ANNOUNCEMENT-REVOKE-1785513439745。"
     },
-    "userDetailEntryCount": 2,
+    "userDetailEntryCount": 4,
     "userDetailRouteFromList": {
       "urlFile": "user-detail.html",
       "activeViews": [
@@ -5940,15 +5679,16 @@
       ],
       "activeNav": "user-list",
       "userDetailNavCount": 0,
-      "navLinkCount": 18,
+      "navLinkCount": 17,
       "title": "用户详情",
       "pageTitle": "用户详情"
     },
     "userListOperationalFilter": {
       "visibleIds": [
+        "USR-1002",
         "USR-9001"
       ],
-      "result": "1 条结果"
+      "result": "2 条结果"
     },
     "userDetailClickedRowContext": {
       "search": "?id=USR-9001",
@@ -5964,13 +5704,13 @@
       "firstActions": [
         "用户详情",
         "白名单设置",
-        "停用"
+        "封禁"
       ],
       "secondActions": [
         "用户详情",
         "编辑官方资料",
         "白名单设置",
-        "停用"
+        "封禁"
       ],
       "firstDisableAction": true,
       "firstWhitelistAction": true,
@@ -6014,7 +5754,7 @@
         "白名单",
         "资料状态",
         "内容数",
-        "积分",
+        "限时积分",
         "邀请数",
         "最近登录",
         "操作"
@@ -6022,12 +5762,13 @@
     },
     "userListDisableConfirmation": {
       "open": true,
-      "title": "账号停用确认",
-      "impact": "即将停用账号并停止 C端登录和新增操作。请确认本次对象、当前状态和预期结果。",
+      "title": "账号封禁确认",
+      "impact": "即将封禁账号并停止 C端登录和新增操作。请确认本次对象、当前状态和预期结果。",
       "object": "USR-1001",
-      "current": "启用 · 资料待审",
-      "result": "账号改为停用；C端停止登录和新增操作；历史内容、积分、邀请、白名单配置和操作日志保留",
-      "hasReasonInput": true
+      "current": "正常 · 资料待审",
+      "result": "账号改为冻结；C端停止登录和新增操作；历史内容、限时积分、邀请、白名单配置和操作日志保留",
+      "reasonFieldHidden": true,
+      "confirmLabel": "确认封禁"
     },
     "officialAccountEditIdentity": {
       "value": "USR-9001",
@@ -6070,23 +5811,23 @@
       "name": "多元拾光官方",
       "avatar": "https://cdn.example.com/avatars/duoyuanshiguang.png",
       "status": "enabled",
-      "logId": "LOG-OFFICIAL-1784705248459",
+      "logId": "LOG-OFFICIAL-1785513440345",
       "authorOptionCount": 2,
-      "feedback": "已创建官方账号 多元拾光官方（USR-OFFICIAL-002）；未生成登录凭证，可用于新内容和新公告，实际操作已写入 LOG-OFFICIAL-1784705248459。"
+      "feedback": "已创建官方账号 多元拾光官方（USR-OFFICIAL-002）；未生成登录凭证，可用于新内容和新公告，实际操作已写入 LOG-OFFICIAL-1785513440345。"
     },
     "officialAccountDisabled": {
       "status": "disabled",
-      "filterState": "停用",
-      "reason": "阶段性官方栏目停止维护",
-      "stateText": "停用",
-      "logId": "LOG-OFFICIAL-DISABLE-1784705248525",
+      "filterState": "冻结",
+      "reason": "",
+      "stateText": "冻结",
+      "logId": "LOG-OFFICIAL-1785513440345",
       "remainsAuthorOption": false,
-      "feedback": "官方账号 多元拾光官方 已停用；新内容与新公告不再可选，历史公开作者保持不变。原因“阶段性官方栏目停止维护”已写入 LOG-OFFICIAL-DISABLE-1784705248525。"
+      "feedback": "账号 USR-OFFICIAL-002 已封禁并更新为冻结；C端停止登录和新增操作，历史内容、限时积分、邀请、白名单配置与日志保持不变。"
     },
     "userDetailActionContract": {
       "actionLabels": [
-        "调整积分",
-        "停用账号"
+        "调整限时积分",
+        "封禁账号"
       ],
       "pointsAction": true,
       "disableAction": true,
@@ -6125,8 +5866,8 @@
       "balance": "1280",
       "nextBalance": "—",
       "directions": [
-        "发放积分",
-        "扣除积分"
+        "发放限时积分",
+        "扣除限时积分"
       ],
       "hasAmount": true,
       "hasReason": true
@@ -6134,7 +5875,7 @@
     "userPointsAdjustmentPreview": "1,305",
     "userPointsAdjustmentReasonGate": {
       "open": true,
-      "error": "请填写本次发放或扣除积分的调整原因。",
+      "error": "请填写本次发放或扣除限时积分的调整原因。",
       "balance": "1,280",
       "rowCount": 2
     },
@@ -6143,18 +5884,18 @@
       "balance": "1,305",
       "activeTab": "points",
       "id": "PTS-MANUAL-1001-01",
-      "reason": "活动补偿，补发漏记积分",
+      "reason": "活动补偿，补发漏记限时积分",
       "logId": "LOG-PTS-MANUAL-1001-01",
       "cells": [
         "后台人工发放流水 PTS-MANUAL-1001-01",
         "+25",
         "已入账",
-        "调整原因：活动补偿，补发漏记积分",
-        "2026-07-22 15:27",
+        "调整原因：活动补偿，补发漏记限时积分",
+        "2026-07-31 23:57",
         "已记录"
       ],
-      "feedback": "发放 25 积分已完成，当前积分 1,305；原因已写入 LOG-PTS-MANUAL-1001-01，并生成新流水 PTS-MANUAL-1001-01。",
-      "recordReason": "活动补偿，补发漏记积分"
+      "feedback": "发放 25 限时积分已完成，当前限时积分 1,305；原因已写入 LOG-PTS-MANUAL-1001-01，并生成新流水 PTS-MANUAL-1001-01。",
+      "recordReason": "活动补偿，补发漏记限时积分"
     },
     "userPointsDebitResult": {
       "balance": "1,295",
@@ -6166,7 +5907,7 @@
         "-10",
         "已扣减",
         "调整原因：重复奖励扣回",
-        "2026-07-22 15:27",
+        "2026-07-31 23:57",
         "已记录"
       ],
       "originalIds": [
@@ -6239,7 +5980,7 @@
     },
     "userDetailPointsList": {
       "headers": [
-        "积分来源",
+        "限时积分来源",
         "变动",
         "处理结果",
         "关联记录",
@@ -6272,7 +6013,7 @@
       ],
       "relations": [
         "调整原因：重复奖励扣回",
-        "调整原因：活动补偿，补发漏记积分",
+        "调整原因：活动补偿，补发漏记限时积分",
         "邀请记录 INV-2031",
         "原流水 PTS-0994"
       ],
@@ -6291,7 +6032,7 @@
       "id": "USR-1003",
       "name": "社区用户",
       "phone": "[PHONE]",
-      "accountState": "停用",
+      "accountState": "限制登录",
       "points": "未登记",
       "invites": "未登记",
       "taskId": "AUD-1003",
@@ -6305,8 +6046,8 @@
       "accountState": "待核对",
       "points": "未登记",
       "disabledActions": [
-        "调整积分",
-        "停用账号"
+        "调整限时积分",
+        "封禁账号"
       ],
       "inheritedText": false
     },
@@ -6355,7 +6096,7 @@
       ],
       "ledgerId": "PTS-1001",
       "ledgerHref": "points-records.html?entry=PTS-1001",
-      "cEndResult": "邀请记录显示当前完成注册，累计获得 50 积分；未完成阶段继续保留。",
+      "cEndResult": "邀请记录显示当前完成注册，累计获得 50 限时积分；未完成阶段继续保留。",
       "activityHref": "activity-detail.html?id=ACT-INVITE-001",
       "pointsConfigHref": "activity-detail.html?id=ACT-INVITE-001&points=edit",
       "operationCount": 2,
@@ -6382,14 +6123,14 @@
     },
     "userDetailDisableConfirmation": {
       "object": "USR-1001",
-      "current": "启用",
-      "result": "账号改为停用；C端停止登录和新增操作；历史内容、积分、邀请、白名单配置和操作日志保留"
+      "current": "正常",
+      "result": "账号改为冻结；C端停止登录和新增操作；历史内容、限时积分、邀请、白名单配置和操作日志保留"
     },
     "userDetailGenericRecordEntry": {
       "triggerCount": 0,
       "headerActions": [
-        "调整积分",
-        "停用账号"
+        "调整限时积分",
+        "封禁账号"
       ],
       "processingHeaders": [
         "记录类型",
@@ -6517,7 +6258,7 @@
         "输入 / 输出",
         "核心能力",
         "成本口径",
-        "社区调用积分",
+        "社区调用限时积分",
         "供应状态",
         "更新时间",
         "操作"
@@ -6527,7 +6268,7 @@
         "官方模型 ID",
         "提供方",
         "输入 / 输出",
-        "社区调用积分",
+        "社区调用限时积分",
         "供应状态",
         "操作"
       ],
@@ -6680,12 +6421,12 @@
       "communityPoints": "18",
       "communityPointsType": "number",
       "communityPointsMin": "0",
-      "hint": "0 表示免费；保存后只影响后续调用和模板展示，历史积分流水保持原值。"
+      "hint": "0 表示免费；保存后只影响后续调用和模板展示，历史限时积分流水保持原值。"
     },
     "modelFreePriceSave": {
       "points": "0",
       "cell": "免费",
-      "feedback": "单次调用积分已保存为 免费；后续调用和模板展示使用新值，历史流水保持原值。",
+      "feedback": "单次调用限时积分已保存为 免费；后续调用和模板展示使用新值，历史流水保持原值。",
       "primary": "修改已保存"
     },
     "modelPauseConfirmation": {
@@ -6884,7 +6625,7 @@
       "impact": "即将暂停活动并停止新增参与和投稿。请确认本次对象、当前状态和预期结果。",
       "object": "ACT-PROMPT-001 · Prompt 共创计划",
       "current": "进行中 · 长期有效 · 当前规则 V3",
-      "result": "以确认提交时间作为暂停截止；该时间起停止新增参与和投稿；当前规则版本保持 V3；此前记录继续绑定各自原版本，历史资格、奖励和积分流水保留"
+      "result": "以确认提交时间作为暂停截止；该时间起停止新增参与和投稿；当前规则版本保持 V3；此前记录继续绑定各自原版本，历史资格、奖励和限时积分流水保留"
     },
     "activityPauseReasonGate": {
       "modalStillOpen": true,
@@ -6895,17 +6636,17 @@
       "lifecycle": "paused",
       "state": "已暂停",
       "version": "V3",
-      "binding": "2026-07-22 15:27 起停止新增记录 · 当前规则 V3 保持，暂停前记录保留原版本",
-      "timeNote": "2026-07-22 15:27 起停止新增参与和投稿；恢复前现有资格、奖励和积分处理继续。",
+      "binding": "2026-07-31 23:57 起停止新增记录 · 当前规则 V3 保持，暂停前记录保留原版本",
+      "timeNote": "2026-07-31 23:57 起停止新增参与和投稿；恢复前现有资格、奖励和限时积分处理继续。",
       "pausedNoteVisible": true,
-      "pausedNote": "活动已暂停；暂停期间规则只读，不创建待生效版本；恢复后再配置积分规则。现有资格与奖励仍可处理。",
+      "pausedNote": "活动已暂停；暂停期间规则只读，不创建待生效版本；恢复后再配置限时积分规则。现有资格与奖励仍可处理。",
       "ruleActionHidden": true,
       "pauseActionHidden": true,
       "resumeActionVisible": true,
       "endActionVisible": true,
       "activeTab": "base",
       "changeSurfaceCount": 0,
-      "result": "ACT-PROMPT-001 已于 2026-07-22 15:27 暂停；该时间起停止新增参与和投稿，规则仍为 V3；暂停前记录继续绑定原版本。原因“临时暂停新增投稿，核对活动运营节奏”已写入 LOG-ACT-PROMPT-001-PAUSE-202607221527。",
+      "result": "ACT-PROMPT-001 已于 2026-07-31 23:57 暂停；该时间起停止新增参与和投稿，规则仍为 V3；暂停前记录继续绑定原版本。原因“临时暂停新增投稿，核对活动运营节奏”已写入 LOG-ACT-PROMPT-001-PAUSE-202607312357。",
       "preservedJudgment": "有效",
       "generatedRewardExists": true
     },
@@ -6929,13 +6670,13 @@
       "lifecycle": "running",
       "state": "进行中",
       "version": "V3",
-      "binding": "2026-07-22 15:27 起新增记录绑定 V3 · 当前生效",
-      "timeNote": "2026-07-22 15:27 起恢复新增参与和投稿；新增记录绑定 V3。",
+      "binding": "2026-07-31 23:57 起新增记录绑定 V3 · 当前生效",
+      "timeNote": "2026-07-31 23:57 起恢复新增参与和投稿；新增记录绑定 V3。",
       "ruleActionVisible": true,
       "pauseActionVisible": true,
       "resumeActionHidden": true,
       "changeSurfaceCount": 0,
-      "result": "ACT-PROMPT-001 已于 2026-07-22 15:27 恢复；该时间后的新增参与、资格判定和奖励记录绑定 V3；历史记录不改写。原因“运营核对完成，按当前规则版本恢复新增参与”已写入 LOG-ACT-PROMPT-001-RESUME-202607221527。",
+      "result": "ACT-PROMPT-001 已于 2026-07-31 23:57 恢复；该时间后的新增参与、资格判定和奖励记录绑定 V3；历史记录不改写。原因“运营核对完成，按当前规则版本恢复新增参与”已写入 LOG-ACT-PROMPT-001-RESUME-202607312357。",
       "preservedJudgment": "有效",
       "generatedRewardExists": true
     },
@@ -6972,7 +6713,7 @@
         "USR-1084",
         "USR-1082"
       ],
-      "summary": "ACT-IMAGE-001 · 奖励记录按当前活动加载；资格、发放和积分流水分别维护，处理结果只追加不覆盖。",
+      "summary": "ACT-IMAGE-001 · 奖励记录按当前活动加载；资格、发放和限时积分流水分别维护，处理结果只追加不覆盖。",
       "rewardTabActive": true,
       "routeTargetId": "RWD-IMAGE-1008",
       "mutationActionCount": 0,
@@ -6983,7 +6724,7 @@
       "title": "补发奖励确认",
       "object": "ACT-PROMPT-001 / RWD-PROMPT-1008",
       "current": "发放失败 · 未生效",
-      "result": "新增补发记录；原失败记录保留；补发处理中结果可回查；到账后关联新积分流水",
+      "result": "新增补发记录；原失败记录保留；补发处理中结果可回查；到账后关联新限时积分流水",
       "impact": "即将补发奖励并新增发放记录。请确认本次对象、当前状态和预期结果。",
       "reasonEmpty": true,
       "dialogRole": "dialog",
@@ -7048,21 +6789,21 @@
       "redemptionId": "",
       "points": "1200",
       "pointsMin": "1",
-      "priceEffectNote": "保存后仅影响后续兑换；历史兑换单保留当时的成交积分快照。",
+      "priceEffectNote": "保存后仅影响后续兑换；历史兑换单保留当时的成交限时积分快照。",
       "nextStep": "",
       "genericPlaceholderCount": 0,
       "primaryVisible": true
     },
     "storeFixedPriceInvalidGate": {
-      "feedback": "兑换积分必须填写为大于 0 的整数。",
+      "feedback": "兑换限时积分必须填写为大于 0 的整数。",
       "rowPoints": "1200",
       "primaryDisabled": false
     },
     "storeFixedPriceSave": {
       "rowPoints": "1250",
-      "rowPointsText": "1250 积分",
-      "historicalSnapshot": "gpt-5-chat-latest Token / 1200 积分",
-      "feedback": "兑换积分已保存为 1250 积分；仅影响后续兑换，历史兑换单保留原成交积分。",
+      "rowPointsText": "1250 限时积分",
+      "historicalSnapshot": "gpt-5-chat-latest Token / 1200 限时积分",
+      "feedback": "兑换限时积分已保存为 1250 限时积分；仅影响后续兑换，历史兑换单保留原成交限时积分。",
       "primaryDisabled": true
     },
     "storeEditDrawer": {
@@ -7089,7 +6830,7 @@
       "impact": "即将停用商品并停止 C端新增兑换。请确认本次对象、当前状态和预期结果。",
       "object": "SKU-001 · gpt-5-chat-latest Token",
       "current": "展示中 · 可兑换",
-      "result": "商品改为已停用；C端停止新增兑换；历史兑换、积分扣减、权益发放和异常记录保留"
+      "result": "商品改为已停用；C端停止新增兑换；历史兑换、限时积分扣减、权益发放和异常记录保留"
     },
     "storeOrdersTab": {
       "active": true,
@@ -7103,9 +6844,9 @@
       "redemptionId": "RED-1001",
       "productId": "",
       "redemptionState": "兑换结果兑换成功",
-      "pointsState": "积分扣减已生效",
+      "pointsState": "限时积分扣减已生效",
       "entitlementState": "权益发放已发放",
-      "nextAction": "下一步兑换已闭合，仅供回查；如后续撤销，必须新增反向积分流水和权益记录。",
+      "nextAction": "下一步兑换已闭合，仅供回查；如后续撤销，必须新增反向限时积分流水和权益记录。",
       "genericPlaceholderCount": 0
     },
     "storeExceptionOrderDetailDrawer": {
@@ -7117,8 +6858,8 @@
       "pointsHref": "points-records.html?entry=PTS-1002",
       "logId": "LOG-2105",
       "logHref": "operation-log.html?log=LOG-2105",
-      "body": "兑换单RED-1002 · [USER_ID]\n          商品快照闪创AI 体验小时卡 / 180 积分\n          积分流水PTS-1002 · 原扣减记录保留\n          异常日志LOG-2105 · 补救方式确认后追加新记录\n          积分扣减已生效\n          权益发放发放失败\n          兑换结果异常待处理\n          下一步进入异常处理，确认失败原因与用户影响后，在补发权益和返还积分中只选择一项；确认后锁定另一项。\n          \n        \n        敏感字段以 [USER_ID]、[CONTENT_ID]、[TOKEN]、[CARD_CODE] 占位展示。",
-      "nextAction": "下一步进入异常处理，确认失败原因与用户影响后，在补发权益和返还积分中只选择一项；确认后锁定另一项。"
+      "body": "兑换单RED-1002 · [USER_ID]\n          商品快照闪创AI 体验小时卡 / 180 限时积分\n          限时积分流水PTS-1002 · 原扣减记录保留\n          异常日志LOG-2105 · 补救方式确认后追加新记录\n          限时积分扣减已生效\n          权益发放发放失败\n          兑换结果异常待处理\n          下一步进入异常处理，确认失败原因与用户影响后，在补发权益和返还限时积分中只选择一项；确认后锁定另一项。\n          \n        \n        敏感字段以 [USER_ID]、[CONTENT_ID]、[TOKEN]、[CARD_CODE] 占位展示。",
+      "nextAction": "下一步进入异常处理，确认失败原因与用户影响后，在补发权益和返还限时积分中只选择一项；确认后锁定另一项。"
     },
     "storeExceptionTab": {
       "active": true,
@@ -7142,10 +6883,10 @@
       "rowCells": [
         "RED-1002",
         "闪创AI 体验小时卡",
-        "PTS-1002-180 积分",
+        "PTS-1002-180 限时积分",
         "权益发放失败LOG-2105",
         "异常待处理",
-        "补发权益返还积分"
+        "补发权益返还限时积分"
       ],
       "pointsHref": "points-records.html?entry=PTS-1002",
       "logHref": "operation-log.html?log=LOG-2105",
@@ -7165,8 +6906,8 @@
       "open": true,
       "title": "补发权益确认",
       "object": "RED-1002",
-      "current": "积分扣减已生效 · 权益发放失败 · 补救方式待选择",
-      "result": "新增权益补发记录；原积分扣减和失败记录保留；锁定积分返还动作"
+      "current": "限时积分扣减已生效 · 权益发放失败 · 补救方式待选择",
+      "result": "新增权益补发记录；原限时积分扣减和失败记录保留；锁定限时积分返还动作"
     },
     "entitlementReissueResult": {
       "resultRecord": true,
@@ -7193,21 +6934,21 @@
     },
     "pointsRefundConfirmation": {
       "open": true,
-      "title": "返还积分确认",
+      "title": "返还限时积分确认",
       "object": "RED-1002"
     },
     "pointsRefundResult": {
       "confirmationOpen": false,
       "selectedAction": "points-refund",
       "remediationState": "points-refund-pending",
-      "stateLabel": "积分返还待入账",
+      "stateLabel": "限时积分返还待入账",
       "redemptionId": "RED-1002",
       "remediationId": "PTS-1002-R1",
       "pointsEntry": "PTS-1002",
       "sourceLogId": "LOG-2105",
       "remediationLogId": "LOG-STORE-1002-R1",
       "processingResult": "新返还流水已创建，原扣减与失败记录保留。",
-      "readableResult": "用户结果：积分返还待入账",
+      "readableResult": "用户结果：限时积分返还待入账",
       "nextStep": "下一步：入账后更新用户结果",
       "pointsHref": "points-records.html?entry=PTS-1002",
       "sourceLogHref": "operation-log.html?log=LOG-2105",
@@ -7217,7 +6958,7 @@
     "userWhitelistAndPhoneLoop": {
       "active": true,
       "visible": true,
-      "whitelistSummary": "白名单当前状态：启用白名单是独立配置，不改变账号“启用/停用”状态；在用户列表中统一设置并记录原因。",
+      "whitelistSummary": "白名单当前状态：启用白名单是独立配置，不改变用户接口返回的账号状态；在用户列表中统一设置并记录原因。",
       "fullPhone": "138****9000",
       "profilePhone": "138****9000",
       "sensitiveActionCount": 0
@@ -7272,7 +7013,7 @@
       "impact": "即将撤销当前邀请奖励并保留核查证据。请确认本次对象、当前状态和预期结果。",
       "object": "INV-2032",
       "current": "疑似重复 · 异常 · 设备/IP 摘要重复",
-      "result": "新增奖励撤销记录；如积分已到账则新增反向流水；原邀请关系、阶段记录和核查证据保留"
+      "result": "新增奖励撤销记录；如限时积分已到账则新增反向流水；原邀请关系、阶段记录和核查证据保留"
     },
     "inviteExceptionEntry": {
       "pageLevelButtons": [],
@@ -7280,40 +7021,35 @@
       "revokeObjectId": "INV-2032",
       "rowId": "INV-2032"
     },
-    "trustInitialTab": {
-      "active": "true",
-      "visibleIds": [
-        "GOV-001"
-      ]
-    },
-    "trustDisabledTab": {
-      "active": "true",
-      "visibleIds": [
-        "GOV-002",
-        "GOV-003"
-      ]
-    },
-    "trustWhitelistTab": {
-      "active": "true",
-      "visibleIds": [
-        "WHT-001",
-        "WHT-002"
+    "accountGovernanceMergedSurface": {
+      "activeView": "user-list",
+      "independentNavCount": 0,
+      "independentViewCount": 0,
+      "accountFilter": true,
+      "whitelistFilter": true,
+      "whitelistEditCount": 4,
+      "accountActionCount": 4,
+      "accountStateOptions": [
+        "全部状态",
+        "正常",
+        "删除",
+        "冻结",
+        "限制登录"
       ],
-      "states": [
-        "启用",
-        "停用"
-      ],
-      "editCount": 2,
-      "createEntryCount": 0,
-      "headerPrimaryActionCount": 0,
-      "legacyTabs": 0
-    },
-    "trustListResponsibility": {
-      "detailEntryCount": 0,
       "drawerCopyDeclared": false,
-      "whitelistEditCount": 2,
-      "accountStateActionCount": 0,
       "drawerOpen": false
+    },
+    "disabledAccountFilter": {
+      "visibleIds": [
+        "USR-1002"
+      ],
+      "result": "1 条结果"
+    },
+    "enabledWhitelistFilter": {
+      "visibleIds": [
+        "USR-1001"
+      ],
+      "result": "1 条结果"
     },
     "trustWhitelistEditContract": {
       "open": true,
@@ -7326,10 +7062,11 @@
     },
     "mangaAccountMappingConflictDetail": {
       "id": "GOV-003",
-      "scope": "社区与漫剧登录、回流发布",
+      "scope": "cross-product-login-return",
       "reason": "需要确认账号后继续",
-      "body": "GOV-003USR-1003账号状态社区与漫剧登录、回流发布停用需要确认账号后继续用户运营—",
-      "detailEntryCount": 0
+      "body": "USR-1003漫剧回流用户需要确认账号后继续限制登录停用资料待审38002026-07-13用户详情白名单设置解封",
+      "detailEntryCount": 0,
+      "enableAction": true
     },
     "roleDirectRbacSurface": {
       "headers": [
@@ -7359,7 +7096,7 @@
       "scopeField": false,
       "reviewField": false,
       "sensitiveField": false,
-      "treePages": 18,
+      "treePages": 17,
       "pointsRulesPermissionAbsent": true,
       "activityCreateAction": false,
       "primary": "保存角色"
@@ -7388,8 +7125,8 @@
       "primary": "保存权限"
     },
     "roleDirectEditResult": {
-      "pages": "内容列表、审核工作台、闪念管理、模型管理、模板配置、教程管理、展示位管理、登录弹窗配置、活动管理、公告配置、商城管理、用户列表、邀请记录、积分记录、账号治理、日志、角色管理",
-      "map": "{\"content-list\":[\"view\",\"official-publish\",\"edit\",\"offline\"],\"review-workbench\":[\"view\",\"approve\",\"return\"],\"flash-management\":[\"view\",\"edit\",\"restore\",\"offline\"],\"model-management\":[\"view\",\"edit\",\"supply\"],\"aigc-template-config\":[\"view\",\"create\",\"edit\"],\"tutorial-management\":[\"view\",\"create\",\"edit\"],\"home-slots\":[\"view\",\"create\",\"edit\",\"delivery\"],\"login-popup-config\":[\"view\",\"create\",\"edit\",\"toggle\"],\"activity-config\":[\"view\",\"edit\",\"rule\",\"reward\"],\"operation-config\":[\"view\",\"announcement-create\",\"announcement-publish\",\"announcement-revoke\"],\"store-config\":[\"view\",\"create\",\"edit\",\"exception\"],\"user-list\":[\"view\",\"detail\",\"official-create\",\"official-edit\",\"official-disable\",\"points-adjust\",\"account-disable\",\"whitelist-set\"],\"invite-records\":[\"view\",\"revoke\"],\"points-records\":[\"view\"],\"trust-lists\":[\"view\"],\"operation-log\":[\"view\"],\"role-management\":[\"view\"]}",
+      "pages": "内容列表、审核工作台、闪念管理、模型管理、模板配置、教程管理、展示位管理、登录弹窗配置、活动管理、公告配置、商城管理、用户列表、邀请记录、限时积分记录、日志、角色管理",
+      "map": "{\"content-list\":[\"view\",\"official-publish\",\"edit\",\"offline\"],\"review-workbench\":[\"view\",\"approve\",\"return\"],\"flash-management\":[\"view\",\"edit\",\"restore\",\"offline\"],\"model-management\":[\"view\",\"edit\",\"supply\"],\"aigc-template-config\":[\"view\",\"create\",\"edit\"],\"tutorial-management\":[\"view\",\"create\",\"edit\"],\"home-slots\":[\"view\",\"create\",\"edit\",\"delivery\"],\"login-popup-config\":[\"view\",\"create\",\"edit\",\"toggle\"],\"activity-config\":[\"view\",\"edit\",\"rule\",\"reward\"],\"operation-config\":[\"view\",\"announcement-create\",\"announcement-publish\",\"announcement-revoke\"],\"store-config\":[\"view\",\"create\",\"edit\",\"exception\"],\"user-list\":[\"view\",\"detail\",\"official-create\",\"official-edit\",\"points-adjust\",\"account-ban\",\"account-unban\",\"whitelist-set\"],\"invite-records\":[\"view\",\"revoke\"],\"points-records\":[\"view\"],\"operation-log\":[\"view\"],\"role-management\":[\"view\"]}",
       "feedback": "角色权限已保存并立即生效；LOG-RBAC-R-ROLE-OPS 已记录。",
       "reviewRows": 0
     },
@@ -7413,52 +7150,103 @@
         "账号状态",
         "权限变化",
         "最近登录",
-        "联系方式",
+        "账号",
         "最近操作人",
         "操作"
       ],
       "rows": 3,
       "reviewPanels": 0,
-      "contract": "后台用户只关联角色并继承角色权限，不配置组织、部门或数据范围。新增和调整直接保存；账号不可删除，停用后保留历史责任，最后一个超级管理员受保护。\n          \n            后台用户管理管理后台登录账号、角色组合和继承权限。\n            新增后台用户\n          \n          \n            后台账号治理新增、停用、回收权限都必须留痕\n            \n              \n                账号状态正常后台用户只展示脱敏联系方式和角色摘要。\n                角色调整直接保存后台用户继承所选角色权限。\n                账号停用已停用停用账号后回收危险操作权限。\n                敏感字段不展示密码、Token、Session 或完整联系方式。\n              \n            \n          \n          \n            后台用户列表\n            \n              \n                后台用户 ID昵称角色账号状态权限变化最近登录联系方式最近操作人操作\n                \n                  ADM-001运营 A超级管理员、内容运营正常新增展示位管理权限，LOG-22012026-07-13 15:46[EMAIL]管理员账号详情调整角色停用\n                  ADM-002审核员 B审核员启用无新增权限2026-07-05[EMAIL]管理员账号详情停用\n                  ADM-009临时支援临时运营支援已停用回收运营管理权限，LOG-22022026-07-12 18:20[EMAIL]管理员账号详情",
+      "contract": "后台用户只关联角色并继承角色权限，不配置组织、部门或数据范围。新增和编辑直接保存；账号不可删除，停用后保留历史责任，最后一个超级管理员受保护。\n          \n            后台用户管理管理后台登录账号、角色组合和继承权限。\n            新增后台用户\n          \n          \n            后台账号治理新增、停用、回收权限都必须留痕\n            \n              \n                账号状态正常后台用户展示账号和角色摘要。\n                角色调整直接保存后台用户继承所选角色权限。\n                账号停用已停用停用账号后回收危险操作权限。\n                敏感字段账号按权限完整展示；密码、Token 和 Session 不回显。\n              \n            \n          \n          \n            后台用户列表\n            \n              \n                后台用户 ID昵称角色账号状态权限变化最近登录账号最近操作人操作\n                \n                  ADM-001运营 A超级管理员、内容运营正常新增展示位管理权限，LOG-22012026-07-13 15:46ops@ai666.example管理员编辑停用\n                  ADM-002审核员 B审核员启用无新增权限2026-07-05review@ai666.example管理员编辑停用\n                  ADM-009临时支援临时运营支援已停用回收运营管理权限，LOG-22022026-07-12 18:20support@ai666.example管理员编辑",
       "pageTitle": "后台用户管理",
       "listTitle": "后台用户列表",
       "createLabel": "新增后台用户",
+      "editEntries": 3,
+      "readonlyEntries": 0,
+      "editLabels": [
+        "编辑",
+        "编辑",
+        "编辑"
+      ],
       "tableMinWidth": "1180px"
     },
     "adminDirectCreateDrawer": {
       "mode": "create",
       "title": "新增后台用户",
       "systemId": "system-generated",
-      "fields": 4,
+      "fields": 5,
+      "accountLabel": "账号",
+      "accountType": "email",
+      "roleTag": "DIV",
+      "roleLibrary": "antd",
+      "roleComponent": "Select",
+      "roleMode": "multiple",
+      "roleOptions": [
+        "超级管理员",
+        "社区运营",
+        "审核员"
+      ],
+      "nativeMultiple": false,
+      "passwordTypes": [
+        "password",
+        "password"
+      ],
+      "saveStatusRows": 0,
+      "validityField": false,
       "scopeField": false,
       "reasonField": false,
       "primary": "保存后台用户"
+    },
+    "adminPasswordMismatch": {
+      "feedback": "两次输入的密码不一致，请重新确认。",
+      "invalid": "true",
+      "createdRows": 0
     },
     "adminDirectCreated": {
       "state": "active",
       "cells": 9,
       "nickname": "活动运营 C",
-      "roles": "活动运营",
+      "roles": "社区运营、审核员",
+      "account": "admin-demo@ai666.example",
+      "passwordEcho": false,
       "status": "正常",
       "history": "管理员已创建，LOG-RBAC-A-ADM-AUTO-001",
-      "actions": "详情调整角色停用",
+      "actions": "编辑停用",
       "feedback": "后台用户 ADM-AUTO-001 已保存并启用；LOG-RBAC-A-ADM-AUTO-001 已记录。"
     },
     "adminDirectEditDrawer": {
       "mode": "edit",
-      "title": "调整后台用户角色",
+      "title": "编辑后台用户",
       "id": "ADM-001",
-      "fields": 2,
+      "fields": 3,
       "inheritance": "role-only",
       "checkboxes": 0,
+      "roleTag": "DIV",
+      "roleMode": "multiple",
+      "selectedRoles": [
+        "超级管理员",
+        "内容运营"
+      ],
+      "selectedTags": [
+        "超级管理员",
+        "内容运营"
+      ],
+      "nativeMultiple": false,
+      "nickname": "运营 A",
+      "account": "ops@ai666.example",
+      "state": "账号状态正常",
+      "login": "最近登录2026-07-13 15:46 · 不展示设备 ID、IP 或 Session",
+      "history": "权限历史新增展示位管理权限，LOG-2201",
+      "validityField": false,
       "scopeField": false,
       "reviewField": false,
-      "primary": "保存角色"
+      "primary": "保存修改"
     },
     "adminDirectEditResult": {
-      "roles": "超级管理员、内容运营、活动运营",
+      "roles": "超级管理员、社区运营、审核员",
+      "nickname": "运营负责人 A",
+      "account": "ops-lead@ai666.example",
       "history": "新增展示位管理权限，LOG-2201；角色已调整，LOG-RBAC-A-ADM-001",
-      "feedback": "后台用户角色已保存并立即生效；LOG-RBAC-A-ADM-001 已记录。",
+      "feedback": "后台用户资料与角色已保存并立即生效；LOG-RBAC-A-ADM-001 已记录。",
       "reviewRows": 0
     },
     "adminStopConfirmation": {
@@ -7471,7 +7259,7 @@
       "governance": "blocked",
       "status": "已停用",
       "history": "账号已停用，LOG-RBAC-STOP-ADM-AUTO-001；历史责任和权限变化保留",
-      "actions": "详情",
+      "actions": "编辑",
       "operator": "管理员",
       "lastSuperGuard": true
     },
@@ -7482,10 +7270,45 @@
       "editOrDeleteActions": 0
     },
     "operationLogBatchActions": 0,
-    "operationLogActionColumn": {
-      "sticky": true,
-      "actionHeader": "操作",
-      "detailVisible": true
+    "operationLogListOnlyContract": {
+      "headers": [
+        "日志 ID",
+        "对象",
+        "动作",
+        "操作前",
+        "操作后",
+        "操作人",
+        "原因",
+        "时间",
+        "风险等级",
+        "复核状态",
+        "来源页面"
+      ],
+      "rowCount": 19,
+      "rowCellCounts": [
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11
+      ],
+      "operationHeaders": 0,
+      "detailEntries": 0,
+      "drawerOpen": false
     },
     "operationLogOperationalFilter": {
       "visibleIds": [
@@ -7508,361 +7331,179 @@
       ],
       "result": "2 条结果"
     },
-    "operationLogSourceTraceability": {
-      "rowCount": 19,
-      "routedCount": 18,
-      "rows": {
-        "LOG-2302": {
-          "object": "gpt-image-2",
-          "sourceHref": "model-management.html?model=gpt-image-2",
-          "sourceLabel": "返回模型当前状态",
-          "sourcePolicy": ""
-        },
-        "LOG-2303": {
-          "object": "ACT-PROMPT-001",
-          "sourceHref": "activity-detail.html?id=ACT-PROMPT-001",
-          "sourceLabel": "返回活动当前状态",
-          "sourcePolicy": ""
-        },
-        "LOG-2001": {
-          "object": "BANNER-001",
-          "sourceHref": "home-slots.html?slot=BANNER-001",
-          "sourceLabel": "返回展示投放记录",
-          "sourcePolicy": ""
-        },
-        "LOG-2002": {
-          "object": "AIGC-1001",
-          "sourceHref": "content-detail.html?id=AIGC-1001",
-          "sourceLabel": "返回内容详情",
-          "sourcePolicy": ""
-        },
-        "LOG-2004": {
-          "object": "gpt-image-2",
-          "sourceHref": "model-management.html?model=gpt-image-2",
-          "sourceLabel": "返回模型详情",
-          "sourcePolicy": ""
-        },
-        "LOG-2003": {
-          "object": "AUD-0995 / PRO-2042",
-          "sourceHref": "review-detail.html?queue=submission&task=AUD-0995",
-          "sourceLabel": "返回历史投稿审核任务",
-          "sourcePolicy": ""
-        },
-        "LOG-AUD-1005-SUBMIT": {
-          "object": "AUD-1005 / AIGC-1005",
-          "sourceHref": "review-detail.html?queue=content&task=AUD-1005",
-          "sourceLabel": "返回内容审核任务",
-          "sourcePolicy": ""
-        },
-        "LOG-AUD-1003-REJECT": {
-          "object": "AUD-1003 / USR-PROFILE-1003",
-          "sourceHref": "review-detail.html?queue=profile&task=AUD-1003",
-          "sourceLabel": "返回资料审核任务",
-          "sourcePolicy": ""
-        },
-        "LOG-AUD-0998-REJECT": {
-          "object": "AUD-0998 / COM-3098 / FLA-0307",
-          "sourceHref": "review-detail.html?queue=comment&task=AUD-0998",
-          "sourceLabel": "返回评论审核任务",
-          "sourcePolicy": ""
-        },
-        "LOG-2005": {
-          "object": "ACT-PROMPT-001",
-          "sourceHref": "activity-detail.html?id=ACT-PROMPT-001",
-          "sourceLabel": "返回活动详情",
-          "sourcePolicy": ""
-        },
-        "LOG-2006": {
-          "object": "ACT-IMAGE-001 / RWD-IMAGE-1008",
-          "sourceHref": "activity-detail.html?id=ACT-IMAGE-001&tab=grants&reward=RWD-IMAGE-1008",
-          "sourceLabel": "返回活动奖励记录",
-          "sourcePolicy": ""
-        },
-        "LOG-2103": {
-          "object": "PTS-1003 / PTS-0994",
-          "sourceHref": "points-records.html?entry=PTS-1003",
-          "sourceLabel": "返回积分撤回流水",
-          "sourcePolicy": ""
-        },
-        "LOG-2104": {
-          "object": "SKU-003",
-          "sourceHref": "store-config.html?tab=items&product=SKU-003",
-          "sourceLabel": "返回商品详情",
-          "sourcePolicy": ""
-        },
-        "LOG-2105": {
-          "object": "RED-1002",
-          "sourceHref": "store-config.html?tab=exceptions&record=RED-1002",
-          "sourceLabel": "返回兑换异常记录",
-          "sourcePolicy": ""
-        },
-        "LOG-2201": {
-          "object": "ROLE-OPS",
-          "sourceHref": "role-management.html?role=ROLE-OPS",
-          "sourceLabel": "返回角色权限",
-          "sourcePolicy": ""
-        },
-        "LOG-2106": {
-          "object": "USR-1001",
-          "sourceHref": "user-detail.html?id=USR-1001",
-          "sourceLabel": "返回用户详情",
-          "sourcePolicy": ""
-        },
-        "LOG-2107": {
-          "object": "INV-2032",
-          "sourceHref": "invite-records.html?record=INV-2032",
-          "sourceLabel": "返回邀请奖励记录",
-          "sourcePolicy": ""
-        },
-        "LOG-2108": {
-          "object": "GOV-002",
-          "sourceHref": "trust-lists.html?tab=disabled&record=GOV-002",
-          "sourceLabel": "返回账号治理记录",
-          "sourcePolicy": ""
-        },
-        "LOG-2301": {
-          "object": "[TOKEN]",
-          "sourceHref": "",
-          "sourceLabel": "",
-          "sourcePolicy": "no-return-sensitive-placeholder"
-        }
-      }
-    },
-    "operationLogSinglePurpose": {
-      "pageTitle": "日志",
-      "navTitle": "日志",
-      "tabCount": 0,
-      "userResultTableCount": 0,
-      "userResultLinkCount": 0,
-      "logTableCount": 1
-    },
-    "userResultLogRoute": {
-      "open": true,
-      "logId": "LOG-AUD-1003-REJECT",
-      "before": "待审核 · 原资料继续展示",
-      "after": "未通过 · 原资料继续展示",
-      "reason": "头像不符合社区资料展示规则；用户可更换后重新提交，账号状态不变",
-      "logTableVisible": true,
-      "sourceHref": "review-detail.html?queue=profile&task=AUD-1003",
-      "sourceLabel": "返回资料审核任务"
-    },
-    "reviewLogReturnsToExactTask": {
-      "queueActive": true,
-      "pageOpen": true,
-      "taskId": "AUD-1003",
-      "object": "USR-PROFILE-1003 · USR-1003 头像与昵称变更"
-    },
-    "activityRewardLogRoute": {
-      "open": true,
-      "logId": "LOG-2006",
-      "object": "LOG-2006 · ACT-IMAGE-001 / RWD-IMAGE-1008",
-      "sourceHref": "activity-detail.html?id=ACT-IMAGE-001&tab=grants&reward=RWD-IMAGE-1008",
-      "sourceLabel": "返回活动奖励记录"
-    },
-    "logDetailDrawer": {
-      "open": true,
-      "logId": "LOG-2001",
-      "fieldCount": 5,
-      "headings": [
-        "基本信息",
-        "操作与来源",
-        "变更结果",
-        "原因",
-        "执行信息"
-      ],
-      "before": "排序 20",
-      "after": "排序 10",
-      "reason": "首页 Banner 主推活动前置",
-      "readonly": true,
-      "hasTimeline": false,
-      "hasImplementationRule": false,
-      "primaryHidden": true
-    },
-    "modelResumeLogDetail": {
-      "logId": "LOG-2302",
-      "fieldCount": 5,
-      "before": "已暂停",
-      "after": "已发布",
-      "sourceHref": "model-management.html?model=gpt-image-2",
-      "timelineCount": 0,
-      "implementationRuleCount": 0
-    },
-    "modelResumeLogTarget": {
-      "modelId": "gpt-image-2",
-      "supplyState": "published"
-    },
-    "activityResumeLogDetail": {
-      "logId": "LOG-2303",
-      "fieldCount": 5,
-      "before": "已暂停 · 停止新增参与",
-      "after": "进行中 · 当前规则 V3 重新承接新增参与",
-      "sourceHref": "activity-detail.html?id=ACT-PROMPT-001",
-      "timelineCount": 0,
-      "implementationRuleCount": 0
-    },
-    "activityResumeLogTarget": {
-      "activityId": "ACT-PROMPT-001",
-      "lifecycle": "running",
-      "version": "V3"
-    },
-    "historicalReviewLogTarget": {
-      "taskId": "AUD-0995",
-      "object": "PRO-2042 · 历史 Prompt 营销文案投稿",
-      "status": "已拒绝",
-      "readonly": true,
-      "actionable": false
-    },
-    "currentReviewTaskIndependent": {
-      "taskId": "AUD-1001",
-      "object": "PRO-2048 · 品牌短视频脚本投稿",
-      "status": "待审核",
-      "actionable": true,
-      "readonly": false
-    },
-    "rewardReviewTaskLinks": {
-      "RWD-PROMPT-1008": {
-        "reviewTaskId": "AUD-0996",
-        "href": "review-detail.html?queue=submission&task=AUD-0996"
+    "operationLogActionDictionary": [
+      {
+        "code": "model-supply-resume",
+        "label": "恢复模型供应",
+        "objectType": "model",
+        "risk": "中"
       },
-      "RWD-PROMPT-1009": {
-        "reviewTaskId": "AUD-0997",
-        "href": "review-detail.html?queue=submission&task=AUD-0997"
+      {
+        "code": "activity-participation-resume",
+        "label": "恢复活动参与",
+        "objectType": "activity",
+        "risk": "中"
+      },
+      {
+        "code": "home-slot-reorder",
+        "label": "首页 Banner 投放调序",
+        "objectType": "placement",
+        "risk": "低"
+      },
+      {
+        "code": "content-offline",
+        "label": "内容下架",
+        "objectType": "content",
+        "risk": "中"
+      },
+      {
+        "code": "model-supply-pause",
+        "label": "暂停模型供应",
+        "objectType": "model",
+        "risk": "中"
+      },
+      {
+        "code": "submission-review-reject",
+        "label": "投稿审核拒绝",
+        "objectType": "review",
+        "risk": "中"
+      },
+      {
+        "code": "content-review-submit",
+        "label": "内容送审",
+        "objectType": "review",
+        "risk": "低"
+      },
+      {
+        "code": "profile-review-reject",
+        "label": "资料审核拒绝",
+        "objectType": "review",
+        "risk": "中"
+      },
+      {
+        "code": "comment-review-reject",
+        "label": "评论审核拒绝",
+        "objectType": "review",
+        "risk": "中"
+      },
+      {
+        "code": "activity-participation-pause",
+        "label": "暂停活动参与",
+        "objectType": "activity",
+        "risk": "中"
+      },
+      {
+        "code": "activity-reward-reissue",
+        "label": "奖励补发",
+        "objectType": "reward",
+        "risk": "高"
+      },
+      {
+        "code": "points-reversal-post",
+        "label": "新增限时积分撤回流水",
+        "objectType": "points",
+        "risk": "高"
+      },
+      {
+        "code": "store-delivery-exception-review",
+        "label": "复核商品交付异常",
+        "objectType": "store",
+        "risk": "高"
+      },
+      {
+        "code": "entitlement-exception-register",
+        "label": "登记兑换异常",
+        "objectType": "entitlement",
+        "risk": "高"
+      },
+      {
+        "code": "role-permission-grant",
+        "label": "授予运营管理权限",
+        "objectType": "role",
+        "risk": "高"
+      },
+      {
+        "code": "user-account-ban",
+        "label": "封禁用户账号",
+        "objectType": "user",
+        "risk": "高"
+      },
+      {
+        "code": "invite-reward-revoke",
+        "label": "撤销邀请奖励",
+        "objectType": "invite",
+        "risk": "高"
+      },
+      {
+        "code": "governance-account-unban",
+        "label": "解封账号",
+        "objectType": "governance",
+        "risk": "高"
+      },
+      {
+        "code": "sensitive-access-block",
+        "label": "敏感字段查看拦截",
+        "objectType": "sensitive",
+        "risk": "高"
       }
-    },
-    "rewardReviewTaskRoute": {
-      "taskId": "AUD-0996",
-      "object": "PRO-2044 · 活动海报 Prompt 投稿",
-      "status": "已通过",
-      "readonly": true
-    },
-    "p0DangerousOperationLogDetail": {
-      "open": true,
-      "logId": "LOG-2108",
-      "actionSource": "停用账号 · 账号治理",
-      "sourceHref": "trust-lists.html?tab=disabled&record=GOV-002",
-      "sourceLabel": "返回账号治理记录",
-      "before": "启用",
-      "after": "停用",
-      "reason": "账号停用原因已记录，历史业务对象保持原状态",
-      "readonly": true,
-      "fieldCount": 5,
-      "primaryHidden": true
-    },
-    "accountGovernanceExactRecordRoute": {
-      "open": false,
-      "selectedTab": "true",
-      "routeTargetId": "GOV-002",
-      "scope": "全部账号能力",
-      "state": "停用",
-      "resolution": "resolved"
-    },
-    "storeFulfillmentLogRoute": {
-      "open": true,
-      "logId": "LOG-2105",
-      "object": "LOG-2105 · RED-1002",
-      "sourceHref": "store-config.html?tab=exceptions&record=RED-1002",
-      "sourceLabel": "返回兑换异常记录"
-    },
-    "storeFulfillmentExactRecordRoute": {
-      "selectedTab": true,
-      "routeTargetId": "RED-1002",
-      "actionLabels": [
-        "补发权益",
-        "返还积分"
+    ],
+    "operationLogWalkthroughActionDictionary": {
+      "title": "日志走查规则",
+      "summary": "按受控动作字典追溯后台关键操作；列表即完整留痕，不提供日志详情。",
+      "sectionLabels": [
+        "页面职责",
+        "字段与对象",
+        "动作字典（19 项）",
+        "定位与跨页",
+        "验收口径"
       ],
-      "context": "RED-1002\n                      闪创AI 体验小时卡\n                      PTS-1002-180 积分\n                      权益发放失败LOG-2105\n                      异常待处理\n                      补发权益返还积分"
+      "actionItems": [
+        "model-supply-resume｜恢复模型供应｜对象：模型｜默认风险：中",
+        "activity-participation-resume｜恢复活动参与｜对象：活动｜默认风险：中",
+        "home-slot-reorder｜首页 Banner 投放调序｜对象：展示投放｜默认风险：低",
+        "content-offline｜内容下架｜对象：内容｜默认风险：中",
+        "model-supply-pause｜暂停模型供应｜对象：模型｜默认风险：中",
+        "submission-review-reject｜投稿审核拒绝｜对象：审核｜默认风险：中",
+        "content-review-submit｜内容送审｜对象：审核｜默认风险：低",
+        "profile-review-reject｜资料审核拒绝｜对象：审核｜默认风险：中",
+        "comment-review-reject｜评论审核拒绝｜对象：审核｜默认风险：中",
+        "activity-participation-pause｜暂停活动参与｜对象：活动｜默认风险：中",
+        "activity-reward-reissue｜奖励补发｜对象：奖励｜默认风险：高",
+        "points-reversal-post｜新增限时积分撤回流水｜对象：限时积分｜默认风险：高",
+        "store-delivery-exception-review｜复核商品交付异常｜对象：商品｜默认风险：高",
+        "entitlement-exception-register｜登记兑换异常｜对象：兑换与权益｜默认风险：高",
+        "role-permission-grant｜授予运营管理权限｜对象：角色权限｜默认风险：高",
+        "user-account-ban｜封禁用户账号｜对象：用户｜默认风险：高",
+        "invite-reward-revoke｜撤销邀请奖励｜对象：邀请｜默认风险：高",
+        "governance-account-unban｜解封账号｜对象：用户账号｜默认风险：高",
+        "sensitive-access-block｜敏感字段查看拦截｜对象：敏感访问｜默认风险：高"
+      ],
+      "actionRule": "动作必须使用稳定动作码与固定中文名称，不接受自由文本。新增动作须先登记动作码、适用对象和默认风险，再允许写日志；未知动作应阻断写入。"
     },
-    "inviteRewardLogRoute": {
-      "open": true,
-      "logId": "LOG-2107",
-      "object": "LOG-2107 · INV-2032",
-      "sourceHref": "invite-records.html?record=INV-2032",
-      "sourceLabel": "返回邀请奖励记录"
+    "operationLogObjectLinks": {
+      "rowCount": 19,
+      "linkedCount": 18,
+      "displayOnlyCount": 1,
+      "hrefsMatch": true,
+      "sensitiveText": "[TOKEN]",
+      "sensitiveHasLink": false
     },
-    "inviteRewardLogExactRecord": {
-      "search": "?record=INV-2032",
-      "open": true,
-      "recordId": "INV-2032"
-    },
-    "pointsWithdrawalLogRoute": {
-      "open": true,
-      "logId": "LOG-2103",
-      "object": "LOG-2103 · PTS-1003 / PTS-0994",
-      "actionSource": "新增积分撤回流水 · 积分记录",
-      "before": "原流水 PTS-0994 · 已入账",
-      "after": "新增 PTS-1003 · 撤回流水生效",
-      "sourceHref": "points-records.html?entry=PTS-1003",
-      "sourceLabel": "返回积分撤回流水"
-    },
-    "pointsWithdrawalLogExactEntry": {
-      "search": "?entry=PTS-1003",
-      "highlighted": true,
-      "entryId": "PTS-1003",
-      "original": "PTS-0994",
+    "operationLogRowRoute": {
+      "logId": "LOG-2106",
+      "objectHref": "user-detail.html?id=USR-1001",
+      "resolution": "resolved",
       "drawerOpen": false
     },
-    "operationLogExactSourceRoutes": {
-      "slotHref": "home-slots.html?slot=BANNER-001",
-      "slot": {
-        "search": "?slot=BANNER-001",
-        "modalOpen": true,
-        "mode": "edit",
-        "slotId": "BANNER-001",
-        "routeTarget": "BANNER-001",
-        "placement": "home-banner"
-      },
-      "contentHref": "content-detail.html?id=AIGC-1001",
-      "content": {
-        "search": "?id=AIGC-1001",
-        "contentId": "AIGC-1001"
-      },
-      "modelHref": "model-management.html?model=gpt-image-2",
-      "model": {
-        "search": "?model=gpt-image-2",
-        "drawerOpen": true,
-        "mode": "edit",
-        "modelId": "gpt-image-2",
-        "routeTarget": "gpt-image-2"
-      },
-      "reviewHref": "review-detail.html?queue=submission&task=AUD-0995",
-      "review": {
-        "search": "?queue=submission&task=AUD-0995",
-        "pageOpen": true,
-        "taskId": "AUD-0995",
-        "queueActive": true
-      },
-      "activityHref": "activity-detail.html?id=ACT-PROMPT-001",
-      "activity": {
-        "search": "?id=ACT-PROMPT-001",
-        "activityId": "ACT-PROMPT-001"
-      },
-      "storeHref": "store-config.html?tab=items&product=SKU-003",
-      "store": {
-        "search": "?tab=items&product=SKU-003",
-        "drawerOpen": true,
-        "productId": "SKU-003",
-        "routeTarget": "SKU-003",
-        "itemsActive": true
-      },
-      "roleHref": "role-management.html?role=ROLE-OPS",
-      "role": {
-        "search": "?role=ROLE-OPS",
-        "drawerOpen": true,
-        "mode": "edit",
-        "roleId": "ROLE-OPS",
-        "routeTarget": "ROLE-OPS"
-      },
-      "userHref": "user-detail.html?id=USR-1001",
-      "user": {
-        "search": "?id=USR-1001",
-        "userId": "USR-1001",
-        "contextState": "registered"
-      }
+    "operationLogObjectDestination": {
+      "search": "?id=USR-1001",
+      "userId": "USR-1001",
+      "contextState": "registered"
     },
-    "sensitiveOperationLogSourceException": {
+    "sensitiveOperationLogDisplayOnly": {
       "logId": "LOG-2301",
-      "sourceLinks": 0,
-      "blockedCopy": "敏感对象不提供来源回跳。"
+      "objectText": "[TOKEN]",
+      "objectLinks": 0,
+      "drawerOpen": false
     },
     "contentLifecycleAndVersion": {
       "lifecycle": "published",
@@ -8094,10 +7735,10 @@
       },
       "governance": {
         "routeResolution": "missing",
-        "objectType": "账号治理记录",
+        "objectType": "用户账号",
         "objectId": "GOV-UNKNOWN-999",
         "feedbackVisible": true,
-        "feedbackText": "未找到账号治理记录 GOV-UNKNOWN-999。当前停留在账号治理列表，没有打开、选中或继承其他对象；请检查来源链接，或返回列表重新选择。",
+        "feedbackText": "未找到用户账号 GOV-UNKNOWN-999。当前停留在用户列表，没有打开、选中或继承其他对象；请检查来源链接，或返回列表重新选择。",
         "openLayerCount": 0,
         "routeTargetCount": 0,
         "activeActivityTab": "",
@@ -8116,10 +7757,10 @@
       },
       "points": {
         "routeResolution": "missing",
-        "objectType": "积分流水",
+        "objectType": "限时积分流水",
         "objectId": "PTS-UNKNOWN-999",
         "feedbackVisible": true,
-        "feedbackText": "未找到积分流水 PTS-UNKNOWN-999。当前停留在积分流水列表，没有打开、选中或继承其他对象；请检查来源链接，或返回列表重新选择。",
+        "feedbackText": "未找到限时积分流水 PTS-UNKNOWN-999。当前停留在限时积分流水列表，没有打开、选中或继承其他对象；请检查来源链接，或返回列表重新选择。",
         "openLayerCount": 0,
         "routeTargetCount": 0,
         "activeActivityTab": "",
@@ -8172,9 +7813,13 @@
     },
     "governanceRouteUsesRecordAsCanonicalContext": {
       "resolution": "resolved",
-      "activeTab": "disabled",
+      "activeView": "user-list",
+      "accountState": "冻结",
       "drawerOpen": false,
-      "recordId": "GOV-002"
+      "recordId": "GOV-002",
+      "visibleIds": [
+        "USR-1002"
+      ]
     },
     "storeRouteUsesExceptionRecordPrecedence": {
       "resolution": "resolved",
@@ -8391,12 +8036,16 @@
         {
           "expectedLabel": "用户详情",
           "expectedContract": "task-page",
-          "count": 2,
+          "count": 4,
           "labels": [
+            "用户详情",
+            "用户详情",
             "用户详情",
             "用户详情"
           ],
           "contracts": [
+            "task-page",
+            "task-page",
             "task-page",
             "task-page"
           ],
@@ -8415,56 +8064,6 @@
           "contracts": [
             "independent-readonly",
             "independent-readonly"
-          ],
-          "unnamed": 0
-        }
-      ],
-      "operation-log": [
-        {
-          "expectedLabel": "日志详情",
-          "expectedContract": "readonly-log",
-          "count": 19,
-          "labels": [
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情",
-            "日志详情"
-          ],
-          "contracts": [
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log",
-            "readonly-log"
           ],
           "unnamed": 0
         }
@@ -8489,29 +8088,17 @@
       ],
       "admin-users": [
         {
-          "expectedLabel": "账号详情",
-          "expectedContract": "independent-readonly",
+          "expectedLabel": "编辑",
+          "expectedContract": "direct-save-edit",
           "count": 3,
           "labels": [
-            "账号详情",
-            "账号详情",
-            "账号详情"
+            "编辑",
+            "编辑",
+            "编辑"
           ],
           "contracts": [
-            "independent-readonly",
-            "independent-readonly",
-            "independent-readonly"
-          ],
-          "unnamed": 0
-        },
-        {
-          "expectedLabel": "调整角色",
-          "expectedContract": "direct-save-edit",
-          "count": 1,
-          "labels": [
-            "调整角色"
-          ],
-          "contracts": [
+            "direct-save-edit",
+            "direct-save-edit",
             "direct-save-edit"
           ],
           "unnamed": 0
@@ -8544,7 +8131,7 @@
       ]
     },
     "formControlAccessibleNames": {
-      "total": 70,
+      "total": 65,
       "unnamed": 0
     }
   },

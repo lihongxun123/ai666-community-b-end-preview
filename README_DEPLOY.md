@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-07-22T07:28:52.404Z
+生成时间：2026-07-31T16:00:24.033Z
 
 ## 用途
 
@@ -45,8 +45,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 用户列表: user-list.html
 - 用户详情: user-detail.html
 - 邀请记录: invite-records.html
-- 积分记录: points-records.html
-- 账号治理: trust-lists.html
+- 限时积分记录: points-records.html
 - 日志: operation-log.html
 - 角色管理: role-management.html
 - 后台用户管理: admin-users.html
