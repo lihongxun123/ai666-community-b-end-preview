@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-07-31T16:00:24.033Z
+生成时间：2026-08-05T14:55:57.343Z
 
 ## 用途
 
@@ -30,24 +30,30 @@ npm.cmd run validate:community-b-end:public-preview
 - 内容列表: index.html
 - 内容详情: content-detail.html
 - 审核工作台: review-workbench.html
-- 审核任务: review-detail.html
 - 闪念管理: flash-management.html
 - 闪念详情: flash-detail.html
-- 模型管理: model-management.html
+- 模型系列: model-series.html
+- 模型配置: model-mapping.html
+- 生成记录: generation-records.html
+- 模型详情: model-runtime-detail.html
+- 模型协议配置: model-protocol-config.html
 - 模板配置: aigc-template-config.html
 - 教程管理: tutorial-management.html
+- 教程预览: tutorial-preview.html
 - 展示位管理: home-slots.html
 - 登录弹窗配置: login-popup-config.html
+- 运营配置: operation-settings.html
 - 活动管理: activity-config.html
 - 活动详情: activity-detail.html
 - 公告配置: operation-config.html
 - 商城管理: store-config.html
 - 用户列表: user-list.html
-- 用户详情: user-detail.html
 - 邀请记录: invite-records.html
-- 限时积分记录: points-records.html
+- 积分记录: points-records.html
+- 会员等级: member-levels.html
 - 日志: operation-log.html
 - 角色管理: role-management.html
+- 权限管理: permission-management.html
 - 后台用户管理: admin-users.html
 
 ## 边界

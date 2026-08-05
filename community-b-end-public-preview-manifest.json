@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-31T16:00:24.033Z",
+  "generatedAt": "2026-08-05T14:55:57.343Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 22,
+  "pageCount": 28,
   "pages": [
     {
       "slug": "content-list",
@@ -26,12 +26,6 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/review-workbench.html"
     },
     {
-      "slug": "review-detail",
-      "label": "审核任务",
-      "path": "review-detail.html",
-      "sourcePath": "outputs/community-b-end-antdesign-prototype/review-detail.html"
-    },
-    {
       "slug": "flash-management",
       "label": "闪念管理",
       "path": "flash-management.html",
@@ -44,10 +38,34 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/flash-detail.html"
     },
     {
-      "slug": "model-management",
-      "label": "模型管理",
-      "path": "model-management.html",
-      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-management.html"
+      "slug": "model-series",
+      "label": "模型系列",
+      "path": "model-series.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-series.html"
+    },
+    {
+      "slug": "model-mapping",
+      "label": "模型配置",
+      "path": "model-mapping.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-mapping.html"
+    },
+    {
+      "slug": "generation-records",
+      "label": "生成记录",
+      "path": "generation-records.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/generation-records.html"
+    },
+    {
+      "slug": "model-runtime-detail",
+      "label": "模型详情",
+      "path": "model-runtime-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-runtime-detail.html"
+    },
+    {
+      "slug": "model-protocol-config",
+      "label": "模型协议配置",
+      "path": "model-protocol-config.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/model-protocol-config.html"
     },
     {
       "slug": "aigc-template-config",
@@ -62,6 +80,12 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/tutorial-management.html"
     },
     {
+      "slug": "tutorial-preview",
+      "label": "教程预览",
+      "path": "tutorial-preview.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/tutorial-preview.html"
+    },
+    {
       "slug": "home-slots",
       "label": "展示位管理",
       "path": "home-slots.html",
@@ -72,6 +96,12 @@
       "label": "登录弹窗配置",
       "path": "login-popup-config.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/login-popup-config.html"
+    },
+    {
+      "slug": "operation-settings",
+      "label": "运营配置",
+      "path": "operation-settings.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/operation-settings.html"
     },
     {
       "slug": "activity-config",
@@ -104,12 +134,6 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/user-list.html"
     },
     {
-      "slug": "user-detail",
-      "label": "用户详情",
-      "path": "user-detail.html",
-      "sourcePath": "outputs/community-b-end-antdesign-prototype/user-detail.html"
-    },
-    {
       "slug": "invite-records",
       "label": "邀请记录",
       "path": "invite-records.html",
@@ -117,9 +141,15 @@
     },
     {
       "slug": "points-records",
-      "label": "限时积分记录",
+      "label": "积分记录",
       "path": "points-records.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/points-records.html"
+    },
+    {
+      "slug": "member-levels",
+      "label": "会员等级",
+      "path": "member-levels.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/member-levels.html"
     },
     {
       "slug": "operation-log",
@@ -132,6 +162,12 @@
       "label": "角色管理",
       "path": "role-management.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/role-management.html"
+    },
+    {
+      "slug": "permission-management",
+      "label": "权限管理",
+      "path": "permission-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/permission-management.html"
     },
     {
       "slug": "admin-users",
@@ -147,6 +183,10 @@
     }
   ],
   "assets": [
+    "assets/icons/arrow-down-s-line.svg",
+    "assets/icons/arrow-left-s-line.svg",
+    "assets/icons/arrow-right-s-line.svg",
+    "assets/icons/close-circle-line.svg",
     "assets/image_assets/1.png",
     "assets/image_assets/11.png",
     "assets/image_assets/12.png",

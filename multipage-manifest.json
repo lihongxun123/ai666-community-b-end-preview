@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T15:57:08.083Z",
+  "generatedAt": "2026-08-05T14:54:02.805Z",
   "pages": [
     {
       "view": "content-list",
@@ -17,11 +17,6 @@
       "label": "审核工作台"
     },
     {
-      "view": "review-detail",
-      "file": "review-detail.html",
-      "label": "审核任务"
-    },
-    {
       "view": "flash-management",
       "file": "flash-management.html",
       "label": "闪念管理"
@@ -32,9 +27,29 @@
       "label": "闪念详情"
     },
     {
-      "view": "model-management",
-      "file": "model-management.html",
-      "label": "模型管理"
+      "view": "model-series",
+      "file": "model-series.html",
+      "label": "模型系列"
+    },
+    {
+      "view": "model-mapping",
+      "file": "model-mapping.html",
+      "label": "模型配置"
+    },
+    {
+      "view": "generation-records",
+      "file": "generation-records.html",
+      "label": "生成记录"
+    },
+    {
+      "view": "model-runtime-detail",
+      "file": "model-runtime-detail.html",
+      "label": "模型详情"
+    },
+    {
+      "view": "model-protocol-config",
+      "file": "model-protocol-config.html",
+      "label": "模型协议配置"
     },
     {
       "view": "aigc-template-config",
@@ -47,6 +62,11 @@
       "label": "教程管理"
     },
     {
+      "view": "tutorial-preview",
+      "file": "tutorial-preview.html",
+      "label": "教程预览"
+    },
+    {
       "view": "home-slots",
       "file": "home-slots.html",
       "label": "展示位管理"
@@ -55,6 +75,11 @@
       "view": "login-popup-config",
       "file": "login-popup-config.html",
       "label": "登录弹窗配置"
+    },
+    {
+      "view": "operation-settings",
+      "file": "operation-settings.html",
+      "label": "运营配置"
     },
     {
       "view": "activity-config",
@@ -82,11 +107,6 @@
       "label": "用户列表"
     },
     {
-      "view": "user-detail",
-      "file": "user-detail.html",
-      "label": "用户详情"
-    },
-    {
       "view": "invite-records",
       "file": "invite-records.html",
       "label": "邀请记录"
@@ -94,7 +114,12 @@
     {
       "view": "points-records",
       "file": "points-records.html",
-      "label": "限时积分记录"
+      "label": "积分记录"
+    },
+    {
+      "view": "member-levels",
+      "file": "member-levels.html",
+      "label": "会员等级"
     },
     {
       "view": "operation-log",
@@ -105,6 +130,11 @@
       "view": "role-management",
       "file": "role-management.html",
       "label": "角色管理"
+    },
+    {
+      "view": "permission-management",
+      "file": "permission-management.html",
+      "label": "权限管理"
     },
     {
       "view": "admin-users",

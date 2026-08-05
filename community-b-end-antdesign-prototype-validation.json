@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T15:57:09.081Z",
+  "generatedAt": "2026-08-05T14:54:04.435Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -125,10 +125,11 @@
     "cFacingAssetUploadsAreOperational": true,
     "loginPopupConfigComplete": true,
     "loginPopupSettingsSaveContractComplete": true,
-    "activityTaskPointsLoopComplete": true,
-    "activityChangeRecordSurfaceRemoved": true,
-    "activityPointsConfigurationEntryIsDirectAndLifecycleAware": true,
-    "activityEditOwnsTimeAndPointsEditorDoesNot": true,
+    "activityConfigurationAndPointsLoopComplete": true,
+    "activityChangeRecordSurfaceRestored": true,
+    "activityRuleConfigurationEntryIsDirectAndLifecycleAware": true,
+    "inviteActivityTaskWorkbenchMatchesCurrentAdmin": true,
+    "activityDisplayAndCoreRuleOwnershipSeparated": true,
     "activityCreationIsDevelopmentOwned": true,
     "activityLifecycleVersionBindingComplete": true,
     "storeConfigAndDeferredReviewComplete": true,
@@ -141,16 +142,16 @@
     "communityProductBusinessContractsComplete": true,
     "placementUsesDeliveryNotSlotCreation": true,
     "activityAndStoreWorkspacesSeparated": true,
-    "activityDetailKeepsIdentityIdInOverview": true,
+    "activityDetailKeepsIdentityAndBaseConfiguration": true,
     "activityRecordRelationMetaRemoved": true,
     "activityRecordStatusDictionaryComplete": true,
     "globalStatusDictionaryHelpComplete": true,
-    "redundantVersionMetadataRemovedFromSummarySurfaces": true,
+    "activityVersionMetadataHasSingleConfigurationSource": true,
     "logsRemainImmutableAndSensitiveAccessTracked": true,
     "operationLogHasAlignedSingleEntry": true,
     "inviteExceptionProcessingIsObjectScoped": true,
-    "globalDescriptiveSurfaceClutterRemoved": true,
-    "globalOverdesignClutterRemoved": true,
+    "globalDescriptiveSurfaceClutterControlled": true,
+    "globalOperationalDensityPreserved": true,
     "operationLogIsSinglePurposeAndUserResultEventsAreRemoved": true,
     "reviewLifecycleStatesComplete": true,
     "roleAndAdminPermissionsUsePageActionTrees": true,
@@ -182,6 +183,35 @@
     "formalCleanupRulesRecorded": true,
     "globalFormalChromeCleaned": true,
     "globalChromeHasNoFalseButtons": true,
+    "aigcRealPageFamilyComplete": true,
+    "aigcSeriesContractComplete": true,
+    "aigcModelMappingContractComplete": true,
+    "aigcProtocolContractComplete": true,
+    "aigcRuntimeDetailContractComplete": true,
+    "aigcGenerationContractComplete": true,
+    "aigcSensitiveFieldsMasked": true,
+    "b03RealOperationPageFamilyComplete": true,
+    "b03DisplaySlotsContractComplete": true,
+    "b03LoginPopupContractComplete": true,
+    "b03OperationSettingsContractComplete": true,
+    "b03ActivityContractComplete": true,
+    "b03AnnouncementContractComplete": true,
+    "b03StoreContractComplete": true,
+    "b03InteractionsWired": true,
+    "b04RealUserPageFamilyComplete": true,
+    "b04UserListContractComplete": true,
+    "b04UserActionsMatchCodeAndApifox": true,
+    "b04InviteContractComplete": true,
+    "b04PointsContractComplete": true,
+    "b04MemberLevelContractComplete": true,
+    "b04InteractionsWired": true,
+    "b05RealSystemPageFamilyComplete": true,
+    "b05OperationLogContractComplete": true,
+    "b05OperationLogSensitiveFieldsMasked": true,
+    "b05RoleContractComplete": true,
+    "b05PermissionContractComplete": true,
+    "b05AdminContractComplete": true,
+    "b05InteractionsWired": true,
     "noFinalApiProtocol": true,
     "noDatabaseDesign": true,
     "noRealProductionAutomation": true,
@@ -209,12 +239,6 @@
       "file": "flash-management.html"
     },
     {
-      "view": "model-management",
-      "group": "内容管理",
-      "label": "模型管理",
-      "file": "model-management.html"
-    },
-    {
       "view": "aigc-template-config",
       "group": "内容管理",
       "label": "模板配置",
@@ -227,6 +251,24 @@
       "file": "tutorial-management.html"
     },
     {
+      "view": "model-series",
+      "group": "AIGC管理",
+      "label": "模型系列",
+      "file": "model-series.html"
+    },
+    {
+      "view": "model-mapping",
+      "group": "AIGC管理",
+      "label": "模型配置",
+      "file": "model-mapping.html"
+    },
+    {
+      "view": "generation-records",
+      "group": "AIGC管理",
+      "label": "生成记录",
+      "file": "generation-records.html"
+    },
+    {
       "view": "home-slots",
       "group": "运营管理",
       "label": "展示位管理",
@@ -237,6 +279,12 @@
       "group": "运营管理",
       "label": "登录弹窗配置",
       "file": "login-popup-config.html"
+    },
+    {
+      "view": "operation-settings",
+      "group": "运营管理",
+      "label": "运营配置",
+      "file": "operation-settings.html"
     },
     {
       "view": "activity-config",
@@ -271,8 +319,14 @@
     {
       "view": "points-records",
       "group": "用户管理",
-      "label": "限时积分记录",
+      "label": "积分记录",
       "file": "points-records.html"
+    },
+    {
+      "view": "member-levels",
+      "group": "用户管理",
+      "label": "会员等级",
+      "file": "member-levels.html"
     },
     {
       "view": "operation-log",
@@ -285,6 +339,12 @@
       "group": "系统管理",
       "label": "角色管理",
       "file": "role-management.html"
+    },
+    {
+      "view": "permission-management",
+      "group": "系统管理",
+      "label": "权限管理",
+      "file": "permission-management.html"
     },
     {
       "view": "admin-users",
@@ -313,12 +373,6 @@
       "file": "flash-management.html"
     },
     {
-      "view": "model-management",
-      "group": "内容管理",
-      "label": "模型管理",
-      "file": "model-management.html"
-    },
-    {
       "view": "aigc-template-config",
       "group": "内容管理",
       "label": "模板配置",
@@ -331,6 +385,24 @@
       "file": "tutorial-management.html"
     },
     {
+      "view": "model-series",
+      "group": "AIGC管理",
+      "label": "模型系列",
+      "file": "model-series.html"
+    },
+    {
+      "view": "model-mapping",
+      "group": "AIGC管理",
+      "label": "模型配置",
+      "file": "model-mapping.html"
+    },
+    {
+      "view": "generation-records",
+      "group": "AIGC管理",
+      "label": "生成记录",
+      "file": "generation-records.html"
+    },
+    {
       "view": "home-slots",
       "group": "运营管理",
       "label": "展示位管理",
@@ -341,6 +413,12 @@
       "group": "运营管理",
       "label": "登录弹窗配置",
       "file": "login-popup-config.html"
+    },
+    {
+      "view": "operation-settings",
+      "group": "运营管理",
+      "label": "运营配置",
+      "file": "operation-settings.html"
     },
     {
       "view": "activity-config",
@@ -375,8 +453,14 @@
     {
       "view": "points-records",
       "group": "用户管理",
-      "label": "限时积分记录",
+      "label": "积分记录",
       "file": "points-records.html"
+    },
+    {
+      "view": "member-levels",
+      "group": "用户管理",
+      "label": "会员等级",
+      "file": "member-levels.html"
     },
     {
       "view": "operation-log",
@@ -391,6 +475,12 @@
       "file": "role-management.html"
     },
     {
+      "view": "permission-management",
+      "group": "系统管理",
+      "label": "权限管理",
+      "file": "permission-management.html"
+    },
+    {
       "view": "admin-users",
       "group": "系统管理",
       "label": "后台用户管理",
@@ -403,10 +493,10 @@
       "file": "content-detail.html"
     },
     {
-      "view": "review-detail",
+      "view": "tutorial-preview",
       "group": "内容管理",
-      "label": "审核任务",
-      "file": "review-detail.html"
+      "label": "教程预览",
+      "file": "tutorial-preview.html"
     },
     {
       "view": "flash-detail",
@@ -421,35 +511,47 @@
       "file": "activity-detail.html"
     },
     {
-      "view": "user-detail",
-      "group": "用户管理",
-      "label": "用户详情",
-      "file": "user-detail.html"
+      "view": "model-runtime-detail",
+      "group": "AIGC管理",
+      "label": "模型详情",
+      "file": "model-runtime-detail.html"
+    },
+    {
+      "view": "model-protocol-config",
+      "group": "AIGC管理",
+      "label": "模型协议配置",
+      "file": "model-protocol-config.html"
     }
   ],
   "generatedFiles": [
     "outputs/community-b-end-antdesign-prototype/index.html",
     "outputs/community-b-end-antdesign-prototype/review-workbench.html",
     "outputs/community-b-end-antdesign-prototype/flash-management.html",
-    "outputs/community-b-end-antdesign-prototype/model-management.html",
     "outputs/community-b-end-antdesign-prototype/aigc-template-config.html",
     "outputs/community-b-end-antdesign-prototype/tutorial-management.html",
+    "outputs/community-b-end-antdesign-prototype/model-series.html",
+    "outputs/community-b-end-antdesign-prototype/model-mapping.html",
+    "outputs/community-b-end-antdesign-prototype/generation-records.html",
     "outputs/community-b-end-antdesign-prototype/home-slots.html",
     "outputs/community-b-end-antdesign-prototype/login-popup-config.html",
+    "outputs/community-b-end-antdesign-prototype/operation-settings.html",
     "outputs/community-b-end-antdesign-prototype/activity-config.html",
     "outputs/community-b-end-antdesign-prototype/operation-config.html",
     "outputs/community-b-end-antdesign-prototype/store-config.html",
     "outputs/community-b-end-antdesign-prototype/user-list.html",
     "outputs/community-b-end-antdesign-prototype/invite-records.html",
     "outputs/community-b-end-antdesign-prototype/points-records.html",
+    "outputs/community-b-end-antdesign-prototype/member-levels.html",
     "outputs/community-b-end-antdesign-prototype/operation-log.html",
     "outputs/community-b-end-antdesign-prototype/role-management.html",
+    "outputs/community-b-end-antdesign-prototype/permission-management.html",
     "outputs/community-b-end-antdesign-prototype/admin-users.html",
     "outputs/community-b-end-antdesign-prototype/content-detail.html",
-    "outputs/community-b-end-antdesign-prototype/review-detail.html",
+    "outputs/community-b-end-antdesign-prototype/tutorial-preview.html",
     "outputs/community-b-end-antdesign-prototype/flash-detail.html",
     "outputs/community-b-end-antdesign-prototype/activity-detail.html",
-    "outputs/community-b-end-antdesign-prototype/user-detail.html"
+    "outputs/community-b-end-antdesign-prototype/model-runtime-detail.html",
+    "outputs/community-b-end-antdesign-prototype/model-protocol-config.html"
   ],
   "formalCEndPages": [
     "index.html",

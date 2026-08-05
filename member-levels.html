@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>AI666 后台 - 公告配置</title>
+  <title>AI666 后台 - 会员等级</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -4286,7 +4286,7 @@
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="operation-settings.html" data-nav="operation-settings" data-page-link="operation-settings.html">运营配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn is-active" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
+          <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -4297,7 +4297,7 @@
           <a class="nav-btn" href="user-list.html" data-nav="user-list" data-page-link="user-list.html">用户列表</a>
           <a class="nav-btn" href="invite-records.html" data-nav="invite-records" data-page-link="invite-records.html">邀请记录</a>
           <a class="nav-btn" href="points-records.html" data-nav="points-records" data-page-link="points-records.html">积分记录</a>
-          <a class="nav-btn" href="member-levels.html" data-nav="member-levels" data-page-link="member-levels.html">会员等级</a>
+          <a class="nav-btn is-active" href="member-levels.html" data-nav="member-levels" data-page-link="member-levels.html">会员等级</a>
         </div>
       </section>
 
@@ -4315,7 +4315,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">公告配置</h1>
+          <h1 class="top-title" id="globalTitle">会员等级</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -4323,18 +4323,16 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="operation-config" data-page-contract="operation-config" data-b03-page="announcements" data-real-route="/operation/announcements" data-announcement-body-format="markdown">
-          <div class="contract-panel" data-b03-contract="announcements">真实公告页复用 NoticIndex：状态筛选、创建/编辑 Drawer、详情 Modal、未发布上架/删除、已发布下架。</div>
-          <div class="page-head"><div class="page-title"><h2>公告配置</h2></div><button class="btn primary" type="button" data-b03-announcement-create>创建公告</button></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">筛选</div><div class="filter-actions"><button class="btn primary" type="button" data-b03-announcement-search>搜索</button><button class="btn" type="button" data-b03-announcement-reset>重置</button></div></div><div class="panel-body"><div class="filter-grid cols-4"><div class="field"><label>状态</label><select class="select" data-b03-announcement-status><option value="">全部</option><option value="0">未发布</option><option value="1">已上架</option><option value="2">已下架</option></select></div></div></div></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">公告列表</div><span class="muted small" data-b03-announcement-result>3 条结果</span></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="announcements" data-antd-component="ModTable"><thead><tr><th>公告 ID</th><th>标题</th><th>目标人群</th><th>状态</th><th>阅读数</th><th>创建人</th><th>发布时间</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
-            <tr data-b03-announcement-row data-id="101" data-status="1" data-title="社区创作者公约更新" data-content="# 社区创作者公约更新\n\n请在发布前了解最新内容规范。" data-created-by="运营 A" data-published="2026-08-01 09:00" data-updated="2026-08-01 09:00"><td class="mono">101</td><td>社区创作者公约更新</td><td>全部注册用户</td><td><span class="tag success">已上架</span></td><td>128</td><td>运营 A</td><td>2026-08-01 09:00</td><td>2026-08-01 09:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link danger-link" data-b03-announcement-offline>下架</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="102" data-status="0" data-title="八月活动预告" data-content="# 八月活动预告\n\n活动即将开始。" data-created-by="运营 B" data-published="" data-updated="2026-08-02 10:00"><td class="mono">102</td><td>八月活动预告</td><td>全部注册用户</td><td><span class="tag gray">未发布</span></td><td>0</td><td>运营 B</td><td>—</td><td>2026-08-02 10:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link" data-b03-announcement-edit>编辑</button><button class="btn link" data-b03-announcement-publish>上架</button><button class="btn link danger-link" data-b03-announcement-delete>删除</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="103" data-status="2" data-title="七月活动结束通知" data-content="# 七月活动结束通知\n\n感谢参与。" data-created-by="运营 A" data-published="2026-07-31 20:00" data-updated="2026-08-01 12:00"><td class="mono">103</td><td>七月活动结束通知</td><td>全部注册用户</td><td><span class="tag warning">已下架</span></td><td>356</td><td>运营 A</td><td>2026-07-31 20:00</td><td>2026-08-01 12:00</td><td><button class="btn link" data-b03-announcement-view>查看</button></td></tr>
-            <tr class="table-empty-row" data-b03-announcement-empty hidden><td colspan="9">暂无公告</td></tr>
-          </tbody></table></div></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-editor" hidden><section class="drawer" data-b03-drawer="announcement-editor" data-antd-component="Drawer"><header><div><h3 data-b03-announcement-editor-title>创建公告</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-editor">×</button></header><div class="drawer-body"><div class="form-grid"><div class="field span-2"><label>标题</label><input class="input" data-b03-announcement-form="title"></div><div class="field span-2"><label>公告正文（Markdown）</label><textarea class="textarea b03-markdown-editor" data-b03-announcement-form="content"></textarea></div></div><div class="alert error" data-b03-announcement-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-editor">取消</button><button class="btn primary" type="button" data-b03-announcement-save>保存</button></footer></section></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-detail" hidden><section class="modal wide" data-b03-modal="announcement-detail" data-antd-component="Modal"><header><div><h3>公告详情</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-detail">×</button></header><div class="modal-body"><dl class="description-grid" data-b03-announcement-detail-meta></dl><section class="b03-markdown-preview"><h3>公告正文</h3><pre data-b03-announcement-detail-content></pre></section></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-detail">关闭</button></footer></section></div>
+<section class="view is-active" data-view="member-levels" data-page-contract="member-levels" data-b04-page="member-levels" data-real-route="/user/member-levels">
+          <div class="contract-panel" data-b04-contract="member-levels">对齐真实会员等级页：启用等级按 sort 排序，禁用等级在后；拖拽卡片保存启用等级顺序。当前真实页面未开放“新增会员等级”入口，只允许编辑成长值、签到奖励积分、奖励有效天数和启用状态。</div>
+          <div class="page-head"><div class="page-title"><h2>会员等级</h2></div></div>
+          <div class="panel"><div class="panel-body"><p>会员等级列表，拖拽排序</p><p>编辑设置会员等级信息</p><p>禁用会员等级将无法使用，不参与排序</p></div></div>
+          <div class="panel"><div class="panel-head"><div class="panel-title">会员等级列表</div><span class="muted small" data-b04-member-feedback>拖动卡片调整顺序</span></div><div class="panel-body"><div class="b04-member-grid" data-b04-member-grid>
+            <article class="b04-member-card" draggable="true" data-b04-member-card data-id="1" data-name="vip1" data-growth="0" data-points="5" data-expire="30" data-enabled="true" data-antd-component="Card"><button class="btn link b04-member-edit" type="button" data-b04-member-edit aria-label="编辑 vip1">编辑</button><h3>VIP 1</h3><p>升级需要成长值 0</p><p>签到奖励积分 5 · 30 天有效</p><span class="tag success b04-member-state" data-b04-member-state>启用</span></article>
+            <article class="b04-member-card" draggable="true" data-b04-member-card data-id="2" data-name="vip2" data-growth="500" data-points="8" data-expire="30" data-enabled="true" data-antd-component="Card"><button class="btn link b04-member-edit" type="button" data-b04-member-edit aria-label="编辑 vip2">编辑</button><h3>VIP 2</h3><p>升级需要成长值 500</p><p>签到奖励积分 8 · 30 天有效</p><span class="tag success b04-member-state" data-b04-member-state>启用</span></article>
+            <article class="b04-member-card" draggable="true" data-b04-member-card data-id="3" data-name="vip3" data-growth="2000" data-points="12" data-expire="60" data-enabled="false" data-antd-component="Card"><button class="btn link b04-member-edit" type="button" data-b04-member-edit aria-label="编辑 vip3">编辑</button><h3>VIP 3</h3><p>升级需要成长值 2,000</p><p>签到奖励积分 12 · 60 天有效</p><span class="tag gray b04-member-state" data-b04-member-state>停用</span></article>
+          </div></div></div>
+          <div class="modal-backdrop" data-b04-layer="member-edit" hidden><section class="modal" data-antd-component="Modal"><header><div><h3>编辑会员等级</h3></div><button class="modal-close" type="button" data-b04-close="member-edit">×</button></header><div class="modal-body"><div class="form-grid"><div class="field span-2"><label>等级名称</label><input class="input" disabled data-b04-member-field="name"></div><div class="field"><label>成长值</label><input class="input" type="number" min="0" data-b04-member-field="growth"></div><div class="field"><label>签到奖励积分</label><input class="input" type="number" min="0" step="1" data-b04-member-field="points"></div><div class="field"><label>有效天数</label><input class="input" type="number" min="1" step="1" data-b04-member-field="expire"></div><div class="field"><label>是否启用</label><label class="switch-line"><input type="checkbox" data-b04-member-field="enabled" data-antd-component="Switch"> <span data-b04-member-enabled-label>启用</span></label></div></div><div class="alert error" data-b04-member-error hidden></div></div><footer><button class="btn" type="button" data-b04-close="member-edit">取消</button><button class="btn primary" type="button" data-b04-member-save>保存</button></footer></section></div>
         </section>
       </main>
     </div>

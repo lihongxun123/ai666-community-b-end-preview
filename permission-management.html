@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>AI666 后台 - 公告配置</title>
+  <title>AI666 后台 - 权限管理</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -4286,7 +4286,7 @@
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="operation-settings.html" data-nav="operation-settings" data-page-link="operation-settings.html">运营配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn is-active" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
+          <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -4306,7 +4306,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="operation-log.html" data-nav="operation-log" data-page-link="operation-log.html">日志</a>
           <a class="nav-btn" href="role-management.html" data-nav="role-management" data-page-link="role-management.html">角色管理</a>
-          <a class="nav-btn" href="permission-management.html" data-nav="permission-management" data-page-link="permission-management.html">权限管理</a>
+          <a class="nav-btn is-active" href="permission-management.html" data-nav="permission-management" data-page-link="permission-management.html">权限管理</a>
           <a class="nav-btn" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
         </div>
       </section>
@@ -4315,7 +4315,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">公告配置</h1>
+          <h1 class="top-title" id="globalTitle">权限管理</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -4323,18 +4323,28 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="operation-config" data-page-contract="operation-config" data-b03-page="announcements" data-real-route="/operation/announcements" data-announcement-body-format="markdown">
-          <div class="contract-panel" data-b03-contract="announcements">真实公告页复用 NoticIndex：状态筛选、创建/编辑 Drawer、详情 Modal、未发布上架/删除、已发布下架。</div>
-          <div class="page-head"><div class="page-title"><h2>公告配置</h2></div><button class="btn primary" type="button" data-b03-announcement-create>创建公告</button></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">筛选</div><div class="filter-actions"><button class="btn primary" type="button" data-b03-announcement-search>搜索</button><button class="btn" type="button" data-b03-announcement-reset>重置</button></div></div><div class="panel-body"><div class="filter-grid cols-4"><div class="field"><label>状态</label><select class="select" data-b03-announcement-status><option value="">全部</option><option value="0">未发布</option><option value="1">已上架</option><option value="2">已下架</option></select></div></div></div></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">公告列表</div><span class="muted small" data-b03-announcement-result>3 条结果</span></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="announcements" data-antd-component="ModTable"><thead><tr><th>公告 ID</th><th>标题</th><th>目标人群</th><th>状态</th><th>阅读数</th><th>创建人</th><th>发布时间</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
-            <tr data-b03-announcement-row data-id="101" data-status="1" data-title="社区创作者公约更新" data-content="# 社区创作者公约更新\n\n请在发布前了解最新内容规范。" data-created-by="运营 A" data-published="2026-08-01 09:00" data-updated="2026-08-01 09:00"><td class="mono">101</td><td>社区创作者公约更新</td><td>全部注册用户</td><td><span class="tag success">已上架</span></td><td>128</td><td>运营 A</td><td>2026-08-01 09:00</td><td>2026-08-01 09:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link danger-link" data-b03-announcement-offline>下架</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="102" data-status="0" data-title="八月活动预告" data-content="# 八月活动预告\n\n活动即将开始。" data-created-by="运营 B" data-published="" data-updated="2026-08-02 10:00"><td class="mono">102</td><td>八月活动预告</td><td>全部注册用户</td><td><span class="tag gray">未发布</span></td><td>0</td><td>运营 B</td><td>—</td><td>2026-08-02 10:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link" data-b03-announcement-edit>编辑</button><button class="btn link" data-b03-announcement-publish>上架</button><button class="btn link danger-link" data-b03-announcement-delete>删除</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="103" data-status="2" data-title="七月活动结束通知" data-content="# 七月活动结束通知\n\n感谢参与。" data-created-by="运营 A" data-published="2026-07-31 20:00" data-updated="2026-08-01 12:00"><td class="mono">103</td><td>七月活动结束通知</td><td>全部注册用户</td><td><span class="tag warning">已下架</span></td><td>356</td><td>运营 A</td><td>2026-07-31 20:00</td><td>2026-08-01 12:00</td><td><button class="btn link" data-b03-announcement-view>查看</button></td></tr>
-            <tr class="table-empty-row" data-b03-announcement-empty hidden><td colspan="9">暂无公告</td></tr>
-          </tbody></table></div></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-editor" hidden><section class="drawer" data-b03-drawer="announcement-editor" data-antd-component="Drawer"><header><div><h3 data-b03-announcement-editor-title>创建公告</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-editor">×</button></header><div class="drawer-body"><div class="form-grid"><div class="field span-2"><label>标题</label><input class="input" data-b03-announcement-form="title"></div><div class="field span-2"><label>公告正文（Markdown）</label><textarea class="textarea b03-markdown-editor" data-b03-announcement-form="content"></textarea></div></div><div class="alert error" data-b03-announcement-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-editor">取消</button><button class="btn primary" type="button" data-b03-announcement-save>保存</button></footer></section></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-detail" hidden><section class="modal wide" data-b03-modal="announcement-detail" data-antd-component="Modal"><header><div><h3>公告详情</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-detail">×</button></header><div class="modal-body"><dl class="description-grid" data-b03-announcement-detail-meta></dl><section class="b03-markdown-preview"><h3>公告正文</h3><pre data-b03-announcement-detail-content></pre></section></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-detail">关闭</button></footer></section></div>
+<section class="view is-active" data-view="permission-management" data-page-contract="permission-management" data-b05-page="permission-management" data-real-route="/system/permissions">
+          <div class="page-head"><div class="page-title"><h2>权限管理</h2></div><div class="action-row"><span class="tag info" data-b05-permission-catalog>系统权限 8 项</span><button class="btn" type="button" data-b05-permission-sync>同步系统权限</button><button class="btn primary" type="button" data-b05-permission-create>新增权限</button></div></div>
+          <div class="panel"><div class="panel-body"><div class="filter-grid">
+            <div class="field"><label>权限名称 / 编码</label><input class="input" placeholder="请输入关键词" data-b05-permission-filter="keyword"></div>
+            <div class="field"><label>类型</label><select class="select" data-b05-permission-filter="type"><option value="">全部</option><option value="1">菜单</option><option value="2">按钮</option><option value="3">API</option></select></div>
+            <div class="field"><label>状态</label><select class="select" data-b05-permission-filter="status"><option value="">全部</option><option value="enabled">启用</option><option value="disabled">停用</option></select></div>
+          </div></div><div class="panel-head"><div class="panel-title">权限列表</div><div class="filter-actions"><span class="muted small" data-b05-permission-result>3 条结果</span><button class="btn primary" type="button" data-b05-permission-search>查询</button><button class="btn" type="button" data-b05-permission-reset>重置</button></div></div>
+            <div class="table-wrap ant-table-wrapper"><table data-table="permission-management" data-b05-table="permission-management" data-antd-component="ModTable"><thead><tr><th>权限编码</th><th>权限名称</th><th>类型</th><th>前端标识</th><th>接口绑定</th><th>排序</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
+              <tr data-b05-permission-row data-code="system:role" data-name="角色管理" data-type="1" data-element="system-role" data-api="GET /admin/api/roles/list" data-sort="10" data-status="enabled" data-parent="system"><td class="mono">system:role</td><td>角色管理</td><td><span class="tag info">菜单</span></td><td class="mono">system-role</td><td class="wrap">GET /admin/api/roles/list</td><td>10</td><td><span class="tag success">启用</span></td><td>2026-08-05 16:40</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link danger-link" type="button" data-b05-permission-toggle>停用</button></div></td></tr>
+              <tr data-b05-permission-row data-code="system:role:create" data-name="新建角色" data-type="2" data-element="role-create" data-api="POST /admin/api/roles/create" data-sort="20" data-status="enabled" data-parent="system:role"><td class="mono">system:role:create</td><td>新建角色</td><td><span class="tag warning">按钮</span></td><td class="mono">role-create</td><td class="wrap">POST /admin/api/roles/create</td><td>20</td><td><span class="tag success">启用</span></td><td>2026-08-05 16:21</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link danger-link" type="button" data-b05-permission-toggle>停用</button></div></td></tr>
+              <tr data-b05-permission-row data-code="system:permission:sync" data-name="同步权限" data-type="3" data-element="permission-sync" data-api="POST /admin/api/permissions/sync" data-sort="30" data-status="disabled" data-parent="system:permission"><td class="mono">system:permission:sync</td><td>同步权限</td><td><span class="tag purple">API</span></td><td class="mono">permission-sync</td><td class="wrap">POST /admin/api/permissions/sync</td><td>30</td><td><span class="tag gray">停用</span></td><td>2026-08-04 18:09</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link" type="button" data-b05-permission-toggle>启用</button></div></td></tr>
+              <tr class="table-empty-row" data-b05-permission-empty hidden><td colspan="9">暂无符合条件的权限</td></tr>
+            </tbody></table></div>
+          </div>
+          <div class="modal-backdrop" data-b05-layer="permission-editor" hidden><section class="modal" data-antd-component="Modal" role="dialog" aria-modal="true"><header><h3 data-b05-permission-editor-title>新增权限</h3><button class="modal-close" type="button" data-b05-close="permission-editor">×</button></header><div class="modal-body"><div class="form-grid">
+            <div class="field span-2"><label>权限编码</label><input class="input" placeholder="如 system:role:create" data-b05-permission-field="code"></div><div class="field span-2"><label>权限名称</label><input class="input" maxlength="60" data-b05-permission-field="name"></div>
+            <div class="field"><label>父级权限</label><select class="select" data-b05-permission-field="parent"><option value="">无父级</option><option value="system">系统管理</option><option value="system:role">角色管理</option><option value="system:permission">权限管理</option></select></div><div class="field"><label>类型</label><select class="select" data-b05-permission-field="type"><option value="1">菜单</option><option value="2">按钮</option><option value="3">API</option></select></div>
+            <div class="field"><label>前端标识</label><input class="input" data-b05-permission-field="element"></div><div class="field"><label>排序</label><input class="input" type="number" min="0" value="0" data-b05-permission-field="sort"></div>
+            <div class="field span-2"><label>状态</label><label><input type="radio" name="b05-permission-status" value="enabled" checked data-b05-permission-status> 启用</label> <label><input type="radio" name="b05-permission-status" value="disabled" data-b05-permission-status> 停用</label></div>
+            <div class="field span-2"><label>API 绑定</label><div class="b05-api-bindings" data-b05-api-bindings><div class="b05-api-binding" data-b05-api-binding><select class="select" data-b05-api-method><option>ANY</option><option>GET</option><option>POST</option><option>DELETE</option></select><input class="input" placeholder="/admin/api/..." data-b05-api-path><button class="btn" type="button" data-b05-api-remove>移除</button></div></div><button class="btn" type="button" data-b05-api-add>新增接口绑定</button></div>
+          </div><div class="alert error" data-b05-permission-feedback hidden></div></div><footer><button class="btn" type="button" data-b05-close="permission-editor">取消</button><button class="btn primary" type="button" data-b05-permission-save>保存</button></footer></section></div>
+          <div class="modal-backdrop" data-b05-layer="permission-confirm" hidden><section class="modal" data-antd-component="Modal"><header><h3 data-b05-permission-confirm-title>确认操作</h3><button class="modal-close" type="button" data-b05-close="permission-confirm">×</button></header><div class="modal-body"><div class="alert warning" data-b05-permission-confirm-copy>请确认本次操作。</div></div><footer><button class="btn" type="button" data-b05-close="permission-confirm">取消</button><button class="btn primary" type="button" data-b05-permission-confirm>确认</button></footer></section></div>
         </section>
       </main>
     </div>

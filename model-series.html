@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>AI666 后台 - 公告配置</title>
+  <title>AI666 后台 - 模型系列</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -4273,7 +4273,7 @@
       <section class="nav-section" data-nav-section="aigc">
         <div class="nav-group" data-nav-module="AIGC管理"><span>AIGC管理</span></div>
         <div class="nav-children">
-          <a class="nav-btn" href="model-series.html" data-nav="model-series" data-page-link="model-series.html">模型系列</a>
+          <a class="nav-btn is-active" href="model-series.html" data-nav="model-series" data-page-link="model-series.html">模型系列</a>
           <a class="nav-btn" href="model-mapping.html" data-nav="model-mapping" data-page-link="model-mapping.html">模型配置</a>
           <a class="nav-btn" href="generation-records.html" data-nav="generation-records" data-page-link="generation-records.html">生成记录</a>
         </div>
@@ -4286,7 +4286,7 @@
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="operation-settings.html" data-nav="operation-settings" data-page-link="operation-settings.html">运营配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn is-active" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
+          <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
       </section>
@@ -4315,7 +4315,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">公告配置</h1>
+          <h1 class="top-title" id="globalTitle">模型系列</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -4323,18 +4323,42 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="operation-config" data-page-contract="operation-config" data-b03-page="announcements" data-real-route="/operation/announcements" data-announcement-body-format="markdown">
-          <div class="contract-panel" data-b03-contract="announcements">真实公告页复用 NoticIndex：状态筛选、创建/编辑 Drawer、详情 Modal、未发布上架/删除、已发布下架。</div>
-          <div class="page-head"><div class="page-title"><h2>公告配置</h2></div><button class="btn primary" type="button" data-b03-announcement-create>创建公告</button></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">筛选</div><div class="filter-actions"><button class="btn primary" type="button" data-b03-announcement-search>搜索</button><button class="btn" type="button" data-b03-announcement-reset>重置</button></div></div><div class="panel-body"><div class="filter-grid cols-4"><div class="field"><label>状态</label><select class="select" data-b03-announcement-status><option value="">全部</option><option value="0">未发布</option><option value="1">已上架</option><option value="2">已下架</option></select></div></div></div></div>
-          <div class="panel"><div class="panel-head"><div class="panel-title">公告列表</div><span class="muted small" data-b03-announcement-result>3 条结果</span></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="announcements" data-antd-component="ModTable"><thead><tr><th>公告 ID</th><th>标题</th><th>目标人群</th><th>状态</th><th>阅读数</th><th>创建人</th><th>发布时间</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
-            <tr data-b03-announcement-row data-id="101" data-status="1" data-title="社区创作者公约更新" data-content="# 社区创作者公约更新\n\n请在发布前了解最新内容规范。" data-created-by="运营 A" data-published="2026-08-01 09:00" data-updated="2026-08-01 09:00"><td class="mono">101</td><td>社区创作者公约更新</td><td>全部注册用户</td><td><span class="tag success">已上架</span></td><td>128</td><td>运营 A</td><td>2026-08-01 09:00</td><td>2026-08-01 09:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link danger-link" data-b03-announcement-offline>下架</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="102" data-status="0" data-title="八月活动预告" data-content="# 八月活动预告\n\n活动即将开始。" data-created-by="运营 B" data-published="" data-updated="2026-08-02 10:00"><td class="mono">102</td><td>八月活动预告</td><td>全部注册用户</td><td><span class="tag gray">未发布</span></td><td>0</td><td>运营 B</td><td>—</td><td>2026-08-02 10:00</td><td><div class="op-list"><button class="btn link" data-b03-announcement-view>查看</button><button class="btn link" data-b03-announcement-edit>编辑</button><button class="btn link" data-b03-announcement-publish>上架</button><button class="btn link danger-link" data-b03-announcement-delete>删除</button></div></td></tr>
-            <tr data-b03-announcement-row data-id="103" data-status="2" data-title="七月活动结束通知" data-content="# 七月活动结束通知\n\n感谢参与。" data-created-by="运营 A" data-published="2026-07-31 20:00" data-updated="2026-08-01 12:00"><td class="mono">103</td><td>七月活动结束通知</td><td>全部注册用户</td><td><span class="tag warning">已下架</span></td><td>356</td><td>运营 A</td><td>2026-07-31 20:00</td><td>2026-08-01 12:00</td><td><button class="btn link" data-b03-announcement-view>查看</button></td></tr>
-            <tr class="table-empty-row" data-b03-announcement-empty hidden><td colspan="9">暂无公告</td></tr>
-          </tbody></table></div></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-editor" hidden><section class="drawer" data-b03-drawer="announcement-editor" data-antd-component="Drawer"><header><div><h3 data-b03-announcement-editor-title>创建公告</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-editor">×</button></header><div class="drawer-body"><div class="form-grid"><div class="field span-2"><label>标题</label><input class="input" data-b03-announcement-form="title"></div><div class="field span-2"><label>公告正文（Markdown）</label><textarea class="textarea b03-markdown-editor" data-b03-announcement-form="content"></textarea></div></div><div class="alert error" data-b03-announcement-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-editor">取消</button><button class="btn primary" type="button" data-b03-announcement-save>保存</button></footer></section></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="announcement-detail" hidden><section class="modal wide" data-b03-modal="announcement-detail" data-antd-component="Modal"><header><div><h3>公告详情</h3></div><button class="modal-close" type="button" data-b03-modal-close="announcement-detail">×</button></header><div class="modal-body"><dl class="description-grid" data-b03-announcement-detail-meta></dl><section class="b03-markdown-preview"><h3>公告正文</h3><pre data-b03-announcement-detail-content></pre></section></div><footer><button class="btn" type="button" data-b03-modal-close="announcement-detail">关闭</button></footer></section></div>
+<section class="view is-active" data-view="model-series" data-page-contract="model-series" data-aigc-page="series-list">
+          <div class="contract-panel" data-page-contract="model-series">模型系列按真实 B 端 modelSeries 页面还原：系列仅承担分组，列表读取 `/admin/api/aigc/series/list`，使用 ModTable；新建/编辑使用 Ant Design Modal，删除前确认，系列下存在模型时接口可拒绝删除。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>模型系列</h2><p>维护模型的分组编码、名称、说明和启停状态。</p></div>
+            <button class="btn primary ant-btn ant-btn-primary" type="button" data-aigc-series-action="create" data-antd-component="Button">新建系列</button>
+          </div>
+          <p class="contract-panel" data-aigc-series-feedback role="status" hidden></p>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">筛选</div><div class="filter-actions"><button class="btn primary ant-btn ant-btn-primary" type="button" data-operational-filter-action="apply" data-operational-filter-page="model-series">搜索</button><button class="btn ant-btn" type="button" data-operational-filter-action="reset" data-operational-filter-page="model-series">重置</button></div></div>
+            <div class="panel-body"><div class="filter-grid">
+              <div class="field"><label>关键词</label><input class="input ant-input" placeholder="编码 / 名称" data-operational-filter-control="keyword" data-operational-filter-page="model-series" data-antd-component="Input"></div>
+              <div class="field"><label>状态</label><select class="select ant-select" data-operational-filter-control="status" data-operational-filter-page="model-series" data-antd-component="Select"><option value="all">全部</option><option value="1">启用</option><option value="0">停用</option></select></div>
+            </div></div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">系列列表</div><span class="muted small" data-operational-filter-result="model-series">4 条结果</span></div>
+            <div class="table-wrap ant-table-wrapper mod-table" data-wide-table-scroll="inside-table" data-sticky-action-column data-component-contract="ModTable" data-antd-component="Table">
+              <table data-table="model-series"><thead><tr><th>系列编码</th><th>名称</th><th>描述</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
+                <tr data-aigc-series-row data-series-code="openai" data-series-name="OpenAI" data-series-description="OpenAI 文本与图像模型" data-series-status="1" data-operational-filter-row data-filter-keyword="openai OpenAI" data-filter-status="1"><td class="mono">openai</td><td>OpenAI</td><td class="wrap">OpenAI 文本与图像模型</td><td data-series-status-cell><span class="tag success">启用</span></td><td>2026-08-01 10:00</td><td><div class="op-list"><button class="btn link" type="button" data-aigc-series-action="edit">编辑</button><button class="btn link danger-link" type="button" data-danger-action="aigc-series-delete" data-danger-object-id="openai" data-danger-current-state="启用" data-danger-result="删除模型系列" data-requires-confirm="true">删除</button></div></td></tr>
+                <tr data-aigc-series-row data-series-code="doubao" data-series-name="豆包" data-series-description="豆包图像与视频模型" data-series-status="1" data-operational-filter-row data-filter-keyword="doubao 豆包" data-filter-status="1"><td class="mono">doubao</td><td>豆包</td><td class="wrap">豆包图像与视频模型</td><td data-series-status-cell><span class="tag success">启用</span></td><td>2026-08-01 10:10</td><td><div class="op-list"><button class="btn link" type="button" data-aigc-series-action="edit">编辑</button><button class="btn link danger-link" type="button" data-danger-action="aigc-series-delete" data-danger-object-id="doubao" data-danger-current-state="启用" data-danger-result="删除模型系列" data-requires-confirm="true">删除</button></div></td></tr>
+                <tr data-aigc-series-row data-series-code="grok" data-series-name="Grok" data-series-description="Grok 视频模型" data-series-status="1" data-operational-filter-row data-filter-keyword="grok Grok" data-filter-status="1"><td class="mono">grok</td><td>Grok</td><td class="wrap">Grok 视频模型</td><td data-series-status-cell><span class="tag success">启用</span></td><td>2026-08-01 10:20</td><td><div class="op-list"><button class="btn link" type="button" data-aigc-series-action="edit">编辑</button><button class="btn link danger-link" type="button" data-danger-action="aigc-series-delete" data-danger-object-id="grok" data-danger-current-state="启用" data-danger-result="删除模型系列" data-requires-confirm="true">删除</button></div></td></tr>
+                <tr data-aigc-series-row data-series-code="legacy" data-series-name="历史模型" data-series-description="仅保留历史生成记录" data-series-status="0" data-operational-filter-row data-filter-keyword="legacy 历史模型" data-filter-status="0"><td class="mono">legacy</td><td>历史模型</td><td class="wrap">仅保留历史生成记录</td><td data-series-status-cell><span class="tag gray">停用</span></td><td>2026-07-20 09:00</td><td><div class="op-list"><button class="btn link" type="button" data-aigc-series-action="edit">编辑</button><button class="btn link danger-link" type="button" data-danger-action="aigc-series-delete" data-danger-object-id="legacy" data-danger-current-state="停用" data-danger-result="删除模型系列" data-requires-confirm="true">删除</button></div></td></tr>
+                <tr class="table-empty-row" data-operational-filter-empty="model-series" hidden><td colspan="6">没有符合条件的模型系列。</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+          <div class="modal-backdrop" id="aigcSeriesModal" aria-hidden="true" data-antd-component="Modal"><div class="modal aigc-form-modal" role="dialog" aria-modal="true" aria-labelledby="aigcSeriesModalTitle">
+            <div class="modal-head"><div><h3 id="aigcSeriesModalTitle">新建系列</h3><p>系列只承担模型分组，不承载调用协议。</p></div><button class="icon-btn" type="button" data-aigc-series-close aria-label="关闭">×</button></div>
+            <div class="modal-body"><div class="aigc-form-grid">
+              <div class="field"><label>系列编码</label><input class="input ant-input" maxlength="64" placeholder="如 openai" data-aigc-series-field="code" data-antd-component="Input"></div>
+              <div class="field"><label>名称</label><input class="input ant-input" maxlength="128" placeholder="如 OpenAI" data-aigc-series-field="name" data-antd-component="Input"></div>
+              <div class="field wide"><label>描述</label><textarea class="textarea ant-input" rows="3" maxlength="512" placeholder="可选" data-aigc-series-field="description" data-antd-component="Input.TextArea"></textarea></div>
+              <div class="field wide"><label>状态</label><div class="tabs ant-radio-group" data-antd-component="Radio.Group"><button class="tab is-active" type="button" data-aigc-series-status="1">启用</button><button class="tab" type="button" data-aigc-series-status="0">停用</button></div><input type="hidden" value="1" data-aigc-series-field="status"></div>
+            </div><p class="error-text" data-aigc-series-error role="alert" hidden></p></div>
+            <div class="modal-foot"><button class="btn ant-btn" type="button" data-aigc-series-close>取消</button><button class="btn primary ant-btn ant-btn-primary" type="button" data-aigc-series-save>保存</button></div>
+          </div></div>
         </section>
       </main>
     </div>
