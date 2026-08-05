@@ -2629,6 +2629,11 @@
       gap: 12px;
     }
 
+    .popup-item-fields[data-work-create-drawer-form] {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
     .popup-item-fields .field.wide { grid-column: 1 / -1; }
 
     .modal[data-modal="operation-slot"] [data-slot-form-field="placement"] {
@@ -3950,13 +3955,16 @@
     }
     .b03-detail-cover { display: flex; align-items: center; gap: 10px; min-width: 0; }
     .b03-detail-cover span { overflow-wrap: anywhere; }
-    }
     [data-b03-page] .align-end { align-self: end; }
     [data-b03-modal-backdrop],
     [data-b03-modal-backdrop][hidden] { display: none !important; }
     [data-b03-modal-backdrop].open { display: flex !important; }
     [data-b03-modal-backdrop] > .modal,
-    [data-b03-modal-backdrop] > .drawer { display: flex; }
+    [data-b03-modal-backdrop] > .drawer {
+      display: flex;
+      flex-direction: column;
+    }
+    [data-b03-modal-backdrop] > .modal { max-height: calc(100vh - 64px); }
     [data-b03-modal-backdrop] > .drawer {
       position: fixed;
       top: 0;
@@ -3970,13 +3978,109 @@
       background: #fff;
       z-index: 71;
     }
+    [data-b03-modal-backdrop] > .modal > header,
+    [data-b03-modal-backdrop] > .drawer > header {
+      min-height: 64px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    [data-b03-modal-backdrop] > .modal > header h3,
+    [data-b03-modal-backdrop] > .drawer > header h3 { margin: 0; }
+    [data-b03-modal-backdrop] > .modal > header p,
+    [data-b03-modal-backdrop] > .drawer > header p {
+      margin: 4px 0 0;
+      color: var(--ant-text-secondary);
+      font-size: 12px;
+    }
     [data-b03-modal-backdrop] > .drawer .drawer-body {
       flex: 1;
       min-height: 0;
       overflow: auto;
       padding: 20px;
     }
-    [data-b03-modal-backdrop] > .drawer > footer { padding: 12px 20px; }
+    [data-b03-modal-backdrop] > .modal > footer,
+    [data-b03-modal-backdrop] > .drawer > footer {
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 12px 20px;
+      border-top: 1px solid #f0f0f0;
+    }
+    [data-b03-drawer="activity"],
+    [data-b03-drawer="activity-task"] { width: min(960px, calc(100vw - 48px)) !important; }
+    [data-b03-drawer="announcement-editor"] { width: min(980px, calc(100vw - 48px)) !important; }
+    [data-b03-drawer="activity"] .form-grid,
+    [data-b03-drawer="activity-task"] .form-grid { align-items: start; }
+    [data-b03-page] .b03-form-section {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      padding: 16px;
+      border: 1px solid #f0f0f0;
+      border-radius: var(--ant-radius);
+      background: #fff;
+    }
+    [data-b03-page] .b03-form-section > h4 {
+      grid-column: 1 / -1;
+      margin: 0;
+      font-size: 14px;
+    }
+    [data-b03-page] .b03-form-section .span-2 { grid-column: 1 / -1; }
+    [data-b03-page] .b03-form-help {
+      margin: 6px 0 0;
+      color: var(--ant-text-secondary);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+    [data-b03-page] .b03-inline-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    [data-b03-page] .b03-inline-control .input { flex: 1; min-width: 0; }
+    [data-b03-page] .b03-submission-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+    }
+    [data-b03-page] .b03-submission-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    [data-b03-page] .b03-work-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    [data-b03-page] .b03-work-detail-card {
+      padding: 12px;
+      border: 1px solid #f0f0f0;
+      border-radius: var(--ant-radius);
+      background: #fafafa;
+    }
+    [data-b03-page] .b03-work-detail-card b,
+    [data-b03-page] .b03-work-detail-card span { display: block; }
+    [data-b03-page] .b03-work-detail-card.span-2 { grid-column: 1 / -1; }
+    [data-b03-page] .b03-work-detail-card b { margin-bottom: 4px; color: var(--ant-text-secondary); font-size: 12px; }
+    [data-b03-page] [data-b03-activity-time-fields][hidden] { display: none !important; }
+    [data-b03-page] [data-b03-task-empty][hidden] { display: none !important; }
+    @media (max-width: 760px) {
+      [data-b03-page] .b03-form-section,
+      [data-b03-page] .b03-work-detail-grid { grid-template-columns: minmax(0, 1fr); }
+      [data-b03-page] .b03-form-section .span-2 { grid-column: auto; }
+      [data-b03-page] .b03-work-detail-card.span-2 { grid-column: auto; }
+      [data-b03-page] .b03-submission-toolbar { align-items: flex-start; flex-direction: column; }
+    }
     [data-b04-table] { width: 100%; min-width: 1180px; table-layout: fixed; }
     [data-b04-table="users"] { min-width: 1260px; }
     [data-b04-table="points"] { min-width: 1660px; }
@@ -4331,8 +4435,8 @@
           <div class="panel" data-b03-store-panel="inventory" hidden><div class="panel-head"><div class="panel-title">卡密库存</div><button class="btn primary" type="button" data-b03-card-create>新增卡密</button></div><div class="panel-body"><div class="filter-grid cols-4"><div class="field"><label>站点</label><select class="select" data-b03-card-filter="site"><option value="">选择站点</option><option value="1">AI 中转站</option><option value="2">闪创 AI</option></select></div><div class="field"><label>产品</label><select class="select" data-b03-card-filter="product"><option value="">选择产品</option><option value="101">API 月卡</option><option value="102">Token 包</option></select></div><div class="filter-actions align-end"><button class="btn primary" type="button" data-b03-card-search>搜索</button><button class="btn" type="button" data-b03-card-reset>重置</button></div></div></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="card-keys" data-antd-component="ModTable"><thead><tr><th>卡密 ID</th><th>所属产品</th><th>卡密</th><th>库存状态</th><th>入库时间</th><th>操作</th></tr></thead><tbody><tr data-b03-card-row data-product="101"><td class="mono">9001</td><td>API 月卡</td><td class="mono">[CARD_CODE]</td><td><span class="tag success">未兑换</span></td><td>2026-08-01 10:00</td><td><div class="op-list"><button class="btn link" data-b03-card-view>查看</button><button class="btn link danger-link" data-b03-card-delete>删除</button></div></td></tr><tr data-b03-card-row data-product="101"><td class="mono">9002</td><td>API 月卡</td><td class="mono">[CARD_CODE]</td><td><span class="tag info">已兑换</span></td><td>2026-08-01 10:05</td><td><button class="btn link" data-b03-card-view>查看</button></td></tr><tr class="table-empty-row" data-b03-card-empty hidden><td colspan="6">请先选择站点和产品</td></tr></tbody></table></div></div>
           <div class="panel" data-b03-store-panel="records" hidden><div class="panel-head"><div class="panel-title">兑换记录</div></div><div class="panel-body"><div class="filter-grid cols-4"><div class="field"><label>记录 ID</label><input class="input" data-b03-record-filter="id"></div><div class="field"><label>产品 ID</label><input class="input" data-b03-record-filter="product"></div><div class="field"><label>兑换用户</label><input class="input" data-b03-record-filter="user"></div><div class="field"><label>兑换状态</label><select class="select" data-b03-record-filter="status"><option value="">全部</option><option>未兑换</option><option>积分兑换</option><option>卡密兑换</option></select></div></div><div class="filter-actions"><button class="btn primary" type="button" data-b03-record-search>查询</button><button class="btn" type="button" data-b03-record-reset>重置</button></div></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="store-records" data-antd-component="ModTable"><thead><tr><th>记录 ID</th><th>产品</th><th>实扣积分</th><th>兑换用户</th><th>状态</th><th>入库时间</th><th>兑换时间</th></tr></thead><tbody><tr data-b03-record-row data-id="9002" data-product="101" data-user="UR0001" data-status="积分兑换"><td class="mono">9002</td><td>API 月卡</td><td>300</td><td>UR0001</td><td><span class="tag success">积分兑换</span></td><td>2026-08-01 10:05</td><td>2026-08-02 09:00</td></tr><tr data-b03-record-row data-id="9003" data-product="102" data-user="UR0002" data-status="卡密兑换"><td class="mono">9003</td><td>Token 包</td><td>0</td><td>UR0002</td><td><span class="tag info">卡密兑换</span></td><td>2026-08-01 10:10</td><td>2026-08-02 10:00</td></tr><tr class="table-empty-row" data-b03-record-empty hidden><td colspan="7">暂无兑换记录</td></tr></tbody></table></div></div>
           <div class="modal-backdrop" data-b03-modal-backdrop="site" hidden><section class="modal" data-b03-modal="site" data-antd-component="Modal"><header><div><h3 data-b03-site-modal-title>新增站点</h3></div><button class="modal-close" type="button" data-b03-modal-close="site">×</button></header><div class="modal-body"><div class="form-grid"><div class="field"><label>站点名称</label><input class="input" data-b03-site-form="name"></div><div class="field"><label>域名</label><input class="input" data-b03-site-form="domain"></div><div class="field span-2"><label>备注</label><textarea class="textarea" data-b03-site-form="remark"></textarea></div></div><div class="alert error" data-b03-site-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="site">取消</button><button class="btn primary" type="button" data-b03-site-save>保存</button></footer></section></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="products" hidden><section class="drawer" data-b03-drawer="products" data-antd-component="Drawer"><header><div><h3 data-b03-products-title>产品列表</h3></div><button class="modal-close" type="button" data-b03-modal-close="products">×</button></header><div class="drawer-body"><div class="action-row"><button class="btn primary" type="button" data-b03-product-create>新增产品</button></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="products" data-antd-component="ModTable"><thead><tr><th>产品 ID</th><th>产品名称</th><th>积分价格</th><th>描述</th><th>状态</th><th>操作</th></tr></thead><tbody><tr data-b03-product-row data-id="101" data-name="API 月卡" data-price="300" data-description="30 天 API 使用权益" data-status="启用"><td class="mono">101</td><td>API 月卡</td><td>300</td><td>30 天 API 使用权益</td><td><span class="tag success">启用</span></td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td></tr><tr data-b03-product-row data-id="102" data-name="Token 包" data-price="500" data-description="固定额度 Token" data-status="停用"><td class="mono">102</td><td>Token 包</td><td>500</td><td>固定额度 Token</td><td><span class="tag gray">停用</span></td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td></tr></tbody></table></div></div><footer><button class="btn" type="button" data-b03-modal-close="products">关闭</button></footer></section></div>
-          <div class="modal-backdrop" data-b03-modal-backdrop="product" hidden><section class="modal" data-b03-modal="product" data-antd-component="Modal"><header><div><h3 data-b03-product-modal-title>新增产品</h3></div><button class="modal-close" type="button" data-b03-modal-close="product">×</button></header><div class="modal-body"><div class="form-grid"><div class="field"><label>产品名称</label><input class="input" data-b03-product-form="name"></div><div class="field"><label>积分价格</label><input class="input" type="number" min="1" data-b03-product-form="price"></div><div class="field span-2"><label>描述</label><textarea class="textarea" data-b03-product-form="description"></textarea></div><div class="field"><label>状态</label><select class="select" data-b03-product-form="status"><option>启用</option><option>停用</option></select></div></div><div class="alert error" data-b03-product-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="product">取消</button><button class="btn primary" type="button" data-b03-product-save>保存</button></footer></section></div>
+          <div class="modal-backdrop" data-b03-modal-backdrop="products" hidden><section class="drawer" data-b03-drawer="products" data-antd-component="Drawer"><header><div><h3 data-b03-products-title>产品列表</h3></div><button class="modal-close" type="button" data-b03-modal-close="products">×</button></header><div class="drawer-body"><div class="action-row"><button class="btn primary" type="button" data-b03-product-create>新增产品</button></div><div class="table-wrap ant-table-wrapper"><table data-b03-table="products" data-antd-component="ModTable"><thead><tr><th>产品 ID</th><th>产品名称</th><th>积分价格</th><th>可用库存</th><th>状态</th><th>描述</th><th>创建时间</th><th>操作</th></tr></thead><tbody><tr data-b03-product-row data-id="101" data-name="API 月卡" data-price="300" data-stock="18" data-description="30 天 API 使用权益" data-status="启用" data-effective-start="2026-08-01" data-effective-end="2026-12-31" data-created="2026-08-01 09:00"><td class="mono">101</td><td>API 月卡</td><td>300</td><td>18</td><td><span class="tag success">启用</span></td><td>30 天 API 使用权益</td><td>2026-08-01 09:00</td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td></tr><tr data-b03-product-row data-id="102" data-name="Token 包" data-price="500" data-stock="0" data-description="固定额度 Token" data-status="停用" data-effective-start="2026-08-01" data-effective-end="2026-10-31" data-created="2026-08-01 09:20"><td class="mono">102</td><td>Token 包</td><td>500</td><td>0</td><td><span class="tag gray">停用</span></td><td>固定额度 Token</td><td>2026-08-01 09:20</td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td></tr></tbody></table></div></div><footer><button class="btn" type="button" data-b03-modal-close="products">关闭</button></footer></section></div>
+          <div class="modal-backdrop" data-b03-modal-backdrop="product" hidden><section class="modal wide" data-b03-modal="product" data-antd-component="Modal"><header><div><h3 data-b03-product-modal-title>新增产品</h3></div><button class="modal-close" type="button" data-b03-modal-close="product">×</button></header><div class="modal-body"><div class="form-grid" data-antd-component="Form"><div class="field"><label>产品名称</label><input class="input" data-b03-product-form="name" data-antd-component="Input"></div><div class="field"><label>积分价格</label><input class="input" type="number" min="1" data-b03-product-form="price" data-antd-component="InputNumber"></div><div class="field span-2"><label>描述</label><textarea class="textarea" data-b03-product-form="description" data-antd-component="Input.TextArea"></textarea></div><div class="field"><label>生效开始时间</label><input class="input" type="date" data-b03-product-form="effectiveStart" data-antd-component="DatePicker"></div><div class="field"><label>生效结束时间</label><input class="input" type="date" data-b03-product-form="effectiveEnd" data-antd-component="DatePicker"></div><div class="field"><label>状态</label><select class="select" data-b03-product-form="status" data-antd-component="Select"><option>启用</option><option>停用</option></select></div><div class="field" data-b03-product-stock-wrap hidden><label>可用库存</label><input class="input" disabled data-b03-product-form="stock" data-antd-component="Input"></div></div><div class="alert error" data-b03-product-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="product">取消</button><button class="btn primary" type="button" data-b03-product-save>保存</button></footer></section></div>
           <div class="modal-backdrop" data-b03-modal-backdrop="card" hidden><section class="modal" data-b03-modal="card" data-antd-component="Modal"><header><div><h3>新增卡密</h3></div><button class="modal-close" type="button" data-b03-modal-close="card">×</button></header><div class="modal-body"><div class="alert info">每行一条卡密；原型不保存或回显真实卡密。</div><div class="field"><label>卡密内容</label><textarea class="textarea" rows="8" data-b03-card-form placeholder="每行输入一条 [CARD_CODE]"></textarea></div><div class="alert error" data-b03-card-feedback hidden></div></div><footer><button class="btn" type="button" data-b03-modal-close="card">取消</button><button class="btn primary" type="button" data-b03-card-save>保存</button></footer></section></div>
         </section>
       </main>
@@ -6663,6 +6767,9 @@
         "activity-end": "结束活动并停止新增参与",
         "activity-eligibility-confirm": "确认当前记录的活动资格并创建待发放奖励",
         "activity-eligibility-reject": "判定当前记录不符合活动资格并生成用户可读原因",
+        "b03-activity-task-delete": "删除活动任务",
+        "b03-activity-submission-featured": "切换投稿精选状态",
+        "b03-activity-submission-homepage": "切换投稿首页推荐状态",
         "reward-reissue": "补发奖励并新增发放记录",
         "reward-revoke": "撤回奖励并新增撤回流水",
         "entitlement-reissue": "补发权益并保留原异常记录",
@@ -6696,6 +6803,9 @@
         "activity-end": "活动结束确认",
         "activity-eligibility-confirm": "活动资格确认",
         "activity-eligibility-reject": "活动资格无效确认",
+        "b03-activity-task-delete": "确认删除活动任务",
+        "b03-activity-submission-featured": "投稿精选状态确认",
+        "b03-activity-submission-homepage": "投稿首页推荐确认",
         "reward-reissue": "补发奖励确认",
         "reward-revoke": "撤回奖励确认",
         "entitlement-reissue": "补发权益确认",
@@ -6729,6 +6839,9 @@
         "activity-end": "以确认提交时间作为结束时间；该时间起关闭新增参与和投稿；C端转为历史活动；历史资格、奖励和限时积分流水继续绑定原版本",
         "activity-eligibility-confirm": "不修改来源审核；活动资格改为有效；新增待发放奖励记录；保存用户可读结果",
         "activity-eligibility-reject": "不修改来源审核；活动资格改为无效；奖励保持未触发；保存可查看原因",
+        "b03-activity-task-delete": "删除活动任务；已有用户进度、奖励记录和操作日志保留",
+        "b03-activity-submission-featured": "更新当前投稿精选状态；投稿资格和作品发布状态保持不变",
+        "b03-activity-submission-homepage": "更新当前投稿首页推荐状态；投稿资格和作品发布状态保持不变",
         "store-stop": "商品改为已停用；C端停止新增兑换；历史兑换、限时积分扣减、权益发放和异常记录保留",
         "profile-reject": "新增资料退回记录；C端展示用户可读原因并允许修改重提；原审核记录保留",
         "invite-reward": "新增奖励处理记录；通过后进入待发放并关联限时积分流水；原邀请关系和阶段记录保留",
@@ -6750,7 +6863,7 @@
       const currentState = trigger?.dataset.dangerCurrentState || activeReviewContext?.status || rowState || "请在提交前再次核对";
       const result = trigger?.dataset.dangerResult || actionResults[action] || "新增一条处理记录并写入操作日志；历史记录不直接改写。";
       const isSimpleConfirmation = action === "announcement-revoke";
-      const reasonRequired = !["announcement-revoke", "user-ban", "user-unban", "flash-take-down", "flash-restore", "content-take-down", "content-restore", "content-home-hot-set", "content-home-hot-remove", "aigc-series-delete", "aigc-model-delete"].includes(action);
+      const reasonRequired = !["announcement-revoke", "user-ban", "user-unban", "flash-take-down", "flash-restore", "content-take-down", "content-restore", "content-home-hot-set", "content-home-hot-remove", "aigc-series-delete", "aigc-model-delete", "b03-activity-task-delete", "b03-activity-submission-featured", "b03-activity-submission-homepage"].includes(action);
       pendingDangerAction = action;
       pendingDangerTrigger = trigger;
       const dangerTitle = trigger?.dataset.dangerTitle || actionTitles[action] || "危险操作确认";
@@ -6887,6 +7000,46 @@
 
       if (["activity-pause", "activity-resume", "activity-end"].includes(action)) {
         applyActivityLifecycleAction(action, trigger, reason);
+      }
+
+      if (action === "b03-activity-task-delete") {
+        const taskRow = trigger?.closest("[data-b03-task-row]");
+        const taskCode = taskRow?.dataset.taskCode || trigger?.dataset.dangerObjectId || "当前任务";
+        taskRow?.remove();
+        b03UpdateTaskEmpty();
+        b03Feedback("[data-b03-task-feedback]", `任务 ${taskCode} 已删除；历史进度和奖励记录保持不变。`, "success");
+      }
+
+      if (action === "b03-activity-submission-featured") {
+        const submissionRow = trigger?.closest("[data-b03-submission-row]");
+        if (submissionRow) {
+          const nextFeatured = submissionRow.dataset.featured === "1" ? "0" : "1";
+          submissionRow.dataset.featured = nextFeatured;
+          const featuredCell = submissionRow.querySelector("[data-b03-submission-featured-cell]");
+          if (featuredCell) featuredCell.textContent = nextFeatured === "1" ? "是" : "否";
+          trigger.textContent = nextFeatured === "1" ? "取消精选" : "设为精选";
+          trigger.dataset.dangerCurrentState = nextFeatured === "1" ? "已精选" : "未精选";
+          trigger.dataset.dangerResult = nextFeatured === "1"
+            ? "取消该投稿的精选状态；投稿与发布状态保持不变"
+            : "将该投稿设为精选；投稿与发布状态保持不变";
+          b03Feedback("[data-b03-submission-feedback]", `投稿 ${submissionRow.dataset.bizId || submissionRow.dataset.id} 已${nextFeatured === "1" ? "设为" : "取消"}精选。`, "success");
+        }
+      }
+
+      if (action === "b03-activity-submission-homepage") {
+        const submissionRow = trigger?.closest("[data-b03-submission-row]");
+        if (submissionRow) {
+          const nextHomepage = submissionRow.dataset.homepage === "1" ? "0" : "1";
+          submissionRow.dataset.homepage = nextHomepage;
+          const homepageCell = submissionRow.querySelector("[data-b03-submission-homepage-cell]");
+          if (homepageCell) homepageCell.textContent = nextHomepage === "1" ? "是" : "否";
+          trigger.textContent = nextHomepage === "1" ? "取消推荐" : "设为推荐";
+          trigger.dataset.dangerCurrentState = nextHomepage === "1" ? "已推荐" : "未推荐";
+          trigger.dataset.dangerResult = nextHomepage === "1"
+            ? "取消该投稿的首页推荐状态；投稿与发布状态保持不变"
+            : "将该投稿设为首页推荐；投稿与发布状态保持不变";
+          b03Feedback("[data-b03-submission-feedback]", `投稿 ${submissionRow.dataset.bizId || submissionRow.dataset.id} 已${nextHomepage === "1" ? "设为" : "取消"}首页推荐。`, "success");
+        }
       }
 
       if (["approve-audit", "reject-audit", "review-second", "profile-return"].includes(action) && activeReviewContext?.row) {
@@ -7399,7 +7552,7 @@
       const reasonError = document.querySelector("[data-reason-error]");
       const slotReviewError = document.querySelector("[data-slot-reactivate-error]");
       const slotAcknowledgement = document.querySelector("[data-slot-reactivate-ack]");
-      const reasonRequired = !["announcement-revoke", "user-ban", "user-unban", "flash-take-down", "flash-restore", "flash-list-re-audit-pass", "flash-list-cancel-featured", "flash-list-unpublish", "flash-list-publish", "flash-list-delete", "content-take-down", "content-restore", "content-home-hot-set", "content-home-hot-remove", "template-set-hot", "template-cancel-hot", "template-enable", "template-disable", "aigc-series-delete", "aigc-model-delete"].includes(pendingDangerAction);
+      const reasonRequired = !["announcement-revoke", "user-ban", "user-unban", "flash-take-down", "flash-restore", "flash-list-re-audit-pass", "flash-list-cancel-featured", "flash-list-unpublish", "flash-list-publish", "flash-list-delete", "content-take-down", "content-restore", "content-home-hot-set", "content-home-hot-remove", "template-set-hot", "template-cancel-hot", "template-enable", "template-disable", "aigc-series-delete", "aigc-model-delete", "b03-activity-task-delete", "b03-activity-submission-featured", "b03-activity-submission-homepage"].includes(pendingDangerAction);
       let slotReviewBlocked = false;
       if (pendingDangerAction === "slot-reactivate") {
         const currentContext = getSlotReactivateReviewContext(pendingDangerTrigger?.closest("tr"));
@@ -10345,27 +10498,24 @@
         activity: "新手任务",
         columns: configurableRewardRuleColumns,
         rows: [
-          { trigger: "首次进入社区", points: "+5", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
-          { trigger: "完善个人资料", points: "+10", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
-          { trigger: "浏览 3 条社区内容", points: "+10", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
-          { trigger: "首次点赞、收藏或评论", points: "+10", period: "仅一次", limit: "每用户 1 次", relation: "同一行为可完成多条", enabled: "启用" },
-          { trigger: "收藏 1 条 AI 作品", points: "+10", period: "仅一次", limit: "每用户 1 次", relation: "同一行为可完成多条", enabled: "启用" },
-          { trigger: "首次发布 AI 作品", points: "+25", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
-          { trigger: "完成所有新手任务", points: "+30", period: "仅一次", limit: "每用户 1 次", relation: "完成奖励另计", enabled: "启用" },
+          { trigger: "首次访问多元拾光并完成注册", points: "+20", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
+          { trigger: "浏览任意一篇 AIGC 作品详情", points: "+30", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
+          { trigger: "完善个人资料信息", points: "+30", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
+          { trigger: "首次点赞、评论或收藏", points: "+30", period: "仅一次", limit: "每用户 1 次", relation: "同一行为只计 1 次", enabled: "启用" },
+          { trigger: "浏览最新作品并复制分享链接", points: "+40", period: "仅一次", limit: "每用户 1 次", relation: "同对象不重复", enabled: "启用" },
         ],
       },
       "continuous-growth": {
         activity: "七日成长任务",
         columns: configurableRewardRuleColumns,
         rows: [
-          { trigger: "第 1 天 · 浏览 3 条社区内容", points: "+10", period: "连续 7 日", limit: "第 1 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 2 天 · 收藏 1 条 AI 作品", points: "+10", period: "连续 7 日", limit: "第 2 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 3 天 · 查看或复制 1 条 Prompt", points: "+15", period: "连续 7 日", limit: "第 3 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 4 天 · 发布 1 条 AI 作品", points: "+30", period: "连续 7 日", limit: "第 4 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 5 天 · 参与 1 次 AI 创作挑战", points: "+40", period: "连续 7 日", limit: "第 5 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 6 天 · 分享 1 条内容或邀请好友", points: "+25", period: "连续 7 日", limit: "第 6 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "第 7 天 · 使用限时积分完成 1 次 AIGC 生成", points: "+30", period: "连续 7 日", limit: "第 7 天 1 次", relation: "独立累计", enabled: "启用" },
-          { trigger: "完成七日任务", points: "+40", period: "连续 7 日", limit: "每用户 1 次", relation: "完成奖励另计", enabled: "启用" },
+          { trigger: "第 1 天 · 浏览 3 条 AIGC 内容", points: "+20", period: "连续 7 日", limit: "第 1 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 2 天 · 复制 1 条 Prompt", points: "+30", period: "连续 7 日", limit: "第 2 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 3 天 · 收藏 1 条 AI 作品", points: "+30", period: "连续 7 日", limit: "第 3 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 4 天 · 点赞或评论 1 条内容", points: "+40", period: "连续 7 日", limit: "第 4 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 5 天 · 转发 1 个 AI 作品", points: "+50", period: "连续 7 日", limit: "第 5 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 6 天 · 转发 1 条闪念", points: "+60", period: "连续 7 日", limit: "第 6 天 1 次", relation: "独立累计", enabled: "启用" },
+          { trigger: "第 7 天 · 发布 1 个 AI 作品", points: "+70", period: "连续 7 日", limit: "第 7 天 1 次", relation: "独立累计", enabled: "启用" },
         ],
       },
       "invite-campaign": {
@@ -15427,6 +15577,7 @@
       settingTab: "content-categories",
       settingRow: null,
       activityRow: null,
+      activityTaskRow: null,
       announcementRow: null,
       siteRow: null,
       productRow: null,
@@ -15453,7 +15604,8 @@
     }
 
     function b03SetImageThumbs(root = document) {
-      root.querySelectorAll("[data-b03-page] .image-thumb[data-image-src]").forEach((thumb) => {
+      root.querySelectorAll(".image-thumb[data-image-src]").forEach((thumb) => {
+        if (!thumb.closest("[data-b03-page]")) return;
         const src = String(thumb.dataset.imageSrc || "").trim();
         thumb.style.backgroundImage = src ? `url('${src}')` : "none";
       });
@@ -15478,6 +15630,15 @@
       flashTop: "展示位 ID",
       flashSide: "展示位 ID",
       modelCard: "展示位 ID",
+    };
+
+    const B03_SLOT_POSITION_LABEL = {
+      homeBanner: "首页 Banner",
+      homeAigc: "首页金刚区",
+      flashFirst: "爆款首卡广告",
+      flashTop: "首页顶部限时条",
+      flashSide: "闪念右侧广告",
+      modelCard: "模型广场运营卡",
     };
 
     function b03ApplySlotRows() {
@@ -15514,10 +15675,19 @@
       b03State.slotRow = row;
       const title = document.querySelector("[data-b03-slot-modal-title]");
       if (title) title.textContent = row ? "编辑投放" : "新建投放";
-      ["title", "description", "link", "cover", "status", "sort"].forEach((key) => {
+      const idWrap = document.querySelector("[data-b03-slot-id-wrap]");
+      if (idWrap) idWrap.hidden = !row;
+      const idLabel = document.querySelector("[data-b03-slot-form-id-label]");
+      if (idLabel) idLabel.textContent = B03_SLOT_ID_LABEL[b03State.slotTab] || "展示项 ID";
+      const isHomeNav = b03State.slotTab === "homeAigc";
+      document.querySelector("[data-b03-slot-title-label]").textContent = isHomeNav ? "导航名称" : "标题";
+      document.querySelector("[data-b03-slot-description-label]").textContent = isHomeNav ? "导航简介" : "描述";
+      const defaults = { id: row?.dataset.id || "", position: B03_SLOT_POSITION_LABEL[b03State.slotTab] || "—", title: "", description: "", link: "", cover: "", status: "启用", sort: "10" };
+      Object.keys(defaults).forEach((key) => {
         const field = document.querySelector(`[data-b03-slot-form="${key}"]`);
-        if (field) field.value = row?.dataset?.[key] || (key === "status" ? "启用" : key === "sort" ? "10" : "");
+        if (field) field.value = row?.dataset?.[key] || defaults[key];
       });
+      syncPrototypeUploadStatus(document.querySelector("[data-b03-slot-upload]"));
       b03Feedback("[data-b03-slot-feedback]");
       b03Layer("slot", true);
     }
@@ -15538,8 +15708,10 @@
         cells[1].textContent = values.title;
         cells[2].textContent = values.description || "—";
         cells[3].textContent = values.link;
+        cells[4].innerHTML = values.cover ? `<div class="image-thumb" data-image-src="${escapeHtml(values.cover)}"></div>` : "—";
         cells[5].innerHTML = `<span class="tag ${values.status === "启用" ? "success" : "gray"}">${values.status}</span>`;
         cells[6].textContent = values.sort || "0";
+        b03SetImageThumbs(b03State.slotRow);
       } else {
         const id = String(Date.now()).slice(-6);
         const row = document.createElement("tr");
@@ -15570,11 +15742,14 @@
     function b03OpenPopupEditor(row = null) {
       b03State.popupRow = row;
       document.querySelector("[data-b03-popup-modal-title]").textContent = row ? "编辑弹窗子项" : "新建弹窗子项";
+      document.querySelector("[data-b03-popup-id-wrap]").hidden = !row;
+      document.querySelector('[data-b03-popup-form="id"]').value = row?.dataset.id || "";
       const map = { title: "title", description: "description", image: "image", button: "button", link: "link", sort: "sort", status: "status" };
       Object.entries(map).forEach(([fieldKey, datasetKey]) => {
         const field = document.querySelector(`[data-b03-popup-form="${fieldKey}"]`);
         if (field) field.value = row?.dataset?.[datasetKey] || (fieldKey === "status" ? "offline" : fieldKey === "sort" ? "10" : "");
       });
+      syncPrototypeUploadStatus(document.querySelector("[data-b03-popup-upload]"));
       b03Feedback("[data-b03-popup-feedback]");
       b03Layer("popup", true);
     }
@@ -15595,11 +15770,13 @@
         Object.assign(row.dataset, { ...values, keyword: `${values.title} ${values.description}` });
         row.children[1].textContent = values.title;
         row.children[2].textContent = values.description;
+        row.children[3].innerHTML = `<div class="image-thumb" data-image-src="${escapeHtml(values.image)}"></div>`;
         row.children[4].textContent = values.button;
         row.children[5].textContent = values.link;
         row.children[6].querySelector("input").checked = values.status === "online";
         row.children[6].querySelector("span").textContent = values.status === "online" ? "上架" : "下架";
         row.children[7].textContent = values.sort || "0";
+        b03SetImageThumbs(row);
       } else {
         const id = String(Date.now()).slice(-5);
         const next = document.createElement("tr");
@@ -15622,6 +15799,14 @@
       scenarios: "适用场景",
       "work-models": "模板模型",
       "tutorial-sections": "教程板块",
+    };
+
+    const B03_SETTING_CONTRACTS = {
+      "content-categories": { nameLabel: "分类名称" },
+      "content-topics": { nameLabel: "话题名称", hasCreated: true },
+      scenarios: { nameLabel: "场景名称", descriptionLabel: "场景描述", scenarioCodeOnEdit: true, hasCreated: true },
+      "work-models": { nameLabel: "模型名称", descriptionLabel: "模型描述", hasBinding: true, hasCreated: true },
+      "tutorial-sections": { nameLabel: "板块名称", descriptionLabel: "板块简介", hasCode: true, hasCover: true },
     };
 
     function b03ActivateSettingTab(tab) {
@@ -15654,41 +15839,83 @@
     function b03OpenSettingEditor(row = null) {
       b03State.settingRow = row;
       const label = B03_SETTING_LABELS[b03State.settingTab];
+      const config = B03_SETTING_CONTRACTS[b03State.settingTab];
       document.querySelector("[data-b03-setting-modal-title]").textContent = `${row ? "编辑" : "新建"}${label}`;
-      const cells = row?.children || [];
-      document.querySelector('[data-b03-setting-form="code"]').value = row ? String(cells[0]?.textContent || "").trim() : "";
-      document.querySelector('[data-b03-setting-form="name"]').value = row ? String(cells[1]?.textContent || "").trim() : "";
-      document.querySelector('[data-b03-setting-form="sort"]').value = row ? String([...cells].find((cell) => /^\d+$/.test(cell.textContent.trim()))?.textContent || "10").trim() : "10";
-      document.querySelector('[data-b03-setting-form="status"]').value = row?.dataset.status || "启用";
-      document.querySelector("[data-b03-setting-binding-field]").hidden = b03State.settingTab !== "work-models";
+      const values = {
+        id: row?.dataset.id || "",
+        code: row?.dataset.code || "",
+        name: row?.dataset.name || "",
+        description: row?.dataset.description || "",
+        cover: row?.dataset.cover || "",
+        binding: row?.dataset.binding || "",
+        sort: row?.dataset.sort || "10",
+        status: row?.dataset.status || "启用",
+      };
+      Object.entries(values).forEach(([key, value]) => {
+        const field = document.querySelector(`[data-b03-setting-form="${key}"]`);
+        if (field) field.value = value;
+      });
+      document.querySelector("[data-b03-setting-id-field]").hidden = !row;
+      const showCode = config.hasCode || (config.scenarioCodeOnEdit && Boolean(row));
+      document.querySelector("[data-b03-setting-code-field]").hidden = !showCode;
       document.querySelector('[data-b03-setting-form="code"]').disabled = Boolean(row);
+      document.querySelector("[data-b03-setting-description-field]").hidden = !config.descriptionLabel;
+      document.querySelector("[data-b03-setting-cover-field]").hidden = !config.hasCover;
+      document.querySelector("[data-b03-setting-binding-field]").hidden = !config.hasBinding;
+      document.querySelector("[data-b03-setting-name-label]").textContent = config.nameLabel;
+      document.querySelector("[data-b03-setting-description-label]").textContent = config.descriptionLabel || "描述";
+      document.querySelector("[data-b03-setting-code-label]").textContent = b03State.settingTab === "tutorial-sections" ? "板块编码" : "场景编码";
+      syncPrototypeUploadStatus(document.querySelector("[data-b03-setting-upload]"));
       b03Feedback("[data-b03-setting-feedback]");
       b03Layer("setting", true);
     }
 
+    function b03RenderSettingRow(row, values) {
+      const statusTag = `<span class="tag ${values.status === "启用" ? "success" : "gray"}">${escapeHtml(values.status)}</span>`;
+      const actions = '<div class="op-list"><button class="btn link" data-b03-setting-edit>编辑</button><button class="btn link danger-link" data-b03-setting-delete>删除</button></div>';
+      const created = values.created || "刚刚";
+      if (b03State.settingTab === "content-categories") row.innerHTML = `<td class="mono">${escapeHtml(values.id)}</td><td>${escapeHtml(values.name)}</td><td>${escapeHtml(values.sort)}</td><td>${statusTag}</td><td>${actions}</td>`;
+      else if (b03State.settingTab === "content-topics") row.innerHTML = `<td class="mono">${escapeHtml(values.id)}</td><td>${escapeHtml(values.name)}</td><td>${escapeHtml(values.sort)}</td><td>${statusTag}</td><td>${escapeHtml(created)}</td><td>${actions}</td>`;
+      else if (b03State.settingTab === "scenarios") row.innerHTML = `<td class="mono">${escapeHtml(values.id)}</td><td>${escapeHtml(values.name)}</td><td>${escapeHtml(values.description || "—")}</td><td>${escapeHtml(values.sort)}</td><td>${statusTag}</td><td>${escapeHtml(created)}</td><td>${actions}</td>`;
+      else if (b03State.settingTab === "work-models") row.innerHTML = `<td class="mono">${escapeHtml(values.id)}</td><td>${escapeHtml(values.name)}</td><td>${escapeHtml(values.description || "—")}</td><td class="mono">${escapeHtml(values.binding || "未关联")}</td><td>${escapeHtml(values.sort)}</td><td>${statusTag}</td><td>${escapeHtml(created)}</td><td>${actions}</td>`;
+      else row.innerHTML = `<td class="mono">${escapeHtml(values.id)}</td><td class="mono">${escapeHtml(values.code)}</td><td>${escapeHtml(values.name)}</td><td>${escapeHtml(values.description || "—")}</td><td>${values.cover ? `<div class="image-thumb" data-image-src="${escapeHtml(values.cover)}"></div>` : "—"}</td><td>${statusTag}</td><td>${escapeHtml(values.sort)}</td><td>${actions}</td>`;
+    }
+
     function b03SaveSetting() {
-      const code = String(document.querySelector('[data-b03-setting-form="code"]')?.value || "").trim();
-      const name = String(document.querySelector('[data-b03-setting-form="name"]')?.value || "").trim();
-      const status = String(document.querySelector('[data-b03-setting-form="status"]')?.value || "启用");
-      if (!code || !name) {
-        b03Feedback("[data-b03-setting-feedback]", "编码和名称为必填");
+      const values = Object.fromEntries(["id", "code", "name", "description", "cover", "binding", "sort", "status"].map((key) => [key, String(document.querySelector(`[data-b03-setting-form="${key}"]`)?.value || "").trim()]));
+      const config = B03_SETTING_CONTRACTS[b03State.settingTab];
+      if (!values.name || (config.hasCode && !values.code)) {
+        b03Feedback("[data-b03-setting-feedback]", config.hasCode ? "板块编码和板块名称为必填" : `${config.nameLabel}为必填`);
         return;
       }
-      if (b03State.settingRow) {
-        b03State.settingRow.children[1].textContent = name;
-        b03State.settingRow.dataset.keyword = `${code} ${name}`;
-        b03State.settingRow.dataset.status = status;
-      } else {
+      if (!/^\d+$/.test(values.sort || "") || Number(values.sort) < 0) {
+        b03Feedback("[data-b03-setting-feedback]", "排序必须是大于等于 0 的整数");
+        return;
+      }
+      let row = b03State.settingRow;
+      if (!row) {
         const panel = b03View("operation-settings").querySelector(`[data-b03-setting-panel="${b03State.settingTab}"]`);
-        const columnCount = panel.querySelectorAll("thead th").length;
-        const row = document.createElement("tr");
-        Object.assign(row.dataset, { b03SettingRow: "", keyword: `${code} ${name}`, status });
-        const middle = Array.from({ length: Math.max(0, columnCount - 6) }, () => "<td>—</td>").join("");
-        row.innerHTML = `<td class="mono"></td><td></td>${middle}<td>10</td><td><span class="tag ${status === "启用" ? "success" : "gray"}">${status}</span></td><td>刚刚</td><td><div class="op-list"><button class="btn link" data-b03-setting-edit>编辑</button><button class="btn link danger-link" data-b03-setting-delete>删除</button></div></td>`;
-        row.children[0].textContent = code;
-        row.children[1].textContent = name;
+        row = document.createElement("tr");
+        values.id = String(Date.now()).slice(-5);
+        values.created = "刚刚";
         panel.querySelector("[data-b03-setting-empty]").before(row);
       }
+      values.created = row.dataset.created || values.created || "刚刚";
+      Object.assign(row.dataset, {
+        b03SettingRow: "",
+        id: values.id,
+        code: values.code,
+        name: values.name,
+        description: values.description,
+        cover: values.cover,
+        binding: values.binding,
+        sort: values.sort,
+        created: values.created,
+        status: values.status,
+        keyword: `${values.id} ${values.code} ${values.name} ${values.binding}`.trim(),
+      });
+      b03RenderSettingRow(row, values);
+      b03SetImageThumbs(row);
       b03Layer("setting", false);
       b03ApplySettingRows();
     }
@@ -15705,49 +15932,119 @@
         view.querySelector("[data-b03-activity-empty]"), [view.querySelector("[data-b03-activity-result]")]);
     }
 
+    const B03_ACTIVITY_TYPE_LABELS = {
+      campaign: "档期活动",
+      long_term: "长期活动",
+      referral: "邀请裂变",
+      archive: "往期归档",
+    };
+
+    function b03ActivityNeedsTimeRange(type) {
+      return type === "campaign" || type === "archive";
+    }
+
+    function b03SyncActivityEditorType() {
+      const type = String(document.querySelector('[data-b03-activity-form="type"]')?.value || "");
+      const timeFields = document.querySelector("[data-b03-activity-time-fields]");
+      if (timeFields) timeFields.hidden = !b03ActivityNeedsTimeRange(type);
+    }
+
     function b03OpenActivityEditor(row = null) {
       b03State.activityRow = row;
       document.querySelector("[data-b03-activity-drawer-title]").textContent = row ? "编辑活动" : "新增活动";
       const values = {
         code: row?.dataset.code || "",
         name: row?.dataset.keyword || "",
-        type: row?.dataset.type || "campaign",
+        type: row?.dataset.type || "long_term",
         status: row?.dataset.status || "未开始",
-        cover: row?.querySelector("[data-image-src]")?.dataset.imageSrc || "",
-        start: "",
-        end: "",
+        cover: row?.dataset.cover || row?.querySelector("[data-image-src]")?.dataset.imageSrc || "",
+        start: row?.dataset.start || "",
+        end: row?.dataset.end || "",
+        max_points: row?.dataset.maxPoints || "0",
+        sort_order: row?.dataset.sortOrder || "0",
+        description: row?.dataset.description || "",
+        unlock_rule: row?.dataset.unlockRule || "{}",
+        extra_config: row?.dataset.extraConfig || "{}",
       };
       Object.entries(values).forEach(([key, value]) => {
         const field = document.querySelector(`[data-b03-activity-form="${key}"]`);
         if (field) field.value = value;
       });
-      document.querySelector('[data-b03-activity-form="code"]').disabled = Boolean(row);
+      const codeField = document.querySelector('[data-b03-activity-form="code"]');
+      const typeField = document.querySelector('[data-b03-activity-form="type"]');
+      if (codeField) codeField.disabled = Boolean(row);
+      if (typeField) {
+        const archiveOption = typeField.querySelector('option[value="archive"]');
+        if (archiveOption) archiveOption.disabled = !row || row.dataset.type !== "archive";
+      }
+      b03SyncActivityEditorType();
       b03Feedback("[data-b03-activity-feedback]");
       b03Layer("activity", true);
     }
 
     function b03SaveActivity() {
-      const values = Object.fromEntries(["code", "name", "type", "status", "cover", "start", "end"].map((key) => [key, String(document.querySelector(`[data-b03-activity-form="${key}"]`)?.value || "").trim()]));
-      if (!values.code || !values.name || !values.type) {
-        b03Feedback("[data-b03-activity-feedback]", "活动编码、活动名称和活动类型为必填");
+      const keys = ["code", "name", "type", "status", "cover", "start", "end", "max_points", "sort_order", "description", "unlock_rule", "extra_config"];
+      const values = Object.fromEntries(keys.map((key) => [key, String(document.querySelector(`[data-b03-activity-form="${key}"]`)?.value || "").trim()]));
+      if (!values.code || !values.name || !values.type || !values.cover) {
+        b03Feedback("[data-b03-activity-feedback]", "活动编码、活动名称、封面图和活动类型为必填");
         return;
       }
       if (values.type === "archive" && !b03State.activityRow) {
-        b03Feedback("[data-b03-activity-feedback]", "往期活动不可新建，只能由档期活动结束后进入");
+        b03Feedback("[data-b03-activity-feedback]", "往期归档不可新建，只能由档期活动结束后进入");
+        return;
+      }
+      if (b03ActivityNeedsTimeRange(values.type) && (!values.start || !values.end)) {
+        b03Feedback("[data-b03-activity-feedback]", "档期活动和往期归档必须配置完整活动时间");
         return;
       }
       if (values.start && values.end && values.start >= values.end) {
         b03Feedback("[data-b03-activity-feedback]", "结束时间必须晚于开始时间");
         return;
       }
+      if (Number(values.max_points) < 0 || Number(values.sort_order) < 0) {
+        b03Feedback("[data-b03-activity-feedback]", "最高可得积分和排序不能小于 0");
+        return;
+      }
+      try {
+        JSON.parse(values.unlock_rule || "{}");
+        JSON.parse(values.extra_config || "{}");
+      } catch {
+        b03Feedback("[data-b03-activity-feedback]", "解锁条件和扩展配置必须是合法 JSON");
+        return;
+      }
+
+      const timeSummary = b03ActivityNeedsTimeRange(values.type)
+        ? `${values.start.replace("T", " ")} ~ ${values.end.replace("T", " ")}`
+        : "不限时";
+      const typeLabel = B03_ACTIVITY_TYPE_LABELS[values.type] || values.type;
+      const statusClass = values.status === "进行中" ? "success" : values.status === "未开始" ? "info" : "gray";
+      const datasetValues = {
+        code: values.code,
+        keyword: values.name,
+        type: values.type,
+        status: values.status,
+        cover: values.cover,
+        start: values.start,
+        end: values.end,
+        maxPoints: values.max_points || "0",
+        sortOrder: values.sort_order || "0",
+        description: values.description,
+        unlockRule: values.unlock_rule || "{}",
+        extraConfig: values.extra_config || "{}",
+      };
       if (b03State.activityRow) {
-        Object.assign(b03State.activityRow.dataset, { code: values.code, keyword: values.name, type: values.type, status: values.status });
-        b03State.activityRow.children[1].querySelector("b").textContent = values.name;
-        b03State.activityRow.children[4].innerHTML = `<span class="tag ${values.status === "进行中" ? "success" : values.status === "未开始" ? "info" : "gray"}">${values.status}</span>`;
+        const row = b03State.activityRow;
+        Object.assign(row.dataset, datasetValues);
+        row.children[0].innerHTML = `<div class="image-thumb" data-image-src="${escapeAttribute(values.cover)}"></div>`;
+        row.children[1].querySelector("b").textContent = values.name;
+        row.children[2].textContent = typeLabel;
+        row.children[3].innerHTML = `<div>${values.type === "archive" ? "已结束" : values.type === "campaign" ? "当前档期" : "长期活动"}</div><div class="muted small">${escapeHtml(timeSummary)}</div>`;
+        row.children[4].innerHTML = `<span class="tag ${statusClass}">${values.status}</span>`;
+        b03SetImageThumbs(row);
       } else {
         const row = document.createElement("tr");
-        Object.assign(row.dataset, { b03ActivityRow: "", code: values.code, keyword: values.name, type: values.type, status: values.status, protected: "false" });
-        row.innerHTML = `<td>${values.cover ? `<div class="image-thumb" data-image-src="${values.cover}"></div>` : "—"}</td><td><b></b><div class="mono muted small"></div></td><td>${values.type}</td><td><div>${values.start && values.end ? `${values.start} ~ ${values.end}` : "不限时"}</div></td><td><span class="tag ${values.status === "进行中" ? "success" : "info"}">${values.status}</span></td><td><div class="op-list"><a class="btn link" href="activity-detail.html?code=${encodeURIComponent(values.code)}">详情</a><button class="btn link" data-b03-activity-edit>编辑</button><button class="btn link danger-link" data-b03-activity-delete>删除</button></div></td>`;
+        Object.assign(row.dataset, { b03ActivityRow: "", ...datasetValues, protected: "false" });
+        row.innerHTML = `<td><div class="image-thumb" data-image-src="${escapeAttribute(values.cover)}"></div></td><td><b></b><div class="mono muted small"></div></td><td>${escapeHtml(typeLabel)}</td><td><div>${values.type === "campaign" ? "当前档期" : "长期活动"}</div><div class="muted small">${escapeHtml(timeSummary)}</div></td><td><span class="tag ${statusClass}">${escapeHtml(values.status)}</span></td><td><div class="op-list"><a class="btn link" href="activity-detail.html?code=${encodeURIComponent(values.code)}" data-antd-component="Button">详情</a><button class="btn link" data-b03-activity-edit data-antd-component="Button">编辑</button><button class="btn link danger-link" data-b03-activity-delete data-antd-component="Button">删除</button></div></td>`;
         row.children[1].querySelector("b").textContent = values.name;
         row.children[1].querySelector("div").textContent = values.code;
         b03View("activity-config").querySelector("[data-b03-activity-empty]").before(row);
@@ -15811,6 +16108,188 @@
       view.querySelectorAll("[data-b03-activity-detail-panel]").forEach((panel) => { panel.hidden = panel.dataset.b03ActivityDetailPanel !== next; });
     }
 
+    function b03TaskFormField(key) {
+      return document.querySelector(`[data-b03-task-form="${key}"]`);
+    }
+
+    function b03OpenActivityTaskEditor(row = null) {
+      const view = b03View("activity-detail");
+      if (!view?.dataset.activityCode) return;
+      b03State.activityTaskRow = row;
+      const taskCode = row?.dataset.taskCode || `TASK-${String(Date.now()).slice(-6)}`;
+      const values = {
+        code: view.dataset.activityCode,
+        task_code: taskCode,
+        name: row?.dataset.name || "",
+        event_type: row?.dataset.eventType || "",
+        description: row?.dataset.description || "",
+        target_count: row?.dataset.targetCount || "1",
+        reward_points: row?.dataset.rewardPoints || "0",
+        expire_days: row?.dataset.expireDays || "30",
+        reward_dispatch_mode: row?.dataset.rewardDispatchMode || "realtime",
+        sort_order: row?.dataset.sortOrder || "0",
+        day_index: row?.dataset.dayIndex || "",
+        unlock_day: row?.dataset.unlockDay || "",
+        cta_text: row?.dataset.ctaText || "",
+        cta_route: row?.dataset.ctaRoute || "",
+        event_filter: row?.dataset.eventFilter || "{}",
+        quota_rule: row?.dataset.quotaRule || "{}",
+        validation_rule: row?.dataset.validationRule || "{}",
+      };
+      Object.entries(values).forEach(([key, value]) => {
+        const field = b03TaskFormField(key);
+        if (field) field.value = value;
+      });
+      document.querySelector("[data-b03-task-drawer-title]").textContent = row ? "编辑活动任务" : "新建活动任务";
+      b03Feedback("[data-b03-task-form-feedback]");
+      b03Layer("activity-task", true);
+    }
+
+    function b03RenderActivityTaskRow(row, values) {
+      Object.assign(row.dataset, {
+        b03TaskRow: "",
+        taskCode: values.task_code,
+        name: values.name,
+        eventType: values.event_type,
+        description: values.description,
+        targetCount: values.target_count,
+        rewardPoints: values.reward_points,
+        expireDays: values.expire_days,
+        rewardDispatchMode: values.reward_dispatch_mode,
+        sortOrder: values.sort_order,
+        dayIndex: values.day_index,
+        unlockDay: values.unlock_day,
+        ctaText: values.cta_text,
+        ctaRoute: values.cta_route,
+        eventFilter: values.event_filter,
+        quotaRule: values.quota_rule,
+        validationRule: values.validation_rule,
+      });
+      const modeLabel = { realtime: "实时", deferred: "延后", manual: "人工" }[values.reward_dispatch_mode] || values.reward_dispatch_mode;
+      row.innerHTML = `<td><b>${escapeHtml(values.name)}</b><div class="mono muted small">${escapeHtml(values.task_code)}</div><div class="muted small">${escapeHtml(values.description || "暂无描述")}</div></td><td><div>${escapeHtml(values.event_type)}</div><div class="muted small">完成 ${escapeHtml(values.target_count)} 次</div></td><td><div>${escapeHtml(values.reward_points)} 积分</div><div class="muted small">${escapeHtml(values.expire_days)} 天有效 · ${escapeHtml(modeLabel)}发放</div></td><td>${escapeHtml(values.sort_order || "0")}</td><td><div>${escapeHtml(values.cta_text || "—")}</div><div class="mono muted small">${escapeHtml(values.cta_route || "—")}</div></td><td><div class="op-list"><button class="btn link" type="button" data-b03-task-edit data-antd-component="Button">编辑</button><button class="btn link danger-link" type="button" data-b03-task-delete data-danger-action="b03-activity-task-delete" data-danger-object-id="${escapeAttribute(values.task_code)}" data-danger-current-state="活动任务已配置" data-danger-result="删除任务后不可恢复；已产生的历史进度与奖励记录保留" data-requires-confirm="true" data-antd-component="Button">删除</button></div></td>`;
+    }
+
+    function b03UpdateTaskEmpty() {
+      const view = b03View("activity-detail");
+      const empty = view?.querySelector("[data-b03-task-empty]");
+      if (empty) empty.hidden = view.querySelectorAll("[data-b03-task-row]").length > 0;
+    }
+
+    function b03SaveActivityTask() {
+      const keys = ["code", "task_code", "name", "event_type", "description", "target_count", "reward_points", "expire_days", "reward_dispatch_mode", "sort_order", "day_index", "unlock_day", "cta_text", "cta_route", "event_filter", "quota_rule", "validation_rule"];
+      const values = Object.fromEntries(keys.map((key) => [key, String(b03TaskFormField(key)?.value || "").trim()]));
+      if (!values.code || !values.task_code || !values.name || !values.event_type) {
+        b03Feedback("[data-b03-task-form-feedback]", "活动编码、任务编码、任务名称和事件类型为必填");
+        return;
+      }
+      if (Number(values.target_count) < 1 || Number(values.reward_points) < 0 || Number(values.expire_days) < 1 || Number(values.sort_order) < 0) {
+        b03Feedback("[data-b03-task-form-feedback]", "目标次数、奖励积分、有效天数或排序不符合范围要求");
+        return;
+      }
+      if (values.cta_route && /^(?:https?:)?\/\//i.test(values.cta_route)) {
+        b03Feedback("[data-b03-task-form-feedback]", "任务入口必须使用已登记的站内相对路径");
+        return;
+      }
+      try {
+        [values.event_filter, values.quota_rule, values.validation_rule].forEach((value) => JSON.parse(value || "{}"));
+      } catch {
+        b03Feedback("[data-b03-task-form-feedback]", "事件过滤、发奖配额和投稿校验必须是合法 JSON");
+        return;
+      }
+      const wasEditing = Boolean(b03State.activityTaskRow);
+      let row = b03State.activityTaskRow;
+      if (!row) {
+        row = document.createElement("tr");
+        b03View("activity-detail").querySelector("[data-b03-task-empty]").before(row);
+      }
+      b03RenderActivityTaskRow(row, values);
+      b03State.activityTaskRow = null;
+      b03UpdateTaskEmpty();
+      b03Feedback("[data-b03-task-feedback]", `任务 ${values.task_code} 已${wasEditing ? "更新" : "新建"}；任务列表已刷新。`, "success");
+      b03Layer("activity-task", false);
+    }
+
+    function b03OpenSubmissionWork(row) {
+      if (!row) return;
+      const fields = {
+        id: row.dataset.bizId || "—",
+        type: row.dataset.contentType || row.dataset.bizType || "—",
+        status: row.dataset.status || "—",
+        author: row.dataset.author || row.dataset.user || "—",
+        intro: row.dataset.intro || "暂无简介",
+        prompt: row.dataset.prompt || "暂无提示词",
+      };
+      Object.entries(fields).forEach(([key, value]) => {
+        const node = document.querySelector(`[data-b03-work-detail="${key}"]`);
+        if (node) node.textContent = value;
+      });
+      const subtitle = document.querySelector("[data-b03-work-detail-subtitle]");
+      if (subtitle) subtitle.textContent = row.dataset.title || row.dataset.bizId || "投稿作品";
+      b03Layer("submission-work", true);
+    }
+
+    function b03SelectedSubmissionRows() {
+      return [...(b03View("activity-detail")?.querySelectorAll("[data-b03-submission-row]") || [])].filter((row) => row.querySelector("[data-b03-submission-select]")?.checked);
+    }
+
+    function b03UpdateSubmissionSelection() {
+      const view = b03View("activity-detail");
+      if (!view) return;
+      const rows = [...view.querySelectorAll("[data-b03-submission-row]")];
+      const selected = b03SelectedSubmissionRows();
+      const count = view.querySelector("[data-b03-submission-selected]");
+      const grant = view.querySelector("[data-b03-submission-grant]");
+      const selectAll = view.querySelector("[data-b03-submission-select-all]");
+      if (count) count.textContent = `已选 ${selected.length} 项`;
+      if (grant) grant.disabled = selected.length === 0;
+      if (selectAll) {
+        selectAll.checked = rows.length > 0 && selected.length === rows.length;
+        selectAll.indeterminate = selected.length > 0 && selected.length < rows.length;
+      }
+    }
+
+    function b03OpenGrantReward() {
+      const selected = b03SelectedSubmissionRows();
+      if (!selected.length) {
+        b03Feedback("[data-b03-submission-feedback]", "请先选择投稿作品");
+        return;
+      }
+      const selectedLabel = document.querySelector("[data-b03-grant-selected]");
+      if (selectedLabel) selectedLabel.textContent = `已选投稿 ${selected.length} 条`;
+      const defaults = { reward_type: "featured", points: "100", expire_days: "30", remark: "" };
+      Object.entries(defaults).forEach(([key, value]) => {
+        const field = document.querySelector(`[data-b03-grant-form="${key}"]`);
+        if (field) field.value = value;
+      });
+      b03Feedback("[data-b03-grant-feedback]");
+      b03Layer("submission-grant", true);
+    }
+
+    function b03SaveGrantReward() {
+      const selected = b03SelectedSubmissionRows();
+      const values = Object.fromEntries(["reward_type", "points", "expire_days", "remark"].map((key) => [key, String(document.querySelector(`[data-b03-grant-form="${key}"]`)?.value || "").trim()]));
+      if (!selected.length) {
+        b03Feedback("[data-b03-grant-feedback]", "投稿选择已变化，请重新选择");
+        return;
+      }
+      if (!values.reward_type || Number(values.points) < 1 || Number(values.expire_days) < 1) {
+        b03Feedback("[data-b03-grant-feedback]", "奖励类型、积分和有效天数为必填，且必须大于 0");
+        return;
+      }
+      const logBody = b03View("activity-detail").querySelector('[data-b03-table="activity-reward-logs"] tbody');
+      selected.forEach((row, index) => {
+        const reward = document.createElement("tr");
+        const rewardId = `RWD-${String(Date.now()).slice(-6)}-${index + 1}`;
+        reward.innerHTML = `<td class="mono">${rewardId}</td><td>${escapeHtml(row.dataset.user || "—")}</td><td>${escapeHtml(values.points)}</td><td>人工 · ${values.reward_type === "homepage" ? "首页推荐" : "精选"}</td><td><span class="tag success">已发放</span></td><td>刚刚</td><td><button class="btn link danger-link" data-antd-component="Button">撤销</button></td>`;
+        logBody?.prepend(reward);
+        const checkbox = row.querySelector("[data-b03-submission-select]");
+        if (checkbox) checkbox.checked = false;
+      });
+      b03UpdateSubmissionSelection();
+      b03Feedback("[data-b03-submission-feedback]", `已为 ${selected.length} 条投稿发放 ${values.points} 积分，发奖审计已追加记录。`, "success");
+      b03Layer("submission-grant", false);
+    }
+
     function b03ApplyAnnouncementRows() {
       const view = b03View("operation-config");
       if (!view) return;
@@ -15822,7 +16301,7 @@
     function b03OpenAnnouncementDetail(row) {
       const meta = document.querySelector("[data-b03-announcement-detail-meta]");
       meta.innerHTML = "";
-      [["公告 ID", row.dataset.id], ["状态", row.dataset.status === "1" ? "已上架" : row.dataset.status === "0" ? "未发布" : "已下架"], ["标题", row.dataset.title], ["目标人群", "全部注册用户"], ["创建人", row.dataset.createdBy], ["发布时间", row.dataset.published || "—"], ["更新时间", row.dataset.updated]].forEach(([label, value]) => {
+      [["公告 ID", row.dataset.id], ["状态", row.dataset.status === "1" ? "已上架" : row.dataset.status === "0" ? "未发布" : "已下架"], ["标题", row.dataset.title], ["摘要", row.dataset.summary || "—"], ["目标人群", row.dataset.audience || "全部注册用户"], ["公开作者", row.dataset.authorUserNo || "—"], ["创建人", row.dataset.createdBy], ["发布时间", row.dataset.published || "—"], ["更新时间", row.dataset.updated]].forEach(([label, value]) => {
         const wrapper = document.createElement("div");
         const dt = document.createElement("dt");
         const dd = document.createElement("dd");
@@ -15838,8 +16317,22 @@
     function b03OpenAnnouncementEditor(row = null) {
       b03State.announcementRow = row;
       document.querySelector("[data-b03-announcement-editor-title]").textContent = row ? "编辑公告" : "创建公告";
-      document.querySelector('[data-b03-announcement-form="title"]').value = row?.dataset.title || "";
-      document.querySelector('[data-b03-announcement-form="content"]').value = row?.dataset.content || "";
+      document.querySelector("[data-b03-announcement-id-wrap]").hidden = !row;
+      document.querySelector("[data-b03-announcement-status-wrap]").hidden = !row;
+      const statusLabel = row?.dataset.status === "1" ? "已上架" : row?.dataset.status === "2" ? "已下架" : "未发布";
+      const values = {
+        id: row?.dataset.id || "",
+        statusLabel,
+        audience: row?.dataset.audience || "全部注册用户",
+        authorUserNo: row?.dataset.authorUserNo || "",
+        title: row?.dataset.title || "",
+        summary: row?.dataset.summary || "",
+        content: row?.dataset.content || "",
+      };
+      Object.entries(values).forEach(([key, value]) => {
+        const field = document.querySelector(`[data-b03-announcement-form="${key}"]`);
+        if (field) field.value = value;
+      });
       b03Feedback("[data-b03-announcement-feedback]");
       b03Layer("announcement-editor", true);
     }
@@ -15852,23 +16345,23 @@
     }
 
     function b03SaveAnnouncement() {
-      const title = String(document.querySelector('[data-b03-announcement-form="title"]')?.value || "").trim();
-      const content = String(document.querySelector('[data-b03-announcement-form="content"]')?.value || "").trim();
-      if (!title || !content) {
-        b03Feedback("[data-b03-announcement-feedback]", "标题和 Markdown 正文为必填");
+      const values = Object.fromEntries(["audience", "authorUserNo", "title", "summary", "content"].map((key) => [key, String(document.querySelector(`[data-b03-announcement-form="${key}"]`)?.value || "").trim()]));
+      if (!values.audience || !values.title || !values.summary || !values.content) {
+        b03Feedback("[data-b03-announcement-feedback]", "目标人群、公告标题、摘要和 Markdown 正文为必填");
         return;
       }
       if (b03State.announcementRow) {
-        b03State.announcementRow.dataset.title = title;
-        b03State.announcementRow.dataset.content = content;
-        b03State.announcementRow.children[1].textContent = title;
+        Object.assign(b03State.announcementRow.dataset, values);
+        b03State.announcementRow.children[1].textContent = values.title;
+        b03State.announcementRow.children[2].textContent = values.audience;
         b03State.announcementRow.children[7].textContent = "刚刚";
       } else {
         const id = String(Date.now()).slice(-5);
         const row = document.createElement("tr");
-        Object.assign(row.dataset, { b03AnnouncementRow: "", id, status: "0", title, content, createdBy: "当前管理员", published: "", updated: "刚刚" });
-        row.innerHTML = `<td class="mono">${id}</td><td></td><td>全部注册用户</td><td><span class="tag gray">未发布</span></td><td>0</td><td>当前管理员</td><td>—</td><td>刚刚</td><td></td>`;
-        row.children[1].textContent = title;
+        Object.assign(row.dataset, { b03AnnouncementRow: "", id, status: "0", ...values, createdBy: "当前管理员", published: "", updated: "刚刚" });
+        row.innerHTML = `<td class="mono">${id}</td><td></td><td></td><td><span class="tag gray">未发布</span></td><td>0</td><td>当前管理员</td><td>—</td><td>刚刚</td><td></td>`;
+        row.children[1].textContent = values.title;
+        row.children[2].textContent = values.audience;
         b03RenderAnnouncementActions(row);
         b03View("operation-config").querySelector("[data-b03-announcement-empty]").before(row);
       }
@@ -15928,30 +16421,35 @@
     function b03OpenProductEditor(row = null) {
       b03State.productRow = row;
       document.querySelector("[data-b03-product-modal-title]").textContent = row ? "编辑产品" : "新增产品";
-      ["name", "price", "description", "status"].forEach((key) => { document.querySelector(`[data-b03-product-form="${key}"]`).value = row?.dataset?.[key] || (key === "status" ? "启用" : ""); });
+      ["name", "price", "description", "effectiveStart", "effectiveEnd", "status", "stock"].forEach((key) => { document.querySelector(`[data-b03-product-form="${key}"]`).value = row?.dataset?.[key] || (key === "status" ? "启用" : key === "stock" ? "0" : ""); });
+      document.querySelector("[data-b03-product-stock-wrap]").hidden = !row;
       b03Feedback("[data-b03-product-feedback]");
       b03Layer("product", true);
     }
 
     function b03SaveProduct() {
-      const values = Object.fromEntries(["name", "price", "description", "status"].map((key) => [key, String(document.querySelector(`[data-b03-product-form="${key}"]`)?.value || "").trim()]));
+      const values = Object.fromEntries(["name", "price", "description", "effectiveStart", "effectiveEnd", "status"].map((key) => [key, String(document.querySelector(`[data-b03-product-form="${key}"]`)?.value || "").trim()]));
       if (!values.name || !/^\d+$/.test(values.price) || Number(values.price) < 1) {
         b03Feedback("[data-b03-product-feedback]", "产品名称必填，积分价格必须为正整数");
+        return;
+      }
+      if (values.effectiveStart && values.effectiveEnd && values.effectiveStart > values.effectiveEnd) {
+        b03Feedback("[data-b03-product-feedback]", "生效结束时间不能早于开始时间");
         return;
       }
       if (b03State.productRow) {
         Object.assign(b03State.productRow.dataset, values);
         b03State.productRow.children[1].textContent = values.name;
         b03State.productRow.children[2].textContent = values.price;
-        b03State.productRow.children[3].textContent = values.description || "—";
         b03State.productRow.children[4].innerHTML = `<span class="tag ${values.status === "启用" ? "success" : "gray"}">${values.status}</span>`;
+        b03State.productRow.children[5].textContent = values.description || "—";
       } else {
         const id = String(Date.now()).slice(-5);
         const row = document.createElement("tr");
-        Object.assign(row.dataset, { b03ProductRow: "", id, ...values });
-        row.innerHTML = `<td class="mono">${id}</td><td></td><td>${values.price}</td><td></td><td><span class="tag ${values.status === "启用" ? "success" : "gray"}">${values.status}</span></td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td>`;
+        Object.assign(row.dataset, { b03ProductRow: "", id, stock: "0", created: "刚刚", ...values });
+        row.innerHTML = `<td class="mono">${id}</td><td></td><td>${values.price}</td><td>0</td><td><span class="tag ${values.status === "启用" ? "success" : "gray"}">${values.status}</span></td><td></td><td>刚刚</td><td><div class="op-list"><button class="btn link" data-b03-product-edit>编辑</button><button class="btn link danger-link" data-b03-product-delete>删除</button></div></td>`;
         row.children[1].textContent = values.name;
-        row.children[3].textContent = values.description || "—";
+        row.children[5].textContent = values.description || "—";
         document.querySelector('[data-b03-table="products"] tbody').append(row);
       }
       b03Layer("product", false);
@@ -15977,6 +16475,8 @@
       b03ActivateSettingTab(B03_SETTING_LABELS[requestedSettingTab] ? requestedSettingTab : "content-categories");
       b03ApplyActivityRows();
       b03InitActivityDetail();
+      b03UpdateTaskEmpty();
+      b03UpdateSubmissionSelection();
       b03ApplyAnnouncementRows();
       b03ActivateStoreTab("catalog");
       const storeView = b03View("store-config");
@@ -16063,16 +16563,14 @@
         b03ApplySettingRows();
       } else if (target.matches("[data-b03-setting-delete]")) {
         const row = target.closest("[data-b03-setting-row]");
-        const protectedCodes = new Set(["CAT-AIGC", "WORK-IMG-A"]);
-        if (protectedCodes.has(String(row?.children[0]?.textContent || "").trim())) {
+        const protectedIds = new Set(["11", "41"]);
+        if (protectedIds.has(String(row?.dataset.id || "").trim())) {
           b03Feedback("[data-b03-setting-feedback]", "删除失败：该配置仍有关联对象");
           b03Layer("setting", true);
         } else {
           row?.remove();
           b03ApplySettingRows();
         }
-      } else if (target.matches("[data-b03-setting-bind]")) {
-        target.textContent = target.textContent.trim() === "绑定" ? "解绑" : "绑定";
       }
 
       else if (target.matches("[data-b03-activity-search]")) b03ApplyActivityRows();
@@ -16082,6 +16580,7 @@
         b03ApplyActivityRows();
       } else if (target.matches("[data-b03-activity-create]")) b03OpenActivityEditor();
       else if (target.matches("[data-b03-activity-edit]")) b03OpenActivityEditor(target.closest("[data-b03-activity-row]"));
+      else if (target.matches("[data-b03-activity-upload]")) b03Feedback("[data-b03-activity-feedback]", "原型展示 Ant Design Upload 入口；请使用上传后的 URL 继续校验表单。", "info");
       else if (target.matches("[data-b03-activity-save]")) b03SaveActivity();
       else if (target.matches("[data-b03-activity-delete]")) {
         const row = target.closest("[data-b03-activity-row]");
@@ -16093,6 +16592,12 @@
           b03ApplyActivityRows();
         }
       } else if (target.matches("[data-b03-activity-detail-tab]")) b03ActivateActivityDetailTab(target.dataset.b03ActivityDetailTab);
+      else if (target.matches("[data-b03-task-create]")) b03OpenActivityTaskEditor();
+      else if (target.matches("[data-b03-task-edit]")) b03OpenActivityTaskEditor(target.closest("[data-b03-task-row]"));
+      else if (target.matches("[data-b03-task-save]")) b03SaveActivityTask();
+      else if (target.matches("[data-b03-submission-view]")) b03OpenSubmissionWork(target.closest("[data-b03-submission-row]"));
+      else if (target.matches("[data-b03-submission-grant]")) b03OpenGrantReward();
+      else if (target.matches("[data-b03-grant-save]")) b03SaveGrantReward();
 
       else if (target.matches("[data-b03-announcement-search]")) b03ApplyAnnouncementRows();
       else if (target.matches("[data-b03-announcement-reset]")) {
@@ -16176,12 +16681,26 @@
     });
 
     document.addEventListener("change", (event) => {
-      const toggle = event.target.closest("[data-b03-popup-toggle]");
-      if (!toggle) return;
-      const row = toggle.closest("[data-b03-popup-row]");
-      row.dataset.status = toggle.checked ? "online" : "offline";
-      toggle.nextElementSibling.textContent = toggle.checked ? "上架" : "下架";
-      b03ApplyPopupRows();
+      const target = event.target;
+      const popupToggle = target.closest("[data-b03-popup-toggle]");
+      if (popupToggle) {
+        const row = popupToggle.closest("[data-b03-popup-row]");
+        row.dataset.status = popupToggle.checked ? "online" : "offline";
+        popupToggle.nextElementSibling.textContent = popupToggle.checked ? "上架" : "下架";
+        b03ApplyPopupRows();
+        return;
+      }
+      if (target.matches('[data-b03-activity-form="type"]')) {
+        b03SyncActivityEditorType();
+        return;
+      }
+      if (target.matches("[data-b03-submission-select-all]")) {
+        const checked = target.checked;
+        b03View("activity-detail")?.querySelectorAll("[data-b03-submission-select]").forEach((checkbox) => { checkbox.checked = checked; });
+        b03UpdateSubmissionSelection();
+        return;
+      }
+      if (target.matches("[data-b03-submission-select]")) b03UpdateSubmissionSelection();
     });
 
     const b04State = {
@@ -16189,8 +16708,7 @@
       officialRow: null,
       whitelistRow: null,
       accountRow: null,
-      memberCard: null,
-      draggedMemberCard: null,
+      memberRow: null,
     };
 
     function b04View(view) {
@@ -16296,6 +16814,7 @@
       setValue("nickname", row?.dataset.nickname);
       setValue("avatar", row?.dataset.avatar);
       setValue("intro", row?.dataset.intro);
+      syncPrototypeUploadStatus(document.querySelector("[data-b04-official-avatar-upload]"));
       document.querySelectorAll("[data-b04-official-purpose]").forEach((field, index) => { field.checked = editing || index === 0; });
       document.querySelectorAll("[data-b04-official-status]").forEach((field) => { field.checked = field.value === (row?.dataset.status === "冻结" ? "0" : "1"); });
       b04Feedback("[data-b04-official-feedback]");
@@ -16446,31 +16965,41 @@
       b04Layer("expire-config", false);
     }
 
-    function b04OpenMemberEditor(card) {
-      b04State.memberCard = card;
-      ["name", "growth", "points", "expire"].forEach((key) => { document.querySelector(`[data-b04-member-field="${key}"]`).value = card.dataset[key] || ""; });
-      document.querySelector('[data-b04-member-field="enabled"]').checked = card.dataset.enabled === "true";
-      document.querySelector("[data-b04-member-enabled-label]").textContent = card.dataset.enabled === "true" ? "启用" : "停用";
+    function b04OpenMemberEditor(row = null) {
+      b04State.memberRow = row;
+      const editing = Boolean(row);
+      document.querySelector("[data-b04-member-title]").textContent = editing ? "编辑会员等级" : "新增会员等级";
+      document.querySelector("[data-b04-member-id-wrap]").hidden = !editing;
+      document.querySelector("[data-b04-member-enabled-wrap]").hidden = !editing;
+      ["id", "name", "growth", "points", "expire"].forEach((key) => { document.querySelector(`[data-b04-member-field="${key}"]`).value = row?.dataset?.[key] || (key === "growth" || key === "points" ? "0" : key === "expire" ? "30" : ""); });
+      document.querySelector('[data-b04-member-field="name"]').disabled = editing;
+      document.querySelector('[data-b04-member-field="enabled"]').checked = editing ? row.dataset.enabled === "true" : true;
+      document.querySelector("[data-b04-member-enabled-label]").textContent = editing && row.dataset.enabled === "false" ? "停用" : "启用";
       b04Feedback("[data-b04-member-error]");
       b04Layer("member-edit", true);
     }
 
     function b04SaveMember() {
-      const card = b04State.memberCard;
+      const name = String(document.querySelector('[data-b04-member-field="name"]')?.value || "").trim();
       const growth = Number(document.querySelector('[data-b04-member-field="growth"]')?.value || -1);
       const points = Number(document.querySelector('[data-b04-member-field="points"]')?.value || -1);
       const expire = Number(document.querySelector('[data-b04-member-field="expire"]')?.value || 0);
       const enabled = document.querySelector('[data-b04-member-field="enabled"]')?.checked || false;
-      if (!card || growth < 0 || !Number.isInteger(points) || points < 0 || !Number.isInteger(expire) || expire < 1) {
-        b04Feedback("[data-b04-member-error]", "成长值和签到积分不能为负数，有效天数必须为正整数");
+      if (!name || !Number.isInteger(growth) || growth < 0 || !Number.isInteger(points) || points < 0 || !Number.isInteger(expire) || expire < 1) {
+        b04Feedback("[data-b04-member-error]", "等级名称必填；成长值、签到积分和有效天数必须为有效整数");
         return;
       }
-      Object.assign(card.dataset, { growth: String(growth), points: String(points), expire: String(expire), enabled: String(enabled) });
-      card.querySelectorAll("p")[0].textContent = `升级需要成长值 ${growth.toLocaleString("zh-CN")}`;
-      card.querySelectorAll("p")[1].textContent = `签到奖励积分 ${points} · ${expire} 天有效`;
-      const state = card.querySelector("[data-b04-member-state]");
-      state.textContent = enabled ? "启用" : "停用";
-      state.className = `tag ${enabled ? "success" : "gray"} b04-member-state`;
+      let row = b04State.memberRow;
+      if (!row) {
+        row = document.createElement("tr");
+        row.dataset.b04MemberRow = "";
+        row.dataset.id = String(Date.now()).slice(-5);
+        b04View("member-levels").querySelector('[data-b04-table="member-levels"] tbody').append(row);
+      }
+      Object.assign(row.dataset, { name, growth: String(growth), points: String(points), expire: String(expire), enabled: String(enabled) });
+      row.innerHTML = `<td class="mono">${escapeHtml(row.dataset.id)}</td><td>${escapeHtml(name)}</td><td>${growth.toLocaleString("zh-CN")}</td><td>${points.toLocaleString("zh-CN")}</td><td>${expire} 天</td><td><button class="btn link" type="button" data-b04-member-edit>编辑</button></td>`;
+      const count = b04View("member-levels").querySelectorAll("[data-b04-member-row]").length;
+      document.querySelector("[data-b04-member-feedback]").textContent = `${count} 条结果`;
       b04Layer("member-edit", false);
     }
 
@@ -16480,21 +17009,6 @@
       b04ApplyUserFilters();
       b04ApplyInviteFilter();
       b04ApplyPointsFilter();
-      document.querySelectorAll("[data-b04-member-card]").forEach((card) => {
-        card.addEventListener("dragstart", () => { b04State.draggedMemberCard = card; card.classList.add("is-dragging"); });
-        card.addEventListener("dragend", () => {
-          card.classList.remove("is-dragging");
-          const order = [...document.querySelectorAll("[data-b04-member-card]")].filter((item) => item.dataset.enabled === "true").map((item) => item.dataset.id).join(", ");
-          const feedback = document.querySelector("[data-b04-member-feedback]");
-          if (feedback) feedback.textContent = order ? `排序已保存：${order}` : "暂无启用等级";
-          b04State.draggedMemberCard = null;
-        });
-        card.addEventListener("dragover", (event) => {
-          event.preventDefault();
-          const dragged = b04State.draggedMemberCard;
-          if (dragged && dragged !== card && dragged.dataset.enabled === "true" && card.dataset.enabled === "true") card.before(dragged);
-        });
-      });
     }
 
     document.addEventListener("click", (event) => {
@@ -16507,7 +17021,6 @@
       else if (target.matches("[data-b04-detail-tab]")) b04ActivateDetailTab(target.dataset.b04DetailTab);
       else if (target.matches("[data-b04-official-create]")) b04OpenOfficialEditor();
       else if (target.matches("[data-b04-official-edit]")) b04OpenOfficialEditor(target.closest("[data-b04-user-row]"));
-      else if (target.matches("[data-b04-official-upload]")) document.querySelector('[data-b04-official-field="avatar"]').value = "assets/image_assets/18.png";
       else if (target.matches("[data-b04-official-save]")) b04SaveOfficial();
       else if (target.matches("[data-b04-user-points]")) b04OpenPointsAdjust(target.closest("[data-b04-user-row]"));
       else if (target.matches("[data-b04-points-save]")) b04SavePointsAdjust();
@@ -16523,7 +17036,8 @@
       else if (target.matches("[data-b04-points-reset]")) { b04View("points-records")?.querySelectorAll("[data-b04-points-filter]").forEach((field) => { field.value = ""; }); b04ApplyPointsFilter(); }
       else if (target.matches("[data-b04-expire-open]")) { b04Feedback("[data-b04-expire-feedback]"); b04Layer("expire-config", true); }
       else if (target.matches("[data-b04-expire-save]")) b04SaveExpireConfig();
-      else if (target.matches("[data-b04-member-edit]")) b04OpenMemberEditor(target.closest("[data-b04-member-card]"));
+      else if (target.matches("[data-b04-member-create]")) b04OpenMemberEditor();
+      else if (target.matches("[data-b04-member-edit]")) b04OpenMemberEditor(target.closest("[data-b04-member-row]"));
       else if (target.matches("[data-b04-member-save]")) b04SaveMember();
     });
 

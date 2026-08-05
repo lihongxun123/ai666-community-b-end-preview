@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:54:14.588Z",
+  "generatedAt": "2026-08-05T18:51:58.464Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -1071,15 +1071,79 @@
       "tabs": 5,
       "panels": 5,
       "tables": 5,
-      "active": "content-categories"
+      "active": "content-categories",
+      "columns": {
+        "content-categories": [
+          "ID",
+          "分类名称",
+          "排序",
+          "状态",
+          "操作"
+        ],
+        "content-topics": [
+          "ID",
+          "话题名称",
+          "排序",
+          "状态",
+          "创建时间",
+          "操作"
+        ],
+        "scenarios": [
+          "ID",
+          "场景名称",
+          "场景描述",
+          "排序",
+          "状态",
+          "创建时间",
+          "操作"
+        ],
+        "work-models": [
+          "ID",
+          "模型名称",
+          "模型描述",
+          "绑定 AIGC 模型",
+          "排序",
+          "状态",
+          "创建时间",
+          "操作"
+        ],
+        "tutorial-sections": [
+          "ID",
+          "板块编码",
+          "板块名称",
+          "板块简介",
+          "封面",
+          "状态",
+          "排序",
+          "操作"
+        ]
+      }
     },
     "b03OperationSettingsFiltered": 1,
     "b03OperationSettingEditor": {
       "open": true,
-      "code": "WORK-IMG-A",
-      "codeDisabled": true,
+      "id": "41",
+      "idDisabled": true,
+      "name": "图像模型",
+      "descriptionVisible": true,
+      "codeHidden": true,
       "bindingVisible": true,
       "queryTab": "work-models"
+    },
+    "b03TutorialSectionCreateEditor": {
+      "codeVisible": true,
+      "descriptionVisible": true,
+      "coverVisible": true,
+      "uploadComponent": "Upload",
+      "bindingHidden": true
+    },
+    "b03TutorialSectionCreated": {
+      "closed": true,
+      "cells": 8,
+      "description": "覆盖教程板块完整字段",
+      "cover": "assets/image_assets/4.png",
+      "edit": true,
+      "remove": true
     },
     "b03ActivityInitial": {
       "rows": 3,
@@ -1094,13 +1158,115 @@
     },
     "b03ActivityExactCount": 1,
     "b03ActivityRequiredError": true,
+    "b03ActivityEditDrawer": {
+      "open": true,
+      "flexDirection": "column",
+      "headerDisplay": "flex",
+      "footerDisplay": "flex",
+      "codeDisabled": true,
+      "code": "campaign-prompt-2026",
+      "maxPoints": "100",
+      "labels": [
+        "活动编码",
+        "活动名称",
+        "封面图",
+        "活动类型",
+        "活动状态",
+        "最高可得积分",
+        "排序",
+        "活动时间",
+        "活动说明（可选）",
+        "解锁条件",
+        "扩展配置"
+      ]
+    },
     "b03ActivityDetailKnown": {
       "contentVisible": true,
       "errorHidden": true,
       "tabs": 5,
       "identity": "Prompt 共创计划 · campaign-prompt-2026 · 进行中"
     },
-    "b03ActivityTasksVisible": true,
+    "b03ActivityTasksInitial": {
+      "visible": true,
+      "rowCount": 1,
+      "createButtons": 1,
+      "editButtons": 1,
+      "deleteButtons": 1
+    },
+    "b03ActivityTaskCreateDrawer": {
+      "open": true,
+      "title": "新建活动任务",
+      "fields": [
+        "code",
+        "task_code",
+        "name",
+        "event_type",
+        "description",
+        "target_count",
+        "sort_order",
+        "reward_points",
+        "expire_days",
+        "reward_dispatch_mode",
+        "day_index",
+        "unlock_day",
+        "cta_text",
+        "cta_route",
+        "event_filter",
+        "quota_rule",
+        "validation_rule"
+      ],
+      "taskCode": "TASK-914477"
+    },
+    "b03ActivityTaskCreated": {
+      "drawerClosed": true,
+      "rowCount": 2,
+      "taskCode": "TASK-914477",
+      "editVisible": true,
+      "deleteVisible": true
+    },
+    "b03ActivityTaskEditDrawer": {
+      "title": "编辑活动任务",
+      "name": "浏览并收藏作品",
+      "codeDisabled": true
+    },
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-914477\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskDeleteConfirm": true,
+    "b03ActivityTaskDeleted": 0,
+    "b03ActivitySubmissionsInitial": {
+      "rowCount": 2,
+      "viewButtons": 2,
+      "featuredButtons": 2,
+      "grantDisabled": true
+    },
+    "b03ActivityWorkDetail": {
+      "open": true,
+      "id": "WK00010002",
+      "title": "柔光人物海报"
+    },
+    "b03ActivityFeaturedConfirm": true,
+    "b03ActivityFeaturedResult": {
+      "featured": "1",
+      "cell": "是",
+      "action": "取消精选"
+    },
+    "b03ActivityGrantEnabled": true,
+    "b03ActivityGrantModal": {
+      "open": true,
+      "selected": "已选投稿 1 条",
+      "fields": [
+        "reward_type",
+        "points",
+        "expire_days",
+        "remark"
+      ]
+    },
+    "b03ActivityGrantResult": {
+      "modalClosed": true,
+      "feedback": "已为 1 条投稿发放 100 积分，发奖审计已追加记录。",
+      "selected": "已选 0 项",
+      "rewardLogCount": 2,
+      "rewardLogCountBefore": 1
+    },
     "b03ActivityDetailUnknown": {
       "contentHidden": true,
       "errorVisible": true
@@ -1112,7 +1278,29 @@
     },
     "b03AnnouncementDraftCount": 1,
     "b03AnnouncementDetailOpen": true,
+    "b03AnnouncementEditorContract": {
+      "fields": [
+        "id",
+        "statusLabel",
+        "audience",
+        "authorUserNo",
+        "title",
+        "summary",
+        "content"
+      ],
+      "idHidden": true,
+      "statusHidden": true,
+      "drawerWidth": 980,
+      "saveLabel": "保存草稿"
+    },
     "b03AnnouncementRequiredError": true,
+    "b03AnnouncementCreated": {
+      "closed": true,
+      "audience": "内容创作者",
+      "author": "AI666-O0001",
+      "summary": "验证公告编辑器完整字段",
+      "cells": 9
+    },
     "b03AnnouncementPublished": {
       "status": "1",
       "label": "已上架",
@@ -1132,7 +1320,41 @@
     "b03StoreCardSaved": "卡密库存 · 已登记 2 条",
     "b03StoreProductsDrawer": {
       "open": true,
-      "products": 2
+      "products": 2,
+      "columns": [
+        "产品 ID",
+        "产品名称",
+        "积分价格",
+        "可用库存",
+        "状态",
+        "描述",
+        "创建时间",
+        "操作"
+      ]
+    },
+    "b03StoreProductEditor": {
+      "open": true,
+      "fields": [
+        "name",
+        "price",
+        "description",
+        "effectiveStart",
+        "effectiveEnd",
+        "status",
+        "stock"
+      ],
+      "stockVisible": true,
+      "stock": "18",
+      "effectiveStart": "2026-08-01",
+      "effectiveEnd": "2026-12-31"
+    },
+    "b03StoreProductCreated": {
+      "modalClosed": true,
+      "rows": 3,
+      "stock": "0",
+      "dates": "2026-08-06,2026-12-31",
+      "cells": 8,
+      "editedDescription": "30 天 API 使用权益（已更新）"
     },
     "b03StoreRecordExactCount": 1,
     "b04UserListInitial": {
@@ -1234,25 +1456,50 @@
     "b04ExpireRequiredError": true,
     "b04ExpireSavedClosed": true,
     "b04MemberInitial": {
-      "cards": 3,
-      "draggable": true,
-      "addButtons": 0
+      "rows": 3,
+      "columns": [
+        "等级 ID",
+        "等级名称",
+        "成长值",
+        "签到奖励积分",
+        "有效天数",
+        "操作"
+      ],
+      "modTable": true,
+      "cards": 0,
+      "addButtons": 1
+    },
+    "b04MemberCreateEditor": {
+      "open": true,
+      "title": "新增会员等级",
+      "idHidden": true,
+      "enabledHidden": true,
+      "nameEnabled": true
+    },
+    "b04MemberCreateRequiredError": true,
+    "b04MemberCreated": {
+      "modalClosed": true,
+      "rows": 4,
+      "cells": 6,
+      "growth": "5000",
+      "points": "18",
+      "expire": "90",
+      "edit": true
     },
     "b04MemberEditor": {
       "open": true,
-      "name": "vip1",
+      "name": "VIP 1",
       "nameDisabled": true,
+      "idVisible": true,
+      "enabledVisible": true,
       "switchComponent": "Switch"
     },
     "b04MemberSaved": {
       "modalClosed": true,
       "growth": "100",
       "points": "6",
-      "expire": "45"
-    },
-    "b04MemberReordered": {
-      "order": "2,1,3",
-      "feedback": "排序已保存：2, 1"
+      "expire": "45",
+      "feedback": "4 条结果"
     },
     "b05OperationLogInitial": {
       "route": "/system/logs",
