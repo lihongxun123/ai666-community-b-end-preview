@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T18:51:58.464Z",
+  "generatedAt": "2026-08-09T09:16:58.885Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -51,6 +51,7 @@
     "b03StoreInteractionsWork": true,
     "b04UserListInteractionsWork": true,
     "b04UserDetailUsesModalNotRoute": true,
+    "b04RegisterSourceInteractionsWork": true,
     "b04InviteInteractionsWork": true,
     "b04PointsInteractionsWork": true,
     "b04MemberLevelInteractionsWork": true,
@@ -75,7 +76,7 @@
         "pageHeading": "内容列表",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -95,7 +96,7 @@
         "pageHeading": "审核工作台",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -115,7 +116,7 @@
         "pageHeading": "闪念管理",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -135,7 +136,7 @@
         "pageHeading": "模板配置",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -155,7 +156,7 @@
         "pageHeading": "",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -172,10 +173,10 @@
         "activeView": "model-series",
         "activeNav": "model-series",
         "routeLabel": "模型系列",
-        "pageHeading": "模型系列",
+        "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -192,10 +193,10 @@
         "activeView": "model-mapping",
         "activeNav": "model-mapping",
         "routeLabel": "模型配置",
-        "pageHeading": "模型管理",
+        "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -212,10 +213,10 @@
         "activeView": "generation-records",
         "activeNav": "generation-records",
         "routeLabel": "生成记录",
-        "pageHeading": "生成记录",
+        "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -235,7 +236,7 @@
         "pageHeading": "展示位管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -252,10 +253,10 @@
         "activeView": "login-popup-config",
         "activeNav": "login-popup-config",
         "routeLabel": "登录弹窗配置",
-        "pageHeading": "登录弹窗配置",
+        "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -272,10 +273,10 @@
         "activeView": "operation-settings",
         "activeNav": "operation-settings",
         "routeLabel": "运营配置",
-        "pageHeading": "运营配置",
+        "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -292,10 +293,10 @@
         "activeView": "activity-config",
         "activeNav": "activity-config",
         "routeLabel": "活动管理",
-        "pageHeading": "活动管理",
+        "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -312,10 +313,10 @@
         "activeView": "operation-config",
         "activeNav": "operation-config",
         "routeLabel": "公告配置",
-        "pageHeading": "公告配置",
+        "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -332,10 +333,10 @@
         "activeView": "store-config",
         "activeNav": "store-config",
         "routeLabel": "商城管理",
-        "pageHeading": "商城管理",
+        "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -355,7 +356,27 @@
         "pageHeading": "用户列表",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "register-sources",
+        "file": "register-sources.html",
+        "activeView": "register-sources",
+        "activeNav": "register-sources",
+        "routeLabel": "注册来源",
+        "pageHeading": "注册来源",
+        "navGroup": "用户管理",
+        "viewCount": 1,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -375,7 +396,7 @@
         "pageHeading": "邀请记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -395,7 +416,7 @@
         "pageHeading": "积分记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -412,10 +433,10 @@
         "activeView": "member-levels",
         "activeNav": "member-levels",
         "routeLabel": "会员等级",
-        "pageHeading": "会员等级",
+        "pageHeading": "",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -432,10 +453,10 @@
         "activeView": "operation-log",
         "activeNav": "operation-log",
         "routeLabel": "日志",
-        "pageHeading": "日志",
+        "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -452,10 +473,10 @@
         "activeView": "role-management",
         "activeNav": "role-management",
         "routeLabel": "角色管理",
-        "pageHeading": "角色管理",
+        "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -472,10 +493,10 @@
         "activeView": "permission-management",
         "activeNav": "permission-management",
         "routeLabel": "权限管理",
-        "pageHeading": "权限管理",
+        "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -492,10 +513,10 @@
         "activeView": "admin-users",
         "activeNav": "admin-users",
         "routeLabel": "后台用户管理",
-        "pageHeading": "后台用户管理",
+        "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -515,7 +536,7 @@
         "pageHeading": "内容详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -535,7 +556,7 @@
         "pageHeading": "教程预览",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -555,7 +576,7 @@
         "pageHeading": "闪念详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -575,7 +596,7 @@
         "pageHeading": "活动详情",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -595,7 +616,7 @@
         "pageHeading": "模型详情",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -615,7 +636,7 @@
         "pageHeading": "模型配置",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 22,
+        "navCount": 23,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -630,9 +651,9 @@
     "userListDesktopNarrow": {
       "viewportWidth": 1266,
       "documentOverflowX": 0,
-      "wrapperRight": 1241,
-      "actionRight": 1223,
-      "actionCellRight": 1241,
+      "wrapperRight": 1221,
+      "actionRight": 1209,
+      "actionCellRight": 1221,
       "actionOverflowX": 0,
       "actionCellOverflowX": 0
     },
@@ -873,9 +894,23 @@
         "keyword",
         "status"
       ],
-      "modTable": true
+      "modTable": true,
+      "singleCard": true,
+      "newActionInHeader": true,
+      "filterActionsInline": true
     },
     "aigcSeriesStoppedFilter": 1,
+    "aigcSeriesCreateModal": {
+      "title": "新建系列",
+      "width": 560,
+      "horizontalForm": true,
+      "defaultStatus": "1",
+      "enableChecked": true,
+      "footerActions": [
+        "取消",
+        "确定"
+      ]
+    },
     "aigcSeriesRequiredError": true,
     "aigcSeriesCreated": {
       "modalOpen": false,
@@ -917,7 +952,9 @@
         "status"
       ],
       "configLinks": 8,
-      "modTable": true
+      "modTable": true,
+      "singleCard": true,
+      "filterActionsInCard": true
     },
     "aigcImageModelCount": 3,
     "aigcModelCreateGate": {
@@ -930,14 +967,15 @@
       "modalOpen": false,
       "rowCount": 9,
       "status": "0",
-      "points": "22"
+      "points": "22",
+      "vendorCell": "—"
     },
     "aigcModelEdit": {
       "open": true,
       "code": "gpt-image-2",
       "codeDisabled": true,
       "series": "openai",
-      "seriesDisabled": true,
+      "seriesHidden": true,
       "points": "18"
     },
     "aigcModelDeleted": 0,
@@ -1020,17 +1058,49 @@
         "work-no",
         "request-id"
       ],
-      "modTable": true
+      "modTable": true,
+      "realLayout": true,
+      "topLevelPanels": 1,
+      "pageHead": false,
+      "filterColumns": 4
     },
     "aigcGenerationFailedCount": 1,
     "aigcGenerationDetail": {
       "open": true,
-      "subtitle": "AG202608011000001",
-      "descriptions": 14,
+      "width": 760,
+      "title": "生成单详情",
+      "labels": [
+        "生成单号",
+        "用户 ID",
+        "生成状态",
+        "系列编码",
+        "模型编码",
+        "输出类型",
+        "消耗积分",
+        "输入比例",
+        "实际比例",
+        "分辨率",
+        "作品 ID",
+        "活动编码",
+        "请求 ID",
+        "创建时间",
+        "更新时间",
+        "提示词",
+        "文本结果"
+      ],
+      "descriptions": 17,
       "inputMedia": 1,
-      "resultMedia": 1,
+      "resultImages": 1,
+      "resultVideos": 0,
+      "headerCloseActions": 2,
+      "footerExists": false,
       "rawRequest": "{\n  \"model\": \"gpt-image-2\",\n  \"prompt\": \"一只赛博朋克猫\",\n  \"request_id\": \"REQ-20260801-001\",\n  \"headers\": {\n    \"Authorization\": \"[REDACTED]\",\n    \"api_key\": \"[REDACTED]\"\n  }\n}",
       "rawResponse": "{\n  \"status\": \"成功\",\n  \"work_no\": \"WK00010001\",\n  \"result_text\": \"生成完成\",\n  \"provider_token\": \"[REDACTED]\"\n}"
+    },
+    "aigcGenerationHeaderCloseWorks": true,
+    "aigcGenerationFailedDetail": {
+      "hasFailureReason": true,
+      "hasLegacyFailureLabel": false
     },
     "aigcGenerationUnknown": {
       "errorVisible": true,
@@ -1041,9 +1111,55 @@
       "activeTab": "homeBanner",
       "rows": 2,
       "columns": 8,
-      "modTable": true
+      "modTable": true,
+      "realCards": true,
+      "actionMap": {
+        "homeBanner": [
+          "编辑",
+          "删除"
+        ],
+        "homeAigc": [
+          "编辑",
+          "停用",
+          "删除"
+        ],
+        "flashFirst": [
+          "编辑"
+        ],
+        "flashTop": [
+          "编辑",
+          "删除"
+        ],
+        "flashSide": [
+          "编辑",
+          "删除"
+        ],
+        "modelCard": [
+          "编辑",
+          "删除"
+        ]
+      }
+    },
+    "b03BannerEditor": {
+      "open": true,
+      "title": "创建 Banner",
+      "kind": "homeBanner",
+      "width": 520,
+      "layout": "horizontal",
+      "positionHidden": true,
+      "descriptionHidden": true,
+      "jumpTypeVisible": true,
+      "status": "停用"
     },
     "b03DisplaySlotExactCount": 1,
+    "b03HomeNavEditor": {
+      "title": "新建首页导航",
+      "kind": "homeAigc",
+      "layout": "vertical",
+      "positionHidden": true,
+      "descriptionVisible": true,
+      "jumpTypeHidden": true
+    },
     "b03DisplaySlotRequiredError": true,
     "b03DisplaySlotCreated": {
       "modalOpen": false,
@@ -1051,15 +1167,46 @@
       "created": true
     },
     "b03DisplaySlotToggled": "停用",
+    "b03DisplaySlotDeleteConfirm": {
+      "open": true,
+      "title": "确认删除展示位",
+      "reasonHidden": true
+    },
+    "b03DisplaySlotDeleted": 0,
     "b03LoginPopupInitial": {
       "rows": 2,
       "columns": 9,
       "settingsSaveDisabled": true,
-      "modTable": true
+      "modTable": true,
+      "settingsCard": true,
+      "listCard": true,
+      "pageHead": false,
+      "filterWidths": [
+        200,
+        200,
+        200
+      ]
     },
     "b03LoginPopupSaveEnabled": true,
     "b03LoginPopupSettingsFeedback": "已保存",
     "b03LoginPopupExactCount": 1,
+    "b03LoginPopupEditor": {
+      "title": "新建弹窗子项",
+      "width": 760,
+      "gridColumns": 2,
+      "fields": [
+        "id",
+        "title",
+        "description",
+        "image",
+        "button",
+        "link",
+        "sort",
+        "status"
+      ],
+      "status": "offline",
+      "switchComponent": "Switch"
+    },
     "b03LoginPopupRequiredError": true,
     "b03LoginPopupCreated": {
       "modalOpen": false,
@@ -1072,6 +1219,14 @@
       "panels": 5,
       "tables": 5,
       "active": "content-categories",
+      "pageHead": false,
+      "tabsCard": true,
+      "filterCardVisible": true,
+      "filters": [
+        "keyword"
+      ],
+      "filterWidth": 240,
+      "createLabel": "新建分类",
       "columns": {
         "content-categories": [
           "ID",
@@ -1122,20 +1277,34 @@
     "b03OperationSettingsFiltered": 1,
     "b03OperationSettingEditor": {
       "open": true,
-      "id": "41",
-      "idDisabled": true,
+      "title": "编辑模型",
+      "kind": "work-models",
+      "width": 520,
+      "idHidden": true,
       "name": "图像模型",
       "descriptionVisible": true,
       "codeHidden": true,
       "bindingVisible": true,
+      "unbindVisible": true,
+      "sortMin": "1",
+      "radioGroup": "Radio.Group",
       "queryTab": "work-models"
     },
     "b03TutorialSectionCreateEditor": {
+      "title": "新增教程板块",
+      "kind": "tutorial-sections",
+      "width": 520,
       "codeVisible": true,
       "descriptionVisible": true,
       "coverVisible": true,
       "uploadComponent": "Upload",
-      "bindingHidden": true
+      "coverModeComponent": "Switch",
+      "bindingHidden": true,
+      "filterCardHidden": true,
+      "actionCardVisible": true,
+      "createLabel": "新增板块",
+      "sortMin": "0",
+      "statusSelectVisible": true
     },
     "b03TutorialSectionCreated": {
       "closed": true,
@@ -1145,6 +1314,12 @@
       "edit": true,
       "remove": true
     },
+    "b03OperationSettingDeleteConfirm": {
+      "open": true,
+      "title": "确认删除配置",
+      "reasonHidden": true
+    },
+    "b03OperationSettingDeleted": 0,
     "b03ActivityInitial": {
       "rows": 3,
       "columns": 6,
@@ -1154,23 +1329,53 @@
         "type",
         "status"
       ],
-      "modTable": true
+      "modTable": true,
+      "realCard": true,
+      "pageHead": false,
+      "filterWidths": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "createLabel": "新增活动"
     },
     "b03ActivityExactCount": 1,
+    "b03ActivityCreateDrawer": {
+      "title": "新建活动",
+      "width": 1152,
+      "viewport": 1440,
+      "codeHidden": true,
+      "statusHidden": true,
+      "segmented": "Segmented",
+      "coverMode": "Switch",
+      "collapse": "Collapse",
+      "type": "long_term",
+      "sort": "100"
+    },
     "b03ActivityRequiredError": true,
     "b03ActivityEditDrawer": {
       "open": true,
       "flexDirection": "column",
       "headerDisplay": "flex",
       "footerDisplay": "flex",
+      "width": 1152,
+      "viewport": 1440,
       "codeDisabled": true,
+      "codeVisible": true,
+      "statusVisible": true,
+      "segmentedVisible": true,
       "code": "campaign-prompt-2026",
       "maxPoints": "100",
       "labels": [
         "活动编码",
         "活动名称",
         "封面图",
+        "手动输入",
         "活动类型",
+        "长期活动",
+        "邀请裂变",
+        "档期活动",
         "活动状态",
         "最高可得积分",
         "排序",
@@ -1215,12 +1420,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-914477"
+      "taskCode": "TASK-014277"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-914477",
+      "taskCode": "TASK-014277",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1229,7 +1434,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-914477\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-014277\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -1274,10 +1479,25 @@
     "b03AnnouncementInitial": {
       "rows": 3,
       "columns": 9,
-      "modTable": true
+      "modTable": true,
+      "realHeader": true,
+      "realTable": true,
+      "pageHead": false,
+      "statusWidth": 180,
+      "createLabel": "发布公告",
+      "statusOptions": [
+        ":请选择状态",
+        "1:已发布",
+        "2:未发布"
+      ]
     },
-    "b03AnnouncementDraftCount": 1,
-    "b03AnnouncementDetailOpen": true,
+    "b03AnnouncementDraftCount": 2,
+    "b03AnnouncementDetail": {
+      "open": true,
+      "width": 960,
+      "metaCount": 7,
+      "footerCount": 0
+    },
     "b03AnnouncementEditorContract": {
       "fields": [
         "id",
@@ -1289,40 +1509,106 @@
         "content"
       ],
       "idHidden": true,
-      "statusHidden": true,
-      "drawerWidth": 980,
-      "saveLabel": "保存草稿"
+      "statusVisible": true,
+      "statusLabel": "草稿",
+      "drawerWidth": 1152,
+      "viewport": 1440,
+      "saveLabel": "保存草稿",
+      "title": "新建公告",
+      "titleMax": 40,
+      "summaryMax": 512,
+      "audienceOptions": [
+        "全部注册用户"
+      ],
+      "authorComponent": "Select",
+      "markdownComponent": "ModMarkdownEditor"
     },
     "b03AnnouncementRequiredError": true,
     "b03AnnouncementCreated": {
       "closed": true,
-      "audience": "内容创作者",
+      "audience": "全部注册用户",
       "author": "AI666-O0001",
       "summary": "验证公告编辑器完整字段",
       "cells": 9
     },
+    "b03AnnouncementPublishConfirm": true,
     "b03AnnouncementPublished": {
       "status": "1",
-      "label": "已上架",
+      "label": "已发布",
       "offlineAction": true
     },
     "b03StoreInitial": {
       "tabs": 3,
       "panels": 3,
       "siteRows": 2,
-      "maskedCardValues": true
+      "maskedCardValues": true,
+      "realTabs": true,
+      "realCatalog": true,
+      "pageHead": false,
+      "siteColumns": [
+        "ID",
+        "站点名称",
+        "域名",
+        "产品数量",
+        "备注",
+        "操作"
+      ]
     },
     "b03StoreInventoryInitial": {
       "visibleCards": 0,
-      "emptyVisible": true
+      "emptyVisible": true,
+      "columns": [
+        "ID",
+        "卡密",
+        "站点",
+        "产品",
+        "库存状态",
+        "兑换方式",
+        "实扣积分",
+        "兑换用户",
+        "兑换时间",
+        "入库时间",
+        "操作"
+      ],
+      "productDisabled": true,
+      "searchDisabled": true,
+      "createDisabled": true,
+      "filterWidths": [
+        180,
+        180
+      ]
     },
     "b03StoreInventoryFiltered": 2,
-    "b03StoreCardSaved": "卡密库存 · 已登记 2 条",
+    "b03StoreCardDetail": {
+      "open": true,
+      "component": "Descriptions",
+      "items": 5,
+      "masked": true
+    },
+    "b03StoreCardCreate": {
+      "open": true,
+      "product": "API 月卡",
+      "alert": "每行一条卡密；填写一条时调用单条创建接口，多条时调用批量创建接口。"
+    },
+    "b03StoreCardSaved": {
+      "closed": true,
+      "cleared": true
+    },
+    "b03StoreSiteEditor": {
+      "open": true,
+      "width": 520,
+      "labels": [
+        "站点名称",
+        "站点域名",
+        "备注"
+      ],
+      "remarkMax": 200
+    },
     "b03StoreProductsDrawer": {
       "open": true,
       "products": 2,
       "columns": [
-        "产品 ID",
+        "ID",
         "产品名称",
         "积分价格",
         "可用库存",
@@ -1330,60 +1616,106 @@
         "描述",
         "创建时间",
         "操作"
-      ]
+      ],
+      "width": 820,
+      "footerCount": 0
     },
     "b03StoreProductEditor": {
       "open": true,
       "fields": [
-        "name",
+        "product_name",
         "price",
         "description",
-        "effectiveStart",
-        "effectiveEnd",
         "status",
-        "stock"
+        "valid_from",
+        "valid_until"
       ],
-      "stockVisible": true,
-      "stock": "18",
-      "effectiveStart": "2026-08-01",
-      "effectiveEnd": "2026-12-31"
+      "width": 520,
+      "statusComponent": "Radio.Group",
+      "validFrom": "2026-08-01T00:00",
+      "validUntil": "2026-12-31T23:59",
+      "stockFields": 0
     },
     "b03StoreProductCreated": {
       "modalClosed": true,
       "rows": 3,
       "stock": "0",
-      "dates": "2026-08-06,2026-12-31",
+      "dates": "2026-08-06T00:00,2026-12-31T23:59",
       "cells": 8,
       "editedDescription": "30 天 API 使用权益（已更新）"
+    },
+    "b03StoreRecordsContract": {
+      "filters": [
+        "id",
+        "product",
+        "user",
+        "status",
+        "dateRange"
+      ],
+      "rangeComponent": "RangePicker",
+      "columns": [
+        "记录 ID",
+        "产品",
+        "实扣积分",
+        "兑换用户",
+        "状态",
+        "入库时间",
+        "兑换时间"
+      ]
     },
     "b03StoreRecordExactCount": 1,
     "b04UserListInitial": {
       "rows": 4,
-      "columns": 9,
+      "columns": 10,
       "filters": [
         "userNo",
         "keyword",
         "accountType",
+        "registerSourceCode",
         "level",
         "status",
         "whitelist",
-        "registeredStart",
-        "registeredEnd"
+        "registeredRange"
       ],
       "modTable": true,
-      "detailRouteNav": 0
+      "detailRouteNav": 0,
+      "realCards": 1,
+      "pageHeads": 0,
+      "description": "统一查询账号启停和白名单状态，并从具体用户发起治理操作。",
+      "labels": [
+        "用户 ID",
+        "用户昵称",
+        "账号类型",
+        "注册来源",
+        "等级",
+        "状态",
+        "白名单",
+        "注册时间"
+      ],
+      "rangeComponent": "RangePicker",
+      "actionDots": 3,
+      "tableScroll": "inside-table"
     },
     "b04UserExactCount": 1,
+    "b04UserSourceCount": 1,
     "b04UserDetailModal": {
       "open": true,
       "title": "用户详情 · AI666-U1001",
       "id": "AI666-U1001",
       "tabs": 3,
-      "descriptions": 10,
-      "phoneLabels": 0
+      "descriptions": 11,
+      "phoneLabels": 0,
+      "width": 960,
+      "footerCount": 0
     },
     "b04UserDetailPointsVisible": true,
     "b04UserDetailInviteVisible": true,
+    "b04UserPointsContract": {
+      "alert": "发放的积分必须设置有效期；扣减按最早到期批次优先处理。",
+      "directionComponent": "Radio.Group",
+      "directionRadios": 2,
+      "expireExtra": "从发放成功时间开始计算"
+    },
     "b04UserPointsRequiredError": true,
     "b04UserPointsSaved": {
       "modalOpen": false,
@@ -1405,6 +1737,13 @@
       "pointsAction": false,
       "accountAction": "解封"
     },
+    "b04OfficialContract": {
+      "width": 520,
+      "alert": "官方账号仅用于内容和公告发布，不创建登录凭证。",
+      "idHidden": true,
+      "checkboxGroup": "Checkbox.Group",
+      "radioGroup": "Radio.Group"
+    },
     "b04OfficialRequiredError": true,
     "b04OfficialCreated": {
       "modalOpen": false,
@@ -1415,12 +1754,73 @@
       "file": "user-list.html",
       "activeView": "user-list"
     },
+    "b04RegisterSourceInitial": {
+      "route": "/user/register-sources",
+      "rows": 3,
+      "columns": [
+        "来源编码",
+        "渠道名称",
+        "排序",
+        "创建时间",
+        "更新时间",
+        "操作"
+      ],
+      "modTable": "ModTable",
+      "cards": 1,
+      "result": "3 条结果"
+    },
+    "b04RegisterSourceCreateModal": {
+      "open": true,
+      "title": "新增注册来源",
+      "codeHidden": true,
+      "fields": [
+        "code",
+        "channelCode",
+        "channelName",
+        "sortOrder"
+      ]
+    },
+    "b04RegisterSourceRequiredError": true,
+    "b04RegisterSourceCreated": {
+      "modalOpen": false,
+      "rows": 4,
+      "code": "100004",
+      "name": "活动落地页"
+    },
+    "b04RegisterSourceEditModal": {
+      "title": "编辑注册来源",
+      "codeVisible": true,
+      "codeDisabled": true
+    },
+    "b04RegisterSourceEdited": {
+      "rowName": "活动专题页"
+    },
+    "b04RegisterSourceConsumer": {
+      "optionName": "活动专题页",
+      "existingUserSource": "邀请活动"
+    },
+    "b04RegisterSourceBoundDelete": {
+      "modalOpen": true,
+      "feedback": "该来源已绑定 24 位用户，无法删除。",
+      "rowKept": true
+    },
+    "b04RegisterSourceDeleted": {
+      "rows": 3,
+      "rowRemoved": true,
+      "optionRemoved": true,
+      "result": "3 条结果"
+    },
     "b04InviteInitial": {
       "descriptionItems": 4,
       "rows": 2,
       "columns": 6,
       "modTable": true,
-      "dangerActions": 0
+      "dangerActions": 0,
+      "realCards": 1,
+      "pageHeads": 0,
+      "inputSearch": "Input.Search",
+      "resetButtons": 0,
+      "tableScroll": "inside-table"
     },
     "b04InviteExactCount": 1,
     "b04InviteDrawer": {
@@ -1428,7 +1828,11 @@
       "component": "Drawer",
       "fields": 9,
       "ruleTags": 3,
-      "columns": 4
+      "columns": 4,
+      "width": 760,
+      "footerCount": 0,
+      "descriptionColumns": 2,
+      "popovers": 1
     },
     "b04InviteRefresh": "已刷新",
     "b04PointsInitial": {
@@ -1441,65 +1845,66 @@
         "sourceNo",
         "direction",
         "optionType",
-        "start",
-        "end"
+        "dateRange"
       ],
       "modTable": true,
-      "rowActions": 0
+      "rowActions": 0,
+      "realCards": 1,
+      "pageHeads": 0,
+      "rangeComponent": "RangePicker",
+      "labels": [
+        "流水 ID",
+        "用户 ID",
+        "来源类型",
+        "来源对象 ID",
+        "变更方向",
+        "业务类型",
+        "变更时间"
+      ],
+      "tableScroll": "inside-table"
     },
     "b04PointsExactCount": 1,
     "b04ExpireConfigInitial": {
       "open": true,
       "rows": 5,
-      "component": "Modal"
+      "component": "Modal",
+      "width": 720
     },
     "b04ExpireRequiredError": true,
     "b04ExpireSavedClosed": true,
     "b04MemberInitial": {
       "rows": 3,
-      "columns": [
-        "等级 ID",
-        "等级名称",
-        "成长值",
-        "签到奖励积分",
-        "有效天数",
-        "操作"
+      "cards": 3,
+      "draggableCards": 3,
+      "addButtons": 0,
+      "tables": 0,
+      "instructions": [
+        "会员等级列表，拖拽排序",
+        "编辑设置会员等级信息",
+        "禁用会员等级将无法使用，不参与排序"
       ],
-      "modTable": true,
-      "cards": 0,
-      "addButtons": 1
+      "order": "1,2,3"
     },
-    "b04MemberCreateEditor": {
-      "open": true,
-      "title": "新增会员等级",
-      "idHidden": true,
-      "enabledHidden": true,
-      "nameEnabled": true
-    },
-    "b04MemberCreateRequiredError": true,
-    "b04MemberCreated": {
-      "modalClosed": true,
-      "rows": 4,
-      "cells": 6,
-      "growth": "5000",
-      "points": "18",
-      "expire": "90",
-      "edit": true
+    "b04MemberReordered": {
+      "order": "2,1,3",
+      "feedback": "排序已保存"
     },
     "b04MemberEditor": {
       "open": true,
       "name": "VIP 1",
       "nameDisabled": true,
-      "idVisible": true,
+      "idFields": 0,
       "enabledVisible": true,
-      "switchComponent": "Switch"
+      "switchComponent": "Switch",
+      "extra": "签到奖励发放成功后开始计算"
     },
     "b04MemberSaved": {
       "modalClosed": true,
       "growth": "100",
       "points": "6",
       "expire": "45",
-      "feedback": "4 条结果"
+      "feedback": "会员等级已更新",
+      "rendered": "100,6,45"
     },
     "b05OperationLogInitial": {
       "route": "/system/logs",
@@ -1515,7 +1920,10 @@
         "endTime"
       ],
       "modTable": true,
-      "mutationActions": 0
+      "mutationActions": 0,
+      "cards": 1,
+      "pageHeads": 0,
+      "rangePicker": true
     },
     "b05OperationLogExactCount": 1,
     "b05OperationLogDetail": {
@@ -1544,11 +1952,13 @@
       "open": true,
       "component": "Modal",
       "tree": "Tree",
+      "permissionCount": 86,
+      "panels": 2,
       "reasonFields": 0
     },
     "b05RoleCreated": {
       "id": "ROLE-004",
-      "permissions": "operation:list,operation:edit",
+      "permissions": "activity-config:edit,activity-config:rule",
       "status": "enabled",
       "cells": 7
     },
@@ -1575,7 +1985,7 @@
       "api": "GET /admin/api/notices",
       "cells": 9
     },
-    "b05PermissionSync": "同步完成：新增 2 · 更新 1 · 额外 0",
+    "b05PermissionSync": "系统目录 86 项 · 待新增 0 · 待校正 0",
     "b05AdminInitial": {
       "route": "/system/admin-users",
       "rows": 3,
@@ -1589,9 +1999,13 @@
       "roleSelectMode": "multiple"
     },
     "b05AdminSuperGuard": {
+      "title": "编辑后台用户",
       "alertVisible": true,
-      "saveHidden": true,
-      "statusDisabled": true
+      "saveVisible": true,
+      "nameEnabled": true,
+      "roleEnabled": true,
+      "enabledStatusEnabled": true,
+      "disabledStatusDisabled": true
     },
     "b05AdminCreated": {
       "id": "ADM-004",

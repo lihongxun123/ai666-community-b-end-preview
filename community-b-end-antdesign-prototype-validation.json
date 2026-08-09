@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T18:51:43.824Z",
+  "generatedAt": "2026-08-09T09:16:43.727Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -201,10 +201,12 @@
     "b04RealUserPageFamilyComplete": true,
     "b04UserListContractComplete": true,
     "b04UserActionsMatchCodeAndApifox": true,
+    "b04RegisterSourceContractComplete": true,
     "b04InviteContractComplete": true,
     "b04PointsContractComplete": true,
     "b04MemberLevelContractComplete": true,
     "b04InteractionsWired": true,
+    "realAdminRouteCoverageComplete": true,
     "b05RealSystemPageFamilyComplete": true,
     "b05OperationLogContractComplete": true,
     "b05OperationLogSensitiveFieldsMasked": true,
@@ -309,6 +311,12 @@
       "group": "用户管理",
       "label": "用户列表",
       "file": "user-list.html"
+    },
+    {
+      "view": "register-sources",
+      "group": "用户管理",
+      "label": "注册来源",
+      "file": "register-sources.html"
     },
     {
       "view": "invite-records",
@@ -445,6 +453,12 @@
       "file": "user-list.html"
     },
     {
+      "view": "register-sources",
+      "group": "用户管理",
+      "label": "注册来源",
+      "file": "register-sources.html"
+    },
+    {
       "view": "invite-records",
       "group": "用户管理",
       "label": "邀请记录",
@@ -539,6 +553,7 @@
     "outputs/community-b-end-antdesign-prototype/operation-config.html",
     "outputs/community-b-end-antdesign-prototype/store-config.html",
     "outputs/community-b-end-antdesign-prototype/user-list.html",
+    "outputs/community-b-end-antdesign-prototype/register-sources.html",
     "outputs/community-b-end-antdesign-prototype/invite-records.html",
     "outputs/community-b-end-antdesign-prototype/points-records.html",
     "outputs/community-b-end-antdesign-prototype/member-levels.html",

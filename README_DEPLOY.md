@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-08-05T19:00:38.280Z
+生成时间：2026-08-09T09:18:19.027Z
 
 ## 用途
 
@@ -48,6 +48,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 公告配置: operation-config.html
 - 商城管理: store-config.html
 - 用户列表: user-list.html
+- 注册来源: register-sources.html
 - 邀请记录: invite-records.html
 - 积分记录: points-records.html
 - 会员等级: member-levels.html

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T18:48:12.096Z",
+  "generatedAt": "2026-08-09T09:16:04.750Z",
   "pages": [
     {
       "view": "content-list",
@@ -105,6 +105,11 @@
       "view": "user-list",
       "file": "user-list.html",
       "label": "用户列表"
+    },
+    {
+      "view": "register-sources",
+      "file": "register-sources.html",
+      "label": "注册来源"
     },
     {
       "view": "invite-records",

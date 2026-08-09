@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-05T19:00:38.280Z",
+  "generatedAt": "2026-08-09T09:18:19.027Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 28,
+  "pageCount": 29,
   "pages": [
     {
       "slug": "content-list",
@@ -132,6 +132,12 @@
       "label": "用户列表",
       "path": "user-list.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/user-list.html"
+    },
+    {
+      "slug": "register-sources",
+      "label": "注册来源",
+      "path": "register-sources.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/register-sources.html"
     },
     {
       "slug": "invite-records",
