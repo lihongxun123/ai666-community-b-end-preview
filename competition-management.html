@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>AI666 后台 - 模型协议配置</title>
+  <title>AI666 后台 - 赛事管理</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -5835,7 +5835,7 @@
         <div class="nav-group" data-nav-module="AIGC管理"><span>AIGC管理</span></div>
         <div class="nav-children">
           <a class="nav-btn" href="model-series.html" data-nav="model-series" data-page-link="model-series.html">模型系列</a>
-          <a class="nav-btn is-active" href="model-mapping.html" data-nav="model-mapping" data-page-link="model-mapping.html">模型配置</a>
+          <a class="nav-btn" href="model-mapping.html" data-nav="model-mapping" data-page-link="model-mapping.html">模型配置</a>
           <a class="nav-btn" href="generation-records.html" data-nav="generation-records" data-page-link="generation-records.html">生成记录</a>
         </div>
       </section>
@@ -5847,7 +5847,7 @@
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="operation-settings.html" data-nav="operation-settings" data-page-link="operation-settings.html">运营配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn" href="competition-management.html" data-nav="competition-management" data-page-link="competition-management.html">赛事管理</a>
+          <a class="nav-btn is-active" href="competition-management.html" data-nav="competition-management" data-page-link="competition-management.html">赛事管理</a>
           <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
@@ -5878,7 +5878,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">模型协议配置</h1>
+          <h1 class="top-title" id="globalTitle">赛事管理</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -5886,24 +5886,50 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="model-protocol-config" data-page-contract="model-protocol-config" data-route-only-page="model-mapping" data-aigc-page="model-protocol-config" data-real-route="/aigc/modelDetail/modelDetailIndex">
-          <div class="contract-panel" data-page-contract="model-protocol-config">模型协议配置按真实隐藏路由 `/aigc/modelDetail/modelDetailIndex?code=...` 还原：调用与鉴权、用户表单与拼包分成两个 Ant Design Tabs；两类配置整份覆盖保存且互不混写，Auth 只在后台受控加载，页面和证据不保留真实凭证。</div>
-          <div class="page-head"><div class="page-title"><div class="content-detail-title-row"><a class="ant-page-header-back content-detail-back-link" href="model-mapping.html"><span aria-hidden="true">←</span>返回模型列表</a><h2 data-protocol-page-title>模型配置</h2></div></div></div>
-          <div class="contract-panel" data-protocol-error data-antd-component="RetryableErrorAlert" role="alert" hidden></div>
-          <div data-protocol-content><div class="tabs ant-tabs" data-protocol-tabs data-antd-component="Tabs"><button class="tab is-active" type="button" data-protocol-tab="invoke">调用与鉴权</button><button class="tab" type="button" data-protocol-tab="frontend">用户表单与拼包</button></div>
-            <div class="panel aigc-protocol-panel" data-protocol-panel="invoke"><div class="aigc-config-header"><div><div class="aigc-config-title">调用与鉴权</div><div class="aigc-config-description">后端调用上游的 path、Auth 与结果提取。Auth 只由后台保存，不进入用户端和原型证据。</div></div></div><div class="aigc-auth-gate" data-protocol-auth-gate><div><strong>敏感配置未加载</strong><p class="muted small">点击后仅载入脱敏示例；真实值不得写入原型。</p></div><button class="btn primary ant-btn ant-btn-primary" type="button" data-protocol-load-auth>加载调用与鉴权</button></div><form class="aigc-form-grid" data-protocol-invoke-form hidden>
-              <div class="field wide"><label>请求 Path</label><input class="input ant-input" value="https://api.example.com/v1/models/{model_name}:generate" data-protocol-field="path" data-antd-component="Input"></div>
-              <div class="field"><label>Method</label><select class="select ant-select" data-protocol-field="method" data-antd-component="Select"><option>POST</option><option>GET</option><option>PUT</option><option>PATCH</option><option>DELETE</option></select></div>
-              <div class="field"><label>输出类型 type</label><select class="select ant-select" data-protocol-field="type" data-antd-component="Select"><option value="image">图片</option><option value="text">文本</option><option value="video">视频</option></select></div>
-              <div class="field wide"><label>厂商模型名 model_name</label><input class="input ant-input" data-protocol-field="model-name" data-antd-component="Input"></div>
-              <div class="field wide"><label>Auth Headers（JSON 对象）</label><textarea class="textarea ant-input aigc-json-editor" rows="4" data-protocol-field="auth-headers" data-sensitive-placeholder="true" data-antd-component="Input.TextArea">{"Authorization":"Bearer [TOKEN]"}</textarea><span class="muted small">脱敏值保持不变表示不修改原值。</span></div>
-              <div class="field"><label>结果路径 result</label><input class="input ant-input" value="data.url" data-protocol-field="result" data-antd-component="Input"></div>
-              <div class="field"><label>结果类型 resultType</label><select class="select ant-select" data-protocol-field="result-type" data-antd-component="Select"><option value="url">URL</option><option value="base64">Base64</option><option value="text">文本</option><option value="id">异步任务 ID</option></select></div>
-              <div class="field wide"><label>responseBody（可选 JSON）</label><textarea class="textarea ant-input aigc-json-editor" rows="8" data-protocol-field="response-body" data-antd-component="Input.TextArea">{}</textarea></div>
-              <div class="field wide aigc-form-grid" data-protocol-async-fields hidden><div class="field wide"><label>queryResultPath</label><input class="input ant-input" placeholder="https://api.example.com/v1/tasks/{task_id}" data-protocol-field="query-result-path" data-antd-component="Input"></div><div class="field"><label>queryResultType</label><select class="select ant-select" data-protocol-field="query-result-type" data-antd-component="Select"><option value="get">GET</option><option value="post">POST</option></select></div><div class="field wide"><label>queryResultResponseBody（可选 JSON）</label><textarea class="textarea ant-input aigc-json-editor" rows="6" data-protocol-field="query-response-body" data-antd-component="Input.TextArea">null</textarea></div><div class="field wide"><label>resultMapping（JSON）</label><textarea class="textarea ant-input aigc-json-editor" rows="4" data-protocol-field="result-mapping" data-antd-component="Input.TextArea">{"video_url":"video_url","progress":"progress","error":"error"}</textarea></div></div>
-            </form><div class="action-row" data-protocol-invoke-actions hidden><button class="btn ant-btn" type="button" data-protocol-reload="invoke">重新加载</button><button class="btn primary ant-btn ant-btn-primary" type="button" data-protocol-save="invoke">保存调用配置</button></div></div>
-            <div class="panel aigc-protocol-panel" data-protocol-panel="frontend" hidden><div class="aigc-config-header"><div><div class="aigc-config-title">用户表单与拼包</div><div class="aigc-config-description">`model_form` 控制用户端表单；`requestBody` 使用 `model_form.xxx` 占位。Auth 不写在这里。</div></div><div class="action-row"><button class="btn ant-btn" type="button" data-protocol-fill-image-example>填充图片示例</button><button class="btn primary ant-btn ant-btn-primary" type="button" data-protocol-save="frontend">保存前端模板</button></div></div><div class="field"><label>model_form（JSON）</label><textarea class="textarea ant-input aigc-json-editor" rows="14" data-protocol-field="model-form" data-antd-component="Input.TextArea">{}</textarea></div><div class="field"><label>requestBody（JSON）</label><textarea class="textarea ant-input aigc-json-editor" rows="14" data-protocol-field="request-body" data-antd-component="Input.TextArea">{}</textarea></div></div>
-            <p class="contract-panel" data-protocol-feedback role="status" hidden></p>
+<section class="view is-active" data-view="competition-management" data-page-contract="competition-management" data-real-route="/operation/competitions" data-competition-list-page>
+          <div class="contract-panel" data-page-contract="competition-management">赛事作为独立业务对象管理；活动中心只承接 C端分发入口，不复用常规活动的任务、积分和奖励配置。</div>
+          <div class="page-head">
+            <div class="page-title"><h2>赛事管理</h2><p>创建赛事草稿，并按状态进入单赛事工作台处理配置、审核、榜单和对接状态。</p></div>
+            <div class="page-actions"><button class="btn primary ant-btn ant-btn-primary" type="button" data-competition-create-open data-antd-component="Button">新建赛事</button></div>
+          </div>
+          <div class="panel" data-competition-list-filter-panel>
+            <div class="panel-body">
+              <div class="filter-grid competition-list-filter-grid">
+                <div class="field"><label>赛事 ID / 名称</label><input class="input ant-input" placeholder="输入赛事 ID 或名称" data-competition-list-filter="keyword" data-antd-component="Input"></div>
+                <div class="field"><label>赛事状态</label><select class="select ant-select" data-competition-list-filter="state" data-antd-component="Select"><option value="">全部</option><option>草稿</option><option>未开始</option><option>进行中</option><option>已暂停</option><option>已结束</option><option>已归档</option></select></div>
+                <div class="filter-actions competition-list-filter-actions"><button class="btn primary ant-btn ant-btn-primary" type="button" data-competition-list-query data-antd-component="Button">查询</button><button class="btn ant-btn" type="button" data-competition-list-reset data-antd-component="Button">重置</button></div>
+              </div>
+            </div>
+          </div>
+          <div class="alert success" data-competition-list-feedback hidden></div>
+          <div class="panel">
+            <div class="panel-head"><div class="panel-title">赛事列表</div><span class="muted small" data-competition-list-count>6 条赛事</span></div>
+            <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table" data-sticky-action-column>
+              <table data-table="competition-management" data-antd-component="ModTable">
+                <thead><tr><th>赛事</th><th>当前阶段</th><th>报名</th><th>投稿规则</th><th>作品</th><th>状态</th><th>操作</th></tr></thead>
+                <tbody data-competition-list-body>
+                  <tr data-competition-row data-competition-id="COMP-2026-DRAFT-01" data-competition-name="AI 叙事练习赛" data-competition-state="草稿" data-competition-stage="未配置">
+                    <td><b>AI 叙事练习赛</b><div class="mono muted small">COMP-2026-DRAFT-01</div></td><td><span class="tag gray">未配置</span></td><td>待配置</td><td>待配置</td><td>0</td><td><span class="tag gray">草稿</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-DRAFT-01" data-competition-detail-link>赛事详情</a></div></td>
+                  </tr>
+                  <tr data-competition-row data-competition-id="COMP-2026-WARMUP-02" data-competition-name="夏日镜头挑战" data-competition-state="未开始" data-competition-stage="预热与报名">
+                    <td><b>夏日镜头挑战</b><div class="mono muted small">COMP-2026-WARMUP-02</div></td><td><span class="tag info">预热与报名</span></td><td>需要报名<div class="muted small">已报名 96</div></td><td>每人最多 2 件</td><td>0</td><td><span class="tag info">未开始</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-WARMUP-02" data-competition-detail-link>赛事详情</a></div></td>
+                  </tr>
+                  <tr data-competition-row data-competition-id="COMP-2026-AIGC-01" data-competition-name="AIGC 创作挑战赛" data-competition-state="进行中" data-competition-stage="作品征集与热度" data-activity-id="COMP-2026-AIGC-01" data-activity-version="R3" data-activity-catalog-item="true" data-activity-section="current" data-activity-title="AIGC 创作挑战赛" data-activity-cend-target="competition-detail.html" data-activity-cend-status="作品征集" data-activity-cend-time="赛事进行中" data-activity-cend-summary="报名、投稿、评审与榜单" data-campaign-state="running">
+                    <td><b>AIGC 创作挑战赛</b><div class="mono muted small">COMP-2026-AIGC-01</div></td><td><span class="tag processing">作品征集与热度</span></td><td>需要报名<div class="muted small">有效报名 842</div></td><td>每人最多 3 件<div class="muted small">允许修改 · 版本留痕</div></td><td>126</td><td><span class="tag success">进行中</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-AIGC-01" data-competition-detail-link>赛事详情</a><a class="btn link" href="/ai666-community-preview/competition-detail.html?id=COMP-2026-AIGC-01" target="_blank" rel="noopener" data-competition-cend-home>C端活动主页</a></div></td>
+                  </tr>
+                  <tr data-competition-row data-competition-id="COMP-2026-PAUSED-03" data-competition-name="AI 微电影实验赛" data-competition-state="已暂停" data-competition-stage="评委评分">
+                    <td><b>AI 微电影实验赛</b><div class="mono muted small">COMP-2026-PAUSED-03</div></td><td><span class="tag warning">评委评分</span></td><td>需要报名<div class="muted small">有效报名 318</div></td><td>每人最多 1 件</td><td>74</td><td><span class="tag warning">已暂停</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-PAUSED-03" data-competition-detail-link>赛事详情</a></div></td>
+                  </tr>
+                  <tr data-competition-row data-competition-id="COMP-2026-ENDED-04" data-competition-name="未来城市影像赛" data-competition-state="已结束" data-competition-stage="结果公布">
+                    <td><b>未来城市影像赛</b><div class="mono muted small">COMP-2026-ENDED-04</div></td><td><span class="tag gray">结果公布</span></td><td>无需报名</td><td>每人最多 3 件</td><td>209</td><td><span class="tag gray">已结束</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-ENDED-04" data-competition-detail-link>赛事详情</a></div></td>
+                  </tr>
+                  <tr data-competition-row data-competition-id="COMP-2026-ARCHIVE-05" data-competition-name="春日灵感短片赛" data-competition-state="已归档" data-competition-stage="结果公布">
+                    <td><b>春日灵感短片赛</b><div class="mono muted small">COMP-2026-ARCHIVE-05</div></td><td><span class="tag gray">结果公布</span></td><td>需要报名<div class="muted small">有效报名 521</div></td><td>每人最多 2 件</td><td>168</td><td><span class="tag gray">已归档</span></td><td><div class="op-list"><a class="btn link" href="competition-detail.html?id=COMP-2026-ARCHIVE-05" data-competition-detail-link>赛事详情</a></div></td>
+                  </tr>
+                  <tr class="table-empty-row" data-competition-list-empty hidden><td colspan="7"><div class="empty-state"><b>暂无符合条件的赛事</b><p>调整赛事名称或状态后重新查询。</p></div></td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
       </main>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T09:16:43.727Z",
+  "generatedAt": "2026-08-15T03:21:23.318Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -140,6 +140,36 @@
     "pointsLedgerDeepLinksHighlightRows": true,
     "mangaReturnTrialCoveredByExistingPages": true,
     "communityProductBusinessContractsComplete": true,
+    "competitionCreateUsesMinimalDraftContract": true,
+    "competitionManagementUsesLowFrequencyDirectoryContract": true,
+    "competitionFabricatedStageTemplateRemoved": true,
+    "competitionWorkbenchConfigurationContractComplete": true,
+    "competitionWorkbenchUsesReadOnlyAntComponentsAndModalEditing": true,
+    "competitionWorkbenchSummaryKeepsOnlyOperationalFacts": true,
+    "competitionWorkbenchPanelHeadsAvoidRedundantDescriptions": true,
+    "competitionAwardManagementUsesSingleItemModal": true,
+    "competitionDetailDoesNotExposePublishRequiredTags": true,
+    "competitionStagesUseManualProgressionContract": true,
+    "competitionTrackBoardsAreSystemFixed": true,
+    "competitionAboutUsesMarkdownAndPublicJudgeSurfaceRemoved": true,
+    "competitionPublicRuleChaptersUseDisplayTableAndModalEditing": true,
+    "competitionWorkCatalogFiltersUseRightAlignedAntToolbar": true,
+    "competitionSubmissionConfigurationKeepsOnlyEventDifferences": true,
+    "competitionSubmissionPreviewEntryRemoved": true,
+    "competitionParticipationRewardUsesUnifiedAwardRow": true,
+    "competitionOperationalLifecycleContractsComplete": true,
+    "competitionCommunityDistributionAndGroupConfigurationComplete": true,
+    "competitionCatalogOwnsSimpleWorkAuditAndJudgeScoringStaysSeparate": true,
+    "competitionPublishGateIsDynamicAndValueAware": true,
+    "competitionSubmissionAuditIsSimplePassFailInsideCatalog": true,
+    "competitionResultManagementIsMinimalAndOperational": true,
+    "competitionRulesUseSimpleLogsAndRestrictedTechnicalDiagnosticsComplete": true,
+    "competitionBusinessSurfaceHasNoPrototypeOrEngineeringCopy": true,
+    "competitionRegistrationUsesFixedFieldsWithoutDemographicConfiguration": true,
+    "competitionHeroMediaContractUsesSafeFallback": true,
+    "competitionMaterialUploadsUseAntDesign": true,
+    "competitionRewardIssuanceIsRecordedManually": true,
+    "competitionCreatedWorkbenchStartsBlank": true,
     "placementUsesDeliveryNotSlotCreation": true,
     "activityAndStoreWorkspacesSeparated": true,
     "activityDetailKeepsIdentityAndBaseConfiguration": true,
@@ -295,6 +325,12 @@
       "file": "activity-config.html"
     },
     {
+      "view": "competition-management",
+      "group": "运营管理",
+      "label": "赛事管理",
+      "file": "competition-management.html"
+    },
+    {
       "view": "operation-config",
       "group": "运营管理",
       "label": "公告配置",
@@ -435,6 +471,12 @@
       "file": "activity-config.html"
     },
     {
+      "view": "competition-management",
+      "group": "运营管理",
+      "label": "赛事管理",
+      "file": "competition-management.html"
+    },
+    {
       "view": "operation-config",
       "group": "运营管理",
       "label": "公告配置",
@@ -525,6 +567,12 @@
       "file": "activity-detail.html"
     },
     {
+      "view": "competition-detail",
+      "group": "运营管理",
+      "label": "赛事工作台",
+      "file": "competition-detail.html"
+    },
+    {
       "view": "model-runtime-detail",
       "group": "AIGC管理",
       "label": "模型详情",
@@ -550,6 +598,7 @@
     "outputs/community-b-end-antdesign-prototype/login-popup-config.html",
     "outputs/community-b-end-antdesign-prototype/operation-settings.html",
     "outputs/community-b-end-antdesign-prototype/activity-config.html",
+    "outputs/community-b-end-antdesign-prototype/competition-management.html",
     "outputs/community-b-end-antdesign-prototype/operation-config.html",
     "outputs/community-b-end-antdesign-prototype/store-config.html",
     "outputs/community-b-end-antdesign-prototype/user-list.html",
@@ -565,6 +614,7 @@
     "outputs/community-b-end-antdesign-prototype/tutorial-preview.html",
     "outputs/community-b-end-antdesign-prototype/flash-detail.html",
     "outputs/community-b-end-antdesign-prototype/activity-detail.html",
+    "outputs/community-b-end-antdesign-prototype/competition-detail.html",
     "outputs/community-b-end-antdesign-prototype/model-runtime-detail.html",
     "outputs/community-b-end-antdesign-prototype/model-protocol-config.html"
   ],
@@ -578,6 +628,14 @@
     "tutorial.html",
     "tutorial-detail.html",
     "activity-center.html",
+    "competition-detail.html",
+    "competition-works.html",
+    "competition-my-submissions.html",
+    "competition-submit.html",
+    "competition-work.html",
+    "competition-ranking.html",
+    "competition-guide.html",
+    "competition-rules.html",
     "campaign-detail.html",
     "campaign-prompt.html",
     "prompt-submit.html",
@@ -592,7 +650,9 @@
     "user-center.html"
   ],
   "standalonePreviewPages": [
+    "competition-state-preview.html",
     "content-detail-modals.html",
-    "campaign-ops.html"
+    "campaign-ops.html",
+    "manga-handoff.html"
   ]
 }

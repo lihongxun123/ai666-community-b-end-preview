@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T09:16:04.750Z",
+  "generatedAt": "2026-08-15T03:11:14.895Z",
   "pages": [
     {
       "view": "content-list",
@@ -80,6 +80,16 @@
       "view": "operation-settings",
       "file": "operation-settings.html",
       "label": "运营配置"
+    },
+    {
+      "view": "competition-management",
+      "file": "competition-management.html",
+      "label": "赛事管理"
+    },
+    {
+      "view": "competition-detail",
+      "file": "competition-detail.html",
+      "label": "赛事工作台"
     },
     {
       "view": "activity-config",

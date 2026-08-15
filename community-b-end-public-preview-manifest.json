@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-09T09:18:19.027Z",
+  "generatedAt": "2026-08-15T03:24:37.068Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 29,
+  "pageCount": 31,
   "pages": [
     {
       "slug": "content-list",
@@ -102,6 +102,18 @@
       "label": "运营配置",
       "path": "operation-settings.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/operation-settings.html"
+    },
+    {
+      "slug": "competition-management",
+      "label": "赛事管理",
+      "path": "competition-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/competition-management.html"
+    },
+    {
+      "slug": "competition-detail",
+      "label": "赛事工作台",
+      "path": "competition-detail.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/competition-detail.html"
     },
     {
       "slug": "activity-config",
@@ -201,7 +213,9 @@
     "assets/image_assets/18.png",
     "assets/image_assets/2.png",
     "assets/image_assets/3.png",
-    "assets/image_assets/4.png"
+    "assets/image_assets/4.png",
+    "assets/image_assets/login-qr-v1.png",
+    "assets/video_assets/aigc-hero-c02c.mp4"
   ],
   "evidenceFiles": [
     "community-b-end-antdesign-prototype-validation.json",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T09:16:58.885Z",
+  "generatedAt": "2026-08-15T03:21:38.124Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -61,6 +61,32 @@
     "b05AdminInteractionsWork": true,
     "tutorialPreviewUsesRealAdminRoute": true,
     "tutorialPreviewMissingIdIsSafeEmptyState": true,
+    "competitionManagementDirectoryIsCompactAndActionable": true,
+    "competitionManagementFiltersByStateAndResets": true,
+    "competitionCreateUsesMinimalDraftShell": true,
+    "competitionCreateEntersBlankDraftWorkbench": true,
+    "competitionBlankDraftSupportsIndependentStageCreation": true,
+    "competitionOperationalSurfaceMatchesCurrentContract": true,
+    "competitionConfigurationUsesReadOnlyDisplayAndSectionModalEditing": true,
+    "competitionPublicRuleChaptersAddThroughModalAndReturnToDisplay": true,
+    "competitionNotificationTemplatesToggleWithoutTestSend": true,
+    "competitionRegistrationFieldsAreEditOnly": true,
+    "competitionPublishActionWorksWithoutOffline": true,
+    "competitionAboutMarkdownPreviewsAndSaves": true,
+    "competitionMaterialUploadsSelectPreviewAndRemove": true,
+    "competitionCommunityGroupAndDistributionPreviewSave": true,
+    "competitionSubmissionPreviewEntryRemoved": true,
+    "competitionSubmissionRulesKeepOnlyEventDifferences": true,
+    "competitionWorkCatalogFiltersAlignActionsToTheRight": true,
+    "competitionCatalogAuditAndJudgeScoreExecutionStaySeparate": true,
+    "competitionAwardAddAndEditUseSingleItemModal": true,
+    "competitionParticipationRewardUsesSameAwardRowAndEditor": true,
+    "competitionStageUsesManualProgressionWithoutExpressions": true,
+    "competitionFinalResultsSwitchByTrack": true,
+    "competitionFinalResultsPublishWithoutPreview": true,
+    "competitionRewardIssuanceRecordsStatusAndTime": true,
+    "competitionScoreCompositionRejectsInvalidWeightAndRefreshesResults": true,
+    "competitionScoringRejectsTrimmedMeanWithTwoJudges": true,
     "noConsoleErrors": true,
     "noPageErrors": true
   },
@@ -76,7 +102,7 @@
         "pageHeading": "内容列表",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -96,7 +122,7 @@
         "pageHeading": "审核工作台",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -116,7 +142,7 @@
         "pageHeading": "闪念管理",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -136,7 +162,7 @@
         "pageHeading": "模板配置",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -156,7 +182,7 @@
         "pageHeading": "",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -176,7 +202,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -196,7 +222,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -216,7 +242,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -236,7 +262,7 @@
         "pageHeading": "展示位管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -256,7 +282,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -276,7 +302,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -296,7 +322,27 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "competition-management",
+        "file": "competition-management.html",
+        "activeView": "competition-management",
+        "activeNav": "competition-management",
+        "routeLabel": "赛事管理",
+        "pageHeading": "赛事管理",
+        "navGroup": "运营管理",
+        "viewCount": 1,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -316,7 +362,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -336,7 +382,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -356,7 +402,7 @@
         "pageHeading": "用户列表",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -376,7 +422,7 @@
         "pageHeading": "注册来源",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -396,7 +442,7 @@
         "pageHeading": "邀请记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -416,7 +462,7 @@
         "pageHeading": "积分记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -436,7 +482,7 @@
         "pageHeading": "",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -456,7 +502,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -476,7 +522,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -496,7 +542,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -516,7 +562,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -536,7 +582,7 @@
         "pageHeading": "内容详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -556,7 +602,7 @@
         "pageHeading": "教程预览",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -576,7 +622,7 @@
         "pageHeading": "闪念详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -596,7 +642,27 @@
         "pageHeading": "活动详情",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "competition-detail",
+        "file": "competition-detail.html",
+        "activeView": "competition-detail",
+        "activeNav": "competition-management",
+        "routeLabel": "赛事工作台",
+        "pageHeading": "AIGC 创作挑战赛",
+        "navGroup": "运营管理",
+        "viewCount": 1,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -616,7 +682,7 @@
         "pageHeading": "模型详情",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -636,7 +702,7 @@
         "pageHeading": "模型配置",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 23,
+        "navCount": 24,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -1062,7 +1128,10 @@
       "realLayout": true,
       "topLevelPanels": 1,
       "pageHead": false,
-      "filterColumns": 4
+      "filterColumns": 4,
+      "recoveryBanner": true,
+      "processingShortcut": "只看处理中",
+      "failActions": 1
     },
     "aigcGenerationFailedCount": 1,
     "aigcGenerationDetail": {
@@ -1105,6 +1174,33 @@
     "aigcGenerationUnknown": {
       "errorVisible": true,
       "contentHidden": true
+    },
+    "aigcGenerationFailModal": {
+      "open": true,
+      "title": "标记生成失败",
+      "summaries": {
+        "generation-no": "AG202608011010002",
+        "status": "处理中",
+        "user": "UR0002",
+        "model": "grok-video-3",
+        "points": "36 积分"
+      },
+      "reasonMaxLength": 512,
+      "submitText": "确认标记失败并退还积分"
+    },
+    "aigcGenerationFailBlankBlocked": {
+      "open": true,
+      "error": "请填写失败原因。",
+      "errorVisible": true
+    },
+    "aigcGenerationFailCount": "19 / 512",
+    "aigcGenerationFailCompleted": {
+      "modalClosed": true,
+      "rowStatus": "失败",
+      "rowStatusText": "失败",
+      "failActionRemaining": false,
+      "feedback": "AG202608011010002 已标记失败；36 积分退还由接口一并处理，列表已刷新。",
+      "feedbackVisible": true
     },
     "b03DisplaySlotsInitial": {
       "tabs": 6,
@@ -1420,12 +1516,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-014277"
+      "taskCode": "TASK-089547"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-014277",
+      "taskCode": "TASK-089547",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1434,7 +1530,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-014277\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-089547\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -1952,7 +2048,7 @@
       "open": true,
       "component": "Modal",
       "tree": "Tree",
-      "permissionCount": 86,
+      "permissionCount": 94,
       "panels": 2,
       "reasonFields": 0
     },
@@ -2026,8 +2122,642 @@
       "componentCount": 3,
       "expectedTutorialNo": "TU000101"
     },
-    "tutorialPreviewMissingId": true
+    "tutorialPreviewMissingId": true,
+    "competitionManagementDirectory": {
+      "filterKeys": [
+        "keyword",
+        "state"
+      ],
+      "headers": [
+        "赛事",
+        "当前阶段",
+        "报名",
+        "投稿规则",
+        "作品",
+        "状态",
+        "操作"
+      ],
+      "buttons": [
+        {
+          "label": "查询",
+          "width": 60,
+          "height": 32
+        },
+        {
+          "label": "重置",
+          "width": 60,
+          "height": 32
+        }
+      ],
+      "rows": 6,
+      "detailLinks": 6,
+      "detailLabels": [
+        "赛事详情",
+        "赛事详情",
+        "赛事详情",
+        "赛事详情",
+        "赛事详情",
+        "赛事详情"
+      ],
+      "cEndLinks": 1,
+      "cEndTargets": [
+        "file:///F:/ai666-community-preview/competition-detail.html?id=COMP-2026-AIGC-01"
+      ],
+      "copyActions": 0,
+      "legacyCopyText": false,
+      "legacyDescriptions": false
+    },
+    "competitionManagementStateFilter": {
+      "visibleRows": 1,
+      "count": "1 条赛事"
+    },
+    "competitionManagementReset": {
+      "visibleRows": 6,
+      "count": "6 条赛事",
+      "state": ""
+    },
+    "competitionCreateDraftShell": {
+      "visible": true,
+      "fieldKeys": [
+        "name"
+      ],
+      "stageTemplateFields": 0,
+      "stageTemplateText": false,
+      "result": "草稿 · 当前阶段未配置 · 0 个阶段",
+      "submitLabel": "创建并进入工作台"
+    },
+    "competitionCreatedBlankDraft": {
+      "created": "1",
+      "draftName": "赛事交互验收草稿-1786764094535",
+      "competitionId": "COMP-2026-094563",
+      "activeView": "competition-detail",
+      "profile": "blank-draft",
+      "configuration": "incomplete",
+      "title": "赛事交互验收草稿-1786764094535",
+      "state": "草稿",
+      "stage": "未配置",
+      "overall": "0 / 10 已配置",
+      "stageRows": 0,
+      "stageSummaryCards": 0,
+      "stageEmptyText": "0 个阶段；请新增并维护阶段时间、允许动作和目标阶段。",
+      "workbenchVisible": true,
+      "notFoundHidden": true,
+      "expectedName": "赛事交互验收草稿-1786764094535"
+    },
+    "competitionBlankDraftStageModal": {
+      "editableStateFields": 0,
+      "stateDisplayDisabled": true,
+      "targetOptions": [
+        "结束赛事"
+      ],
+      "timeFields": true,
+      "removedFields": true,
+      "removedAlert": true
+    },
+    "competitionBlankDraftStageCreated": {
+      "tableRows": 1,
+      "summaryCards": 0,
+      "emptyRows": 0,
+      "stageId": "STAGE-01",
+      "order": "1",
+      "name": "作品征集",
+      "state": "未开始",
+      "actions": "可浏览、可投稿",
+      "target": "结束赛事",
+      "start": "2026-10-01T09:00",
+      "end": "2026-10-08T23:59",
+      "removedDatasetValues": true,
+      "timeContract": true,
+      "rowText": "01 作品征集提交作品并查看公开内容未开始10-01 09:00—10-08 23:59可浏览、可投稿结束赛事编辑"
+    },
+    "competitionOperationalContractSurface": {
+      "tabs": [
+        {
+          "key": "overview",
+          "label": "赛事总览"
+        },
+        {
+          "key": "basic",
+          "label": "基础信息"
+        },
+        {
+          "key": "tracks",
+          "label": "赛道赛题"
+        },
+        {
+          "key": "stages",
+          "label": "赛程维护"
+        },
+        {
+          "key": "participation",
+          "label": "报名资格"
+        },
+        {
+          "key": "submission",
+          "label": "投稿作品"
+        },
+        {
+          "key": "scoring",
+          "label": "评委评分"
+        },
+        {
+          "key": "results",
+          "label": "排名管理"
+        },
+        {
+          "key": "records",
+          "label": "赛事通知"
+        }
+      ],
+      "configChecks": 10,
+      "summaryCards": [
+        "有效报名842实时统计",
+        "有效作品126108 件已审核",
+        "待审核作品18进入处理",
+        "评分进度55 / 14438.2% 已完成"
+      ],
+      "overviewDashboard": true,
+      "overviewProgress": "当前赛程维护赛程 当前阶段作品征集进行中 02 / 04 01预热报名 02作品征集 03评委评分 04结果公布 当前截止2026-09-10 23:59 下一阶段评委评分2026-09-11 09:00 开始",
+      "overviewTodoCount": 4,
+      "overviewTrackRows": 4,
+      "overviewVisibleOnLoad": true,
+      "configOverall": "10 / 10 已配置",
+      "gateState": "pass",
+      "removedRegistrationRuleFields": true,
+      "registrationLimitHelperRemoved": true,
+      "registrationQualificationReviewRemoved": true,
+      "registrationRecordsUseAutomaticSuccess": true,
+      "removedRegistrationRuleCopy": true,
+      "registrationFieldCreateActions": 0,
+      "registrationFieldEditActions": 2,
+      "registrationFieldRows": 2,
+      "stageTimeRows": 4,
+      "heroConfig": true,
+      "heroFields": true,
+      "removedHeroFields": true,
+      "materialUploads": [
+        {
+          "key": "community-qr",
+          "antUpload": true,
+          "hasInput": true,
+          "hasValue": true,
+          "hasPreview": true,
+          "hasRemove": true
+        },
+        {
+          "key": "banner-video",
+          "antUpload": true,
+          "hasInput": true,
+          "hasValue": true,
+          "hasPreview": true,
+          "hasRemove": true
+        },
+        {
+          "key": "banner-image",
+          "antUpload": true,
+          "hasInput": true,
+          "hasValue": true,
+          "hasPreview": true,
+          "hasRemove": true
+        }
+      ],
+      "heroVideo": "assets/video_assets/aigc-hero-c02c.mp4",
+      "heroImage": "assets/image_assets/18.png",
+      "autoPoster": "视频上传后由系统自动抽帧生成封面，无需单独上传。",
+      "trackBoardInputs": 0,
+      "trackRankingFields": 0,
+      "trackRowsSystemBoards": true,
+      "finalResultRows": 3,
+      "finalResultTrackTabs": [
+        "TRACK-01",
+        "TRACK-02",
+        "TRACK-03",
+        "TRACK-04"
+      ],
+      "finalResultTrackRows": [
+        "TRACK-01",
+        "TRACK-01",
+        "TRACK-02"
+      ],
+      "finalResultEmpty": true,
+      "finalResultPreviewRemoved": true,
+      "finalResultHeaderStatusRemoved": true,
+      "finalResultPublish": true,
+      "rewardRows": 1,
+      "rewardActions": 1,
+      "obsoleteResultSurfaces": 0,
+      "notifications": 6,
+      "notificationTriggerKeys": [
+        "rules-change",
+        "registration-result",
+        "submission-review",
+        "stage-result",
+        "final-result",
+        "reward-issued"
+      ],
+      "notificationToggleCount": 6,
+      "notificationSendCount": 0,
+      "rulesetSurfaceCount": 0,
+      "governanceLogCount": 1,
+      "submissionSubtabs": [
+        "rules",
+        "catalog"
+      ],
+      "reviewSubpanelCount": 0,
+      "catalogAuditActions": 2,
+      "catalogAuditStates": [
+        "approved",
+        "pending"
+      ],
+      "finalResultModalRemoved": true,
+      "rewardIssueModal": true,
+      "technicalDiagnostics": false,
+      "aboutMarkdownConfig": true,
+      "aboutMarkdownInputCount": 1,
+      "aboutMarkdownPreviewCount": 1,
+      "aboutModuleRows": 0,
+      "publicJudgeConfigCount": 0,
+      "judgeManagement": true,
+      "judgeRows": 2,
+      "judgeAssignment": true,
+      "judgeTasks": 2,
+      "configurationPresentation": {
+        "saveSections": 15,
+        "displayPanels": 15,
+        "readonlySections": 15,
+        "editButtons": 15,
+        "editModals": 15,
+        "openEditModals": 0,
+        "antDescriptions": 13,
+        "antTables": 1
+      },
+      "publicRuleChapters": {
+        "addButtons": 1,
+        "rowCount": 7,
+        "readonlyTables": 1,
+        "editorTableInModal": true,
+        "emptyPrompts": 0,
+        "exposedFormControls": 0
+      },
+      "communityGroupConfig": true,
+      "trustedTargetLibraryHidden": true,
+      "platformNavigationHidden": true,
+      "platformNavigationVisibleStates": [
+        "隐藏",
+        "隐藏",
+        "隐藏"
+      ],
+      "communityGroupEnabled": "展示",
+      "communityDistributionConfig": true,
+      "distributionFields": [
+        "enabled",
+        "phase",
+        "channels",
+        "title",
+        "pool"
+      ],
+      "distributionChannels": [
+        "社区首页",
+        "AIGC 灵感广场"
+      ],
+      "publicationActions": [
+        "publish:发布"
+      ],
+      "communityPreview": {
+        "label": "前往社区预览",
+        "target": "_blank",
+        "rel": "noopener",
+        "href": "/ai666-community-preview/competition-detail.html?id=COMP-2026-AIGC-01"
+      },
+      "headerSaveCount": 0,
+      "sectionSaveCount": 15,
+      "embeddedPreviewPanels": 0,
+      "obsoletePreviewLinks": 0,
+      "platformReviewQueue": false,
+      "platformReviewEvidence": false,
+      "judgeWorkbench": true,
+      "judgeScoreForm": true
+    },
+    "competitionReadOnlySectionBeforeEdit": {
+      "summaryVisible": true,
+      "formVisible": false,
+      "modalOpen": false,
+      "editLabel": "编辑"
+    },
+    "competitionReadOnlySectionAfterSave": {
+      "modalOpen": false,
+      "summaryText": "赛事名称AIGC 创作挑战赛 · 展示编辑验证赛事短介绍面向 AI 视频创作者的娱乐向创作挑战，用作品参与热度、评审与投票。"
+    },
+    "competitionPublicRuleChapterAdded": {
+      "before": 7,
+      "after": 8,
+      "modalOpen": false,
+      "summaryText": "章节公开标题章节导语事实引用展示排序参赛资格eligibility参赛资格与报名报名方式、账号状态与投稿上限报名与资格展示1赛道赛题tracks赛道与赛题各赛道主题、内容类型与作品时长赛道与赛题展示2作品规格work-spec作品规格与来源文件格式、技术边界、生成来源与第三方后期投稿内容与技术规格展示3投稿修改submission-edit投稿与修改投稿数量、允许修改阶段与重新审核规则报名配置与修改规则展示4评审投票judging-voting评审、投票与榜单评分口径、投票资格、异常票与排名规则评委与评分 + 投票与榜单展示5奖项结果awards-results奖项、结果与公示奖项名额、结果生成、公示与领奖流程奖项展示 + 结果与履约展示6权利申诉rights-appeal权利、违规与申诉参赛承诺、违规处置与有限申诉范围权利声明 + 公示申诉展示7作品展示作品展示规则说明公开作品的展示范围与基本要求活动介绍展示8",
+      "exposedFormControls": 0
+    },
+    "competitionNotificationToggleBefore": {
+      "label": "停用",
+      "state": "启用"
+    },
+    "competitionNotificationToggleAfter": {
+      "label": "启用",
+      "state": "停用",
+      "status": "停用"
+    },
+    "competitionNotificationToggleRestored": {
+      "label": "停用",
+      "state": "启用"
+    },
+    "competitionRegistrationFieldEditModal": {
+      "title": "编辑报名字段",
+      "keyDisabled": true,
+      "createActions": 0
+    },
+    "competitionRegistrationFieldSaved": {
+      "rowCount": 2,
+      "help": "选择计划参与的赛道，投稿时可按规则调整",
+      "modalClosed": true,
+      "logAdded": true,
+      "logText": "2026-8-15 11:21:35当前运营报名字段 / 意向赛道修改—单选 · 必填报名信息收集调整当前赛事配置赛事工作台待复核",
+      "expected": "选择计划参与的赛道，投稿时可按规则调整"
+    },
+    "competitionPublicationActions": {
+      "initialPublicationState": "published",
+      "publishHiddenWhenPublished": true,
+      "offlineActionCount": 0
+    },
+    "competitionPublishAction": {
+      "publicationState": "published",
+      "publishHidden": true,
+      "offlineActionCount": 0,
+      "logAdded": true
+    },
+    "competitionAboutMarkdownPreview": {
+      "heading": "活动介绍验证",
+      "strong": "Markdown",
+      "listItems": [
+        "创作主题",
+        "赛事说明"
+      ],
+      "rawScriptCount": 0
+    },
+    "competitionAboutMarkdownSaved": {
+      "errorHidden": true,
+      "feedback": "活动介绍已保存，并追加变更记录。",
+      "saveState": "",
+      "logAdded": true
+    },
+    "competitionCommunityQrUpload": {
+      "status": "已选择：competition-community-qr.png",
+      "value": "assets/uploads/competition-community-qr.png",
+      "preview": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=",
+      "removeVisible": true,
+      "errorHidden": true
+    },
+    "competitionCommunityQrRemoved": {
+      "value": "",
+      "previewImageCount": 0,
+      "removeHidden": true,
+      "emptyText": "尚未上传"
+    },
+    "competitionBannerUploads": [
+      {
+        "key": "banner-video",
+        "status": "已选择：competition-banner.mp4",
+        "value": "assets/uploads/competition-banner.mp4",
+        "previewSource": "data:video/mp4;base64,AAAAFGZ0eXBpc29t",
+        "removeVisible": true
+      },
+      {
+        "key": "banner-image",
+        "status": "已选择：competition-banner-image.webp",
+        "value": "assets/uploads/competition-banner-image.webp",
+        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
+        "removeVisible": true
+      }
+    ],
+    "competitionCommunityGroupPreview": {
+      "drawerOpen": true,
+      "previewCard": true,
+      "qrPresent": true,
+      "title": "加入赛事微信社群"
+    },
+    "competitionCommunityDistributionSaved": {
+      "groupErrorHidden": true,
+      "distributionErrorHidden": true,
+      "channels": [
+        "社区首页",
+        "AIGC 灵感广场"
+      ],
+      "removedFields": true,
+      "groupLogged": true,
+      "distributionLogged": true
+    },
+    "competitionSubmissionRulesAreSimplified": {
+      "panelVisible": true,
+      "allowedTypes": [
+        "video",
+        "image",
+        "text"
+      ],
+      "allowedTypesInline": true,
+      "sourceCountType": "number",
+      "editUntilCount": 1,
+      "removedFields": true,
+      "removedPanels": true,
+      "sourcePolicyRemoved": true,
+      "removedCopy": true,
+      "previewRemoved": true,
+      "registrationAgreementConfigCount": 0
+    },
+    "competitionSimplifiedSubmissionRulesSaved": {
+      "sourceCount": "2",
+      "editUntil": "评委评分开始前",
+      "feedback": "作品修改阶段已保存，并追加变更记录。",
+      "logAdded": true
+    },
+    "competitionWorkCatalogFilterToolbar": {
+      "visible": true,
+      "antForm": "Form",
+      "filterKeys": [
+        "keyword",
+        "track",
+        "review",
+        "public",
+        "score",
+        "stage-result"
+      ],
+      "allOnOneRow": true,
+      "actionsRightAligned": true,
+      "actionsBottomAligned": true,
+      "actionButtons": [
+        {
+          "label": "查询",
+          "antComponent": "Button"
+        },
+        {
+          "label": "重置",
+          "antComponent": "Button"
+        }
+      ]
+    },
+    "competitionCatalogAuditRequiresRejectReason": {
+      "modalVisible": true,
+      "errorVisible": true,
+      "evidenceFields": 0,
+      "decisions": [
+        "approve",
+        "reject"
+      ]
+    },
+    "competitionCatalogAuditSaved": {
+      "auditState": "rejected",
+      "workState": "hidden",
+      "actionCount": 1,
+      "logAdded": true
+    },
+    "competitionJudgeWorkbenchScores": {
+      "total": "85",
+      "modalClosed": true,
+      "logAdded": true
+    },
+    "competitionAwardAddEntryBeforeOpen": {
+      "visible": true,
+      "inPanelHeader": true,
+      "outsideModal": true,
+      "label": "新增奖项"
+    },
+    "competitionAwardAddOpensSingleItemModal": {
+      "modalVisible": true,
+      "rowNotAddedBeforeSave": true,
+      "title": "新增奖项",
+      "nameFocused": true,
+      "noGlobalEditor": true
+    },
+    "competitionAwardAdded": {
+      "rowAdded": true,
+      "values": {
+        "competitionAwardRow": "",
+        "awardId": "AWARD-096996",
+        "awardType": "ranking",
+        "awardName": "社区创意奖",
+        "awardQuota": "2",
+        "awardTrack": "全部赛道",
+        "awardBenefit": "1,200 积分",
+        "awardOrder": "5",
+        "awardState": "展示"
+      },
+      "logAdded": true
+    },
+    "competitionAwardEditPrefillsSingleItemModal": {
+      "title": "编辑奖项",
+      "name": "赛道亚军",
+      "benefit": "6,000 积分及专题推荐"
+    },
+    "competitionParticipationRewardUsesSameEditor": {
+      "sameTable": true,
+      "title": "编辑奖项",
+      "name": "有效参赛奖励",
+      "type": "participation",
+      "specialFields": 0
+    },
+    "competitionAwardsAfterEdit": {
+      "runnerBenefit": "6,800 积分及专题推荐",
+      "participationBenefit": "680 积分",
+      "sectionSave": false
+    },
+    "competitionStageUsesManualProgression": {
+      "modalVisible": true,
+      "removedFields": true,
+      "targetPresent": true,
+      "actionInputs": 7,
+      "stateReadOnly": true
+    },
+    "competitionFinalResultTrackSwitching": {
+      "trackTwoState": {
+        "activeTrackId": "TRACK-02",
+        "visibleTrackIds": [
+          "TRACK-02"
+        ],
+        "emptyHidden": true
+      },
+      "trackThreeState": {
+        "activeTrackId": "TRACK-03",
+        "visibleResultRows": 0,
+        "emptyVisible": true,
+        "emptyTitle": "长镜头实验暂无排名"
+      }
+    },
+    "competitionFinalResultPublish": {
+      "sourceRows": 3,
+      "rowStatuses": [
+        "已发布",
+        "已发布",
+        "已发布"
+      ],
+      "publishDisabled": true,
+      "logAdded": true,
+      "previewTriggerRemoved": true,
+      "previewModalRemoved": true,
+      "headerStatusRemoved": true
+    },
+    "competitionRewardIssuance": {
+      "status": "已发放",
+      "issuedAt": "2026-09-25 10:00",
+      "logAdded": true
+    },
+    "competitionInvalidScoreComposition": {
+      "available": true,
+      "errorVisible": true,
+      "errorText": "评委评分权重与热度分权重合计必须等于 100%，当前配置未保存。",
+      "totalText": "权重合计 90% · 需等于 100%",
+      "feedbackVisible": true,
+      "feedbackText": "最终成绩权重合计须为 100%，请修正后再保存。",
+      "logRowsBefore": 19,
+      "logRowsAfter": 19
+    },
+    "competitionInvalidHeatCoefficients": {
+      "errorVisible": true,
+      "errorText": "热度系数须为 0–100 的整数，且至少一项大于 0；当前配置未保存。",
+      "feedbackVisible": true,
+      "feedbackText": "热度系数须为 0–100 的整数，且至少一项大于 0，请修正后再保存。",
+      "logRowsBefore": 19,
+      "logRowsAfter": 19
+    },
+    "competitionValidScoreComposition": {
+      "formula": "最终分 = 评委得分 × 70% + 热度分 × 30%",
+      "heatFormula": "有效浏览 × 2 + 点赞 × 4 + 有效评论 × 6",
+      "firstRawHeat": "18,672",
+      "secondRawHeat": "15,048",
+      "firstFinal": "94.7",
+      "secondHeatScore": "80.6",
+      "secondFinal": "86.9",
+      "logAdded": true
+    },
+    "competitionInvalidScoringAggregation": {
+      "errorVisible": true,
+      "errorText": "去掉最高最低分后取平均至少需要 3 名有效评委；当前配置未保存。",
+      "gateConfigured": "false",
+      "gateState": "",
+      "logUnchanged": true
+    }
   },
   "consoleErrors": [],
+  "ignoredConsoleErrors": [
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778669559326657922.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1785493970531188194.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778665616635399090.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778663872722361283.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778658093127133307.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778657061904115517.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778653817644032200.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778642454204766595.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778577735718870833.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778235732710970768.jpg",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778235808684726951.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778229565783990082.jpg",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1778229611273538451.png",
+    "Failed to load resource: net::ERR_NETWORK_ACCESS_DENIED @ https://aismedia.oss-cn-shanghai.aliyuncs.com/ai666/1785493970531188194.png"
+  ],
   "pageErrors": []
 }
