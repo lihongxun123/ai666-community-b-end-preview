@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-15T03:24:37.068Z",
+  "generatedAt": "2026-08-17T10:48:48.428Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 31,
+  "pageCount": 32,
   "pages": [
     {
       "slug": "content-list",
@@ -116,6 +116,12 @@
       "sourcePath": "outputs/community-b-end-antdesign-prototype/competition-detail.html"
     },
     {
+      "slug": "competition-judge-workbench",
+      "label": "我的评分任务",
+      "path": "competition-judge-workbench.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/competition-judge-workbench.html"
+    },
+    {
       "slug": "activity-config",
       "label": "活动管理",
       "path": "activity-config.html",
@@ -201,6 +207,9 @@
     }
   ],
   "assets": [
+    "assets/competition/featured-ancient-tree.png",
+    "assets/competition/featured-light-library.png",
+    "assets/competition/featured-sky-whale-city.png",
     "assets/icons/arrow-down-s-line.svg",
     "assets/icons/arrow-left-s-line.svg",
     "assets/icons/arrow-right-s-line.svg",
@@ -214,6 +223,7 @@
     "assets/image_assets/2.png",
     "assets/image_assets/3.png",
     "assets/image_assets/4.png",
+    "assets/image_assets/7.png",
     "assets/image_assets/login-qr-v1.png",
     "assets/video_assets/aigc-hero-c02c.mp4"
   ],

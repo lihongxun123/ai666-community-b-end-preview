@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T03:11:14.895Z",
+  "generatedAt": "2026-08-17T10:47:17.304Z",
   "pages": [
     {
       "view": "content-list",
@@ -90,6 +90,11 @@
       "view": "competition-detail",
       "file": "competition-detail.html",
       "label": "赛事工作台"
+    },
+    {
+      "view": "competition-judge-workbench",
+      "file": "competition-judge-workbench.html",
+      "label": "我的评分任务"
     },
     {
       "view": "activity-config",

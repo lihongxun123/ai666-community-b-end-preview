@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>AI666 后台 - 权限管理</title>
+  <title>AI666 后台 - 我的评分任务</title>
   <style>
     :root {
       --ant-sider-width: 208px;
@@ -6089,7 +6089,7 @@
           <a class="nav-btn" href="login-popup-config.html" data-nav="login-popup-config" data-page-link="login-popup-config.html">登录弹窗配置</a>
           <a class="nav-btn" href="operation-settings.html" data-nav="operation-settings" data-page-link="operation-settings.html">运营配置</a>
           <a class="nav-btn" href="activity-config.html" data-nav="activity-config" data-page-link="activity-config.html">活动管理</a>
-          <a class="nav-btn" href="competition-management.html" data-nav="competition-management" data-page-link="competition-management.html">赛事管理</a>
+          <a class="nav-btn is-active" href="competition-management.html" data-nav="competition-management" data-page-link="competition-management.html">赛事管理</a>
           <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
         </div>
@@ -6111,7 +6111,7 @@
         <div class="nav-children">
           <a class="nav-btn" href="operation-log.html" data-nav="operation-log" data-page-link="operation-log.html">日志</a>
           <a class="nav-btn" href="role-management.html" data-nav="role-management" data-page-link="role-management.html">角色管理</a>
-          <a class="nav-btn is-active" href="permission-management.html" data-nav="permission-management" data-page-link="permission-management.html">权限管理</a>
+          <a class="nav-btn" href="permission-management.html" data-nav="permission-management" data-page-link="permission-management.html">权限管理</a>
           <a class="nav-btn" href="admin-users.html" data-nav="admin-users" data-page-link="admin-users.html">后台用户管理</a>
         </div>
       </section>
@@ -6120,7 +6120,7 @@
     <div class="main-shell ant-layout">
       <header class="topbar ant-layout-header">
         <div class="topbar-main">
-          <h1 class="top-title" id="globalTitle">权限管理</h1>
+          <h1 class="top-title" id="globalTitle">我的评分任务</h1>
         </div>
         <div class="top-meta">
           <div class="avatar-button" aria-label="当前登录用户" data-user-avatar="login-user" title="当前登录用户">AI</div>
@@ -6128,24 +6128,13 @@
       </header>
 
       <main class="content ant-layout-content">
-<section class="view is-active" data-view="permission-management" data-page-contract="permission-management" data-b05-page="permission-management" data-real-route="/system/permissions">
-          <div class="b05-permission-toolbar">
-            <div class="b05-permission-toolbar-group"><input class="input" placeholder="权限名称 / 编码" data-b05-permission-filter="keyword"><select class="select" aria-label="权限类型" data-b05-permission-filter="type"><option value="">权限类型</option><option value="1">菜单</option><option value="2">按钮</option><option value="3">接口</option></select><select class="select" aria-label="状态" data-b05-permission-filter="status"><option value="">状态</option><option value="1">启用</option><option value="0">停用</option></select><span data-b05-permission-result hidden>3 条结果</span><button class="btn primary" type="button" data-b05-permission-search>查询</button><button class="btn" type="button" data-b05-permission-reset>重置</button></div>
-            <div class="b05-permission-toolbar-group"><span class="tag info" data-b05-permission-catalog>系统目录 86 项 · 待新增 2 · 待校正 1</span><button class="btn" type="button" data-b05-permission-sync>同步系统权限</button><button class="btn primary" type="button" data-b05-permission-create>新增权限</button></div>
-          </div>
-          <div class="table-wrap ant-table-wrapper b05-permission-table-shell"><table data-table="permission-management" data-b05-table="permission-management" data-antd-component="ModTable"><thead><tr><th>权限编码</th><th>权限名称</th><th>类型</th><th>前端标识</th><th>接口绑定</th><th>排序</th><th>状态</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
-              <tr data-b05-permission-row data-code="system:role" data-name="角色管理" data-type="1" data-element="system-role" data-api="GET /admin/api/roles/list" data-sort="10" data-status="1" data-parent="system"><td class="mono">system:role</td><td>角色管理</td><td><span class="tag info">菜单</span></td><td class="mono">system-role</td><td class="wrap">1 个接口</td><td>10</td><td><span class="tag success">启用</span></td><td>2026-08-05 16:40</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link danger-link" type="button" data-b05-permission-toggle>停用</button></div></td></tr>
-              <tr data-b05-permission-row data-code="system:role:create" data-name="新建角色" data-type="2" data-element="role-create" data-api="POST /admin/api/roles/create" data-sort="20" data-status="1" data-parent="system:role"><td class="mono">system:role:create</td><td>新建角色</td><td><span class="tag purple">按钮</span></td><td class="mono">role-create</td><td class="wrap">1 个接口</td><td>20</td><td><span class="tag success">启用</span></td><td>2026-08-05 16:21</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link danger-link" type="button" data-b05-permission-toggle>停用</button></div></td></tr>
-              <tr data-b05-permission-row data-code="system:permission:sync" data-name="同步权限" data-type="3" data-element="permission-sync" data-api="POST /admin/api/permissions/sync" data-sort="30" data-status="0" data-parent="system:permission"><td class="mono">system:permission:sync</td><td>同步权限</td><td><span class="tag info">接口</span></td><td class="mono">permission-sync</td><td class="wrap">1 个接口</td><td>30</td><td><span class="tag gray">停用</span></td><td>2026-08-04 18:09</td><td><div class="op-list"><button class="btn link" type="button" data-b05-permission-edit>编辑</button><button class="btn link" type="button" data-b05-permission-toggle>启用</button></div></td></tr>
-              <tr class="table-empty-row" data-b05-permission-empty hidden><td colspan="9">暂无符合条件的权限</td></tr>
-            </tbody></table></div>
-          <div class="modal-backdrop" data-b05-layer="permission-editor" hidden><section class="modal" data-antd-component="Modal" role="dialog" aria-modal="true"><header><h3 data-b05-permission-editor-title>新增权限</h3><button class="modal-close" type="button" data-b05-close="permission-editor">×</button></header><div class="modal-body"><div class="form-grid">
-            <div class="field"><label>权限编码</label><input class="input" maxlength="100" placeholder="例如 content-list:view" data-b05-permission-field="code"></div><div class="field"><label>权限名称</label><input class="input" maxlength="100" data-b05-permission-field="name"></div>
-            <div class="field"><label>父级权限</label><select class="select" data-b05-permission-field="parent"><option value="">无（顶级权限）</option><option value="system">系统管理（system）</option><option value="system:role">角色管理（system:role）</option><option value="system:permission">权限管理（system:permission）</option></select></div><div class="field"><label>权限类型</label><select class="select" data-b05-permission-field="type"><option value="1">菜单</option><option value="2">按钮</option><option value="3">接口</option></select></div>
-            <div class="field"><label>前端元素标识</label><input class="input" maxlength="100" placeholder="例如 menu_content_list" data-b05-permission-field="element"></div><div class="field"><label>排序</label><input class="input" type="number" value="100" data-b05-permission-field="sort"></div>
-            <div class="field"><label>状态</label><select class="select" data-b05-permission-status><option value="1">启用</option><option value="0">停用</option></select></div>
-          </div><div class="b05-api-heading"><div class="b05-api-heading-copy"><b>接口绑定</b><span>支持精确路径、前缀或通配符</span></div><button class="btn" type="button" data-b05-api-add>添加接口</button></div><div class="b05-api-empty" data-b05-api-empty>未绑定接口，仅控制前端页面或按钮</div><div class="b05-api-bindings" data-b05-api-bindings></div><div class="alert error" data-b05-permission-feedback hidden></div></div><footer><button class="btn" type="button" data-b05-close="permission-editor">取消</button><button class="btn primary" type="button" data-b05-permission-save>保存</button></footer></section></div>
-          <div class="modal-backdrop" data-b05-layer="permission-confirm" hidden><section class="modal" data-antd-component="Modal"><header><h3 data-b05-permission-confirm-title>确认操作</h3><button class="modal-close" type="button" data-b05-close="permission-confirm">×</button></header><div class="modal-body"><div class="alert warning" data-b05-permission-confirm-copy>请确认本次操作。</div></div><footer><button class="btn" type="button" data-b05-close="permission-confirm">取消</button><button class="btn primary" type="button" data-b05-permission-confirm>确认</button></footer></section></div>
+<section class="view is-active" data-view="competition-judge-workbench" data-page-contract="competition-judge-workbench" data-route-only-page="competition-management" data-real-route="/operation/competitions/{competitionId}/my-scoring-tasks" data-competition-judge-workbench-page>
+          <div class="competition-judge-page-head"><div><a href="competition-detail.html?id=COMP-2026-AIGC-01&tab=scoring" data-competition-judge-back>← 返回赛事评分管理</a><h2>我的评分任务</h2></div><span class="tag info">赛事评委</span></div>
+          <div class="alert info">盲审已开启：隐藏作者身份、头像、互动数据和审核备注。</div>
+          <div hidden data-competition-judge-context data-judge-id="JUDGE-01" data-judge-name="周予安" data-judge-account="ADM-004" data-judge-scope="极短叙事、一分钟世界" data-judge-progress="2/4" data-judge-deadline="2026-09-14 20:00" data-judge-blind="隐藏作者身份、头像与互动数据" data-judge-state="评分中"></div>
+          <div class="competition-judge-task-summary" data-competition-judge-task-summary><div><b>负责赛道</b><strong data-competition-judge-task-scope>—</strong></div><div><b>已提交</b><strong data-competition-judge-task-done>0</strong></div><div><b>待评分</b><strong data-competition-judge-task-pending>0</strong></div><div><b>评分截止</b><strong data-competition-judge-task-deadline>—</strong></div></div>
+          <div class="panel"><div class="panel-body"><div class="competition-judge-workbench-layout"><div class="competition-judge-task-queue" role="region" aria-label="评分任务"><div class="competition-judge-task-queue-head"><b>评分任务</b><span class="tag processing" data-competition-judge-task-count>0</span></div><div class="competition-judge-task-list" data-competition-judge-task-list></div></div><article class="competition-judge-work-preview" data-competition-judge-work-preview><div class="competition-judge-work-media" data-competition-judge-work-media></div><div class="competition-judge-work-copy"><div class="competition-judge-work-tags"><span class="tag processing" data-competition-judge-work-track>—</span><span class="tag gray" data-competition-judge-work-type>—</span></div><h3 data-competition-judge-work-title>待评作品</h3><p data-competition-judge-work-meta>—</p><div class="competition-judge-materials" data-competition-judge-work-materials hidden></div></div></article><div class="competition-judge-score-form" data-competition-judge-score-form><label class="field"><span>创意表达 · 40 分</span><input class="input" type="number" min="0" max="40" value="0" data-competition-judge-score="creativity"></label><label class="field"><span>视听完成度 · 35 分</span><input class="input" type="number" min="0" max="35" value="0" data-competition-judge-score="narrative"></label><label class="field"><span>赛题契合度 · 25 分</span><input class="input" type="number" min="0" max="25" value="0" data-competition-judge-score="visual"></label><div class="drawer-field"><b>当前总分</b><p><strong data-competition-judge-score-total>0</strong> / 100</p></div><label class="field"><span>评语</span><textarea class="textarea" rows="4" data-competition-judge-score-comment></textarea></label><p class="field-error" data-competition-judge-score-error hidden></p></div></div></div><div class="panel-head"><div class="competition-judge-submit-bar"><button class="btn" type="button" data-competition-judge-work-nav="previous">上一件</button><button class="btn" type="button" data-competition-judge-score-save="submit-next">提交并下一件</button><button class="btn primary" type="button" data-competition-judge-score-save="submit">提交评分</button></div></div></div>
+          <span class="competition-admin-feedback" data-competition-admin-feedback hidden></span>
         </section>
       </main>
     </div>

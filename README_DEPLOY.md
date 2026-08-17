@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-08-15T03:24:37.068Z
+生成时间：2026-08-17T10:48:48.428Z
 
 ## 用途
 
@@ -45,6 +45,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 运营配置: operation-settings.html
 - 赛事管理: competition-management.html
 - 赛事工作台: competition-detail.html
+- 我的评分任务: competition-judge-workbench.html
 - 活动管理: activity-config.html
 - 活动详情: activity-detail.html
 - 公告配置: operation-config.html
