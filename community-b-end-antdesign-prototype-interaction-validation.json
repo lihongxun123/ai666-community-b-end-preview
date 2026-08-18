@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T10:48:48.145Z",
+  "generatedAt": "2026-08-18T04:26:21.794Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -65,6 +65,7 @@
     "competitionManagementFiltersByStateAndResets": true,
     "competitionCreateUsesMinimalDraftShell": true,
     "competitionCreateEntersBlankDraftWorkbench": true,
+    "competitionBlankDraftPublishCheckExplainsEveryModule": true,
     "competitionBlankDraftSupportsIndependentStageCreation": true,
     "competitionOperationalSurfaceMatchesCurrentContract": true,
     "competitionContactQrReadonlyImagePreview": true,
@@ -78,7 +79,7 @@
     "competitionPublishActionWorksWithoutOffline": true,
     "competitionAboutMarkdownPreviewsAndSaves": true,
     "competitionMaterialUploadsSelectPreviewAndRemove": true,
-    "competitionCommunityGroupAndDistributionPreviewSave": true,
+    "competitionCommunityGroupAndContentAttributionPreviewSave": true,
     "competitionSubmissionPreviewEntryRemoved": true,
     "competitionSubmissionRulesCoverLimitTypesMaterialsAndEditing": true,
     "competitionWorkCatalogFiltersAlignActionsToTheRight": true,
@@ -88,8 +89,10 @@
     "competitionAwardAddAndEditUseSingleItemModal": true,
     "competitionParticipationRewardUsesSameAwardRowAndEditor": true,
     "competitionStageUsesManualProgressionWithoutExpressions": true,
+    "competitionResultManagementUsesThreeSubtabs": true,
     "competitionFinalResultsSwitchByTrack": true,
     "competitionFinalResultsPublishRequiresCompleteScoring": true,
+    "competitionRewardIssuanceOpensOnlyAfterPublishedResult": true,
     "competitionRewardIssuanceRecordsStatusAndTime": true,
     "competitionScoreCompositionRejectsInvalidWeightAndRefreshesResults": true,
     "competitionScoringUsesSimpleTrackOwnerFlow": true,
@@ -1543,12 +1546,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-717494"
+      "taskCode": "TASK-170623"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-717494",
+      "taskCode": "TASK-170623",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1557,7 +1560,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-717494\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-170623\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2219,21 +2222,69 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1786963722384",
-      "competitionId": "COMP-2026-722428",
+      "draftName": "赛事交互验收草稿-1787027175577",
+      "competitionId": "COMP-2026-175608",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1786963722384",
+      "title": "赛事交互验收草稿-1787027175577",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
       "stageRows": 0,
       "stageSummaryCards": 0,
       "stageEmptyText": "0 个阶段；请新增并维护阶段时间、允许动作和目标阶段。",
+      "overviewBlankStage": true,
+      "overviewStageText": "当前赛程维护赛程 尚未配置赛程新增赛事阶段并维护起止时间后，这里显示当前进度。",
+      "overviewTodoCount": 1,
+      "overviewTodoText": "运营待办 完成赛事上线配置从基础信息开始，按发布检查逐项维护。完善基础信息",
+      "overviewTrackText": "尚未配置赛道；新增赛道后再查看作品分布。",
+      "scoringProgress": "0 / 0",
+      "scoreRecordText": "尚未配置评委与评分任务，暂无评分记录。",
+      "rewardActionCount": 0,
+      "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1786963722384"
+      "expectedName": "赛事交互验收草稿-1787027175577"
+    },
+    "competitionBlankDraftPublishCheck": {
+      "rowCount": 10,
+      "labels": [
+        "赛事基础建档",
+        "赛道与赛题",
+        "阶段时间与流转",
+        "报名规则",
+        "投稿规则",
+        "评委执行与评分",
+        "作品审核",
+        "赛道排名",
+        "奖励发放",
+        "赛事通知"
+      ],
+      "reasons": [
+        "请补齐赛事基础信息、时间、Banner、联系入口、社区内容归类、活动介绍与公开规则",
+        "至少配置 1 个赛题、投稿类型和时长完整的启用赛道",
+        "请补齐每个阶段的时间、动作与目标阶段",
+        "请选择报名方式",
+        "请配置投稿上限、作品类型、来源材料要求与修改截止",
+        "请补齐评委执行、评委账号、评分维度与计分口径",
+        "请保留参赛作品列表及通过、不通过审核动作",
+        "请配置评委评分与热度分权重，二者合计须为 100%",
+        "请至少配置 1 个展示中的赛事奖项",
+        "请启用并补齐 6 个赛事通知触点"
+      ],
+      "targets": [
+        "overview",
+        "tracks",
+        "stages",
+        "participation",
+        "submission",
+        "scoring",
+        "works",
+        "results",
+        "awards",
+        "notifications"
+      ]
     },
     "competitionBlankDraftStageModal": {
       "editableStateFields": 0,
@@ -2399,6 +2450,8 @@
         "participation"
       ],
       "participationRewardRows": 2,
+      "resultPrecheckRows": 0,
+      "appealRows": 0,
       "obsoleteResultSurfaces": 0,
       "notifications": 6,
       "notificationTriggerKeys": [
@@ -2576,20 +2629,10 @@
         "隐藏"
       ],
       "communityGroupEnabled": "展示",
-      "communityDistributionConfig": true,
-      "distributionComponent": "Checkbox.Group",
-      "distributionNativeMultiple": false,
-      "distributionFields": [
-        "enabled",
-        "phase",
-        "channels",
-        "title",
-        "pool"
-      ],
-      "distributionChannels": [
-        "社区首页",
-        "AIGC 灵感广场"
-      ],
+      "contentAttributionConfig": true,
+      "contentAttributionTopic": "AIGC 创作挑战赛",
+      "contentAttributionFixedRules": "归类规则内容分类继承作品投稿时已选分类；投稿关联赛事后自动带上赛事话题；审核通过且公开展示后进入社区现有作品流，不单独创建赛事模块。",
+      "legacyDistributionFields": 0,
       "publicationActions": [
         "publish:发布"
       ],
@@ -2645,7 +2688,7 @@
         "violations"
       ],
       "modalOpen": false,
-      "summaryText": "7 个固定章节7/7 已就绪参赛者生命周期（5 步）1报名前1 章参与方式与赛道已就绪2投稿前2 章参赛资格已就绪投稿要求已就绪3评选中1 章评审维度已就绪4结果后2 章奖项与权益已就绪版权与授权已就绪5争议处理1 章违规处理与申诉已就绪报名前 · 1/5参与方式与赛道已配置正文维护来源报名规则 + 赛道赛题C端展示摘要报名、选择赛道、提交作品与审核公开维护入口报名规则赛道赛题赛事补充说明（选填）如遇报名资格问题，请通过赛事助手咨询。投稿前 · 2/5参赛资格已配置正文维护来源报名规则C端展示摘要登录账号、选择赛道并确认参赛协议维护入口报名规则赛事补充说明（选填）未填写投稿前 · 2/5投稿要求已配置正文维护来源投稿规则C端展示摘要投稿上限、作品类型、来源材料要求与修改截止维护入口投稿规则赛事补充说明（选填）未填写评选中 · 3/5评审维度已配置正文维护来源评委评分 + 排名管理C端展示摘要评分维度、热度口径、最终成绩与结果时间维护入口评分规则最终成绩规则赛事补充说明（选填）未填写结果后 · 4/5奖项与权益已配置正文维护来源奖项维护 + 结果与履约C端展示摘要竞技奖项、有效参赛奖励与领取流程维护入口奖项维护结果与履约赛事补充说明（选填）未填写结果后 · 4/5版权与授权已配置正文维护来源平台固定版权与授权规则C端展示摘要素材合法使用权、作品权属与赛事使用范围维护入口平台固定赛事补充说明（选填）未填写争议处理 · 5/5违规处理与申诉已配置正文维护来源作品审核 + 固定申诉规则 + 赛事助手C端展示摘要违规范围、处理结果、申诉时限与联系入口维护入口作品审核赛事助手赛事补充说明（选填）未填写",
+      "summaryText": "7 个固定章节7/7 已就绪参赛者生命周期（5 步）1报名前1 章参与方式与赛道已就绪2投稿前2 章参赛资格已就绪投稿要求已就绪3评选中1 章评审维度已就绪4结果后2 章奖项与权益已就绪版权与授权已就绪5争议处理1 章违规处理与申诉已就绪报名前 · 1/5参与方式与赛道已配置正文维护来源报名规则 + 赛道赛题C端展示摘要报名、选择赛道、提交作品与审核公开维护入口报名规则赛道赛题赛事补充说明（选填）如遇报名资格问题，请通过赛事助手咨询。投稿前 · 2/5参赛资格已配置正文维护来源报名规则C端展示摘要登录账号、选择赛道并确认参赛协议维护入口报名规则赛事补充说明（选填）未填写投稿前 · 2/5投稿要求已配置正文维护来源投稿规则C端展示摘要投稿上限、作品类型、来源材料要求与修改截止维护入口投稿规则赛事补充说明（选填）未填写评选中 · 3/5评审维度已配置正文维护来源评委评分 + 排名管理C端展示摘要评分维度、热度口径、最终成绩与结果时间维护入口评分规则成绩规则赛事补充说明（选填）未填写结果后 · 4/5奖项与权益已配置正文维护来源奖项维护 + 结果与履约C端展示摘要竞技奖项、有效参赛奖励与领取流程维护入口奖项维护奖励发放赛事补充说明（选填）未填写结果后 · 4/5版权与授权已配置正文维护来源平台固定版权与授权规则C端展示摘要素材合法使用权、作品权属与赛事使用范围维护入口平台固定赛事补充说明（选填）未填写争议处理 · 5/5违规处理与申诉已配置正文维护来源作品审核 + 固定申诉规则 + 赛事助手C端展示摘要违规范围、处理结果、申诉时限与联系入口维护入口作品审核赛事助手赛事补充说明（选填）未填写",
       "exposedFormControls": 0,
       "storedCompetitionId": "COMP-2026-AIGC-01",
       "storedSupplement": "如遇报名资格问题，请通过赛事助手咨询。",
@@ -2692,8 +2735,16 @@
         "渠道",
         "计划 / 成功 / 失败",
         "发送时间",
-        "操作者"
+        "操作者",
+        "操作"
       ]
+    },
+    "competitionNotificationLogDetail": {
+      "open": true,
+      "title": "通知发送明细 · MSG-2026-0811-01",
+      "kind": "notification-log-detail",
+      "text": "事件 / 受众投稿审核结果 · 18 名投稿用户渠道站内信计划 / 成功 / 失败18 / 18 / 0发送时间 / 操作者2026-08-11 18:30 · 运营 A本批次全部发送成功，无需后续处理。收件人明细按权限脱敏展示；失败对象由运营回查发送通道，不提供自动重试。",
+      "retryActions": 0
     },
     "competitionRegistrationInformationArchitecture": {
       "panelVisible": true,
@@ -2717,6 +2768,10 @@
       "modalClosed": true,
       "mode": "需要报名",
       "feedback": "报名规则已保存，并追加变更记录。",
+      "feedbackComponent": "Message",
+      "feedbackType": "success",
+      "feedbackVisible": true,
+      "feedbackPosition": "fixed",
       "logAdded": true
     },
     "competitionRegistrationRecordsSubtab": {
@@ -2725,8 +2780,11 @@
       "recordsVisible": true,
       "recordRows": 2,
       "headers": [
-        "报名 ID / 状态 / 时间",
-        "用户 / 投稿",
+        "报名 ID",
+        "报名状态",
+        "报名时间",
+        "用户",
+        "投稿数",
         "首选赛道",
         "操作"
       ]
@@ -2807,18 +2865,14 @@
       "service": "工作日 10:00—18:00",
       "fixedDisplay": "固定展示"
     },
-    "competitionCommunityDistributionSaved": {
+    "competitionCommunityContentAttributionSaved": {
       "groupErrorHidden": true,
-      "distributionErrorHidden": true,
-      "channels": [
-        "社区首页",
-        "AIGC 灵感广场"
-      ],
-      "component": "Checkbox.Group",
-      "nativeMultiple": false,
-      "removedFields": true,
+      "attributionErrorHidden": true,
+      "topic": "AIGC 创作挑战赛",
+      "fixedRule": true,
+      "legacyDistributionFields": 0,
       "groupLogged": true,
-      "distributionLogged": true
+      "attributionLogged": true
     },
     "competitionSubmissionRulesAreComplete": {
       "panelVisible": true,
@@ -2889,27 +2943,29 @@
       "title": "光之门",
       "media": "assets/competition/featured-light-library.png",
       "sectionTitles": [
-        "作品信息",
+        "社区作品",
         "投稿材料",
-        "赛事与状态"
+        "赛事投稿关系"
       ],
       "materialCount": 2,
-      "cEndHref": "/ai666-community-preview/competition-work.html?id=COMP-2026-AIGC-01&submission_id=S-001",
-      "text": "\n    作品详情\n    视频作品极短叙事光之门旅人穿过无尽书库，向光照进来的门扉前行。作品信息投稿 IDS-001作者UR0001 · 空镜作品类型视频内容规格00:42投稿时间2026-09-03 18:26投稿材料生成原片光之门-AI原片.mp4 · 已上传最终成片光之门-成片.mp4 · 已上传赛事与状态赛事AIGC 创作挑战赛赛道极短叙事审核状态审核通过C端状态展示中社区表现热度 9,840 · 赞 179 · 评论 2查看 C端作品\n    关闭保存草稿\n  "
+      "cEndHref": "/ai666-community-preview/competition-work.html?id=COMP-2026-AIGC-01&work_id=AIGC-2001&submission_id=S-001",
+      "text": "\n    作品详情\n    视频作品极短叙事光之门旅人穿过无尽书库，向光照进来的门扉前行。社区作品社区作品 IDAIGC-2001作者UR0001 · 空镜作品类型视频内容规格00:42内容审核审核通过社区公开已发布投稿材料生成原片光之门-AI原片.mp4 · 已上传最终成片光之门-成片.mp4 · 已上传赛事投稿关系赛事投稿 IDS-001赛事AIGC 创作挑战赛赛道极短叙事赛事审核审核通过赛事展示展示中投稿时间2026-09-03 18:26社区表现热度 9,840 · 赞 179 · 评论 2查看 C端作品\n    关闭保存草稿\n  "
     },
     "competitionImageWorkMaterials": {
       "type": "图片",
-      "text": "\n    作品详情\n    图片作品一分钟世界最后的守望古树与守望者共同等待一场迟来的春天。作品信息投稿 IDS-002作者UR0009 · 阿青作品类型图片内容规格3 张参考原图投稿时间2026-09-04 09:12投稿材料参考原图（多张）3 张参考原图 · 已上传最终作品图最后的守望-最终作品.png · 已上传赛事与状态赛事AIGC 创作挑战赛赛道一分钟世界审核状态待审核C端状态不展示社区表现热度 0 · 赞 0 · 评论 0\n    关闭保存草稿\n  "
+      "text": "\n    作品详情\n    图片作品一分钟世界最后的守望古树与守望者共同等待一场迟来的春天。社区作品社区作品 IDAIGC-2002作者UR0009 · 阿青作品类型图片内容规格3 张参考原图内容审核审核通过社区公开已发布投稿材料参考原图（多张）3 张参考原图 · 已上传最终作品图最后的守望-最终作品.png · 已上传赛事投稿关系赛事投稿 IDS-002赛事AIGC 创作挑战赛赛道一分钟世界赛事审核待审核赛事展示不展示投稿时间2026-09-04 09:12社区表现热度 0 · 赞 0 · 评论 0\n    关闭保存草稿\n  "
     },
     "competitionTextWorkMaterials": {
       "type": "纯文字",
-      "text": "\n    作品详情\n    纯文字作品自由创作云上有声鲸形飞行器越过城市上空，留下被人听见的回声。作品信息投稿 IDS-003作者UR0012 · 司南作品类型纯文字内容规格612 字投稿时间2026-09-04 10:05投稿材料提示词以漂浮城市为背景，写一封来自未来的短篇书信。成文内容云层之上，城市每天都把一封没有地址的信交给风。直到今天，信封上第一次出现了我的名字。赛事与状态赛事AIGC 创作挑战赛赛道自由创作审核状态审核通过C端状态展示中社区表现热度 8,560 · 赞 156 · 评论 12查看 C端作品\n    关闭保存草稿\n  "
+      "text": "\n    作品详情\n    纯文字作品自由创作云上有声鲸形飞行器越过城市上空，留下被人听见的回声。社区作品社区作品 IDAIGC-2003作者UR0012 · 司南作品类型纯文字内容规格612 字内容审核审核通过社区公开已发布投稿材料提示词以漂浮城市为背景，写一封来自未来的短篇书信。成文内容云层之上，城市每天都把一封没有地址的信交给风。直到今天，信封上第一次出现了我的名字。赛事投稿关系赛事投稿 IDS-003赛事AIGC 创作挑战赛赛道自由创作赛事审核审核通过赛事展示展示中投稿时间2026-09-04 10:05社区表现热度 8,560 · 赞 156 · 评论 12查看 C端作品\n    关闭保存草稿\n  "
     },
     "competitionCatalogAuditCompactDefault": {
       "width": 520,
-      "bodyHeight": 136,
-      "objectHeight": 32,
-      "objectText": "审核对象S-002",
+      "bodyHeight": 176,
+      "objectHeight": 72,
+      "objectText": "作品名称最后的守望作品描述古树与守望者共同等待一场迟来的春天。",
+      "workTitle": "最后的守望",
+      "workDescription": "古树与守望者共同等待一场迟来的春天。",
       "reasonHidden": true
     },
     "competitionCatalogAuditRejectReasonField": {
@@ -2929,16 +2985,18 @@
       ]
     },
     "competitionCatalogAuditSaved": {
-      "auditState": "rejected",
-      "workState": "hidden",
+      "competitionAuditState": "rejected",
+      "competitionDisplayState": "hidden",
+      "contentAuditState": "approved",
+      "communityPublicState": "published",
       "auditReason": "作品未满足本次赛事投稿要求，请修改后重新提交。",
       "actionCount": 1,
-      "feedback": "审核结果与未通过原因已保存，并同步到 C端投稿记录。",
+      "feedback": "赛事审核结果与未通过原因已保存，并同步到 C端投稿记录。",
       "logAdded": true
     },
     "competitionCatalogAuditReasonInDetail": {
       "open": true,
-      "text": "作品详情 图片作品一分钟世界最后的守望古树与守望者共同等待一场迟来的春天。作品信息投稿 IDS-002作者UR0009 · 阿青作品类型图片内容规格3 张参考原图投稿时间2026-09-04 09:12投稿材料参考原图（多张）3 张参考原图 · 已上传最终作品图最后的守望-最终作品.png · 已上传赛事与状态赛事AIGC 创作挑战赛赛道一分钟世界审核状态审核不通过C端状态不展示未通过原因作品未满足本次赛事投稿要求，请修改后重新提交。社区表现热度 0 · 赞 0 · 评论 0 关闭保存草稿"
+      "text": "作品详情 图片作品一分钟世界最后的守望古树与守望者共同等待一场迟来的春天。社区作品社区作品 IDAIGC-2002作者UR0009 · 阿青作品类型图片内容规格3 张参考原图内容审核审核通过社区公开已发布投稿材料参考原图（多张）3 张参考原图 · 已上传最终作品图最后的守望-最终作品.png · 已上传赛事投稿关系赛事投稿 IDS-002赛事AIGC 创作挑战赛赛道一分钟世界赛事审核审核不通过赛事展示不展示投稿时间2026-09-04 09:12未通过原因作品未满足本次赛事投稿要求，请修改后重新提交。社区表现热度 0 · 赞 0 · 评论 0 关闭保存草稿"
     },
     "competitionJudgeWorkbenchScores": {
       "total": "85",
@@ -2966,7 +3024,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-725394",
+        "awardId": "AWARD-178757",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3008,6 +3066,41 @@
       "actionInputs": 7,
       "stateReadOnly": true
     },
+    "competitionResultManagementSubtabs": {
+      "rules": {
+        "labels": [
+          "成绩规则",
+          "赛道排名",
+          "奖励发放"
+        ],
+        "active": "rules",
+        "visiblePanels": [
+          "rules"
+        ]
+      },
+      "ranking": {
+        "labels": [
+          "成绩规则",
+          "赛道排名",
+          "奖励发放"
+        ],
+        "active": "ranking",
+        "visiblePanels": [
+          "ranking"
+        ]
+      },
+      "rewards": {
+        "labels": [
+          "成绩规则",
+          "赛道排名",
+          "奖励发放"
+        ],
+        "active": "rewards",
+        "visiblePanels": [
+          "rewards"
+        ]
+      }
+    },
     "competitionFinalResultTrackSwitching": {
       "trackTwoState": {
         "activeTrackId": "TRACK-02",
@@ -3032,10 +3125,16 @@
       ],
       "publishDisabled": true,
       "gateCopy": "已完成 3 / 8，全部评分完成后可发布",
+      "rewardButtonsDisabled": true,
+      "rewardGateCopy": "最终结果发布后可记录发放",
       "logUnchanged": true,
       "previewTriggerRemoved": true,
       "previewModalRemoved": true,
       "headerStatusRemoved": true
+    },
+    "competitionRewardGateAfterPublishedResult": {
+      "rewardButtonsEnabled": true,
+      "gateCopy": "最终结果已发布，可记录奖励发放"
     },
     "competitionRewardIssuance": {
       "status": "已发放",
@@ -3131,7 +3230,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-08-17 18:48",
+      "status": "已提交 · 2026-08-18 12:26",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,

@@ -5765,9 +5765,11 @@
     }
     .modal.popup-item-modal[data-modal="competition-work-audit"] { width:min(520px,calc(100vw - 32px)); }
     .competition-work-audit-body { display:grid; gap:14px; }
-    .competition-work-audit-object { display:grid; grid-template-columns:72px minmax(0,1fr); gap:12px; align-items:center; min-height:32px; }
-    .competition-work-audit-object > span { color:#64748b; font-size:12px; }
-    .competition-work-audit-object > strong { min-width:0; color:var(--ant-text); font-size:13px; }
+    .competition-work-audit-object { display:grid; grid-template-columns:72px minmax(0,1fr); gap:8px 12px; align-items:start; min-height:32px; padding:10px 12px; border:1px solid #f0f0f0; border-radius:var(--ant-radius); background:#fafafa; }
+    .competition-work-audit-object > span { color:#64748b; font-size:12px; line-height:1.6; }
+    .competition-work-audit-object > strong,
+    .competition-work-audit-object > p { min-width:0; margin:0; color:var(--ant-text); font-size:13px; line-height:1.6; overflow-wrap:anywhere; }
+    .competition-work-audit-object > p { color:#475569; }
     .competition-work-audit-body .required-star { color:#ff4d4f; }
     .competition-work-audit-reason-hint { margin:6px 0 0; color:#64748b; font-size:12px; line-height:1.5; }
     .competition-admin-rule { padding:14px; border:1px solid #edf0f5; border-radius:var(--ant-radius); background:#fafafa; }
@@ -5779,7 +5781,12 @@
     .competition-admin-status { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px; border:1px solid #ffe58f; border-radius:var(--ant-radius); background:#fffbe6; }
     .competition-admin-integration { display:grid; gap:10px; margin-top:16px; }
     .competition-admin-integration > div { display:grid; grid-template-columns:42px minmax(180px,1fr) 1.6fr 110px; gap:12px; align-items:center; padding:12px 14px; border:1px solid #edf0f5; border-radius:var(--ant-radius); }
-    .competition-admin-feedback { margin-left:10px; color:#389e0d; font-size:13px; }
+    .competition-ant-message.ant-message { position:fixed; inset:72px 0 auto; z-index:1500; display:flex; justify-content:center; padding:0 24px; pointer-events:none; }
+    .competition-ant-message .ant-message-notice { max-width:min(560px,calc(100vw - 48px)); }
+    .competition-ant-message .ant-message-notice-content { display:inline-flex; align-items:center; min-height:40px; padding:10px 16px; border-radius:8px; background:#fff; color:#1f2329; font-size:14px; line-height:20px; text-align:left; box-shadow:0 6px 20px rgba(15,23,42,.16); }
+    .competition-ant-message .ant-message-success { color:#389e0d; }
+    .competition-ant-message .ant-message-warning { color:#d48806; }
+    .competition-ant-message .ant-message-error { color:#cf1322; }
     .competition-admin-tabs { overflow-x:auto; white-space:nowrap; scrollbar-width:thin; }
     .competition-admin-tabs .tab { flex:0 0 auto; }
     [data-competition-final-results] .table-wrap[data-sticky-action-column] th:last-child,
@@ -5951,7 +5958,13 @@
     .competition-admin-grid .field > p { margin:6px 0 0; }
     .competition-inline-fields { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
     .competition-publish-checks { display:grid; gap:10px; margin-top:14px; }
-    .competition-publish-checks > div { display:flex; justify-content:space-between; gap:16px; padding:11px 12px; border:1px solid #edf0f5; border-radius:var(--ant-radius); }
+    .competition-publish-checks > div { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:11px 12px; border:1px solid #edf0f5; border-radius:var(--ant-radius); }
+    .competition-publish-check-copy { display:grid; gap:4px; min-width:0; }
+    .competition-publish-check-copy b { color:#1f2937; }
+    .competition-publish-check-copy span { color:#64748b; font-size:12px; line-height:1.5; }
+    .competition-overview-blank-state { display:grid; place-items:center; min-height:206px; padding:28px; text-align:center; border:1px dashed #d9d9d9; border-radius:var(--ant-radius); background:#fafafa; }
+    .competition-overview-blank-state b { color:#1f2937; font-size:16px; }
+    .competition-overview-blank-state span { max-width:360px; margin-top:6px; color:#64748b; line-height:1.6; }
     .competition-empty-config { padding:30px 16px; text-align:center; color:#64748b; }
     .competition-review-evidence-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; }
     .competition-review-evidence-grid > div { padding:14px; border:1px solid #edf0f5; border-radius:var(--ant-radius); background:#fafafa; }
@@ -6025,6 +6038,18 @@
     .competition-work-detail-hero p { margin:0; color:#64748b; line-height:1.7; }
     .competition-work-detail-section { margin-top:18px; }
     .competition-work-detail-section h4 { margin:0 0 10px; }
+    [data-competition-drawer-kind="work-detail"] .competition-ant-description-label,
+    [data-competition-drawer-kind="work-detail"] .competition-ant-description-content {
+      display:flex;
+      align-items:center;
+    }
+    [data-competition-drawer-kind="work-detail"] .competition-ant-description-content {
+      min-width:0;
+      padding:11px 14px;
+      color:#172033;
+      line-height:1.6;
+      overflow-wrap:anywhere;
+    }
     .competition-work-materials { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
     .competition-work-materials > div { padding:14px; border:1px solid #edf0f5; border-radius:var(--ant-radius); }
     .competition-work-materials p { margin:6px 0 0; color:#64748b; font-size:12px; }
@@ -6327,7 +6352,7 @@
 
   <section class="modal popup-item-modal" data-modal="competition-work-audit" role="dialog" aria-modal="true" aria-labelledby="competitionWorkAuditTitle" aria-hidden="true" data-antd-component="Modal">
     <div class="modal-head"><span id="competitionWorkAuditTitle">审核作品</span><button class="btn" type="button" data-close-layer>关闭</button></div>
-    <div class="modal-body competition-work-audit-body"><div class="competition-work-audit-object"><span>审核对象</span><strong class="mono" data-competition-work-audit-object>—</strong></div><div class="field"><label>审核结论</label><select class="select ant-select" data-competition-work-audit-decision data-antd-component="Select"><option value="approve">通过</option><option value="reject">不通过</option></select></div><div class="field" data-competition-work-audit-reason-field hidden><label><span class="required-star" aria-hidden="true">*</span> 未通过原因</label><textarea class="textarea ant-input" rows="3" maxlength="200" data-competition-work-audit-reason data-antd-component="Input.TextArea" placeholder="请填写具体原因，便于投稿用户修改"></textarea><p class="competition-work-audit-reason-hint">保存后将展示在 C端“我的投稿”的未通过记录中。</p></div><p class="field-error" data-competition-work-audit-error hidden></p></div>
+    <div class="modal-body competition-work-audit-body"><div class="competition-work-audit-object" data-competition-work-audit-object><span>作品名称</span><strong data-competition-work-audit-title>—</strong><span>作品描述</span><p data-competition-work-audit-description>—</p></div><div class="field"><label>审核结论</label><select class="select ant-select" data-competition-work-audit-decision data-antd-component="Select"><option value="approve">通过</option><option value="reject">不通过</option></select></div><div class="field" data-competition-work-audit-reason-field hidden><label><span class="required-star" aria-hidden="true">*</span> 未通过原因</label><textarea class="textarea ant-input" rows="3" maxlength="200" data-competition-work-audit-reason data-antd-component="Input.TextArea" placeholder="请填写具体原因，便于投稿用户修改"></textarea><p class="competition-work-audit-reason-hint">保存后将展示在 C端“我的投稿”的未通过记录中。</p></div><p class="field-error" data-competition-work-audit-error hidden></p></div>
     <div class="modal-footer"><button class="btn" type="button" data-close-layer>取消</button><button class="btn primary" type="button" data-competition-work-audit-save>保存审核结果</button></div>
   </section>
   <section class="modal popup-item-modal" data-modal="competition-notification-editor" role="dialog" aria-modal="true" aria-labelledby="competitionNotificationTitle" aria-hidden="true" data-antd-component="Modal">
@@ -7174,13 +7199,13 @@
           "页头只提供前往社区预览、发布，以及暂停赛事、结束赛事等独立动作；各配置分区在对应编辑弹层内完成校验和保存，页头不提供全局保存。社区预览按当前赛事 ID 打开 C 端活动主页新标签，发布必须经过确认并追加记录；已发布赛事不提供下线动作。",
           "赛事总览集中展示有效报名、有效作品、待审核作品、评分进度、当前赛程、运营待办与赛道作品分布；其他页签不重复展示全局统计。",
           "赛事总览只负责看状态和进入待办；具体配置与处理继续在对应页签和编辑弹层完成。发布检查保留为发布动作的内部门禁，触发发布时校验并定位配置，不在总览中单独展示。",
-          "基础信息将赛事资料、活动时间、活动介绍和赛事主页 Banner 媒体合并为一个卡片与一个编辑表单，统一保存；赛事副标题（Slogan）使用单行短文案，与赛事名称同排维护，并展示在 C端赛事主页 Hero 标题下方，较长内容进入活动介绍；赛事主页 Banner 固定展示，只维护媒体类型与素材，不提供显隐配置；赛事社群与赛事助手合并为一个联系入口卡片和表单，社群可隐藏，赛事助手固定展示；社区作品分发独立维护。参赛规则使用独立页签，按报名前、投稿前、评选中、结果后和争议处理五个阶段编排参与方式、参赛资格、投稿要求、评审维度、奖项与权益、版权与授权、违规处理与申诉七章。每章核心事实读取对应业务配置，并提供返回唯一事实来源的维护入口；后台只维护选填补充说明并按赛事 ID 同步到 C端规则页，不提供新增、隐藏、删除或排序。规则页头不重复展示赛事与 C端发布状态，跨端入口统一命名为预览规则。参赛指南仅保留旧链接兼容，规则引言不单独配置，作品授权归入公开规则与投稿确认。活动中心素材仍由活动中心单一入口维护。",
+          "基础信息将赛事资料、活动时间、活动介绍和赛事主页 Banner 媒体合并为一个卡片与一个编辑表单，统一保存；赛事副标题（Slogan）使用单行短文案，与赛事名称同排维护，并展示在 C端赛事主页 Hero 标题下方，较长内容进入活动介绍；赛事主页 Banner 固定展示，只维护媒体类型与素材，不提供显隐配置；赛事社群与赛事助手合并为一个联系入口卡片和表单，社群可隐藏，赛事助手固定展示；社区内容归类独立维护。参赛规则使用独立页签，按报名前、投稿前、评选中、结果后和争议处理五个阶段编排参与方式、参赛资格、投稿要求、评审维度、奖项与权益、版权与授权、违规处理与申诉七章。每章核心事实读取对应业务配置，并提供返回唯一事实来源的维护入口；后台只维护选填补充说明并按赛事 ID 同步到 C端规则页，不提供新增、隐藏、删除或排序。规则页头不重复展示赛事与 C端发布状态，跨端入口统一命名为预览规则。参赛指南仅保留旧链接兼容，规则引言不单独配置，作品授权归入公开规则与投稿确认。活动中心素材仍由活动中心单一入口维护。",
           "平台可信链接库与赛事平台导航暂不对运营开放；社区导航组直接展示，不提供导航排序字段。",
-          "社区作品分发只选择社区首页和 AIGC 灵感广场，使用多选下拉；排序、展示数量、同作者上限、卡片目标和紧急下线均使用统一产品规则，不做赛事级配置。",
+          "赛事投稿不在 C端新增独立作品分发模块；内容分类继承社区投稿，运营只维护赛事话题，投稿关联赛事后自动带上该话题，审核通过且公开展示的作品进入社区现有作品流。",
           "奖项维护作为独立一级页签，位于赛道赛题之后、赛程维护之前；统一维护竞技奖项与有效参赛奖励。排名管理只读取奖项定义并承载结果发布与奖励发放记录，不重复编辑奖项。",
           "赛事 Banner 只选择图片或视频并维护对应媒体；默认静音循环、移动端封面回退、遮罩、焦点与文字可读性由统一前端规范处理。",
           "赛事社群二维码、赛事助手二维码、Banner 视频和 Banner 图片等真实素材统一使用 Ant Design Upload；支持选择或拖拽上传、即时预览、替换与移除，取消编辑不提交修改，运营不填写技术路径。视频封面由系统自动抽帧生成，不提供额外上传入口。",
-          "C端报名弹窗读取赛事报名方式并执行固定流程：仅持有效社区账号的个人用户可报名，必须选择一个启用赛道并确认参赛协议，报名一次可参与全部启用赛道，提交成功即报名成功；B端报名资格页按报名规则、报名记录分区，报名规则只维护报名方式，其余作为系统固定规则提示，不扩展年龄、地区、团队或资格复核流程。B端投稿规则维护单账号上限、允许类型、修改截止，并按作品类型决定是否额外要求生成原片、参考原图或提示词；最终成片、最终作品图与成文内容固定必交。C端按赛事已发布配置显示并校验对应材料。参赛作品详情以投稿 ID 对齐 C端作品，并按类型展示实际提交材料；作品审核不通过时必须填写未通过原因，并同步展示在 C端“我的投稿”记录中。当前不展示 MakeNow 项目选择；后续打通后，三类作品均可选填 MakeNow 项目。",
+          "C端报名弹窗读取赛事报名方式并执行固定流程：仅持有效社区账号的个人用户可报名，必须选择一个启用赛道并确认参赛协议，报名一次可参与全部启用赛道，提交成功即报名成功；B端报名资格页按报名规则、报名记录分区，报名规则只维护报名方式，其余作为系统固定规则提示，不扩展年龄、地区、团队或资格复核流程。报名记录按报名 ID、报名状态、报名时间、用户、投稿数、首选赛道和操作独立列展示，避免将多个业务事实压缩在同一单元格。B端投稿规则维护单账号上限、允许类型、修改截止，并按作品类型决定是否额外要求生成原片、参考原图或提示词；最终成片、最终作品图与成文内容固定必交。C端按赛事已发布配置显示并校验对应材料。参赛作品详情同时保留社区作品 ID（work_id）与赛事投稿 ID（submission_id）：前者主责作品内容、全局公开与互动，后者主责赛道、赛事审核、赛事展示、评分和榜单；赛事审核不通过时必须填写用户可见原因并同步到 C端“我的投稿”，不得覆盖社区作品状态。当前不展示 MakeNow 项目选择；后续打通后，三类作品均可选填 MakeNow 项目。",
           "评委评分按评分规则、评委与进度、评分记录分区；规则集中维护开放时间、截止时间、盲审和评分维度。系统角色只控制能否进入评分页和提交评分，赛事内分配只控制该账号能评哪场赛事、哪些赛道。每个赛道只分配一名主评并独立计分，符合范围的作品自动进入本人任务，不逐件人工分配。评委账号登录后默认进入我的评分任务，只查看视频最终成片、图片最终作品图或纯文字成文内容并完成盲审；评分提交即确认，支持上一件与提交并下一件。提交同步队列状态、进度与评分记录，全部任务完成前禁止发布排名；运营侧只预览同一工作台并查看进度。",
           "赛事通知按规则模板、发送记录分区；规则模板维护触发事件、受众、渠道、正文与启停，发送记录只追溯实际发送批次、结果和操作者。",
           "阶段只维护起止时间、允许动作和目标阶段，由运营人工完成当前阶段并切换下一阶段。",
@@ -20553,13 +20578,21 @@
       drawer.querySelector("[data-close-layer]")?.focus();
     }
 
-    function showCompetitionFeedback(view, message) {
+    function showCompetitionFeedback(view, message, type = "") {
       const feedback = view?.querySelector("[data-competition-admin-feedback]");
       if (!feedback) return;
+      const host = feedback.closest("[data-competition-message-host]");
+      const resolvedType = type || (/未通过|未填写|不能为空|须为|暂不能|请先|失败|错误/.test(message) ? "error" : /仍有|提醒|待处理/.test(message) ? "warning" : "success");
       feedback.textContent = message;
+      feedback.className = `ant-message-notice-content ant-message-${resolvedType}`;
+      feedback.dataset.messageType = resolvedType;
       feedback.hidden = false;
+      if (host) host.hidden = false;
       clearTimeout(competitionFeedbackTimers.get(view));
-      competitionFeedbackTimers.set(view, setTimeout(() => { feedback.hidden = true; }, 3600));
+      competitionFeedbackTimers.set(view, setTimeout(() => {
+        feedback.hidden = true;
+        if (host) host.hidden = true;
+      }, 3000));
     }
 
     function appendCompetitionLog(view, objectId, action, summary, reason = "—") {
@@ -20636,10 +20669,16 @@
       setCompetitionTableEmpty(view.querySelector("[data-competition-score-dimension-body]"), 6, "尚未配置评分维度。");
       const works = view.querySelector("[data-competition-admin-panel='works'] tbody");
       setCompetitionTableEmpty(works, 9, "赛事尚未发布，暂无投稿作品。");
-      setCompetitionTableEmpty(view.querySelector("[data-competition-final-result-body]"), 6, "评委评分完成后，系统将自动生成赛道排名。");
+      setCompetitionTableEmpty(view.querySelector("[data-competition-score-record-body]"), 8, "尚未配置评委与评分任务，暂无评分记录。");
+      setCompetitionTableEmpty(view.querySelector("[data-competition-final-result-body]"), 9, "评委评分完成后，系统将自动生成赛道排名。");
       view.querySelectorAll("[data-competition-reward-body]").forEach((body) => setCompetitionTableEmpty(body, 8, body.dataset.competitionRewardBody === "participation" ? "作品审核通过并公开展示后，系统生成有效参赛奖励资格。" : "发布最终结果后，可在此记录竞技奖项发放。"));
       setCompetitionTableEmpty(view.querySelector("[data-competition-notification-log-body]"), 7, "赛事尚未发布，暂无通知发送记录。");
       setCompetitionTableEmpty(view.querySelector("[data-competition-award-body]"), 7, "尚未配置奖项展示；至少完成 1 条展示中的奖项后才能发布。");
+      setCompetitionTableEmpty(view.querySelector("[data-competition-overview-track-table] tbody"), 4, "尚未配置赛道；新增赛道后再查看作品分布。");
+      const overviewStage = view.querySelector("[data-competition-overview-progress] [data-antd-component='Steps']");
+      if (overviewStage) overviewStage.innerHTML = '<div class="competition-overview-blank-state" data-competition-overview-blank-stage><b>尚未配置赛程</b><span>新增赛事阶段并维护起止时间后，这里显示当前进度。</span></div>';
+      const overviewTodos = view.querySelector("[data-competition-overview-todos] .competition-overview-todo-list");
+      if (overviewTodos) overviewTodos.innerHTML = '<div class="competition-overview-todo" data-competition-overview-blank-todo><div class="competition-overview-todo-copy"><b>完成赛事上线配置</b><span>从基础信息开始，按发布检查逐项维护。</span></div><button class="btn link" type="button" data-competition-overview-jump data-competition-jump-tab="basic">完善基础信息</button></div>';
       const log = view.querySelector("[data-competition-admin-log]");
       if (log) log.innerHTML = `<tr><td>刚刚<div class="muted small">当前运营</div></td><td>${escapeHtml(view.querySelector("[data-competition-workbench-id]")?.textContent || "赛事草稿")}</td><td>创建草稿</td><td>不存在</td><td>仅创建赛事名称；其余模块均待配置</td><td>新建赛事</td><td>当前赛事</td><td>赛事管理</td><td>待配置</td></tr>`;
       view.querySelectorAll("[data-competition-basic-field]").forEach((field) => {
@@ -20670,13 +20709,12 @@
       if (name) name.value = record.name;
       const overall = view.querySelector("[data-competition-config-overall]");
       const summary = view.querySelector("[data-competition-config-summary]");
-      if (overall) { overall.textContent = "1 / 10 已配置"; overall.className = "tag warning"; }
-      if (summary) summary.textContent = "仅完成赛事建档，发布前需补齐 9 项上线配置";
+      if (overall) { overall.textContent = "0 / 10 已配置"; overall.className = "tag warning"; }
+      if (summary) summary.textContent = "赛事已建档，发布前需完成 10 项上线配置";
       view.querySelectorAll("[data-competition-config-check]").forEach((item) => {
-        const done = item.dataset.competitionConfigCheck === "overview";
-        item.dataset.configured = done ? "true" : "false";
+        item.dataset.configured = "false";
         const state = item.querySelector("[data-config-state]");
-        if (state) { state.textContent = done ? "已建档，内容待完善" : "待配置"; state.className = done ? "tag warning" : "tag gray"; }
+        if (state) { state.textContent = "待配置"; state.className = "tag gray"; }
       });
       [...view.querySelectorAll("[data-competition-admin-summary] strong")].forEach((value) => { value.textContent = "0"; });
     }
@@ -20997,14 +21035,7 @@
         && value('[data-competition-community-group-field="qr"]'));
       const competitionAssistantConfigured = ["label", "title", "description", "service", "qr"]
         .every((key) => value(`[data-competition-assistant-field="${key}"]`));
-      const distributionEnabled = value('[data-competition-distribution-field="enabled"]');
-      const distributionChannelValues = [...view.querySelectorAll('[data-competition-distribution-field="channels"] input[type="checkbox"]:checked')].map((input) => input.value);
-      const communityDistributionConfigured = distributionEnabled === "停用" || Boolean(distributionEnabled === "启用"
-        && value('[data-competition-distribution-field="phase"]')
-        && distributionChannelValues.length > 0
-        && distributionChannelValues.every((channel) => ["社区首页", "AIGC 灵感广场"].includes(channel))
-        && value('[data-competition-distribution-field="title"]')
-        && value('[data-competition-distribution-field="pool"]'));
+      const contentAttributionConfigured = Boolean(value('[data-competition-content-attribution-field="topic"]'));
       const aboutMarkdownConfigured = Boolean(value('[data-competition-about-markdown-input]'));
       const publicRuleRows = [...view.querySelectorAll('[data-competition-public-rule-row]')];
       const publicRulesConfigured = publicRuleRows.length === COMPETITION_PUBLIC_RULE_KEYS.length
@@ -21012,7 +21043,7 @@
           && row.querySelector('[data-competition-public-rule-source]')
           && row.querySelector('[data-competition-public-rule-field="supplement"]'));
       return {
-        overview: { configured: Boolean(value('[data-competition-basic-field="name"]') && value('[data-competition-basic-field="summary"]') && value('[data-competition-schedule-field="start"]') && value('[data-competition-schedule-field="end"]') > value('[data-competition-schedule-field="start"]') && value('[data-competition-schedule-field="public-copy"]') && bannerConfigured && communityGroupConfigured && competitionAssistantConfigured && communityDistributionConfigured && aboutMarkdownConfigured && publicRulesConfigured), reason: "请补齐赛事基础信息、时间、Banner、联系入口、作品分发、活动介绍与公开规则" },
+        overview: { configured: Boolean(value('[data-competition-basic-field="name"]') && value('[data-competition-basic-field="summary"]') && value('[data-competition-schedule-field="start"]') && value('[data-competition-schedule-field="end"]') > value('[data-competition-schedule-field="start"]') && value('[data-competition-schedule-field="public-copy"]') && bannerConfigured && communityGroupConfigured && competitionAssistantConfigured && contentAttributionConfigured && aboutMarkdownConfigured && publicRulesConfigured), reason: "请补齐赛事基础信息、时间、Banner、联系入口、社区内容归类、活动介绍与公开规则" },
         tracks: { configured: enabledTracks.length > 0 && enabledTracks.every((row) => row.dataset.trackName && row.dataset.trackTopic && row.dataset.trackContent), reason: "至少配置 1 个赛题、投稿类型和时长完整的启用赛道" },
         stages: { configured: stageTimesValid && stages.every((row) => row.dataset.stageActions && row.dataset.stageTarget), reason: "请补齐每个阶段的时间、动作与目标阶段" },
         participation: { configured: Boolean(registrationConfigured), reason: "请选择报名方式" },
@@ -21030,8 +21061,9 @@
       const items = [...view.querySelectorAll("[data-competition-config-check]")];
       if (view.dataset.competitionBlankDraft === "true") {
         items.forEach((item) => {
+          const module = modules[item.dataset.competitionConfigCheck] || { reason: "请完成该模块配置" };
           item.dataset.configured = "false";
-          item.dataset.configReason = "待配置";
+          item.dataset.configReason = module.reason;
           const state = item.querySelector("[data-config-state]");
           if (state) { state.textContent = "待配置"; state.className = "tag gray"; }
         });
@@ -21080,10 +21112,8 @@
       if (communityGroupValue("enabled") === "展示" && (!communityGroupValue("label") || !communityGroupValue("title") || !communityGroupValue("description") || !communityGroupValue("qr"))) issues.push({ key: "community-group", target: "basic", label: "展示赛事社群入口时需补齐名称、标题、说明与二维码" });
       const competitionAssistantValue = (key) => String(view.querySelector(`[data-competition-assistant-field="${key}"]`)?.value || "").trim();
       if (["label", "title", "description", "service", "qr"].some((key) => !competitionAssistantValue(key))) issues.push({ key: "competition-assistant", target: "basic", label: "联系赛事助手需补齐入口名称、弹层标题、说明、服务时间与二维码" });
-      const distributionValue = (key) => String(view.querySelector(`[data-competition-distribution-field="${key}"]`)?.value || "").trim();
-      const distributionChannels = [...view.querySelectorAll('[data-competition-distribution-field="channels"] input[type="checkbox"]:checked')].map((input) => input.value);
-      const allowedDistributionChannels = new Set(["社区首页", "AIGC 灵感广场"]);
-      if (distributionValue("enabled") === "启用" && (!distributionValue("phase") || !distributionChannels.length || distributionChannels.some((channel) => !allowedDistributionChannels.has(channel)) || !distributionValue("title") || !distributionValue("pool"))) issues.push({ key: "community-distribution", target: "basic", label: "社区作品分发需选择社区首页或 AIGC 灵感广场，并补齐阶段、标题与候选池" });
+      const competitionTopic = String(view.querySelector('[data-competition-content-attribution-field="topic"]')?.value || "").trim();
+      if (!competitionTopic) issues.push({ key: "content-attribution", target: "basic", label: "请配置赛事话题" });
       const aboutMarkdown = String(view.querySelector('[data-competition-about-markdown-input]')?.value || "").trim();
       if (!aboutMarkdown) issues.push({ key: "about-markdown", target: "basic", label: "请填写活动介绍 Markdown 正文" });
       const publicRuleRows = [...view.querySelectorAll('[data-competition-public-rule-section]')];
@@ -21119,13 +21149,15 @@
     function openCompetitionPublishCheck(view, activate) {
       refreshCompetitionConfigurationProgress(view);
       const missing = [...view.querySelectorAll('[data-competition-config-check][data-configured="false"]')];
-      const overviewIssues = getCompetitionOverviewGateIssues(view);
+      const overviewIssues = view.dataset.competitionBlankDraft === "true" ? [] : getCompetitionOverviewGateIssues(view);
       if (!missing.length && !overviewIssues.length && view.dataset.competitionConfiguration === "complete") return false;
       const modal = openCompetitionModal("competition-publish-check");
       const list = modal.querySelector("[data-competition-publish-check-list]");
-      const missingMarkup = missing.map((item) => `<div><span>${escapeHtml(item.dataset.configReason || item.querySelector("b")?.textContent || "待配置模块")}</span><button class="btn link" type="button" data-competition-publish-check-target="${escapeHtml(item.dataset.competitionConfigCheck === "integration" ? "presentation" : item.dataset.competitionConfigCheck)}">去配置</button></div>`).join("");
-      const issueMarkup = overviewIssues.map((item) => `<div><span>${escapeHtml(item.label)}</span><button class="btn link" type="button" data-competition-publish-check-target="${escapeHtml(item.target || "overview")}">去配置</button></div>`).join("");
-      list.innerHTML = missingMarkup + issueMarkup || '<div><span>当前草稿仍缺少发布所需内容</span><button class="btn link" type="button" data-competition-publish-check-target="overview">去配置</button></div>';
+      const targetLabels = { overview:"基础信息", basic:"基础信息", tracks:"赛道赛题", stages:"赛程维护", participation:"报名资格", submission:"投稿作品", scoring:"评委评分", works:"作品审核", results:"排名管理", awards:"奖项维护", records:"赛事通知", notifications:"赛事通知" };
+      const renderCheck = (label, reason, target) => `<div><div class="competition-publish-check-copy"><b>${escapeHtml(label)}</b><span>${escapeHtml(reason)}</span></div><button class="btn link" type="button" data-competition-publish-check-target="${escapeHtml(target)}">去配置</button></div>`;
+      const missingMarkup = missing.map((item) => renderCheck(item.querySelector("b")?.textContent || "待配置模块", item.dataset.configReason || "请完成该模块配置", item.dataset.competitionConfigCheck === "integration" ? "basic" : item.dataset.competitionConfigCheck)).join("");
+      const issueMarkup = overviewIssues.map((item) => renderCheck(targetLabels[item.target] || "发布检查", item.label, item.target || "overview")).join("");
+      list.innerHTML = missingMarkup + issueMarkup || renderCheck("发布检查", "当前草稿仍缺少发布所需内容", "overview");
       const first = overviewIssues[0]?.target || missing[0]?.dataset.competitionConfigCheck || "overview";
       const fix = modal.querySelector("[data-competition-publish-check-fix]");
       fix.dataset.competitionPublishCheckTarget = first;
@@ -21330,7 +21362,8 @@
     function createCompetitionBannerReadonlyPreview(section) {
       const type = section.querySelector('[data-competition-banner-media="type"]')?.value === "图片" ? "图片" : "视频";
       const kind = type === "图片" ? "image" : "video";
-      const wrapper = section.querySelector(`[data-competition-material-upload="banner-${kind}"]`);
+      const materialKey = `banner-${kind}`;
+      const wrapper = section.querySelector(`[data-competition-material-upload=${CSS.escape(materialKey)}]`);
       const source = competitionMaterialRenderableSource(wrapper);
       if (!source) return '<div class="competition-banner-summary-preview" data-competition-banner-summary-preview data-media-type="empty"><p class="competition-banner-summary-preview-empty">尚未上传可预览的 Banner 素材</p></div>';
       const media = kind === "video"
@@ -21445,8 +21478,6 @@
       });
       const footer = document.createElement("div");
       footer.className = "competition-section-footer";
-      const previewButton = bannerPanel.querySelector("[data-competition-banner-preview]");
-      if (previewButton) footer.append(previewButton);
       const saveButton = document.createElement("button");
       saveButton.className = "btn primary ant-btn ant-btn-primary";
       saveButton.type = "button";
@@ -21649,6 +21680,30 @@
           worksPanel.querySelectorAll("[data-competition-subpanel]").forEach((panel) => { panel.hidden = panel.dataset.competitionSubpanel !== submissionSubtab; });
         }
       };
+      const applyCompetitionWorkCatalogFilters = () => {
+        const valueOf = (key) => view.querySelector(`[data-competition-work-filter="${key}"]`)?.value || (key === "keyword" ? "" : "all");
+        const keyword = valueOf("keyword").trim().toLowerCase();
+        const track = valueOf("track");
+        const review = valueOf("review");
+        const publicState = valueOf("public");
+        const score = valueOf("score");
+        const stageResult = valueOf("stage-result");
+        view.querySelectorAll("[data-competition-work-catalog-row]").forEach((row) => {
+          const searchable = [row.dataset.competitionSubmissionId, row.dataset.communityWorkId, row.dataset.workTitle, row.dataset.workUser].join(" ").toLowerCase();
+          row.hidden = Boolean(
+            (keyword && !searchable.includes(keyword))
+            || (track !== "all" && row.dataset.workTrack !== track)
+            || (review !== "all" && row.dataset.competitionAuditState !== review)
+            || (publicState !== "all" && row.dataset.competitionDisplayState !== publicState)
+            || (score !== "all" && row.dataset.scoreState !== score)
+            || (stageResult !== "all" && row.dataset.stageResultState !== stageResult)
+          );
+        });
+      };
+      const resetCompetitionWorkCatalogFilters = () => {
+        view.querySelectorAll("[data-competition-work-filter]").forEach((control) => { control.value = control.dataset.competitionWorkFilter === "keyword" ? "" : "all"; });
+        applyCompetitionWorkCatalogFilters();
+      };
       let participationSubtab = "rules";
       const setParticipationSubtab = (mode) => {
         participationSubtab = ["rules", "records"].includes(mode) ? mode : "rules";
@@ -21685,6 +21740,18 @@
           panel.hidden = panel.dataset.competitionScoringSubpanel !== scoringSubtab;
         });
       };
+      let resultSubtab = "rules";
+      const setResultSubtab = (mode) => {
+        resultSubtab = ["rules", "ranking", "rewards"].includes(mode) ? mode : "rules";
+        view.querySelectorAll("[data-competition-result-subtab]").forEach((button) => {
+          const active = button.dataset.competitionResultSubtab === resultSubtab;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-selected", String(active));
+        });
+        view.querySelectorAll("[data-competition-result-subpanel]").forEach((panel) => {
+          panel.hidden = panel.dataset.competitionResultSubpanel !== resultSubtab;
+        });
+      };
       const legacyTabMap = { presentation: "basic", ranking: "results", logs: "records" };
       const activate = (key) => {
         key = legacyTabMap[key] || key;
@@ -21718,6 +21785,7 @@
           const panel = view.querySelector('[data-competition-admin-panel="ranking"]');
           if (panel) {
             panel.hidden = false;
+            setResultSubtab(resultSubtab);
             panel.querySelectorAll("[data-competition-ops-section]").forEach((section) => {
               const intentionallyHidden = section.getAttribute("aria-hidden") === "true";
               section.hidden = intentionallyHidden || !section.dataset.competitionOpsSection.split(/\s+/).includes(key);
@@ -21787,10 +21855,22 @@
       view.querySelectorAll("[data-competition-participation-subtab]").forEach((button) => button.addEventListener("click", () => setParticipationSubtab(button.dataset.competitionParticipationSubtab)));
       view.querySelectorAll("[data-competition-notification-subtab]").forEach((button) => button.addEventListener("click", () => setNotificationSubtab(button.dataset.competitionNotificationSubtab)));
       view.querySelectorAll("[data-competition-scoring-subtab]").forEach((button) => button.addEventListener("click", () => setScoringSubtab(button.dataset.competitionScoringSubtab)));
+      view.querySelectorAll("[data-competition-result-subtab]").forEach((button) => button.addEventListener("click", () => setResultSubtab(button.dataset.competitionResultSubtab)));
       view.querySelectorAll("[data-competition-jump-tab]").forEach((button) => button.addEventListener("click", () => {
         if (button.dataset.competitionJumpSubtab) submissionSubtab = button.dataset.competitionJumpSubtab;
         activate(button.dataset.competitionJumpTab);
+        if (button.dataset.competitionJumpReviewState) {
+          const reviewFilter = view.querySelector('[data-competition-work-filter="review"]');
+          if (reviewFilter) reviewFilter.value = button.dataset.competitionJumpReviewState;
+        }
+        if (button.dataset.competitionJumpTrack) {
+          const trackFilter = view.querySelector('[data-competition-work-filter="track"]');
+          if (trackFilter) trackFilter.value = button.dataset.competitionJumpTrack;
+        }
+        if (button.dataset.competitionJumpReviewState || button.dataset.competitionJumpTrack) applyCompetitionWorkCatalogFilters();
       }));
+      view.querySelector('[data-competition-work-filter-action="query"]')?.addEventListener("click", applyCompetitionWorkCatalogFilters);
+      view.querySelector('[data-competition-work-filter-action="reset"]')?.addEventListener("click", resetCompetitionWorkCatalogFilters);
       view.addEventListener("click", (event) => {
         const chapterSelector = event.target.closest("[data-competition-public-rule-select]");
         if (chapterSelector) {
@@ -21817,7 +21897,8 @@
         event.preventDefault();
         const editModal = button.closest("[data-competition-section-edit-modal]");
         if (editModal?.classList.contains("is-open")) editModal.querySelector("[data-competition-section-edit-cancel]")?.click();
-        if (button.dataset.maintainSubtab) submissionSubtab = button.dataset.maintainSubtab;
+        if (button.dataset.maintainSubtab && button.dataset.maintainTab === "submission") submissionSubtab = button.dataset.maintainSubtab;
+        if (button.dataset.maintainSubtab && button.dataset.maintainTab === "results") resultSubtab = button.dataset.maintainSubtab;
         activate(button.dataset.maintainTab || "basic");
         requestAnimationFrame(() => {
           const target = button.dataset.maintainTarget ? view.querySelector(button.dataset.maintainTarget) : null;
@@ -21858,7 +21939,7 @@
         const publicRulesIssue = overviewIssues.find((item) => item.key === "public-rules");
         const communityGroupIssue = overviewIssues.find((item) => item.key === "community-group");
         const competitionAssistantIssue = overviewIssues.find((item) => item.key === "competition-assistant");
-        const communityDistributionIssue = overviewIssues.find((item) => item.key === "community-distribution");
+        const contentAttributionIssue = overviewIssues.find((item) => item.key === "content-attribution");
         const registrationIssue = overviewIssues.find((item) => item.key === "registration");
         const submissionIssue = overviewIssues.find((item) => item.key === "submission");
         if ((section === "活动时间" || section === "基础信息") && scheduleIssue) {
@@ -21878,10 +21959,10 @@
           showCompetitionFeedback(view, "赛事联系入口未通过配置检查，请修正后再保存。");
           return;
         }
-        if (section === "社区作品分发" && communityDistributionIssue) {
-          const error = view.querySelector("[data-competition-community-distribution-error]");
-          if (error) { error.textContent = communityDistributionIssue.label; error.hidden = false; }
-          showCompetitionFeedback(view, "社区作品分发未通过配置检查，请修正后再保存。");
+        if (section === "社区内容归类" && contentAttributionIssue) {
+          const error = view.querySelector("[data-competition-content-attribution-error]");
+          if (error) { error.textContent = contentAttributionIssue.label; error.hidden = false; }
+          showCompetitionFeedback(view, "社区内容归类未通过配置检查，请配置赛事话题后再保存。");
           return;
         }
         if (section === "报名规则" && registrationIssue) {
@@ -21912,7 +21993,7 @@
         if (section === "奖项展示" && awardError) awardError.hidden = true;
         if (section === "赛事平台导航") view.querySelector("[data-competition-site-nav-error]")?.setAttribute("hidden", "");
         if (section === "赛事联系入口") view.querySelector("[data-competition-contact-entry-error]")?.setAttribute("hidden", "");
-        if (section === "社区作品分发") view.querySelector("[data-competition-community-distribution-error]")?.setAttribute("hidden", "");
+        if (section === "社区内容归类") view.querySelector("[data-competition-content-attribution-error]")?.setAttribute("hidden", "");
         if (section === "报名规则") view.querySelector("[data-competition-registration-rules-error]")?.setAttribute("hidden", "");
         if (section === "投稿规则") view.querySelector("[data-competition-submission-rules-error]")?.setAttribute("hidden", "");
         if (section === "活动介绍" || section === "基础信息") view.querySelector("[data-competition-about-markdown-error]")?.setAttribute("hidden", "");
@@ -21945,7 +22026,7 @@
         persistCompetitionPublicRulePreviewContext(view, competitionId);
         persistCompetitionPublicRuleSnapshot(view, competitionId, { publish:workbench.dataset.competitionPublicationState === "published" });
         if (section === "赛事联系入口") view.querySelector("[data-competition-contact-entry-error]")?.setAttribute("hidden", "");
-        if (section === "社区作品分发") view.querySelector("[data-competition-community-distribution-error]")?.setAttribute("hidden", "");
+        if (section === "社区内容归类") view.querySelector("[data-competition-content-attribution-error]")?.setAttribute("hidden", "");
         setCompetitionOpsSaveState(view, "saved", `${section}已保存`);
         appendCompetitionLog(view, section, "保存配置", `${section}已保存`, "运营配置调整");
         showCompetitionFeedback(view, `${section}已保存，并追加变更记录。`);
@@ -21982,20 +22063,6 @@
         }
         const rewardTab = event.target.closest("[data-competition-reward-tab]");
         if (rewardTab) { setCompetitionRewardPanel(view, rewardTab.dataset.competitionRewardTab); return; }
-        if (event.target.closest("[data-competition-banner-preview]")) {
-          const value = (key) => view.querySelector(`[data-competition-banner-media="${key}"]`)?.value || "—";
-          const videoWrapper = view.querySelector('[data-competition-material-upload="banner-video"]');
-          const imageWrapper = view.querySelector('[data-competition-material-upload="banner-image"]');
-          const video = competitionMaterialRenderableSource(videoWrapper);
-          const image = competitionMaterialRenderableSource(imageWrapper);
-          const mediaPreview = value("type") === "视频" && video
-            ? `<video controls playsinline preload="metadata" muted loop src="${escapeAttribute(video)}" style="display:block;width:100%;max-height:280px;border-radius:8px;background:#0f172a"></video><p class="muted small">视频封面由系统自动抽帧生成。</p>`
-            : image
-              ? `<img src="${escapeAttribute(image)}" alt="Banner 图片预览" style="display:block;width:100%;max-height:280px;object-fit:cover;border-radius:8px">`
-              : '<p class="muted">尚未上传 Banner 素材。</p>';
-          openCompetitionDrawer("Banner 媒体预览", `<div class="competition-detail-stack"><div class="drawer-field" data-competition-banner-media-preview>${mediaPreview}</div><div class="drawer-field"><b>媒体类型</b><p>${escapeHtml(value("type"))}</p></div><div class="drawer-field"><b>展示规则</b><p>随赛事主页固定展示</p></div></div>`);
-          return;
-        }
         const trackOpen = event.target.closest("[data-competition-track-open]");
         if (trackOpen) {
           activeCompetitionTrackRow = trackOpen.closest("[data-competition-track-row]");
@@ -22121,11 +22188,13 @@
         const workDetail = event.target.closest("[data-competition-work-detail]");
         if (workDetail) {
           const row = workDetail.closest("[data-competition-admin-work],[data-competition-work-catalog-row]");
-          const auditStateLabel = row.dataset.workAuditState === "approved" ? "审核通过" : row.dataset.workAuditState === "rejected" ? "审核不通过" : "待审核";
-          const publicState = row.dataset.workState === "visible" ? "展示中" : "不展示";
-          const publicUrl = `/ai666-community-preview/competition-work.html?id=${encodeURIComponent(competitionId)}&submission_id=${encodeURIComponent(row.dataset.workId)}`;
-          const publicAction = row.dataset.workState === "visible" ? `<a class="btn" href="${escapeHtml(publicUrl)}" target="_blank" rel="noopener">查看 C端作品</a>` : "";
-          const auditReasonMarkup = row.dataset.workAuditState === "rejected" && row.dataset.workAuditReason ? `<div class="competition-ant-description-item is-wide"><div class="competition-ant-description-label">未通过原因</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workAuditReason)}</div></div>` : "";
+          const auditStateLabel = row.dataset.competitionAuditState === "approved" ? "审核通过" : row.dataset.competitionAuditState === "rejected" ? "审核不通过" : "待审核";
+          const competitionDisplayState = row.dataset.competitionDisplayState === "visible" ? "展示中" : "不展示";
+          const contentAuditState = row.dataset.contentAuditState === "approved" ? "审核通过" : row.dataset.contentAuditState === "rejected" ? "审核不通过" : "待审核";
+          const communityPublicState = row.dataset.communityPublicState === "published" ? "已发布" : "未公开";
+          const publicUrl = `/ai666-community-preview/competition-work.html?id=${encodeURIComponent(competitionId)}&work_id=${encodeURIComponent(row.dataset.communityWorkId)}&submission_id=${encodeURIComponent(row.dataset.competitionSubmissionId)}`;
+          const publicAction = row.dataset.competitionDisplayState === "visible" && row.dataset.communityPublicState === "published" ? `<a class="btn" href="${escapeHtml(publicUrl)}" target="_blank" rel="noopener">查看 C端作品</a>` : "";
+          const auditReasonMarkup = row.dataset.competitionAuditState === "rejected" && row.dataset.workAuditReason ? `<div class="competition-ant-description-item is-wide"><div class="competition-ant-description-label">未通过原因</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workAuditReason)}</div></div>` : "";
           const workType = row.dataset.workContentType || "视频";
           const materialItems = workType === "图片"
             ? [["参考原图（多张）", row.dataset.workSourceMaterial || "未上传"], ["最终作品图", row.dataset.workFinalMaterial || "未上传"]]
@@ -22133,13 +22202,14 @@
               ? [["提示词", row.dataset.workPrompt || "未填写"], ["成文内容", row.dataset.workArticle || "未填写"]]
               : [["生成原片", row.dataset.workSourceMaterial || "未上传"], ["最终成片", row.dataset.workFinalMaterial || "未上传"]];
           const materialMarkup = materialItems.map(([label, value]) => `<div><b>${escapeHtml(label)}</b><p>${escapeHtml(value)}</p></div>`).join("");
-          openCompetitionDrawer("作品详情", `<div class="competition-detail-stack" data-competition-drawer-kind="work-detail" data-competition-work-type="${escapeHtml(workType)}"><div class="competition-work-detail-hero"><img src="${escapeHtml(row.dataset.workMedia || "assets/competition/featured-light-library.png")}" alt="作品《${escapeHtml(row.dataset.workTitle)}》"><div><div class="op-list"><span class="tag processing">${escapeHtml(row.dataset.workMediaType || `${workType}作品`)}</span><span class="tag gray">${escapeHtml(row.dataset.workTrack)}</span></div><h3>${escapeHtml(row.dataset.workTitle)}</h3><p>${escapeHtml(row.dataset.workDescription || "暂无作品说明")}</p></div></div><section class="competition-work-detail-section"><h4>作品信息</h4><div class="competition-ant-descriptions"><div class="competition-ant-description-item"><div class="competition-ant-description-label">投稿 ID</div><div class="competition-ant-description-content mono">${escapeHtml(row.dataset.workId)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">作者</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workUser)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">作品类型</div><div class="competition-ant-description-content">${escapeHtml(workType)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">内容规格</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workDuration || "—")}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">投稿时间</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workCreated || "—")}</div></div></div></section><section class="competition-work-detail-section"><h4>投稿材料</h4><div class="competition-work-materials">${materialMarkup}</div></section><section class="competition-work-detail-section"><h4>赛事与状态</h4><div class="competition-ant-descriptions"><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛事</div><div class="competition-ant-description-content">AIGC 创作挑战赛</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛道</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workTrack)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">审核状态</div><div class="competition-ant-description-content">${escapeHtml(auditStateLabel)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">C端状态</div><div class="competition-ant-description-content">${escapeHtml(publicState)}</div></div>${auditReasonMarkup}<div class="competition-ant-description-item"><div class="competition-ant-description-label">社区表现</div><div class="competition-ant-description-content">热度 ${Number(row.dataset.workHeat || 0).toLocaleString("zh-CN")} · 赞 ${escapeHtml(row.dataset.workLikes || "0")} · 评论 ${escapeHtml(row.dataset.workComments || "0")}</div></div></div></section><div class="competition-work-detail-actions">${publicAction}</div></div>`);
+          openCompetitionDrawer("作品详情", `<div class="competition-detail-stack" data-competition-drawer-kind="work-detail" data-community-work-id="${escapeHtml(row.dataset.communityWorkId)}" data-competition-submission-id="${escapeHtml(row.dataset.competitionSubmissionId)}" data-competition-work-type="${escapeHtml(workType)}"><div class="competition-work-detail-hero"><img src="${escapeHtml(row.dataset.workMedia || "assets/competition/featured-light-library.png")}" alt="作品《${escapeHtml(row.dataset.workTitle)}》"><div><div class="op-list"><span class="tag processing">${escapeHtml(row.dataset.workMediaType || `${workType}作品`)}</span><span class="tag gray">${escapeHtml(row.dataset.workTrack)}</span></div><h3>${escapeHtml(row.dataset.workTitle)}</h3><p>${escapeHtml(row.dataset.workDescription || "暂无作品说明")}</p></div></div><section class="competition-work-detail-section"><h4>社区作品</h4><div class="competition-ant-descriptions"><div class="competition-ant-description-item"><div class="competition-ant-description-label">社区作品 ID</div><div class="competition-ant-description-content mono">${escapeHtml(row.dataset.communityWorkId)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">作者</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workUser)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">作品类型</div><div class="competition-ant-description-content">${escapeHtml(workType)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">内容规格</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workDuration || "—")}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">内容审核</div><div class="competition-ant-description-content">${escapeHtml(contentAuditState)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">社区公开</div><div class="competition-ant-description-content">${escapeHtml(communityPublicState)}</div></div></div></section><section class="competition-work-detail-section"><h4>投稿材料</h4><div class="competition-work-materials">${materialMarkup}</div></section><section class="competition-work-detail-section"><h4>赛事投稿关系</h4><div class="competition-ant-descriptions"><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛事投稿 ID</div><div class="competition-ant-description-content mono">${escapeHtml(row.dataset.competitionSubmissionId)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛事</div><div class="competition-ant-description-content">AIGC 创作挑战赛</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛道</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workTrack)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛事审核</div><div class="competition-ant-description-content">${escapeHtml(auditStateLabel)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">赛事展示</div><div class="competition-ant-description-content">${escapeHtml(competitionDisplayState)}</div></div><div class="competition-ant-description-item"><div class="competition-ant-description-label">投稿时间</div><div class="competition-ant-description-content">${escapeHtml(row.dataset.workCreated || "—")}</div></div>${auditReasonMarkup}<div class="competition-ant-description-item is-wide"><div class="competition-ant-description-label">社区表现</div><div class="competition-ant-description-content">热度 ${Number(row.dataset.workHeat || 0).toLocaleString("zh-CN")} · 赞 ${escapeHtml(row.dataset.workLikes || "0")} · 评论 ${escapeHtml(row.dataset.workComments || "0")}</div></div></div></section><div class="competition-work-detail-actions">${publicAction}</div></div>`);
         }
         const workAudit = event.target.closest("[data-competition-work-audit]");
         if (workAudit) {
           activeCompetitionAuditRow = workAudit.closest("[data-competition-work-catalog-row]");
           const modal = openCompetitionModal("competition-work-audit");
-          modal.querySelector("[data-competition-work-audit-object]").textContent = activeCompetitionAuditRow.dataset.workId;
+          modal.querySelector("[data-competition-work-audit-title]").textContent = activeCompetitionAuditRow.dataset.workTitle || "未命名作品";
+          modal.querySelector("[data-competition-work-audit-description]").textContent = activeCompetitionAuditRow.dataset.workDescription || "暂无作品描述";
           modal.querySelector("[data-competition-work-audit-decision]").value = "approve";
           const auditReason = modal.querySelector("[data-competition-work-audit-reason]");
           auditReason.value = "";
@@ -22159,8 +22229,10 @@
         if (finalResultTrack) {
           setCompetitionFinalResultTrack(view, finalResultTrack.dataset.competitionResultTrack);
         }
-        const finalResultPublish = event.target.closest("[data-competition-final-result-publish]");
+        const finalResultPublish = event.target.closest("[data-competition-final-result-publish][data-competition-ranking-publish]");
         if (finalResultPublish) {
+          event.preventDefault();
+          event.stopPropagation();
           const scoringReady = competitionJudgeWorkQueue.every((item) => item.status === "submitted");
           if (!scoringReady) {
             showCompetitionFeedback(view, "仍有评委任务未提交，暂不能发布结果。");
@@ -22173,21 +22245,27 @@
           });
           finalResultPublish.dataset.resultPublished = "true";
           finalResultPublish.disabled = true;
+          syncCompetitionScoringClosure(view);
           appendCompetitionLog(view, "FINAL-RESULT", "发布赛道排名", "按评委评分与热度分权重生成的各赛道最终排名已发布到 C端", "运营确认");
           showCompetitionFeedback(view, "各赛道最终排名已发布，并已记录操作日志。");
         }
         const scoreRecordDetail = event.target.closest("[data-competition-score-record-detail]");
         if (scoreRecordDetail) {
           const record = scoreRecordDetail.closest("[data-competition-score-record]");
-          const item = competitionJudgeWorkQueue.find((candidate) => candidate.id === record?.dataset.workId);
+          const item = competitionJudgeWorkQueue.find((candidate) => candidate.id === record?.dataset.competitionSubmissionId);
           if (item) {
             const judge = competitionJudgeCatalog[item.judgeId];
             const total = item.scores.reduce((sum, value) => sum + Number(value || 0), 0);
-            openCompetitionDrawer("评分详情", `<div class="competition-detail-stack" data-competition-drawer-kind="score-record-detail"><div class="drawer-field"><b>作品</b><p>${escapeHtml(item.title)} · <span class="mono">${escapeHtml(item.id)}</span></p></div><div class="drawer-field"><b>主评</b><p>${escapeHtml(judge?.name || "—")}</p></div><div class="drawer-field"><b>维度得分</b><p>${item.scores.map(Number).join(" / ")} · 总分 ${total}</p></div><div class="drawer-field"><b>评语</b><p>${escapeHtml(item.comment)}</p></div><div class="drawer-field"><b>提交时间</b><p>${escapeHtml(item.submittedAt)}</p></div></div>`);
+            openCompetitionDrawer("评分详情", `<div class="competition-detail-stack" data-competition-drawer-kind="score-record-detail"><div class="drawer-field"><b>作品</b><p>${escapeHtml(item.title)}</p></div><div class="drawer-field"><b>社区作品 ID / 赛事投稿 ID</b><p><span class="mono">${escapeHtml(item.workId)}</span> / <span class="mono">${escapeHtml(item.id)}</span></p></div><div class="drawer-field"><b>主评</b><p>${escapeHtml(judge?.name || "—")}</p></div><div class="drawer-field"><b>维度得分</b><p>${item.scores.map(Number).join(" / ")} · 总分 ${total}</p></div><div class="drawer-field"><b>评语</b><p>${escapeHtml(item.comment)}</p></div><div class="drawer-field"><b>提交时间</b><p>${escapeHtml(item.submittedAt)}</p></div></div>`);
           }
         }
         const rewardOpen = event.target.closest("[data-competition-reward-open]");
         if (rewardOpen) {
+          const resultPublish = view.querySelector("[data-competition-final-result-publish]");
+          if (rewardOpen.disabled || resultPublish?.dataset.resultPublished !== "true") {
+            showCompetitionFeedback(view, "请先完成全部评分并发布最终结果，再记录奖励发放。");
+            return;
+          }
           activeCompetitionRewardRow = rewardOpen.closest("[data-competition-reward-row]") || view.querySelector("[data-competition-reward-row]");
           const modal = openCompetitionModal("competition-reward-issue");
           const fill = (key, value) => { const field = modal?.querySelector(`[data-competition-reward-field="${key}"]`); if (field) field.value = value || ""; };
@@ -22223,18 +22301,15 @@
           showCompetitionFeedback(view, `${row.dataset.notificationEvent}模板已${nextState}。`);
           refreshCompetitionConfigurationProgress(view);
         }
-        const notificationSend = event.target.closest("[data-competition-notification-send-removed]");
-        if (notificationSend) {
-          const row = notificationSend.closest("[data-competition-notification]");
-          const body = view.querySelector("[data-competition-notification-log-body]");
-          body?.querySelector(".table-empty-row")?.remove();
-          const batch = `MSG-TEST-${String(Date.now()).slice(-6)}`;
-          body?.insertAdjacentHTML("afterbegin", `<tr><td class="mono">${batch}</td><td>${escapeHtml(row.dataset.notificationEvent)}<div class="muted small">当前运营测试账号</div></td><td>${escapeHtml(row.dataset.notificationChannel)}</td><td>1 / 1 / 0</td><td>刚刚</td><td>当前运营</td><td><button class="btn link" type="button" data-competition-notification-log>查看明细</button></td></tr>`);
-          appendCompetitionLog(view, batch, "发送通知测试", `${row.dataset.notificationEvent} · 1 人成功`, "通知模板验证");
-          showCompetitionFeedback(view, "测试通知已记录，未向真实用户批量发送。 ");
-        }
         const notificationLog = event.target.closest("[data-competition-notification-log]");
-        if (notificationLog) openCompetitionDrawer("通知发送明细", '<div class="competition-detail-stack"><div class="drawer-field"><b>发送结果</b><p>计划、成功、失败与重试结果按批次保留。</p></div><div class="alert info">收件人明细按权限脱敏展示。</div></div>');
+        if (notificationLog) {
+          const row = notificationLog.closest("[data-competition-notification-log-row]");
+          const failed = Number(row?.dataset.failed || 0);
+          const resultState = failed > 0
+            ? `<div class="alert warning"><b>失败 ${failed} 人</b><div>${escapeHtml(row?.dataset.failureSummary || "请回查发送通道日志并人工处理失败对象。")}</div></div>`
+            : '<div class="alert success">本批次全部发送成功，无需后续处理。</div>';
+          openCompetitionDrawer(`通知发送明细 · ${row?.dataset.batchId || "—"}`, `<div class="competition-detail-stack" data-competition-drawer-kind="notification-log-detail"><div class="drawer-field"><b>事件 / 受众</b><p>${escapeHtml(row?.dataset.event || "—")} · ${escapeHtml(row?.dataset.audience || "—")}</p></div><div class="drawer-field"><b>渠道</b><p>${escapeHtml(row?.dataset.channel || "—")}</p></div><div class="drawer-field"><b>计划 / 成功 / 失败</b><p>${escapeHtml(row?.dataset.planned || "0")} / ${escapeHtml(row?.dataset.success || "0")} / ${escapeHtml(row?.dataset.failed || "0")}</p></div><div class="drawer-field"><b>发送时间 / 操作者</b><p>${escapeHtml(row?.dataset.time || "—")} · ${escapeHtml(row?.dataset.operator || "—")}</p></div>${resultState}<div class="alert info">收件人明细按权限脱敏展示；失败对象由运营回查发送通道，不提供自动重试。</div></div>`);
+        }
       });
 
       document.querySelector("[data-competition-track-save]")?.addEventListener("click", () => saveCompetitionTrack(view));
@@ -22488,14 +22563,14 @@
     });
     const competitionJudgeScoreStorageKey = "ai666:competition:COMP-2026-AIGC-01:judge-scores:v2";
     const competitionJudgeWorkQueue = [
-      { judgeId:"JUDGE-01", id:"S-001", title:"光之门", track:"极短叙事", contentType:"视频", poster:"assets/competition/featured-light-library.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"光之门-AI原片.mp4", scores:[36,31,22], comment:"主题明确，视觉完成度较高；中段叙事转折可进一步收紧。", status:"submitted", submittedAt:"2026-09-12 13:20" },
-      { judgeId:"JUDGE-01", id:"S-004", title:"人间有味", track:"极短叙事", contentType:"视频", poster:"assets/image_assets/7.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"人间有味-AI原片.mp4", scores:[34,29,23], comment:"叙事自然，情绪完整；结尾节奏可以更利落。", status:"submitted", submittedAt:"2026-09-12 13:42" },
-      { judgeId:"JUDGE-01", id:"S-006", title:"雨后信号", track:"一分钟世界", contentType:"图片", finalImage:"assets/competition/featured-ancient-tree.png", references:["assets/image_assets/7.png","assets/competition/featured-light-library.png"], scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
-      { judgeId:"JUDGE-01", id:"S-009", title:"第七码头", track:"一分钟世界", contentType:"纯文字", prompt:"以深夜码头的第七盏灯为线索，写一篇关于等待与告别的短篇。", article:"潮水第三次漫过石阶时，第七盏灯终于亮了。守夜人把那封没有署名的信放进铁盒，像往常一样等一艘不会靠岸的船。", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
-      { judgeId:"JUDGE-02", id:"S-011", title:"回声走廊", track:"长镜头实验", contentType:"视频", poster:"assets/competition/featured-sky-whale-city.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"回声走廊-AI原片.mp4", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
-      { judgeId:"JUDGE-02", id:"S-014", title:"风的笔记", track:"长镜头实验", contentType:"视频", poster:"assets/competition/featured-ancient-tree.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"风的笔记-AI原片.mp4", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
-      { judgeId:"JUDGE-02", id:"S-017", title:"未命名花园", track:"自由创作", contentType:"图片", finalImage:"assets/image_assets/7.png", references:["assets/competition/featured-ancient-tree.png","assets/competition/featured-sky-whale-city.png"], scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
-      { judgeId:"JUDGE-02", id:"S-020", title:"凌晨四点", track:"自由创作", contentType:"纯文字", prompt:"写一段只发生在凌晨四点的城市记忆。", article:"凌晨四点，路灯把空旷的街道折成两半。早餐店刚刚开火，第一阵蒸汽升起来，像城市在天亮之前偷偷写下的署名。", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-01", workId:"AIGC-2001", id:"S-001", title:"光之门", track:"极短叙事", contentType:"视频", poster:"assets/competition/featured-light-library.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"光之门-AI原片.mp4", scores:[36,31,22], comment:"主题明确，视觉完成度较高；中段叙事转折可进一步收紧。", status:"submitted", submittedAt:"2026-09-12 13:20" },
+      { judgeId:"JUDGE-01", workId:"AIGC-2004", id:"S-004", title:"人间有味", track:"极短叙事", contentType:"视频", poster:"assets/image_assets/7.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"人间有味-AI原片.mp4", scores:[34,29,23], comment:"叙事自然，情绪完整；结尾节奏可以更利落。", status:"submitted", submittedAt:"2026-09-12 13:42" },
+      { judgeId:"JUDGE-01", workId:"AIGC-2006", id:"S-006", title:"雨后信号", track:"一分钟世界", contentType:"图片", finalImage:"assets/competition/featured-ancient-tree.png", references:["assets/image_assets/7.png","assets/competition/featured-light-library.png"], scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-01", workId:"AIGC-2009", id:"S-009", title:"第七码头", track:"一分钟世界", contentType:"纯文字", prompt:"以深夜码头的第七盏灯为线索，写一篇关于等待与告别的短篇。", article:"潮水第三次漫过石阶时，第七盏灯终于亮了。守夜人把那封没有署名的信放进铁盒，像往常一样等一艘不会靠岸的船。", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-02", workId:"AIGC-2011", id:"S-011", title:"回声走廊", track:"长镜头实验", contentType:"视频", poster:"assets/competition/featured-sky-whale-city.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"回声走廊-AI原片.mp4", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-02", workId:"AIGC-2014", id:"S-014", title:"风的笔记", track:"长镜头实验", contentType:"视频", poster:"assets/competition/featured-ancient-tree.png", finalVideo:"assets/video_assets/aigc-hero-c02c.mp4", sourceFile:"风的笔记-AI原片.mp4", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-02", workId:"AIGC-2017", id:"S-017", title:"未命名花园", track:"自由创作", contentType:"图片", finalImage:"assets/image_assets/7.png", references:["assets/competition/featured-ancient-tree.png","assets/competition/featured-sky-whale-city.png"], scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
+      { judgeId:"JUDGE-02", workId:"AIGC-2020", id:"S-020", title:"凌晨四点", track:"自由创作", contentType:"纯文字", prompt:"写一段只发生在凌晨四点的城市记忆。", article:"凌晨四点，路灯把空旷的街道折成两半。早餐店刚刚开火，第一阵蒸汽升起来，像城市在天亮之前偷偷写下的署名。", scores:[0,0,0], comment:"", status:"pending", submittedAt:"" },
     ];
     let competitionJudgeStateHydrated = false;
 
@@ -22601,15 +22676,38 @@
       return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
     }
 
+    function syncCompetitionRewardGate(root = document) {
+      const view = root.matches?.('.view[data-view="competition-detail"]') ? root : root.querySelector?.('.view[data-view="competition-detail"]');
+      const publish = root.querySelector?.("[data-competition-final-result-publish]");
+      const published = publish?.dataset.resultPublished === "true";
+      const readOnly = view?.dataset.competitionState === "已归档";
+      root.querySelectorAll?.("[data-competition-reward-open]").forEach((button) => {
+        button.disabled = !published || readOnly;
+        button.title = readOnly ? "已归档赛事仅支持查看" : published ? "" : "发布最终结果后可记录发放";
+      });
+      const gate = root.querySelector?.("[data-competition-reward-gate]");
+      if (gate) gate.textContent = readOnly ? "赛事已归档，仅支持查看发放记录" : published ? "最终结果已发布，可记录奖励发放" : "最终结果发布后可记录发放";
+    }
+
     function syncCompetitionScoringClosure(root = document) {
       hydrateCompetitionJudgeScoreState();
-      const total = competitionJudgeWorkQueue.length;
-      const done = competitionJudgeWorkQueue.filter((item) => item.status === "submitted").length;
+      const view = root.matches?.('.view[data-view="competition-detail"]') ? root : root.querySelector?.('.view[data-view="competition-detail"]');
+      const blankDraft = view?.dataset.competitionBlankDraft === "true";
+      const total = blankDraft ? 0 : competitionJudgeWorkQueue.length;
+      const done = blankDraft ? 0 : competitionJudgeWorkQueue.filter((item) => item.status === "submitted").length;
       const percent = total ? Math.round(done / total * 100) : 0;
       const count = root.querySelector?.("[data-competition-scoring-overview-count]");
       const percentNode = root.querySelector?.("[data-competition-scoring-overview-percent]");
       if (count) count.textContent = `${done} / ${total}`;
       if (percentNode) percentNode.textContent = `${percent}% 已完成`;
+      if (blankDraft) {
+        const publish = root.querySelector?.("[data-competition-final-result-publish]");
+        const gate = root.querySelector?.("[data-competition-final-result-gate]");
+        if (publish) publish.disabled = true;
+        if (gate) gate.textContent = "配置评委与评分规则后可生成赛道排名";
+        syncCompetitionRewardGate(root);
+        return;
+      }
       root.querySelectorAll?.("[data-competition-judge-row]").forEach((row) => {
         const queue = getCompetitionJudgeWorkQueue(row.dataset.judgeId);
         const judgeDone = queue.filter((item) => item.status === "submitted").length;
@@ -22624,11 +22722,11 @@
         recordBody.innerHTML = competitionJudgeWorkQueue.filter((item) => item.status === "submitted").map((item, index) => {
           const judge = competitionJudgeCatalog[item.judgeId];
           const score = item.scores.reduce((sum, value) => sum + Number(value || 0), 0);
-          return `<tr data-competition-score-record data-score-record-id="SCORE-${String(index + 1).padStart(3, "0")}" data-work-id="${escapeAttribute(item.id)}"><td>${escapeHtml(item.title)}<div class="mono muted small">${escapeHtml(item.id)}</div></td><td>${escapeHtml(item.track)}</td><td>${escapeHtml(judge?.name || "—")}</td><td>${item.scores.map(Number).join(" / ")}</td><td><b>${score}</b></td><td>${escapeHtml(item.submittedAt)}</td><td><span class="tag success">已提交</span></td><td><button class="btn link" type="button" data-competition-score-record-detail>查看详情</button></td></tr>`;
+          return `<tr data-competition-score-record data-score-record-id="SCORE-${String(index + 1).padStart(3, "0")}" data-community-work-id="${escapeAttribute(item.workId)}" data-competition-submission-id="${escapeAttribute(item.id)}"><td>${escapeHtml(item.title)}<div class="mono muted small">${escapeHtml(item.id)} · ${escapeHtml(item.workId)}</div></td><td>${escapeHtml(item.track)}</td><td>${escapeHtml(judge?.name || "—")}</td><td>${item.scores.map(Number).join(" / ")}</td><td><b>${score}</b></td><td>${escapeHtml(item.submittedAt)}</td><td><span class="tag success">已提交</span></td><td><button class="btn link" type="button" data-competition-score-record-detail>查看详情</button></td></tr>`;
         }).join("");
       }
-      root.querySelectorAll?.("[data-competition-final-result-row][data-work-id]").forEach((row) => {
-        const item = competitionJudgeWorkQueue.find((candidate) => candidate.id === row.dataset.workId && candidate.status === "submitted");
+      root.querySelectorAll?.("[data-competition-final-result-row][data-competition-submission-id]").forEach((row) => {
+        const item = competitionJudgeWorkQueue.find((candidate) => candidate.id === row.dataset.competitionSubmissionId && candidate.status === "submitted");
         if (!item) return;
         const score = item.scores.reduce((sum, value) => sum + Number(value || 0), 0);
         row.dataset.judgeScore = String(score);
@@ -22638,7 +22736,8 @@
       const publish = root.querySelector?.("[data-competition-final-result-publish]");
       const gate = root.querySelector?.("[data-competition-final-result-gate]");
       if (publish && !publish.dataset.resultPublished) publish.disabled = done !== total;
-      if (gate) gate.textContent = done === total ? "全部评分已完成，可发布结果" : `已完成 ${done} / ${total}，全部评分完成后可发布`;
+      if (gate) gate.textContent = publish?.dataset.resultPublished === "true" ? "最终结果已发布" : done === total ? "全部评分已完成，可发布结果" : `已完成 ${done} / ${total}，全部评分完成后可发布`;
+      syncCompetitionRewardGate(root);
     }
 
     function saveCompetitionJudgeScore(view, mode, root = null) {
@@ -22746,24 +22845,27 @@
       const error = modal.querySelector("[data-competition-work-audit-error]");
       if (decision === "reject" && !reason) { error.textContent = "未通过时必须填写原因"; error.hidden = false; return; }
       error.hidden = true;
-      const workId = activeCompetitionAuditRow.dataset.workId;
+      const submissionId = activeCompetitionAuditRow.dataset.competitionSubmissionId;
+      const communityWorkId = activeCompetitionAuditRow.dataset.communityWorkId;
       activeCompetitionAuditRow.dataset.workAuditReason = decision === "reject" ? reason : "";
-      const stateCell = activeCompetitionAuditRow.querySelector("[data-competition-work-audit-state]");
-      const publicCell = activeCompetitionAuditRow.querySelector("[data-competition-work-public-state]");
+      const stateCell = activeCompetitionAuditRow.querySelector("[data-competition-submission-audit-state]");
+      const publicCell = activeCompetitionAuditRow.querySelector("[data-competition-submission-display-state]");
       if (decision === "approve") {
-        activeCompetitionAuditRow.dataset.workAuditState = "approved";
-        activeCompetitionAuditRow.dataset.workState = "visible";
+        activeCompetitionAuditRow.dataset.competitionAuditState = "approved";
+        activeCompetitionAuditRow.dataset.competitionDisplayState = "visible";
         if (stateCell) stateCell.innerHTML = '<span class="tag success">审核通过</span>';
         if (publicCell) publicCell.innerHTML = '<span class="tag success">展示中</span>';
       } else {
-        activeCompetitionAuditRow.dataset.workAuditState = "rejected";
-        activeCompetitionAuditRow.dataset.workState = "hidden";
+        activeCompetitionAuditRow.dataset.competitionAuditState = "rejected";
+        activeCompetitionAuditRow.dataset.competitionDisplayState = "hidden";
         if (stateCell) stateCell.innerHTML = '<span class="tag danger">未通过</span>';
         if (publicCell) publicCell.innerHTML = '<span class="tag gray">不展示</span>';
       }
-      appendCompetitionLog(view, workId, decision === "approve" ? "审核通过" : "未通过", reason || "作品通过审核并公开展示", "作品审核");
+      appendCompetitionLog(view, submissionId, decision === "approve" ? "赛事审核通过" : "赛事审核不通过", `${reason || "赛事投稿通过审核并进入赛事展示"}；关联社区作品 ${communityWorkId} 的内容审核与全局公开状态保持不变`, "赛事投稿审核");
       refreshCompetitionConfigurationProgress(view);
-      showCompetitionFeedback(view, decision === "reject" ? "审核结果与未通过原因已保存，并同步到 C端投稿记录。" : "审核结果已保存。");
+      const activeReviewFilter = view.querySelector('[data-competition-work-filter="review"]')?.value || "all";
+      if (activeReviewFilter !== "all" && activeReviewFilter !== activeCompetitionAuditRow.dataset.competitionAuditState) activeCompetitionAuditRow.hidden = true;
+      showCompetitionFeedback(view, decision === "reject" ? "赛事审核结果与未通过原因已保存，并同步到 C端投稿记录。" : "赛事审核结果已保存；社区作品状态未改变。");
       closeLayers();
       activeCompetitionAuditRow = null;
     }
