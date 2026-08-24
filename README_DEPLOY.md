@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-08-18T04:26:31.789Z
+生成时间：2026-08-24T18:06:31.820Z
 
 ## 用途
 
@@ -55,6 +55,14 @@ npm.cmd run validate:community-b-end:public-preview
 - 邀请记录: invite-records.html
 - 积分记录: points-records.html
 - 会员等级: member-levels.html
+- 数据总览: analytics-overview.html
+- 增长分析: analytics-growth.html
+- 用户分析: analytics-users.html
+- 内容生态: analytics-content.html
+- 创作分析: analytics-creation.html
+- 活动与激励: analytics-activity.html
+- 运营质量: analytics-quality.html
+- 指标中心: analytics-metrics.html
 - 日志: operation-log.html
 - 角色管理: role-management.html
 - 权限管理: permission-management.html

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T04:19:04.396Z",
+  "generatedAt": "2026-08-24T18:06:06.854Z",
   "pages": [
     {
       "view": "content-list",
@@ -140,6 +140,46 @@
       "view": "member-levels",
       "file": "member-levels.html",
       "label": "会员等级"
+    },
+    {
+      "view": "analytics-overview",
+      "file": "analytics-overview.html",
+      "label": "数据总览"
+    },
+    {
+      "view": "analytics-growth",
+      "file": "analytics-growth.html",
+      "label": "增长分析"
+    },
+    {
+      "view": "analytics-users",
+      "file": "analytics-users.html",
+      "label": "用户分析"
+    },
+    {
+      "view": "analytics-content",
+      "file": "analytics-content.html",
+      "label": "内容生态"
+    },
+    {
+      "view": "analytics-creation",
+      "file": "analytics-creation.html",
+      "label": "创作分析"
+    },
+    {
+      "view": "analytics-activity",
+      "file": "analytics-activity.html",
+      "label": "活动与激励"
+    },
+    {
+      "view": "analytics-quality",
+      "file": "analytics-quality.html",
+      "label": "运营质量"
+    },
+    {
+      "view": "analytics-metrics",
+      "file": "analytics-metrics.html",
+      "label": "指标中心"
     },
     {
       "view": "operation-log",

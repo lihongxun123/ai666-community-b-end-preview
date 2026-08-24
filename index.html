@@ -394,6 +394,336 @@
       flex-wrap: wrap;
     }
 
+    .analytics-demo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      color: #8a5a00;
+      font-size: 12px;
+    }
+
+    .analytics-filter-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr)) auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .analytics-filter-grid.is-compact {
+      grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(150px, 1fr)) auto;
+    }
+
+    .analytics-data-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-bottom: 14px;
+      border: 1px solid #d9e6f7;
+      border-radius: var(--ant-radius);
+      overflow: hidden;
+      background: #d9e6f7;
+    }
+
+    .analytics-data-strip > div {
+      min-width: 0;
+      padding: 10px 12px;
+      background: #f8fbff;
+    }
+
+    .analytics-data-strip span {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ant-subtle);
+      font-size: 12px;
+    }
+
+    .analytics-data-strip b {
+      display: block;
+      overflow: hidden;
+      color: var(--ant-text);
+      font-size: 13px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .analytics-page-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      margin: -8px 0 14px;
+      padding: 8px 12px;
+      border: 1px solid #e6edf7;
+      border-radius: var(--ant-radius);
+      background: #fbfdff;
+      color: var(--ant-subtle);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .analytics-page-meta b {
+      color: #344054;
+      font-weight: 500;
+    }
+
+    .view[data-analytics-page] > .contract-panel,
+    .view[data-analytics-page] .analytics-demo-badge,
+    .view[data-analytics-page] .analytics-data-strip,
+    .view[data-analytics-page] .analytics-page-meta {
+      display: none;
+    }
+
+    .analytics-chart-surface {
+      position: relative;
+      min-width: 0;
+    }
+
+    .view[data-view="analytics-metrics"] [data-table="analytics-metrics"] th:nth-child(8),
+    .view[data-view="analytics-metrics"] [data-table="analytics-metrics"] td:nth-child(8) {
+      display: none;
+    }
+
+    .analytics-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .analytics-stat-card {
+      min-height: 96px;
+      padding: 14px 16px;
+      border: 1px solid #edf0f5;
+      border-radius: var(--ant-radius);
+      background: var(--ant-card);
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+    }
+
+    .analytics-stat-card .stat-label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      min-height: 22px;
+      flex-wrap: wrap;
+    }
+
+    .analytics-metric-help-button {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: #8c8c8c;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      vertical-align: middle;
+      cursor: help;
+    }
+
+    .analytics-metric-help-button .anticon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 0;
+    }
+
+    .analytics-metric-help-button svg {
+      width: 14px;
+      height: 14px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .analytics-metric-help-button:hover,
+    .analytics-metric-help-button:focus-visible,
+    .analytics-metric-help-button[aria-expanded="true"] {
+      background: transparent;
+      color: #1677ff;
+      outline: none;
+    }
+
+    .analytics-metric-name-cell .analytics-metric-help-button {
+      margin-left: 6px;
+    }
+
+    .analytics-metric-help-tooltip {
+      position: fixed;
+      z-index: 90;
+      width: max-content;
+      max-width: min(320px, calc(100vw - 24px));
+      padding: 8px 10px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.88);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      color: #fff;
+      font-size: 12px;
+      line-height: 1.55;
+      pointer-events: none;
+    }
+
+    .analytics-metric-help-tooltip[hidden] {
+      display: none;
+    }
+
+    .analytics-stat-card .stat-value {
+      margin: 8px 0 0;
+      color: var(--ant-text);
+    }
+
+    .analytics-grid-two {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .analytics-trend-chart {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 12px;
+      min-height: 220px;
+      align-items: end;
+      padding: 18px 8px 6px;
+    }
+
+    .analytics-trend-column {
+      display: grid;
+      grid-template-rows: minmax(150px, 1fr) auto auto;
+      gap: 6px;
+      min-width: 0;
+      color: var(--ant-subtle);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .analytics-trend-track {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      height: 150px;
+      border-bottom: 1px solid #d9d9d9;
+      background: linear-gradient(to top, rgba(22, 119, 255, 0.04), transparent);
+    }
+
+    .analytics-trend-bar {
+      width: min(34px, 72%);
+      min-height: 8px;
+      border-radius: 5px 5px 0 0;
+      background: #1677ff;
+    }
+
+    .analytics-trend-column b {
+      overflow: hidden;
+      color: var(--ant-text);
+      font-size: 12px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .analytics-chain {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .analytics-chain-step {
+      position: relative;
+      padding: 14px;
+      border: 1px solid #e8eef6;
+      border-radius: var(--ant-radius);
+      background: #fbfdff;
+    }
+
+    .analytics-chain-step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -9px;
+      z-index: 1;
+      width: 18px;
+      color: #8c8c8c;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+
+    .analytics-chain-step span,
+    .analytics-chain-step small {
+      display: block;
+      color: var(--ant-subtle);
+    }
+
+    .analytics-chain-step b {
+      display: block;
+      margin: 8px 0 4px;
+      color: var(--ant-text);
+      font-size: 22px;
+    }
+
+    .analytics-segment-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .analytics-segment-row {
+      display: grid;
+      grid-template-columns: minmax(100px, 140px) minmax(0, 1fr) 72px;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .analytics-segment-track {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #eef2f7;
+    }
+
+    .analytics-segment-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: #1677ff;
+    }
+
+    .analytics-segment-row b { text-align: right; }
+
+    .analytics-result-line {
+      min-height: 22px;
+      margin-top: 10px;
+      color: var(--ant-subtle);
+      font-size: 12px;
+    }
+
+    .analytics-metric-detail {
+      margin-bottom: 14px;
+      padding: 14px 16px;
+      border: 1px solid #91caff;
+      border-radius: var(--ant-radius);
+      background: #f0f7ff;
+    }
+
+    .analytics-metric-detail h3 { margin: 0 0 8px; font-size: 16px; }
+    .analytics-metric-detail p { margin: 4px 0; color: #344054; line-height: 1.6; }
+
+    @media (max-width: 1180px) {
+      .analytics-filter-grid,
+      .analytics-filter-grid.is-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .analytics-data-strip,
+      .analytics-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 900px) {
+      .analytics-grid-two { grid-template-columns: 1fr; }
+      .analytics-filter-grid,
+      .analytics-filter-grid.is-compact { grid-template-columns: 1fr; }
+    }
+
     .filter-grid.competition-work-catalog-filter-grid {
       grid-template-columns: minmax(220px, 1.6fr) repeat(5, minmax(104px, 1fr)) auto;
       align-items: end;
@@ -3469,7 +3799,7 @@
       align-items: stretch;
     }
 
-    .view[data-view="tutorial-management"] {
+    .view.is-active[data-view="tutorial-management"] {
       height: 100%;
       min-height: 0;
       min-width: 0;
@@ -5512,7 +5842,7 @@
     [data-b05-page="operation-log"] .b05-range-picker .input { min-width: 0; padding-inline: 8px; }
     [data-b05-page="role-management"] .b05-filter-field { min-width: 180px; }
     [data-b05-page="admin-users"] .b05-filter-field { min-width: 220px; }
-    [data-b05-page="permission-management"] { display: flex; min-width: 0; flex-direction: column; gap: 12px; }
+    .view.is-active[data-b05-page="permission-management"] { display: flex; min-width: 0; flex-direction: column; gap: 12px; }
     [data-b05-page="permission-management"] .b05-permission-toolbar {
       display: flex;
       align-items: center;
@@ -5973,7 +6303,7 @@
     .modal.popup-item-modal[data-modal="competition-judge-workbench"] { width:min(1360px,calc(100vw - 32px)); height:min(860px,calc(100vh - 32px)); max-height:calc(100vh - 32px); color:var(--ant-text); }
     .modal.popup-item-modal[data-modal="competition-judge-workbench"].is-open { display:grid; grid-template-rows:auto minmax(0,1fr) auto; }
     .modal.popup-item-modal[data-modal="competition-judge-workbench"] .modal-body { display:flex; min-height:0; max-height:none; flex-direction:column; overflow:hidden; padding:16px 18px; }
-    [data-competition-judge-workbench-page] { display:grid; gap:16px; }
+    .view.is-active[data-competition-judge-workbench-page] { display:grid; gap:16px; }
     .competition-judge-page-head { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
     .competition-judge-page-head h2 { margin:4px 0 0; }
     .competition-judge-task-summary { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:12px 0 14px; }
@@ -6128,6 +6458,20 @@
           <a class="nav-btn" href="invite-records.html" data-nav="invite-records" data-page-link="invite-records.html">邀请记录</a>
           <a class="nav-btn" href="points-records.html" data-nav="points-records" data-page-link="points-records.html">积分记录</a>
           <a class="nav-btn" href="member-levels.html" data-nav="member-levels" data-page-link="member-levels.html">会员等级</a>
+        </div>
+      </section>
+
+      <section class="nav-section" data-nav-section="analytics">
+        <div class="nav-group" data-nav-module="数据分析"><span>数据分析</span></div>
+        <div class="nav-children">
+          <a class="nav-btn" href="analytics-overview.html" data-nav="analytics-overview" data-page-link="analytics-overview.html">数据总览</a>
+          <a class="nav-btn" href="analytics-growth.html" data-nav="analytics-growth" data-page-link="analytics-growth.html">增长分析</a>
+          <a class="nav-btn" href="analytics-users.html" data-nav="analytics-users" data-page-link="analytics-users.html">用户分析</a>
+          <a class="nav-btn" href="analytics-content.html" data-nav="analytics-content" data-page-link="analytics-content.html">内容生态</a>
+          <a class="nav-btn" href="analytics-creation.html" data-nav="analytics-creation" data-page-link="analytics-creation.html">创作分析</a>
+          <a class="nav-btn" href="analytics-activity.html" data-nav="analytics-activity" data-page-link="analytics-activity.html">活动与激励</a>
+          <a class="nav-btn" href="analytics-quality.html" data-nav="analytics-quality" data-page-link="analytics-quality.html">运营质量</a>
+          <a class="nav-btn" href="analytics-metrics.html" data-nav="analytics-metrics" data-page-link="analytics-metrics.html">指标中心</a>
         </div>
       </section>
 
@@ -6981,6 +7325,14 @@
       "invite-records": "invite-records.html",
       "points-records": "points-records.html",
       "member-levels": "member-levels.html",
+      "analytics-overview": "analytics-overview.html",
+      "analytics-growth": "analytics-growth.html",
+      "analytics-users": "analytics-users.html",
+      "analytics-content": "analytics-content.html",
+      "analytics-creation": "analytics-creation.html",
+      "analytics-activity": "analytics-activity.html",
+      "analytics-quality": "analytics-quality.html",
+      "analytics-metrics": "analytics-metrics.html",
       "operation-log": "operation-log.html",
       "role-management": "role-management.html",
       "permission-management": "permission-management.html",
@@ -7023,6 +7375,14 @@
       "register-sources": ["用户管理", "注册来源"],
       "invite-records": ["用户管理", "邀请记录"],
       "points-records": ["用户管理", "限时积分记录"],
+      "analytics-overview": ["数据分析", "数据总览"],
+      "analytics-growth": ["数据分析", "增长分析"],
+      "analytics-users": ["数据分析", "用户分析"],
+      "analytics-content": ["数据分析", "内容生态"],
+      "analytics-creation": ["数据分析", "创作分析"],
+      "analytics-activity": ["数据分析", "活动与激励"],
+      "analytics-quality": ["数据分析", "运营质量"],
+      "analytics-metrics": ["数据分析", "指标中心"],
       "content-data": ["数据看板", "内容数据"],
       "activity-data": ["数据看板", "活动数据"],
       "growth-data": ["数据看板", "用户增长数据"],
@@ -7056,6 +7416,86 @@
       { code: "sensitive-access-block", label: "敏感字段查看拦截", objectType: "敏感访问", risk: "高" },
     ];
     const walkthroughPageCatalog = {
+      "analytics-overview": {
+        summary: "使用共同数据截止和复用指标判断平台变化、增长激活及当前优先处理事项。",
+        rules: [
+          "默认查看最近 7 个完整自然日；今日未完结数据不作为跨来源结论，数据总览不增加模型、活动等专项筛选。",
+          "核心卡片复用 G-02、G-07、U-02、U-03、C-02、A-02、H-02 和质量指标；匿名访客、注册用户、内容和业务对象分别命名。",
+          "数据延迟时保留上一成功快照；来源截止不一致时暂停跨来源比率。异常只分类型展示，不汇总成跨对象总数。",
+          "UV→注册是聚合估算；7 日激活只使用拥有完整 168 小时观察窗的成熟注册批次，两条链路分开展示。",
+          "页面、筛选、数据状态和下钻可用；所有数值标注演示数据，处理动作回到生成、审核或注册来源主责页。",
+        ],
+      },
+      "analytics-growth": {
+        summary: "统一查看 51LA 匿名访问、标准渠道、入口页和业务注册结果。",
+        rules: [
+          "页面承接 G-01 至 G-10；51LA 是匿名流量来源，用户系统是新增注册和注册来源事实源。",
+          "筛选支持完整自然日、标准渠道、终端和入口页；UTM、来路、浏览器和地域只使用隐私安全聚合。",
+          "历史 UTM 缺失归入直接/其他/未知覆盖区，不猜测补写；完整 URL、IP、UUID 和会话明细不进入 B端。",
+          "UV→注册和渠道→注册均标注聚合估算；只有匿名 UTM 与注册来源映射一致的标准渠道可比较。",
+          "页面展示共同截止、可比覆盖率和 51LA 额度；OpenAPI 不由浏览器调用，受控任务峰值不高于约 1.54 OPS。",
+        ],
+      },
+      "analytics-users": {
+        summary: "按注册账号与有效价值行为判断账号规模、成熟注册批次激活和持续价值用户。",
+        rules: [
+          "页面承接 U-01 至 U-04；累计注册、有效 DAU、WEVU 和 7 日激活均使用注册账号或业务事实，不使用 51LA 新访客替代。",
+          "有效价值行为只包含生成成功、内容发布和有效活动投稿；同一用户跨行为去重，WEVU 按北京时间自然周统计。",
+          "7 日激活只统计拥有完整 168 小时观察窗的成熟注册批次，未成熟批次单列且不进入分母。",
+          "当前缺稳定登录历史，因此不展示或估算登录 DAU、WAU、MAU 和登录留存；D1/D7 有效行为留存进入第二期。",
+          "页面只展示聚合数据和注册批次，不展示手机号、邮箱或用户明细；回查进入用户列表或注册来源。",
+        ],
+      },
+      "analytics-content": {
+        summary: "查看内容存量、发布供给、结构、活跃创作者和当前互动价值。",
+        rules: [
+          "页面承接 C-01 至 C-05 和 C-07；作品与帖子、用户与官方内容、当前状态和话题分别统计。",
+          "新增发布按首次发布时间统计，编辑不重复计入；活跃创作者只统计周期内发布过正式内容的非官方、非测试作者。",
+          "点赞、收藏、评论和分享是当前快照，不命名为期间新增互动；取消关系的历史不做推测性恢复。",
+          "高价值内容默认按当前收藏数排序，同值再看互动总量和首次发布时间；排行携带稳定内容 ID，不复制正文。",
+          "列表到详情消费率和收藏后二次消费率在补事件前不展示；回查进入内容列表或精确内容详情。",
+        ],
+      },
+      "analytics-creation": {
+        summary: "按生成主单核对生成稳定性、失败原因、处理中积压、作品绑定和成熟观察窗发布结果。",
+        rules: [
+          "页面承接 A-01 至 A-07；生成量按主单去重，不使用前端生成开始或成功事件替代业务事实。",
+          "处理中、成功、失败和已退款互斥展示；失败率分母只含最终状态，处理中不提前归失败。",
+          "失败原因先归一化为低基数原因组，不展示 Prompt、Token、原始错误响应或供应敏感载荷。",
+          "超过 2 小时和 24 小时只形成提醒/严重提示，不在统计页标记失败；业务处理回到生成记录。",
+          "绑定作品不等于发布；生成→发布只使用完整 168 小时观察窗，缺稳定完成时间前不展示生成耗时。",
+        ],
+      },
+      "analytics-activity": {
+        summary: "分别核对活动参与、投稿、任务、奖励、积分和兑换结果，不合并成单一活动成功数。",
+        rules: [
+          "页面承接 H-01 至 H-07；参与用户、有效投稿、任务完成/领取、奖励状态、奖励成本、积分流量和兑换分别统计。",
+          "任务完成不等于奖励到账，待结算不计入已发放成本；积分余额与期间发放/消耗保持分离。",
+          "筛选支持活动、期次、任务、奖励状态、积分来源和兑换对象；业务回查进入活动、积分或商城主责页面。",
+          "第一期不展示活动曝光→点击→参与漏斗，也不判断活动对后续留存或有效行为的增量贡献。",
+          "页面不展示卡密、兑换凭证或用户隐私，不执行发奖、撤回、补发、积分调整或兑换处理。",
+        ],
+      },
+      "analytics-quality": {
+        summary: "集中查看审核、生成、奖励和注册来源的业务异常，并返回对应业务页处理。",
+        rules: [
+          "页面展示 Q-01、Q-02、Q-03，并复用 A-05 和 H-04；各业务对象先分开展示再判断级别。",
+          "异常行只展示异常类型、业务域、级别、影响数量、判断阈值、最早发生时间和目标业务页。",
+          "超过阈值只形成运营提示，不自动失败生成单、不自动审核、不自动发奖、不调整积分；处理回到业务主责页。",
+          "数据状态、数据截止、采集任务、API 额度、排除版本和未就绪指标属于研发与数据治理材料，不进入运营页面。",
+          "每个指标标题右侧使用 Ant Design QuestionCircleOutlined 图标触发 Tooltip；释义只保留一句定义，计算指标直接列公式，来源与边界进入指标中心。统计卡片只保留指标名称、问号和数值，不常驻展示同比、来源、拆分、阈值或边界说明。",
+        ],
+      },
+      "analytics-metrics": {
+        summary: "提供当前已进入运营使用范围的 38 项指标/维度只读目录和页面使用边界。",
+        rules: [
+          "目录包含 G-01 至 G-10、U-01 至 U-04、C-01 至 C-05/C-07、A-01 至 A-07、H-01 至 H-07、Q-01/Q-02/Q-03/Q-06；Q-05 作为内部数据任务治理项，不进入运营页面。",
+          "每项展示统计对象、权威来源、刷新目标和历史边界；指标名称右侧使用 Ant Design QuestionCircleOutlined 图标提供一句话释义，计算指标直接列公式，点击查看定义继续展示来源和边界。",
+          "支持按 ID/名称、分析域和来源筛选；不在页面内编辑公式、渠道映射、阈值或排除清单。",
+          "登录活跃、登录留存和未补事件指标不进入第一期目录；历史不可回溯项不得用经验或样例补数。",
+          "页面仅呈现运营可以理解和使用的指标；研发状态、采集任务和权限编码保留在研发评审材料中。",
+        ],
+      },
       "content-list": {
         summary: "按真实作品列表管理内容的创建、筛选、详情、审核、发布状态和爆款关系。",
         rules: [
@@ -7750,6 +8190,16 @@
         ["invite-records", "邀请记录", [["view", "查看"], ["revoke", "撤销奖励"]]],
         ["points-records", "限时积分记录", [["view", "查看"]]],
       ]],
+      ["analytics", "数据分析", [
+        ["analytics-overview", "数据总览", [["view", "查看"]]],
+        ["analytics-growth", "增长分析", [["view", "查看"]]],
+        ["analytics-users", "用户分析", [["view", "查看"]]],
+        ["analytics-content", "内容生态", [["view", "查看"]]],
+        ["analytics-creation", "创作分析", [["view", "查看"]]],
+        ["analytics-activity", "活动与激励", [["view", "查看"]]],
+        ["analytics-quality", "运营质量", [["view", "查看"]]],
+        ["analytics-metrics", "指标中心", [["view", "查看"]]],
+      ]],
       ["system", "系统管理", [
         ["operation-log", "日志", [["view", "查看"]]],
         ["role-management", "角色管理", [["view", "查看"], ["create", "新建角色"], ["edit", "调整权限"], ["stop", "停用角色"]]],
@@ -8049,11 +8499,6 @@
 
 
     function openView(viewName) {
-      const targetView = document.querySelector(`.view[data-view="${viewName}"]`);
-      if (!targetView && pageRoutes[viewName]) {
-        window.location.href = pageRoutes[viewName];
-        return;
-      }
       document.querySelectorAll(".view").forEach((view) => view.classList.toggle("is-active", view.dataset.view === viewName));
       document.querySelectorAll(".nav-btn").forEach((button) => button.classList.toggle("is-active", button.dataset.nav === viewName));
       const title = pageTitles[viewName] || ["首页", "社区后台"];
@@ -10723,6 +11168,7 @@
       "activity-center.html",
       "competition-detail.html",
       "competition-works.html",
+      "competition-my-submissions.html",
       "competition-submit.html",
       "competition-work.html",
       "competition-ranking.html",
@@ -20138,6 +20584,16 @@
         ["points-records", "积分记录", [["view", "查看"], ["config", "维护有效期配置"]]],
         ["member-level", "会员等级", [["view", "查看"], ["create", "新增等级"], ["edit", "编辑等级"], ["reorder", "拖拽排序"]]],
       ]],
+      ["analytics", "数据分析", [
+        ["analytics-overview", "数据总览", [["view", "查看"]]],
+        ["analytics-growth", "增长分析", [["view", "查看"]]],
+        ["analytics-users", "用户分析", [["view", "查看"]]],
+        ["analytics-content", "内容生态", [["view", "查看"]]],
+        ["analytics-creation", "创作分析", [["view", "查看"]]],
+        ["analytics-activity", "活动与激励", [["view", "查看"]]],
+        ["analytics-quality", "运营质量", [["view", "查看"]]],
+        ["analytics-metrics", "指标中心", [["view", "查看"]]],
+      ]],
       ["system", "系统管理", [
         ["operation-log", "日志", [["view", "查看"]]],
         ["role-management", "角色管理", [["view", "查看"], ["create", "新建角色"], ["edit", "调整权限"], ["stop", "停用角色"]]],
@@ -22300,6 +22756,13 @@
         if (finalResultTrack) {
           setCompetitionFinalResultTrack(view, finalResultTrack.dataset.competitionResultTrack);
         }
+        const resultPrecheckOpen = event.target.closest("[data-competition-result-precheck-open]");
+        if (resultPrecheckOpen) {
+          event.preventDefault();
+          event.stopPropagation();
+          openCompetitionFinalResultOperationalCheck(view);
+          return;
+        }
         const finalResultPublish = event.target.closest("[data-competition-final-result-publish][data-competition-ranking-publish]");
         if (finalResultPublish) {
           event.preventDefault();
@@ -22309,6 +22772,7 @@
             showCompetitionFeedback(view, "仍有评委任务未提交，暂不能发布结果。");
             return;
           }
+          if (!openCompetitionFinalResultOperationalCheck(view, false)) return;
           view.querySelectorAll("[data-competition-final-result-row]").forEach((row) => {
             row.dataset.resultState = "已发布";
             const cell = row.querySelector("[data-competition-final-result-row-status]");
@@ -22747,8 +23211,56 @@
       return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
     }
 
+    function getCompetitionFinalResultOperationalBlockers(root = document) {
+      const blockers = [];
+      root.querySelectorAll?.("[data-competition-personal-result]").forEach((record) => {
+        if (record.dataset.resultPrecheck !== "已通过") {
+          blockers.push(`个人结果 ${record.dataset.resultId || "未编号"} 名单预检未通过`);
+        }
+      });
+      root.querySelectorAll?.("[data-competition-appeal]").forEach((record) => {
+        if (["待处理", "处理中"].includes(record.dataset.appealState)) {
+          blockers.push(`申诉 ${record.dataset.appealId || "未编号"} 仍为${record.dataset.appealState}`);
+        }
+      });
+      return blockers;
+    }
+
+    function refreshCompetitionResultPrecheck(root = document) {
+      const gate = root.querySelector?.('[data-competition-publish-gate="result-precheck"]');
+      if (!gate) return [];
+      const blockers = getCompetitionFinalResultOperationalBlockers(root);
+      const personalResults = [...root.querySelectorAll?.("[data-competition-personal-result]") || []];
+      const passedResults = personalResults.filter((record) => record.dataset.resultPrecheck === "已通过").length;
+      const unresolvedAppeals = [...root.querySelectorAll?.("[data-competition-appeal]") || []]
+        .filter((record) => ["待处理", "处理中"].includes(record.dataset.appealState)).length;
+      gate.dataset.precheckState = blockers.length ? "未通过" : "已通过";
+      const summary = gate.querySelector("[data-competition-result-precheck-summary]");
+      const state = gate.querySelector("[data-competition-result-precheck-state]");
+      if (summary) summary.textContent = `个人结果 ${passedResults} / ${personalResults.length} 已通过，未结申诉 ${unresolvedAppeals} 条；发布结果后才生成奖励发放记录。`;
+      if (state) {
+        state.className = `tag ${blockers.length ? "danger" : "success"}`;
+        state.textContent = blockers.length ? `阻断 ${blockers.length} 项` : "已通过";
+      }
+      return blockers;
+    }
+
+    function openCompetitionFinalResultOperationalCheck(root = document, showReady = true) {
+      const blockers = getCompetitionFinalResultOperationalBlockers(root);
+      refreshCompetitionResultPrecheck(root);
+      if (blockers.length) {
+        openCompetitionDrawer("最终结果发布前检查", `<div class="competition-detail-stack"><div class="drawer-field"><b>当前不可发布</b><p>个人结果名单预检未通过，或仍有待处理、处理中的申诉。</p></div>${blockers.map((item) => `<div class="drawer-field"><b>阻断项</b><p>${escapeHtml(item)}</p></div>`).join("")}<div class="drawer-field"><b>下一步</b><p>回到对应结果或申诉记录完成处理，再重新执行运营预检。</p></div></div>`);
+        return false;
+      }
+      if (showReady) {
+        openCompetitionDrawer("最终结果发布前检查", '<div class="competition-detail-stack"><div class="drawer-field"><b>运营预检已通过</b><p>个人结果名单均已通过，且不存在待处理或处理中的申诉。</p></div><div class="drawer-field"><b>发布边界</b><p>发布最终结果后才开放奖励发放记录；本步骤不自动发奖或执行财务结算。</p></div></div>');
+      }
+      return true;
+    }
+
     function syncCompetitionRewardGate(root = document) {
       const view = root.matches?.('.view[data-view="competition-detail"]') ? root : root.querySelector?.('.view[data-view="competition-detail"]');
+      refreshCompetitionResultPrecheck(root);
       const publish = root.querySelector?.("[data-competition-final-result-publish]");
       const published = publish?.dataset.resultPublished === "true";
       const readOnly = view?.dataset.competitionState === "已归档";
@@ -23388,6 +23900,7 @@
     document.addEventListener("keydown", (event) => {
       const roleSelect = event.target.closest("[data-admin-role-select]");
       if (event.key === "Escape") {
+        closeAnalyticsMetricHelp();
         closeAdminRoleSelects();
         toggleTutorialSectionSelect(false);
         return;
@@ -23420,7 +23933,253 @@
       }
     });
 
+    const analyticsMetricHelpDefinitions = {
+      "G-01": "PV = 统计周期内页面浏览次数。",
+      "G-02": "UV = 统计周期内去重匿名访客数。",
+      "G-03": "会话数 = 访问会话总数；新访客数 = 首次识别访客数。",
+      "G-04": "跳出率 = 跳出会话数 ÷ 总会话数 × 100%；平均访问时长 = 总访问时长 ÷ 会话数。",
+      "G-05": "按页面统计 PV、UV、会话数和访问质量。",
+      "G-06": "按 UTM、来路、浏览器和地域汇总匿名访问。",
+      "G-07": "新增注册 = 周期内创建的去重账号数。",
+      "G-08": "来源占比 = 该来源新增账号数 ÷ 新增注册数 × 100%。",
+      "G-09": "UV → 注册率 = 新增注册数 ÷ UV × 100%。",
+      "G-10": "渠道注册率 = 该渠道新增注册数 ÷ 该渠道可比 UV × 100%。",
+      "U-01": "累计注册用户 = 截止日未排除的注册账号数。",
+      "U-02": "有效 DAU = 当日完成任一有效价值行为的去重用户数。",
+      "U-03": "WEVU = 自然周内完成任一有效价值行为的去重用户数。",
+      "U-04": "7 日激活率 = 7 日内激活的新用户数 ÷ 成熟注册用户数 × 100%。",
+      "C-01": "内容存量 = 截止日已发布作品数 + 已发布帖子数。",
+      "C-02": "新增发布内容 = 周期内首次发布作品数 + 首次发布帖子数。",
+      "C-03": "内容占比 = 该类内容数 ÷ 内容总数 × 100%。",
+      "C-04": "活跃创作者 = 周期内发布过正式内容的去重作者数。",
+      "C-05": "当前互动总量 = 点赞数 + 收藏数 + 评论数 + 分享数。",
+      "C-07": "按当前收藏数降序排列的内容 Top 榜。",
+      "A-01": "生成量 = 周期内创建的去重生成主单数。",
+      "A-02": "状态占比 = 对应最终状态单数 ÷ 最终状态总单数 × 100%。",
+      "A-03": "生成类型占比 = 该类型生成主单数 ÷ 生成主单总数 × 100%。",
+      "A-04": "失败原因占比 = 该原因失败单数 ÷ 失败单总数 × 100%。",
+      "A-05": "处理中积压 = 处理中且超过运营阈值的生成单数。",
+      "A-06": "作品绑定率 = 已绑定作品的成功生成单数 ÷ 成功生成单数 × 100%。",
+      "A-07": "生成 → 发布率 = 168 小时内发布的成熟成功生成单数 ÷ 成熟成功生成单数 × 100%。",
+      "H-01": "活动参与用户 = 存在参与记录的去重用户数。",
+      "H-02": "有效投稿数 = 有效投稿去重数；投稿用户数 = 有效投稿用户去重数。",
+      "H-03": "分别统计任务完成数和奖励领取数。",
+      "H-04": "按待结算、已发放、失败统计奖励对象数。",
+      "H-05": "活动奖励成本 = 已发放奖励积分之和。",
+      "H-06": "积分发放/消耗 = 周期内对应方向的积分流水之和。",
+      "H-07": "兑换量 = 兑换对象数；兑换用户 = 去重用户数；消耗积分 = 实际扣减积分之和。",
+      "Q-01": "审核积压 = 待审核和审核中的任务数。",
+      "Q-02": "审核耗时 = 完成时间 − 创建时间；通过率/处理失败率 = 对应任务数 ÷ 已完成任务数 × 100%。",
+      "Q-03": "注册来源缺失率 = 来源缺失新增账号数 ÷ 新增注册数 × 100%。",
+      "Q-06": "排除测试账号、测试内容和明确内部流量。",
+    };
+
+    let activeAnalyticsMetricHelpTrigger = null;
+
+    function ensureAnalyticsMetricHelpTooltip() {
+      let tooltip = document.querySelector("[data-analytics-metric-help-tooltip]");
+      if (tooltip) return tooltip;
+      tooltip = document.createElement("div");
+      tooltip.id = "analyticsMetricHelpTooltip";
+      tooltip.className = "analytics-metric-help-tooltip ant-tooltip";
+      tooltip.dataset.analyticsMetricHelpTooltip = "true";
+      tooltip.dataset.antdComponent = "Tooltip";
+      tooltip.setAttribute("role", "tooltip");
+      tooltip.hidden = true;
+      document.body.appendChild(tooltip);
+      return tooltip;
+    }
+
+    function positionAnalyticsMetricHelpTooltip(trigger, tooltip) {
+      const triggerBox = trigger.getBoundingClientRect();
+      const tooltipBox = tooltip.getBoundingClientRect();
+      const viewportGap = 12;
+      const contentBox = trigger.closest("main")?.getBoundingClientRect();
+      const minLeft = Math.max(viewportGap, (contentBox?.left || 0) + viewportGap);
+      const maxLeft = Math.max(
+        minLeft,
+        Math.min(window.innerWidth - tooltipBox.width - viewportGap, (contentBox?.right || window.innerWidth) - tooltipBox.width - viewportGap),
+      );
+      const preferredLeft = triggerBox.left + triggerBox.width / 2 - tooltipBox.width / 2;
+      const left = Math.min(Math.max(minLeft, preferredLeft), maxLeft);
+      const below = triggerBox.bottom + 8;
+      const top = below + tooltipBox.height <= window.innerHeight - viewportGap
+        ? below
+        : Math.max(viewportGap, triggerBox.top - tooltipBox.height - 8);
+      tooltip.style.left = `${Math.round(left)}px`;
+      tooltip.style.top = `${Math.round(top)}px`;
+    }
+
+    function closeAnalyticsMetricHelp() {
+      const tooltip = document.querySelector("[data-analytics-metric-help-tooltip]");
+      if (tooltip) tooltip.hidden = true;
+      if (activeAnalyticsMetricHelpTrigger) activeAnalyticsMetricHelpTrigger.setAttribute("aria-expanded", "false");
+      activeAnalyticsMetricHelpTrigger = null;
+    }
+
+    function openAnalyticsMetricHelp(trigger) {
+      const tooltip = ensureAnalyticsMetricHelpTooltip();
+      closeAnalyticsMetricHelp();
+      tooltip.textContent = trigger.dataset.analyticsMetricHelpText || "该指标暂未登记释义。";
+      tooltip.hidden = false;
+      trigger.setAttribute("aria-expanded", "true");
+      activeAnalyticsMetricHelpTrigger = trigger;
+      positionAnalyticsMetricHelpTooltip(trigger, tooltip);
+      return true;
+    }
+
+    function createAnalyticsMetricHelpButton(id, label, definition) {
+      const button = document.createElement("button");
+      button.className = "analytics-metric-help-button ant-btn ant-btn-text ant-btn-icon-only";
+      button.type = "button";
+      button.dataset.analyticsMetricHelp = id;
+      button.dataset.analyticsMetricHelpText = definition;
+      button.dataset.antdComponent = "Tooltip.Trigger";
+      button.dataset.antdIcon = "QuestionCircleOutlined";
+      button.setAttribute("aria-label", `查看指标说明：${label}`);
+      button.setAttribute("aria-describedby", "analyticsMetricHelpTooltip");
+      button.setAttribute("aria-expanded", "false");
+      const icon = document.createElement("span");
+      icon.className = "anticon anticon-question-circle";
+      icon.dataset.antdIcon = "QuestionCircleOutlined";
+      icon.setAttribute("aria-hidden", "true");
+      icon.innerHTML = '<svg viewBox="0 0 1024 1024" focusable="false" data-icon="question-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path><path d="M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0 1 30.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1 0 80 0 40 40 0 1 0-80 0z"></path></svg>';
+      button.appendChild(icon);
+      button.addEventListener("mouseenter", () => openAnalyticsMetricHelp(button));
+      button.addEventListener("mouseleave", closeAnalyticsMetricHelp);
+      button.addEventListener("focus", () => openAnalyticsMetricHelp(button));
+      button.addEventListener("blur", closeAnalyticsMetricHelp);
+      return button;
+    }
+
+    function initAnalyticsMetricHelp() {
+      ensureAnalyticsMetricHelpTooltip();
+      document.querySelectorAll(".analytics-stat-card[data-analytics-metric]").forEach((card) => {
+        const label = card.querySelector(".stat-label");
+        if (!label || label.querySelector("[data-analytics-metric-help]")) return;
+        const id = card.dataset.analyticsMetric || "指标";
+        const labelText = [...label.childNodes]
+          .filter((node) => node.nodeType === Node.TEXT_NODE)
+          .map((node) => node.textContent.trim())
+          .filter(Boolean)
+          .join(" ") || id;
+        const definition = card.dataset.analyticsMetricHelpText || analyticsMetricHelpDefinitions[id] || "该指标暂未登记释义。";
+        const button = createAnalyticsMetricHelpButton(id, labelText, definition);
+        label.insertBefore(button, label.querySelector(":scope > .tag"));
+      });
+
+      document.querySelectorAll("[data-analytics-metric-row]").forEach((row) => {
+        const nameCell = row.cells?.[1];
+        const definitionTrigger = row.querySelector("[data-analytics-metric-open]");
+        if (!nameCell || !definitionTrigger || nameCell.querySelector("[data-analytics-metric-help]")) return;
+        nameCell.classList.add("analytics-metric-name-cell");
+        nameCell.appendChild(createAnalyticsMetricHelpButton(
+          row.dataset.id || definitionTrigger.dataset.id || "指标",
+          row.dataset.name || definitionTrigger.dataset.name || nameCell.textContent.trim(),
+          analyticsMetricHelpDefinitions[row.dataset.id || definitionTrigger.dataset.id] || definitionTrigger.dataset.definition || "该指标暂未登记释义。",
+        ));
+      });
+    }
+
+    function applyAnalyticsFilters(panel) {
+      if (!panel) return 0;
+      const controls = [...panel.querySelectorAll("[data-analytics-filter-control]")];
+      const labels = controls.map((control) => control.selectedOptions?.[0]?.textContent?.trim() || control.value).filter(Boolean);
+      const result = panel.querySelector("[data-analytics-filter-result]");
+      if (result) result.textContent = `已应用：${labels.join(" · ")}`;
+      panel.dataset.analyticsFiltersApplied = "true";
+      return controls.length;
+    }
+
+    function resetAnalyticsFilters(panel) {
+      if (!panel) return 0;
+      const controls = [...panel.querySelectorAll("[data-analytics-filter-control]")];
+      controls.forEach((control) => {
+        const key = control.dataset.analyticsFilterControl;
+        if (key === "range") control.value = "7d";
+        else if (key === "compare") control.value = "previous";
+        else control.selectedIndex = 0;
+      });
+      return applyAnalyticsFilters(panel);
+    }
+
+    function applyAnalyticsMetricFilters() {
+      const view = document.querySelector('.view[data-view="analytics-metrics"]');
+      if (!view) return 0;
+      const keyword = view.querySelector('[data-analytics-metric-filter="keyword"]')?.value.trim().toLowerCase() || "";
+      const domain = view.querySelector('[data-analytics-metric-filter="domain"]')?.value || "";
+      const source = view.querySelector('[data-analytics-metric-filter="source"]')?.value || "";
+      const rows = [...view.querySelectorAll("[data-analytics-metric-row]")];
+      let visible = 0;
+      rows.forEach((row) => {
+        const haystack = `${row.dataset.id || ""} ${row.dataset.name || ""}`.toLowerCase();
+        const matches =
+          (!keyword || haystack.includes(keyword)) &&
+          (!domain || row.dataset.domain === domain) &&
+          (!source || row.dataset.source === source);
+        row.hidden = !matches;
+        if (matches) visible += 1;
+      });
+      const empty = view.querySelector("[data-analytics-metric-empty]");
+      if (empty) empty.hidden = visible > 0;
+      const result = view.querySelector("[data-analytics-metric-result]");
+      if (result) result.textContent = `共 38 项；当前显示 ${visible} 项`;
+      view.dataset.analyticsMetricFiltered = "true";
+      return visible;
+    }
+
+    function resetAnalyticsMetricFilters() {
+      const view = document.querySelector('.view[data-view="analytics-metrics"]');
+      if (!view) return 0;
+      view.querySelectorAll("[data-analytics-metric-filter]").forEach((control) => {
+        if (control.matches("select")) control.selectedIndex = 0;
+        else control.value = "";
+      });
+      return applyAnalyticsMetricFilters();
+    }
+
+    function showAnalyticsMetricDefinition(trigger) {
+      const view = trigger?.closest('.view[data-view="analytics-metrics"]');
+      const detail = view?.querySelector("[data-analytics-metric-detail]");
+      if (!detail) return false;
+      const id = trigger.dataset.id || "";
+      const name = trigger.dataset.name || "";
+      detail.querySelector("[data-analytics-metric-detail-title]").textContent = `${id} · ${name}`;
+      detail.querySelector("[data-analytics-metric-detail-definition]").textContent = `定义：${trigger.dataset.definition || "未登记"}`;
+      detail.querySelector("[data-analytics-metric-detail-source]").textContent = `来源：${trigger.dataset.sourceLabel || "未登记"}`;
+      detail.querySelector("[data-analytics-metric-detail-boundary]").textContent = `边界：${trigger.dataset.boundary || "未登记"}`;
+      detail.hidden = false;
+      detail.dataset.analyticsMetricDetailId = id;
+      detail.scrollIntoView({ block: "nearest" });
+      return true;
+    }
+
     document.addEventListener("click", (event) => {
+      const analyticsMetricHelp = event.target.closest("[data-analytics-metric-help]");
+      if (analyticsMetricHelp) {
+        openAnalyticsMetricHelp(analyticsMetricHelp);
+        event.preventDefault();
+        return;
+      }
+      closeAnalyticsMetricHelp();
+      const analyticsFilterAction = event.target.closest("[data-analytics-filter-action]");
+      if (analyticsFilterAction) {
+        const panel = analyticsFilterAction.closest("[data-analytics-filter-panel]");
+        if (analyticsFilterAction.dataset.analyticsFilterAction === "reset") resetAnalyticsFilters(panel);
+        else applyAnalyticsFilters(panel);
+        return;
+      }
+      const analyticsMetricAction = event.target.closest("[data-analytics-metric-action]");
+      if (analyticsMetricAction) {
+        if (analyticsMetricAction.dataset.analyticsMetricAction === "reset") resetAnalyticsMetricFilters();
+        else applyAnalyticsMetricFilters();
+        return;
+      }
+      const analyticsMetricOpen = event.target.closest("[data-analytics-metric-open]");
+      if (analyticsMetricOpen) {
+        showAnalyticsMetricDefinition(analyticsMetricOpen);
+        return;
+      }
       const tutorialKeywordClear = event.target.closest("[data-tutorial-keyword-clear]");
       if (tutorialKeywordClear) {
         const input = document.querySelector('.view[data-view="tutorial-management"] [data-tutorial-filter="keyword"]');
@@ -23850,7 +24609,10 @@
     document.addEventListener("change", (event) => {
       if (event.target.matches('[data-protocol-field="result-type"]')) syncProtocolAsyncFields();
     });
+    window.addEventListener("resize", closeAnalyticsMetricHelp);
+    document.addEventListener("scroll", closeAnalyticsMetricHelp, true);
     simplifyVisibleVersionMetadata();
+    initAnalyticsMetricHelp();
     applyTutorialFilters();
     initTutorialPreviewPage();
     renderWalkthroughPanel();

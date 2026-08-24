@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T04:19:13.527Z",
+  "generatedAt": "2026-08-24T18:06:09.936Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -19,6 +19,21 @@
     "deferredDataDashboardViewsRetainedInSource": true,
     "deferredDataDashboardPagesNotGenerated": true,
     "dataDashboardDeferredRequirementRecorded": true,
+    "analyticsPhaseOneInformationArchitectureComplete": true,
+    "analyticsSharedFiltersAndInternalMetadataBoundaryComplete": true,
+    "analyticsInternalMetadataNotExposedToOperators": true,
+    "analyticsOverviewContractComplete": true,
+    "analyticsGrowthContractComplete": true,
+    "analyticsUsersContractComplete": true,
+    "analyticsContentContractComplete": true,
+    "analyticsCreationContractComplete": true,
+    "analyticsActivityContractComplete": true,
+    "analyticsQualityContractComplete": true,
+    "analyticsMetricCenterContractComplete": true,
+    "analyticsVisualizationComponentsStandardized": true,
+    "analyticsMetricHelpContractComplete": true,
+    "sourceViewsVisibilityScopedToActiveView": true,
+    "analyticsPagesStayReadOnlyAndPrivacySafe": true,
     "navigationRefinementApplied": true,
     "hiddenOperationConfigPagesNotGenerated": true,
     "layoutUsesAntDesignShell": true,
@@ -120,6 +135,7 @@
     "modelListDefersDecisionFieldsToDetail": true,
     "modelCommunityPointsAreSeparateFromCost": true,
     "officialTutorialManagementComplete": true,
+    "tutorialManagementVisibilityScopedToActiveView": true,
     "tutorialCatalogObjectCoverageComplete": true,
     "officialTutorialManagementSurfaceSlimmed": true,
     "officialTutorialModalMatchesCEndIA": true,
@@ -389,6 +405,54 @@
       "file": "member-levels.html"
     },
     {
+      "view": "analytics-overview",
+      "group": "数据分析",
+      "label": "数据总览",
+      "file": "analytics-overview.html"
+    },
+    {
+      "view": "analytics-growth",
+      "group": "数据分析",
+      "label": "增长分析",
+      "file": "analytics-growth.html"
+    },
+    {
+      "view": "analytics-users",
+      "group": "数据分析",
+      "label": "用户分析",
+      "file": "analytics-users.html"
+    },
+    {
+      "view": "analytics-content",
+      "group": "数据分析",
+      "label": "内容生态",
+      "file": "analytics-content.html"
+    },
+    {
+      "view": "analytics-creation",
+      "group": "数据分析",
+      "label": "创作分析",
+      "file": "analytics-creation.html"
+    },
+    {
+      "view": "analytics-activity",
+      "group": "数据分析",
+      "label": "活动与激励",
+      "file": "analytics-activity.html"
+    },
+    {
+      "view": "analytics-quality",
+      "group": "数据分析",
+      "label": "运营质量",
+      "file": "analytics-quality.html"
+    },
+    {
+      "view": "analytics-metrics",
+      "group": "数据分析",
+      "label": "指标中心",
+      "file": "analytics-metrics.html"
+    },
+    {
       "view": "operation-log",
       "group": "系统管理",
       "label": "日志",
@@ -535,6 +599,54 @@
       "file": "member-levels.html"
     },
     {
+      "view": "analytics-overview",
+      "group": "数据分析",
+      "label": "数据总览",
+      "file": "analytics-overview.html"
+    },
+    {
+      "view": "analytics-growth",
+      "group": "数据分析",
+      "label": "增长分析",
+      "file": "analytics-growth.html"
+    },
+    {
+      "view": "analytics-users",
+      "group": "数据分析",
+      "label": "用户分析",
+      "file": "analytics-users.html"
+    },
+    {
+      "view": "analytics-content",
+      "group": "数据分析",
+      "label": "内容生态",
+      "file": "analytics-content.html"
+    },
+    {
+      "view": "analytics-creation",
+      "group": "数据分析",
+      "label": "创作分析",
+      "file": "analytics-creation.html"
+    },
+    {
+      "view": "analytics-activity",
+      "group": "数据分析",
+      "label": "活动与激励",
+      "file": "analytics-activity.html"
+    },
+    {
+      "view": "analytics-quality",
+      "group": "数据分析",
+      "label": "运营质量",
+      "file": "analytics-quality.html"
+    },
+    {
+      "view": "analytics-metrics",
+      "group": "数据分析",
+      "label": "指标中心",
+      "file": "analytics-metrics.html"
+    },
+    {
       "view": "operation-log",
       "group": "系统管理",
       "label": "日志",
@@ -628,6 +740,14 @@
     "outputs/community-b-end-antdesign-prototype/invite-records.html",
     "outputs/community-b-end-antdesign-prototype/points-records.html",
     "outputs/community-b-end-antdesign-prototype/member-levels.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-overview.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-growth.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-users.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-content.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-creation.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-activity.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-quality.html",
+    "outputs/community-b-end-antdesign-prototype/analytics-metrics.html",
     "outputs/community-b-end-antdesign-prototype/operation-log.html",
     "outputs/community-b-end-antdesign-prototype/role-management.html",
     "outputs/community-b-end-antdesign-prototype/permission-management.html",
@@ -676,6 +796,30 @@
     "competition-state-preview.html",
     "content-detail-modals.html",
     "campaign-ops.html",
-    "manga-handoff.html"
+    "manga-handoff.html",
+    "mobile-home.html",
+    "mobile-community.html",
+    "mobile-image-detail.html",
+    "mobile-video-detail.html",
+    "mobile-create.html",
+    "mobile-create-image.html",
+    "mobile-create-video.html",
+    "mobile-generation-progress.html",
+    "mobile-generation-result.html",
+    "mobile-activity.html",
+    "mobile-activity-detail.html",
+    "mobile-campaign-detail.html",
+    "mobile-submission-detail.html",
+    "mobile-my.html",
+    "mobile-profile-edit.html",
+    "mobile-my-works.html",
+    "mobile-my-submissions.html",
+    "mobile-tasks.html",
+    "mobile-points.html",
+    "mobile-points-records.html",
+    "mobile-exchange.html",
+    "mobile-exchange-records.html",
+    "mobile-invite.html",
+    "mobile-messages.html"
   ]
 }

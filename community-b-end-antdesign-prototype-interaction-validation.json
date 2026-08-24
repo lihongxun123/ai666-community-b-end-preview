@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T04:26:21.794Z",
+  "generatedAt": "2026-08-24T18:06:31.532Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -96,6 +96,10 @@
     "competitionRewardIssuanceRecordsStatusAndTime": true,
     "competitionScoreCompositionRejectsInvalidWeightAndRefreshesResults": true,
     "competitionScoringUsesSimpleTrackOwnerFlow": true,
+    "analyticsOverviewInteractionsWork": true,
+    "analyticsMetricCenterInteractionsWork": true,
+    "analyticsGeneratedPagesRespectDisplayAndComponentBoundaries": true,
+    "analyticsSpaViewIsolationComplete": true,
     "antdLayerCloseButtonsUseStandardComponents": true,
     "noConsoleErrors": true,
     "noPageErrors": true
@@ -112,7 +116,7 @@
         "pageHeading": "内容列表",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -132,7 +136,7 @@
         "pageHeading": "审核工作台",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -152,7 +156,7 @@
         "pageHeading": "闪念管理",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -172,7 +176,7 @@
         "pageHeading": "模板配置",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -192,7 +196,7 @@
         "pageHeading": "",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -212,7 +216,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -232,7 +236,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -252,7 +256,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -272,7 +276,7 @@
         "pageHeading": "展示位管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -292,7 +296,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -312,7 +316,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -332,7 +336,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -352,7 +356,7 @@
         "pageHeading": "赛事管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -372,7 +376,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -392,7 +396,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -412,7 +416,7 @@
         "pageHeading": "用户列表",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -432,7 +436,7 @@
         "pageHeading": "注册来源",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -452,7 +456,7 @@
         "pageHeading": "邀请记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -472,7 +476,7 @@
         "pageHeading": "积分记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -492,7 +496,167 @@
         "pageHeading": "",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-overview",
+        "file": "analytics-overview.html",
+        "activeView": "analytics-overview",
+        "activeNav": "analytics-overview",
+        "routeLabel": "数据总览",
+        "pageHeading": "数据总览",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-growth",
+        "file": "analytics-growth.html",
+        "activeView": "analytics-growth",
+        "activeNav": "analytics-growth",
+        "routeLabel": "增长分析",
+        "pageHeading": "增长分析",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-users",
+        "file": "analytics-users.html",
+        "activeView": "analytics-users",
+        "activeNav": "analytics-users",
+        "routeLabel": "用户分析",
+        "pageHeading": "用户分析",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-content",
+        "file": "analytics-content.html",
+        "activeView": "analytics-content",
+        "activeNav": "analytics-content",
+        "routeLabel": "内容生态",
+        "pageHeading": "内容生态",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-creation",
+        "file": "analytics-creation.html",
+        "activeView": "analytics-creation",
+        "activeNav": "analytics-creation",
+        "routeLabel": "创作分析",
+        "pageHeading": "创作分析",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-activity",
+        "file": "analytics-activity.html",
+        "activeView": "analytics-activity",
+        "activeNav": "analytics-activity",
+        "routeLabel": "活动与激励",
+        "pageHeading": "活动与激励",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-quality",
+        "file": "analytics-quality.html",
+        "activeView": "analytics-quality",
+        "activeNav": "analytics-quality",
+        "routeLabel": "运营质量",
+        "pageHeading": "运营质量",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "analytics-metrics",
+        "file": "analytics-metrics.html",
+        "activeView": "analytics-metrics",
+        "activeNav": "analytics-metrics",
+        "routeLabel": "指标中心",
+        "pageHeading": "指标中心",
+        "navGroup": "数据分析",
+        "viewCount": 1,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -512,7 +676,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -532,7 +696,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -552,7 +716,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -572,7 +736,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -592,7 +756,7 @@
         "pageHeading": "内容详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -612,7 +776,7 @@
         "pageHeading": "教程预览",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -632,7 +796,7 @@
         "pageHeading": "闪念详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -652,7 +816,7 @@
         "pageHeading": "活动详情",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -672,7 +836,7 @@
         "pageHeading": "AIGC 创作挑战赛",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -692,7 +856,7 @@
         "pageHeading": "我的评分任务",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -712,7 +876,7 @@
         "pageHeading": "模型详情",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -732,7 +896,7 @@
         "pageHeading": "模型配置",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 24,
+        "navCount": 32,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -1546,12 +1710,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-170623"
+      "taskCode": "TASK-778530"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-170623",
+      "taskCode": "TASK-778530",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1560,7 +1724,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-170623\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-778530\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2079,7 +2243,7 @@
       "open": true,
       "component": "Modal",
       "tree": "Tree",
-      "permissionCount": 96,
+      "permissionCount": 105,
       "panels": 2,
       "reasonFields": 0
     },
@@ -2222,12 +2386,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1787027175577",
-      "competitionId": "COMP-2026-175608",
+      "draftName": "赛事交互验收草稿-1787594783536",
+      "competitionId": "COMP-2026-783565",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1787027175577",
+      "title": "赛事交互验收草稿-1787594783536",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2245,7 +2409,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1787027175577"
+      "expectedName": "赛事交互验收草稿-1787594783536"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -2450,8 +2614,10 @@
         "participation"
       ],
       "participationRewardRows": 2,
-      "resultPrecheckRows": 0,
-      "appealRows": 0,
+      "resultPrecheckRows": 3,
+      "appealRows": 1,
+      "resultPrecheckGate": true,
+      "resultPrecheckOpen": true,
       "obsoleteResultSurfaces": 0,
       "notifications": 6,
       "notificationTriggerKeys": [
@@ -2847,7 +3013,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
+        "previewSource": "data:image/webp;base64,",
         "removeVisible": true
       }
     ],
@@ -3024,7 +3190,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-178757",
+        "awardId": "AWARD-786797",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3230,7 +3396,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-08-18 12:26",
+      "status": "已提交 · 2026-08-25 02:06",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3279,6 +3445,233 @@
         "Button"
       ]
     },
+    "analyticsOverviewInteraction": {
+      "active": "analytics-overview",
+      "internalMetadataVisible": false,
+      "chartComponents": 3,
+      "anomalyRows": 3,
+      "metricHelpButtons": 8,
+      "metricHelpIcons": 8,
+      "statCardTags": 0,
+      "statCardFooters": 0
+    },
+    "analyticsOverviewMetricHelp": {
+      "visible": true,
+      "text": "UV = 统计周期内去重匿名访客数。",
+      "expanded": "true",
+      "component": "Tooltip.Trigger",
+      "icon": "QuestionCircleOutlined",
+      "iconSvgPresent": true,
+      "rawQuestionTextPresent": false
+    },
+    "analyticsOverviewMetricHelpClosed": {
+      "hidden": true,
+      "expanded": "false"
+    },
+    "analyticsOverviewApplied": "已应用：最近 30 个完整日 · 前一等长周期",
+    "analyticsOverviewReset": "已应用：最近 7 个完整日 · 前一等长周期",
+    "analyticsMetricCenterHelp": {
+      "buttonCount": 38,
+      "visible": true,
+      "text": "UV → 注册率 = 新增注册数 ÷ UV × 100%。"
+    },
+    "analyticsMetricDomainFilter": {
+      "visibleRows": 10,
+      "result": "共 38 项；当前显示 10 项"
+    },
+    "analyticsMetricReset": {
+      "visibleRows": 38,
+      "result": "共 38 项；当前显示 38 项",
+      "q05Visible": false
+    },
+    "analyticsGeneratedPageContracts": [
+      {
+        "expectedView": "analytics-overview",
+        "activeView": "analytics-overview",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 3,
+        "antTables": 1,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 8,
+        "metricHelpIcons": 8,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-growth",
+        "activeView": "analytics-growth",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 1,
+        "antTables": 2,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 8,
+        "metricHelpIcons": 8,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-users",
+        "activeView": "analytics-users",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 2,
+        "antTables": 2,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 4,
+        "metricHelpIcons": 4,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-content",
+        "activeView": "analytics-content",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 1,
+        "antTables": 2,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 6,
+        "metricHelpIcons": 6,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-creation",
+        "activeView": "analytics-creation",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 1,
+        "antTables": 2,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 7,
+        "metricHelpIcons": 7,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-activity",
+        "activeView": "analytics-activity",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 1,
+        "antTables": 3,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 7,
+        "metricHelpIcons": 7,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-quality",
+        "activeView": "analytics-quality",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 1,
+        "antTables": 1,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 5,
+        "metricHelpIcons": 5,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      },
+      {
+        "expectedView": "analytics-metrics",
+        "activeView": "analytics-metrics",
+        "viewCount": 1,
+        "forbiddenVisible": [],
+        "chartComponents": 0,
+        "antTables": 1,
+        "uncontractedChartSurfaces": 0,
+        "metricHelpButtons": 38,
+        "metricHelpIcons": 38,
+        "statCardTags": 0,
+        "statCardFooters": 0,
+        "statCardShapeComplete": true,
+        "metricHelpDefinitionsComplete": true
+      }
+    ],
+    "analyticsSpaViewIsolation": [
+      {
+        "expectedView": "analytics-overview",
+        "activeView": "analytics-overview",
+        "visibleViews": [
+          "analytics-overview"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-growth",
+        "activeView": "analytics-growth",
+        "visibleViews": [
+          "analytics-growth"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-users",
+        "activeView": "analytics-users",
+        "visibleViews": [
+          "analytics-users"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-content",
+        "activeView": "analytics-content",
+        "visibleViews": [
+          "analytics-content"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-creation",
+        "activeView": "analytics-creation",
+        "visibleViews": [
+          "analytics-creation"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-activity",
+        "activeView": "analytics-activity",
+        "visibleViews": [
+          "analytics-activity"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-quality",
+        "activeView": "analytics-quality",
+        "visibleViews": [
+          "analytics-quality"
+        ],
+        "forbiddenVisible": []
+      },
+      {
+        "expectedView": "analytics-metrics",
+        "activeView": "analytics-metrics",
+        "visibleViews": [
+          "analytics-metrics"
+        ],
+        "forbiddenVisible": []
+      }
+    ],
     "antdLayerCloseButtons": {
       "content-list": {
         "checked": 34,
@@ -3358,6 +3751,38 @@
       },
       "member-levels": {
         "checked": 35,
+        "invalid": []
+      },
+      "analytics-overview": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-growth": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-users": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-content": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-creation": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-activity": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-quality": {
+        "checked": 34,
+        "invalid": []
+      },
+      "analytics-metrics": {
+        "checked": 34,
         "invalid": []
       },
       "operation-log": {
