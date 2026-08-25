@@ -414,6 +414,17 @@
       grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(150px, 1fr)) auto;
     }
 
+    .analytics-filter-grid.is-overview {
+      grid-template-columns: minmax(220px, 280px) minmax(220px, 280px) minmax(0, 1fr) auto;
+    }
+
+    .analytics-filter-grid.is-overview > .filter-actions {
+      grid-column: 4;
+      justify-self: end;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+
     .analytics-data-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -658,6 +669,12 @@
       color: var(--ant-subtle);
     }
 
+    .analytics-chain-step .analytics-chain-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     .analytics-chain-step b {
       display: block;
       margin: 8px 0 4px;
@@ -714,6 +731,8 @@
     @media (max-width: 1180px) {
       .analytics-filter-grid,
       .analytics-filter-grid.is-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .analytics-filter-grid.is-overview { grid-template-columns: repeat(2, minmax(0, 1fr)) auto; }
+      .analytics-filter-grid.is-overview > .filter-actions { grid-column: 3; }
       .analytics-data-strip,
       .analytics-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -722,6 +741,8 @@
       .analytics-grid-two { grid-template-columns: 1fr; }
       .analytics-filter-grid,
       .analytics-filter-grid.is-compact { grid-template-columns: 1fr; }
+      .analytics-filter-grid.is-overview { grid-template-columns: 1fr; }
+      .analytics-filter-grid.is-overview > .filter-actions { grid-column: 1; }
     }
 
     .filter-grid.competition-work-catalog-filter-grid {
@@ -7368,13 +7389,14 @@
     ];
     const walkthroughPageCatalog = {
       "analytics-overview": {
-        summary: "使用共同数据截止和复用指标判断平台变化、增长激活及当前优先处理事项。",
+        summary: "使用复用指标判断平台核心变化、增长与激活表现。",
         rules: [
           "默认查看最近 7 个完整自然日；今日未完结数据不作为跨来源结论，数据总览不增加模型、活动等专项筛选。",
-          "核心卡片复用 G-02、G-07、U-02、U-03、C-02、A-02、H-02 和质量指标；匿名访客、注册用户、内容和业务对象分别命名。",
-          "数据延迟时保留上一成功快照；来源截止不一致时暂停跨来源比率。异常只分类型展示，不汇总成跨对象总数。",
+          "核心卡片复用 G-02、G-07、U-02、U-03、C-02、A-02、H-02；匿名访客、注册用户、内容和业务对象分别命名。",
+          "数据延迟时保留上一成功快照；来源截止不一致时暂停跨来源比率，异常积压统一进入运营质量页查看。",
           "UV→注册是聚合估算；7 日激活只使用拥有完整 168 小时观察窗的成熟注册批次，两条链路分开展示。",
-          "页面、筛选、数据状态和下钻可用；所有数值标注演示数据，处理动作回到生成、审核或注册来源主责页。",
+          "筛选按钮组固定贴右，选择结果不重复显示已应用摘要；图表标题不放解释标签，链路节点口径通过 QuestionCircleOutlined Tooltip 查看。",
+          "页面、筛选和指标释义可用；所有数值标注演示数据，数据总览不承载异常处理或业务处置动作。",
         ],
       },
       "analytics-growth": {
@@ -24029,6 +24051,15 @@
           row.dataset.name || definitionTrigger.dataset.name || nameCell.textContent.trim(),
           analyticsMetricHelpDefinitions[row.dataset.id || definitionTrigger.dataset.id] || definitionTrigger.dataset.definition || "该指标暂未登记释义。",
         ));
+      });
+
+      document.querySelectorAll("[data-analytics-chain-help]").forEach((step) => {
+        const label = step.querySelector(":scope > .analytics-chain-label");
+        if (!label || label.querySelector("[data-analytics-metric-help]")) return;
+        const id = step.dataset.analyticsChainHelp || "链路指标";
+        const labelText = label.textContent.trim() || id;
+        const definition = step.dataset.analyticsChainHelpText || "该指标暂未登记释义。";
+        label.appendChild(createAnalyticsMetricHelpButton(id, labelText, definition));
       });
     }
 

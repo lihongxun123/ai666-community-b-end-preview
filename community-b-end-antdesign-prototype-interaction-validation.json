@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T18:06:31.532Z",
+  "generatedAt": "2026-08-25T14:59:39.691Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -1710,12 +1710,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-778530"
+      "taskCode": "TASK-967022"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-778530",
+      "taskCode": "TASK-967022",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1724,7 +1724,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-778530\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-967022\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2386,12 +2386,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1787594783536",
-      "competitionId": "COMP-2026-783565",
+      "draftName": "赛事交互验收草稿-1787669972059",
+      "competitionId": "COMP-2026-972090",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1787594783536",
+      "title": "赛事交互验收草稿-1787669972059",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2409,7 +2409,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1787594783536"
+      "expectedName": "赛事交互验收草稿-1787669972059"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -3190,7 +3190,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-786797",
+        "awardId": "AWARD-975138",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3396,7 +3396,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-08-25 02:06",
+      "status": "已提交 · 2026-08-25 22:59",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3449,11 +3449,16 @@
       "active": "analytics-overview",
       "internalMetadataVisible": false,
       "chartComponents": 3,
-      "anomalyRows": 3,
-      "metricHelpButtons": 8,
-      "metricHelpIcons": 8,
+      "anomalyRows": 0,
+      "metricHelpButtons": 13,
+      "metricHelpIcons": 13,
       "statCardTags": 0,
-      "statCardFooters": 0
+      "statCardFooters": 0,
+      "chainHelpButtons": 6,
+      "chainDescriptions": 0,
+      "chartHeaderTags": 0,
+      "filterResultLines": 0,
+      "filterActionsRightGap": 0
     },
     "analyticsOverviewMetricHelp": {
       "visible": true,
@@ -3468,8 +3473,22 @@
       "hidden": true,
       "expanded": "false"
     },
-    "analyticsOverviewApplied": "已应用：最近 30 个完整日 · 前一等长周期",
-    "analyticsOverviewReset": "已应用：最近 7 个完整日 · 前一等长周期",
+    "analyticsOverviewChainHelp": {
+      "visible": true,
+      "text": "匿名 UV = 统计周期内由 51LA 去重的匿名访客数。",
+      "component": "Tooltip.Trigger",
+      "icon": "QuestionCircleOutlined"
+    },
+    "analyticsOverviewApplied": {
+      "range": "30d",
+      "applied": "true",
+      "resultLineCount": 0
+    },
+    "analyticsOverviewReset": {
+      "range": "7d",
+      "applied": "true",
+      "resultLineCount": 0
+    },
     "analyticsMetricCenterHelp": {
       "buttonCount": 38,
       "visible": true,
@@ -3491,10 +3510,10 @@
         "viewCount": 1,
         "forbiddenVisible": [],
         "chartComponents": 3,
-        "antTables": 1,
+        "antTables": 0,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 8,
-        "metricHelpIcons": 8,
+        "metricHelpButtons": 13,
+        "metricHelpIcons": 13,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
