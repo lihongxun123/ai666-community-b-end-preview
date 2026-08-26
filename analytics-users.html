@@ -588,6 +588,24 @@
       color: var(--ant-text);
     }
 
+    .analytics-activation-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 16px;
+    }
+
+    .analytics-activation-value {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .analytics-activation-value span {
+      color: var(--ant-subtle);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
     .analytics-grid-two {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6519,7 +6537,7 @@
 
       <main class="content ant-layout-content">
 <section class="view is-active" data-view="analytics-users" data-page-contract="analytics-users" data-analytics-page="users" data-analytics-batch="phase1-batch2" data-analytics-demo="true">
-          <div class="contract-panel" data-page-contract="analytics-users">用户分析使用 U-01 至 U-04；有效 DAU、WEVU 和 7 日激活以生成成功、内容发布或有效活动投稿为价值行为，不等于登录活跃。成熟注册批次需拥有完整 168 小时观察窗。</div>
+          <div class="contract-panel" data-page-contract="analytics-users">用户分析使用 U-01 至 U-04；激活沿用系统有效行为，即生成成功、内容发布或有效活动投稿，有效行为不等于登录活跃。用户激活时效在成熟注册批次内统计注册后 24 小时激活、168 小时累计激活和 168 小时未激活；首日激活是 7 天内激活的子集，三项统一以成熟注册用户为分母，并按注册来源对比。</div>
           <div class="page-head"><div class="page-title"><h2>用户分析</h2><p>判断账号规模、新用户激活和持续价值行为。</p><span class="analytics-demo-badge"><span class="tag warning">演示数据</span>不展示用户明细，也不估算登录活跃</span></div></div>
           <div class="analytics-data-strip" data-analytics-data-status>
             <div><span>数据状态</span><b><span class="tag success">正常</span> 完整日演示快照</b></div>
@@ -6546,6 +6564,28 @@
             <div class="analytics-stat-card" data-analytics-metric="U-02"><div class="stat-label">有效 DAU</div><div class="stat-value">93</div></div>
             <div class="analytics-stat-card" data-analytics-metric="U-03"><div class="stat-label">WEVU</div><div class="stat-value">286</div></div>
             <div class="analytics-stat-card" data-analytics-metric="U-04"><div class="stat-label">成熟批次 7 日激活率</div><div class="stat-value">43.5%</div></div>
+          </div>
+          <div class="panel" data-analytics-activation-timing>
+            <div class="panel-head"><div class="panel-title">用户激活时效</div></div>
+            <div class="panel-body">
+              <div class="analytics-stat-grid analytics-activation-grid" data-analytics-activation-cards>
+                <div class="analytics-stat-card" data-analytics-metric="U-04" data-activation-window="d1" data-analytics-metric-help-text="首日激活率 = 注册后 24 小时内完成首个有效行为的成熟注册用户数 ÷ 成熟注册用户数 × 100%。"><div class="stat-label">首日激活</div><div class="stat-value analytics-activation-value"><strong data-activation-count>32</strong><span>人 · <b data-activation-rate>24.4%</b></span></div></div>
+                <div class="analytics-stat-card" data-analytics-metric="U-04" data-activation-window="d7" data-analytics-metric-help-text="7 天内激活率 = 注册后 168 小时内完成首个有效行为的成熟注册用户数 ÷ 成熟注册用户数 × 100%。"><div class="stat-label">7 天内激活</div><div class="stat-value analytics-activation-value"><strong data-activation-count>57</strong><span>人 · <b data-activation-rate>43.5%</b></span></div></div>
+                <div class="analytics-stat-card" data-analytics-metric="U-04" data-activation-window="inactive" data-analytics-metric-help-text="7 天未激活率 = 注册后 168 小时内未完成有效行为的成熟注册用户数 ÷ 成熟注册用户数 × 100%。"><div class="stat-label">7 天未激活</div><div class="stat-value analytics-activation-value"><strong data-activation-count>74</strong><span>人 · <b data-activation-rate>56.5%</b></span></div></div>
+              </div>
+              <div class="table-wrap ant-table-wrapper" data-wide-table-scroll="inside-table">
+                <table data-component-library="ant-design-vue" data-antd-component="Table" data-table="analytics-user-activation-sources">
+                  <thead><tr><th>注册来源</th><th>成熟注册用户</th><th>首日激活</th><th>7 天内激活</th><th>7 天未激活</th></tr></thead>
+                  <tbody>
+                    <tr data-activation-source="xiaohongshu"><td>小红书</td><td>54</td><td>16 / 29.6%</td><td>28 / 51.9%</td><td>26 / 48.1%</td></tr>
+                    <tr data-activation-source="wechat"><td>微信</td><td>29</td><td>8 / 27.6%</td><td>14 / 48.3%</td><td>15 / 51.7%</td></tr>
+                    <tr data-activation-source="douyin"><td>抖音</td><td>18</td><td>5 / 27.8%</td><td>7 / 38.9%</td><td>11 / 61.1%</td></tr>
+                    <tr data-activation-source="makenow"><td>MakeNow</td><td>16</td><td>&lt;5 / 样本不足</td><td>5 / 31.3%</td><td>11 / 68.8%</td></tr>
+                    <tr data-activation-source="unknown"><td>未知</td><td>14</td><td>0 / 0.0%</td><td>&lt;5 / 样本不足</td><td>11 / 78.6%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
           <div class="analytics-grid-two">
             <div class="panel">
@@ -7460,6 +7500,7 @@
           "页面承接 U-01 至 U-04；累计注册、有效 DAU、WEVU 和 7 日激活均使用注册账号或业务事实，不使用 51LA 新访客替代。",
           "有效价值行为只包含生成成功、内容发布和有效活动投稿；同一用户跨行为去重，WEVU 按北京时间自然周统计。",
           "7 日激活只统计拥有完整 168 小时观察窗的成熟注册批次，未成熟批次单列且不进入分母。",
+          "用户激活时效按成熟注册用户统计：首日为注册后 24 小时内激活，7 天内为 168 小时累计激活且包含首日，7 天未激活为 168 小时内未完成有效行为；三项统一按注册来源对比。",
           "当前缺稳定登录历史，因此不展示或估算登录 DAU、WAU、MAU 和登录留存；D1/D7 有效行为留存进入第二期。",
           "页面只展示聚合数据和注册批次，不展示手机号、邮箱或用户明细；回查进入用户列表或注册来源。",
         ],

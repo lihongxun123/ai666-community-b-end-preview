@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T14:59:39.691Z",
+  "generatedAt": "2026-08-26T09:16:30.468Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -1710,12 +1710,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-967022"
+      "taskCode": "TASK-777722"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-967022",
+      "taskCode": "TASK-777722",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1724,7 +1724,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-967022\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-777722\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2386,12 +2386,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1787669972059",
-      "competitionId": "COMP-2026-972090",
+      "draftName": "赛事交互验收草稿-1787735782627",
+      "competitionId": "COMP-2026-782656",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1787669972059",
+      "title": "赛事交互验收草稿-1787735782627",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2409,7 +2409,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1787669972059"
+      "expectedName": "赛事交互验收草稿-1787735782627"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -3013,7 +3013,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,",
+        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
         "removeVisible": true
       }
     ],
@@ -3190,7 +3190,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-975138",
+        "awardId": "AWARD-785757",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3396,7 +3396,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-08-25 22:59",
+      "status": "已提交 · 2026-08-26 17:16",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3540,10 +3540,10 @@
         "viewCount": 1,
         "forbiddenVisible": [],
         "chartComponents": 2,
-        "antTables": 2,
+        "antTables": 3,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 4,
-        "metricHelpIcons": 4,
+        "metricHelpButtons": 7,
+        "metricHelpIcons": 7,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,

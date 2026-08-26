@@ -588,6 +588,24 @@
       color: var(--ant-text);
     }
 
+    .analytics-activation-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 16px;
+    }
+
+    .analytics-activation-value {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .analytics-activation-value span {
+      color: var(--ant-subtle);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
     .analytics-grid-two {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -7395,6 +7413,7 @@
           "页面承接 U-01 至 U-04；累计注册、有效 DAU、WEVU 和 7 日激活均使用注册账号或业务事实，不使用 51LA 新访客替代。",
           "有效价值行为只包含生成成功、内容发布和有效活动投稿；同一用户跨行为去重，WEVU 按北京时间自然周统计。",
           "7 日激活只统计拥有完整 168 小时观察窗的成熟注册批次，未成熟批次单列且不进入分母。",
+          "用户激活时效按成熟注册用户统计：首日为注册后 24 小时内激活，7 天内为 168 小时累计激活且包含首日，7 天未激活为 168 小时内未完成有效行为；三项统一按注册来源对比。",
           "当前缺稳定登录历史，因此不展示或估算登录 DAU、WAU、MAU 和登录留存；D1/D7 有效行为留存进入第二期。",
           "页面只展示聚合数据和注册批次，不展示手机号、邮箱或用户明细；回查进入用户列表或注册来源。",
         ],
