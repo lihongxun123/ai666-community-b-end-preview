@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T09:17:42.360Z",
+  "generatedAt": "2026-09-19T03:36:15.343Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
@@ -254,6 +254,10 @@
       "redirectTo": "user-list.html"
     }
   ],
+  "sharedAssets": [
+    "assets/runtime/community-b-end.css",
+    "assets/runtime/community-b-end.js"
+  ],
   "assets": [
     "assets/competition/featured-ancient-tree.png",
     "assets/competition/featured-light-library.png",
@@ -273,6 +277,8 @@
     "assets/image_assets/4.png",
     "assets/image_assets/7.png",
     "assets/image_assets/login-qr-v1.png",
+    "assets/runtime/community-b-end.css",
+    "assets/runtime/community-b-end.js",
     "assets/video_assets/aigc-hero-c02c.mp4"
   ],
   "evidenceFiles": [

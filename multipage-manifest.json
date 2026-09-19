@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T09:17:30.984Z",
+  "generatedAt": "2026-09-19T03:32:28.478Z",
   "pages": [
     {
       "view": "content-list",
@@ -201,5 +201,9 @@
       "file": "admin-users.html",
       "label": "后台用户管理"
     }
+  ],
+  "sharedAssets": [
+    "assets/runtime/community-b-end.css",
+    "assets/runtime/community-b-end.js"
   ]
 }

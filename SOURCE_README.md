@@ -34,6 +34,8 @@ outputs/community-b-end-antdesign-prototype/home-slots.html
 node outputs/community-b-end-antdesign-prototype/build-multipage.mjs
 ```
 
+`spa-source.html` 是唯一编辑源。构建会把各页相同的样式和运行脚本分别写入 `assets/runtime/community-b-end.css`、`assets/runtime/community-b-end.js`，业务目录 JSON 继续保留在页面内。生成页与共享资源需要一起保留，支持直接打开 HTML 和静态服务访问；不得手改生成资源。验证器读取页面实际引用的共享资源后继续执行原有产品断言。
+
 ## 验证方式
 
 ```powershell

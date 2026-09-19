@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T09:16:30.468Z",
+  "generatedAt": "2026-09-19T03:33:06.405Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -51,6 +51,7 @@
     "b03StoreInteractionsWork": true,
     "b04UserListInteractionsWork": true,
     "b04UserDetailUsesModalNotRoute": true,
+    "analyticsChannelsReuseRegisterSources": true,
     "b04RegisterSourceInteractionsWork": true,
     "b04InviteInteractionsWork": true,
     "b04PointsInteractionsWork": true,
@@ -97,10 +98,40 @@
     "competitionScoreCompositionRejectsInvalidWeightAndRefreshesResults": true,
     "competitionScoringUsesSimpleTrackOwnerFlow": true,
     "analyticsOverviewInteractionsWork": true,
+    "analyticsGrowthSourceBoundaryWorks": true,
+    "analyticsGrowthResultsFirstWorks": true,
+    "analyticsGrowthBiWorkspaceInteractionsWork": true,
+    "analyticsSemanticTimestamps": true,
     "analyticsMetricCenterInteractionsWork": true,
+    "analyticsBusinessFactDefinitionsWork": true,
+    "analyticsGenerationRefundSeparated": true,
+    "analyticsRewardCohortSamplesConsistent": true,
+    "analyticsRegistrationJourneySameCohort": true,
+    "analyticsRegistrationJourneyMetricTrend": true,
+    "analyticsFollowupRestores": true,
+    "analyticsOverviewUserContinuity": true,
+    "analyticsOverviewReturnState": true,
+    "analyticsOverviewGrowthContinuity": true,
+    "analyticsDomainSuiteInteractions": true,
+    "creationExplorer": true,
+    "analyticsFinalReviewFixes": true,
+    "analyticsRefinedSuite": true,
+    "analyticsIncentiveBaseline": true,
+    "analyticsHighValueRanking": true,
+    "analyticsSemanticCohorts": true,
+    "analyticsP0DrilldownInteractionsWork": true,
+    "analyticsAtomicCatalogMatchesRequirement": true,
+    "analyticsAtomicSearchAndDisplay": true,
+    "analyticsDomainChannelsNoRetiredCategories": true,
+    "analyticsReducedScope": true,
+    "analyticsUserMaturityAuxiliary": true,
     "analyticsGeneratedPagesRespectDisplayAndComponentBoundaries": true,
     "analyticsSpaViewIsolationComplete": true,
     "antdLayerCloseButtonsUseStandardComponents": true,
+    "layoutScrollIsolation": true,
+    "scrollbarChromeHidden": true,
+    "walkthroughPanelOpens": true,
+    "formControlsHaveAccessibleNames": true,
     "noConsoleErrors": true,
     "noPageErrors": true
   },
@@ -513,7 +544,7 @@
         "activeView": "analytics-overview",
         "activeNav": "analytics-overview",
         "routeLabel": "数据总览",
-        "pageHeading": "数据总览",
+        "pageHeading": "访问质量",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -533,7 +564,7 @@
         "activeView": "analytics-growth",
         "activeNav": "analytics-growth",
         "routeLabel": "增长分析",
-        "pageHeading": "增长分析",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -553,7 +584,7 @@
         "activeView": "analytics-users",
         "activeNav": "analytics-users",
         "routeLabel": "用户分析",
-        "pageHeading": "用户分析",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -573,7 +604,7 @@
         "activeView": "analytics-content",
         "activeNav": "analytics-content",
         "routeLabel": "内容生态",
-        "pageHeading": "内容生态",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -593,7 +624,7 @@
         "activeView": "analytics-creation",
         "activeNav": "analytics-creation",
         "routeLabel": "创作分析",
-        "pageHeading": "创作分析",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -613,7 +644,7 @@
         "activeView": "analytics-activity",
         "activeNav": "analytics-activity",
         "routeLabel": "活动与激励",
-        "pageHeading": "活动与激励",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -633,7 +664,7 @@
         "activeView": "analytics-quality",
         "activeNav": "analytics-quality",
         "routeLabel": "运营质量",
-        "pageHeading": "运营质量",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -653,7 +684,7 @@
         "activeView": "analytics-metrics",
         "activeNav": "analytics-metrics",
         "routeLabel": "指标中心",
-        "pageHeading": "指标中心",
+        "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
         "navCount": 32,
@@ -1710,12 +1741,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-777722"
+      "taskCode": "TASK-761209"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-777722",
+      "taskCode": "TASK-761209",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1724,7 +1755,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-777722\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-761209\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2085,6 +2116,44 @@
     "b04RegisterSourceEdited": {
       "rowName": "活动专题页"
     },
+    "analyticsRegisterSourceConsumers": [
+      {
+        "view": "analytics-overview",
+        "name": "活动专题页",
+        "configured": [
+          "invite_campaign",
+          "community_content",
+          "partner_referral",
+          "campaign_landing"
+        ],
+        "historical": true,
+        "system": true
+      },
+      {
+        "view": "analytics-growth",
+        "name": "活动专题页",
+        "configured": [
+          "invite_campaign",
+          "community_content",
+          "partner_referral",
+          "campaign_landing"
+        ],
+        "historical": true,
+        "system": true
+      },
+      {
+        "view": "analytics-users",
+        "name": "活动专题页",
+        "configured": [
+          "invite_campaign",
+          "community_content",
+          "partner_referral",
+          "campaign_landing"
+        ],
+        "historical": true,
+        "system": true
+      }
+    ],
     "b04RegisterSourceConsumer": {
       "optionName": "活动专题页",
       "existingUserSource": "邀请活动"
@@ -2386,12 +2455,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1787735782627",
-      "competitionId": "COMP-2026-782656",
+      "draftName": "赛事交互验收草稿-1789788766347",
+      "competitionId": "COMP-2026-766380",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1787735782627",
+      "title": "赛事交互验收草稿-1789788766347",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2409,7 +2478,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1787735782627"
+      "expectedName": "赛事交互验收草稿-1789788766347"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -3013,7 +3082,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
+        "previewSource": "data:image/webp;base64,",
         "removeVisible": true
       }
     ],
@@ -3190,7 +3259,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-785757",
+        "awardId": "AWARD-769625",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3396,7 +3465,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-08-26 17:16",
+      "status": "已提交 · 2026-09-19 11:32",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3448,15 +3517,33 @@
     "analyticsOverviewInteraction": {
       "active": "analytics-overview",
       "internalMetadataVisible": false,
-      "chartComponents": 3,
+      "chartComponents": 1,
       "anomalyRows": 0,
-      "metricHelpButtons": 13,
-      "metricHelpIcons": 13,
+      "overviewCards": 6,
+      "pvValue": "7,515",
+      "stageCards": 6,
+      "selectedStageMetric": "G-02",
+      "trendTabs": 11,
+      "diagnostics": 4,
+      "diagnosticLinks": [
+        "查看渠道分析",
+        "查看创作分析",
+        "查看活动与激励",
+        "查看入口页分析"
+      ],
+      "metricHelpButtons": 12,
+      "metricHelpIcons": 12,
       "statCardTags": 0,
       "statCardFooters": 0,
       "chainHelpButtons": 6,
       "chainDescriptions": 0,
       "chartHeaderTags": 0,
+      "chainGroups": 1,
+      "chainOutcomes": 3,
+      "trendMetric": "G-02",
+      "trendTitle": "UV 趋势",
+      "trendGranularity": "day",
+      "trendBuckets": 7,
       "filterResultLines": 0,
       "filterActionsRightGap": 0
     },
@@ -3475,33 +3562,1473 @@
     },
     "analyticsOverviewChainHelp": {
       "visible": true,
-      "text": "匿名 UV = 统计周期内由 51LA 去重的匿名访客数。",
+      "text": "新增注册 = 统计周期内完成账号创建的去重用户数。",
       "component": "Tooltip.Trigger",
       "icon": "QuestionCircleOutlined"
     },
+    "analyticsOverviewDatePicker": {
+      "component": "a-range-picker",
+      "library": "ant-design-vue",
+      "expanded": "true",
+      "popupVisible": true,
+      "presetLabels": [
+        "今日",
+        "昨日",
+        "最近 7 个完整日",
+        "最近 30 个完整日"
+      ],
+      "dateInputTypes": [
+        "date",
+        "date"
+      ],
+      "start": "2026-09-12",
+      "end": "2026-09-18",
+      "calendarIcon": true
+    },
+    "analyticsOverviewTodayPreset": {
+      "value": "today",
+      "start": "2026-09-19",
+      "end": "2026-09-19"
+    },
     "analyticsOverviewApplied": {
-      "range": "30d",
+      "range": "complete30",
       "applied": "true",
-      "resultLineCount": 0
+      "resultLineCount": 0,
+      "trendRange": "2026-08-20 至 2026-09-18 · 按周 · 访问日期 / 会话触点",
+      "trendGranularity": "week",
+      "trendBuckets": 5,
+      "selectedQuickRange": "complete30"
+    },
+    "analyticsOverviewTrendMetricChanged": {
+      "metric": "G-01",
+      "chartMetric": "G-01",
+      "title": "PV 趋势",
+      "values": [
+        "4,317",
+        "7,556",
+        "7,487",
+        "7,536",
+        "5,374"
+      ],
+      "detailTarget": "analytics-growth",
+      "selectedStages": 0
+    },
+    "analyticsOverviewStageChanged": {
+      "stageMetric": "U-05",
+      "trendMetric": "U-05",
+      "chartMetric": "U-05",
+      "title": "7 日首次生成用户 趋势",
+      "detailTarget": "analytics-users",
+      "detailLabel": "查看用户分析"
+    },
+    "analyticsOverviewComparisonDisabled": {
+      "disabledClass": true,
+      "previousBars": 0,
+      "chartComparison": "none",
+      "deltaVisible": false
     },
     "analyticsOverviewReset": {
-      "range": "7d",
+      "range": "complete7",
       "applied": "true",
-      "resultLineCount": 0
+      "resultLineCount": 0,
+      "trendMetric": "G-02",
+      "selectedStageMetric": "G-02",
+      "trendTitle": "UV 趋势",
+      "trendGranularity": "day",
+      "trendBuckets": 7,
+      "compare": "previous",
+      "previousBars": 7
+    },
+    "analyticsGrowthSourceBoundary": {
+      "cardLabel": "新访客",
+      "cardValue": "1,117",
+      "wholeSiteOnly": "",
+      "helpText": "首次触点新访客。首次访问发生在所选区间的去重访客数，按首次触点归因。",
+      "headers": [
+        "获客渠道",
+        "PV",
+        "UV",
+        "IP",
+        "会话",
+        "跳出率",
+        "平均访问时长"
+      ],
+      "newVisitorColumns": 0
+    },
+    "analyticsAttributionTabs": {
+      "first": {
+        "active": "first",
+        "selected": "true",
+        "panelVisible": true,
+        "visiblePanels": 1
+      },
+      "session": {
+        "active": "session",
+        "selected": "true",
+        "panelVisible": true,
+        "visiblePanels": 1
+      },
+      "registration": {
+        "active": "registration",
+        "selected": "true",
+        "panelVisible": true,
+        "visiblePanels": 1
+      },
+      "campaign": {
+        "active": "campaign",
+        "selected": "true",
+        "panelVisible": true,
+        "visiblePanels": 1
+      }
+    },
+    "analyticsGrowthChannelApplied": {
+      "channel": "xiaohongshu",
+      "wholeSiteCardValue": "409"
+    },
+    "analyticsGrowthBiWorkspace": {
+      "ready": "true",
+      "tabs": [
+        {
+          "tab": "first",
+          "exists": true
+        },
+        {
+          "tab": "session",
+          "exists": true
+        },
+        {
+          "tab": "registration",
+          "exists": true
+        },
+        {
+          "tab": "campaign",
+          "exists": true
+        }
+      ],
+      "controls": [
+        {
+          "testId": "growth-more-filters",
+          "exists": true
+        },
+        {
+          "testId": "growth-clear-filters",
+          "exists": true
+        },
+        {
+          "testId": "growth-metric-select",
+          "exists": true
+        },
+        {
+          "testId": "growth-date-range",
+          "exists": true
+        },
+        {
+          "testId": "growth-granularity",
+          "exists": true
+        },
+        {
+          "testId": "growth-compare",
+          "exists": true
+        },
+        {
+          "testId": "growth-group-by",
+          "exists": true
+        },
+        {
+          "testId": "growth-sort",
+          "exists": true
+        }
+      ],
+      "initialPeriods": "本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11",
+      "initialTrend": {
+        "metric": "new",
+        "granularity": "day",
+        "comparison": "previous"
+      },
+      "initialHeaders": [
+        "渠道",
+        "首次触点新访客 · 当前",
+        "前期",
+        "变化 / 变化率",
+        "新访客占比",
+        "操作"
+      ]
+    },
+    "analyticsGrowthResultsFirst": {
+      "cardKeys": [
+        "uv",
+        "pv",
+        "sessions",
+        "ip",
+        "returning",
+        "bounce",
+        "duration"
+      ],
+      "rankings": [
+        {
+          "key": "channel",
+          "rows": 5
+        },
+        {
+          "key": "entry",
+          "rows": 3
+        },
+        {
+          "key": "device",
+          "rows": 2
+        }
+      ],
+      "fullClosed": true,
+      "metricPickerHidden": false,
+      "singleMetricEntry": true,
+      "canvas": true,
+      "helperTextAbsent": true,
+      "filtered": {
+        "channel": "xiaohongshu",
+        "chip": true,
+        "channelRows": 1
+      }
+    },
+    "analyticsGrowthGroupingAndFiltering": {
+      "before": {
+        "total": "跳出率 35.5%　变化 +0.4 个百分点",
+        "rows": 2,
+        "chips": 0,
+        "headers": [
+          "终端",
+          "跳出率 · 当前",
+          "前期",
+          "变化（百分点）",
+          "PV",
+          "UV",
+          "IP",
+          "会话",
+          "平均访问时长",
+          "操作"
+        ]
+      },
+      "after": {
+        "total": "跳出率 35.8%　变化 +1.1 个百分点",
+        "rows": 1,
+        "chips": [
+          "终端：桌面端 ×"
+        ],
+        "filter": "desktop"
+      }
+    },
+    "analyticsGrowthPeriodAndComparison": {
+      "periods": "本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11",
+      "trendGranularity": "week",
+      "trendComparison": "previous",
+      "headers": [
+        "终端",
+        "跳出率 · 当前",
+        "前期",
+        "变化（百分点）",
+        "PV",
+        "UV",
+        "IP",
+        "会话",
+        "平均访问时长",
+        "操作"
+      ],
+      "changeText": "+1.1 个百分点"
+    },
+    "analyticsGrowthComparisonDisabled": {
+      "periods": "本期 2026-09-12 至 2026-09-18",
+      "headers": [
+        "终端",
+        "跳出率 · 当前",
+        "PV",
+        "UV",
+        "IP",
+        "会话",
+        "平均访问时长",
+        "操作"
+      ],
+      "trendComparison": "none"
+    },
+    "analyticsGrowthReadonlyDetail": {
+      "open": true,
+      "type": "analytics-growth-detail",
+      "mode": "readonly",
+      "context": "终端：桌面端本期 2026-09-12 至 2026-09-18终端：桌面端浏览量 PV4,079访客 UV1,156独立 IP790会话数1,460跳出率35.8%平均访问时长201 秒比较结果当前 35.8%",
+      "hasBacktrace": false,
+      "closeButtons": 2,
+      "closed": {
+        "closed": true,
+        "tab": "session",
+        "metric": "bounce",
+        "group": "device",
+        "granularity": "week",
+        "comparison": "none",
+        "chips": 1
+      }
+    },
+    "analyticsGrowthFiltersCleared": {
+      "chips": 0,
+      "sourceType": "all",
+      "comparison": "previous"
+    },
+    "analyticsSemanticTimestamps": {
+      "conversionNum": 5,
+      "conversionDen": 5,
+      "reviewHours": 6,
+      "reviewDen": 5,
+      "triggerBoundaries": true
+    },
+    "analyticsMetricG04Definition": {
+      "visible": true,
+      "id": "G-04",
+      "formula": "公式：跳出率 = 仅一次有效页面访问且无有效路由切换或业务成功行为的会话数 ÷ 总会话数；平均访问时长 = 会话访问时长之和 ÷ 会话数。",
+      "boundary": "边界：现有来源只能提供单页会话率等替代算法时，必须标注差异；单页面且无后续行为的会话时长按 0 秒计算。"
     },
     "analyticsMetricCenterHelp": {
-      "buttonCount": 38,
+      "buttonCount": 46,
       "visible": true,
       "text": "UV → 注册率 = 新增注册数 ÷ UV × 100%。"
     },
     "analyticsMetricDomainFilter": {
       "visibleRows": 10,
-      "result": "共 38 项；当前显示 10 项"
+      "result": "共 46 项；当前显示 10 项"
     },
     "analyticsMetricReset": {
-      "visibleRows": 38,
-      "result": "共 38 项；当前显示 38 项",
+      "visibleRows": 46,
+      "result": "共 46 项；当前显示 46 项",
       "q05Visible": false
+    },
+    "analyticsBusinessFactDefinitions": {
+      "G-06": "关闭\nG-06 · 触点渠道分布\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n首次触点新访客占比\t该首次触点渠道新访客 ÷ 全部新访客\t稳定访客\t首次访问\t渠道空值保留；区间整体去重\n会话触点访问量\t按会话触点拆分 PV、UV、IP、会话；各自使用 G-01～G-04 公式\t各原指标对象\t各原指标时间\t属于分组视图，不新增混合计量指标",
+      "U-08": "关闭\nU-08 · 新增用户有效行为率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n再次有效行为人数\t成熟注册用户中，首次有效行为后在新会话主动发起独立业务且窗内成功者人数\tuser_no\t注册批次＋窗内再次成功\t同会话生成后投稿不算再次；后台完成不替代返回\n再次有效行为率\t再次有效行为人数 ÷ 对应观察窗已满注册人数\tuser_no\t注册批次\t不是除以首次激活人数",
+      "C-02": "关闭\nC-02 · 作品提交审核与提交用户\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n提交审核作品数\t区间成功进入审核的作品数\t作品\t提交审核发生\t同区间重提不增作品数；轮次另计\n作品提交用户数\t区间提交审核的作者人数\tuser_no\t提交审核发生\t同作者多作品仅计一人",
+      "C-06": "关闭\nC-06 · 作品生命周期\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n作品创建数\t区间发生创建的作品数\t作品\t创建发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n创建用户数\t区间发生作品创建的作者人数\tuser_no\t创建发生\t各阶段独立去重，不相加\n作品审核通过数\t区间发生审核通过的作品数\t作品\t审核通过发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n审核通过用户数\t区间发生作品审核通过的作者人数\tuser_no\t审核通过发生\t各阶段独立去重，不相加\n作品审核拒绝数\t区间发生审核拒绝的作品数\t作品\t审核拒绝发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n审核拒绝用户数\t区间发生作品审核拒绝的作者人数\tuser_no\t审核拒绝发生\t各阶段独立去重，不相加\n作品正式发布数\t区间发生正式发布的作品数\t作品\t正式发布发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n正式发布用户数\t区间发生作品正式发布的作者人数\tuser_no\t正式发布发生\t各阶段独立去重，不相加\n当前下架作品数\t截止时处于下架状态的作品数\t作品\t截止快照\t不是区间下架次数；提交数量见 C-02",
+      "A-02": "关闭\nA-02 · 生成状态量与成功失败率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n生成成功主单数\t区间到达成功终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成失败主单数\t区间到达失败终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成取消主单数\t区间到达取消终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成成功率\t成功主单 ÷（成功＋失败＋取消主单）\t生成主单\t同区间终态发生\t不以创建量或点击量作分母\n生成失败率\t失败主单 ÷（成功＋失败＋取消主单）\t生成主单\t同区间终态发生\t失败退款仍计失败\n处理中主单数\t截止时仍处于处理中的主单数\t生成主单\t截止快照\t与终态发生量分开",
+      "H-04": "关闭\nH-04 · 任务完成率与奖励到账率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n任务完成率\t指定任务/期次完成的合资格用户 ÷ 同批合资格用户\tuser_no\t按资格形成时间选批次\t签到指定自然日期；未选任务/期次或无资格全集不计算\n奖励到账率\t截至共同截止仍完整有效到账对象 ÷ 同批应奖励对象\t应奖对象\t按应奖时间选批次\t失败/待发仍在分母；补发、冲正见 3.5\n奖励待结算对象数\t同批应奖对象中截至截止仍待发放者数量\t应奖对象\t应奖批次截止状态\t不是接口尝试次数",
+      "H-05": "关闭\nH-05 · 积分到账、失败与冲正\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n积分到账流水数\t区间实际到账的生效流水数\t积分流水\t到账发生\t重复回调不增加\n积分到账用户数\t区间有实际积分到账的用户人数\tuser_no\t到账发生\t不以展示奖励计到账\n未解决奖励失败对象数\t同批应奖对象中截至截止仍失败未解决者数量\t应奖对象\t应奖批次截止状态\t补发成功移出失败；不是失败尝试次数\n冲正流水数\t区间生效冲正流水数\t冲正流水\t冲正发生\t与原流水关联，原流水保留\n冲正用户数\t区间有生效冲正流水的用户人数\tuser_no\t冲正发生\t不撤销此前发生人数",
+      "H-07": "关闭\nH-07 · 积分兑换成功\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n成功兑换单数\t扣减及交付均成功的兑换单数\t兑换单\t两者完成较晚时间\t失败退分不是成功兑换\n成功兑换用户数\t成功兑换单的用户人数\tuser_no\t完整兑换成功\t同用户多单去重\n成功兑换扣减积分\t成功兑换单实际扣减积分之和\t兑换单关联扣减流水\t完整兑换成功\t不是全站同期消耗积分",
+      "H-08": "关闭\nH-08 · 激励后复访与有效行为\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n激励后复访人数\t成熟触发用户中窗内产生触发会话之后新会话者人数\tuser_no\t按触发时间选批次\t按触发类型观察；同一期次重复奖励不重启窗口\n激励后复访率\t激励后复访人数 ÷ 成熟触发用户数\tuser_no\t激励批次\t24/168/336h；注册批次基线仅参考，不声称因果\n激励后有效行为人数\t成熟触发用户中在新会话主动发起独立业务且窗内成功者人数\tuser_no\t激励批次\t排除触发自身及无人返回的异步完成\n激励后有效行为率\t激励后有效行为人数 ÷ 成熟触发用户数\tuser_no\t激励批次\t跨对象汇总按同触发类型本期最早合资格触发，用户去重",
+      "Q-03": "关闭\nQ-03 · 未记录渠道占比\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n未记录渠道占比\t固化注册渠道字段为空的新增账号数 ÷ 新增账号数\tuser_no\t账号创建成功\t只判断已知空值，不推断访问方式；历史未匹配非空编码不进分子；字段状态无法确认时不计算"
+    },
+    "analyticsGenerationResultOptions": [
+      "全部状态",
+      "成功",
+      "失败",
+      "处理中",
+      "已取消"
+    ],
+    "analyticsRewardCohortRows": [
+      {
+        "due": 146,
+        "credited": 132,
+        "rate": "90.4%",
+        "remaining": [
+          10,
+          3,
+          1
+        ]
+      },
+      {
+        "due": 88,
+        "credited": 78,
+        "rate": "88.6%",
+        "remaining": [
+          7,
+          1,
+          2
+        ]
+      },
+      {
+        "due": 84,
+        "credited": 76,
+        "rate": "90.5%",
+        "remaining": [
+          7,
+          0,
+          1
+        ]
+      }
+    ],
+    "analyticsRegistrationEntryToGrowth": {
+      "active": "analytics-growth",
+      "metric": "G-07",
+      "activeAttribution": "registration",
+      "focusedTable": "analytics-growth-registration-touch"
+    },
+    "analyticsP0OverviewToGrowth": {
+      "active": "analytics-growth",
+      "path": "下钻路径数据总览UV增长分析",
+      "range": "complete7",
+      "compare": "previous",
+      "back": "analytics-overview.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&overview_metric=G-02&overview_granularity=auto",
+      "clear": "analytics-growth.html",
+      "rowRecordDetails": 7,
+      "registrationRecordDetails": 0,
+      "firstTouchRecordDetails": 0,
+      "activeAttribution": "session",
+      "entryFilters": 3
+    },
+    "analyticsP0RegistrationDetail": {
+      "open": true,
+      "type": "analytics-growth-detail",
+      "mode": "readonly",
+      "text": "渠道：小红书本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11UTM 媒介：organic · 自然 · 投放批次：xhs_landing_page · 素材：hero_a新增注册337 日激活人数—7 日激活率—首次生成人数—首次提交人数—比较结果当前 33；前期 33；变化 0 / 0.0%满 7 天 0 人；未满 33 人；前期满 7 天 33 人。成熟样本不足，暂不显示激活率。查看注册用户后续行为",
+      "backtrace": "analytics-users.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-09-12%2526f_end%253D2026-09-18%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded",
+      "cohortValues": [
+        "33",
+        "—",
+        "—",
+        "—",
+        "—"
+      ]
+    },
+    "analyticsP0ChannelToUsers": {
+      "cohortValues": [
+        "33",
+        "—",
+        "—",
+        "—",
+        "—"
+      ],
+      "active": "analytics-users",
+      "source": "xiaohongshu",
+      "utmMedium": "organic",
+      "utmCampaign": "xhs_landing_page",
+      "utmContent": "hero_a",
+      "dimension": "",
+      "path": "下钻路径增长分析注册转化小红书用户分析",
+      "selectedRows": 0,
+      "registrationSourceRowDrills": 10,
+      "registrationSourceValues": [
+        "xiaohongshu",
+        "wechat_group",
+        "wechat_moments",
+        "douyin_organic",
+        "douyin_paid",
+        "duoyuan_direct",
+        "direct",
+        "onsite",
+        "external_other",
+        "missing"
+      ],
+      "back": "analytics-growth.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&f_attribution=registration&growth_metric=registered&growth_group=channel&drill_metric=G-02&drill_path=%E6%95%B0%E6%8D%AE%E6%80%BB%E8%A7%88%7CUV&drill_back=analytics-overview.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26overview_metric%3DG-02%26overview_granularity%3Dauto&f_source-type=all&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_browser=all&f_region=all&f_entry=all&growth_granularity=day&growth_sort=value-desc&growth_table=expanded"
+    },
+    "analyticsRegistrationJourney": {
+      "metric": "generated",
+      "title": "首次生成人数 · 按注册日期",
+      "points": 2,
+      "overflow": false
+    },
+    "analyticsAttributionReturnToGrowth": {
+      "active": "analytics-growth",
+      "activeAttribution": "registration",
+      "focusedTable": "analytics-growth-registration-touch"
+    },
+    "analyticsFollowupRestores": {
+      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/analytics-users.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-09-12%2526f_end%253D2026-09-18%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded&f_first-value=all&f_account-scope=normal&journey_metric=generated&journey_group=utm-campaign&journey_granularity=week&f_source-type=all&followup_metric=relogin&followup_group=channel&followup_granularity=week&journey_view=secondary",
+      "summary": "3.4%前期 9.1%2026-09-12 至 2026-09-18 · 注册批次 · 1 日观察窗 · 分子 1 / 成熟 29 · 观察中 4"
+    },
+    "analyticsOverviewUserContinuity": {
+      "source": "xiaohongshu",
+      "metric": "generated",
+      "value": "52",
+      "range": "complete30"
+    },
+    "analyticsDomainSuite": [
+      {
+        "kind": "content",
+        "before": "91 件",
+        "switched": "submitUsers",
+        "detailOpen": true,
+        "chips": 2,
+        "restored": true,
+        "noComparison": true
+      },
+      {
+        "kind": "creation",
+        "before": "142 单",
+        "switched": "failure",
+        "detailOpen": true,
+        "chips": 1,
+        "restored": true,
+        "noComparison": true
+      },
+      {
+        "kind": "activity",
+        "before": "178 人",
+        "switched": "taskUsers",
+        "detailOpen": true,
+        "chips": 1,
+        "restored": true,
+        "noComparison": true
+      },
+      {
+        "kind": "quality",
+        "before": "4 轮",
+        "switched": "reviewHours",
+        "detailOpen": true,
+        "chips": 1,
+        "restored": true,
+        "noComparison": true
+      }
+    ],
+    "creationExplorer": {
+      "drawerOpened": true,
+      "closeRestores": true,
+      "noOverflow": true,
+      "ratioHeader": "模型生成后 7 日提交率窗内提交主单成熟成功主单前期变化明细"
+    },
+    "analyticsRefinedSuite": [
+      {
+        "kind": "overview",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "growth",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "users",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "content",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "creation",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "activity",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "quality",
+        "refined": true,
+        "overflow": false
+      },
+      {
+        "kind": "metrics",
+        "refined": true,
+        "overflow": false
+      }
+    ],
+    "analyticsFinalReviewFixes": {
+      "taskNeedsScope": true,
+      "taskUsersMatch": true,
+      "signInNeedsDate": true,
+      "signInRestored": true,
+      "stateSum": true,
+      "stateFiltered": true,
+      "stateCleared": true,
+      "topicGroup": true,
+      "reviewTypes": true,
+      "reviewFiltered": true,
+      "reviewTypeCleared": true
+    },
+    "analyticsSemanticCohorts": {
+      "mature": 463,
+      "followupMature": 463,
+      "active": 193,
+      "followupActive": 193,
+      "generated": 120,
+      "followupGenerated": 120,
+      "submitted": 45,
+      "followupSubmitted": 45
+    },
+    "analyticsP0MetricCenterActions": {
+      "count": 46,
+      "g04Target": "analytics-growth",
+      "h08Target": "analytics-activity"
+    },
+    "analyticsAtomicCatalog": {
+      "catalog": [
+        [
+          "G-01",
+          "PV",
+          "有效页面访问计数",
+          "页面访问",
+          "访问发生",
+          "重复渲染、回调、重定向中间页不计"
+        ],
+        [
+          "G-02",
+          "UV",
+          "区间访问访客去重数",
+          "稳定访客",
+          "访问发生",
+          "跨日、终端、渠道分组不可相加"
+        ],
+        [
+          "G-03",
+          "独立 IP",
+          "区间公网 IP 去重数",
+          "公网 IP",
+          "访问发生",
+          "仅聚合，不展示明细"
+        ],
+        [
+          "G-03",
+          "会话数",
+          "开始于区间内的会话数",
+          "会话",
+          "会话开始",
+          "30 分钟无活动后再次活动建立新会话"
+        ],
+        [
+          "G-03",
+          "新访客数",
+          "首次可识别访问在区间内的访客数",
+          "稳定访客",
+          "首次访问",
+          "跨日整体去重；按首次触点拆分"
+        ],
+        [
+          "G-03",
+          "老访客数",
+          "区间前已识别且本期访问的访客数",
+          "稳定访客",
+          "本期访问",
+          "不以日老访客之和代替区间人数"
+        ],
+        [
+          "G-04",
+          "跳出率",
+          "仅一次有效页面访问且无路由切换或业务成功的会话 ÷ 会话数",
+          "会话",
+          "会话开始",
+          "同批会话；页面维度限入口会话"
+        ],
+        [
+          "G-04",
+          "平均访问时长",
+          "同批会话可观测前台时长之和 ÷ 会话数",
+          "会话内时长段",
+          "会话开始",
+          "后台不计；单页无后续行为按 0 秒"
+        ],
+        [
+          "G-05",
+          "页面 PV",
+          "该规范页面有效访问次数",
+          "页面访问",
+          "页面访问发生",
+          "入口页与受访页分别统计"
+        ],
+        [
+          "G-05",
+          "页面 UV",
+          "访问该页面的访客数",
+          "稳定访客",
+          "页面访问发生",
+          "同访客访问多页可进入多个分组"
+        ],
+        [
+          "G-05",
+          "页面 IP",
+          "访问该页面的公网 IP 数",
+          "公网 IP",
+          "页面访问发生",
+          "仅聚合"
+        ],
+        [
+          "G-05",
+          "页面新访客数",
+          "全站本期新访客中访问该页面者人数",
+          "稳定访客",
+          "首次访问及本期页面访问",
+          "不是第一次访问该页面的人数"
+        ],
+        [
+          "G-05",
+          "页面涉及会话数",
+          "访问过该页面的会话数",
+          "会话",
+          "会话开始",
+          "入口页口径仅取以该页开始的会话"
+        ],
+        [
+          "G-05",
+          "页面平均停留时长",
+          "该页面可观测前台停留总时长 ÷ 页面 PV",
+          "页面访问内时长段",
+          "页面访问发生",
+          "隐藏不计；末页无结束信号取最后观测时点，可能低估"
+        ],
+        [
+          "G-06",
+          "首次触点新访客占比",
+          "该首次触点渠道新访客 ÷ 全部新访客",
+          "稳定访客",
+          "首次访问",
+          "渠道空值保留；区间整体去重"
+        ],
+        [
+          "G-06",
+          "会话触点访问量",
+          "按会话触点拆分 PV、UV、IP、会话；各自使用 G-01～G-04 公式",
+          "各原指标对象",
+          "各原指标时间",
+          "属于分组视图，不新增混合计量指标"
+        ],
+        [
+          "G-07",
+          "新增注册人数",
+          "新建账号人数",
+          "user_no",
+          "账号创建成功",
+          "已有账号登录不计"
+        ],
+        [
+          "G-08",
+          "各注册渠道人数",
+          "注册批次按固化注册触点分组的人数",
+          "user_no",
+          "账号创建成功",
+          "渠道及 UTM 五参数；空值与历史未匹配编码分开，不被后续访问覆盖"
+        ],
+        [
+          "G-09",
+          "UV→注册聚合率",
+          "同区间新增注册人数 ÷ UV",
+          "分子账号；分母访客",
+          "注册发生／访问发生",
+          "仅聚合估算，不是个人漏斗"
+        ],
+        [
+          "G-10",
+          "渠道 UV→注册聚合率",
+          "同渠道注册触点人数 ÷ 会话触点 UV",
+          "分子账号；分母访客",
+          "注册发生／访问发生",
+          "不同触点；可超过 100%，不截断"
+        ],
+        [
+          "U-01",
+          "累计注册用户",
+          "截止前已创建账号人数",
+          "user_no",
+          "截止快照",
+          "含停用/注销；排除明确官方/测试，不等于可登录数"
+        ],
+        [
+          "U-02",
+          "有效 DAU（P0）",
+          "当日生成成功、作品提交、有效参与用户的并集人数",
+          "user_no",
+          "有效行为成功",
+          "登录或积分不单独计有效"
+        ],
+        [
+          "U-03",
+          "周有效价值用户",
+          "北京时间周一至周日有效行为用户的并集人数",
+          "user_no",
+          "有效行为成功",
+          "不相加每日 DAU；未完结周标注"
+        ],
+        [
+          "U-04",
+          "观察窗已满注册人数（成熟注册）",
+          "所选注册批次中，截至共同截止已满观察窗的人数",
+          "user_no",
+          "注册批次",
+          "24/168/336h 分别计算；分母辅助量，不进入主指标选择器"
+        ],
+        [
+          "U-04",
+          "待满观察窗注册人数",
+          "所选注册批次人数 − 对应观察窗已满人数",
+          "user_no",
+          "注册批次",
+          "辅助说明，不进入主指标选择器或该窗口的分子、分母"
+        ],
+        [
+          "U-04",
+          "首次激活人数",
+          "成熟注册用户中，窗内首次生成成功、提交作品或有效参与者人数",
+          "user_no",
+          "注册批次＋窗内首次行为",
+          "三种行为取并集"
+        ],
+        [
+          "U-04",
+          "注册后激活率",
+          "首次激活人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "24/168/336h 各自计算，7 天内激活率使用 168h"
+        ],
+        [
+          "U-05",
+          "首次生成成功人数",
+          "成熟注册用户中，窗内首次生成成功者人数",
+          "user_no",
+          "注册批次＋窗内首次成功",
+          "用户数，不是主单数"
+        ],
+        [
+          "U-05",
+          "注册→首次生成率",
+          "首次生成成功人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "内容类型、注册渠道拆分"
+        ],
+        [
+          "U-06",
+          "首次作品提交人数",
+          "成熟注册用户中，窗内首次提交审核者人数",
+          "user_no",
+          "注册批次＋窗内首次提交",
+          "无需审核通过"
+        ],
+        [
+          "U-06",
+          "注册→首次作品提交率",
+          "首次作品提交人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "不要求先生成"
+        ],
+        [
+          "U-07",
+          "新增用户复访人数",
+          "成熟注册用户中，窗内产生注册会话之后新会话者人数",
+          "user_no",
+          "注册批次＋窗内新会话",
+          "保持登录返回也计；排除注册会话"
+        ],
+        [
+          "U-07",
+          "新增用户复访率",
+          "新增用户复访人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "不等于再次认证"
+        ],
+        [
+          "U-08",
+          "再次有效行为人数",
+          "成熟注册用户中，首次有效行为后在新会话主动发起独立业务且窗内成功者人数",
+          "user_no",
+          "注册批次＋窗内再次成功",
+          "同会话生成后投稿不算再次；后台完成不替代返回"
+        ],
+        [
+          "U-08",
+          "再次有效行为率",
+          "再次有效行为人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "不是除以首次激活人数"
+        ],
+        [
+          "U-10",
+          "注册后再登录人数",
+          "成熟注册用户中，窗内发生新的独立认证成功者人数",
+          "user_no",
+          "注册批次＋窗内认证",
+          "排除注册自动登录、续期、重复回调"
+        ],
+        [
+          "U-10",
+          "注册后再登录率",
+          "注册后再登录人数 ÷ 对应观察窗已满注册人数",
+          "user_no",
+          "注册批次",
+          "不替代访问复访率"
+        ],
+        [
+          "C-01",
+          "内容存量",
+          "截止时作品/帖子各自对象数",
+          "内容类型＋对象编码",
+          "截止快照",
+          "类型、状态、用户/官方分别统计"
+        ],
+        [
+          "C-02",
+          "提交审核作品数",
+          "区间成功进入审核的作品数",
+          "作品",
+          "提交审核发生",
+          "同区间重提不增作品数；轮次另计"
+        ],
+        [
+          "C-02",
+          "作品提交用户数",
+          "区间提交审核的作者人数",
+          "user_no",
+          "提交审核发生",
+          "同作者多作品仅计一人"
+        ],
+        [
+          "C-03",
+          "内容结构数量",
+          "截止内容按类型、来源、状态、话题分组计数",
+          "内容类型＋对象编码",
+          "截止快照",
+          "业务字典；多话题分组不相加"
+        ],
+        [
+          "C-03",
+          "内容结构占比",
+          "分组内容数 ÷ 当前筛选范围内容总数",
+          "内容类型＋对象编码",
+          "截止快照",
+          "多话题占比可重叠"
+        ],
+        [
+          "C-04",
+          "活跃创作者（P0）",
+          "区间至少提交一件作品的作者人数",
+          "user_no",
+          "提交审核发生",
+          "排除官方/测试；不以生成用户替代"
+        ],
+        [
+          "C-05",
+          "当前点赞数",
+          "范围内内容当前有效点赞计数之和",
+          "有效点赞记录",
+          "截止快照",
+          "作品/帖子分开，撤销反映快照"
+        ],
+        [
+          "C-05",
+          "当前收藏数",
+          "范围内内容当前有效收藏计数之和",
+          "有效收藏记录",
+          "截止快照",
+          "不是期间新增"
+        ],
+        [
+          "C-05",
+          "当前评论数",
+          "范围内内容当前有效评论计数之和",
+          "有效评论记录",
+          "截止快照",
+          "不是期间新增"
+        ],
+        [
+          "C-05",
+          "当前分享数",
+          "范围内内容当前有效分享计数之和",
+          "有效分享记录",
+          "截止快照",
+          "快照不可相加"
+        ],
+        [
+          "C-06",
+          "作品创建数",
+          "区间发生创建的作品数",
+          "作品",
+          "创建发生",
+          "每阶段区间去重；重提/再发布不增该阶段作品数"
+        ],
+        [
+          "C-06",
+          "创建用户数",
+          "区间发生作品创建的作者人数",
+          "user_no",
+          "创建发生",
+          "各阶段独立去重，不相加"
+        ],
+        [
+          "C-06",
+          "作品审核通过数",
+          "区间发生审核通过的作品数",
+          "作品",
+          "审核通过发生",
+          "每阶段区间去重；重提/再发布不增该阶段作品数"
+        ],
+        [
+          "C-06",
+          "审核通过用户数",
+          "区间发生作品审核通过的作者人数",
+          "user_no",
+          "审核通过发生",
+          "各阶段独立去重，不相加"
+        ],
+        [
+          "C-06",
+          "作品审核拒绝数",
+          "区间发生审核拒绝的作品数",
+          "作品",
+          "审核拒绝发生",
+          "每阶段区间去重；重提/再发布不增该阶段作品数"
+        ],
+        [
+          "C-06",
+          "审核拒绝用户数",
+          "区间发生作品审核拒绝的作者人数",
+          "user_no",
+          "审核拒绝发生",
+          "各阶段独立去重，不相加"
+        ],
+        [
+          "C-06",
+          "作品正式发布数",
+          "区间发生正式发布的作品数",
+          "作品",
+          "正式发布发生",
+          "每阶段区间去重；重提/再发布不增该阶段作品数"
+        ],
+        [
+          "C-06",
+          "正式发布用户数",
+          "区间发生作品正式发布的作者人数",
+          "user_no",
+          "正式发布发生",
+          "各阶段独立去重，不相加"
+        ],
+        [
+          "C-06",
+          "当前下架作品数",
+          "截止时处于下架状态的作品数",
+          "作品",
+          "截止快照",
+          "不是区间下架次数；提交数量见 C-02"
+        ],
+        [
+          "C-07",
+          "高价值内容排行",
+          "收藏降序→互动总数降序→首次发布时间降序→对象编码升序",
+          "内容类型＋对象编码",
+          "截止快照",
+          "互动总数＝点赞＋收藏＋评论＋分享；保留各原数"
+        ],
+        [
+          "A-01",
+          "生成主单数",
+          "区间创建成功的生成主单数",
+          "生成主单",
+          "创建发生",
+          "内部重试、子任务不增主单"
+        ],
+        [
+          "A-02",
+          "生成成功主单数",
+          "区间到达成功终态的主单数",
+          "生成主单",
+          "终态发生",
+          "成功/失败/取消互斥；退款不改变生成结果"
+        ],
+        [
+          "A-02",
+          "生成失败主单数",
+          "区间到达失败终态的主单数",
+          "生成主单",
+          "终态发生",
+          "成功/失败/取消互斥；退款不改变生成结果"
+        ],
+        [
+          "A-02",
+          "生成取消主单数",
+          "区间到达取消终态的主单数",
+          "生成主单",
+          "终态发生",
+          "成功/失败/取消互斥；退款不改变生成结果"
+        ],
+        [
+          "A-02",
+          "生成成功率",
+          "成功主单 ÷（成功＋失败＋取消主单）",
+          "生成主单",
+          "同区间终态发生",
+          "不以创建量或点击量作分母"
+        ],
+        [
+          "A-02",
+          "生成失败率",
+          "失败主单 ÷（成功＋失败＋取消主单）",
+          "生成主单",
+          "同区间终态发生",
+          "失败退款仍计失败"
+        ],
+        [
+          "A-02",
+          "处理中主单数",
+          "截止时仍处于处理中的主单数",
+          "生成主单",
+          "截止快照",
+          "与终态发生量分开"
+        ],
+        [
+          "A-03",
+          "模型/系列/类型分布数量",
+          "区间创建主单按模型、系列或输出类型分组计数",
+          "生成主单",
+          "创建发生",
+          "未知历史编码单列，不猜映射"
+        ],
+        [
+          "A-03",
+          "模型/系列/类型占比",
+          "分组创建主单数 ÷ 当前范围创建主单总数",
+          "生成主单",
+          "创建发生",
+          "各分组维度分别计算"
+        ],
+        [
+          "A-04",
+          "失败原因数量",
+          "失败主单按原因分组计数",
+          "生成主单",
+          "失败终态发生",
+          "超时、安全拒绝、参数、额度/供应、其他"
+        ],
+        [
+          "A-04",
+          "失败原因占比",
+          "该原因失败主单 ÷ 全部失败主单",
+          "生成主单",
+          "失败终态发生",
+          "不是除以全部终态主单"
+        ],
+        [
+          "A-05",
+          "超时处理中积压",
+          "处理中且超过模型约定处理时限的主单数",
+          "生成主单",
+          "截止快照",
+          "未配置时限仅展示处理中量及年龄，不判断异常"
+        ],
+        [
+          "A-06",
+          "生成结果件数",
+          "区间最终可交付成品数",
+          "主单＋成品",
+          "最终交付发生",
+          "图片/视频/漫剧/文本分开，排除预览中间文件"
+        ],
+        [
+          "A-07",
+          "生成成功用户数",
+          "区间有成功终态主单的用户数",
+          "user_no",
+          "成功终态发生",
+          "与失败用户可重叠"
+        ],
+        [
+          "A-07",
+          "生成失败用户数",
+          "区间有失败终态主单的用户数",
+          "user_no",
+          "失败终态发生",
+          "与成功用户不可相加"
+        ],
+        [
+          "A-08",
+          "生成→作品提交率",
+          "168h 内有关联作品提交的成熟成功主单 ÷ 成熟成功主单",
+          "生成主单",
+          "按生成成功时间选批次",
+          "缺对象关系时只可另名用户级估算；每用户批次首次成功为起点"
+        ],
+        [
+          "H-01",
+          "活动参与人数",
+          "有效加入、报名、投稿用户的并集人数",
+          "user_no",
+          "参与发生",
+          "按活动/期次拆分，跨活动汇总用户去重"
+        ],
+        [
+          "H-01",
+          "活动参与次数",
+          "各参与方式有效记录数",
+          "方式＋参与记录",
+          "参与发生",
+          "加入/报名/投稿分别计数；非点击次数"
+        ],
+        [
+          "H-02",
+          "有效投稿数",
+          "区间投稿且截至截止仍合资格的投稿对象数",
+          "活动＋期次＋投稿对象",
+          "投稿发生，截止核资格",
+          "失效移出有效量"
+        ],
+        [
+          "H-02",
+          "有效投稿用户数",
+          "上述合资格投稿的用户人数",
+          "user_no",
+          "投稿发生，截止核资格",
+          "跨投稿对象去重"
+        ],
+        [
+          "H-03",
+          "任务完成用户数",
+          "区间业务确认完成任务的用户并集人数",
+          "user_no",
+          "完成发生",
+          "新手/成长/签到/其他可拆分"
+        ],
+        [
+          "H-03",
+          "任务完成次数",
+          "区间完成的用户、任务、期次组合数",
+          "用户＋任务＋期次",
+          "完成发生",
+          "刷新、重复领奖不增加"
+        ],
+        [
+          "H-04",
+          "任务完成率",
+          "指定任务/期次完成的合资格用户 ÷ 同批合资格用户",
+          "user_no",
+          "按资格形成时间选批次",
+          "签到指定自然日期；未选任务/期次或无资格全集不计算"
+        ],
+        [
+          "H-04",
+          "奖励到账率",
+          "截至共同截止仍完整有效到账对象 ÷ 同批应奖励对象",
+          "应奖对象",
+          "按应奖时间选批次",
+          "失败/待发仍在分母；补发、冲正见 3.5"
+        ],
+        [
+          "H-04",
+          "奖励待结算对象数",
+          "同批应奖对象中截至截止仍待发放者数量",
+          "应奖对象",
+          "应奖批次截止状态",
+          "不是接口尝试次数"
+        ],
+        [
+          "H-05",
+          "积分到账流水数",
+          "区间实际到账的生效流水数",
+          "积分流水",
+          "到账发生",
+          "重复回调不增加"
+        ],
+        [
+          "H-05",
+          "积分到账用户数",
+          "区间有实际积分到账的用户人数",
+          "user_no",
+          "到账发生",
+          "不以展示奖励计到账"
+        ],
+        [
+          "H-05",
+          "未解决奖励失败对象数",
+          "同批应奖对象中截至截止仍失败未解决者数量",
+          "应奖对象",
+          "应奖批次截止状态",
+          "补发成功移出失败；不是失败尝试次数"
+        ],
+        [
+          "H-05",
+          "冲正流水数",
+          "区间生效冲正流水数",
+          "冲正流水",
+          "冲正发生",
+          "与原流水关联，原流水保留"
+        ],
+        [
+          "H-05",
+          "冲正用户数",
+          "区间有生效冲正流水的用户人数",
+          "user_no",
+          "冲正发生",
+          "不撤销此前发生人数"
+        ],
+        [
+          "H-06",
+          "发放积分量",
+          "区间发放生效流水的积分数量汇总",
+          "积分流水",
+          "发放流水发生",
+          "各方向单列；保留正负方向，不混净额/余额；按来源拆分"
+        ],
+        [
+          "H-06",
+          "消耗积分量",
+          "区间消耗生效流水的积分数量汇总",
+          "积分流水",
+          "消耗流水发生",
+          "各方向单列；保留正负方向，不混净额/余额；按来源拆分"
+        ],
+        [
+          "H-06",
+          "返还积分量",
+          "区间返还生效流水的积分数量汇总",
+          "积分流水",
+          "返还流水发生",
+          "各方向单列；保留正负方向，不混净额/余额；按来源拆分"
+        ],
+        [
+          "H-06",
+          "冲正积分量",
+          "区间冲正生效流水的积分数量汇总",
+          "积分流水",
+          "冲正流水发生",
+          "各方向单列；保留正负方向，不混净额/余额；按来源拆分"
+        ],
+        [
+          "H-07",
+          "成功兑换单数",
+          "扣减及交付均成功的兑换单数",
+          "兑换单",
+          "两者完成较晚时间",
+          "失败退分不是成功兑换"
+        ],
+        [
+          "H-07",
+          "成功兑换用户数",
+          "成功兑换单的用户人数",
+          "user_no",
+          "完整兑换成功",
+          "同用户多单去重"
+        ],
+        [
+          "H-07",
+          "成功兑换扣减积分",
+          "成功兑换单实际扣减积分之和",
+          "兑换单关联扣减流水",
+          "完整兑换成功",
+          "不是全站同期消耗积分"
+        ],
+        [
+          "H-08",
+          "激励后复访人数",
+          "成熟触发用户中窗内产生触发会话之后新会话者人数",
+          "user_no",
+          "按触发时间选批次",
+          "按触发类型观察；同一期次重复奖励不重启窗口"
+        ],
+        [
+          "H-08",
+          "激励后复访率",
+          "激励后复访人数 ÷ 成熟触发用户数",
+          "user_no",
+          "激励批次",
+          "24/168/336h；注册批次基线仅参考，不声称因果"
+        ],
+        [
+          "H-08",
+          "激励后有效行为人数",
+          "成熟触发用户中在新会话主动发起独立业务且窗内成功者人数",
+          "user_no",
+          "激励批次",
+          "排除触发自身及无人返回的异步完成"
+        ],
+        [
+          "H-08",
+          "激励后有效行为率",
+          "激励后有效行为人数 ÷ 成熟触发用户数",
+          "user_no",
+          "激励批次",
+          "跨对象汇总按同触发类型本期最早合资格触发，用户去重"
+        ],
+        [
+          "Q-01",
+          "审核积压轮次数",
+          "截止时未终结审核轮次数",
+          "审核轮次",
+          "截止快照",
+          "作品/帖子分开；重提新建轮次"
+        ],
+        [
+          "Q-01",
+          "审核积压年龄",
+          "截止时间 − 本轮提交时间",
+          "单个审核轮次",
+          "截止快照",
+          "不是完成耗时"
+        ],
+        [
+          "Q-02",
+          "平均审核耗时",
+          "终结轮次（完成时间−本轮提交时间）之和 ÷ 终结轮次数",
+          "审核轮次",
+          "审核完成发生",
+          "同批轮次；排除跳过/删除"
+        ],
+        [
+          "Q-02",
+          "审核通过率",
+          "通过轮次数 ÷ 全部终结轮次数",
+          "审核轮次",
+          "审核完成发生",
+          "分母含通过、业务拒绝、技术失败"
+        ],
+        [
+          "Q-02",
+          "审核技术失败率",
+          "技术失败轮次数 ÷ 全部终结轮次数",
+          "审核轮次",
+          "审核完成发生",
+          "业务拒绝不等于技术失败"
+        ],
+        [
+          "Q-03",
+          "未记录渠道占比",
+          "固化注册渠道字段为空的新增账号数 ÷ 新增账号数",
+          "user_no",
+          "账号创建成功",
+          "只判断已知空值，不推断访问方式；历史未匹配非空编码不进分子；字段状态无法确认时不计算"
+        ],
+        [
+          "Q-06",
+          "官方/测试排除规则",
+          "按 2.1 排除明确官方/测试等记录；内容保留用户/官方拆分",
+          "各原指标对象",
+          "各原指标时间",
+          "规则项，不是数值指标；历史未知不猜测"
+        ]
+      ],
+      "ids": 46
+    },
+    "analyticsAtomicSearch": {
+      "rows": 4,
+      "text": "具体指标\t计算方式\t去重对象\t统计时间\t限制\n独立 IP\t区间公网 IP 去重数\t公网 IP\t访问发生\t仅聚合，不展示明细\n会话数\t开始于区间内的会话数\t会话\t会话开始\t30 分钟无活动后再次活动建立新会话\n新访客数\t首次可识别访问在区间内的访客数\t稳定访客\t首次访问\t跨日整体去重；按首次触点拆分\n老访客数\t区间前已识别且本期访问的访客数\t稳定访客\t本期访问\t不以日老访客之和代替区间人数",
+      "overflow": false
+    },
+    "analyticsReducedScope": {
+      "metric": "activation",
+      "options": [
+        "registered",
+        "active",
+        "activation",
+        "generated",
+        "submitted"
+      ],
+      "groups": [
+        "channel",
+        "device",
+        "utm-campaign",
+        "utm-content"
+      ],
+      "channels": [
+        "全部渠道",
+        "邀请活动",
+        "社区内容",
+        "合作推荐",
+        "小红书",
+        "微信群",
+        "抖音自然",
+        "微信朋友圈",
+        "抖音付费",
+        "多元直达",
+        "未记录渠道"
+      ],
+      "sourceHidden": true,
+      "sourcePanel": false,
+      "note": "纳入计算 0 人 · 待满 7 天 138 人 样本不足，暂不显示比率。",
+      "notice": true
     },
     "analyticsGeneratedPageContracts": [
       {
@@ -3509,11 +5036,11 @@
         "activeView": "analytics-overview",
         "viewCount": 1,
         "forbiddenVisible": [],
-        "chartComponents": 3,
+        "chartComponents": 1,
         "antTables": 0,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 13,
-        "metricHelpIcons": 13,
+        "metricHelpButtons": 12,
+        "metricHelpIcons": 12,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3525,10 +5052,10 @@
         "viewCount": 1,
         "forbiddenVisible": [],
         "chartComponents": 1,
-        "antTables": 2,
+        "antTables": 6,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 8,
-        "metricHelpIcons": 8,
+        "metricHelpButtons": 9,
+        "metricHelpIcons": 9,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3540,10 +5067,10 @@
         "viewCount": 1,
         "forbiddenVisible": [],
         "chartComponents": 2,
-        "antTables": 3,
+        "antTables": 5,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 7,
-        "metricHelpIcons": 7,
+        "metricHelpButtons": 8,
+        "metricHelpIcons": 8,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3554,11 +5081,11 @@
         "activeView": "analytics-content",
         "viewCount": 1,
         "forbiddenVisible": [],
-        "chartComponents": 1,
-        "antTables": 2,
+        "chartComponents": 2,
+        "antTables": 5,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 6,
-        "metricHelpIcons": 6,
+        "metricHelpButtons": 14,
+        "metricHelpIcons": 14,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3569,11 +5096,11 @@
         "activeView": "analytics-creation",
         "viewCount": 1,
         "forbiddenVisible": [],
-        "chartComponents": 1,
-        "antTables": 2,
+        "chartComponents": 2,
+        "antTables": 4,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 7,
-        "metricHelpIcons": 7,
+        "metricHelpButtons": 15,
+        "metricHelpIcons": 15,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3584,11 +5111,11 @@
         "activeView": "analytics-activity",
         "viewCount": 1,
         "forbiddenVisible": [],
-        "chartComponents": 1,
-        "antTables": 3,
+        "chartComponents": 2,
+        "antTables": 6,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 7,
-        "metricHelpIcons": 7,
+        "metricHelpButtons": 15,
+        "metricHelpIcons": 15,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3599,11 +5126,11 @@
         "activeView": "analytics-quality",
         "viewCount": 1,
         "forbiddenVisible": [],
-        "chartComponents": 1,
-        "antTables": 1,
+        "chartComponents": 2,
+        "antTables": 3,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 5,
-        "metricHelpIcons": 5,
+        "metricHelpButtons": 12,
+        "metricHelpIcons": 12,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3617,8 +5144,8 @@
         "chartComponents": 0,
         "antTables": 1,
         "uncontractedChartSurfaces": 0,
-        "metricHelpButtons": 38,
-        "metricHelpIcons": 38,
+        "metricHelpButtons": 46,
+        "metricHelpIcons": 46,
         "statCardTags": 0,
         "statCardFooters": 0,
         "statCardShapeComplete": true,
@@ -3852,6 +5379,95 @@
         "checked": 34,
         "invalid": []
       }
+    },
+    "layoutScrollIsolation": {
+      "before": {
+        "documentOverflowY": 0,
+        "windowScrollY": 0,
+        "topbarTop": 0,
+        "brandTop": 14,
+        "sidebarClientHeight": 1000,
+        "sidebarScrollHeight": 1480,
+        "contentClientHeight": 936,
+        "viewportHeight": 1000
+      },
+      "afterWindowScroll": {
+        "windowScrollY": 0,
+        "topbarTop": 0
+      },
+      "afterSidebarScroll": {
+        "sidebarScrollTop": 240,
+        "windowScrollY": 0,
+        "topbarTop": 0,
+        "brandTop": 14
+      }
+    },
+    "scrollbarChrome": [
+      {
+        "selector": ".sidebar",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": true
+      },
+      {
+        "selector": ".content",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      },
+      {
+        "selector": ".table-wrap",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      },
+      {
+        "selector": ".modal-body",
+        "exists": true,
+        "scrollbarWidth": "none",
+        "msOverflowStyle": "",
+        "canScroll": false
+      }
+    ],
+    "walkthroughPanel": {
+      "open": true,
+      "view": "operation-config",
+      "title": "公告配置走查规则",
+      "summary": "按真实公告页维护公告草稿、上架、下架、删除和详情查看，正文统一使用 Markdown。",
+      "rules": [
+        {
+          "label": "页面职责",
+          "text": "页面顶部只保留 180px 状态选择、搜索和发布公告；状态接口值仅有已发布与未发布，不增加关键词、重置或第三种下架状态。"
+        },
+        {
+          "label": "关键字段",
+          "text": "ModTable 列为公告 ID、标题、目标人群、状态、阅读数、创建人、发布时间、更新时间、操作；状态标题提供 Ant Design Popover 说明。"
+        },
+        {
+          "label": "状态与操作",
+          "text": "未发布公告可查看、编辑、上架、删除；已发布公告只可查看和下架。上架、下架与删除均使用 Ant Design Popconfirm 语义确认。"
+        },
+        {
+          "label": "跨页关系",
+          "text": "新建与编辑使用 80% 宽 Drawer；新建显示草稿状态但不显示公告 ID，编辑显示只读 ID 和真实状态。"
+        },
+        {
+          "label": "验收口径",
+          "text": "目标人群当前固定为全部注册用户；公开作者只能选择启用中的官方账号；标题 4–40 字，摘要最多 512 字，正文使用 Markdown 编辑器。"
+        },
+        {
+          "label": "规则 6",
+          "text": "公告详情使用 960px Modal，展示 ID、状态、标题、目标人群、创建人、发布时间、更新时间和 Markdown 正文，不重复显示编辑表单字段。"
+        }
+      ],
+      "closed": true
+    },
+    "formControlAccessibleNames": {
+      "total": 168,
+      "unnamed": 0
     }
   },
   "consoleErrors": [],
