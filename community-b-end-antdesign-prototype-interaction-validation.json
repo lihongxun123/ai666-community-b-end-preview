@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T05:16:33.488Z",
+  "generatedAt": "2026-11-26T05:58:34.351Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -1789,12 +1789,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-165456"
+      "taskCode": "TASK-689105"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-165456",
+      "taskCode": "TASK-689105",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1803,7 +1803,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-165456\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-689105\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -1957,7 +1957,7 @@
     "b03StoreCardCreate": {
       "open": true,
       "product": "API 月卡",
-      "alert": "每行一条卡密；填写一条时调用单条创建接口，多条时调用批量创建接口。"
+      "alert": "每行填写一条卡密。"
     },
     "b03StoreCardSaved": {
       "closed": true,
@@ -2050,7 +2050,7 @@
       "detailRouteNav": 0,
       "realCards": 1,
       "pageHeads": 0,
-      "description": "统一查询账号启停和白名单状态，并从具体用户发起治理操作。",
+      "description": "",
       "labels": [
         "用户 ID",
         "用户昵称",
@@ -2503,12 +2503,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1795670170713",
-      "competitionId": "COMP-2026-170757",
+      "draftName": "赛事交互验收草稿-1795672694258",
+      "competitionId": "COMP-2026-694288",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1795670170713",
+      "title": "赛事交互验收草稿-1795672694258",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2526,7 +2526,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1795670170713"
+      "expectedName": "赛事交互验收草稿-1795672694258"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -2914,7 +2914,7 @@
       "communityGroupEnabled": "展示",
       "contentAttributionConfig": true,
       "contentAttributionTopic": "AIGC 创作挑战赛",
-      "contentAttributionFixedRules": "归类规则内容分类继承作品投稿时已选分类；投稿关联赛事后自动带上赛事话题；审核通过且公开展示后进入社区现有作品流，不单独创建赛事模块。",
+      "contentAttributionFixedRules": "归类规则沿用投稿分类，自动关联赛事话题。审核通过且公开的作品进入社区现有作品流。",
       "legacyDistributionFields": 0,
       "publicationActions": [
         "publish:发布"
@@ -3130,7 +3130,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
+        "previewSource": "data:image/webp;base64,",
         "removeVisible": true
       }
     ],
@@ -3307,7 +3307,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-174289",
+        "awardId": "AWARD-697556",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3513,7 +3513,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-11-26 13:16",
+      "status": "已提交 · 2026-11-26 13:58",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,

@@ -5678,6 +5678,7 @@
     .markdown-preview > :last-child { margin-bottom: 0; }
     .markdown-preview code { padding: 1px 5px; border-radius: 4px; background: #f0f2f5; }
 
+    html:not(.prototype-review) :is([data-toggle-walkthrough], [data-bend-walkthrough]) { display: none !important; }
     .walkthrough-toggle {
       position: fixed;
       right: 18px;

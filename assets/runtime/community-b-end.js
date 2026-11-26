@@ -1,4 +1,5 @@
 
+    document.documentElement.classList.toggle("prototype-review", new URLSearchParams(location.search).get("review") === "1");
     const pageRoutes = {
       "content-list": "index.html",
       "review-workbench": "review-workbench.html",
@@ -1400,7 +1401,7 @@
     }
 
     function openDrawer(type, trigger = null) {
-      let [title, body] = drawerCopy[type] || ["详情抽屉", "当前对象的只读预览、状态和操作历史在这里承接。"];
+      let [title, body] = drawerCopy[type] || ["详情抽屉", ""];
       const rowContext = getTableRowContext(trigger);
       activeDrawerRowContext = rowContext;
       const rowValues = rowContext?.values || {};
@@ -4196,7 +4197,7 @@
         timeNote: "原型默认保持可投稿；暂停后停止新增参与和投稿，恢复操作统一写入系统日志。",
         pending: "投稿 12 · 资格 6 · 奖励 6",
         display: "C端活动入口、投稿编辑、发布结果和进行中状态统一在此核对。",
-        records: "参与记录 326 · 投稿记录 84 · 示例数据，仅用于原型走查。",
+        records: "参与记录 326 · 投稿记录 84",
         changes: "V3：调整奖励说明；仅影响新参与记录，历史参与、奖励和限时积分流水不改写。",
         ruleTemplate: "content-co-create",
         currentVersionEffectiveAt: "2026-03-03 10:00",
@@ -9248,7 +9249,7 @@
         <div class="field wide"><label>${templateMode ? "默认创作模型" : "关联模型"}</label><select class="select ant-select" data-content-form-field="model-codes" data-antd-component="ModWorkModelSelect" data-require-aigc-binding="${templateMode}" aria-label="${templateMode ? "默认创作模型" : "关联模型"}"><option value="">${templateMode ? "请选择已绑定的启用 AIGC 模型" : "请选择作品模型"}</option><option value="GPT-4.1">GPT-4.1</option><option value="Flux Pro 1.1">Flux Pro 1.1</option><option value="Seedance 2.0">Seedance 2.0</option><option value="gpt-5.5">gpt-5.5</option><option value="gpt-image-2">gpt-image-2</option><option value="grok-video-3">grok-video-3</option><option value="doubao-seedream-5-0-260128">doubao-seedream-5-0-260128</option></select></div>
         <div class="field wide"><label>使用场景</label><select class="select ant-select" multiple data-content-form-field="scenario-codes" data-antd-component="ModWorkScenarioSelect" aria-label="使用场景"><option value="">暂无已加载场景</option></select></div>
         ${templateMode ? '<div class="field wide"><label>模板排序</label><input class="input ant-input-number" type="number" min="0" step="1" data-content-form-field="template-sort-order" placeholder="数值越小越靠前" data-antd-component="InputNumber"></div>' : `<div class="field wide"><label>是否热门</label><div class="tabs ant-radio-group" data-antd-component="Radio.Group">${hotButtons}</div><input type="hidden" data-content-form-field="is-hot"></div>`}
-        <div class="field wide"><label>媒体资源</label><div class="ant-upload ant-upload-drag popup-upload" data-antd-component="WorkCreateMediaPanel"><div class="popup-upload-title">按内容类型维护图片或视频</div><div class="popup-upload-hint">媒体数量、类型和封面由真实组件校验。</div><textarea class="textarea ant-input" rows="3" data-content-form-field="medias" placeholder="原型中填写媒体地址，每行一条" data-antd-component="Input.TextArea"></textarea></div></div>
+        <div class="field wide"><label>媒体资源</label><div class="ant-upload ant-upload-drag popup-upload" data-antd-component="WorkCreateMediaPanel"><div class="popup-upload-title">按内容类型维护图片或视频</div><div class="popup-upload-hint">媒体数量、类型和封面由真实组件校验。</div><textarea class="textarea ant-input" rows="3" data-content-form-field="medias" placeholder="每行填写一个媒体地址" data-antd-component="Input.TextArea"></textarea></div></div>
       </div>`;
     }
 
@@ -11145,7 +11146,7 @@
       const content = view.querySelector("[data-runtime-model-content]");
       const edit = view.querySelector("[data-runtime-model-edit]");
       if (!record) {
-        error.textContent = code ? `未找到模型 ${code}，请返回模型列表重新选择。` : "缺少模型编码 code，请返回模型列表重新选择。";
+        error.textContent = code ? `未找到模型 ${code}，请返回模型列表重新选择。` : "请从模型列表选择模型。";
         error.hidden = false;
         content.hidden = true;
         edit.hidden = true;
@@ -11184,7 +11185,7 @@
       const error = view.querySelector("[data-protocol-error]");
       const content = view.querySelector("[data-protocol-content]");
       if (!record) {
-        error.textContent = code ? `未找到模型 ${code}，请返回模型列表重新选择。` : "缺少模型编码 code，请返回模型列表重新选择。";
+        error.textContent = code ? `未找到模型 ${code}，请返回模型列表重新选择。` : "请从模型列表选择模型。";
         error.hidden = false;
         content.hidden = true;
         return;
@@ -18324,8 +18325,8 @@
       const view = growthView();
       if (!view) return;
       view.querySelector("[data-analytics-common-cutoff]").textContent = `${formatAnalyticsDate(shiftAnalyticsDate(growthDemoAsOf, -1))} 23:59`;
-      view.querySelector("[data-analytics-page-generated]").textContent = `${formatAnalyticsDate(growthDemoAsOf)} · 本地演示`;
-      view.querySelector("[data-analytics-source-success]").textContent = "本地演示数据，未连接统计服务";
+      view.querySelector("[data-analytics-page-generated]").textContent = `${formatAnalyticsDate(growthDemoAsOf)} · 演示数据`;
+      view.querySelector("[data-analytics-source-success]").textContent = "演示数据";
       const panel = view.querySelector("[data-analytics-filter-panel]");
       const grid = panel.querySelector(".analytics-filter-grid");
       const controls = [...grid.querySelectorAll("[data-analytics-filter-control]")];
