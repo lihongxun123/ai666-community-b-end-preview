@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T03:32:32.039Z",
+  "generatedAt": "2026-11-26T05:15:58.979Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -12,6 +12,7 @@
     "generatedSharedAssetsPresent": true,
     "manifestSharedAssetsMatch": true,
     "generatedPagesUseSharedRuntime": true,
+    "membershipManagementBuiltInMainShell": true,
     "indexIsContentListPage": true,
     "generatedPagesAreSingleView": true,
     "generatedPagesUseMultiPageMode": true,
@@ -313,6 +314,12 @@
       "file": "flash-management.html"
     },
     {
+      "view": "flash-categories",
+      "group": "内容管理",
+      "label": "闪念分类",
+      "file": "flash-categories.html"
+    },
+    {
       "view": "aigc-template-config",
       "group": "内容管理",
       "label": "模板配置",
@@ -383,6 +390,12 @@
       "group": "运营管理",
       "label": "商城管理",
       "file": "store-config.html"
+    },
+    {
+      "view": "membership-management",
+      "group": "运营管理",
+      "label": "会员管理",
+      "file": "membership-management.html"
     },
     {
       "view": "user-list",
@@ -507,6 +520,12 @@
       "file": "flash-management.html"
     },
     {
+      "view": "flash-categories",
+      "group": "内容管理",
+      "label": "闪念分类",
+      "file": "flash-categories.html"
+    },
+    {
       "view": "aigc-template-config",
       "group": "内容管理",
       "label": "模板配置",
@@ -577,6 +596,12 @@
       "group": "运营管理",
       "label": "商城管理",
       "file": "store-config.html"
+    },
+    {
+      "view": "membership-management",
+      "group": "运营管理",
+      "label": "会员管理",
+      "file": "membership-management.html"
     },
     {
       "view": "user-list",
@@ -733,6 +758,7 @@
     "outputs/community-b-end-antdesign-prototype/index.html",
     "outputs/community-b-end-antdesign-prototype/review-workbench.html",
     "outputs/community-b-end-antdesign-prototype/flash-management.html",
+    "outputs/community-b-end-antdesign-prototype/flash-categories.html",
     "outputs/community-b-end-antdesign-prototype/aigc-template-config.html",
     "outputs/community-b-end-antdesign-prototype/tutorial-management.html",
     "outputs/community-b-end-antdesign-prototype/model-series.html",
@@ -745,6 +771,7 @@
     "outputs/community-b-end-antdesign-prototype/competition-management.html",
     "outputs/community-b-end-antdesign-prototype/operation-config.html",
     "outputs/community-b-end-antdesign-prototype/store-config.html",
+    "outputs/community-b-end-antdesign-prototype/membership-management.html",
     "outputs/community-b-end-antdesign-prototype/user-list.html",
     "outputs/community-b-end-antdesign-prototype/register-sources.html",
     "outputs/community-b-end-antdesign-prototype/invite-records.html",
@@ -800,9 +827,12 @@
     "invite.html",
     "login.html",
     "member-store.html",
+    "membership.html",
     "user-center.html"
   ],
   "standalonePreviewPages": [
+    "share.html",
+    "mobile-work-publish.html",
     "competition-state-preview.html",
     "content-detail-modals.html",
     "campaign-ops.html",

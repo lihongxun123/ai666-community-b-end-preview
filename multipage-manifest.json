@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T03:32:28.478Z",
+  "generatedAt": "2026-11-26T05:15:35.917Z",
   "pages": [
     {
       "view": "content-list",
@@ -15,6 +15,11 @@
       "view": "review-workbench",
       "file": "review-workbench.html",
       "label": "审核工作台"
+    },
+    {
+      "view": "flash-categories",
+      "file": "flash-categories.html",
+      "label": "闪念分类"
     },
     {
       "view": "flash-management",
@@ -115,6 +120,11 @@
       "view": "store-config",
       "file": "store-config.html",
       "label": "商城管理"
+    },
+    {
+      "view": "membership-management",
+      "file": "membership-management.html",
+      "label": "会员管理"
     },
     {
       "view": "user-list",

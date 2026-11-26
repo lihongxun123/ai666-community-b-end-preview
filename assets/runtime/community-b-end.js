@@ -3,6 +3,7 @@
       "content-list": "index.html",
       "review-workbench": "review-workbench.html",
       "flash-management": "flash-management.html",
+      "flash-categories": "flash-categories.html",
       "aigc-template-config": "aigc-template-config.html",
       "tutorial-management": "tutorial-management.html",
       "model-series": "model-series.html",
@@ -15,6 +16,7 @@
       "competition-management": "competition-management.html",
       "operation-config": "operation-config.html",
       "store-config": "store-config.html",
+      "membership-management": "membership-management.html",
       "user-list": "user-list.html",
       "register-sources": "register-sources.html",
       "invite-records": "invite-records.html",
@@ -47,6 +49,7 @@
       "review-workbench": ["内容管理", "审核工作台"],
       "review-detail": ["内容管理", "审核任务"],
       "flash-management": ["内容管理", "闪念管理"],
+      "flash-categories": ["内容管理", "闪念分类"],
       "flash-detail": ["内容管理", "闪念详情"],
       "model-series": ["AIGC管理", "模型系列"],
       "model-mapping": ["AIGC管理", "模型配置"],
@@ -65,6 +68,7 @@
       "competition-detail": ["运营管理", "赛事工作台"],
       "operation-config": ["运营管理", "公告配置"],
       "store-config": ["运营管理", "商城管理"],
+      "membership-management": ["运营管理", "会员管理"],
       "user-list": ["用户管理", "用户列表"],
       "user-detail": ["用户管理", "用户详情"],
       "register-sources": ["用户管理", "注册来源"],
@@ -193,7 +197,7 @@
           "页面标题只在顶部栏展示，内容区不重复显示同名标题或说明块。",
           "时间范围使用 Ant Design a-range-picker，只选择 YYYY-MM-DD；支持今日、昨日、最近 7 个完整日、最近 30 个完整日及最多 90 日自定义范围。",
           "页面承接 A-01 至 A-08；生成任务按主单去重，生成结果件数和生成用户数分别统计，不使用前端点击替代业务事实。",
-          "生成主单终态仅成功、失败、取消；成功至少有 1 件可用成品，部分交付也成功，件数按实际可用成品计。处理中只按截止时快照展示；成功率或失败率分母为成功 + 失败 + 取消。",
+          "生成主单终态为成功或失败；成功至少有 1 件可用成品，部分交付也成功，件数按实际可用成品计。处理中只按截止时快照展示；成功率或失败率分母为成功 + 失败。",
           "退款是独立积分流水，失败退款后仍计失败；跨日退款不改原生成结果、发生日或成功失败率。",
           "失败原因先归一化为低基数原因组，不展示 Prompt、Token、原始错误响应或供应敏感载荷。",
           "创作指标通过选择器切换趋势与拆分表；失败原因可继续筛选；查看记录打开本地只读生成记录抽屉，业务工作台单独进入。",
@@ -271,6 +275,16 @@
           "列表展示来源 ID、来源对象、用户、类型、来源状态、提交时间和审核操作，主列表使用 ModTable。",
           "点击审核先按当前来源 ID 拉取详情并校验对象一致，再在 Ant Design Modal 中提交通过或拒绝。",
           "拒绝原因必填；权限分别使用 review-workbench:approve 与 review-workbench:reject，提交中禁止重复操作。",
+        ],
+      },
+      "flash-categories": {
+        summary: "运营按名称、状态和关联话题维护闪念分类。",
+        rules: [
+          "有编辑权限的运营可以新增、编辑、启停和删除分类。",
+          "分类名称生成拼音标识，已有分类的标识保持不变。",
+          "启停操作需要确认，删除前先停用。",
+          "闪念消费页按分类读取公开内容，拼车分类单独维护。",
+          "核对新增、关联话题、重新打开、筛选和取消删除后的记录。"
         ],
       },
       "flash-management": {
@@ -570,6 +584,16 @@
             "有效期配置使用 720px Modal 按业务来源维护正整数天数；加载失败时锁定保存，避免覆盖真实配置。",
           ],
         },
+      "membership-management": {
+        summary: "配置购买型会员，核对会员订单与发放结果。",
+        rules: [
+          { label: "档位配置", text: "新增时指定升档位置。确认开售后，用户端可比较购买。改时长、售价和赠分只影响新订单，已售权益只可调优。" },
+          { label: "优惠配置", text: "首充和适用活动取低价，同价优先首充。对同一档位和购买方式，活动不得重叠。" },
+          { label: "收款与到账", text: "分别核对收款、会员和积分。已收款订单按失败项恢复，避免多给时长或积分。" },
+          { label: "赠礼与客服", text: "年卡缺码照常销售。联系客服、补码和处理记录均关联原订单。" },
+          { label: "演示范围", text: "档位、支付和兑换码均为本地样例。两端通过同一浏览器、同一预览地址共享操作结果。" },
+        ],
+      },
       "member-levels": {
         summary: "维护会员等级成长值、签到奖励与排序。",
         rules: [
@@ -642,6 +666,9 @@
           : "";
         return `<section class="walkthrough-page-section" data-page-walkthrough-rule="${escapeAttribute(viewName)}-${index + 1}"><b>${escapeHtml(label || `规则 ${index + 1}`)}</b><p>${escapeHtml(text || "")}</p>${items}</section>`;
       }).join("");
+      if (viewName === "membership-management") {
+        sections.insertAdjacentHTML("beforeend", '<div class="action-row"><button class="btn" type="button" data-antd-component="Button" data-member-admin-action="load-support">加载缺码客服示例</button><button class="btn" type="button" data-antd-component="Button" data-member-admin-action="load-payment-issue">加载已收款异常示例</button></div>');
+      }
     }
 
     const drawerCopy = {
@@ -931,7 +958,7 @@
         ["store-config", "商城管理", [["view", "查看"], ["site-edit", "维护站点"], ["product-edit", "维护产品"], ["card-key-view", "查看完整卡密"], ["card-key-write", "新增 / 删除卡密"]]],
       ]],
       ["user", "用户管理", [
-        ["user-list", "用户列表", [["view", "查看"], ["detail", "用户详情"], ["official-create", "创建官方账号"], ["official-edit", "编辑官方账号"], ["points-adjust", "调整限时积分"], ["account-ban", "封禁账号"], ["account-unban", "解封账号"], ["whitelist-set", "设置白名单"]]],
+        ["user-list", "用户列表", [["account-merge", "合并账号"], ["notification-send", "发站内通知"], ["notification-view", "查看发送记录"], ["view", "查看"], ["detail", "用户详情"], ["official-create", "创建官方账号"], ["official-edit", "编辑官方账号"], ["points-adjust", "调整限时积分"], ["account-ban", "封禁账号"], ["account-unban", "解封账号"], ["whitelist-set", "设置白名单"]]],
         ["register-source", "注册来源", [["view", "查看"], ["create", "新建"], ["edit", "编辑"], ["delete", "删除"]]],
         ["invite-records", "邀请记录", [["view", "查看"], ["revoke", "撤销奖励"]]],
         ["points-records", "限时积分记录", [["view", "查看"]]],
@@ -1245,6 +1272,11 @@
 
 
     function openView(viewName) {
+      const targetView = document.querySelector(`.view[data-view="${viewName}"]`);
+      if (!targetView && pageRoutes[viewName]) {
+        window.location.href = pageRoutes[viewName];
+        return;
+      }
       document.querySelectorAll(".view").forEach((view) => view.classList.toggle("is-active", view.dataset.view === viewName));
       document.querySelectorAll(".nav-btn").forEach((button) => button.classList.toggle("is-active", button.dataset.nav === viewName));
       const title = pageTitles[viewName] || ["首页", "社区后台"];
@@ -3931,6 +3963,7 @@
       "invite.html",
       "login.html",
       "member-store.html",
+      "membership.html",
       "user-center.html",
     ]);
 
@@ -13336,7 +13369,7 @@
         ["store-config", "商城管理", [["view", "查看"], ["site-edit", "维护站点"], ["product-edit", "维护产品"], ["card-key-view", "查看完整卡密"], ["card-key-write", "新增 / 删除卡密"]]],
       ]],
       ["user", "用户管理", [
-        ["user-list", "用户列表", [["view", "查看"], ["detail", "用户详情"], ["official-create", "创建官方账号"], ["official-edit", "编辑官方账号"], ["points-adjust", "调整积分"], ["account-ban", "封禁账号"], ["account-unban", "解封账号"], ["whitelist-set", "设置白名单"]]],
+        ["user-list", "用户列表", [["account-merge", "合并账号"], ["notification-send", "发站内通知"], ["notification-view", "查看发送记录"], ["view", "查看"], ["detail", "用户详情"], ["official-create", "创建官方账号"], ["official-edit", "编辑官方账号"], ["points-adjust", "调整积分"], ["account-ban", "封禁账号"], ["account-unban", "解封账号"], ["whitelist-set", "设置白名单"]]],
         ["register-source", "注册来源", [["view", "查看"], ["create", "新建"], ["edit", "编辑"], ["delete", "删除"]]],
         ["invite-records", "邀请记录", [["view", "查看"]]],
         ["points-records", "积分记录", [["view", "查看"], ["config", "维护有效期配置"]]],
@@ -16720,7 +16753,7 @@
       "C-06": "创建按作品一生一次，提交、审核、发布按区间各阶段作品去重；下架为截止时快照。",
       "C-07": "按当前收藏数降序排列的内容 Top 榜。",
       "A-01": "生成量 = 周期内创建的去重生成主单数。",
-      "A-02": "成功率或失败率 = 对应结果主单数 ÷（成功 + 失败 + 取消主单数）× 100%；退款不改变生成结果。",
+      "A-02": "成功率或失败率 = 对应结果主单数 ÷（成功 + 失败主单数）× 100%；退款不改变生成结果。",
       "A-03": "生成类型占比 = 该类型生成主单数 ÷ 生成主单总数 × 100%。",
       "A-04": "失败原因占比 = 该原因失败单数 ÷ 失败单总数 × 100%。",
       "A-05": "处理中积压 = 截止时仍处理中且超过模型约定处理时限的主单数。",
@@ -17192,7 +17225,7 @@
         ['C-06','createdWorks','作品创建','件','event'],['C-06','approved','审核通过作品','件','event'],['C-06','rejected','审核拒绝作品','件','event'],['C-06','offline','下架存量','件','snapshot'],['C-03','structure','内容结构','件','snapshot'],['C-07','favorites','高价值内容 · 收藏','次','snapshot'],['C-05','likes','当前点赞','次','snapshot'],['C-05','comments','当前评论','次','snapshot'],['C-05','shares','当前分享','次','snapshot'],['C-06','publishUsers','发布用户','人','event'],['C-06','createdUsers','创建用户','人','event'],['C-06','approvedUsers','审核通过用户','人','event'],['C-06','rejectedUsers','审核拒绝用户','人','event'] ]},
       creation: { title:'创作分析', groups:['model','output','channel','failure-group'], business:'generation-records.html', metrics:[
         ['A-02','success','生成成功','单','event'],['A-02','failure','生成失败','单','event'],['A-02','successRate','生成成功率','%','ratio'],['A-06','results','可用成品','件','event'],['A-07','successUsers','成功用户','人','event'],['A-08','generationSubmit','生成后 7 日提交率','%','cohort'],
-        ['A-01','generation','创建主单','单','event'],['A-02','cancelled','生成取消','单','event'],['A-02','processing','处理中','单','snapshot'],['A-02','failureRate','生成失败率','%','ratio'],['A-05','backlog','超时处理中','单','snapshot'],['A-07','failureUsers','失败用户','人','event'],['A-03','distribution','生成类型分布','单','event'],['A-04','failureReasons','失败原因分布','单','event'] ]},
+        ['A-01','generation','创建主单','单','event'],['A-02','processing','处理中','单','snapshot'],['A-02','failureRate','生成失败率','%','ratio'],['A-05','backlog','超时处理中','单','snapshot'],['A-07','failureUsers','失败用户','人','event'],['A-03','distribution','生成类型分布','单','event'],['A-04','failureReasons','失败原因分布','单','event'] ]},
       activity: { title:'活动与激励', groups:['activity','period','channel','task','points-source','trigger','exchange'], business:'activity-config.html', metrics:[
         ['H-01','participants','活动参与用户','人','event'],['H-03','taskUsers','任务完成用户','人','event'],['H-04','rewardRate','奖励到账率','%','reward'],['H-05','pointsUsers','积分到账用户','人','event'],['H-07','exchanges','成功兑换','单','event'],['H-08','returnRate','激励后复访率','%','cohort'],
         ['H-01','participations','参与次数','次','event'],['H-02','submissions','有效投稿','件','event'],['H-02','submissionUsers','投稿用户','人','event'],['H-03','tasks','任务完成次数','次','event'],['H-04','taskRate','任务完成率','%','eligibility'],['H-05','rewardFailures','未解决奖励失败','项','reward'],['H-05','reversals','冲正流水','条','event'],['H-06','issuedPoints','发放积分','积分','event'],['H-06','spentPoints','消耗积分','积分','event'],['H-06','returnedPoints','返还积分','积分','event'],['H-06','reversedPoints','冲正积分','积分','event'],['H-07','exchangeUsers','兑换用户','人','event'],['H-07','exchangePoints','兑换扣减积分','积分','event'],['H-08','effectiveRate','激励后有效行为率','%','cohort'] ]},
@@ -17207,7 +17240,7 @@
         const n=(d+200)*37+i, day=formatAnalyticsDate(shiftAnalyticsDate(today,d));
         const at=+shiftAnalyticsDate(today,d)+((i%20)+1)*3600000;
         const output=['image','image','video','manga','text'][n%5];
-        const terminal=n%13===0?'cancelled':n%7===0?'failed':'success';
+        const terminal=n%7===0?'failed':'success';
         rows.push({id:`DEMO-${n}`,user:`DEMO-U-${n%311}`,work:`DEMO-W-${n%1951}`,content:`DEMO-W-${n%1951}`,at,day,
           end:at+((n%17)+1)*3600000,reviewEnd:at+86400000+((n%19)+1)*3600000,
           channel:['xiaohongshu','wechat_group','douyin_organic','douyin_paid','wechat_moments','duoyuan_direct','missing','missing'][(n%311)%8],
@@ -17241,7 +17274,7 @@
       const key=metric[1], mode=metric[4];
       const facts=state.kind==='content'&&mode==='snapshot'?[...new Map(domainFacts.filter(r=>r.at<=cutoff).map(r=>[r.work,r])).values()]:domainFacts;
       let rows=facts.map(r=>({...r,state:domainContentState(r,cutoff),'task-day':r.day})).filter(r=>{
-        const time=['returnRate','effectiveRate'].includes(key)?(r.trigger==='activity'?r.at:r.end):['success','failure','successRate','failureRate','successUsers','failureUsers','cancelled','failureReasons','results','generationSubmit','tasks','taskUsers','pointsUsers','issuedPoints','exchanges','exchangeUsers','exchangePoints'].includes(key)?r.end:['reviewHours','reviewPass','reviewFailure','approved','approvedUsers','rejected','rejectedUsers'].includes(key)?r.reviewEnd:['submitted','submitUsers','creators'].includes(key)?r.at+86400000:['published','publishUsers'].includes(key)?r.at+172800000:r.at;
+        const time=['returnRate','effectiveRate'].includes(key)?(r.trigger==='activity'?r.at:r.end):['success','failure','successRate','failureRate','successUsers','failureUsers','failureReasons','results','generationSubmit','tasks','taskUsers','pointsUsers','issuedPoints','exchanges','exchangeUsers','exchangePoints'].includes(key)?r.end:['reviewHours','reviewPass','reviewFailure','approved','approvedUsers','rejected','rejectedUsers'].includes(key)?r.reviewEnd:['submitted','submitUsers','creators'].includes(key)?r.at+86400000:['published','publishUsers'].includes(key)?r.at+172800000:r.at;
         return (mode==='snapshot'?r.at<=cutoff:time>=beginning&&time<=cutoff) && [...state.filters].every(([k,v])=>
           (k==='failure-group'&&!['failure','failureUsers','failureReasons'].includes(key)) ||
           !domainLabels[k] && !['type','state','series','topic','activity-code','participation-mode','reward-state','object-state'].includes(k) || v==='all' || r[k]===v);
@@ -17258,7 +17291,7 @@
       let selected=rows,num=0,den=null,immature=0;
       if(['success','successUsers','results'].includes(key)) selected=success;
       if(['failure','failureUsers','failureReasons'].includes(key)) selected=failed;
-      if(key==='cancelled') selected=terminal.filter(r=>r.terminal==='cancelled');
+
       if(['processing','backlog'].includes(key)) selected=rows.filter(r=>r.end>cutoff && (key==='processing'||cutoff-r.at>7200000));
       if(['submitted','submitUsers','creators','tasks','taskUsers'].includes(key)) selected=rows.filter(r=>key.startsWith('task')?r.completed:r.type==='work'&&r.submitted);
       if(['published','publishUsers'].includes(key)) selected=rows.filter(r=>r.type==='work'&&r.published);
@@ -17441,7 +17474,7 @@
       let records=domainSelectedRows(state,state.start,state.end).filter(record=>record[state.group]===row.key);
       if(['success','successUsers','results','generationSubmit'].includes(key))records=records.filter(r=>r.terminal==='success');
       if(['failure','failureUsers','failureReasons'].includes(key))records=records.filter(r=>r.terminal==='failed');
-      if(key==='cancelled')records=records.filter(r=>r.terminal==='cancelled');
+
       if(['processing','backlog'].includes(key))records=records.filter(r=>r.end>cutoff&&(key==='processing'||cutoff-r.at>7200000));
       records.sort((a,b)=>b.end-a.end);
       const cohort=key==='generationSubmit',asOf=+parseAnalyticsDate(formatAnalyticsDate(new Date()));
@@ -17458,7 +17491,7 @@
     }
     function renderCreationRecords(state) {
       const detail=state.view.querySelector('[data-domain-detail-panel]'),records=state.creationRecords,page=state.creationRecordPage;
-      detail.querySelector('[data-creation-records]').innerHTML=`<thead><tr><th>生成主单</th><th>终态时间</th><th>结果</th>${state.creationRecordCohort?'<th>7 日提交</th>':''}</tr></thead><tbody>${records.slice(page*10,page*10+10).map(r=>`<tr><td>${escapeHtml(r.id)}</td><td>${r.end<=+state.end+86400000-1?new Date(r.end).toLocaleString('zh-CN',{hour12:false}):'—'}</td><td>${r.end>+state.end+86400000-1?'处理中':({success:'成功',failed:'失败',cancelled:'取消'}[r.terminal]||r.terminal)}</td>${state.creationRecordCohort?`<td>${r.end+7*86400000>state.creationRecordAsOf?'观察中':r.type==='work'&&r.submitted&&r.at+86400000>r.end&&r.at+86400000<=r.end+7*86400000?'已提交':'未提交'}</td>`:''}</tr>`).join('')||'<tr><td colspan="4">暂无记录</td></tr>'}</tbody>`;
+      detail.querySelector('[data-creation-records]').innerHTML=`<thead><tr><th>生成主单</th><th>终态时间</th><th>结果</th>${state.creationRecordCohort?'<th>7 日提交</th>':''}</tr></thead><tbody>${records.slice(page*10,page*10+10).map(r=>`<tr><td>${escapeHtml(r.id)}</td><td>${r.end<=+state.end+86400000-1?new Date(r.end).toLocaleString('zh-CN',{hour12:false}):'—'}</td><td>${r.end>+state.end+86400000-1?'处理中':({success:'成功',failed:'失败'}[r.terminal]||r.terminal)}</td>${state.creationRecordCohort?`<td>${r.end+7*86400000>state.creationRecordAsOf?'观察中':r.type==='work'&&r.submitted&&r.at+86400000>r.end&&r.at+86400000<=r.end+7*86400000?'已提交':'未提交'}</td>`:''}</tr>`).join('')||'<tr><td colspan="4">暂无记录</td></tr>'}</tbody>`;
       detail.querySelector('[data-creation-record-count]').textContent=`${records.length} 条 · ${page+1} / ${Math.max(1,Math.ceil(records.length/10))} 页`;
       detail.querySelector('[data-creation-prev]').disabled=page===0;detail.querySelector('[data-creation-next]').disabled=(page+1)*10>=records.length;
     }
@@ -19751,7 +19784,112 @@
     });
     window.addEventListener("resize", () => { closeAnalyticsMetricHelp(); closeAnalyticsDatePicker(); });
     document.addEventListener("scroll", () => { closeAnalyticsMetricHelp(); closeAnalyticsDatePicker(); }, true);
-    const analyticsAtomicCatalog = [["G-01","PV","有效页面访问计数","页面访问","访问发生","重复渲染、回调、重定向中间页不计"],["G-02","UV","区间访问访客去重数","稳定访客","访问发生","跨日、终端、渠道分组不可相加"],["G-03","独立 IP","区间公网 IP 去重数","公网 IP","访问发生","仅聚合，不展示明细"],["G-03","会话数","开始于区间内的会话数","会话","会话开始","30 分钟无活动后再次活动建立新会话"],["G-03","新访客数","首次可识别访问在区间内的访客数","稳定访客","首次访问","跨日整体去重；按首次触点拆分"],["G-03","老访客数","区间前已识别且本期访问的访客数","稳定访客","本期访问","不以日老访客之和代替区间人数"],["G-04","跳出率","仅一次有效页面访问且无路由切换或业务成功的会话 ÷ 会话数","会话","会话开始","同批会话；页面维度限入口会话"],["G-04","平均访问时长","同批会话可观测前台时长之和 ÷ 会话数","会话内时长段","会话开始","后台不计；单页无后续行为按 0 秒"],["G-05","页面 PV","该规范页面有效访问次数","页面访问","页面访问发生","入口页与受访页分别统计"],["G-05","页面 UV","访问该页面的访客数","稳定访客","页面访问发生","同访客访问多页可进入多个分组"],["G-05","页面 IP","访问该页面的公网 IP 数","公网 IP","页面访问发生","仅聚合"],["G-05","页面新访客数","全站本期新访客中访问该页面者人数","稳定访客","首次访问及本期页面访问","不是第一次访问该页面的人数"],["G-05","页面涉及会话数","访问过该页面的会话数","会话","会话开始","入口页口径仅取以该页开始的会话"],["G-05","页面平均停留时长","该页面可观测前台停留总时长 ÷ 页面 PV","页面访问内时长段","页面访问发生","隐藏不计；末页无结束信号取最后观测时点，可能低估"],["G-06","首次触点新访客占比","该首次触点渠道新访客 ÷ 全部新访客","稳定访客","首次访问","渠道空值保留；区间整体去重"],["G-06","会话触点访问量","按会话触点拆分 PV、UV、IP、会话；各自使用 G-01～G-04 公式","各原指标对象","各原指标时间","属于分组视图，不新增混合计量指标"],["G-07","新增注册人数","新建账号人数","user_no","账号创建成功","已有账号登录不计"],["G-08","各注册渠道人数","注册批次按固化注册触点分组的人数","user_no","账号创建成功","渠道及 UTM 五参数；空值与历史未匹配编码分开，不被后续访问覆盖"],["G-09","UV→注册聚合率","同区间新增注册人数 ÷ UV","分子账号；分母访客","注册发生／访问发生","仅聚合估算，不是个人漏斗"],["G-10","渠道 UV→注册聚合率","同渠道注册触点人数 ÷ 会话触点 UV","分子账号；分母访客","注册发生／访问发生","不同触点；可超过 100%，不截断"],["U-01","累计注册用户","截止前已创建账号人数","user_no","截止快照","含停用/注销；排除明确官方/测试，不等于可登录数"],["U-02","有效 DAU（P0）","当日生成成功、作品提交、有效参与用户的并集人数","user_no","有效行为成功","登录或积分不单独计有效"],["U-03","周有效价值用户","北京时间周一至周日有效行为用户的并集人数","user_no","有效行为成功","不相加每日 DAU；未完结周标注"],["U-04","观察窗已满注册人数（成熟注册）","所选注册批次中，截至共同截止已满观察窗的人数","user_no","注册批次","24/168/336h 分别计算；分母辅助量，不进入主指标选择器"],["U-04","待满观察窗注册人数","所选注册批次人数 − 对应观察窗已满人数","user_no","注册批次","辅助说明，不进入主指标选择器或该窗口的分子、分母"],["U-04","首次激活人数","成熟注册用户中，窗内首次生成成功、提交作品或有效参与者人数","user_no","注册批次＋窗内首次行为","三种行为取并集"],["U-04","注册后激活率","首次激活人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","24/168/336h 各自计算，7 天内激活率使用 168h"],["U-05","首次生成成功人数","成熟注册用户中，窗内首次生成成功者人数","user_no","注册批次＋窗内首次成功","用户数，不是主单数"],["U-05","注册→首次生成率","首次生成成功人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","内容类型、注册渠道拆分"],["U-06","首次作品提交人数","成熟注册用户中，窗内首次提交审核者人数","user_no","注册批次＋窗内首次提交","无需审核通过"],["U-06","注册→首次作品提交率","首次作品提交人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","不要求先生成"],["U-07","新增用户复访人数","成熟注册用户中，窗内产生注册会话之后新会话者人数","user_no","注册批次＋窗内新会话","保持登录返回也计；排除注册会话"],["U-07","新增用户复访率","新增用户复访人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","不等于再次认证"],["U-08","再次有效行为人数","成熟注册用户中，首次有效行为后在新会话主动发起独立业务且窗内成功者人数","user_no","注册批次＋窗内再次成功","同会话生成后投稿不算再次；后台完成不替代返回"],["U-08","再次有效行为率","再次有效行为人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","不是除以首次激活人数"],["U-10","注册后再登录人数","成熟注册用户中，窗内发生新的独立认证成功者人数","user_no","注册批次＋窗内认证","排除注册自动登录、续期、重复回调"],["U-10","注册后再登录率","注册后再登录人数 ÷ 对应观察窗已满注册人数","user_no","注册批次","不替代访问复访率"],["C-01","内容存量","截止时作品/帖子各自对象数","内容类型＋对象编码","截止快照","类型、状态、用户/官方分别统计"],["C-02","提交审核作品数","区间成功进入审核的作品数","作品","提交审核发生","同区间重提不增作品数；轮次另计"],["C-02","作品提交用户数","区间提交审核的作者人数","user_no","提交审核发生","同作者多作品仅计一人"],["C-03","内容结构数量","截止内容按类型、来源、状态、话题分组计数","内容类型＋对象编码","截止快照","业务字典；多话题分组不相加"],["C-03","内容结构占比","分组内容数 ÷ 当前筛选范围内容总数","内容类型＋对象编码","截止快照","多话题占比可重叠"],["C-04","活跃创作者（P0）","区间至少提交一件作品的作者人数","user_no","提交审核发生","排除官方/测试；不以生成用户替代"],["C-05","当前点赞数","范围内内容当前有效点赞计数之和","有效点赞记录","截止快照","作品/帖子分开，撤销反映快照"],["C-05","当前收藏数","范围内内容当前有效收藏计数之和","有效收藏记录","截止快照","不是期间新增"],["C-05","当前评论数","范围内内容当前有效评论计数之和","有效评论记录","截止快照","不是期间新增"],["C-05","当前分享数","范围内内容当前有效分享计数之和","有效分享记录","截止快照","快照不可相加"],["C-06","作品创建数","区间发生创建的作品数","作品","创建发生","每阶段区间去重；重提/再发布不增该阶段作品数"],["C-06","创建用户数","区间发生作品创建的作者人数","user_no","创建发生","各阶段独立去重，不相加"],["C-06","作品审核通过数","区间发生审核通过的作品数","作品","审核通过发生","每阶段区间去重；重提/再发布不增该阶段作品数"],["C-06","审核通过用户数","区间发生作品审核通过的作者人数","user_no","审核通过发生","各阶段独立去重，不相加"],["C-06","作品审核拒绝数","区间发生审核拒绝的作品数","作品","审核拒绝发生","每阶段区间去重；重提/再发布不增该阶段作品数"],["C-06","审核拒绝用户数","区间发生作品审核拒绝的作者人数","user_no","审核拒绝发生","各阶段独立去重，不相加"],["C-06","作品正式发布数","区间发生正式发布的作品数","作品","正式发布发生","每阶段区间去重；重提/再发布不增该阶段作品数"],["C-06","正式发布用户数","区间发生作品正式发布的作者人数","user_no","正式发布发生","各阶段独立去重，不相加"],["C-06","当前下架作品数","截止时处于下架状态的作品数","作品","截止快照","不是区间下架次数；提交数量见 C-02"],["C-07","高价值内容排行","收藏降序→互动总数降序→首次发布时间降序→对象编码升序","内容类型＋对象编码","截止快照","互动总数＝点赞＋收藏＋评论＋分享；保留各原数"],["A-01","生成主单数","区间创建成功的生成主单数","生成主单","创建发生","内部重试、子任务不增主单"],["A-02","生成成功主单数","区间到达成功终态的主单数","生成主单","终态发生","成功/失败/取消互斥；退款不改变生成结果"],["A-02","生成失败主单数","区间到达失败终态的主单数","生成主单","终态发生","成功/失败/取消互斥；退款不改变生成结果"],["A-02","生成取消主单数","区间到达取消终态的主单数","生成主单","终态发生","成功/失败/取消互斥；退款不改变生成结果"],["A-02","生成成功率","成功主单 ÷（成功＋失败＋取消主单）","生成主单","同区间终态发生","不以创建量或点击量作分母"],["A-02","生成失败率","失败主单 ÷（成功＋失败＋取消主单）","生成主单","同区间终态发生","失败退款仍计失败"],["A-02","处理中主单数","截止时仍处于处理中的主单数","生成主单","截止快照","与终态发生量分开"],["A-03","模型/系列/类型分布数量","区间创建主单按模型、系列或输出类型分组计数","生成主单","创建发生","未知历史编码单列，不猜映射"],["A-03","模型/系列/类型占比","分组创建主单数 ÷ 当前范围创建主单总数","生成主单","创建发生","各分组维度分别计算"],["A-04","失败原因数量","失败主单按原因分组计数","生成主单","失败终态发生","超时、安全拒绝、参数、额度/供应、其他"],["A-04","失败原因占比","该原因失败主单 ÷ 全部失败主单","生成主单","失败终态发生","不是除以全部终态主单"],["A-05","超时处理中积压","处理中且超过模型约定处理时限的主单数","生成主单","截止快照","未配置时限仅展示处理中量及年龄，不判断异常"],["A-06","生成结果件数","区间最终可交付成品数","主单＋成品","最终交付发生","图片/视频/漫剧/文本分开，排除预览中间文件"],["A-07","生成成功用户数","区间有成功终态主单的用户数","user_no","成功终态发生","与失败用户可重叠"],["A-07","生成失败用户数","区间有失败终态主单的用户数","user_no","失败终态发生","与成功用户不可相加"],["A-08","生成→作品提交率","168h 内有关联作品提交的成熟成功主单 ÷ 成熟成功主单","生成主单","按生成成功时间选批次","缺对象关系时只可另名用户级估算；每用户批次首次成功为起点"],["H-01","活动参与人数","有效加入、报名、投稿用户的并集人数","user_no","参与发生","按活动/期次拆分，跨活动汇总用户去重"],["H-01","活动参与次数","各参与方式有效记录数","方式＋参与记录","参与发生","加入/报名/投稿分别计数；非点击次数"],["H-02","有效投稿数","区间投稿且截至截止仍合资格的投稿对象数","活动＋期次＋投稿对象","投稿发生，截止核资格","失效移出有效量"],["H-02","有效投稿用户数","上述合资格投稿的用户人数","user_no","投稿发生，截止核资格","跨投稿对象去重"],["H-03","任务完成用户数","区间业务确认完成任务的用户并集人数","user_no","完成发生","新手/成长/签到/其他可拆分"],["H-03","任务完成次数","区间完成的用户、任务、期次组合数","用户＋任务＋期次","完成发生","刷新、重复领奖不增加"],["H-04","任务完成率","指定任务/期次完成的合资格用户 ÷ 同批合资格用户","user_no","按资格形成时间选批次","签到指定自然日期；未选任务/期次或无资格全集不计算"],["H-04","奖励到账率","截至共同截止仍完整有效到账对象 ÷ 同批应奖励对象","应奖对象","按应奖时间选批次","失败/待发仍在分母；补发、冲正见 3.5"],["H-04","奖励待结算对象数","同批应奖对象中截至截止仍待发放者数量","应奖对象","应奖批次截止状态","不是接口尝试次数"],["H-05","积分到账流水数","区间实际到账的生效流水数","积分流水","到账发生","重复回调不增加"],["H-05","积分到账用户数","区间有实际积分到账的用户人数","user_no","到账发生","不以展示奖励计到账"],["H-05","未解决奖励失败对象数","同批应奖对象中截至截止仍失败未解决者数量","应奖对象","应奖批次截止状态","补发成功移出失败；不是失败尝试次数"],["H-05","冲正流水数","区间生效冲正流水数","冲正流水","冲正发生","与原流水关联，原流水保留"],["H-05","冲正用户数","区间有生效冲正流水的用户人数","user_no","冲正发生","不撤销此前发生人数"],["H-06","发放积分量","区间发放生效流水的积分数量汇总","积分流水","发放流水发生","各方向单列；保留正负方向，不混净额/余额；按来源拆分"],["H-06","消耗积分量","区间消耗生效流水的积分数量汇总","积分流水","消耗流水发生","各方向单列；保留正负方向，不混净额/余额；按来源拆分"],["H-06","返还积分量","区间返还生效流水的积分数量汇总","积分流水","返还流水发生","各方向单列；保留正负方向，不混净额/余额；按来源拆分"],["H-06","冲正积分量","区间冲正生效流水的积分数量汇总","积分流水","冲正流水发生","各方向单列；保留正负方向，不混净额/余额；按来源拆分"],["H-07","成功兑换单数","扣减及交付均成功的兑换单数","兑换单","两者完成较晚时间","失败退分不是成功兑换"],["H-07","成功兑换用户数","成功兑换单的用户人数","user_no","完整兑换成功","同用户多单去重"],["H-07","成功兑换扣减积分","成功兑换单实际扣减积分之和","兑换单关联扣减流水","完整兑换成功","不是全站同期消耗积分"],["H-08","激励后复访人数","成熟触发用户中窗内产生触发会话之后新会话者人数","user_no","按触发时间选批次","按触发类型观察；同一期次重复奖励不重启窗口"],["H-08","激励后复访率","激励后复访人数 ÷ 成熟触发用户数","user_no","激励批次","24/168/336h；注册批次基线仅参考，不声称因果"],["H-08","激励后有效行为人数","成熟触发用户中在新会话主动发起独立业务且窗内成功者人数","user_no","激励批次","排除触发自身及无人返回的异步完成"],["H-08","激励后有效行为率","激励后有效行为人数 ÷ 成熟触发用户数","user_no","激励批次","跨对象汇总按同触发类型本期最早合资格触发，用户去重"],["Q-01","审核积压轮次数","截止时未终结审核轮次数","审核轮次","截止快照","作品/帖子分开；重提新建轮次"],["Q-01","审核积压年龄","截止时间 − 本轮提交时间","单个审核轮次","截止快照","不是完成耗时"],["Q-02","平均审核耗时","终结轮次（完成时间−本轮提交时间）之和 ÷ 终结轮次数","审核轮次","审核完成发生","同批轮次；排除跳过/删除"],["Q-02","审核通过率","通过轮次数 ÷ 全部终结轮次数","审核轮次","审核完成发生","分母含通过、业务拒绝、技术失败"],["Q-02","审核技术失败率","技术失败轮次数 ÷ 全部终结轮次数","审核轮次","审核完成发生","业务拒绝不等于技术失败"],["Q-03","未记录渠道占比","固化注册渠道字段为空的新增账号数 ÷ 新增账号数","user_no","账号创建成功","只判断已知空值，不推断访问方式；历史未匹配非空编码不进分子；字段状态无法确认时不计算"],["Q-06","官方/测试排除规则","按 2.1 排除明确官方/测试等记录；内容保留用户/官方拆分","各原指标对象","各原指标时间","规则项，不是数值指标；历史未知不猜测"]];
+    const analyticsAtomicCatalog = [
+      ["G-01", "PV", "有效页面访问计数", "页面访问", "访问发生", "重复渲染、回调、重定向中间页不计"],
+      ["G-02", "UV", "区间访问访客去重数", "稳定访客", "访问发生", "跨日、终端、渠道分组不可相加"],
+      ["G-03", "独立 IP", "区间公网 IP 去重数", "公网 IP", "访问发生", "仅聚合，不展示明细"],
+      ["G-03", "会话数", "开始于区间内的会话数", "会话", "会话开始", "30 分钟无活动后再次活动建立新会话"],
+      ["G-03", "新访客数", "首次可识别访问在区间内的访客数", "稳定访客", "首次访问", "跨日整体去重；按首次触点拆分"],
+      ["G-03", "老访客数", "区间前已识别且本期访问的访客数", "稳定访客", "本期访问", "不以日老访客之和代替区间人数"],
+      ["G-04", "跳出率", "排除跨日会话后，仅一次有效页面访问且无路由切换或业务成功的会话数 ÷ 剩余会话数", "会话", "会话开始", "同批会话；页面维度限入口会话"],
+      ["G-04", "平均访问时长", "所选区间开始的非跨日会话中，协议2、可见时长可信且已闭合的有效会话可见时长总秒数 ÷ 有效会话数；排除跨日、旧协议、无效或缺失可见段及未闭合会话，后台时长不计", "有效会话", "会话开始", "仅在无有效会话时不计算；无需全部非跨日会话均有效，样本覆盖率在详情单列"],
+      ["G-05", "页面 PV", "该规范页面有效访问次数", "页面访问", "页面访问发生", "入口页与受访页分别统计"],
+      ["G-05", "页面 UV", "访问该页面的访客数", "稳定访客", "页面访问发生", "同访客访问多页可进入多个分组"],
+      ["G-05", "页面 IP", "访问该页面的公网 IP 数", "公网 IP", "页面访问发生", "仅聚合"],
+      ["G-05", "页面新访客数", "全站本期新访客中访问该页面者人数", "稳定访客", "首次访问及本期页面访问", "不是第一次访问该页面的人数"],
+      ["G-05", "页面涉及会话数", "访问过该页面的会话数", "会话", "会话开始", "入口页口径仅取以该页开始的会话"],
+      ["G-05", "页面平均停留时长", "该页面可观测前台停留总时长 ÷ 页面 PV", "页面访问内时长段", "页面访问发生", "隐藏不计；末页无结束信号取最后观测时点，可能低估"],
+      ["G-06", "首次触点新访客占比", "该首次触点渠道新访客 ÷ 全部新访客", "稳定访客", "首次访问", "渠道空值保留；区间整体去重"],
+      ["G-06", "会话触点访问量", "按会话触点拆分 PV、UV、IP、会话；各自使用 G-01～G-04 公式", "各原指标对象", "各原指标时间", "属于分组视图，不新增混合计量指标"],
+      ["G-07", "新增注册人数", "新建账号人数", "user_no", "账号创建成功", "已有账号登录不计"],
+      ["G-08", "各注册渠道人数", "注册批次按固化注册触点分组的人数", "user_no", "账号创建成功", "渠道及 UTM 五参数；空值与历史未匹配编码分开，不被后续访问覆盖"],
+      ["G-09", "UV→注册聚合率", "同区间新增注册人数 ÷ UV", "分子账号；分母访客", "注册发生／访问发生", "仅聚合估算，不是个人漏斗"],
+      ["G-10", "渠道 UV→注册聚合率", "同渠道注册触点人数 ÷ 会话触点 UV", "分子账号；分母访客", "注册发生／访问发生", "不同触点；可超过 100%，不截断"],
+      ["U-01", "累计注册用户", "截止前已创建账号人数", "user_no", "截止快照", "含停用/注销；排除明确官方/测试，不等于可登录数"],
+      ["U-02", "有效 DAU（P0）", "当日生成成功、作品提交、有效参与用户的并集人数", "user_no", "有效行为成功", "登录或积分不单独计有效"],
+      ["U-03", "周有效价值用户", "北京时间周一至周日有效行为用户的并集人数", "user_no", "有效行为成功", "不相加每日 DAU；未完结周标注"],
+      ["U-04", "观察窗已满注册人数（成熟注册）", "所选注册批次中，截至共同截止已满观察窗的人数", "user_no", "注册批次", "24/168/336h 分别计算；分母辅助量，不进入主指标选择器"],
+      ["U-04", "待满观察窗注册人数", "所选注册批次人数 − 对应观察窗已满人数", "user_no", "注册批次", "辅助说明，不进入主指标选择器或该窗口的分子、分母"],
+      ["U-04", "首次激活人数", "成熟注册用户中，窗内首次生成成功、提交作品或有效参与者人数", "user_no", "注册批次＋窗内首次行为", "三种行为取并集"],
+      ["U-04", "注册后激活率", "首次激活人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "24/168/336h 各自计算，7 天内激活率使用 168h"],
+      ["U-05", "首次生成成功人数", "成熟注册用户中，窗内首次生成成功者人数", "user_no", "注册批次＋窗内首次成功", "用户数，不是主单数"],
+      ["U-05", "注册→首次生成率", "首次生成成功人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "内容类型、注册渠道拆分"],
+      ["U-06", "首次作品提交人数", "成熟注册用户中，窗内首次提交审核者人数", "user_no", "注册批次＋窗内首次提交", "无需审核通过"],
+      ["U-06", "注册→首次作品提交率", "首次作品提交人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "不要求先生成"],
+      ["U-07", "新增用户复访人数", "成熟注册用户中，窗内产生注册会话之后新会话者人数", "user_no", "注册批次＋窗内新会话", "保持登录返回也计；排除注册会话"],
+      ["U-07", "新增用户复访率", "新增用户复访人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "不等于再次认证"],
+      ["U-08", "再次有效行为人数", "成熟注册用户中，首次有效行为后在新会话主动发起独立业务且窗内成功者人数", "user_no", "注册批次＋窗内再次成功", "同会话生成后投稿不算再次；后台完成不替代返回"],
+      ["U-08", "再次有效行为率", "再次有效行为人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "不是除以首次激活人数"],
+      ["U-10", "注册后再登录人数", "成熟注册用户中，窗内发生新的独立认证成功者人数", "user_no", "注册批次＋窗内认证", "排除注册自动登录、续期、重复回调"],
+      ["U-10", "注册后再登录率", "注册后再登录人数 ÷ 对应观察窗已满注册人数", "user_no", "注册批次", "不替代访问复访率"],
+      ["C-01", "内容存量", "截止时作品/帖子各自对象数", "内容类型＋对象编码", "截止快照", "类型、状态、用户/官方分别统计"],
+      ["C-02", "提交审核作品数", "区间成功进入审核的作品数", "作品", "提交审核发生", "同区间重提不增作品数；轮次另计"],
+      ["C-02", "作品提交用户数", "区间提交审核的作者人数", "user_no", "提交审核发生", "同作者多作品仅计一人"],
+      ["C-03", "内容结构数量", "截止内容按类型、来源、状态、话题分组计数", "内容类型＋对象编码", "截止快照", "业务字典；多话题分组不相加"],
+      ["C-03", "内容结构占比", "分组内容数 ÷ 当前筛选范围内容总数", "内容类型＋对象编码", "截止快照", "多话题占比可重叠"],
+      ["C-04", "活跃创作者（P0）", "区间至少提交一件作品的作者人数", "user_no", "提交审核发生", "排除官方/测试；不以生成用户替代"],
+      ["C-05", "当前点赞数", "范围内内容当前有效点赞计数之和", "有效点赞记录", "截止快照", "作品/帖子分开，撤销反映快照"],
+      ["C-05", "当前收藏数", "范围内内容当前有效收藏计数之和", "有效收藏记录", "截止快照", "不是期间新增"],
+      ["C-05", "当前评论数", "范围内内容当前有效评论计数之和", "有效评论记录", "截止快照", "不是期间新增"],
+      ["C-05", "当前分享数", "范围内内容当前有效分享计数之和", "有效分享记录", "截止快照", "快照不可相加"],
+      ["C-06", "作品创建数", "区间发生创建的作品数", "作品", "创建发生", "每阶段区间去重；重提/再发布不增该阶段作品数"],
+      ["C-06", "创建用户数", "区间发生作品创建的作者人数", "user_no", "创建发生", "各阶段独立去重，不相加"],
+      ["C-06", "作品审核通过数", "区间发生审核通过的作品数", "作品", "审核通过发生", "每阶段区间去重；重提/再发布不增该阶段作品数"],
+      ["C-06", "审核通过用户数", "区间发生作品审核通过的作者人数", "user_no", "审核通过发生", "各阶段独立去重，不相加"],
+      ["C-06", "作品审核拒绝数", "区间发生审核拒绝的作品数", "作品", "审核拒绝发生", "每阶段区间去重；重提/再发布不增该阶段作品数"],
+      ["C-06", "审核拒绝用户数", "区间发生作品审核拒绝的作者人数", "user_no", "审核拒绝发生", "各阶段独立去重，不相加"],
+      ["C-06", "作品正式发布数", "区间发生正式发布的作品数", "作品", "正式发布发生", "每阶段区间去重；重提/再发布不增该阶段作品数"],
+      ["C-06", "正式发布用户数", "区间发生作品正式发布的作者人数", "user_no", "正式发布发生", "各阶段独立去重，不相加"],
+      ["C-06", "当前下架作品数", "截止时处于下架状态的作品数", "作品", "截止快照", "不是区间下架次数；提交数量见 C-02"],
+      ["C-07", "高价值内容排行", "收藏降序→互动总数降序→首次发布时间降序→对象编码升序", "内容类型＋对象编码", "截止快照", "互动总数＝点赞＋收藏＋评论＋分享；保留各原数"],
+      ["A-01", "生成主单数", "区间创建成功的生成主单数", "生成主单", "创建发生", "内部重试、子任务不增主单"],
+      ["A-02", "生成成功主单数", "区间到达成功终态的主单数", "生成主单", "终态发生", "成功/失败互斥；退款不改变生成结果"],
+      ["A-02", "生成失败主单数", "区间到达失败终态的主单数", "生成主单", "终态发生", "成功/失败互斥；退款不改变生成结果"],
+      ["A-02", "生成成功率", "成功主单 ÷（成功＋失败主单）", "生成主单", "同区间终态发生", "不以创建量或点击量作分母"],
+      ["A-02", "生成失败率", "失败主单 ÷（成功＋失败主单）", "生成主单", "同区间终态发生", "失败退款仍计失败"],
+      ["A-02", "处理中主单数", "截止时仍处于处理中的主单数", "生成主单", "截止快照", "与终态发生量分开"],
+      ["A-03", "模型/系列/类型分布数量", "区间创建主单按模型、系列或输出类型分组计数", "生成主单", "创建发生", "未知历史编码单列，不猜映射"],
+      ["A-03", "模型/系列/类型占比", "分组创建主单数 ÷ 当前范围创建主单总数", "生成主单", "创建发生", "各分组维度分别计算"],
+      ["A-04", "失败原因数量", "失败主单按原因分组计数", "生成主单", "失败终态发生", "超时、安全拒绝、参数、额度/供应、其他"],
+      ["A-04", "失败原因占比", "该原因失败主单 ÷ 全部失败主单", "生成主单", "失败终态发生", "不是除以全部终态主单"],
+      ["A-05", "超时处理中积压", "处理中且超过模型约定处理时限的主单数", "生成主单", "截止快照", "未配置时限仅展示处理中量及年龄，不判断异常"],
+      ["A-06", "生成结果件数", "区间最终可交付成品数", "主单＋成品", "最终交付发生", "图片/视频/漫剧/文本分开，排除预览中间文件"],
+      ["A-07", "生成成功用户数", "区间有成功终态主单的用户数", "user_no", "成功终态发生", "与失败用户可重叠"],
+      ["A-07", "生成失败用户数", "区间有失败终态主单的用户数", "user_no", "失败终态发生", "与成功用户不可相加"],
+      ["A-08", "生成→作品提交率", "168h 内有关联作品提交的成熟成功主单 ÷ 成熟成功主单", "生成主单", "按生成成功时间选批次", "缺对象关系时只可另名用户级估算；每用户批次首次成功为起点"],
+      ["H-01", "活动参与人数", "有效加入、报名、投稿用户的并集人数", "user_no", "参与发生", "按活动/期次拆分，跨活动汇总用户去重"],
+      ["H-01", "活动参与次数", "各参与方式有效记录数", "方式＋参与记录", "参与发生", "加入/报名/投稿分别计数；非点击次数"],
+      ["H-02", "有效投稿数", "区间投稿且截至截止仍合资格的投稿对象数", "活动＋期次＋投稿对象", "投稿发生，截止核资格", "失效移出有效量"],
+      ["H-02", "有效投稿用户数", "上述合资格投稿的用户人数", "user_no", "投稿发生，截止核资格", "跨投稿对象去重"],
+      ["H-03", "任务完成用户数", "区间业务确认完成任务的用户并集人数", "user_no", "完成发生", "新手/成长/签到/其他可拆分"],
+      ["H-03", "任务完成次数", "区间完成的用户、任务、期次组合数", "用户＋任务＋期次", "完成发生", "刷新、重复领奖不增加"],
+      ["H-04", "任务完成率", "指定任务/期次完成的合资格用户 ÷ 同批合资格用户", "user_no", "按资格形成时间选批次", "签到指定自然日期；未选任务/期次或无资格全集不计算"],
+      ["H-04", "奖励到账率", "截至共同截止仍完整有效到账对象 ÷ 同批应奖励对象", "应奖对象", "按应奖时间选批次", "失败/待发仍在分母；补发、冲正见 3.5"],
+      ["H-04", "奖励待结算对象数", "同批应奖对象中截至截止仍待发放者数量", "应奖对象", "应奖批次截止状态", "不是接口尝试次数"],
+      ["H-05", "积分到账流水数", "区间实际到账的生效流水数", "积分流水", "到账发生", "重复回调不增加"],
+      ["H-05", "积分到账用户数", "区间有实际积分到账的用户人数", "user_no", "到账发生", "不以展示奖励计到账"],
+      ["H-05", "未解决奖励失败对象数", "同批应奖对象中截至截止仍失败未解决者数量", "应奖对象", "应奖批次截止状态", "补发成功移出失败；不是失败尝试次数"],
+      ["H-05", "冲正流水数", "区间生效冲正流水数", "冲正流水", "冲正发生", "与原流水关联，原流水保留"],
+      ["H-05", "冲正用户数", "区间有生效冲正流水的用户人数", "user_no", "冲正发生", "不撤销此前发生人数"],
+      ["H-06", "发放积分量", "区间发放生效流水的积分数量汇总", "积分流水", "发放流水发生", "各方向单列；保留正负方向，不混净额/余额；按来源拆分"],
+      ["H-06", "消耗积分量", "区间消耗生效流水的积分数量汇总", "积分流水", "消耗流水发生", "各方向单列；保留正负方向，不混净额/余额；按来源拆分"],
+      ["H-06", "返还积分量", "区间返还生效流水的积分数量汇总", "积分流水", "返还流水发生", "各方向单列；保留正负方向，不混净额/余额；按来源拆分"],
+      ["H-06", "冲正积分量", "区间冲正生效流水的积分数量汇总", "积分流水", "冲正流水发生", "各方向单列；保留正负方向，不混净额/余额；按来源拆分"],
+      ["H-07", "成功兑换单数", "扣减及交付均成功的兑换单数", "兑换单", "两者完成较晚时间", "失败退分不是成功兑换"],
+      ["H-07", "成功兑换用户数", "成功兑换单的用户人数", "user_no", "完整兑换成功", "同用户多单去重"],
+      ["H-07", "成功兑换扣减积分", "成功兑换单实际扣减积分之和", "兑换单关联扣减流水", "完整兑换成功", "不是全站同期消耗积分"],
+      ["H-08", "激励后复访人数", "成熟触发用户中窗内产生触发会话之后新会话者人数", "user_no", "按触发时间选批次", "按触发类型观察；同一期次重复奖励不重启窗口"],
+      ["H-08", "激励后复访率", "激励后复访人数 ÷ 成熟触发用户数", "user_no", "激励批次", "24/168/336h；注册批次基线仅参考，不声称因果"],
+      ["H-08", "激励后有效行为人数", "成熟触发用户中在新会话主动发起独立业务且窗内成功者人数", "user_no", "激励批次", "排除触发自身及无人返回的异步完成"],
+      ["H-08", "激励后有效行为率", "激励后有效行为人数 ÷ 成熟触发用户数", "user_no", "激励批次", "跨对象汇总按同触发类型本期最早合资格触发，用户去重"],
+      ["Q-01", "审核积压轮次数", "截止时未终结审核轮次数", "审核轮次", "截止快照", "作品/帖子分开；重提新建轮次"],
+      ["Q-01", "审核积压年龄", "截止时间 − 本轮提交时间", "单个审核轮次", "截止快照", "不是完成耗时"],
+      ["Q-02", "平均审核耗时", "终结轮次（完成时间−本轮提交时间）之和 ÷ 终结轮次数", "审核轮次", "审核完成发生", "同批轮次；排除跳过/删除"],
+      ["Q-02", "审核通过率", "通过轮次数 ÷ 全部终结轮次数", "审核轮次", "审核完成发生", "分母含通过、业务拒绝、技术失败"],
+      ["Q-02", "审核技术失败率", "技术失败轮次数 ÷ 全部终结轮次数", "审核轮次", "审核完成发生", "业务拒绝不等于技术失败"],
+      ["Q-03", "未记录渠道占比", "固化注册渠道字段为空的新增账号数 ÷ 新增账号数", "user_no", "账号创建成功", "只判断已知空值，不推断访问方式；历史未匹配非空编码不进分子；字段状态无法确认时不计算"],
+      ["Q-06", "官方/测试排除规则", "按 2.1 排除明确官方/测试等记录；内容保留用户/官方拆分", "各原指标对象", "各原指标时间", "规则项，不是数值指标；历史未知不猜测"]
+    ];
     function initAnalyticsAtomicCatalog() {
       const view=document.querySelector('.view[data-view="analytics-metrics"]');if(!view)return;
       const names={'G-06':'触点渠道分布','G-08':'注册触点渠道','Q-03':'未记录渠道占比'};
@@ -19780,7 +19918,7 @@
         guide.rules=guide.rules.filter(rule=>!['直接访问','站内来源','外部来源','四类','来源类型','系统分类'].some(word=>rule.includes(word)));
         guide.rules.unshift('渠道仅使用后台注册来源及 UTM 渠道值；空值显示未记录渠道，非空历史编码保留在历史 / 未匹配渠道，不根据 referrer 推断分类。');
         if(['analytics-growth','analytics-users'].includes(key))guide.rules.unshift('观察窗已满人数仅作激活、首次行为等指标的分母说明，不进入主指标选择；旧 mature 链接转到激活率。');
-        if(key==='analytics-metrics')guide.rules.unshift('按具体展示指标名称搜索；定义中逐行展示计算方式、去重对象、统计时间与限制，逐项对应需求第 5.2 节。');
+        if(key==='analytics-metrics')guide.rules.unshift('可按名称或编号查询 104 个展示值的计算方式和适用条件。作品存量取截止时的最新版本，排除已删除作品，再分别看归属和状态。生成后提交作品只看成功已满 168 小时的主单；关联记录覆盖不完整时显示不可计算。');
       });
       const url = new URL(location.href);
       const retired = ['direct','onsite','external','external_other'];
@@ -19819,6 +19957,117 @@
     }
     applyTutorialFilters();
     initRefinedAnalyticsSuite();
+    initFlashCategoryPage();
+    function initFlashCategoryPage() {
+      const root = document.querySelector('[data-view="flash-categories"]');
+      if (!root) return;
+      const storage = "ai666-prototype.flash-categories.v1";
+      const initial = [
+        { id: "C001", name: "拼车", key: "pinche", topics: [], state: "启用", modified: "2026-11-25" },
+        { id: "C002", name: "技术分享", key: "jishufenxiang", topics: ["MJ"], state: "启用", modified: "2026-11-25" },
+      ];
+      let rows = initial;
+      try {
+        const saved = JSON.parse(localStorage.getItem(storage));
+        if (Array.isArray(saved)) rows = saved;
+      } catch {}
+      const filter = root.querySelector("[data-category-filter]");
+      const tbody = root.querySelector("[data-category-rows]");
+      const batch = root.querySelector("[data-category-batch]");
+      const feedback = root.querySelector("[data-category-feedback]");
+      const editor = root.querySelector("[data-category-editor]");
+      const form = editor.querySelector("form");
+      let editing = null;
+      function commit(message) {
+        localStorage.setItem(storage, JSON.stringify(rows));
+        feedback.textContent = message;
+        render();
+      }
+      function remove(selected) {
+        if (!selected.length) return;
+        if (selected.some(row => row.state === "启用")) {
+          feedback.textContent = "启用状态的分类不可删除";
+          return;
+        }
+        if (!window.confirm(selected.length === 1 ? "确定要删除分类「" + selected[0].name + "」吗？" : "确定要删除选中的 " + selected.length + " 个分类吗？")) return;
+        rows = rows.filter(row => !selected.includes(row));
+        commit("删除成功");
+      }
+      function edit(row) {
+        editing = row;
+        form.reset();
+        editor.querySelector("h3").textContent = row ? "编辑分类" : "新增分类";
+        form.elements.label.value = row?.name || "";
+        form.elements.key.value = row?.key || "";
+        form.elements.state.value = row?.state || "启用";
+        form.elements.state.disabled = Boolean(row);
+        for (const option of form.elements.topics.options) option.selected = Boolean(row?.topics.includes(option.value));
+        editor.showModal();
+        form.elements.label.focus();
+      }
+      function render() {
+        tbody.replaceChildren();
+        batch.disabled = true;
+        for (const row of rows) {
+          if (!row.name.includes(filter.elements.query.value.trim()) || (filter.elements.status.value && row.state !== filter.elements.status.value) || (filter.elements.topic.value && !row.topics.includes(filter.elements.topic.value))) continue;
+          const tr = tbody.insertRow();
+          const select = document.createElement("input");
+          select.type = "checkbox";
+          select.value = row.id;
+          select.setAttribute("aria-label", "选择" + row.name);
+          select.onchange = () => { batch.disabled = !tbody.querySelector("input:checked"); };
+          tr.insertCell().append(select);
+          for (const value of [row.id,row.name,row.key,row.topics.join("、") || "—",row.state,row.modified]) tr.insertCell().textContent = value;
+          const actions = tr.insertCell();
+          const next = row.state === "启用" ? "停用" : "启用";
+          for (const [name, action] of [["编辑", () => edit(row)], [next, () => {
+            if (!window.confirm("确定要" + next + "分类「" + row.name + "」吗？")) return;
+            row.state = next;
+            row.modified = new Date().toLocaleString("zh-CN");
+            commit(next + "成功");
+          }], ["删除", () => remove([row])]]) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "btn";
+            button.textContent = name;
+            button.onclick = action;
+            actions.append(button);
+          }
+        }
+        if (!tbody.rows.length) {
+          const cell = tbody.insertRow().insertCell();
+          cell.colSpan = 8;
+          cell.textContent = "暂无数据";
+        }
+      }
+      filter.onsubmit = (event) => { event.preventDefault(); render(); };
+      root.querySelector("[data-category-add]").onclick = () => edit(null);
+      batch.onclick = () => {
+        const ids = new Set([...tbody.querySelectorAll("input:checked")].map(input => input.value));
+        remove(rows.filter(row => ids.has(row.id)));
+      };
+      root.querySelector("[data-category-cancel]").onclick = () => editor.close();
+      form.elements.label.oninput = () => {
+        form.elements.label.setCustomValidity("");
+        if (!editing) form.elements.key.value = window.pinyinPro.pinyin(form.elements.label.value.trim(), { toneType: "none", separator: "", nonZh: "consecutive" })
+          .toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9_-]/g, "").replace(/-+/g, "-").replace(/^-|-$/g, "");
+      };
+      form.onsubmit = (event) => {
+        event.preventDefault();
+        const name = form.elements.label.value.trim();
+        if (!name || !form.elements.key.value) {
+          form.elements.label.setCustomValidity("请输入能生成分类标识的名称");
+          form.reportValidity();
+          return;
+        }
+        const row = editing || { id: "C-" + crypto.randomUUID(), key: form.elements.key.value };
+        Object.assign(row, { name, topics: [...form.elements.topics.selectedOptions].map(option => option.value), state: form.elements.state.value, modified: new Date().toLocaleString("zh-CN") });
+        if (!editing) rows.push(row);
+        editor.close();
+        commit("保存成功");
+      };
+      render();
+    }
     initTutorialPreviewPage();
     renderWalkthroughPanel();
     syncReviewWorkbenchRouteContext();

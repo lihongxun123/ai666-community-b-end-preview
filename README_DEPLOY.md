@@ -1,6 +1,6 @@
 # AI666 社区 B端管理后台公网静态预览包
 
-生成时间：2026-09-19T03:36:15.343Z
+生成时间：2026-11-25T03:18:20.819Z
 
 ## 用途
 
@@ -32,6 +32,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 内容列表: index.html
 - 内容详情: content-detail.html
 - 审核工作台: review-workbench.html
+- 闪念分类: flash-categories.html
 - 闪念管理: flash-management.html
 - 闪念详情: flash-detail.html
 - 模型系列: model-series.html
@@ -52,6 +53,7 @@ npm.cmd run validate:community-b-end:public-preview
 - 活动详情: activity-detail.html
 - 公告配置: operation-config.html
 - 商城管理: store-config.html
+- 会员管理: membership-management.html
 - 用户列表: user-list.html
 - 注册来源: register-sources.html
 - 邀请记录: invite-records.html

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-19T03:36:15.343Z",
+  "generatedAt": "2026-11-25T03:18:20.819Z",
   "packageType": "community-b-end-public-preview",
   "sourceRoot": "outputs/community-b-end-antdesign-prototype",
   "entry": "index.html",
   "homepage": "index.html",
   "publishBasePath": "/ai666-community-b-end-preview",
-  "pageCount": 40,
+  "pageCount": 42,
   "pages": [
     {
       "slug": "content-list",
@@ -24,6 +24,12 @@
       "label": "审核工作台",
       "path": "review-workbench.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/review-workbench.html"
+    },
+    {
+      "slug": "flash-categories",
+      "label": "闪念分类",
+      "path": "flash-categories.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/flash-categories.html"
     },
     {
       "slug": "flash-management",
@@ -144,6 +150,12 @@
       "label": "商城管理",
       "path": "store-config.html",
       "sourcePath": "outputs/community-b-end-antdesign-prototype/store-config.html"
+    },
+    {
+      "slug": "membership-management",
+      "label": "会员管理",
+      "path": "membership-management.html",
+      "sourcePath": "outputs/community-b-end-antdesign-prototype/membership-management.html"
     },
     {
       "slug": "user-list",
@@ -279,6 +291,12 @@
     "assets/image_assets/login-qr-v1.png",
     "assets/runtime/community-b-end.css",
     "assets/runtime/community-b-end.js",
+    "assets/runtime/membership-admin.css",
+    "assets/runtime/membership-admin.js",
+    "assets/runtime/membership-state.js",
+    "assets/runtime/user-operations.css",
+    "assets/runtime/user-operations.js",
+    "assets/vendor/pinyin-pro/index.js",
     "assets/video_assets/aigc-hero-c02c.mp4"
   ],
   "evidenceFiles": [

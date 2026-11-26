@@ -1,0 +1,56 @@
+[data-membership-admin] .member-admin-tabs .tabs { margin: 0; border-bottom: 0; }
+[data-membership-admin] .member-table td { vertical-align: middle; }
+[data-membership-admin] .member-table td:last-child { white-space: nowrap; }
+[data-membership-admin] .table-muted { display: block; margin-top: 4px; color: var(--ant-subtle); font-size: 12px; }
+[data-membership-admin] .panel-head p { margin: 3px 0 0; }
+[data-membership-admin] .panel-title { margin: 0; font-size: 14px; }
+[data-membership-admin] .tag + .tag { margin-left: 4px; }
+[data-membership-admin] .member-filters { display: flex; align-items: end; gap: 12px; flex-wrap: wrap; padding: 14px 16px; }
+[data-membership-admin] .member-filters label { display: grid; gap: 5px; color: var(--ant-subtle); }
+[data-membership-admin] .member-filters input { width: 240px; }
+[data-membership-admin] .member-filters select { min-width: 144px; }
+[data-membership-admin] .log-message { white-space: normal; min-width: 220px; overflow-wrap: anywhere; }
+[data-membership-admin] .appearance-preview { display: inline-block; padding: 3px 8px; border: 1px solid currentColor; border-radius: 14px; color: #0c6850; background: #e3f9ef; }
+[data-membership-admin] [data-appearance="month"] { color: #0b5f9b; background: #e8f6ff; }
+[data-membership-admin] [data-appearance="quarter"] { color: #683aba; background: #f3edff; }
+[data-membership-admin] [data-appearance="year"] { color: #834701; background: #fff5dd; }
+[data-membership-admin] .member-dialog { padding: 0; border: 0; color: var(--ant-text); background: #fff; box-shadow: 0 18px 54px #0b213044; overflow: auto; }
+[data-membership-admin] .member-dialog::backdrop { background: #00152967; }
+[data-membership-admin] .member-editor { width: min(630px, calc(100vw - 28px)); max-height: 90vh; border-radius: 8px; }
+[data-membership-admin] .member-drawer { position: fixed; inset: 0 0 0 auto; width: min(565px, 100%); height: 100%; max-width: none; max-height: none; margin: 0; }
+[data-membership-admin] .member-dialog-head,
+[data-membership-admin] .member-dialog-footer { display: flex; align-items: center; gap: 12px; padding: 12px 20px; position: sticky; background: #fff; z-index: 1; }
+[data-membership-admin] .member-dialog-head { top: 0; justify-content: space-between; border-bottom: 1px solid #edf0f5; }
+[data-membership-admin] .member-dialog-footer { bottom: 0; justify-content: end; border-top: 1px solid #edf0f5; }
+[data-membership-admin] .member-dialog-head h3 { margin: 0; font-size: 16px; }
+[data-membership-admin] .member-dialog-close { min-width: 32px; padding: 0 7px; font-size: 20px; color: var(--ant-subtle); text-decoration: none; }
+[data-membership-admin] .member-dialog-body { padding: 16px 20px; }
+[data-membership-admin] .member-dialog fieldset { border: 0; padding: 0; margin: 0; }
+[data-membership-admin] .member-dialog legend { margin-bottom: 6px; }
+[data-membership-admin] .member-dialog .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; }
+[data-membership-admin] .member-dialog .wide { grid-column: 1 / -1; }
+[data-membership-admin] .member-dialog .field { min-width: 0; align-content: start; }
+[data-membership-admin] .member-dialog .field > label,
+[data-membership-admin] .member-dialog legend { color: var(--ant-text); font-size: 14px; font-weight: 550; }
+[data-membership-admin] .member-dialog .input,
+[data-membership-admin] .member-dialog .select { width: 100%; min-width: 0; }
+[data-membership-admin] .member-dialog textarea.input { min-height: 88px; resize: vertical; }
+[data-membership-admin] .member-dialog .appearance-field { align-self: end; margin-bottom: 5px; }
+[data-membership-admin] .member-dialog .choices { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+[data-membership-admin] .member-dialog .choice { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; }
+[data-membership-admin] .member-dialog .plan-result { align-self: end; margin: 0; padding: 7px 9px; border-radius: var(--ant-radius); background: var(--ant-primary-soft); color: #2c4b6c; }
+[data-membership-admin] .member-dialog .help { color: var(--ant-subtle); line-height: 1.5; }
+[data-membership-admin] .member-dialog .attention,
+[data-membership-admin] .member-form-error { padding: 9px 11px; border-radius: var(--ant-radius); line-height: 1.55; }
+[data-membership-admin] .member-dialog .attention { margin: 0 0 12px; border: 1px solid #ffe58f; background: #fffbe6; color: #624516; }
+[data-membership-admin] .member-form-error { margin: 0 20px 12px; border: 1px solid #f3b8b5; background: #fff2f0; color: #a9272a; }
+[data-membership-admin] .member-drawer .detail-list { display: grid; grid-template-columns: 112px minmax(0, 1fr); margin: 0; }
+[data-membership-admin] .member-drawer .detail-list dt,
+[data-membership-admin] .member-drawer .detail-list dd { margin: 0; padding: 8px 0; border-bottom: 1px solid #f1f3f6; overflow-wrap: anywhere; }
+[data-membership-admin] .member-drawer .detail-list dt { color: var(--ant-subtle); }
+[data-membership-admin] .member-drawer .detail-group + .detail-group { margin-top: 18px; }
+[data-membership-admin] .member-drawer .detail-group h3 { margin: 0 0 4px; font-size: 14px; }
+[data-membership-admin] .member-drawer .order-actions { margin: 12px 0; }
+[data-membership-admin] .member-drawer .customer-request dd { white-space: pre-wrap; }
+[data-membership-admin] .member-drawer .order-notes { padding-left: 20px; line-height: 1.65; overflow-wrap: anywhere; }
+[data-membership-admin] .member-notice { position: fixed; z-index: 22; left: 50%; top: 14px; transform: translateX(-50%); padding: 9px 14px; border: 1px solid #b7eb8f; border-radius: var(--ant-radius); background: #f6ffed; color: #237804; box-shadow: var(--ant-shadow); }

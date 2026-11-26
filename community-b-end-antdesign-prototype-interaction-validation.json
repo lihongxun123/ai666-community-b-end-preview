@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T03:33:06.405Z",
+  "generatedAt": "2026-11-26T05:16:33.488Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -8,6 +8,7 @@
     "legacyReviewDetailRedirectExists": true,
     "allPagesRenderWithAlignedNavigation": true,
     "allVisibleBusinessControlsUseAntComponentContracts": true,
+    "membershipManagementFlows": true,
     "userListDesktopNarrowKeepsStickyActionsVisible": true,
     "contentListMatchesRealWorkTable": true,
     "contentListFiltersOperate": true,
@@ -147,7 +148,7 @@
         "pageHeading": "内容列表",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -167,7 +168,7 @@
         "pageHeading": "审核工作台",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -187,7 +188,27 @@
         "pageHeading": "闪念管理",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "flash-categories",
+        "file": "flash-categories.html",
+        "activeView": "flash-categories",
+        "activeNav": "flash-categories",
+        "routeLabel": "闪念分类",
+        "pageHeading": "闪念分类",
+        "navGroup": "内容管理",
+        "viewCount": 1,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -207,7 +228,7 @@
         "pageHeading": "模板配置",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -227,7 +248,7 @@
         "pageHeading": "",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -247,7 +268,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -267,7 +288,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -287,7 +308,7 @@
         "pageHeading": "",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -307,7 +328,7 @@
         "pageHeading": "展示位管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -327,7 +348,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -347,7 +368,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -367,7 +388,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -387,7 +408,7 @@
         "pageHeading": "赛事管理",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -407,7 +428,7 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -427,7 +448,27 @@
         "pageHeading": "",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
+        "overflowX": 0,
+        "consoleReady": true,
+        "antComponentCoverage": {
+          "buttonsMissing": 0,
+          "inputsMissing": 0,
+          "selectsMissing": 0,
+          "textareasMissing": 0
+        },
+        "ok": true
+      },
+      {
+        "view": "membership-management",
+        "file": "membership-management.html",
+        "activeView": "membership-management",
+        "activeNav": "membership-management",
+        "routeLabel": "会员管理",
+        "pageHeading": "会员管理",
+        "navGroup": "运营管理",
+        "viewCount": 1,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -447,7 +488,7 @@
         "pageHeading": "用户列表",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -467,7 +508,7 @@
         "pageHeading": "注册来源",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -487,7 +528,7 @@
         "pageHeading": "邀请记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -507,7 +548,7 @@
         "pageHeading": "积分记录",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -527,7 +568,7 @@
         "pageHeading": "",
         "navGroup": "用户管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -547,7 +588,7 @@
         "pageHeading": "访问质量",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -567,7 +608,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -587,7 +628,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -607,7 +648,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -627,7 +668,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -647,7 +688,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -667,7 +708,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -687,7 +728,7 @@
         "pageHeading": "",
         "navGroup": "数据分析",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -707,7 +748,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -727,7 +768,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -747,7 +788,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -767,7 +808,7 @@
         "pageHeading": "",
         "navGroup": "系统管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -787,7 +828,7 @@
         "pageHeading": "内容详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -807,7 +848,7 @@
         "pageHeading": "教程预览",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -827,7 +868,7 @@
         "pageHeading": "闪念详情",
         "navGroup": "内容管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -847,7 +888,7 @@
         "pageHeading": "活动详情",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -867,7 +908,7 @@
         "pageHeading": "AIGC 创作挑战赛",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -887,7 +928,7 @@
         "pageHeading": "我的评分任务",
         "navGroup": "运营管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -907,7 +948,7 @@
         "pageHeading": "模型详情",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -927,7 +968,7 @@
         "pageHeading": "模型配置",
         "navGroup": "AIGC管理",
         "viewCount": 1,
-        "navCount": 32,
+        "navCount": 34,
         "overflowX": 0,
         "consoleReady": true,
         "antComponentCoverage": {
@@ -939,6 +980,13 @@
         "ok": true
       }
     ],
+    "membershipManagement": {
+      "draftHidden": true,
+      "planPublished": true,
+      "newPlanEligibleForPromotion": true,
+      "missingPointsOnly": true,
+      "repairRestoredOrder": true
+    },
     "userListDesktopNarrow": {
       "viewportWidth": 1266,
       "documentOverflowX": 0,
@@ -1741,12 +1789,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-761209"
+      "taskCode": "TASK-165456"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-761209",
+      "taskCode": "TASK-165456",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1755,7 +1803,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-761209\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-165456\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -1986,7 +2034,7 @@
     },
     "b03StoreRecordExactCount": 1,
     "b04UserListInitial": {
-      "rows": 4,
+      "rows": 6,
       "columns": 10,
       "filters": [
         "userNo",
@@ -2068,7 +2116,7 @@
     "b04OfficialRequiredError": true,
     "b04OfficialCreated": {
       "modalOpen": false,
-      "rows": 5,
+      "rows": 7,
       "created": true
     },
     "b04LegacyUserDetailRedirect": {
@@ -2312,7 +2360,7 @@
       "open": true,
       "component": "Modal",
       "tree": "Tree",
-      "permissionCount": 105,
+      "permissionCount": 108,
       "panels": 2,
       "reasonFields": 0
     },
@@ -2455,12 +2503,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1789788766347",
-      "competitionId": "COMP-2026-766380",
+      "draftName": "赛事交互验收草稿-1795670170713",
+      "competitionId": "COMP-2026-170757",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1789788766347",
+      "title": "赛事交互验收草稿-1795670170713",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2478,7 +2526,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1789788766347"
+      "expectedName": "赛事交互验收草稿-1795670170713"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -3082,7 +3130,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,",
+        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
         "removeVisible": true
       }
     ],
@@ -3259,7 +3307,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-769625",
+        "awardId": "AWARD-174289",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3465,7 +3513,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-09-19 11:32",
+      "status": "已提交 · 2026-11-26 13:16",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3520,7 +3568,7 @@
       "chartComponents": 1,
       "anomalyRows": 0,
       "overviewCards": 6,
-      "pvValue": "7,515",
+      "pvValue": "7,527",
       "stageCards": 6,
       "selectedStageMetric": "G-02",
       "trendTabs": 11,
@@ -3581,20 +3629,20 @@
         "date",
         "date"
       ],
-      "start": "2026-09-12",
-      "end": "2026-09-18",
+      "start": "2026-11-19",
+      "end": "2026-11-25",
       "calendarIcon": true
     },
     "analyticsOverviewTodayPreset": {
       "value": "today",
-      "start": "2026-09-19",
-      "end": "2026-09-19"
+      "start": "2026-11-26",
+      "end": "2026-11-26"
     },
     "analyticsOverviewApplied": {
       "range": "complete30",
       "applied": "true",
       "resultLineCount": 0,
-      "trendRange": "2026-08-20 至 2026-09-18 · 按周 · 访问日期 / 会话触点",
+      "trendRange": "2026-10-27 至 2026-11-25 · 按周 · 访问日期 / 会话触点",
       "trendGranularity": "week",
       "trendBuckets": 5,
       "selectedQuickRange": "complete30"
@@ -3604,11 +3652,11 @@
       "chartMetric": "G-01",
       "title": "PV 趋势",
       "values": [
-        "4,317",
-        "7,556",
-        "7,487",
-        "7,536",
-        "5,374"
+        "6,451",
+        "7,514",
+        "7,555",
+        "7,509",
+        "3,210"
       ],
       "detailTarget": "analytics-growth",
       "selectedStages": 0
@@ -3641,7 +3689,7 @@
     },
     "analyticsGrowthSourceBoundary": {
       "cardLabel": "新访客",
-      "cardValue": "1,117",
+      "cardValue": "1,121",
       "wholeSiteOnly": "",
       "helpText": "首次触点新访客。首次访问发生在所选区间的去重访客数，按首次触点归因。",
       "headers": [
@@ -3683,7 +3731,7 @@
     },
     "analyticsGrowthChannelApplied": {
       "channel": "xiaohongshu",
-      "wholeSiteCardValue": "409"
+      "wholeSiteCardValue": "408"
     },
     "analyticsGrowthBiWorkspace": {
       "ready": "true",
@@ -3739,7 +3787,7 @@
           "exists": true
         }
       ],
-      "initialPeriods": "本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11",
+      "initialPeriods": "本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18",
       "initialTrend": {
         "metric": "new",
         "granularity": "day",
@@ -3791,7 +3839,7 @@
     },
     "analyticsGrowthGroupingAndFiltering": {
       "before": {
-        "total": "跳出率 35.5%　变化 +0.4 个百分点",
+        "total": "跳出率 35.1%　变化 0.0 个百分点",
         "rows": 2,
         "chips": 0,
         "headers": [
@@ -3808,16 +3856,16 @@
         ]
       },
       "after": {
-        "total": "跳出率 35.8%　变化 +1.1 个百分点",
+        "total": "跳出率 35.2%　变化 0.0 个百分点",
         "rows": 1,
         "chips": [
-          "终端：桌面端 ×"
+          "终端：移动端 ×"
         ],
-        "filter": "desktop"
+        "filter": "mobile"
       }
     },
     "analyticsGrowthPeriodAndComparison": {
-      "periods": "本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11",
+      "periods": "本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18",
       "trendGranularity": "week",
       "trendComparison": "previous",
       "headers": [
@@ -3832,10 +3880,10 @@
         "平均访问时长",
         "操作"
       ],
-      "changeText": "+1.1 个百分点"
+      "changeText": "0.0 个百分点"
     },
     "analyticsGrowthComparisonDisabled": {
-      "periods": "本期 2026-09-12 至 2026-09-18",
+      "periods": "本期 2026-11-19 至 2026-11-25",
       "headers": [
         "终端",
         "跳出率 · 当前",
@@ -3852,7 +3900,7 @@
       "open": true,
       "type": "analytics-growth-detail",
       "mode": "readonly",
-      "context": "终端：桌面端本期 2026-09-12 至 2026-09-18终端：桌面端浏览量 PV4,079访客 UV1,156独立 IP790会话数1,460跳出率35.8%平均访问时长201 秒比较结果当前 35.8%",
+      "context": "终端：移动端本期 2026-11-19 至 2026-11-25终端：移动端浏览量 PV3,355访客 UV960独立 IP606会话数1,195跳出率35.2%平均访问时长202 秒比较结果当前 35.2%",
       "hasBacktrace": false,
       "closeButtons": 2,
       "closed": {
@@ -3902,7 +3950,7 @@
       "U-08": "关闭\nU-08 · 新增用户有效行为率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n再次有效行为人数\t成熟注册用户中，首次有效行为后在新会话主动发起独立业务且窗内成功者人数\tuser_no\t注册批次＋窗内再次成功\t同会话生成后投稿不算再次；后台完成不替代返回\n再次有效行为率\t再次有效行为人数 ÷ 对应观察窗已满注册人数\tuser_no\t注册批次\t不是除以首次激活人数",
       "C-02": "关闭\nC-02 · 作品提交审核与提交用户\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n提交审核作品数\t区间成功进入审核的作品数\t作品\t提交审核发生\t同区间重提不增作品数；轮次另计\n作品提交用户数\t区间提交审核的作者人数\tuser_no\t提交审核发生\t同作者多作品仅计一人",
       "C-06": "关闭\nC-06 · 作品生命周期\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n作品创建数\t区间发生创建的作品数\t作品\t创建发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n创建用户数\t区间发生作品创建的作者人数\tuser_no\t创建发生\t各阶段独立去重，不相加\n作品审核通过数\t区间发生审核通过的作品数\t作品\t审核通过发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n审核通过用户数\t区间发生作品审核通过的作者人数\tuser_no\t审核通过发生\t各阶段独立去重，不相加\n作品审核拒绝数\t区间发生审核拒绝的作品数\t作品\t审核拒绝发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n审核拒绝用户数\t区间发生作品审核拒绝的作者人数\tuser_no\t审核拒绝发生\t各阶段独立去重，不相加\n作品正式发布数\t区间发生正式发布的作品数\t作品\t正式发布发生\t每阶段区间去重；重提/再发布不增该阶段作品数\n正式发布用户数\t区间发生作品正式发布的作者人数\tuser_no\t正式发布发生\t各阶段独立去重，不相加\n当前下架作品数\t截止时处于下架状态的作品数\t作品\t截止快照\t不是区间下架次数；提交数量见 C-02",
-      "A-02": "关闭\nA-02 · 生成状态量与成功失败率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n生成成功主单数\t区间到达成功终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成失败主单数\t区间到达失败终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成取消主单数\t区间到达取消终态的主单数\t生成主单\t终态发生\t成功/失败/取消互斥；退款不改变生成结果\n生成成功率\t成功主单 ÷（成功＋失败＋取消主单）\t生成主单\t同区间终态发生\t不以创建量或点击量作分母\n生成失败率\t失败主单 ÷（成功＋失败＋取消主单）\t生成主单\t同区间终态发生\t失败退款仍计失败\n处理中主单数\t截止时仍处于处理中的主单数\t生成主单\t截止快照\t与终态发生量分开",
+      "A-02": "关闭\nA-02 · 生成状态量与成功失败率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n生成成功主单数\t区间到达成功终态的主单数\t生成主单\t终态发生\t成功/失败互斥；退款不改变生成结果\n生成失败主单数\t区间到达失败终态的主单数\t生成主单\t终态发生\t成功/失败互斥；退款不改变生成结果\n生成成功率\t成功主单 ÷（成功＋失败主单）\t生成主单\t同区间终态发生\t不以创建量或点击量作分母\n生成失败率\t失败主单 ÷（成功＋失败主单）\t生成主单\t同区间终态发生\t失败退款仍计失败\n处理中主单数\t截止时仍处于处理中的主单数\t生成主单\t截止快照\t与终态发生量分开",
       "H-04": "关闭\nH-04 · 任务完成率与奖励到账率\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n任务完成率\t指定任务/期次完成的合资格用户 ÷ 同批合资格用户\tuser_no\t按资格形成时间选批次\t签到指定自然日期；未选任务/期次或无资格全集不计算\n奖励到账率\t截至共同截止仍完整有效到账对象 ÷ 同批应奖励对象\t应奖对象\t按应奖时间选批次\t失败/待发仍在分母；补发、冲正见 3.5\n奖励待结算对象数\t同批应奖对象中截至截止仍待发放者数量\t应奖对象\t应奖批次截止状态\t不是接口尝试次数",
       "H-05": "关闭\nH-05 · 积分到账、失败与冲正\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n积分到账流水数\t区间实际到账的生效流水数\t积分流水\t到账发生\t重复回调不增加\n积分到账用户数\t区间有实际积分到账的用户人数\tuser_no\t到账发生\t不以展示奖励计到账\n未解决奖励失败对象数\t同批应奖对象中截至截止仍失败未解决者数量\t应奖对象\t应奖批次截止状态\t补发成功移出失败；不是失败尝试次数\n冲正流水数\t区间生效冲正流水数\t冲正流水\t冲正发生\t与原流水关联，原流水保留\n冲正用户数\t区间有生效冲正流水的用户人数\tuser_no\t冲正发生\t不撤销此前发生人数",
       "H-07": "关闭\nH-07 · 积分兑换成功\n\n比率以百分比展示（商 × 100%）；业务人数按 user_no 去重，时间采用北京时间。\n\n具体指标\t计算方式\t去重对象\t统计时间\t限制\n成功兑换单数\t扣减及交付均成功的兑换单数\t兑换单\t两者完成较晚时间\t失败退分不是成功兑换\n成功兑换用户数\t成功兑换单的用户人数\tuser_no\t完整兑换成功\t同用户多单去重\n成功兑换扣减积分\t成功兑换单实际扣减积分之和\t兑换单关联扣减流水\t完整兑换成功\t不是全站同期消耗积分",
@@ -3913,8 +3961,7 @@
       "全部状态",
       "成功",
       "失败",
-      "处理中",
-      "已取消"
+      "处理中"
     ],
     "analyticsRewardCohortRows": [
       {
@@ -3959,7 +4006,7 @@
       "path": "下钻路径数据总览UV增长分析",
       "range": "complete7",
       "compare": "previous",
-      "back": "analytics-overview.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&overview_metric=G-02&overview_granularity=auto",
+      "back": "analytics-overview.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&overview_metric=G-02&overview_granularity=auto",
       "clear": "analytics-growth.html",
       "rowRecordDetails": 7,
       "registrationRecordDetails": 0,
@@ -3971,8 +4018,8 @@
       "open": true,
       "type": "analytics-growth-detail",
       "mode": "readonly",
-      "text": "渠道：小红书本期 2026-09-12 至 2026-09-18 对比 2026-09-05 至 2026-09-11UTM 媒介：organic · 自然 · 投放批次：xhs_landing_page · 素材：hero_a新增注册337 日激活人数—7 日激活率—首次生成人数—首次提交人数—比较结果当前 33；前期 33；变化 0 / 0.0%满 7 天 0 人；未满 33 人；前期满 7 天 33 人。成熟样本不足，暂不显示激活率。查看注册用户后续行为",
-      "backtrace": "analytics-users.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-09-12%2526f_end%253D2026-09-18%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded",
+      "text": "渠道：小红书本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18UTM 媒介：organic · 自然 · 投放批次：xhs_landing_page · 素材：hero_a新增注册337 日激活人数—7 日激活率—首次生成人数—首次提交人数—比较结果当前 33；前期 35；变化 -2 / -5.7%满 7 天 0 人；未满 33 人；前期满 7 天 35 人。成熟样本不足，暂不显示激活率。查看注册用户后续行为",
+      "backtrace": "analytics-users.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-19%2526f_end%253D2026-11-25%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded",
       "cohortValues": [
         "33",
         "—",
@@ -4010,7 +4057,7 @@
         "external_other",
         "missing"
       ],
-      "back": "analytics-growth.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&f_attribution=registration&growth_metric=registered&growth_group=channel&drill_metric=G-02&drill_path=%E6%95%B0%E6%8D%AE%E6%80%BB%E8%A7%88%7CUV&drill_back=analytics-overview.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26overview_metric%3DG-02%26overview_granularity%3Dauto&f_source-type=all&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_browser=all&f_region=all&f_entry=all&growth_granularity=day&growth_sort=value-desc&growth_table=expanded"
+      "back": "analytics-growth.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&f_attribution=registration&growth_metric=registered&growth_group=channel&drill_metric=G-02&drill_path=%E6%95%B0%E6%8D%AE%E6%80%BB%E8%A7%88%7CUV&drill_back=analytics-overview.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26overview_metric%3DG-02%26overview_granularity%3Dauto&f_source-type=all&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_browser=all&f_region=all&f_entry=all&growth_granularity=day&growth_sort=value-desc&growth_table=expanded"
     },
     "analyticsRegistrationJourney": {
       "metric": "generated",
@@ -4024,13 +4071,13 @@
       "focusedTable": "analytics-growth-registration-touch"
     },
     "analyticsFollowupRestores": {
-      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/analytics-users.html?f_range=complete7&f_start=2026-09-12&f_end=2026-09-18&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-09-12%26f_end%3D2026-09-18%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-09-12%2526f_end%253D2026-09-18%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded&f_first-value=all&f_account-scope=normal&journey_metric=generated&journey_group=utm-campaign&journey_granularity=week&f_source-type=all&followup_metric=relogin&followup_group=channel&followup_granularity=week&journey_view=secondary",
-      "summary": "3.4%前期 9.1%2026-09-12 至 2026-09-18 · 注册批次 · 1 日观察窗 · 分子 1 / 成熟 29 · 观察中 4"
+      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/analytics-users.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-19%2526f_end%253D2026-11-25%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded&f_first-value=all&f_account-scope=normal&journey_metric=generated&journey_group=utm-campaign&journey_granularity=week&f_source-type=all&followup_metric=relogin&followup_group=channel&followup_granularity=week&journey_view=secondary",
+      "summary": "10.7%前期 2.9%2026-11-19 至 2026-11-25 · 注册批次 · 1 日观察窗 · 分子 3 / 成熟 28 · 观察中 5"
     },
     "analyticsOverviewUserContinuity": {
       "source": "xiaohongshu",
       "metric": "generated",
-      "value": "52",
+      "value": "54",
       "range": "complete30"
     },
     "analyticsDomainSuite": [
@@ -4045,7 +4092,7 @@
       },
       {
         "kind": "creation",
-        "before": "142 单",
+        "before": "153 单",
         "switched": "failure",
         "detailOpen": true,
         "chips": 1,
@@ -4133,12 +4180,12 @@
       "reviewTypeCleared": true
     },
     "analyticsSemanticCohorts": {
-      "mature": 463,
-      "followupMature": 463,
-      "active": 193,
-      "followupActive": 193,
-      "generated": 120,
-      "followupGenerated": 120,
+      "mature": 454,
+      "followupMature": 454,
+      "active": 203,
+      "followupActive": 203,
+      "generated": 125,
+      "followupGenerated": 125,
       "submitted": 45,
       "followupSubmitted": 45
     },
@@ -4200,7 +4247,7 @@
         [
           "G-04",
           "跳出率",
-          "仅一次有效页面访问且无路由切换或业务成功的会话 ÷ 会话数",
+          "排除跨日会话后，仅一次有效页面访问且无路由切换或业务成功的会话数 ÷ 剩余会话数",
           "会话",
           "会话开始",
           "同批会话；页面维度限入口会话"
@@ -4208,10 +4255,10 @@
         [
           "G-04",
           "平均访问时长",
-          "同批会话可观测前台时长之和 ÷ 会话数",
-          "会话内时长段",
+          "所选区间开始的非跨日会话中，协议2、可见时长可信且已闭合的有效会话可见时长总秒数 ÷ 有效会话数；排除跨日、旧协议、无效或缺失可见段及未闭合会话，后台时长不计",
+          "有效会话",
           "会话开始",
-          "后台不计；单页无后续行为按 0 秒"
+          "仅在无有效会话时不计算；无需全部非跨日会话均有效，样本覆盖率在详情单列"
         ],
         [
           "G-05",
@@ -4619,7 +4666,7 @@
           "区间到达成功终态的主单数",
           "生成主单",
           "终态发生",
-          "成功/失败/取消互斥；退款不改变生成结果"
+          "成功/失败互斥；退款不改变生成结果"
         ],
         [
           "A-02",
@@ -4627,20 +4674,12 @@
           "区间到达失败终态的主单数",
           "生成主单",
           "终态发生",
-          "成功/失败/取消互斥；退款不改变生成结果"
-        ],
-        [
-          "A-02",
-          "生成取消主单数",
-          "区间到达取消终态的主单数",
-          "生成主单",
-          "终态发生",
-          "成功/失败/取消互斥；退款不改变生成结果"
+          "成功/失败互斥；退款不改变生成结果"
         ],
         [
           "A-02",
           "生成成功率",
-          "成功主单 ÷（成功＋失败＋取消主单）",
+          "成功主单 ÷（成功＋失败主单）",
           "生成主单",
           "同区间终态发生",
           "不以创建量或点击量作分母"
@@ -4648,7 +4687,7 @@
         [
           "A-02",
           "生成失败率",
-          "失败主单 ÷（成功＋失败＋取消主单）",
+          "失败主单 ÷（成功＋失败主单）",
           "生成主单",
           "同区间终态发生",
           "失败退款仍计失败"
@@ -5231,6 +5270,10 @@
         "checked": 34,
         "invalid": []
       },
+      "flash-categories": {
+        "checked": 34,
+        "invalid": []
+      },
       "aigc-template-config": {
         "checked": 34,
         "invalid": []
@@ -5277,6 +5320,10 @@
       },
       "store-config": {
         "checked": 39,
+        "invalid": []
+      },
+      "membership-management": {
+        "checked": 34,
         "invalid": []
       },
       "user-list": {
@@ -5387,7 +5434,7 @@
         "topbarTop": 0,
         "brandTop": 14,
         "sidebarClientHeight": 1000,
-        "sidebarScrollHeight": 1480,
+        "sidebarScrollHeight": 1552,
         "contentClientHeight": 936,
         "viewportHeight": 1000
       },

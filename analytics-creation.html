@@ -28,6 +28,7 @@
           <a class="nav-btn" href="index.html" data-nav="content-list" data-page-link="index.html">内容列表</a>
           <a class="nav-btn" href="review-workbench.html" data-nav="review-workbench" data-page-link="review-workbench.html">审核工作台</a>
           <a class="nav-btn" href="flash-management.html" data-nav="flash-management" data-page-link="flash-management.html">闪念管理</a>
+          <a class="nav-btn" href="flash-categories.html" data-nav="flash-categories" data-page-link="flash-categories.html">闪念分类</a>
           <a class="nav-btn" href="aigc-template-config.html" data-nav="aigc-template-config" data-page-link="aigc-template-config.html">模板配置</a>
           <a class="nav-btn" href="tutorial-management.html" data-nav="tutorial-management" data-page-link="tutorial-management.html">教程管理</a>
         </div>
@@ -62,6 +63,7 @@
           <a class="nav-btn" href="competition-management.html" data-nav="competition-management" data-page-link="competition-management.html">赛事管理</a>
           <a class="nav-btn" href="operation-config.html" data-nav="operation-config" data-page-link="operation-config.html">公告配置</a>
           <a class="nav-btn" href="store-config.html" data-nav="store-config" data-page-link="store-config.html">商城管理</a>
+          <a class="nav-btn" href="membership-management.html" data-nav="membership-management" data-page-link="membership-management.html">会员管理</a>
         </div>
       </section>
 
@@ -113,7 +115,7 @@
 
       <main class="content ant-layout-content">
 <section class="view is-active" data-view="analytics-creation" data-page-contract="analytics-creation" data-analytics-page="creation" data-analytics-batch="phase1-batch1" data-analytics-demo="true" data-page-title-owned-by="header">
-          <div class="contract-panel" data-page-contract="analytics-creation">创作分析使用 A-01 至 A-08；生成任务、生成结果件数和生成用户分别统计，同一主单内部重试、预览及中间文件不重复计数。生成结果只分成功、失败、取消，处理中为截止时快照；退款是独立积分流水，不覆盖生成结果。生成→作品提交使用完整 168 小时观察窗；缺少稳定生成结果与作品关系时，只能降级为用户级时间窗口估算。</div>
+          <div class="contract-panel" data-page-contract="analytics-creation">创作分析使用 A-01 至 A-08；生成任务、生成结果件数和生成用户分别统计，同一主单内部重试、预览及中间文件不重复计数。指标中心按成功、失败统计终态，处理中为截止时快照；退款是独立积分流水，不覆盖生成结果。生成→作品提交使用完整 168 小时观察窗；缺少稳定生成结果与作品关系时，只能降级为用户级时间窗口估算。</div>
           <div class="analytics-data-strip" data-analytics-data-status>
             <div><span>数据状态</span><b><span class="tag success">演示</span> 产品口径已定义</b></div>
             <div><span>共同数据截止</span><b data-analytics-common-cutoff>2026-08-23 23:59</b></div>
@@ -129,7 +131,7 @@
                 <div class="field"><label>模型系列</label><select class="select" aria-label="创作分析模型系列" data-analytics-filter-control="series"><option value="all" selected>全部系列</option><option value="image">图像生成</option><option value="video">视频生成</option><option value="text">文本生成</option></select></div>
                 <div class="field"><label>模型</label><select class="select" aria-label="创作分析模型" data-analytics-filter-control="model"><option value="all" selected>全部模型</option><option value="image-general">通用图像模型</option><option value="video-general">通用视频模型</option><option value="unknown">未知历史编码</option></select></div>
                 <div class="field"><label>输出类型</label><select class="select" aria-label="创作分析输出类型" data-analytics-filter-control="output"><option value="all" selected>全部类型</option><option value="image">图片</option><option value="video">视频</option><option value="text">文本</option></select></div>
-                <div class="field"><label>生成状态</label><select class="select" aria-label="创作分析生成状态" data-analytics-filter-control="state"><option value="all" selected>全部状态</option><option value="success">成功</option><option value="failed">失败</option><option value="processing">处理中</option><option value="cancelled">已取消</option></select></div>
+                <div class="field"><label>生成状态</label><select class="select" aria-label="创作分析生成状态" data-analytics-filter-control="state"><option value="all" selected>全部状态</option><option value="success">成功</option><option value="failed">失败</option><option value="processing">处理中</option></select></div>
                 <div class="field"><label>活动编码</label><select class="select" aria-label="创作分析活动编码" data-analytics-filter-control="activity-code"><option value="all" selected>全部活动</option><option value="campaign-image">campaign_image</option><option value="new-user">new_user</option><option value="none">无活动</option></select></div>
                 <div class="field"><label>失败原因组</label><select class="select" aria-label="创作分析失败原因组" data-analytics-filter-control="failure-group"><option value="all" selected>全部原因组</option><option value="timeout">供应超时</option><option value="safety">内容安全拒绝</option><option value="parameter">参数不支持</option><option value="quota">额度/供应不可用</option><option value="other">其他归一化原因</option></select></div>
                 <div class="filter-actions"><button class="btn" type="button" data-analytics-filter-action="reset">重置</button><button class="btn primary" type="button" data-analytics-filter-action="apply">应用筛选</button></div>
@@ -139,7 +141,7 @@
           </div>
           <div class="analytics-stat-grid" data-analytics-creation-cards>
             <div class="analytics-stat-card" data-analytics-metric="A-01"><div class="stat-label">生成主单</div><div class="stat-value">904</div></div>
-            <div class="analytics-stat-card" data-analytics-metric="A-02"><div class="stat-label">状态量与成功 / 失败率</div><div class="stat-value">742 / 80 / 78</div><div class="muted small">成功 / 失败 / 处理中 · 取消 4</div><div class="muted small">成功率 89.8% · 失败率 9.7% · 最终状态 826；独立退款流水 2</div></div>
+            <div class="analytics-stat-card" data-analytics-metric="A-02"><div class="stat-label">状态量与成功 / 失败率</div><div class="stat-value">742 / 80 / 78</div><div class="muted small">成功 / 失败 / 处理中</div><div class="muted small">成功率 90.3% · 失败率 9.7% · 最终状态 822；独立退款流水 2</div></div>
             <div class="analytics-stat-card" data-analytics-metric="A-05"><div class="stat-label">处理中积压</div><div class="stat-value">11</div></div>
             <div class="analytics-stat-card" data-analytics-metric="A-06"><div class="stat-label">生成结果件数</div><div class="stat-value">1,486</div></div>
             <div class="analytics-stat-card" data-analytics-metric="A-07"><div class="stat-label">成功 / 失败用户</div><div class="stat-value">486 / 63</div></div>
@@ -526,6 +528,7 @@
               <option value="./aigc.html#aigc-create-panel" data-slot-target-option data-slot-target-label="AIGC 创作" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-AIGC-CREATE"></option>
               <option value="./campaign-detail.html" data-slot-target-option data-slot-target-label="AI 生图创作挑战" data-slot-target-source-type="activity" data-slot-target-source-id="ACT-IMAGE-001"></option>
               <option value="./member-store.html" data-slot-target-option data-slot-target-label="会员商城" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-MEMBER-STORE"></option>
+              <option value="./membership.html" data-slot-target-option data-slot-target-label="会员" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-MEMBERSHIP"></option>
               <option value="./activity-center.html" data-slot-target-option data-slot-target-label="活动中心" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-ACTIVITY-CENTER"></option>
               <option value="./aigc.html#inspiration-gallery" data-slot-target-option data-slot-target-label="Prompt 案例库" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-AIGC-PROMPT"></option>
               <option value="./tutorial.html" data-slot-target-option data-slot-target-label="官方教程" data-slot-target-source-type="cend-target" data-slot-target-source-id="TARGET-TUTORIAL"></option>
