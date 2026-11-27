@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T05:58:34.351Z",
+  "generatedAt": "2026-11-27T12:07:14.114Z",
   "prototype": "outputs/community-b-end-antdesign-prototype/index.html",
   "mode": "multi-page",
   "status": "passed",
@@ -1789,12 +1789,12 @@
         "quota_rule",
         "validation_rule"
       ],
-      "taskCode": "TASK-689105"
+      "taskCode": "TASK-207548"
     },
     "b03ActivityTaskCreated": {
       "drawerClosed": true,
       "rowCount": 2,
-      "taskCode": "TASK-689105",
+      "taskCode": "TASK-207548",
       "editVisible": true,
       "deleteVisible": true
     },
@@ -1803,7 +1803,7 @@
       "name": "浏览并收藏作品",
       "codeDisabled": true
     },
-    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-689105\n浏览活动作品后完成一次收藏",
+    "b03ActivityTaskEdited": "浏览并收藏精选作品\nTASK-207548\n浏览活动作品后完成一次收藏",
     "b03ActivityTaskDeleteConfirm": true,
     "b03ActivityTaskDeleted": 0,
     "b03ActivitySubmissionsInitial": {
@@ -2503,12 +2503,12 @@
     },
     "competitionCreatedBlankDraft": {
       "created": "1",
-      "draftName": "赛事交互验收草稿-1795672694258",
-      "competitionId": "COMP-2026-694288",
+      "draftName": "赛事交互验收草稿-1795781213234",
+      "competitionId": "COMP-2026-213263",
       "activeView": "competition-detail",
       "profile": "blank-draft",
       "configuration": "incomplete",
-      "title": "赛事交互验收草稿-1795672694258",
+      "title": "赛事交互验收草稿-1795781213234",
       "state": "草稿",
       "stage": "未配置",
       "overall": "0 / 10 已配置",
@@ -2526,7 +2526,7 @@
       "notificationRecordText": "赛事尚未发布，暂无通知发送记录。",
       "workbenchVisible": true,
       "notFoundHidden": true,
-      "expectedName": "赛事交互验收草稿-1795672694258"
+      "expectedName": "赛事交互验收草稿-1795781213234"
     },
     "competitionBlankDraftPublishCheck": {
       "rowCount": 10,
@@ -3130,7 +3130,7 @@
         "key": "banner-image",
         "status": "已选择：competition-banner-image.webp",
         "value": "assets/uploads/competition-banner-image.webp",
-        "previewSource": "data:image/webp;base64,",
+        "previewSource": "data:image/webp;base64,UklGRgAAAABXRUJQ",
         "removeVisible": true
       }
     ],
@@ -3307,7 +3307,7 @@
       "rowAdded": true,
       "values": {
         "competitionAwardRow": "",
-        "awardId": "AWARD-697556",
+        "awardId": "AWARD-216564",
         "awardType": "ranking",
         "awardName": "社区创意奖",
         "awardQuota": "2",
@@ -3513,7 +3513,7 @@
     "competitionScoringQueueSelection": {
       "work": "雨后信号 · S-006",
       "activeTask": "S-006",
-      "status": "已提交 · 2026-11-26 13:58",
+      "status": "已提交 · 2026-11-27 20:06",
       "scoreDisabled": true,
       "contentType": "图片",
       "modalWidth": 1360,
@@ -3568,7 +3568,7 @@
       "chartComponents": 1,
       "anomalyRows": 0,
       "overviewCards": 6,
-      "pvValue": "7,527",
+      "pvValue": "7,538",
       "stageCards": 6,
       "selectedStageMetric": "G-02",
       "trendTabs": 11,
@@ -3629,20 +3629,20 @@
         "date",
         "date"
       ],
-      "start": "2026-11-19",
-      "end": "2026-11-25",
+      "start": "2026-11-20",
+      "end": "2026-11-26",
       "calendarIcon": true
     },
     "analyticsOverviewTodayPreset": {
       "value": "today",
-      "start": "2026-11-26",
-      "end": "2026-11-26"
+      "start": "2026-11-27",
+      "end": "2026-11-27"
     },
     "analyticsOverviewApplied": {
       "range": "complete30",
       "applied": "true",
       "resultLineCount": 0,
-      "trendRange": "2026-10-27 至 2026-11-25 · 按周 · 访问日期 / 会话触点",
+      "trendRange": "2026-10-28 至 2026-11-26 · 按周 · 访问日期 / 会话触点",
       "trendGranularity": "week",
       "trendBuckets": 5,
       "selectedQuickRange": "complete30"
@@ -3652,11 +3652,11 @@
       "chartMetric": "G-01",
       "title": "PV 趋势",
       "values": [
-        "6,451",
+        "5,364",
         "7,514",
         "7,555",
         "7,509",
-        "3,210"
+        "4,294"
       ],
       "detailTarget": "analytics-growth",
       "selectedStages": 0
@@ -3689,7 +3689,7 @@
     },
     "analyticsGrowthSourceBoundary": {
       "cardLabel": "新访客",
-      "cardValue": "1,121",
+      "cardValue": "1,124",
       "wholeSiteOnly": "",
       "helpText": "首次触点新访客。首次访问发生在所选区间的去重访客数，按首次触点归因。",
       "headers": [
@@ -3731,7 +3731,7 @@
     },
     "analyticsGrowthChannelApplied": {
       "channel": "xiaohongshu",
-      "wholeSiteCardValue": "408"
+      "wholeSiteCardValue": "411"
     },
     "analyticsGrowthBiWorkspace": {
       "ready": "true",
@@ -3787,7 +3787,7 @@
           "exists": true
         }
       ],
-      "initialPeriods": "本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18",
+      "initialPeriods": "本期 2026-11-20 至 2026-11-26 对比 2026-11-13 至 2026-11-19",
       "initialTrend": {
         "metric": "new",
         "granularity": "day",
@@ -3856,7 +3856,7 @@
         ]
       },
       "after": {
-        "total": "跳出率 35.2%　变化 0.0 个百分点",
+        "total": "跳出率 35.3%　变化 +0.2 个百分点",
         "rows": 1,
         "chips": [
           "终端：移动端 ×"
@@ -3865,7 +3865,7 @@
       }
     },
     "analyticsGrowthPeriodAndComparison": {
-      "periods": "本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18",
+      "periods": "本期 2026-11-20 至 2026-11-26 对比 2026-11-13 至 2026-11-19",
       "trendGranularity": "week",
       "trendComparison": "previous",
       "headers": [
@@ -3880,10 +3880,10 @@
         "平均访问时长",
         "操作"
       ],
-      "changeText": "0.0 个百分点"
+      "changeText": "+0.2 个百分点"
     },
     "analyticsGrowthComparisonDisabled": {
-      "periods": "本期 2026-11-19 至 2026-11-25",
+      "periods": "本期 2026-11-20 至 2026-11-26",
       "headers": [
         "终端",
         "跳出率 · 当前",
@@ -3900,7 +3900,7 @@
       "open": true,
       "type": "analytics-growth-detail",
       "mode": "readonly",
-      "context": "终端：移动端本期 2026-11-19 至 2026-11-25终端：移动端浏览量 PV3,355访客 UV960独立 IP606会话数1,195跳出率35.2%平均访问时长202 秒比较结果当前 35.2%",
+      "context": "终端：移动端本期 2026-11-20 至 2026-11-26终端：移动端浏览量 PV3,342访客 UV956独立 IP610会话数1,191跳出率35.3%平均访问时长202 秒比较结果当前 35.3%",
       "hasBacktrace": false,
       "closeButtons": 2,
       "closed": {
@@ -4006,7 +4006,7 @@
       "path": "下钻路径数据总览UV增长分析",
       "range": "complete7",
       "compare": "previous",
-      "back": "analytics-overview.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&overview_metric=G-02&overview_granularity=auto",
+      "back": "analytics-overview.html?f_range=complete7&f_start=2026-11-20&f_end=2026-11-26&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&overview_metric=G-02&overview_granularity=auto",
       "clear": "analytics-growth.html",
       "rowRecordDetails": 7,
       "registrationRecordDetails": 0,
@@ -4018,8 +4018,8 @@
       "open": true,
       "type": "analytics-growth-detail",
       "mode": "readonly",
-      "text": "渠道：小红书本期 2026-11-19 至 2026-11-25 对比 2026-11-12 至 2026-11-18UTM 媒介：organic · 自然 · 投放批次：xhs_landing_page · 素材：hero_a新增注册337 日激活人数—7 日激活率—首次生成人数—首次提交人数—比较结果当前 33；前期 35；变化 -2 / -5.7%满 7 天 0 人；未满 33 人；前期满 7 天 35 人。成熟样本不足，暂不显示激活率。查看注册用户后续行为",
-      "backtrace": "analytics-users.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-19%2526f_end%253D2026-11-25%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded",
+      "text": "渠道：小红书本期 2026-11-20 至 2026-11-26 对比 2026-11-13 至 2026-11-19UTM 媒介：organic · 自然 · 投放批次：xhs_landing_page · 素材：hero_a新增注册337 日激活人数—7 日激活率—首次生成人数—首次提交人数—比较结果当前 33；前期 35；变化 -2 / -5.7%满 7 天 0 人；未满 33 人；前期满 7 天 35 人。成熟样本不足，暂不显示激活率。查看注册用户后续行为",
+      "backtrace": "analytics-users.html?f_range=complete7&f_start=2026-11-20&f_end=2026-11-26&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-20%26f_end%3D2026-11-26%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-20%2526f_end%253D2026-11-26%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded",
       "cohortValues": [
         "33",
         "—",
@@ -4057,7 +4057,7 @@
         "external_other",
         "missing"
       ],
-      "back": "analytics-growth.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&f_attribution=registration&growth_metric=registered&growth_group=channel&drill_metric=G-02&drill_path=%E6%95%B0%E6%8D%AE%E6%80%BB%E8%A7%88%7CUV&drill_back=analytics-overview.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26overview_metric%3DG-02%26overview_granularity%3Dauto&f_source-type=all&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_browser=all&f_region=all&f_entry=all&growth_granularity=day&growth_sort=value-desc&growth_table=expanded"
+      "back": "analytics-growth.html?f_range=complete7&f_start=2026-11-20&f_end=2026-11-26&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_compare=previous&f_channel=all&f_attribution=registration&growth_metric=registered&growth_group=channel&drill_metric=G-02&drill_path=%E6%95%B0%E6%8D%AE%E6%80%BB%E8%A7%88%7CUV&drill_back=analytics-overview.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-20%26f_end%3D2026-11-26%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26overview_metric%3DG-02%26overview_granularity%3Dauto&f_source-type=all&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_browser=all&f_region=all&f_entry=all&growth_granularity=day&growth_sort=value-desc&growth_table=expanded"
     },
     "analyticsRegistrationJourney": {
       "metric": "generated",
@@ -4071,8 +4071,8 @@
       "focusedTable": "analytics-growth-registration-touch"
     },
     "analyticsFollowupRestores": {
-      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/analytics-users.html?f_range=complete7&f_start=2026-11-19&f_end=2026-11-25&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-19%26f_end%3D2026-11-25%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-19%2526f_end%253D2026-11-25%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded&f_first-value=all&f_account-scope=normal&journey_metric=generated&journey_group=utm-campaign&journey_granularity=week&f_source-type=all&followup_metric=relogin&followup_group=channel&followup_granularity=week&journey_view=secondary",
-      "summary": "10.7%前期 2.9%2026-11-19 至 2026-11-25 · 注册批次 · 1 日观察窗 · 分子 3 / 成熟 28 · 观察中 5"
+      "url": "file:///F:/%E5%AE%A2%E6%88%B7%E8%B5%84%E6%96%99/AIGC-%E7%A4%BE%E5%8C%BA/ai666-codex-audit-pack/outputs/community-b-end-antdesign-prototype/analytics-users.html?f_range=complete7&f_start=2026-11-20&f_end=2026-11-26&f_range-label=%E6%9C%80%E8%BF%91+7+%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%97%A5&f_utm-medium=organic&f_utm-campaign=xhs_landing_page&f_utm-content=hero_a&f_utm-term=all&f_device=all&f_entry=all&f_browser=all&f_region=all&f_compare=previous&f_source=xiaohongshu&f_window=d7&drill_metric=G-08&drill_path=%E5%A2%9E%E9%95%BF%E5%88%86%E6%9E%90%7C%E6%B3%A8%E5%86%8C%E8%BD%AC%E5%8C%96%7C%E5%B0%8F%E7%BA%A2%E4%B9%A6&drill_back=analytics-growth.html%3Ff_range%3Dcomplete7%26f_start%3D2026-11-20%26f_end%3D2026-11-26%26f_range-label%3D%25E6%259C%2580%25E8%25BF%2591%2B7%2B%25E4%25B8%25AA%25E5%25AE%258C%25E6%2595%25B4%25E6%2597%25A5%26f_compare%3Dprevious%26f_channel%3Dall%26f_attribution%3Dregistration%26growth_metric%3Dregistered%26growth_group%3Dchannel%26drill_metric%3DG-02%26drill_path%3D%25E6%2595%25B0%25E6%258D%25AE%25E6%2580%25BB%25E8%25A7%2588%257CUV%26drill_back%3Danalytics-overview.html%253Ff_range%253Dcomplete7%2526f_start%253D2026-11-20%2526f_end%253D2026-11-26%2526f_range-label%253D%2525E6%25259C%252580%2525E8%2525BF%252591%252B7%252B%2525E4%2525B8%2525AA%2525E5%2525AE%25258C%2525E6%252595%2525B4%2525E6%252597%2525A5%2526f_compare%253Dprevious%2526f_channel%253Dall%2526overview_metric%253DG-02%2526overview_granularity%253Dauto%26f_source-type%3Dall%26f_utm-medium%3Dorganic%26f_utm-campaign%3Dxhs_landing_page%26f_utm-content%3Dhero_a%26f_utm-term%3Dall%26f_device%3Dall%26f_browser%3Dall%26f_region%3Dall%26f_entry%3Dall%26growth_granularity%3Dday%26growth_sort%3Dvalue-desc%26growth_table%3Dexpanded&f_first-value=all&f_account-scope=normal&journey_metric=generated&journey_group=utm-campaign&journey_granularity=week&f_source-type=all&followup_metric=relogin&followup_group=channel&followup_granularity=week&journey_view=secondary",
+      "summary": "10.3%前期 2.9%2026-11-20 至 2026-11-26 · 注册批次 · 1 日观察窗 · 分子 3 / 成熟 29 · 观察中 4"
     },
     "analyticsOverviewUserContinuity": {
       "source": "xiaohongshu",
@@ -4180,14 +4180,14 @@
       "reviewTypeCleared": true
     },
     "analyticsSemanticCohorts": {
-      "mature": 454,
-      "followupMature": 454,
-      "active": 203,
-      "followupActive": 203,
+      "mature": 460,
+      "followupMature": 460,
+      "active": 204,
+      "followupActive": 204,
       "generated": 125,
       "followupGenerated": 125,
-      "submitted": 45,
-      "followupSubmitted": 45
+      "submitted": 46,
+      "followupSubmitted": 46
     },
     "analyticsP0MetricCenterActions": {
       "count": 46,
@@ -5066,7 +5066,7 @@
       ],
       "sourceHidden": true,
       "sourcePanel": false,
-      "note": "纳入计算 0 人 · 待满 7 天 138 人 样本不足，暂不显示比率。",
+      "note": "纳入计算 0 人 · 待满 7 天 137 人 样本不足，暂不显示比率。",
       "notice": true
     },
     "analyticsGeneratedPageContracts": [

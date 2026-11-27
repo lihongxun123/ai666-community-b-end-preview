@@ -119,7 +119,8 @@
       <td><strong>${money(plan.price)}</strong></td><td>${escape(plan.points)} 分
         <span class="table-muted">${plan.pointsMode === "rate" ? `每元 ${escape(plan.pointRate)} 分` : "固定赠分"}</span></td>
       <td>${currency.format(plan.discount * 10)} 折</td><td>${escape(plan.activityRate)} 倍</td><td>${escape(plan.signRate)} 倍</td>
-      <td><span class="appearance-preview" data-appearance="${escape(plan.appearance || plan.id)}">${escape(plan.style || "—")}</span></td>
+      <td><span class="member-admin-art">${window.MemberArt.portrait(plan.appearance || plan.id)}
+        <span>${escape(plan.style || "—")}<br>${button("预览装扮", "preview-art", plan.id)}</span></span></td>
       <td>${escape(plan.gift || "—")}</td>
       <td>${button("编辑档位", "edit-plan", plan.id)}</td>
     </tr>`);
@@ -297,7 +298,8 @@
       ? `每笔购买到账 ${points} 积分，永久有效。` : "请填写赠分规则。";
     const preview = byId("plan-appearance-preview");
     preview.dataset.appearance = elements.appearance.value;
-    preview.textContent = elements.style.value.trim() || "装扮预览";
+    preview.innerHTML = window.MemberArt.portrait(elements.appearance.value);
+    preview.append(document.createTextNode(elements.style.value.trim() || "装扮预览"));
     if (elements.insertAfterId) {
       const ordered = read().plans.map(({ id, name }) => ({ id, name }));
       const index = elements.insertAfterId.value
@@ -488,7 +490,16 @@
       <div class="action-row order-actions">${noteButton}</div></section>`;
   }
 
+  function previewArt(plan) {
+    if (!plan) return;
+    selectedOrder = null;
+    byId("details-title").textContent = plan.name + "装扮";
+    window.MemberArt.tryOn(byId("details-body"), plan.appearance || plan.id, plan);
+    if (!drawer.open) drawer.showModal();
+  }
+
   function viewOrder(id) {
+    byId("details-title").textContent = "订单详情";
     selectedOrder = id;
     drawOrder(id);
     if (!drawer.open) drawer.showModal();
@@ -605,6 +616,7 @@
     const { memberAdminAction: action, id } = control.dataset;
     const plan = () => read().plans.find((item) => item.id === id);
     const handlers = {
+      "preview-art": () => previewArt(plan()),
       "new-plan": () => editPlan(),
       "edit-plan": () => editPlan(plan()), "edit-first": () => editFirst(plan()),
       "edit-campaign": () => editCampaign(read().campaigns.find((item) => item.id === id)),
